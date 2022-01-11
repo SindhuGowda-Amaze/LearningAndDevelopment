@@ -8,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   constructor() { }
-
+  temp:any
   ngOnInit(): void {
+    this.temp=sessionStorage.getItem('temp')
   }
 
+  logout() {
+    sessionStorage.clear();
+    location.href = "/Login";
+    //location.reload();
+  }
 }

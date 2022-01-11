@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'LearningAndDevelopment';
+  temp:any
+  ngOnInit() {
+    this.temp=localStorage.getItem('temp')
+  }
 }
