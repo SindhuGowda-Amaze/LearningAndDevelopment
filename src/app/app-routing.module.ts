@@ -9,8 +9,8 @@ import { TrainerCourseMappingComponent } from './Pages/trainer-course-mapping/tr
 import { ChapterComponent } from './Pages/chapter/chapter.component'
 import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.component';
 import { TrainerComponent } from './Pages/trainer/trainer.component';
-import { CourseDashboardComponent } from './course-dashboard/course-dashboard.component';
-import{ChapterDashboardComponent} from './chapter-dashboard/chapter-dashboard.component'
+import { CourseDashboardComponent } from './Pages/course-dashboard/course-dashboard.component';
+import{ChapterDashboardComponent} from './Pages/chapter-dashboard/chapter-dashboard.component'
 import { EmployeeComponent } from './Pages/employee/employee.component';
 import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
 import { CatalogComponent } from './Pages/catalog/catalog.component';
