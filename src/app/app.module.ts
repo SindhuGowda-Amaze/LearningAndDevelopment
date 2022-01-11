@@ -15,6 +15,8 @@ import { ChapterComponent } from './Pages/chapter/chapter.component';
 import { TrainerComponent } from './Pages/trainer/trainer.component';
 import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.component';
 import { TrainerCourseMappingComponent } from './Pages/trainer-course-mapping/trainer-course-mapping.component';
+import { CourseDashboardComponent } from './course-dashboard/course-dashboard.component';
+import { ChapterDashboardComponent } from './chapter-dashboard/chapter-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { TrainerCourseMappingComponent } from './Pages/trainer-course-mapping/tr
     // ManagerLoginComponent
     TrainerComponent,
     TrainerFormComponent,
-    TrainerCourseMappingComponent
+    TrainerCourseMappingComponent,
+    CourseDashboardComponent,
+    ChapterDashboardComponent
   ],
   imports: [
     BrowserModule,
