@@ -1,43 +1,30 @@
-<div class="container-fluid" *ngIf="temp=='1'">
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-1">
             <img src="/assets/Images/89_89_L.png" class="logo" alt="logo">
         </div>
 
-        <div class="col-lg-1" *ngIf="roleid!=5">
-            <h6 class="menutext" *ngIf="roleid!=1" routerLink="/Dashboard">Dashboard</h6>
-            <h6 class="menutext" *ngIf="roleid==1" routerLink="/AdminDashboard">Dashboard</h6>
+        <div class="col-lg-1">
+
+            <h6 class="menutext" routerLink="/AdminDashboard">Dashboard</h6>
         </div>
-        <div class="col-lg-1" *ngIf="roleid!='4' && roleid!=3 && roleid!=6 && roleid!=5">
-            <h6 class=" dropdown-toggle menutext" *ngIf="roleid!=8" type="button" id="dropdownMenu1"
-                data-toggle="dropdown" aria-expanded="false">Set Up</h6>
+        <div class="col-lg-1">
+            <h6 class=" dropdown-toggle menutext" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                aria-expanded="false">Set Up</h6>
             <ul class="dropdown-menu">
-                <li class="dropdown-item"><a class="menuitem" tabindex="-1" *ngIf="roleid!='7'"
-                        routerLink="/ClientDashBoard">Client</a></li>
+                <li class="dropdown-item"><a class="menuitem" tabindex="-1" routerLink="/ClientDashBoard">Course</a>
+                </li>
                 <li class="dropdown-item"><a class="menuitem" tabindex="-1"
-                        routerLink="/ClientStaffDashBoard">Client Staff </a></li>
-              
-                <li class="dropdown-item"><a class="menuitem" routerLink="/RecruiterStaffDashboard">Company Staff </a></li> 
-                <li class="dropdown-item"><a class="menuitem" 
-                        routerLink="/VendorDashboard">Vendor</a></li>
-               
+                        routerLink="/ClientStaffDashBoard">Chapter</a></li>
+                <li class="dropdown-item"><a class="menuitem" routerLink="/RecruiterStaffDashboard">Trainer</a></li>
+                <li class="dropdown-item"><a class="menuitem" routerLink="/RecruiterStaffDashboard">Assign Trainer</a>
+                </li>
+                <li class="dropdown-item"><a class="menuitem" routerLink="/RecruiterStaffDashboard">Employer</a></li>
+
             </ul>
         </div>
 
-        <div class="col-lg-1" *ngIf="roleid==5" >
-            <h6 class=" dropdown-toggle menutext" *ngIf="roleid!=8" type="button" id="dropdownMenu3"
-                data-toggle="dropdown" aria-expanded="false">Scheduled Interviews</h6>
-          
-                <ul class="dropdown-menu">
-              
-                <li class="dropdown-item"><a class="menuitem" 
-                        routerLink="/ScheduledInterviews">Scheduled Interviews </a></li>
-                <li class="dropdown-item"><a class="menuitem" routerLink="/SelectedCandidates">SelectedCandidates</a>
-                </li>
-                </ul>  
-        </div>
-
-
+        <!-- 
         <div class="col-lg-1" *ngIf="roleid!=1 && roleid!=5" >
             <h6 class=" dropdown-toggle menutext" *ngIf="roleid!=8" type="button" id="dropdownMenu1"
                 data-toggle="dropdown" aria-expanded="false">Job Recruitments</h6>
@@ -56,39 +43,17 @@
                 <li class="dropdown-item"><a class="menuitem" routerLink="/DroppedCandidates">Dropped Candidates </a>
                 </li>
             </ul>
-        </div>
+        </div>-->
+        <div class="col-lg-1">
 
-        <div class="col-lg-1" style="margin-left: 61px;" *ngIf="roleid!=1 && roleid!=5">
-            <h6 class=" dropdown-toggle menutext" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                aria-expanded="false" *ngIf="roleid!=8">Reports</h6>
-            <ul class="dropdown-menu">
-                <li class="dropdown-item"><a class="menuitem" tabindex="-1" routerLink="/JobRecruitementReport">Job
-                        Recruitments Report</a></li>
-                <li class="dropdown-item"><a class="menuitem" routerLink="/AppliedCandidatesReports">Applied Candidates
-                        Report</a></li>
-                <li class="dropdown-item"><a class="menuitem" routerLink="/ShortlistedCandidatesReports">Shortlisted
-                        Candidates Report</a></li>
-                <li class="dropdown-item"><a class="menuitem" routerLink="/ScheduledInterviewsReports">Scheduled
-                        Interviews Report</a></li>
-                <li class="dropdown-item"><a class="menuitem"
-                        routerLink="/SelectedCandidatesReports">Selected Candidates Reports</a></li>
-                <li class="dropdown-item"><a class="menuitem" routerLink="/OfferedCandidatesReports">Offered Candidates
-                        Report</a></li>
-                <li class="dropdown-item"><a class="menuitem" routerLink="/JoinedCandidatesReport">Joined Candidates
-                        Reports</a></li>
-                <li class="dropdown-item"><a class="menuitem" routerLink="/DroppedCandiadtesReports">Dropped Candidates
-                        Report</a></li>
-            </ul>
+            <h6 class="menutext" routerLink="/AdminDashboard">My Course</h6>
         </div>
-
-        <div class="col-lg-4" *ngIf="roleid==5 "></div>
-        <div class="col-lg-4" *ngIf="roleid==1"></div>
-        <div class="col-lg-4" *ngIf="roleid==4 "></div> 
-        <div class="col-lg-4" *ngIf="roleid==6 || roleid==3"></div> 
-        <div class="col-lg-1" style="margin-left: 100px;">
-            <img src="assets/Images/logout.png" class="logout" (click)="logout()">&nbsp;
-            <img src="assets/Images/notification.png" class="notify" routerLink="/Notification">&nbsp; &nbsp;&nbsp;
+            <div class="col-lg-7" ></div>
+        <div class="col-lg-1" >
+            <!-- <img src="assets/Images/notification.png" class="notify" routerLink="/Notification">&nbsp; &nbsp;&nbsp; -->
+        <img src="assets/Images/logout.png" class="logout" (click)="logout()">&nbsp;
         </div>
-        <div class="col-lg-1"> Welcome {{UserName}} ({{role}})</div>
     </div>
+    <!-- <div class="col-lg-1"> Welcome {{UserName}} ({{role}})</div> -->
 </div>
+
