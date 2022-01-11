@@ -8,6 +8,7 @@ import { HeaderComponent } from './Pages/header/header.component';
 import { FooterComponent } from './Pages/footer/footer.component';
 import { TrainerComponent } from './Pages/trainer/trainer.component';
 import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.component';
+import { TrainerCourseMappingComponent } from './Pages/trainer-course-mapping/trainer-course-mapping.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.componen
     HeaderComponent,
     FooterComponent,
     TrainerComponent,
-    TrainerFormComponent
+    TrainerFormComponent,
+    TrainerCourseMappingComponent
   ],
   imports: [
     BrowserModule,
