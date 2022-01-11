@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxDropzoneModule } from 'ngx-dropzone';
-// import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { HeaderComponent } from './Pages/header/header.component';
 import { FooterComponent } from './Pages/footer/footer.component';
-import { CourseComponent } from './Pages/course/course.component';
-import { ChapterComponent } from './Pages/chapter/chapter.component';
-// import { AdminLoginComponent } from './Pages/admin-login/admin-login.component';
-// import { EmployeeLoginComponent } from './Pages/employee-login/employee-login.component';
-// import { ManagerLoginComponent } from './Pages/manager-login/manager-login.component';
 import { TrainerComponent } from './Pages/trainer/trainer.component';
 import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.component';
 import { TrainerCourseMappingComponent } from './Pages/trainer-course-mapping/trainer-course-mapping.component';
 import { CourseDashboardComponent } from './course-dashboard/course-dashboard.component';
 import { ChapterDashboardComponent } from './chapter-dashboard/chapter-dashboard.component';
+import { CourseComponent } from './Pages/course/course.component';
+import { ChapterComponent } from './Pages/chapter/chapter.component';
+import { EmployeeComponent } from './Pages/employee/employee.component';
+import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
 
 @NgModule({
   declarations: [
@@ -24,22 +22,20 @@ import { ChapterDashboardComponent } from './chapter-dashboard/chapter-dashboard
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    CourseComponent,
-    ChapterComponent,
-    // AdminLoginComponent,
-    // EmployeeLoginComponent,
-    // ManagerLoginComponent
     TrainerComponent,
     TrainerFormComponent,
     TrainerCourseMappingComponent,
     CourseDashboardComponent,
-    ChapterDashboardComponent
+    ChapterDashboardComponent,
+    CourseComponent,
+    ChapterComponent,
+    EmployeeComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxDropzoneModule
-    // NgxDropzoneModule,
+    NgxDropzoneModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

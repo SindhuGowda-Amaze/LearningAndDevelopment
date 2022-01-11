@@ -11,6 +11,8 @@ import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.componen
 import { TrainerComponent } from './Pages/trainer/trainer.component';
 import { CourseDashboardComponent } from './course-dashboard/course-dashboard.component';
 import{ChapterDashboardComponent} from './chapter-dashboard/chapter-dashboard.component'
+import { EmployeeComponent } from './Pages/employee/employee.component';
+import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'Footer', component: FooterComponent },
   { path: 'Course', component: CourseComponent },
   { path: 'Chapter', component: ChapterComponent },
+  { path: 'Employee', component: EmployeeComponent },
+  { path: 'EmployeeForm', component: EmployeeFormComponent },
   { path: 'Trainer', component: TrainerComponent },
   { path: 'TrainerForm', component: TrainerFormComponent },
   { path: 'TrainerCourseMapping', component: TrainerCourseMappingComponent },
