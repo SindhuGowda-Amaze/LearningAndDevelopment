@@ -11,6 +11,7 @@ import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.componen
 import { TrainerComponent } from './Pages/trainer/trainer.component';
 import { EmployeeComponent } from './Pages/employee/employee.component';
 import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
+import { CatalogComponent } from './Pages/catalog/catalog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'Chapter', component: ChapterComponent },
   { path: 'Employee', component: EmployeeComponent },
   { path: 'EmployeeForm', component: EmployeeFormComponent },
+  { path: 'Catalog', component: CatalogComponent },
   { path: 'Trainer', component: TrainerComponent },
   { path: 'TrainerForm', component: TrainerFormComponent },
   { path: 'TrainerCourseMapping', component: TrainerCourseMappingComponent },
