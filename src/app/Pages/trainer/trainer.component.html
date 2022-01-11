@@ -1,0 +1,85 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-10">
+                    <p class="Heading">Trainer Dashboard</p>
+                </div>
+                <div class="col-lg-2">
+                    <p class="Text" style="float:right; padding-right:50px;">Count:1</p>
+                </div>
+            </div>
+            <hr class="HrLine">
+
+            <div class="row FilterClass ">
+                <div class="col-lg-1">
+                    <p class="Text">Filter By</p>
+                </div>
+                <div class="col-lg-6">
+                    <!-- <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search"
+                        name="search"> -->
+                        <input type="search" class="form-control" placeholder="Search for Name..">
+                </div>
+                <div class="col-lg-1"></div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-9"></div>
+                <div class="col-lg-3">
+                    <button class=button routerLink="/TrainerForm">Add</button>
+                </div>
+            </div> <br>
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- <table class="table" *ngIf="(vendordetails | filter: search).length > 0; else noResults"> -->
+                            <table class="table table-bordered">
+                            <thead>
+                                <tr class="head">
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Email Id</th>
+                                    <th>Address</th>
+                                    <th>Year of Experience</th>
+                                    <th>Resume</th>
+                                    <th>Skills and Technology</th>
+                                    <th>Trainer Fee</th>
+                                    <th>Actions</th>
+                                </tr>
+                                <!-- <tr *ngFor="let vendor of vendordetails|filter:search">
+                                    <td><img style="width: 100px;" src="{{vendor.vendor_Logo}}"></td>
+                                    <td>{{vendor.vendor_Name}}</td>
+                                    <td>{{vendor.phone_Number}}</td>
+                                    <td>{{vendor.email_ID}}</td>
+                                    <td>{{vendor.address}}</td>
+                                    <td><button class="button1" (click)="edit(vendor.id)">Edit</button> <br> <br>
+                                        <button class="button2" (click)="Ondelete(vendor.id)">Delete</button>
+                                    </td>
+                                </tr> -->
+                                <tr class="head">
+                                    <td>Pavan</td>
+                                    <td>978787778</td>
+                                    <td>pavan123@gmail.com</td>
+                                    <td>#24 2nd main, Jayanagar 8th block Bangalore-70</td>
+                                    <td>3</td>
+                                    <td>Resume</td>
+                                    <td>Programing,good at debugging,good Interpersonal skills,</td>
+                                    <td>5000</td>
+                                    <td><button class="button1" >Edit</button> <br> <br>
+                                        <button class="button2" >Delete</button>
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- <ng-template #noResults>
+                            <p class="NoResultShow"> No results found for "{{search}}" </p>
+                        </ng-template> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
