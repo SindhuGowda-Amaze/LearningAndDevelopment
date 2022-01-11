@@ -6,187 +6,45 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                        <div class="back">
-                            <br>
-                            <div class="row" *ngFor="let job of clientlist">
-                                <div class="col-lg-2">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"
-                                        style="font-size: 43px;color:maroon; margin-top: 5px;
-                                        margin-left: 5px;"></i>
-                                </div>
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-7" >
-                                    <label class="name">{{job.name}}<br>
-                                        <div class="din-Medium1">{{job.email}}</div>
-                                        <div class="din-Medium1">{{job.phoneNo}}</div>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr class="new4">
-                            <div class="backflip">
-                                <button class="bcakbtn">BACK</button>
-                                <a ><button class="viewall" >VIEW ALL</button></a>
-                            </div>
-                        </div>
-                        <div class="front">
-                            <br>
-                            <div class="row title_outer1" > 
-                                <div class="col-lg-2">
-                                    <!-- <img src="assets/Images/target.png"  style="width:200%"> -->
-                                </div>
-                                <div class="col-lg-9">
-                                    <h1 class="cardlabel"  style="color: #555;font-size: 25px;margin-top: 0px;">Active listening and Custo... </h1>
-                                </div>
-                            </div><br><br>
-                            <div class="row">
-                                <div class="col-lg-4"></div>
-                                <div class="col-lg-4" style="text-align: center;">
-                                    <h6 class="Number">{{count}}</h6>
-                                </div>
-                                <div class="col-lg-4"></div>
-                            </div><br><br><br><br>
-                            <button class="clickbutton1" >VIEW DETAILS</button>
+                        <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                        <div class="back">
-                            <br>
-                            <div class="row" *ngFor="let job of clientstafflist1">
-                                <div class="col-lg-2">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"
-                                        style="font-size: 43px;color:maroon; margin-top: 5px;
-                                        margin-left: 5px;"></i>
-                                </div>
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-7" >
-                                    <label class="name">{{job.name}}<br>
-                                        <div class="din-Medium1">{{job.email}}</div>
-                                        <div class="din-Medium1">{{job.phoneNo}}</div>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr class="new4">
-                            <div class="backflip">
-                                <button class="bcakbtn">BACK</button>
-                                <a ><button class="viewall" >VIEW ALL</button></a>
-                            </div>
-                        </div>
-                        <div class="front">
-                            <br>
-                            <div class="row title_outer1" > 
-                                <div class="col-lg-1">
-                                </div>
-                                <div class="col-lg-1">
-                                    <!-- <i class="fa fa-calendar calend" aria-hidden="true"></i> -->
-                                </div>
-                                <div class="col-lg-9">
-                                    <h1 class="cardlabel"  style="color: #555;font-size: 25px;margin-top: 0px;">2016 SPi Global Overview</h1>
-                                </div>
-                            </div><br><br>
-                            <div class="row">
-                                <div class="col-lg-4"></div>
-                                <div class="col-lg-4" style="text-align: center;">
-                                    <h6 class="Number">{{count1}}</h6>
-                                </div>
-                                <div class="col-lg-4"></div>
-                            </div><br><br><br><br>
-                            <button class="clickbutton1" >VIEW DETAILS</button>
+                        <img class="card-img-top" src="/assets/Images/course2.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                        <div class="back">
-                            <br>
-                            <div class="row" *ngFor="let job of Vendorlist1">
-                                <div class="col-lg-2">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"
-                                        style="font-size: 43px;color:maroon; margin-top: 5px;
-                                        margin-left: 5px;"></i>
-                                </div>
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-7" >
-                                    <label class="name">{{job.vendor_Name}}<br>
-                                        <div class="din-Medium1">{{job.email_ID}}</div>
-                                        <div class="din-Medium1">{{job.phone_Number}}</div>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr class="new4">
-                            <div class="backflip">
-                                <button class="bcakbtn">BACK</button>
-                                <a ><button class="viewall"  >VIEW ALL</button></a>
-                            </div>
-                        </div>
-                        <div class="front">
-                            <br>
-                            <div class="row title_outer1" > 
-                                <div class="col-lg-1">
-                                </div>
-                                <div class="col-lg-1">
-                                    <!-- <i class="fa fa-calendar calend" aria-hidden="true"></i> -->
-                                </div>
-                                <div class="col-lg-9">
-                                    <h1 class="cardlabel"  style="color: #555;font-size: 25px;margin-top: 0px;">Active Listening to Boost S...</h1>
-                                </div>
-                            </div><br><br>
-                            <div class="row">
-                                <div class="col-lg-4"></div>
-                                <div class="col-lg-4" style="text-align: center;">
-                                    <h6 class="Number">{{count2}}</h6>
-                                </div>
-                                <div class="col-lg-4"></div>
-                            </div><br><br><br><br>
-                            <button class="clickbutton1" >VIEW DETAILS</button>
+                        <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                        <div class="back">
-                            <br>
-                            <div class="row" *ngFor="let job of clientstafflist1">
-                                <div class="col-lg-2">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"
-                                        style="font-size: 43px;color:maroon; margin-top: 5px;
-                                        margin-left: 5px;"></i>
-                                </div>
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-7" >
-                                    <label class="name">{{job.name}}<br>
-                                        <div class="din-Medium1">{{job.email}}</div>
-                                        <div class="din-Medium1">{{job.phoneNo}}</div>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr class="new4">
-                            <div class="backflip">
-                                <button class="bcakbtn">BACK</button>
-                                <a ><button class="viewall" >VIEW ALL</button></a>
-                            </div>
-                        </div>
-                        <div class="front">
-                            <br>
-                            <div class="row title_outer1" > 
-                                <div class="col-lg-1">
-                                </div>
-                                <div class="col-lg-1">
-                                    <!-- <i class="fa fa-calendar calend" aria-hidden="true"></i> -->
-                                </div>
-                                <div class="col-lg-9">
-                                    <h1 class="cardlabel"  style="color: #555;font-size: 25px;margin-top: 0px;">Adaptive skills</h1>
-                                </div>
-                            </div><br><br>
-                            <div class="row">
-                                <div class="col-lg-4"></div>
-                                <div class="col-lg-4" style="text-align: center;">
-                                    <h6 class="Number">{{count4}}</h6>
-                                </div>
-                                <div class="col-lg-4"></div>
-                            </div><br><br><br><br>
-                            <button class="clickbutton1" >VIEW DETAILS</button>
+                        <img class="card-img-top" src="/assets/Images/course3.png" alt="Card image cap" style="height: 120px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
@@ -200,187 +58,51 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                        <div class="back">
-                            <br>
-                            <div class="row" *ngFor="let job of clientlist">
-                                <div class="col-lg-2">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"
-                                        style="font-size: 43px;color:maroon; margin-top: 5px;
-                                        margin-left: 5px;"></i>
-                                </div>
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-7" >
-                                    <label class="name">{{job.name}}<br>
-                                        <div class="din-Medium1">{{job.email}}</div>
-                                        <div class="din-Medium1">{{job.phoneNo}}</div>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr class="new4">
-                            <div class="backflip">
-                                <button class="bcakbtn">BACK</button>
-                                <a ><button class="viewall" >VIEW ALL</button></a>
-                            </div>
-                        </div>
-                        <div class="front">
-                            <br>
-                            <div class="row title_outer1" > 
-                                <div class="col-lg-2">
-                                    <!-- <img src="assets/Images/target.png"  style="width:200%"> -->
-                                </div>
-                                <div class="col-lg-9">
-                                    <h1 class="cardlabel"  style="color: #555;font-size: 25px;margin-top: 0px;">Adaptive Skills to Cope wit...</h1>
-                                </div>
-                            </div><br><br>
-                            <div class="row">
-                                <div class="col-lg-4"></div>
-                                <div class="col-lg-4" style="text-align: center;">
-                                    <h6 class="Number">{{count}}</h6>
-                                </div>
-                                <div class="col-lg-4"></div>
-                            </div><br><br><br><br>
-                            <button class="clickbutton1" >VIEW DETAILS</button>
+                        <img class="card-img-top" src="/assets/Images/course3.png" alt="Card image cap" style="height: 120px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                        <div class="back">
-                            <br>
-                            <div class="row" *ngFor="let job of clientstafflist1">
-                                <div class="col-lg-2">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"
-                                        style="font-size: 43px;color:maroon; margin-top: 5px;
-                                        margin-left: 5px;"></i>
-                                </div>
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-7" >
-                                    <label class="name">{{job.name}}<br>
-                                        <div class="din-Medium1">{{job.email}}</div>
-                                        <div class="din-Medium1">{{job.phoneNo}}</div>
-                                    </label>
-                                </div>
+                    <div class="col-lg-3">
+                        <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                            <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                    of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
-                            <hr class="new4">
-                            <div class="backflip">
-                                <button class="bcakbtn">BACK</button>
-                                <a ><button class="viewall" >VIEW ALL</button></a>
-                            </div>
-                        </div>
-                        <div class="front">
-                            <br>
-                            <div class="row title_outer1" > 
-                                <div class="col-lg-1">
-                                </div>
-                                <div class="col-lg-1">
-                                    <!-- <i class="fa fa-calendar calend" aria-hidden="true"></i> -->
-                                </div>
-                                <div class="col-lg-9">
-                                    <h1 class="cardlabel"  style="color: #555;font-size: 25px;margin-top: 0px;">Angular - The Complete Guid</h1>
-                                </div>
-                            </div><br><br>
-                            <div class="row">
-                                <div class="col-lg-4"></div>
-                                <div class="col-lg-4" style="text-align: center;">
-                                    <h6 class="Number">{{count1}}</h6>
-                                </div>
-                                <div class="col-lg-4"></div>
-                            </div><br><br><br><br>
-                            <button class="clickbutton1" >VIEW DETAILS</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                        <div class="back">
-                            <br>
-                            <div class="row" *ngFor="let job of Vendorlist1">
-                                <div class="col-lg-2">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"
-                                        style="font-size: 43px;color:maroon; margin-top: 5px;
-                                        margin-left: 5px;"></i>
-                                </div>
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-7" >
-                                    <label class="name">{{job.vendor_Name}}<br>
-                                        <div class="din-Medium1">{{job.email_ID}}</div>
-                                        <div class="din-Medium1">{{job.phone_Number}}</div>
-                                    </label>
-                                </div>
+                    <div class="col-lg-3">
+                        <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                            <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                    of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
-                            <hr class="new4">
-                            <div class="backflip">
-                                <button class="bcakbtn">BACK</button>
-                                <a ><button class="viewall"  >VIEW ALL</button></a>
-                            </div>
-                        </div>
-                        <div class="front">
-                            <br>
-                            <div class="row title_outer1" > 
-                                <div class="col-lg-1">
-                                </div>
-                                <div class="col-lg-1">
-                                    <!-- <i class="fa fa-calendar calend" aria-hidden="true"></i> -->
-                                </div>
-                                <div class="col-lg-9">
-                                    <h1 class="cardlabel"  style="color: #555;font-size: 25px;margin-top: 0px;">Anti Money Laundering</h1>
-                                </div>
-                            </div><br><br>
-                            <div class="row">
-                                <div class="col-lg-4"></div>
-                                <div class="col-lg-4" style="text-align: center;">
-                                    <h6 class="Number">{{count2}}</h6>
-                                </div>
-                                <div class="col-lg-4"></div>
-                            </div><br><br><br><br>
-                            <button class="clickbutton1" >VIEW DETAILS</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                        <div class="back">
-                            <br>
-                            <div class="row" *ngFor="let job of clientstafflist1">
-                                <div class="col-lg-2">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"
-                                        style="font-size: 43px;color:maroon; margin-top: 5px;
-                                        margin-left: 5px;"></i>
-                                </div>
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-7" >
-                                    <label class="name">{{job.name}}<br>
-                                        <div class="din-Medium1">{{job.email}}</div>
-                                        <div class="din-Medium1">{{job.phoneNo}}</div>
-                                    </label>
-                                </div>
+                    <div class="col-lg-3">
+                        <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                            <img class="card-img-top" src="/assets/Images/course2.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                    of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
-                            <hr class="new4">
-                            <div class="backflip">
-                                <button class="bcakbtn">BACK</button>
-                                <a ><button class="viewall" >VIEW ALL</button></a>
-                            </div>
-                        </div>
-                        <div class="front">
-                            <br>
-                            <div class="row title_outer1" > 
-                                <div class="col-lg-1">
-                                </div>
-                                <div class="col-lg-1">
-                                    <!-- <i class="fa fa-calendar calend" aria-hidden="true"></i> -->
-                                </div>
-                                <div class="col-lg-9">
-                                    <h1 class="cardlabel"  style="color: #555;font-size: 25px;margin-top: 0px;">assess.01.image</h1>
-                                </div>
-                            </div><br><br>
-                            <div class="row">
-                                <div class="col-lg-4"></div>
-                                <div class="col-lg-4" style="text-align: center;">
-                                    <h6 class="Number">{{count4}}</h6>
-                                </div>
-                                <div class="col-lg-4"></div>
-                            </div><br><br><br><br>
-                            <button class="clickbutton1" >VIEW DETAILS</button>
                         </div>
                     </div>
                 </div>
@@ -393,49 +115,15 @@
         <div class="col-lg-9">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="card1" style="background-color: white; height: 300px;width: 250px;">
-                        <div class="back">
-                            <br>
-                            <div class="row" *ngFor="let job of CompanyStaffList">
-                                <div class="col-lg-2">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"
-                                        style="font-size: 43px;color:maroon; margin-top: 5px;
-                                        margin-left: 5px;"></i>
-                                </div>
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-7" >
-                                    <label class="name">{{job.name}}<br>
-                                        <div class="din-Medium1">{{job.email}}</div>
-                                        <div class="din-Medium1">{{job.phoneNo}}</div>
-                                    </label>
-                                </div>
+                    <div class="col-lg-3">
+                        <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                            <img class="card-img-top" src="/assets/Images/course2.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                    of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
-                            <hr class="new4">
-                            <div class="backflip">
-                                <button class="bcakbtn">BACK</button>
-                                <a ><button class="viewall" >VIEW ALL</button></a>
-                            </div>
-                        </div>
-                        <div class="front">
-                            <br>
-                            <div class="row title_outer1" > 
-                                <div class="col-lg-1">
-                                </div>
-                                <div class="col-lg-1">
-                                    <!-- <i class="fa fa-calendar calend" aria-hidden="true"></i> -->
-                                </div>
-                                <div class="col-lg-9">
-                                    <h1 class="cardlabel"  style="color: #555;font-size: 25px;margin-top: 0px;">assess.new.01</h1>
-                                </div>
-                            </div><br><br>
-                            <div class="row">
-                                <div class="col-lg-4"></div>
-                                <div class="col-lg-4" style="text-align: center;">
-                                    <h6 class="Number">{{count3}}</h6>
-                                </div>
-                                <div class="col-lg-4"></div>
-                            </div><br><br><br><br>
-                            <button class="clickbutton1" >VIEW DETAILS</button>
                         </div>
                     </div>
                 </div>
@@ -443,4 +131,3 @@
         </div>
     </div><br><br><br>
 </div>
-
