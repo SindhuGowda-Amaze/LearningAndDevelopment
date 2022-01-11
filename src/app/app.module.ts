@@ -9,6 +9,10 @@ import { FooterComponent } from './Pages/footer/footer.component';
 import { TrainerComponent } from './Pages/trainer/trainer.component';
 import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.component';
 import { TrainerCourseMappingComponent } from './Pages/trainer-course-mapping/trainer-course-mapping.component';
+import { CourseComponent } from './Pages/course/course.component';
+import { ChapterComponent } from './Pages/chapter/chapter.component';
+import { EmployeeComponent } from './Pages/employee/employee.component';
+import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { TrainerCourseMappingComponent } from './Pages/trainer-course-mapping/tr
     FooterComponent,
     TrainerComponent,
     TrainerFormComponent,
-    TrainerCourseMappingComponent
+    TrainerCourseMappingComponent,
+    CourseComponent,
+    ChapterComponent,
+    EmployeeComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,
