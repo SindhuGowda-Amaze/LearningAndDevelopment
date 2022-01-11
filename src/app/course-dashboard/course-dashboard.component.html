@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-10">
+                    <p class="Heading">Course Dashboard</p>
+                </div>
+                <div class="col-lg-2">
+                    <p class="Text" style="float:right; padding-right:50px;">Count:1</p>
+                </div>
+            </div>
+            <hr class="HrLine">
+
+            <div class="row FilterClass ">
+                <div class="col-lg-1">
+                    <p class="Text">Filter By</p>
+                </div>
+                <div class="col-lg-6">
+                    <!-- <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search"
+                        name="search"> -->
+                        <input type="search" class="form-control" placeholder="Search for Name..">
+                </div>
+                <div class="col-lg-1"></div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-9"></div>
+                <div class="col-lg-3">
+                    <button class=button routerLink="/Course">Add</button>
+                </div>
+            </div> <br>
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- <table class="table" *ngIf="(vendordetails | filter: search).length > 0; else noResults"> -->
+                            <table class="table table-bordered">
+                            <thead>
+                                <tr class="head">
+                                    <th>Category Name</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Photo</th>
+                                    <th>Duration</th>
+                                    <th>Fee</th>
+                                    <th>Entry Criteria</th>
+                                    <th>Exit Criteria</th>
+                                    <th>Actions</th>
+                                </tr>
+                              
+                                <tr class="header">
+                                    <td>Cat-A</td>
+                                    <td>Sai</td>
+                                    <td>Test</td>
+                                    <td>https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500</td>
+                                    <td>6 Months</td>
+                                    <td>50,000</td>
+                                    <td>Test</td>
+                                    <td>Test</td>
+                                    <td><button class="button1" >Edit</button> <br> <br>
+                                        <button class="button2" >Delete</button>
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- <ng-template #noResults>
+                            <p class="NoResultShow"> No results found for "{{search}}" </p>
+                        </ng-template> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>

@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-10">
+                    <p class="Heading">Chapter  Dashboard</p>
+                </div>
+                <div class="col-lg-2">
+                    <p class="Text" style="float:right; padding-right:50px;">Count:1</p>
+                </div>
+            </div>
+            <hr class="HrLine">
+
+            <div class="row FilterClass ">
+                <div class="col-lg-1">
+                    <p class="Text">Filter By</p>
+                </div>
+                <div class="col-lg-6">
+                    <!-- <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search"
+                        name="search"> -->
+                        <input type="search" class="form-control" placeholder="Search for Name..">
+                </div>
+                <div class="col-lg-1"></div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-9"></div>
+                <div class="col-lg-3">
+                    <button class=button routerLink="/Chapter">Add</button>
+                </div>
+            </div> <br>
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- <table class="table" *ngIf="(vendordetails | filter: search).length > 0; else noResults"> -->
+                            <table class="table table-bordered">
+                            <thead>
+                                <tr class="head">
+                                    <th>Course Name</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Pdf Attachment</th>
+                                    <th>Image Attachment</th>
+                                    <th>Video Attachment</th>
+                                    <th>Word Attachment</th>
+                                    <th>Chapter Photo</th>
+                                    <th>Chapter Text</th>
+                                    <th>Actions</th>
+                                </tr>
+                              
+                                <tr class="header">
+                                    <td>Test Data</td>
+                                    <td>Test Data</td>
+                                    <td>Test Data</td>
+                                    <td>Test Data</td>
+                                    <td>Test Data</td>
+                                    <td>Test Data</td>
+                                    <td>Test Data</td>
+                                    <td>Test Data</td>
+                                    <td>Test Data</td>
+                                    <td><button class="button1" >Edit</button> <br> <br>
+                                        <button class="button2" >Delete</button>
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- <ng-template #noResults>
+                            <p class="NoResultShow"> No results found for "{{search}}" </p>
+                        </ng-template> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+
