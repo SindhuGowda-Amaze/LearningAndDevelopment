@@ -1,0 +1,21 @@
+.outlet{
+    background-color: #ececec;
+    height: 90vh;
+    width: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .side-height{
+    height: 80vh;
+}
+
+.negative-padding{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.head-height{
+    height: 10vh;
+    margin-bottom: -1px;
+    overflow-y: hidden;
+}
