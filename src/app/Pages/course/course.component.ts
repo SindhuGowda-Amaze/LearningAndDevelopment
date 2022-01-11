@@ -12,6 +12,9 @@ export class CourseComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  cancel() {
+    location.href = "/Course";
+  }
 
 
   files: File[] = [];
