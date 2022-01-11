@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+.container-fluid{
+    font-family: 'Open Sans', sans-serif;
+}
+@font-face {
+    font-family: 'DIN Regular';
+    src: 
+      
+      url('assets/D-DIN.otf') 
+      format('opentype');
+  }
+  @font-face {
+    font-family: 'DIN Bold';
+    src: 
+      
+      url('assets/D-DIN-Bold.otf') 
+      format('opentype');
+  }
+
+  @font-face {
+    font-family: 'DIN Medium';
+    src: 
+      
+      url('assets/DIN Medium.otf') 
+      format('opentype');
+  }
+  body,button,p{
+    font-family: 'DIN Bold';
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer; 
+  }
+  input{
+    font-size: 10px;
+  }

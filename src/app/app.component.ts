@@ -9,6 +9,6 @@ export class AppComponent {
   title = 'LearningAndDevelopment';
   temp:any
   ngOnInit() {
-    this.temp=localStorage.getItem('temp')
+    // this.temp=localStorage.getItem('temp')
   }
 }

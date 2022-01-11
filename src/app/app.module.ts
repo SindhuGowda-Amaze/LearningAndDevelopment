@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+// import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Pages/login/login.component';
@@ -9,6 +9,8 @@ import { FooterComponent } from './Pages/footer/footer.component';
 // import { AdminLoginComponent } from './Pages/admin-login/admin-login.component';
 // import { EmployeeLoginComponent } from './Pages/employee-login/employee-login.component';
 // import { ManagerLoginComponent } from './Pages/manager-login/manager-login.component';
+import { TrainerComponent } from './Pages/trainer/trainer.component';
+import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,13 @@ import { FooterComponent } from './Pages/footer/footer.component';
     // AdminLoginComponent,
     // EmployeeLoginComponent,
     // ManagerLoginComponent
+    TrainerComponent,
+    TrainerFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // NgxDropzoneModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
