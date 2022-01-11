@@ -16,6 +16,7 @@ import { ChapterComponent } from './Pages/chapter/chapter.component';
 import { EmployeeComponent } from './Pages/employee/employee.component';
 import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
 import { CatalogComponent } from './Pages/catalog/catalog.component';
+import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CatalogComponent } from './Pages/catalog/catalog.component';
     ChapterComponent,
     EmployeeComponent,
     EmployeeFormComponent,
-    CatalogComponent
+    CatalogComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     sessionStorage.setItem('role', 'Admin');
     sessionStorage.setItem('roleid', '1');
     // this.router.navigate(["/Dashboard"]);
-    location.href = "/Trainer"
+    location.href = "/AdminDashboard"
 
     // }
   }
