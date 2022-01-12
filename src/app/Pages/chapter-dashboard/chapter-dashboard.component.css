@@ -137,4 +137,12 @@
   .NoResultShow{
     font-size: 16px;
   }
+  .pdfimg{
+    width: 20%;
+    height: auto;
+}
+.photo{
+  width: 70%;
+  height: auto;
+}
   
