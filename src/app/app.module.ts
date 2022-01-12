@@ -15,6 +15,7 @@ import { CourseComponent } from './Pages/course/course.component';
 import { ChapterComponent } from './Pages/chapter/chapter.component';
 import { EmployeeComponent } from './Pages/employee/employee.component';
 import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
+import { MyCourseDashboardComponent } from './Pages/my-course-dashboard/my-course-dashboard.component';
 import { CatalogComponent } from './Pages/catalog/catalog.component';
 import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
 import { ViewCourseComponent } from './Pages/view-course/view-course.component';
@@ -34,6 +35,7 @@ import { ViewCourseComponent } from './Pages/view-course/view-course.component';
     ChapterComponent,
     EmployeeComponent,
     EmployeeFormComponent,
+    MyCourseDashboardComponent,
     CatalogComponent,
     AdminDashboardComponent,
     ViewCourseComponent
