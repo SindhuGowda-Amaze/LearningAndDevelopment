@@ -511,3 +511,35 @@ hr.new4 {
   width: 96%;
   margin-left: 30px;
 }
+
+.VScroll{
+  background-color: white;
+   height:1000px;
+   overflow-y: scroll; 
+   overflow-x: scroll;
+   border: gray;
+}
+
+
+.vertical-menu {
+  width: 360px;
+  margin-left: 30px;
+  font-size: 16px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color:black;
+  color: white;
+}
