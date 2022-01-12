@@ -3,7 +3,6 @@
     border-radius: 5px;
     color:black;
     background-color: whitesmoke;
-    width:100%;
 }
 ul {
     list-style-type: none;
@@ -35,3 +34,8 @@ ul {
       color:gray;
   }
  
+ 
+.start:hover{
+    background-color: black;
+    color: white;
+}

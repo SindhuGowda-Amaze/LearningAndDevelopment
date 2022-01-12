@@ -27,7 +27,7 @@
 .btn
 {
   padding: 5px;
-  width: 40%;
+  width: 45%;
   font-size: 12px;
 }
 .Number{
@@ -485,4 +485,29 @@ hr.new4 {
     font-size: 11px;
     padding: 5px;
 
+}
+
+.card-img-top{
+  height: 120px;
+}
+
+.InputBox{
+  width: 70%;
+  font-size: 12px;
+  height: 90%;
+  border-radius: 5px;
+  border-color: grey;
+}
+
+.Btn{
+  height: 30px;
+  width: 30px;
+}
+
+.HRline{
+  border: 0;
+  border-top: 1.5px solid #ddd9d9;
+  margin: 20px 0;
+  width: 96%;
+  margin-left: 30px;
 }
