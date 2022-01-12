@@ -21,28 +21,29 @@ export class LoginComponent implements OnInit {
   constructor(public LearningService:LearningService) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('temp') == '1') {
-      localStorage.clear();
-      location.reload();
+    localStorage.getItem('temp') == '1'
+    // if (localStorage.getItem('temp') == '1') {
+    //   localStorage.clear();
+    //   location.reload();
 
-    }
-    this.GetLoginTypeMaster();
+    // }
+    // this.GetLoginTypeMaster();
   }
 
-  GetLoginTypeMaster() {
+  // GetLoginTypeMaster() {
 
-    this.LearningService.GetLoginTypeMaster().subscribe(data => {
+  //   this.LearningService.GetLoginTypeMaster().subscribe(data => {
 
-      this.loginTypeList = data;
-    })
-  }
+  //     this.loginTypeList = data;
+  //   })
+  // }
 
 
 
 
   public login() {
     debugger
-     if (this.userName == 'admin' && this.password == '1') {
+    //  if (this.userName == 'admin' && this.password == '1') {
     debugger
     sessionStorage.setItem('UserName', 'admin');
     sessionStorage.setItem('temp', '1');
@@ -52,14 +53,14 @@ export class LoginComponent implements OnInit {
     location.href = "/AdminDashboard"
 
      }
-     else if(this.userName == 'emp' && this.password == '2'){
-      sessionStorage.setItem('UserName', 'emp');
-      sessionStorage.setItem('temp', '2');
-      sessionStorage.setItem('role', 'emp');
-      sessionStorage.setItem('roleid', '2');
-      // this.router.navigate(["/Dashboard"]);
-      location.href = "/AdminDashboard"
-     }
+    //  else if(this.userName == 'emp' && this.password == '2'){
+    //   sessionStorage.setItem('UserName', 'emp');
+    //   sessionStorage.setItem('temp', '2');
+    //   sessionStorage.setItem('role', 'Employee');
+    //   sessionStorage.setItem('roleid', '2');
+    //   // this.router.navigate(["/Dashboard"]);
+    //   location.href = "/AdminDashboard"
+    //  }
 
   //    else if (this.roleID == 2){
   //     this.LearningService.GetRecruiterStaff().subscribe(data => {
@@ -90,4 +91,4 @@ export class LoginComponent implements OnInit {
   // }
     }
     
-}
+

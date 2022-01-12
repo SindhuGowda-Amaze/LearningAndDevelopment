@@ -10,14 +10,14 @@ import { ChapterComponent } from './Pages/chapter/chapter.component'
 import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.component';
 import { TrainerComponent } from './Pages/trainer/trainer.component';
 import { CourseDashboardComponent } from './Pages/course-dashboard/course-dashboard.component';
-import {ChapterDashboardComponent} from './Pages/chapter-dashboard/chapter-dashboard.component'
+import { ChapterDashboardComponent } from './Pages/chapter-dashboard/chapter-dashboard.component'
 import { EmployeeComponent } from './Pages/employee/employee.component';
 import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
 import { MyCourseDashboardComponent } from './Pages/my-course-dashboard/my-course-dashboard.component';
 import { CatalogComponent } from './Pages/catalog/catalog.component';
 import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
 import { ViewCourseComponent } from './Pages/view-course/view-course.component';
-import { StartMyCourseComponent } from './start-my-course/start-my-course.component';
+
 import { TakeAssessmentComponent } from './Pages/take-assessment/take-assessment.component';
 import { AssessmentResultComponent } from './Pages/assessment-result/assessment-result.component';
 import { CourseCertificateComponent } from './Pages/course-certificate/course-certificate.component';
@@ -37,15 +37,15 @@ const routes: Routes = [
   { path: 'TrainerForm', component: TrainerFormComponent },
   { path: 'TrainerCourseMapping', component: TrainerCourseMappingComponent },
   { path: 'TrainerCourseMappingForm', component: TrainerCourseMappingFormComponent },
-  {path:  'CourseDashboard',component:CourseDashboardComponent},
-  {path:  'ChapterDashboard',component:ChapterDashboardComponent},
-  {path:  'AdminDashboard',component:AdminDashboardComponent},
-  {path:  'ViewCourse',component:ViewCourseComponent},
-  {path:'MyCourseDashboard',component:MyCourseDashboardComponent},
-  {path:'TakeAssessment',component:TakeAssessmentComponent},
-  {path:'AssessmentResult',component:AssessmentResultComponent},
-  {path:'CourseCertificate',component:CourseCertificateComponent},
-  {path:'StartMyCourse',component:StartMyCourseComponent}
+  { path: 'CourseDashboard', component: CourseDashboardComponent },
+  { path: 'ChapterDashboard', component: ChapterDashboardComponent },
+  { path: 'AdminDashboard', component: AdminDashboardComponent },
+  { path: 'ViewCourse', component: ViewCourseComponent },
+  { path: 'MyCourseDashboard', component: MyCourseDashboardComponent },
+  { path: 'TakeAssessment', component: TakeAssessmentComponent },
+  { path: 'AssessmentResult', component: AssessmentResultComponent },
+  { path: 'CourseCertificate', component: CourseCertificateComponent },
+
 
 
 ];
