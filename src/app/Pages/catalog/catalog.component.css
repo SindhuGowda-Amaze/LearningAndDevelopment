@@ -543,3 +543,9 @@ hr.new4 {
   background-color:black;
   color: white;
 }
+
+.FilterBox{
+  width: 95%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
