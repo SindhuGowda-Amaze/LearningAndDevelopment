@@ -15,13 +15,24 @@
 .course{
     font-size: 15px;
 }
+  
+    .Save{
+        padding:7px;
+        border-radius: 5px;
+        border:none;
+        background-color: #2f87cc;
+        color:white; 
+        width:100%;
+        font-size: 16px;
+      }
+
 .button1{   
-padding:5px;
-border-radius: 5px;
-color:white;
-background-color: #2F87CC;
-border:none;
-width:100%;
-}
+    border-radius: 5px;
+    border:black;
+    color:black; 
+    background-color: white;
+    width:100%;
+    font-size: 16px;
+    }
  
 

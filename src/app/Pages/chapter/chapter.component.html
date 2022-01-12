@@ -1,41 +1,45 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-1"></div>
-        <div class="col-lg-10">
+        <div class="col-lg-10">            
             <div class="row">
                 <div class="col-lg-2">
                     <p class="course">Chapter Details </p>
                 </div>
-              
-            </div>
-            <hr>
+                <div class="col-lg-8"></div>
+                <!-- <div class="col-lg-2">
+                    <button class="button ">ADD</button>
+                </div> -->
+            </div><hr>      
             <div class="card">
+                <div class="row" >
+                    <div class="col-lg-2">
+                        <p>Course Name <span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p>Name <span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p>Description <span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p>Pdf Attachment <span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p>Image Attachment <span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p>Vedio Attachment <span style="color: red;">*</span></p>
+                    </div>
+                </div> 
                 <div class="row">
                     <div class="col-lg-2">
-                        <p>Course Name</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Name</p>
-                    </div>
-                    <div class="col-lg-4">
-                        <p>Description</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Pdf Attachment</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Image Attachment</p>
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-lg-2">
-                        <input class="form-control" placeholder="Course Id">
+                       <input class="form-control" placeholder="Course Name">
                     </div>
                     <div class="col-lg-2">
                         <input class="form-control" placeholder="Name">
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-2">
                         <textarea class="form-control" placeholder="Description"></textarea>
                     </div>
                     <div class="col-lg-2">
@@ -54,23 +58,6 @@
                             </ngx-dropzone-preview>
                         </ngx-dropzone>
                     </div>
-                </div> <br>
-
-                <div class="row">
-                    <div class="col-lg-2">
-                        <p>Vedio Attachment</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Word Attachment</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Chapter Photo</p>
-                    </div>
-                    <div class="col-lg-3">
-                        <p>Chapter Text</p>
-                    </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-2">
                         <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto;">
                             <ngx-dropzone-label>Please attach video!</ngx-dropzone-label>
@@ -79,6 +66,20 @@
                             </ngx-dropzone-preview>
                         </ngx-dropzone>
                     </div>
+                </div> <br>
+                
+                <div class="row">
+                    <div class="col-lg-2">
+                        <p>Word Attachment <span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p>Chapter Photo <span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p>Chapter Text <span style="color: red;">*</span></p>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-2">
                         <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto;">
                             <ngx-dropzone-label>Please attach Word!</ngx-dropzone-label>
@@ -95,25 +96,24 @@
                             </ngx-dropzone-preview>
                         </ngx-dropzone>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
                         <textarea class="form-control" placeholder="Chapter text"></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-9"></div>
                     <div class="col-lg-1">
-                        <button class="form-control " (click)="cancel()">Cancel</button>
+                        <button class="form-control  button1">Cancel</button>
                     </div>
                     <div class="col-lg-1">
-                        <button class="form-control button1">Save</button>
+                        <button class="form-control Save">Save</button>
                         <!-- <button class="form-control button1"  *ngIf="id==null || id==undefined" (click)="Save()">Save</button>    
                      <button class="form-control button1"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>    -->
                     </div>
-                </div>
+                    <div class="col-lg-1"></div>
+                </div><br>
             </div>
-          
         </div>
-        <div class="col-lg-1"></div>
     </div>
+    <div class="col-lg-1"></div>
 </div>
-

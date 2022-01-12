@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'TrainerCourseMappingForm', component: TrainerCourseMappingFormComponent },
   {path:'CourseDashboard',component:CourseDashboardComponent},
   {path:'ChapterDashboard',component:ChapterDashboardComponent},
-  {path:'MyCourseDashboard',component:MyCourseDashboardComponent}
+  {path:'MyCourseDashboard',component:MyCourseDashboardComponent},
   {path:'AdminDashboard',component:AdminDashboardComponent},
 ];
 
