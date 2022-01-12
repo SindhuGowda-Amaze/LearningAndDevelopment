@@ -512,6 +512,10 @@ hr.new4 {
   margin-left: 30px;
 }
 
+.VScroll{
+  /* overflow-y: scroll; */
+}
+
 
 .vertical-menu {
   width: 360px;
