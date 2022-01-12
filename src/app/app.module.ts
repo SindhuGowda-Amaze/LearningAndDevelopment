@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Pages/login/login.component';
@@ -19,6 +20,7 @@ import { MyCourseDashboardComponent } from './Pages/my-course-dashboard/my-cours
 import { CatalogComponent } from './Pages/catalog/catalog.component';
 import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
 import { ViewCourseComponent } from './Pages/view-course/view-course.component';
+import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.component';
 
 @NgModule({
   declarations: [
@@ -38,12 +40,14 @@ import { ViewCourseComponent } from './Pages/view-course/view-course.component';
     MyCourseDashboardComponent,
     CatalogComponent,
     AdminDashboardComponent,
-    ViewCourseComponent
+    ViewCourseComponent,
+    StartMyCourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxDropzoneModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

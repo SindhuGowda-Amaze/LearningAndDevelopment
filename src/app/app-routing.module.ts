@@ -17,6 +17,7 @@ import { MyCourseDashboardComponent } from './Pages/my-course-dashboard/my-cours
 import { CatalogComponent } from './Pages/catalog/catalog.component';
 import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
 import { ViewCourseComponent } from './Pages/view-course/view-course.component';
+import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path:  'ChapterDashboard',component:ChapterDashboardComponent},
   {path:  'AdminDashboard',component:AdminDashboardComponent},
   {path:  'ViewCourse',component:ViewCourseComponent},
-  {path:'MyCourseDashboard',component:MyCourseDashboardComponent}
+  {path:'MyCourseDashboard',component:MyCourseDashboardComponent},
+  {path:'StartMyCourse',component:StartMyCourseComponent}
 
 ];
 
