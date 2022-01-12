@@ -9,13 +9,15 @@ import { FooterComponent } from './Pages/footer/footer.component';
 import { TrainerComponent } from './Pages/trainer/trainer.component';
 import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.component';
 import { TrainerCourseMappingComponent } from './Pages/trainer-course-mapping/trainer-course-mapping.component';
-import { CourseDashboardComponent } from './course-dashboard/course-dashboard.component';
-import { ChapterDashboardComponent } from './chapter-dashboard/chapter-dashboard.component';
+import { CourseDashboardComponent } from './Pages/course-dashboard/course-dashboard.component';
+import { ChapterDashboardComponent } from './Pages/chapter-dashboard/chapter-dashboard.component';
 import { CourseComponent } from './Pages/course/course.component';
 import { ChapterComponent } from './Pages/chapter/chapter.component';
 import { EmployeeComponent } from './Pages/employee/employee.component';
 import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
 import { MyCourseDashboardComponent } from './Pages/my-course-dashboard/my-course-dashboard.component';
+import { CatalogComponent } from './Pages/catalog/catalog.component';
+import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { MyCourseDashboardComponent } from './Pages/my-course-dashboard/my-cours
     ChapterComponent,
     EmployeeComponent,
     EmployeeFormComponent,
-    MyCourseDashboardComponent
+    MyCourseDashboardComponent,
+    CatalogComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

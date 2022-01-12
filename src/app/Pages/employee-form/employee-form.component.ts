@@ -34,7 +34,7 @@ export class EmployeeFormComponent implements OnInit {
     // })
   }
   cancel() {
-    location.href = "/Trainer";
+    location.href = "/Employee";
   }
 
 }

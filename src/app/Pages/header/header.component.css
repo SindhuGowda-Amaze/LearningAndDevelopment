@@ -29,7 +29,9 @@
   }
   .menutext{
   color: #2f87cc;
-  margin-top: 15px;
+  margin-top: 25px;
+  font-weight: bold;
+  font-family: 'DIN Regular';
   }
   
   .dropdown-submenu>.dropdown-menu {

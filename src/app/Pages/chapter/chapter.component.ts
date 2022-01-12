@@ -11,6 +11,9 @@ export class ChapterComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  cancel() {
+    location.href = "/ChapterDashboard";
+  }
 
   files: File[] = [];
 
