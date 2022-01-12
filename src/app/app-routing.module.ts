@@ -39,6 +39,7 @@ const routes: Routes = [
   {path:  'ViewCourse',component:ViewCourseComponent},
   {path:'MyCourseDashboard',component:MyCourseDashboardComponent}
 
+
 ];
 
 @NgModule({
