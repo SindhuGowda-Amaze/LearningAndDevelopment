@@ -40,6 +40,10 @@ ul {
    height: 4px;
 
   }
+ .img{
+  width: 250px;
+   height:auto;
+ }
  
 .start:hover{
     background-color: black;
