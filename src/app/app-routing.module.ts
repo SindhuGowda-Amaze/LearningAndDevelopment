@@ -21,6 +21,7 @@ import { ViewCourseComponent } from './Pages/view-course/view-course.component';
 import { TakeAssessmentComponent } from './Pages/take-assessment/take-assessment.component';
 import { AssessmentResultComponent } from './Pages/assessment-result/assessment-result.component';
 import { CourseCertificateComponent } from './Pages/course-certificate/course-certificate.component';
+import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'TakeAssessment', component: TakeAssessmentComponent },
   { path: 'AssessmentResult', component: AssessmentResultComponent },
   { path: 'CourseCertificate', component: CourseCertificateComponent },
+  { path: 'StartMyCourse', component: StartMyCourseComponent },
 
 
 

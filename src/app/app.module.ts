@@ -24,6 +24,7 @@ import { ViewCourseComponent } from './Pages/view-course/view-course.component';
 import { TakeAssessmentComponent } from './Pages/take-assessment/take-assessment.component';
 import { AssessmentResultComponent } from './Pages/assessment-result/assessment-result.component';
 import { CourseCertificateComponent } from './Pages/course-certificate/course-certificate.component';
+import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { CourseCertificateComponent } from './Pages/course-certificate/course-ce
     CatalogComponent,
     AdminDashboardComponent,
     ViewCourseComponent,
-  
+    StartMyCourseComponent,
     TakeAssessmentComponent,
     AssessmentResultComponent,
     CourseCertificateComponent
