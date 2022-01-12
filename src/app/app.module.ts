@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxDropzoneModule } from 'ngx-dropzone';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Pages/login/login.component';
@@ -20,7 +20,11 @@ import { MyCourseDashboardComponent } from './Pages/my-course-dashboard/my-cours
 import { CatalogComponent } from './Pages/catalog/catalog.component';
 import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
 import { ViewCourseComponent } from './Pages/view-course/view-course.component';
-import { StartMyCourseComponent } from './start-my-course/start-my-course.component';
+
+import { TakeAssessmentComponent } from './Pages/take-assessment/take-assessment.component';
+import { AssessmentResultComponent } from './Pages/assessment-result/assessment-result.component';
+import { CourseCertificateComponent } from './Pages/course-certificate/course-certificate.component';
+import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +45,16 @@ import { StartMyCourseComponent } from './start-my-course/start-my-course.compon
     CatalogComponent,
     AdminDashboardComponent,
     ViewCourseComponent,
-    StartMyCourseComponent
+    StartMyCourseComponent,
+    TakeAssessmentComponent,
+    AssessmentResultComponent,
+    CourseCertificateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxDropzoneModule,
+    HttpClientModule,
   
   ],
   providers: [],

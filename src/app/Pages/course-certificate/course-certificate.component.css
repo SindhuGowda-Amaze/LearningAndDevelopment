@@ -1,0 +1,33 @@
+.card1{
+    margin: 10px;
+    background-color: whitesmoke(83, 84, 85);
+    color: black;
+}
+button{
+    padding:5px;
+    border-radius: 5px;
+    color:white;
+    background-color: #030a0f;
+    border:none;
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 40px;
+}
+.close{
+    background-color:transparent;
+    color: black;
+}
+.chapter{
+   
+    text-decoration: none;
+    margin: 20px;
+}
+.image{
+    width: 10%;
+    height: 20%;
+}
+.certificate{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
