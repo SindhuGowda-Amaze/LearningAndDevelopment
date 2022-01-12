@@ -5,10 +5,68 @@
                 <h1>Adaptive Skills to Cope with Stress</h1>
                 <p>Developing Adaptive skills for coping with stressful situations occurring in the workplace.</p><br>
                 <hr>
-                <button class="button" (click)="enroll()">ENROLL</button>
+                <button class="button" data-toggle="modal"
+                data-target="#enroll">ENROLL</button>
             </div>
             <div class="col-lg-3">
-                <img src="../../../assets/Images/course1.png">
+                <img src="assets/Images/course1.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="enroll" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Enroll for Course</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text">Name:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <!-- <select class="form-control" [(ngModel)]="Hired">
+                            <option value="">Select </option>
+                            <option>Yes</option>  
+                            <option>No</option> 
+                        </select> -->
+                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired" 
+                            placeholder="Peeter Ferin" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text" style="font-weight: bold;">Phone No:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired" 
+                            placeholder="9843873473" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text" style="font-weight: bold;">Email:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired" 
+                            placeholder="Ferin123@gmail.com" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-5"></div>
+                    <div class="col-lg-2">
+                        <button class="form-control Save"  (click)="enroll()">Enroll</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <hr>
+                <div class="col-lg-2">
+                    <button  data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>

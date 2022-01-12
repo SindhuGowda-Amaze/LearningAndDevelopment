@@ -6,43 +6,40 @@
                 <div class="col-lg-2">
                     <p class="course">Chapter Details </p>
                 </div>
-                <div class="col-lg-8"></div>
-                <!-- <div class="col-lg-2">
-                    <button class="button ">ADD</button>
-                </div> -->
-            </div><hr>      
+            </div>
+            <hr>
             <div class="card">
                 <div class="row" >
                     <div class="col-lg-2">
                         <p>Course Name <span style="color: red;">*</span></p>
                     </div>
                     <div class="col-lg-2">
-                        <p>Name <span style="color: red;">*</span></p>
+                        <p>Chapter Name</p>
                     </div>
                     <div class="col-lg-2">
                         <p>Description <span style="color: red;">*</span></p>
                     </div>
-                    <div class="col-lg-2">
-                        <p>Pdf Attachment <span style="color: red;">*</span></p>
+                    <div class="col-lg-4">
+                        <p>Attachment</p>
                     </div>
-                    <div class="col-lg-2">
-                        <p>Image Attachment <span style="color: red;">*</span></p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Vedio Attachment <span style="color: red;">*</span></p>
-                    </div>
-                </div> 
+                </div>
                 <div class="row">
                     <div class="col-lg-2">
-                       <input class="form-control" placeholder="Course Name">
+                        <!-- <input class="form-control" placeholder="Course Nmae"> -->
+                        <select class="form-control" name="cars" id="Duration">
+                            <option value="Select">Course Name</option>
+                            <option value="">Compliance</option>
+                            <option value=""> Marketing</option>
+                            <option value="">Communication Skills</option>
+                        </select>
                     </div>
                     <div class="col-lg-2">
-                        <input class="form-control" placeholder="Name">
+                        <input class="form-control" placeholder="Chapter Name">
                     </div>
                     <div class="col-lg-2">
                         <textarea class="form-control" placeholder="Description"></textarea>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-4">
                         <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto;">
                             <ngx-dropzone-label>Please attach pdf!</ngx-dropzone-label>
                             <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
@@ -50,54 +47,18 @@
                             </ngx-dropzone-preview>
                         </ngx-dropzone>
                     </div>
-                    <div class="col-lg-2">
-                        <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto;">
-                            <ngx-dropzone-label>Please attach photo!</ngx-dropzone-label>
-                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                            </ngx-dropzone-preview>
-                        </ngx-dropzone>
-                    </div>
-                    <div class="col-lg-2">
-                        <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto;">
-                            <ngx-dropzone-label>Please attach video!</ngx-dropzone-label>
-                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                            </ngx-dropzone-preview>
-                        </ngx-dropzone>
-                    </div>
+                   
                 </div> <br>
                 
                 <div class="row">
-                    <div class="col-lg-2">
-                        <p>Word Attachment <span style="color: red;">*</span></p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Chapter Photo <span style="color: red;">*</span></p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>Chapter Text <span style="color: red;">*</span></p>
+                   
+                    <div class="col-lg-3">
+                        <p>Chapter Text</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-2">
-                        <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto;">
-                            <ngx-dropzone-label>Please attach Word!</ngx-dropzone-label>
-                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                            </ngx-dropzone-preview>
-                        </ngx-dropzone>
-                    </div>
-                    <div class="col-lg-2">
-                        <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto;">
-                            <ngx-dropzone-label>Please attach Photo!</ngx-dropzone-label>
-                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                            </ngx-dropzone-preview>
-                        </ngx-dropzone>
-                    </div>
-                    <div class="col-lg-2">
-                        <textarea class="form-control" placeholder="Chapter text"></textarea>
+                    <div class="col-lg-8">
+                        <textarea class="form-control" placeholder="Chapter text" rows="10"></textarea>
                     </div>
                 </div>
                 <div class="row">
