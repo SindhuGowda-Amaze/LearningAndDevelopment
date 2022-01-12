@@ -15,6 +15,7 @@ import { CourseComponent } from './Pages/course/course.component';
 import { ChapterComponent } from './Pages/chapter/chapter.component';
 import { EmployeeComponent } from './Pages/employee/employee.component';
 import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
+import { MyCourseDashboardComponent } from './Pages/my-course-dashboard/my-course-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EmployeeFormComponent } from './Pages/employee-form/employee-form.compo
     CourseComponent,
     ChapterComponent,
     EmployeeComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    MyCourseDashboardComponent
   ],
   imports: [
     BrowserModule,
