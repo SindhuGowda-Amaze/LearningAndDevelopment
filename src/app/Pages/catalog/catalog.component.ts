@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LearningDevelopmentService } from 'src/app/learning-development.service';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -10,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CatalogComponent implements OnInit {
 
-  constructor(private LearningDevelopmentService: LearningDevelopmentService, private ActivatedRoute: ActivatedRoute) { }
+  constructor( private ActivatedRoute: ActivatedRoute) { }
 
 
   clientlist:any;

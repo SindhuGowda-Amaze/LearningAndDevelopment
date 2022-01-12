@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxDropzoneModule } from 'ngx-dropzone';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Pages/login/login.component';
@@ -53,6 +53,7 @@ import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.
     BrowserModule,
     AppRoutingModule,
     NgxDropzoneModule,
+    HttpClientModule,
   
   ],
   providers: [],
