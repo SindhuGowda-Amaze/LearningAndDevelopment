@@ -57,7 +57,7 @@
   }
   
   .button1{
-    padding:5px;
+    padding:3px;
     border-radius: 5px;
     color:white;
     background-color: #2F87CC;
@@ -66,17 +66,7 @@
 
   }
 
-  .button2{
-    padding:5px;
-    border-radius: 5px;
-    color:white;
-    background-color: #2F87CC;
-    border:none;
-    width:100%;
-   
-   
-
-  }
+ 
   
   ul {
     list-style-type: none;
@@ -130,3 +120,7 @@
     font-size: 16px;
   }
   
+  .pdfimg{
+      width: 20%;
+      height: auto;
+  }

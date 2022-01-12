@@ -17,6 +17,7 @@ import { EmployeeComponent } from './Pages/employee/employee.component';
 import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
 import { CatalogComponent } from './Pages/catalog/catalog.component';
 import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
+import { ViewCourseComponent } from './Pages/view-course/view-course.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard
     EmployeeComponent,
     EmployeeFormComponent,
     CatalogComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    ViewCourseComponent
   ],
   imports: [
     BrowserModule,

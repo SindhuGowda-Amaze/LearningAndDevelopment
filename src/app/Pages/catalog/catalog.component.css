@@ -24,8 +24,12 @@
     font-weight: bold;
 } */
 
-
-
+.btn
+{
+  padding: 5px;
+  width: 40%;
+  font-size: 12px;
+}
 .Number{
     text-align: center;
     padding-top: 22px;

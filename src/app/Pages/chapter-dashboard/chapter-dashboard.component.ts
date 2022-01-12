@@ -23,4 +23,5 @@ export class ChapterDashboardComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
+
 }

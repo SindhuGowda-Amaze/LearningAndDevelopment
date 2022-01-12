@@ -15,6 +15,7 @@ import { EmployeeComponent } from './Pages/employee/employee.component';
 import { EmployeeFormComponent } from './Pages/employee-form/employee-form.component';
 import { CatalogComponent } from './Pages/catalog/catalog.component';
 import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
+import { ViewCourseComponent } from './Pages/view-course/view-course.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
@@ -31,9 +32,10 @@ const routes: Routes = [
   { path: 'TrainerForm', component: TrainerFormComponent },
   { path: 'TrainerCourseMapping', component: TrainerCourseMappingComponent },
   { path: 'TrainerCourseMappingForm', component: TrainerCourseMappingFormComponent },
-  {path:'CourseDashboard',component:CourseDashboardComponent},
-  {path:'ChapterDashboard',component:ChapterDashboardComponent},
-  {path:'AdminDashboard',component:AdminDashboardComponent},
+  {path:  'CourseDashboard',component:CourseDashboardComponent},
+  {path:  'ChapterDashboard',component:ChapterDashboardComponent},
+  {path:  'AdminDashboard',component:AdminDashboardComponent},
+  {path:  'ViewCourse',component:ViewCourseComponent},
 ];
 
 @NgModule({
