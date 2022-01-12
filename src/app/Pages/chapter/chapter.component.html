@@ -19,6 +19,9 @@
                     <div class="col-lg-2">
                         <p>Description <span style="color: red;">*</span></p>
                     </div>
+                    <div class="col-lg-2">
+                        <p>Chapter Photo</p>
+                    </div>
                     <div class="col-lg-4">
                         <p>Attachment</p>
                     </div>
@@ -39,13 +42,31 @@
                     <div class="col-lg-2">
                         <textarea class="form-control" placeholder="Description"></textarea>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-2">
                         <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto;">
-                            <ngx-dropzone-label>Please attach pdf!</ngx-dropzone-label>
+                            <ngx-dropzone-label>Please attach  Photo!</ngx-dropzone-label>
                             <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
                                 <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                             </ngx-dropzone-preview>
                         </ngx-dropzone>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="image" src="assets/Images/youtube.png">&nbsp;&nbsp;
+                        <img  class="image" src="assets/Images/word.png">&nbsp;&nbsp;
+                        <img  class="image" src="assets/Images/pdf.png">&nbsp;&nbsp;
+                        <img class="image" src="assets/Images/image.png">&nbsp;&nbsp;
+                        <img  class="image"src="assets/Images/files.png">&nbsp;&nbsp;
+
+
+
+
+
+                        <!-- <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto;">
+                            <ngx-dropzone-label>Please attach pdf!</ngx-dropzone-label>
+                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-preview>
+                        </ngx-dropzone> -->
                     </div>
                    
                 </div> <br>

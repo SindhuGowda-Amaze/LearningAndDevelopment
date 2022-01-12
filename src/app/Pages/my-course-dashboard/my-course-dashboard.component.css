@@ -33,10 +33,16 @@ ul {
       font-size: 15px;
       color:gray;
   }
- 
+ .img{
+  width: 250px;
+   height:auto;
+ }
  
 .start:hover{
     background-color: black;
     color: white;
 }
-
+.thumb{
+  width: 300px;
+  height:120px;
+}
