@@ -23,5 +23,13 @@ export class ChapterDashboardComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
+  public PreviewVideo() {
+    window.open('assets/Images/Java_Course.mp4')
+  }
+  
+  public PreviewPPT() {
+    window.open('assets/Images/JAVA_PPT.ppt')
+  }
+  
 
 }
