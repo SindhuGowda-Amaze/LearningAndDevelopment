@@ -35,7 +35,13 @@
                         <a href="#" class="active">Select Category</a><br>
                         <!-- <input class="FilterBox" type="input" placeholder="Filter"><br> -->
                         <input class="form-control FilterBox" type="search" placeholder="Filter"><br>
-                        <a href="#"><input type="checkbox">&nbsp; JAVA</a><br>
+                        <select class="form-control FilterBox" id="test">
+                            <option value="1"><input type="checkbox">&nbsp; JAVA</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                            <option value="4">Option 4</option>
+                          </select><br>
+                        <!-- <a href="#"><input type="checkbox">&nbsp; JAVA</a><br> -->
                         <a href="#"><input type="checkbox">&nbsp; Python</a><br>
                         <a href="#"><input type="checkbox">&nbsp; AI</a><br>
                         <a href="#"><input type="checkbox">&nbsp; .Net</a><br>
@@ -76,8 +82,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">2016 SPi Global Overview</h5>
                                     <p class="card-text">2016 SPi Global VMV</p>
-                                    <button routerLink="/StartMyCourse" class="btn">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="ViewCourse" class="btn">VIEW COURSE</button>
+                                    <button routerLink="/StartMyCourse" class="btn">START COURSE</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
                                 </div>
                             </div>
                         </div>
@@ -87,8 +93,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Active Listening to Boost Sales </h5>
                                     <p class="card-text">Active listening for boosting sales and avoiding passive listening.</p>
-                                    <button routerLink="/StartMyCourse" class="btn">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="ViewCourse" class="btn">VIEW COURSE</button>
+                                    <button class="btn" data-toggle="modal" data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
                                 </div>
                             </div>
                         </div>
@@ -99,8 +105,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Adaptive skills</h5>
                                     <p class="card-text">Developing Adaptive skills for coping with stressful situations</p>
-                                    <button routerLink="/StartMyCourse" class="btn">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="ViewCourse" class="btn">VIEW COURSE</button>
+                                    <button class="btn" data-toggle="modal" data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
                                 </div>
                             </div>
                         </div>
@@ -118,8 +124,8 @@
                                     <h5 class="card-title">Adaptive Skills to Cope with stressful situations. </h5>
                                     <p class="card-text">Developing Adaptive skills for coping with stressful situations
                                         occurring i...</p>
-                                        <button routerLink="/StartMyCourse" class="btn">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="ViewCourse" class="btn">VIEW COURSE</button>
+                                    <button class="btn" data-toggle="modal" data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
                                 </div>
                             </div>
                         </div>
@@ -130,8 +136,8 @@
                                     <h5 class="card-title">Angular - The Complete Guids</h5>
                                     <p class="card-text">"Master Angular 10 (formerly ""Angular 2"") and build awesome, reactive
                                         websites...</p>
-                                        <button routerLink="/StartMyCourse" class="btn">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="ViewCourse" class="btn">VIEW COURSE</button>
+                                        <button routerLink="/StartMyCourse" class="btn">START COURSE</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
                                 </div>
                             </div>
                         </div>
@@ -141,8 +147,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Anti Money Laundering</h5>
                                     <p class="card-text">Anti Money Laundering</p>
-                                    <button routerLink="/StartMyCourse" class="btn">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="ViewCourse" class="btn">VIEW COURSE</button>
+                                    <button class="btn" data-toggle="modal" data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
                                 </div>
                             </div>
                         </div>
@@ -152,8 +158,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">assess.01.image</h5>
                                     <p class="card-text">Description</p>
-                                    <button routerLink="/StartMyCourse" class="btn">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="ViewCourse" class="btn">VIEW COURSE</button>
+                                    <button class="btn" data-toggle="modal" data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
                                 </div>
                             </div>
                         </div>
@@ -170,8 +176,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">assess.new.01</h5>
                                     <p class="card-text">Description</p>
-                                    <button routerLink="/StartMyCourse" class="btn">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="ViewCourse" class="btn">VIEW COURSE</button>
+                                    <button routerLink="/StartMyCourse" class="btn">START COURSE</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
                                 </div>
                             </div>
                         </div>
@@ -181,3 +187,62 @@
         </div>
     </div>
 </div>
+
+
+<div id="enroll" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Enroll for Course</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text">Name:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <!-- <select class="form-control" [(ngModel)]="Hired">
+                            <option value="">Select </option>
+                            <option>Yes</option>  
+                            <option>No</option> 
+                        </select> -->
+                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
+                            placeholder="Peeter Ferin" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text" style="font-weight: bold;">Phone No:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
+                            placeholder="9843873473" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text" style="font-weight: bold;">Email:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
+                            placeholder="Ferin123@gmail.com" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-5"></div>
+                    <div class="col-lg-2">
+                        <button class="form-control Save" (click)="enroll()">Enroll</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <hr>
+                <div class="col-lg-2">
+                    <button data-dismiss="modal" class="CloseBTN">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
