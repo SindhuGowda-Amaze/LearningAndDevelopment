@@ -25,6 +25,8 @@ import { TakeAssessmentComponent } from './Pages/take-assessment/take-assessment
 import { AssessmentResultComponent } from './Pages/assessment-result/assessment-result.component';
 import { CourseCertificateComponent } from './Pages/course-certificate/course-certificate.component';
 import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.component';
+import { LearningPathDashboardComponent } from './Pages/learning-path-dashboard/learning-path-dashboard.component';
+import { LearningPathDetailsComponent } from './Pages/learning-path-details/learning-path-details.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.
     StartMyCourseComponent,
     TakeAssessmentComponent,
     AssessmentResultComponent,
-    CourseCertificateComponent
+    CourseCertificateComponent,
+    LearningPathDashboardComponent,
+    LearningPathDetailsComponent
   ],
   imports: [
     BrowserModule,
