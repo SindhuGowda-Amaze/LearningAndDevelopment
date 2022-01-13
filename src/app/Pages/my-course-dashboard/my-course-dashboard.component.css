@@ -125,6 +125,14 @@ div {
   height: 325px;
   overflow-y: scroll;
 }  */
+.View{
+  padding-left: 25px;
+}
+.tagline{
+  background-color: 1px solid silver; ;
+  color: 1px solid silver;
+  height: 4px;
+}
 
 .attendance-day {
   font-size: 14px;
