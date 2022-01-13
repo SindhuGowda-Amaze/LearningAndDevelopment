@@ -45,5 +45,10 @@ export class ViewCourseComponent implements OnInit {
     }
   };
 
+  public PreviewPdf() {
+    window.open('assets/Images/JAVA-Stack-Brochure.pdf',"blank")
+  }
+
+
 }
 

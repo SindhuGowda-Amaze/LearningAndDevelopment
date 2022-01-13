@@ -19,4 +19,11 @@ export class StartMyCourseComponent implements OnInit {
     this.show= 1;
   }
 
+  public PreviewPdf() {
+    window.open('assets/Images/Java_Assessment_Qts.pdf')
+  }
+  public PreviewPPT() {
+    window.open('assets/Images/JAVA_PPT.ppt')
+  }
+
 }

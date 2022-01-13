@@ -553,12 +553,12 @@ hr.new4 {
   margin-right: 40px;
 }
 .ShowMore {
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
   color: white;
   background-color: #030a0f;
   border: none;
-  margin-left: 150px;
+  margin-left: 100px;
 }
 
 .CloseBTN {
