@@ -80,7 +80,26 @@ ul {
     font-weight: bold;
 } */
 
-
+.btn-danger{
+  background-color: rgb(245, 214, 214);
+  border-radius: 20px;
+  width: 100%;
+  padding: 2px;
+  border: transparent;
+}
+.btn-success{
+  background-color: rgb(177, 243, 191);
+  border-radius: 20px;
+  width: 100%;
+  padding: 2px;
+  border: transparent;
+}
+.btn-light{
+  background-color: rgb(177, 224, 243);
+  border-radius: 20px;
+  width: 100%;
+  padding: 2px;
+}
 
 .Number{
   text-align: center;
