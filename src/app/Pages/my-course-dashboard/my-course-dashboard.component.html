@@ -8,8 +8,8 @@
                         <div class="col-lg-3" style="margin-left: 10px;">
                             <img src="assets/Images/default_user.jpg" style="width:200% ; border-radius: 10px;">
                         </div>
-                        </div> <br>
-                        <div class="row">
+                    </div> <br>
+                    <div class="row">
                         <div class="col-lg-9">
                             <h1 class="cardlabel"
                                 style="color: #555;font-size: 22px;margin-top: 0px; margin-left: 10px;">
@@ -27,17 +27,20 @@
                 <div class="card-body">
                     <div class="row">
                         <h6 class="card-title">Active listening and Customer Satisfaction</h6>
-                    </div> <br>                
+                    </div> <br>
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- <button href="#" class="btn" style="font-size: 12px; width:100px;">START
                                 COURSE</button> -->
-                                <button href="#" type="button" class="btn btn-outline-secondary">Start Course</button>
+                            <button href="#" routerLink="/StartMyCourse" type="button"
+                                class="btn btn-outline-secondary">Start
+                                Course</button>
                         </div>
                         <div class="col-lg-6">
                             <!-- <button routerLink="/ViewCourse" class="btn" style="font-size: 12px; width:100px;">VIEW
                                 COURSE</button> -->
-                                <button type="button" routerLink="/ViewCourse" class="btn btn-outline-secondary">View Course</button>
+                            <button type="button" routerLink="/ViewCourse" class="btn btn-outline-secondary">View
+                                Course</button>
                         </div>
                     </div>
                 </div>
@@ -58,6 +61,7 @@
                     </div>
                 </div>
                 <div class="row">
+
                     <div class="col-lg-10">
                         <p style="margin-left:15px;margin-top: 15px; font-size: 15px;">Assesment</p>
                         <p style="margin-left: 10px;">1 Not Started &nbsp;
@@ -77,14 +81,11 @@
                             0 Completed
                         </p>
                     </div>
-                    <div class="col-lg-2">
-                        <p style="margin-left:15px;margin-top: 15px; font-size: 15px;">1</p>
-                    </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
-            <div class="card1 " style="background-color: white; height:290px;width: 350px; border-radius: 10px;">
+            <div class="card1" style="background-color: white; height:290px;width: 350px; border-radius: 10px;">
                 <div class="front">
                     <div class="row" style="margin-left: 10px;padding-top:10px;">
                         <div class="col-lg-12">
@@ -104,34 +105,40 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <button type="button" class="btn btn-success">1</button><br>
-                                        <p>Completed</p> 
+                                        <p>Completed</p>
                                     </div><br>
                                     <div class="col-lg-1">
                                         <br>
-                                        <button type="button" class="btn" routerLink="/LearningPathDashboard">View more</button><br>
-                                      
+                                        <button type="button" class="btn" routerLink="/LearningPathDashboard">View
+                                            more</button><br>
+
                                     </div>
-                                </div> 
+                                </div>
                             </div>
                         </div> <br>
                     </div>
                 </div>
             </div>
+
         </div> <br><br>
-        <div class="row">
-            <div class="col-lg-10 View ">
-                <ul>
-                    <li><a class="active">All</a></li>
-                    <li><a class="active">Training</a></li>
-                    <li><a class="active">Assesment</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2">
-                <input style="margin-top: 10px;" class="form-control" placeholder="Search">
-            </div>
-        </div>
     </div>
-    <div class="row" >
+
+
+
+    <div class="row">
+        <div class="col-lg-8 View ">
+            <ul>
+                <li><a class="active">All</a></li>
+                <li><a class="active">Training</a></li>
+                <li><a class="active">Assesment</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-4">
+            <input style="margin-top: 10px;" class="form-control" placeholder="Search">
+        </div>
+    </div> <br><br>
+
+    <div class="row">
         <div class="col-lg-3">
             <div class="card1" style="background-color: white; height: 290px;width:350px;border-radius: 10px;"
                 (click)="flip1($event)">
@@ -715,13 +722,4 @@
             </div>
         </div>
     </div> <br>
-
-
-
-
-
-
-
-
-
 </div>
