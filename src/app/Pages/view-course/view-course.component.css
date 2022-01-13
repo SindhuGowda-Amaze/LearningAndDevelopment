@@ -21,6 +21,7 @@ button{
    
     text-decoration: none;
     margin: 20px;
+    text-align: justify;
 }
 .image{
     width: 10%;
