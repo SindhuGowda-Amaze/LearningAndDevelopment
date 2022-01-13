@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartMyCourseComponent implements OnInit {
 
+  show: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.show = 0;
+  }
+
+  clickEvent(){
+    this.show= 1;
   }
 
 }

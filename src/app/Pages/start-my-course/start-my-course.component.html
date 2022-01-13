@@ -10,15 +10,30 @@
             <div class="col-lg-12">
                 <h2>assess.new.01</h2>
                 <h5>Description</h5><br>
-                <h3>1. Assessment(s)</h3>
+                <h3 routerLink="/TakeAssessment">1. Assessment(s)</h3><br>
             </div>
         </div>
     </div>
     <div class="col-lg-3">
         <div class="row">
             <div class="col-lg-12">
-                <button routerLink="/Catalog">Back</button>
-                <h2>Course Contents </h2>
+                <button routerLink="/Catalog" class="BackBTN">Back</button>
+                <h2>Course Contents </h2><br>
+                <h5 (click)="clickEvent()" ><input type="checkbox"> 1. Chapter 
+                    <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;">
+                </h5><hr class="HRline">
+                <h5><input type="checkbox"> 2. Chapter 
+                    <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;">
+                </h5><hr class="HRline">
+                <h5><input type="checkbox"> 3. Chapter
+                    <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;">
+                </h5><hr class="HRline">
+                <h5><input type="checkbox"> 4. Chapter 
+                    <img src="assets/Images/word.png" alt="video_icon" style="width: 10%;">
+                </h5><hr class="HRline">
+                <h5><input type="checkbox"> 5. Chapter 
+                    <img src="assets/Images/files.png" alt="video_icon" style="width: 10%;">
+                </h5><hr class="HRline">
             </div>
         </div>
     </div>

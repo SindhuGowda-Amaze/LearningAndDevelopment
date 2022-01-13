@@ -1,0 +1,11 @@
+.BackBTN{
+    padding:5px;
+    border-radius: 5px;
+    color:white;
+    background-color: #030a0f;
+    border:none;
+  }
+
+  .HRline{
+    border-top: 1.5px solid #ddd9d9;
+  }
