@@ -19,11 +19,22 @@ export class StartMyCourseComponent implements OnInit {
     this.show= 1;
   }
 
+
+  public PreviewVideo() {
+    window.open('assets/Images/Java_Course.mp4')
+  }
   public PreviewPdf() {
     window.open('assets/Images/Java_Assessment_Qts.pdf')
   }
   public PreviewPPT() {
     window.open('assets/Images/JAVA_PPT.ppt')
   }
+  public PreviewMSword() {
+    window.open('assets/Images/Java_Test_Words.docx')
+  }
+  public PreviewIMG() {
+    window.open('assets/Images/Java_CourseIMG.jpg')
+  }
+  
 
 }
