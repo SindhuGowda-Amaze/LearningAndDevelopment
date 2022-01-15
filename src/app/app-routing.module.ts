@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'Course', component: CourseComponent },
   { path: 'Chapter', component: ChapterComponent },
   { path: 'Employee', component: EmployeeComponent },
-  { path: 'EmployeeForm', component: EmployeeFormComponent },
+  { path: 'EmployeeForm', component: EmployeeFormComponent},
   { path: 'Catalog', component: CatalogComponent },
   { path: 'Trainer', component: TrainerComponent },
   { path: 'TrainerForm', component: TrainerFormComponent },
@@ -61,7 +61,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
