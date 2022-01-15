@@ -535,6 +535,7 @@ hr.new4 {
   width: 95%;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 10px;
 }
 
 .Filter1 {
@@ -572,4 +573,7 @@ hr.new4 {
 .close {
   background-color: transparent;
   color: black;
+}
+.box{
+  margin-right: 10px;
 }

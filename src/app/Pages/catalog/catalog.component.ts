@@ -29,6 +29,7 @@ export class CatalogComponent implements OnInit {
   vendorstafflist1:any;
   count4:any;
   
+  show:any;
 
   ngOnInit(): void {
   }
@@ -54,6 +55,10 @@ export class CatalogComponent implements OnInit {
       }
     })
   }
+   
 
+  Showcards(value:any){
+    this.show=value;
+   }
 
 }
