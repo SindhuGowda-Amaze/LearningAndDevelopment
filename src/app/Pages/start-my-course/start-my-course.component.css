@@ -9,3 +9,36 @@
   .HRline{
     border-top: 1.5px solid #ddd9d9;
   }
+
+  .VScroll {
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    border: gray;
+  }
+
+  .vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc;
+  }
+  
+  .vertical-menu a.active {
+    background-color: black;
+    color: white;
+  }
+
+  .ShowMore {
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    background-color: #030a0f;
+    border: none;
+    margin-left: 100px;
+  }
