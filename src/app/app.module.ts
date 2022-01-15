@@ -27,6 +27,8 @@ import { CourseCertificateComponent } from './Pages/course-certificate/course-ce
 import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.component';
 import { LearningPathDashboardComponent } from './Pages/learning-path-dashboard/learning-path-dashboard.component';
 import { LearningPathDetailsComponent } from './Pages/learning-path-details/learning-path-details.component';
+import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
+import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { LearningPathDetailsComponent } from './Pages/learning-path-details/lear
     AssessmentResultComponent,
     CourseCertificateComponent,
     LearningPathDashboardComponent,
-    LearningPathDetailsComponent
+    LearningPathDetailsComponent,
+    AssessmentdashboardComponent,
+    AssessmentFormComponent
   ],
   imports: [
     BrowserModule,
