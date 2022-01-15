@@ -6,6 +6,15 @@
     border:none;
   }
 
+  .ViewCertificate{
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: #030a0f;
+    border: none;
+    margin-left: 200px;
+  }
+
   .HRline{
     border-top: 1.5px solid #ddd9d9;
   }
@@ -41,4 +50,13 @@
     background-color: #030a0f;
     border: none;
     margin-left: 100px;
+  }
+  .ShowMore1 {
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    background-color: #030a0f;
+    border: none;
+    margin-left: 100px;
+    width: 130px;
   }
