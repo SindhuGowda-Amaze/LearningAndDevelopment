@@ -14,7 +14,7 @@ export class ViewCourseComponent implements OnInit {
   enroll(){
     Swal.fire({
       title: 'Enroll Confirmation',
-      text: "Please click on OK to proceed with course enrolment.",
+      text: "Please click on OK to send Course Enrolment Request",
       icon: 'warning',
       // icon: 'success',
       showCloseButton: true,
@@ -25,8 +25,8 @@ export class ViewCourseComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire(
-          'Enrolled',
-          'Successfully Assigned',
+          'Request Sent',
+          'Your request has been sent to manager for Approval',
           'success'
         )
       }
