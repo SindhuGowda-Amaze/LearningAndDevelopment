@@ -7,8 +7,23 @@
             </div>
         </div>
         <div class="row" style="margin-left: 15px;">
+            <div class="col-lg-2">
+                <h2>Assess.new.01</h2>
+            </div>
+            <div class="col-lg-6">
+            </div>
+            <div class="col-lg-4" style="text-align: right;">
+                <br>
+                <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;" (click)="PreviewVideo()">&nbsp;&nbsp;
+                <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;" (click)="PreviewPdf()">&nbsp;&nbsp;
+                <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;" (click)="PreviewIMG()">&nbsp;&nbsp;
+                <img src="assets/Images/word.png" alt="video_icon" style="width: 10%;" (click)="PreviewMSword()">&nbsp;&nbsp;
+                <img src="assets/Images/files.png" alt="video_icon" style="width: 10%;" (click)="PreviewPPT()">
+
+            </div>
+        </div>
+        <div class="row" style="margin-left: 15px;">
             <div class="col-lg-12">
-                <h2>assess.new.01</h2>
                 <h5>Description</h5><br>
                 <h3 routerLink="/TakeAssessment">1. Assessment(s)</h3><br>
             </div>
@@ -17,9 +32,8 @@
             <div class="col-lg-2">
             </div>
             <div class="col-lg-8" style="text-align: center;">
-                <button class="ShowMore">Take My Test</button>
-                <button class="ShowMore">View My Test Results</button>
-                <button class="ShowMore">View My Certificate</button>
+                <button class="ShowMore1">Take My Test</button>
+                <button class="ShowMore1">View My Test Results</button>
             </div>
             <div class="col-lg-2">
             </div>
@@ -30,21 +44,22 @@
             <div class="col-lg-12">
                 <br>
                 <button routerLink="/Catalog" class="BackBTN">Back</button>
+                <button class="ViewCertificate">View My Certificate</button>
                 <h2>Course Contents </h2><br>
                 <h5 (click)="clickEvent()" ><img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;"> 1. Basics of JAVA Demo. 
-                    <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;" (click)="PreviewVideo()">
+                    
                 </h5><hr class="HRline">
                 <h5 ><img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;">  2. Basics of JAVA simple <br> questions. 
-                    <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;" (click)="PreviewPdf()">
+                    
                 </h5><hr class="HRline">
                 <h5><img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;">  3. JAVA Fullstack developer <br> roadmap
-                    <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;" (click)="PreviewIMG()">
+                    
                 </h5><hr class="HRline">
                 <h5><img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 6%;">  4. Basics of JAVA Documents 
-                    <img src="assets/Images/word.png" alt="video_icon" style="width: 10%;" (click)="PreviewMSword()">
+                    
                 </h5><hr class="HRline">
                 <h5><img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 6%;">  5. JAVA course scope & details 
-                    <img src="assets/Images/files.png" alt="video_icon" style="width: 10%;" (click)="PreviewPPT()">
+                    
                 </h5><hr class="HRline">
             </div>
         </div>
