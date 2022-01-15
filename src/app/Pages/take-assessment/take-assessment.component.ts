@@ -18,7 +18,7 @@ export class TakeAssessmentComponent implements OnInit {
       icon: 'success',
       title: 'Your Assessment is completed and Your inputs has been saved',
       showConfirmButton: true,
-      timer: 3000
+      // timer: 3000
     })
   }
 }

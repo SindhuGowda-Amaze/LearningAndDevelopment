@@ -29,3 +29,7 @@
 li{
     display: inline;
 }
+.colwidth{
+    height: 300px;
+    overflow-y: scroll;
+}
