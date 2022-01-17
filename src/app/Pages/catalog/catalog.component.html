@@ -53,11 +53,11 @@
                         <a data-toggle="collapse" class="FilterBox " data-target="#demo1" style="background-color: rgb(66, 66, 66); color: white;"><input
                                 type="checkbox">&nbsp;Development</a>
                         <div id="demo1" class="collapse FilterBox1">
-                            <a><input type="checkbox">&nbsp;Complete Python</a>
-                            <a><input type="checkbox">&nbsp;Web Developer Bootcamp</a>
-                            <a><input type="checkbox">&nbsp;Machine learning </a>
-                            <a><input type="checkbox">&nbsp;Java Programming</a>
-                            <a><input type="checkbox">&nbsp;Angular</a>
+                            <a><input type="checkbox" [(ngModel)]="show" name="show"   (click)="showcards()">&nbsp;Complete Python</a>
+                            <a><input type="checkbox" [(ngModel)]="show1" name="show1"   (click)="showcards()">&nbsp;Web Developer Bootcamp</a>
+                            <a><input type="checkbox" [(ngModel)]="show2" name="show2"   (click)="showcards()">&nbsp;Machine learning </a>
+                            <a><input type="checkbox" [(ngModel)]="show3" name="show3"   (click)="showcards()">&nbsp;Java Programming</a>
+                            <a><input type="checkbox" [(ngModel)]="show4" name="show4"   (click)="showcards()">&nbsp;Angular</a>
                         </div>
                         <a data-toggle="collapse" class="FilterBox" data-target="#demo2" style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox">&nbsp;IT and
                             Software </a>

@@ -92,11 +92,14 @@ this.showfullcards=1;
   show2:any;
   show3:any;
 
+  show4:any;
+
   showcards(){
    debugger
    this.showfullcards=0;
-   }
+  }
    
+
   //  Showcards1(value:any){
   //   this.show1=value;
   //  }
