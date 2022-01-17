@@ -81,7 +81,7 @@ this.showfullcards=1;
           'Your request has been sent to manager for Approval',
           'success'
         );
-        location.href="/Catalog";
+        location.href="/#/Catalog";
 
       }
     })
