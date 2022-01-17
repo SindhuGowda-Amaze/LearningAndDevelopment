@@ -7,12 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartMyCourseComponent implements OnInit {
 
-  show: any;
-
   constructor() { }
 
   ngOnInit(): void {
-    this.show = 0;
+    this.show = 1;
+  
   }
 
   clickEvent(){
@@ -34,6 +33,18 @@ export class StartMyCourseComponent implements OnInit {
   }
   public PreviewIMG() {
     window.open('assets/Images/Java_CourseIMG.jpg')
+  }
+
+  show:any;
+  show1:any;
+  show2:any;
+  show3:any;
+  show4:any;
+  show5:any;
+
+  showcards(value:any){
+   debugger
+   this.show=value;
   }
   
 
