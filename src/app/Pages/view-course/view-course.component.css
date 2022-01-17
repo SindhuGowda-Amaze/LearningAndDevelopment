@@ -28,3 +28,22 @@ button{
     width: 10%;
     height: 20%;
 }
+.Save {
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: #030a0f;
+    border: none;
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 40px;
+  }
+
+  .CloseBTN {
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: #030a0f;
+    border: none;
+    float: right;
+  }

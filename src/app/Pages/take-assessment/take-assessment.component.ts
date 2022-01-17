@@ -14,11 +14,25 @@ export class TakeAssessmentComponent implements OnInit {
   }
   submit(){
     Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Your Assessment is completed and Your inputs has been saved',
-      showConfirmButton: true,
-      // timer: 3000
+      title: 'Are you sure?',
+      text: "you want to submit your answers",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, submit it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Success',
+          'Your Answers is successfully Submitted.',
+          'success'
+        )
+      }
     })
+  }
+
+  cancel(){
+    location.href="#/StartMyCourse"
   }
 }
