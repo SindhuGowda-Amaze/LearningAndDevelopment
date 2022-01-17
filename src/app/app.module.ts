@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,18 @@ import { CourseCertificateComponent } from './Pages/course-certificate/course-ce
 import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.component';
 import { LearningPathDashboardComponent } from './Pages/learning-path-dashboard/learning-path-dashboard.component';
 import { LearningPathDetailsComponent } from './Pages/learning-path-details/learning-path-details.component';
+import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
+import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
+import { FormsModule } from '@angular/forms';
+// import { NgxFullCalendarModule } from 'ngx-fullcalendar';
+// import { NgWizardModule } from 'ng-wizard';
+import { NgWizardConfig, NgWizardModule, THEME } from 'ng-wizard';
+import { NgxFullCalendarModule } from '../../node_modules/ngx-fullcalendar';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+const ngWizardConfig: NgWizardConfig = {
+  theme: THEME.circles
+};
 
 @NgModule({
   declarations: [
@@ -52,13 +65,20 @@ import { LearningPathDetailsComponent } from './Pages/learning-path-details/lear
     AssessmentResultComponent,
     CourseCertificateComponent,
     LearningPathDashboardComponent,
-    LearningPathDetailsComponent
+    LearningPathDetailsComponent,
+    AssessmentdashboardComponent,
+    AssessmentFormComponent
   ],
   imports: [
+    NgbModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     NgxDropzoneModule,
+    NgxFullCalendarModule,
     HttpClientModule,
+    NgWizardModule.forRoot(ngWizardConfig),
+    NgxPaginationModule
   
   ],
   providers: [],

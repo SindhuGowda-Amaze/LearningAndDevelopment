@@ -1,71 +1,95 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
-            <div class="row">
-                <div class="col-lg-10">
-                    <p class="Heading">Employee Dashboard</p>
-                </div>
-                <div class="col-lg-2">
-                    <p class="Text" style="float:right; padding-right:50px;">Count:1</p>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <div>
+                <div>
+                    <ul>
+                        <li><a class="active"> <u>Staff Dashboard</u></a></li>
+                    </ul>
                 </div>
             </div>
-            <hr class="HrLine">
-            <div class="row FilterClass ">
-                <div class="col-lg-1">
-                    <p class="Text">Filter By</p>
-                </div>
-                <div class="col-lg-6">
-                    <!-- <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search"
-                        name="search"> -->
-                        <input type="search" class="form-control" placeholder="Search for Name..">
-                </div>
-                <div class="col-lg-1"></div>
-            </div><br>
+            <hr>
             <div class="row">
-                <div class="col-lg-9"></div>
-                <div class="col-lg-3">
-                    <button class=button routerLink="/EmployeeForm">Add</button>
+                <div class="col-md-2">
+                    Filter By
                 </div>
-            </div> <br>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- <table class="table" *ngIf="(vendordetails | filter: search).length > 0; else noResults"> -->
-                            <table class="table table-bordered">
-                            <thead>
-                                <tr class="head">
-                                    <th>Emp ID</th>
-                                    <th>Emp Name</th>
-                                    <th>Designation</th>
-                                    <th>Phone Number</th>
-                                    <th>Email Id</th>
-                                    <th>Address</th>
-                                    <th>Year of Experience</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="head">
-                                    <td>CN-22625</td>
-                                    <td>Tim Holand</td>
-                                    <td>Sr Developer</td>
-                                    <td>+002-778654568</td>
-                                    <td>timjay@gmail.com</td>
-                                    <td>Ontario, Canada.</td>
-                                    <td>5 Years</td>
-                                    <td><button class="button1" routerLink="/EmployeeForm">Edit</button> <br> <br>
-                                        <button class="button2" >Delete</button>
-                                    </td>
-                                </tr>
-                            </tbody>  
-                        </table>
-                        <!-- <ng-template #noResults>
-                            <p class="NoResultShow"> No results found for "{{search}}" </p>
-                        </ng-template> -->
-                    </div>
+                <div class="col-md-2">
+                    <input class="form-control" type="date" placeholder="Duration" id="date" name="date"
+                        [(ngModel)]="date" (change)="getdate($event)">
                 </div>
+                <div class="col-md-6">
+                    <input class="form-control" type="search" [(ngModel)]="term"
+                        placeholder="search for Staff , Date of joining or Role">
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <p class="show3res">SHOWING <span style="color: black;">{{stafflist.length}}</span>&nbsp;RESULTS
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <button class="form-control requestbtn" routerLink="/EmployeeForm">Add Staff</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table" id="lvs">
+                        <thead>
+                            <tr>
+                                <!-- <th>Check Box</th> -->
+                                <th>Employee Id</th>
+                                <th>Employee Name</th>
+                                <th>Role</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                                <th>Date Of Joining</th>
+                                <th>Manager</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of stafflist">
+
+                                <td>000{{item.id}}</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.role}}</td>
+                                <td>{{item.mobile}}</td>
+                                <td>{{item.emailID}}</td>
+                                <td>{{item.joiningDate|date}}</td>
+                                <td>
+                                    <p *ngIf="item.manager==null">
+                                        NA
+                                    </p>
+                                    <p *ngIf="item.manager!=null">
+                                        {{item.manager}}
+                                    </p>
+                                </td>
+                                <td> <button class="upload"
+                                        [routerLink]="['/EmployeeForm',item.id]">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="upload">Delete</button>&nbsp;
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-1">
             </div>
         </div>
     </div>
 </div>
+<br />
+<br />
+<br />

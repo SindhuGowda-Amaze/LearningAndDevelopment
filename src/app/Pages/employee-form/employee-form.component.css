@@ -1,72 +1,69 @@
+.SubmitBTN{
+  background-color: #21a4da;
+  color: white;
+  cursor: pointer;
+}
+
+.SubmitBTN:hover {background-color: #28a745;}
+
+.CancelBTN{
+  color: black;
+  cursor: pointer;
+}
+
 
 .card{
-    background-color: white;
-  }
-  
-  .card-padding{
-    padding:1%;
-  }
-  .table{
-  border-radius: 5px;
-  }
-  
-  .FilterClass{
-    padding-left: 15px;
-    font-size: 15px;
-    font-weight: bold;
-    color: black;
-  }
-  
-  .table td {
-    color: #494949;
-    font-size: 12px;
-    vertical-align: middle;
-    background-color: white;
-  }
-  
-  .HrLine{
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-   .Heading{
-     font-size: 20px;
-     font-weight: bold;
-   }
-   .count{
-     font-size: 15px;
-     float:right;
-     margin-right: 10px;
-   }
-  
-  
-  /* .table, th, td {
-    border: 1px solid lightgray;
-     border-collapse: collapse; 
-   
-  } */
+  padding: 20px;
+  border-radius: 0px;
+}
 
-  .Save{
-    padding:7px;
-    border-radius: 5px;
-    border:none;
-    background-color: #21a4da;
-    color:white; 
-    width:100%;
-    font-size: 16px;
-  }
-  
-  .leavereq{
-  padding-left: 15px;
+.BOXCARD{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+th{
+  background-color: #e4e5e6;
+}
+.dropdown-toggle{
+  text-align: left;
+}
+.LocDashboard{
   padding-top: 10px;
+  margin: 0px;
+  background-color: #e4e5e6;
+  margin-top: -20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  
+}
+
+
+.FormHeadText{
+  color: #494949 !important;
+  font-size: 15px !important;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+body{
+  color: #494949 !important;
+}
+.fontheading{
+  font-size: 15px;
+  font-weight: bold;
   }
-
-  .button1{
-
-    border-radius: 5px;
-    border:none;
-    background-color: #21a4da;
-    color:white; 
-    width:100%;
-    font-size: 16px;
-
+  .fonttxt{
+    font-size: 12px;
+    font-weight: bold;
   }
