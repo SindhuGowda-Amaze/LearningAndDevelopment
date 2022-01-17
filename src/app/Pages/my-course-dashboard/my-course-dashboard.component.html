@@ -123,11 +123,11 @@
     <div class="row">
         <div class="col-lg-8 View ">
             <ul>
-                <li><a class="active" (click)="Showcards(1)"><u>All</u></a></li>
-                <li><a class="active"  [ngClass]="{'underlinetext': show==2}" (click)="Showcards(2)">Enrolled Training
+                <li [ngClass]="{'underlinetext': show=='1'}"><a class="active"  (click)="Showcards(1)"  > <ul >All</ul></a></li>
+                <li [ngClass]="{'underlinetext': show=='2'}"><a class="active"  [ngClass]="{'underlinetext': show==2}" (click)="Showcards(2)">Enrolled Training
                     </a></li>
-                <li><a class="active" (click)="Showcards(3)" [ngClass]="{'underlinetext': show==3}">New Training</a></li>
-                <li><a class="active" (click)="Showcards(4)" [ngClass]="{'underlinetext': show=='4'}">Completed Training</a></li>
+                <li [ngClass]="{'underlinetext': show=='3'}"><a class="active" (click)="Showcards(3)" >New Training</a></li>
+                <li [ngClass]="{'underlinetext': show=='4'}"><a class="active" (click)="Showcards(4)" >Completed Training</a></li>
             </ul>
         </div>
         <div class="col-lg-4">

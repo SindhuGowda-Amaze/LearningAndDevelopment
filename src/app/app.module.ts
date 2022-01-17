@@ -34,7 +34,7 @@ import { FormsModule } from '@angular/forms';
 // import { NgxFullCalendarModule } from 'ngx-fullcalendar';
 // import { NgWizardModule } from 'ng-wizard';
 import { NgWizardConfig, NgWizardModule, THEME } from 'ng-wizard';
-import { NgxFullCalendarModule } from '../../node_modules/ngx-fullcalendar';
+// import { NgxFullCalendarModule } from '../../node_modules/ngx-fullcalendar';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 const ngWizardConfig: NgWizardConfig = {
@@ -75,7 +75,7 @@ const ngWizardConfig: NgWizardConfig = {
     BrowserModule,
     AppRoutingModule,
     NgxDropzoneModule,
-    NgxFullCalendarModule,
+    // NgxFullCalendarModule,
     HttpClientModule,
     NgWizardModule.forRoot(ngWizardConfig),
     NgxPaginationModule
