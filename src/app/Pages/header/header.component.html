@@ -7,6 +7,7 @@
         <div class="col-lg-1">
             <h6 class="menutext"  *ngIf="roleid=='1' || roleid==2 " routerLink="/AdminDashboard">Dashboard</h6>
             <h6 class="menutext"  *ngIf="roleid==4" routerLink="/Assessmentdashboard">Assessments</h6>
+            <h6 class="menutext"  *ngIf="roleid==3" routerLink="/ManagerDashboard">Dashboard</h6>
         </div>
         <div class="col-lg-1">
             <h6 class="menutext"  *ngIf="roleid==4" routerLink="/ChapterDashboard">Chapter</h6>
@@ -22,16 +23,16 @@
                 <li class="dropdown-item"><a class="menuitem" routerLink="/Employee">Employee</a></li>
 
             </ul>
-            <h6 class="menutext" *ngIf="roleid==2" routerLink="/MyCourseDashboard">My Course</h6>
+            <h6 class="menutext" *ngIf="roleid==2 || roleid==3" routerLink="/MyCourseDashboard">My Course</h6>
         </div>
         <!-- <div class="col-lg-1">
            
         </div> -->
         <div class="col-lg-1">
-            <h6 class="menutext"  *ngIf="roleid==2" routerLink="/Catalog">Catalog</h6>
+            <h6 class="menutext" *ngIf="roleid==2 || roleid==3" routerLink="/Catalog">Catalog</h6>
         </div>
         <div class="col-lg-1">
-            <h6 class="menutext"  *ngIf="roleid==2" routerLink="/CourseCertificate">Certificate</h6>
+            <h6 class="menutext" *ngIf="roleid==2 || roleid==3" routerLink="/CourseCertificate">Certificate</h6>
         </div>
         <div class="col-lg-1">
            
