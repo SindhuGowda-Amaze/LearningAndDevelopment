@@ -4,6 +4,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './Pages/login/login.component';
 import { HeaderComponent } from './Pages/header/header.component';
 import { FooterComponent } from './Pages/footer/footer.component';
@@ -59,6 +60,7 @@ import { LearningPathDetailsComponent } from './Pages/learning-path-details/lear
     AppRoutingModule,
     NgxDropzoneModule,
     HttpClientModule,
+    FormsModule
   
   ],
   providers: [],
