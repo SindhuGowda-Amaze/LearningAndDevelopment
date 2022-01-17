@@ -46,42 +46,69 @@
         </div>
         <div class="col-lg-3">
             <div class="card1" style="background-color: white; height:300px;width: 350px; border-radius: 10px;">
-                <div class="row">
-                    <div class="col-lg-10">
-                        <p style="margin-left:15px;margin-top: 15px; font-size: 15px;">Training</p>
-                        <p style="margin-left: 10px;">3 Not Started &nbsp;
-                            4 in Progress &nbsp;
-                            2 Completed
-                        </p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p style="margin-left:15px;margin-top: 15px; font-size: 15px;">2</p>
-                    </div>
-                </div>
-                <div class="row">
-
-                    <div class="col-lg-10">
-                        <p style="margin-left:15px;margin-top: 15px; font-size: 15px;">Assessment</p>
-                        <p style="margin-left: 10px;">1 Not Started &nbsp;
-                            0 in Progress &nbsp;
-                            2 Completed
-                        </p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p style="margin-left:15px;margin-top: 15px; font-size: 15px;">3</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-10">
-                        <p style="margin-left:15px;margin-top: 15px; font-size: 15px;">Survey</p>
-                        <p style="margin-left:10px;">1 Not Started
-                            0 in Progress &nbsp;
-                            0 Completed
-                        </p>
-                    </div>
+                <div class="front">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="margin-left:120px; font-size: 16px;">Training</p>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-danger">3</button><br>
+                                        <p style="text-align: center;">Not Started</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-light">4</button><br>
+                                        <p style="text-align: center;">In progress</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-success">2</button><br>
+                                        <p style="text-align: center;">Completed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="margin-left: 120px; font-size: 16px;">Assesment</p>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-danger">3</button><br>
+                                        <p style="text-align: center;">Not Started</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-light">4</button><br>
+                                        <p style="text-align: center;" >In progress</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-success">2</button><br>
+                                        <p style="text-align: center;">Completed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="margin-left: 120px; font-size: 16px;">Survey</p>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-danger">3</button><br>
+                                        <p style="text-align: center;">Not Started</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-light">4</button><br>
+                                        <p style="text-align: center;">In progress</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-success">2</button><br>
+                                        <p style="text-align: center;">Completed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   
                 </div>
             </div>
-        </div>
+
+        </div> <br><br>
         <div class="col-lg-3">
             <div class="card1" style="background-color: white; height:300px;width: 350px; border-radius: 10px;">
                 <div class="front">
@@ -123,11 +150,16 @@
     <div class="row">
         <div class="col-lg-8 View ">
             <ul>
-                <li [ngClass]="{'underlinetext': show=='1'}"><a class="active"  (click)="Showcards(1)"  > <ul >All</ul></a></li>
-                <li [ngClass]="{'underlinetext': show=='2'}"><a class="active"  [ngClass]="{'underlinetext': show==2}" (click)="Showcards(2)">Enrolled Training
+                <li [ngClass]="{'underlinetext': show=='1'}"><a class="active" (click)="Showcards(1)">
+                        <ul>All</ul>
                     </a></li>
-                <li [ngClass]="{'underlinetext': show=='3'}"><a class="active" (click)="Showcards(3)" >New Training</a></li>
-                <li [ngClass]="{'underlinetext': show=='4'}"><a class="active" (click)="Showcards(4)" >Completed Training</a></li>
+                <li [ngClass]="{'underlinetext': show=='2'}"><a class="active" [ngClass]="{'underlinetext': show==2}"
+                        (click)="Showcards(2)">Enrolled Training
+                    </a></li>
+                <li [ngClass]="{'underlinetext': show=='3'}"><a class="active" (click)="Showcards(3)">New Training</a>
+                </li>
+                <li [ngClass]="{'underlinetext': show=='4'}"><a class="active" (click)="Showcards(4)">Completed
+                        Training</a></li>
             </ul>
         </div>
         <div class="col-lg-4">
@@ -535,11 +567,14 @@
                         </div><br>
                         <div class="row">
                             <div class="col-lg-6">
-                                <!-- <button class="">Start Course</button> -->
-                                <button type="button" class="btn btn-outline-secondary" routerLink="/StartMyCourse">Resume Course</button>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    routerLink="/StartMyCourse">Resume Course</button>
                             </div>
+                            <!-- <div class="col-lg-4">
+                                <button type="button" class="btn btn-outline-secondary"
+                                    routerLink="/StartMyCourse">Enroll</button>
+                            </div> -->
                             <div class="col-lg-6">
-                                <!-- <button>Flip For Details</button> -->
                                 <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
                             </div>
                         </div>
@@ -620,7 +655,8 @@
                         </div><br>
                         <div class="row">
                             <div class="col-lg-6">
-                                <button type="button" class="btn btn-outline-secondary" routerLink="/StartMyCourse">Resume Course</button>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    routerLink="/StartMyCourse">Resume Course</button>
                             </div>
                             <div class="col-lg-6">
                                 <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
@@ -703,7 +739,8 @@
                         </div><br>
                         <div class="row">
                             <div class="col-lg-6">
-                                <button type="button" class="btn btn-outline-secondary" routerLink="/StartMyCourse">Resume Course</button>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    routerLink="/StartMyCourse">Enroll</button>
                             </div>
                             <div class="col-lg-6">
                                 <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
@@ -781,7 +818,8 @@
                         </div><br>
                         <div class="row">
                             <div class="col-lg-6">
-                                <button type="button" class="btn btn-outline-secondary"routerLink="/StartMyCourse" >Resume Course</button>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    routerLink="/StartMyCourse">Enroll</button>
                             </div>
                             <div class="col-lg-6">
                                 <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
@@ -871,7 +909,8 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <!-- <button class="">Start Course</button> -->
-                                <button type="button" class="btn btn-outline-secondary" routerLink="/StartMyCourse">Start Course</button>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    routerLink="/StartMyCourse">Enroll</button>
                             </div>
                             <div class="col-lg-6">
                                 <!-- <button>Flip For Details</button> -->
@@ -956,7 +995,8 @@
                         </div><br>
                         <div class="row">
                             <div class="col-lg-6">
-                                <button type="button" class="btn btn-outline-secondary" routerLink="/StartMyCourse">Start Course</button>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    routerLink="/StartMyCourse">Enroll</button>
                             </div>
                             <div class="col-lg-6">
                                 <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
@@ -1038,7 +1078,8 @@
                         </div><br>
                         <div class="row">
                             <div class="col-lg-6">
-                                <button type="button" class="btn btn-outline-secondary" routerLink="/StartMyCourse">Start Course</button>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    routerLink="/StartMyCourse">Enroll</button>
                             </div>
                             <div class="col-lg-6">
                                 <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
@@ -1204,7 +1245,8 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <!-- <button class="">Start Course</button> -->
-                                <button type="button" class="btn btn-outline-secondary" routerLink="/ViewCourse">View Course</button>
+                                <button type="button" class="btn btn-outline-secondary" routerLink="/ViewCourse">View
+                                    Course</button>
                             </div>
                             <div class="col-lg-6">
                                 <!-- <button>Flip For Details</button> -->
@@ -1289,7 +1331,8 @@
                         </div><br>
                         <div class="row">
                             <div class="col-lg-6">
-                                <button type="button" class="btn btn-outline-secondary" routerLink="/ViewCourse">ViewCourse</button>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    routerLink="/ViewCourse">ViewCourse</button>
                             </div>
                             <div class="col-lg-6">
                                 <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
