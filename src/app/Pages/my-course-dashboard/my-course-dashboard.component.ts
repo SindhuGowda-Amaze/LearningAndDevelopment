@@ -24,6 +24,8 @@ export class MyCourseDashboardComponent implements OnInit {
         element.style.transform = "rotateY(180deg)";
       }
     }
+
+    this.show=1;
   };
   Showcards(value:any){
    this.show=value;

@@ -23,29 +23,21 @@
         </div>
         <div class="col-lg-3">
             <div class="card1" style="background-color: white; height:300px;width: 350px; border-radius: 10px;">
-                <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
+                <img class="card-img-top" style="width:100%;height:auto" src="/assets/Images/course1.png"
+                    alt="Card image cap">
                 <div class="card-body">
                     <div class="row">
-                        <h6 class="card-title">Active listening and Customer Satisfaction</h6>
-                    </div> 
+                        <p style="margin-left:15px;font-size:18px;">Last Assigned</p>
+                    </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <!-- <label for="file">Completed:</label> -->
                             <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
                         </div>
                     </div><br>
                     <div class="row">
                         <div class="col-lg-6">
-                            <!-- <button href="#" class="btn" style="font-size: 12px; width:100px;">START
-                                COURSE</button> -->
                             <button href="#" routerLink="/StartMyCourse" type="button"
                                 class="btn btn-outline-secondary">Start
-                                Course</button>
-                        </div>
-                        <div class="col-lg-6">
-                            <!-- <button routerLink="/ViewCourse" class="btn" style="font-size: 12px; width:100px;">VIEW
-                                COURSE</button> -->
-                            <button type="button" routerLink="/ViewCourse" class="btn btn-outline-secondary">View
                                 Course</button>
                         </div>
                     </div>
@@ -131,10 +123,11 @@
     <div class="row">
         <div class="col-lg-8 View ">
             <ul>
-                <li><a class="active" (click)="Showcards(1)">All</a></li>
-                <li><a class="active" (click)="Showcards(2)">Enrolled Training </a></li>
-                <li><a class="active" (click)="Showcards(3)">New Training</a></li>
-                <li><a class="active" (click)="Showcards(4)">Completed Training</a></li>
+                <li [ngClass]="{'underlinetext': show=='1'}"><a class="active"  (click)="Showcards(1)"  > <ul >All</ul></a></li>
+                <li [ngClass]="{'underlinetext': show=='2'}"><a class="active"  [ngClass]="{'underlinetext': show==2}" (click)="Showcards(2)">Enrolled Training
+                    </a></li>
+                <li [ngClass]="{'underlinetext': show=='3'}"><a class="active" (click)="Showcards(3)" >New Training</a></li>
+                <li [ngClass]="{'underlinetext': show=='4'}"><a class="active" (click)="Showcards(4)" >Completed Training</a></li>
             </ul>
         </div>
         <div class="col-lg-4">
@@ -142,7 +135,7 @@
         </div>
     </div> <br><br>
     <div *ngIf="show==1">
-    <div class="row" >
+        <!-- <div class="row" >
         <div class="col-lg-3">
             <div class="card1" style="background-color: white; height: 310px;width:350px;border-radius: 10px;"
                 (click)="flip1($event)">
@@ -150,8 +143,6 @@
                     <br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
-                                margin-left: 5px;"></i> -->
                             <p style="font-size: 15px;">2016 Spi Global Overview</p>
                             <p>2016 Spi Global Overview</p>
                         </div>
@@ -218,11 +209,9 @@
                     </div><br>
                     <div class="row">
                         <div class="col-lg-6">
-                            <!-- <button class="">Start Course</button> -->
                             <button type="button" class="btn btn-outline-secondary">Start Course</button>
                         </div>
                         <div class="col-lg-6">
-                            <!-- <button>Flip For Details</button> -->
                             <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
                         </div>
                     </div>
@@ -236,8 +225,6 @@
                     <br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
-                                margin-left: 5px;"></i> -->
                             <p style="font-size: 18px;">Subjective</p>
                             <p>All Cases Janit </p>
                         </div>
@@ -319,8 +306,6 @@
                     <br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
-                                margin-left: 5px;"></i> -->
                             <p style="font-size: 18px;">assess.new.01</p>
                             <p style="font-size: 15px;">Description</p>
                         </div>
@@ -402,8 +387,6 @@
                     <br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
-                                margin-left: 5px;"></i> -->
                             <p style="font-size: 15px;">Test_ILT_9101</p>
                             <p>Test_ILT_9101</p>
                         </div>
@@ -473,605 +456,604 @@
                 </div>
             </div>
         </div>
-    </div> <br>
-   </div>
-   <div *ngIf="show==1 ||show==2" >
-    <div class="row"  >
-        <div class="col-lg-3">
-            <div class="card1" style="background-color: white; height:310px;width:350px;border-radius: 10px;"
-                (click)="flip1($event)">
-                <div class="back">
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
+    </div> <br> -->
+    </div>
+    <div *ngIf="show==1 ||show==2">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card1" style="background-color: white; height:310px;width:350px;border-radius: 10px;"
+                    (click)="flip1($event)">
+                    <div class="back">
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
                                 margin-left: 5px;"></i> -->
-                            <p style="font-size: 15px;">2016 Spi Global Overview</p>
-                            <p>2016 Spi Global Overview</p>
+                                <p style="font-size: 15px;">2016 Spi Global Overview</p>
+                                <p>2016 Spi Global Overview</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p>Start Date</p>
+                                <p style="color:gray;font-size: 10px;">12 Jan 22 AMt 12:07 AM</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-5">
+                                <p>End Date</p>
+                                <p style="color:gray">Not applicable</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="30" max="100" style="width:100%;height:15px;">0%</progress>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">Item[S]</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p style="font-size: 15px;">Videos</p>
+                            </div>
+                            <div class="col-lg-2">
+                                <p style="font-size: 15px;">1</p>
+                            </div>
+                        </div> <br>
+                        <div class="backflip">
+                            <button class="bcakbtn">BACK</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p>Start Date</p>
-                            <p style="color:gray;font-size: 10px;">12 Jan 22 AMt 12:07 AM</p>
+                    <div class="front">
+                        <br>
+                        <div class="row title_outer1">
+                            <div class="col-lg-12">
+                                <img style="width:100px;height: auto;" src="assets/Images/download.png">
+                            </div>
                         </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5">
-                            <p>End Date</p>
-                            <p style="color:gray">Not applicable</p>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">2016 SPI Global Overview</p>
+                                <p>2016 SPI Global Overview</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p>Resume </p>
+                            </div>
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4">
+                                <p>1 Items[s]</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">Item[S]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <p style="font-size: 15px;">Videos</p>
-                        </div>
-                        <div class="col-lg-2">
-                            <p style="font-size: 15px;">1</p>
-                        </div>
-                    </div> <br>
-                    <div class="backflip">
-                        <button class="bcakbtn">BACK</button>
-                    </div>
-                </div>
-                <div class="front">
-                    <br>
-                    <div class="row title_outer1">
-                        <div class="col-lg-12">
-                            <img style="width:200px;height: auto;" src="assets/Images/course2.png">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">2016 SPI Global Overview</p>
-                            <p>2016 SPI Global Overview</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <p>Resume Course</p>
-                        </div>
-                        <div class="col-lg-4"></div>
-                        <div class="col-lg-4">
-                            <p>1 Items[s]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <!-- <button class="">Start Course</button> -->
-                            <button type="button" class="btn btn-outline-secondary">Resume Course</button>
-                        </div>
-                        <div class="col-lg-6">
-                            <!-- <button>Flip For Details</button> -->
-                            <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="30" max="100" style="width:100%;height:15px;"></progress>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <!-- <button class="">Start Course</button> -->
+                                <button type="button" class="btn btn-outline-secondary">Resume Course</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <!-- <button>Flip For Details</button> -->
+                                <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card1" style="background-color: white;  height:310px;width: 350px;border-radius: 10px"
-                (click)="flip1($event)">
-                <div class="back">
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
+            <div class="col-lg-3">
+                <div class="card1" style="background-color: white;  height:310px;width: 350px;border-radius: 10px"
+                    (click)="flip1($event)">
+                    <div class="back">
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
                                 margin-left: 5px;"></i> -->
-                            <p style="font-size: 18px;">Subjective</p>
-                            <p>All Cases Janit </p>
+                                <p style="font-size: 18px;">Subjective</p>
+                                <p>All Cases Janit </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p>Start Date</p>
+                                <p style="color: gray;">11 Jan 22 PMt 10:57 PM</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-5">
+                                <p>End Date</p>
+                                <p style="color: gray;">Not Applicable</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="20" max="100" style="width:100%;height:15px;">20%</progress>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size:15px;">Item[S]</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p style="font-size:15px;">Assesments</p>
+                            </div>
+                            <div class="col-lg-2">
+                                <p style="font-size:15px;">2</p>
+                            </div>
+                        </div>
+                        <div class="backflip">
+                            <button type="button" class="btn btn-outline-secondary">BACK</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p>Start Date</p>
-                            <p style="color: gray;">11 Jan 22 PMt 10:57 PM</p>
+                    <div class="front">
+                        <br>
+                        <div class="row title_outer1">
+                            <div class="col-lg-12">
+                                <img style="width:130px;height: auto;" src="assets/Images/download2.png">
+                            </div>
                         </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5">
-                            <p>End Date</p>
-                            <p style="color: gray;">Not Applicable</p>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">Subjective</p>
+                                <p>All Cases janit</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p>Resume</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>1 Items[s]</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size:15px;">Item[S]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <p style="font-size:15px;">Assesments</p>
-                        </div>
-                        <div class="col-lg-2">
-                            <p style="font-size:15px;">2</p>
-                        </div>
-                    </div>
-                    <div class="backflip">
-                        <button type="button" class="btn btn-outline-secondary">BACK</button>
-                    </div>
-                </div>
-                <div class="front">
-                    <br>
-                    <div class="row title_outer1">
-                        <div class="col-lg-12">
-                            <img style="width:200px;height: auto;" src="assets/Images/course2.png">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">Subjective</p>
-                            <p>All Cases janit</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <p>Not Started</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <p>1 Items[s]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Resume Course</button>
-                        </div>
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="20" max="100" style="width:100%;height:15px;">20%</progress>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Resume Course</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card1" style="background-color: white;height:310px;width: 350px;border-radius: 10px"
-                (click)="flip1($event)">
-                <div class="back">
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
+            <div class="col-lg-3">
+                <div class="card1" style="background-color: white;height:310px;width: 350px;border-radius: 10px"
+                    (click)="flip1($event)">
+                    <div class="back">
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
                                 margin-left: 5px;"></i> -->
-                            <p style="font-size: 18px;">assess.new.01</p>
-                            <p style="font-size: 15px;">Description</p>
+                                <p style="font-size: 18px;">assess.new.01</p>
+                                <p style="font-size: 15px;">Description</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p style="font-size: 12px;">Start Date</p>
+                                <p style="font-size: 12px;color:gray">11 Jan 22 PMt 10:41 PM</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-5">
+                                <p style="font-size: 12px;">End Date</p>
+                                <p style="font-size: 12px;color:gray"> Not Applicable</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="0" max="50" style="width:100%;height:15px;">50%</progress>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">Item[S]</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p>Assesments</p>
+                            </div>
+                            <div class="col-lg-2">
+                                <p>1</p>
+                            </div>
+                        </div>
+                        <div class="backflip">
+                            <button class="bcakbtn">BACK</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p style="font-size: 12px;">Start Date</p>
-                            <p style="font-size: 12px;color:gray">11 Jan 22 PMt 10:41 PM</p>
+                    <div class="front">
+                        <br>
+                        <div class="row title_outer1">
+                            <div class="col-lg-12">
+                                <img style="width:130px;height: auto;" src="assets/Images/download2.png">
+                            </div>
                         </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5">
-                            <p style="font-size: 12px;">End Date</p>
-                            <p style="font-size: 12px;color:gray"> Not Applicable</p>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">Assess.new.01</p>
+                                <p>Description</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p>Resume</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>1 Items[s]</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">Item[S]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <p>Assesments</p>
-                        </div>
-                        <div class="col-lg-2">
-                            <p>1</p>
-                        </div>
-                    </div>
-                    <div class="backflip">
-                        <button class="bcakbtn">BACK</button>
-                    </div>
-                </div>
-                <div class="front">
-                    <br>
-                    <div class="row title_outer1">
-                        <div class="col-lg-12">
-                            <img style="width:200px;height: auto;" src="assets/Images/course2.png">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">Assess.new.01</p>
-                            <p>Description</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <p>Not Started</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <p>1 Items[s]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Resume Course</button>
-                        </div>
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="50" max="100" style="width:100%;height:15px;">50%</progress>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Resume Course</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card1" style="background-color: white; height: 310px;width:350px;border-radius: 10px"
-                (click)="flip1($event)">
-                <div class="back">
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
+            <div class="col-lg-3">
+                <div class="card1" style="background-color: white; height: 310px;width:350px;border-radius: 10px"
+                    (click)="flip1($event)">
+                    <div class="back">
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
                                 margin-left: 5px;"></i> -->
-                            <p style="font-size: 15px;">Test_ILT_9101</p>
-                            <p>Test_ILT_9101</p>
+                                <p style="font-size: 15px;">Test_ILT_9101</p>
+                                <p>Test_ILT_9101</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p style="font-size: 12px;">Start Date</p>
+                                <p style="color: gray;">11 Jan 22 PMt 10:37 PM</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-5">
+                                <p style="font-size: 12px;">End Date</p>
+                                <p style="color: gray;">Not Applicable</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="10" max="100" style="width:100%;height:15px;">10%</progress>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p>Resume</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>1 Item[S]</p>
+                            </div>
+                        </div>
+                        <div class="backflip">
+                            <button class="bcakbtn">BACK</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p style="font-size: 12px;">Start Date</p>
-                            <p style="color: gray;">11 Jan 22 PMt 10:37 PM</p>
+                    <div class="front">
+                        <br>
+                        <div class="row title_outer1">
+                            <div class="col-lg-12">
+                                <img style="width:128px;height:auto;" src="assets/Images/download4.jfif">
+                            </div>
                         </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5">
-                            <p style="font-size: 12px;">End Date</p>
-                            <p style="color: gray;">Not Applicable</p>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">Test_ILT_9101</p>
+                                <p>Test_ILT_9101</p>
+                            </div>
                         </div>
-                    </div> 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p>Resume</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>1 Items[s]</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <p>Not Started</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <p>1 Item[S]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
-                        </div>
-                    </div><br>
-                    <div class="backflip">
-                        <button class="bcakbtn">BACK</button>
-                    </div>
-                </div>
-                <div class="front">
-                    <br>
-                    <div class="row title_outer1">
-                        <div class="col-lg-12">
-                            <img style="width:200px;height:auto;" src="assets/Images/course2.png">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">Test_ILT_9101</p>
-                            <p>Test_ILT_9101</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <p>Not Started </p>
-                        </div>
-                        <div class="col-lg-4">
-                            <p>1 Items[s]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Resume Course</button>
-                        </div>
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="10" max="100" style="width:100%;height:15px;">10%</progress>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Resume Course</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div> <br>
-</div>
-<div  *ngIf="show==1 ||show==3">
-    <div class="row" >
-        <div class="col-lg-3">
-            <div class="card1" style="background-color: white; height:310px;width:350px;border-radius: 10px;"
-                (click)="flip1($event)">
-                <div class="back">
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
+        </div> <br>
+    </div>
+    <div *ngIf="show==1 ||show==3">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card1" style="background-color: white; height:310px;width:350px;border-radius: 10px;"
+                    (click)="flip1($event)">
+                    <div class="back">
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
                                 margin-left: 5px;"></i> -->
-                            <p style="font-size: 15px;">2016 Spi Global Overview</p>
-                            <p>2016 Spi Global Overview</p>
+                                <p style="font-size: 15px;">2016 Spi Global Overview</p>
+                                <p>2016 Spi Global Overview</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p>Start Date</p>
+                                <p style="color:gray;font-size: 10px;">12 Jan 22 AMt 12:07 AM</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-5">
+                                <p>End Date</p>
+                                <p style="color:gray">Not applicable</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="0" max="100"
+                                    style="width:100%;height:15px;color:#4282be"></progress>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">Item[S]</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p style="font-size: 15px;">Videos</p>
+                            </div>
+                            <div class="col-lg-2">
+                                <p style="font-size: 15px;">1</p>
+                            </div>
+                        </div> <br>
+                        <div class="backflip">
+                            <button class="bcakbtn">BACK</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p>Start Date</p>
-                            <p style="color:gray;font-size: 10px;">12 Jan 22 AMt 12:07 AM</p>
+                    <div class="front">
+                        <br>
+                        <div class="row title_outer1">
+                            <div class="col-lg-12">
+                                <img style="width:105px;height: auto;" src="assets/Images/download.png">
+                            </div>
                         </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5">
-                            <p>End Date</p>
-                            <p style="color:gray">Not applicable</p>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">2016 SPI Global Overview</p>
+                                <p>2016 SPI Global Overview</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">Item[S]</p>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p>Not Started </p>
+                            </div>
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4">
+                                <p>1 Items[s]</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <p style="font-size: 15px;">Videos</p>
-                        </div>
-                        <div class="col-lg-2">
-                            <p style="font-size: 15px;">1</p>
-                        </div>
-                    </div> <br>
-                    <div class="backflip">
-                        <button class="bcakbtn">BACK</button>
-                    </div>
-                </div>
-                <div class="front">
-                    <br>
-                    <div class="row title_outer1">
-                        <div class="col-lg-12">
-                            <img style="width:200px;height: auto;" src="assets/Images/course2.png">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">2016 SPI Global Overview</p>
-                            <p>2016 SPI Global Overview</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <p>Not Started </p>
-                        </div>
-                        <div class="col-lg-4"></div>
-                        <div class="col-lg-4">
-                            <p>1 Items[s]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <!-- <button class="">Start Course</button> -->
-                            <button type="button" class="btn btn-outline-secondary">Start Course</button>
-                        </div>
-                        <div class="col-lg-6">
-                            <!-- <button>Flip For Details</button> -->
-                            <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <!-- <button class="">Start Course</button> -->
+                                <button type="button" class="btn btn-outline-secondary">Start Course</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <!-- <button>Flip For Details</button> -->
+                                <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card1" style="background-color: white;  height:310px;width: 350px;border-radius: 10px"
-                (click)="flip1($event)">
-                <div class="back">
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
+            <div class="col-lg-3">
+                <div class="card1" style="background-color: white;  height:310px;width: 350px;border-radius: 10px"
+                    (click)="flip1($event)">
+                    <div class="back">
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
                                 margin-left: 5px;"></i> -->
-                            <p style="font-size: 18px;">Subjective</p>
-                            <p>All Cases Janit </p>
+                                <p style="font-size: 18px;">Subjective</p>
+                                <p>All Cases Janit </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p>Start Date</p>
+                                <p style="color: gray;">11 Jan 22 PMt 10:57 PM</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-5">
+                                <p>End Date</p>
+                                <p style="color: gray;">Not Applicable</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size:15px;">Item[S]</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p style="font-size:15px;">Assesments</p>
+                            </div>
+                            <div class="col-lg-2">
+                                <p style="font-size:15px;">2</p>
+                            </div>
+                        </div>
+                        <div class="backflip">
+                            <button class="bcakbtn">BACK</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p>Start Date</p>
-                            <p style="color: gray;">11 Jan 22 PMt 10:57 PM</p>
+                    <div class="front">
+                        <br>
+                        <div class="row title_outer1">
+                            <div class="col-lg-12">
+                                <img style="width:130px;height: auto;" src="assets/Images/download2.png">
+                            </div>
                         </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5">
-                            <p>End Date</p>
-                            <p style="color: gray;">Not Applicable</p>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">Subjective</p>
+                                <p>All Cases janit</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="100" max="100" style="width:100%;height:15px;">0%</progress>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p>Not Started</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>2 Items[s]</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size:15px;">Item[S]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <p style="font-size:15px;">Assesments</p>
-                        </div>
-                        <div class="col-lg-2">
-                            <p style="font-size:15px;">2</p>
-                        </div>
-                    </div>
-                    <div class="backflip">
-                        <button type="button" class="btn btn-outline-secondary">BACK</button>
-                    </div>
-                </div>
-                <div class="front">
-                    <br>
-                    <div class="row title_outer1">
-                        <div class="col-lg-12">
-                            <img style="width:200px;height: auto;" src="assets/Images/course2.png">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">Subjective</p>
-                            <p>All Cases janit</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <p>Completed</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <p>2 Items[s]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="100" max="100" style="width:100%;height:15px;color:#4282be"></progress>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Start Course</button>
-                        </div>
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="0" max="100"
+                                    style="width:100%;height:15px;color:#4282be"></progress>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Start Course</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card1" style="background-color: white;  height:310px;width: 350px;border-radius: 10px"
-                (click)="flip1($event)">
-                <div class="back">
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
-                                margin-left: 5px;"></i> -->
-                            <p style="font-size: 18px;">assess.new.01</p>
-                            <p style="font-size: 15px;">Description</p>
+            <div class="col-lg-3">
+                <div class="card1" style="background-color: white;  height:310px;width: 350px;border-radius: 10px"
+                    (click)="flip1($event)">
+                    <div class="back">
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 18px;">assess.new.01</p>
+                                <p style="font-size: 15px;">Description</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p style="font-size: 12px;">Start Date</p>
+                                <p style="font-size: 12px;color:gray">11 Jan 22 PMt 10:41 PM</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-5">
+                                <p style="font-size: 12px;">End Date</p>
+                                <p style="font-size: 12px;color:gray"> Not Applicable</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">Item[S]</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p>Assesments</p>
+                            </div>
+                            <div class="col-lg-2">
+                                <p>1</p>
+                            </div>
+                        </div>
+                        <div class="backflip">
+                            <button class="bcakbtn">BACK</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p style="font-size: 12px;">Start Date</p>
-                            <p style="font-size: 12px;color:gray">11 Jan 22 PMt 10:41 PM</p>
+                    <div class="front">
+                        <br>
+                        <div class="row title_outer1">
+                            <div class="col-lg-12">
+                                <img style="width:128px;height: auto;" src="assets/Images/download4.jfif">
+                            </div>
                         </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5">
-                            <p style="font-size: 12px;">End Date</p>
-                            <p style="font-size: 12px;color:gray"> Not Applicable</p>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">Assess.new.01</p>
+                                <p>Description</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="100" max="100" style="width:100%;height:15px;">0%</progress>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p>Not Started</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>1 Items[s]</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">Item[S]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <p>Assesments</p>
-                        </div>
-                        <div class="col-lg-2">
-                            <p>1</p>
-                        </div>
-                    </div>
-                    <div class="backflip">
-                        <button class="bcakbtn">BACK</button>
-                    </div>
-                </div>
-                <div class="front">
-                    <br>
-                    <div class="row title_outer1">
-                        <div class="col-lg-12">
-                            <img style="width:200px;height: auto;" src="assets/Images/course2.png">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">Assess.new.01</p>
-                            <p>Description</p>
-                        </div>
-                    </div> 
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <p>Completed</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <p>1 Items[s]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="100" max="100" style="width:100%;height:15px;color:#4282be"></progress>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Start Course</button>
-                        </div>
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="0" max="100"
+                                    style="width:100%;height:15px;color:#4282be"></progress>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Start Course</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
+            <!-- <div class="col-lg-3">
             <div class="card1" style="background-color: white;height:310px;width:350px;border-radius: 10px"
                 (click)="flip1($event)">
                 <div class="back">
                     <br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
-                                margin-left: 5px;"></i> -->
                             <p style="font-size: 15px;">Test_ILT_9101</p>
                             <p>Test_ILT_9101</p>
                         </div>
@@ -1140,189 +1122,189 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div> <br>
-</div>
-<div *ngIf="show==1 ||show==4">
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="card1" style="background-color: white; height:310px;width:350px;border-radius: 10px;"
-                (click)="flip1($event)">
-                <div class="back">
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
+        </div> -->
+        </div> <br>
+    </div>
+    <div *ngIf="show==1 ||show==4">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card1" style="background-color: white; height:310px;width:350px;border-radius: 10px;"
+                    (click)="flip1($event)">
+                    <div class="back">
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
                                 margin-left: 5px;"></i> -->
-                            <p style="font-size: 15px;">2016 Spi Global Overview</p>
-                            <p>2016 Spi Global Overview</p>
+                                <p style="font-size: 15px;">2016 Spi Global Overview</p>
+                                <p>2016 Spi Global Overview</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p>Start Date</p>
+                                <p style="color:gray;font-size: 10px;">12 Jan 22 AMt 12:07 AM</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-5">
+                                <p>End Date</p>
+                                <p style="color:gray">Not applicable</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="100" max="100" style="width:100%;height:15px;">0%</progress>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">Item[S]</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p style="font-size: 15px;">Videos</p>
+                            </div>
+                            <div class="col-lg-2">
+                                <p style="font-size: 15px;">1</p>
+                            </div>
+                        </div> <br>
+                        <div class="backflip">
+                            <button class="bcakbtn">BACK</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p>Start Date</p>
-                            <p style="color:gray;font-size: 10px;">12 Jan 22 AMt 12:07 AM</p>
+                    <div class="front">
+                        <br>
+                        <div class="row title_outer1">
+                            <div class="col-lg-12">
+                                <img style="width:130px;height: auto;" src="assets/Images/download3.png">
+                            </div>
                         </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5">
-                            <p>End Date</p>
-                            <p style="color:gray">Not applicable</p>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">2016 SPI Global Overview</p>
+                                <p>2016 SPI Global Overview</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="100" max="100" style="width:100%;height:15px;">0%</progress>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p>Completed </p>
+                            </div>
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4">
+                                <p>1 Items[s]</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">Item[S]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <p style="font-size: 15px;">Videos</p>
-                        </div>
-                        <div class="col-lg-2">
-                            <p style="font-size: 15px;">1</p>
-                        </div>
-                    </div> <br>
-                    <div class="backflip">
-                        <button class="bcakbtn">BACK</button>
-                    </div>
-                </div>
-                <div class="front">
-                    <br>
-                    <div class="row title_outer1">
-                        <div class="col-lg-12">
-                            <img style="width:200px;height: auto;" src="assets/Images/course2.png">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">2016 SPI Global Overview</p>
-                            <p>2016 SPI Global Overview</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <p>Completed </p>
-                        </div>
-                        <div class="col-lg-4"></div>
-                        <div class="col-lg-4">
-                            <p>1 Items[s]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="100" max="100" style="width:100%;height:15px;color:#4282be"></progress>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <!-- <button class="">Start Course</button> -->
-                            <button type="button" class="btn btn-outline-secondary">Completed</button>
-                        </div>
-                        <div class="col-lg-6">
-                            <!-- <button>Flip For Details</button> -->
-                            <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="100" max="100"
+                                    style="width:100%;height:15px;color:#4282be"></progress>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <!-- <button class="">Start Course</button> -->
+                                <button type="button" class="btn btn-outline-secondary">Completed</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <!-- <button>Flip For Details</button> -->
+                                <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
+            <div class="col-lg-3">
+                <div class="card1" style="background-color: white;height:310px;width: 350px;border-radius: 10px"
+                    (click)="flip1($event)">
+                    <div class="back">
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
+                                margin-left: 5px;"></i> -->
+                                <p style="font-size: 15px;">Subjective</p>
+                                <p>All Cases Janit </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p>Start Date</p>
+                                <p style="color: gray;">11 Jan 22 PMt 10:57 PM</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-5">
+                                <p>End Date</p>
+                                <p style="color: gray;">Not Applicable</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="100" max="100" style="width:100%;height:15px;">0%</progress>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size:15px;">Item[S]</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p style="font-size:15px;">Assesments</p>
+                            </div>
+                            <div class="col-lg-2">
+                                <p style="font-size:15px;">2</p>
+                            </div>
+                        </div>
+                        <div class="backflip">
+                            <button class="bcakbtn">BACK</button>
+                        </div>
+                    </div>
+                    <div class="front">
+                        <br>
+                        <div class="row title_outer1">
+                            <div class="col-lg-12">
+                                <img style="width:130px;height: auto;" src="assets/Images/download3.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p style="font-size: 15px;">Subjective</p>
+                                <p>All Cases janit</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p>Completed</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>2 Items[s]</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <progress id="file" value="100" max="100"
+                                    style="width:100%;height:15px;color:#4282be"></progress>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Completed</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-lg-3">
             <div class="card1" style="background-color: white;height:310px;width: 350px;border-radius: 10px"
                 (click)="flip1($event)">
                 <div class="back">
                     <br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
-                                margin-left: 5px;"></i> -->
-                            <p style="font-size: 18px;">Subjective</p>
-                            <p>All Cases Janit </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p>Start Date</p>
-                            <p style="color: gray;">11 Jan 22 PMt 10:57 PM</p>
-                        </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5">
-                            <p>End Date</p>
-                            <p style="color: gray;">Not Applicable</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="100" max="100" style="width:100%;height:15px;">0%</progress>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size:15px;">Item[S]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <p style="font-size:15px;">Assesments</p>
-                        </div>
-                        <div class="col-lg-2">
-                            <p style="font-size:15px;">2</p>
-                        </div>
-                    </div>
-                    <div class="backflip">
-                        <button type="button" class="btn btn-outline-secondary">BACK</button>
-                    </div>
-                </div>
-                <div class="front">
-                    <br>
-                    <div class="row title_outer1">
-                        <div class="col-lg-12">
-                            <img style="width:200px;height: auto;" src="assets/Images/course2.png">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p style="font-size: 15px;">Subjective</p>
-                            <p>All Cases janit</p>
-                        </div>
-                    </div> 
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <p>Completed</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <p>2 Items[s]</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <progress id="file" value="100" max="100" style="width:100%;height:15px;color:#4282be"></progress>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Completed</button>
-                        </div>
-                        <div class="col-lg-6">
-                            <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card1" style="background-color: white;height:310px;width: 350px;border-radius: 10px"
-                (click)="flip1($event)">
-                <div class="back">
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
-                                margin-left: 5px;"></i> -->
                             <p style="font-size: 18px;">assess.new.01</p>
                             <p style="font-size: 15px;">Description</p>
                         </div>
@@ -1404,8 +1386,6 @@
                     <br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <!-- <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
-                                margin-left: 5px;"></i> -->
                             <p style="font-size: 15px;">Test_ILT_9101</p>
                             <p>Test_ILT_9101</p>
                         </div>
@@ -1469,8 +1449,8 @@
                     </div>
                 </div>
             </div>
-        </div> 
-    </div> <br>
-</div>
+        </div>  -->
+        </div> <br>
+    </div>
 
 </div>
