@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './Pages/login/login.component';
 import { HeaderComponent } from './Pages/header/header.component';
 import { FooterComponent } from './Pages/footer/footer.component';
@@ -30,7 +31,6 @@ import { LearningPathDashboardComponent } from './Pages/learning-path-dashboard/
 import { LearningPathDetailsComponent } from './Pages/learning-path-details/learning-path-details.component';
 import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
 import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
-import { FormsModule } from '@angular/forms';
 // import { NgxFullCalendarModule } from 'ngx-fullcalendar';
 // import { NgWizardModule } from 'ng-wizard';
 import { NgWizardConfig, NgWizardModule, THEME } from 'ng-wizard';
@@ -77,6 +77,7 @@ const ngWizardConfig: NgWizardConfig = {
     NgxDropzoneModule,
     // NgxFullCalendarModule,
     HttpClientModule,
+    FormsModule,
     NgWizardModule.forRoot(ngWizardConfig),
     NgxPaginationModule
   

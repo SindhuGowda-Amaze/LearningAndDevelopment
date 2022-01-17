@@ -36,52 +36,56 @@
         <div class="col-lg-3 ">
             <div class="row ">
                 <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h4 class="Category">Select Course Category</h4>
+                        </div>
+                    </div>
                     <div class="vertical-menu VScroll">
-                        <a style="background-color: balck;">SELECT CATEGORY</a>
-                        <a data-toggle="collapse" class="FilterBox" data-target="#demo"> <input
-                                type="checkbox">&nbsp;Management</a>
-                        <div id="demo" class="collapse FilterBox ">
-                            <a><input class="box" type="checkbox">&nbsp;Complete Digital Marketing</a>
-                            <a><input class="box" type="checkbox">&nbsp;Online business</a>
-                            <a><input class="box" type="checkbox">&nbsp;Digital Marketing Instagram</a>
-                            <a><input class="box" type="checkbox">&nbsp;Product Management and Marketing</a>
+                        <a data-toggle="collapse" class="FilterBox" data-target="#demo" style="background-color: rgb(66, 66, 66); color: white;"> <input
+                                type="checkbox" >&nbsp;Management</a>
+                        <div id="demo" class="collapse FilterBox1">
+                            <a><input class="box" type="checkbox" [(ngModel)]="show" name="show"   (click)="showcards()">&nbsp;Complete Digital Marketing</a>
+                            <a><input class="box" type="checkbox" [(ngModel)]="show1" name="show1" (click)="showcards()">&nbsp;Online Business Development</a>
+                            <a><input class="box" type="checkbox" [(ngModel)]="show2" name="show2" (click)="showcards()">&nbsp;Digital Marketing Social Media SEO</a>
+                            <a><input class="box" type="checkbox" [(ngModel)]="show3" name="show3" (click)="showcards()">&nbsp;Product Management and Marketing</a>
                         </div>
-                        <a data-toggle="collapse" class="FilterBox " data-target="#demo1"><input
+                        <a data-toggle="collapse" class="FilterBox " data-target="#demo1" style="background-color: rgb(66, 66, 66); color: white;"><input
                                 type="checkbox">&nbsp;Development</a>
-                        <div id="demo1" class="collapse FilterBox ">
-                            <a><input type="checkbox">&nbsp;Complete Python</a>
-                            <a><input type="checkbox">&nbsp;Web Developer Bootcamp</a>
-                            <a><input type="checkbox">&nbsp;Machine learning </a>
-                            <a><input type="checkbox">&nbsp;Java Programming</a>
-                            <a><input type="checkbox">&nbsp;Angular</a>
+                        <div id="demo1" class="collapse FilterBox1">
+                            <a><input type="checkbox" [(ngModel)]="show" name="show"   (click)="showcards()">&nbsp;Complete Python</a>
+                            <a><input type="checkbox" [(ngModel)]="show1" name="show1"   (click)="showcards()">&nbsp;Web Developer Bootcamp</a>
+                            <a><input type="checkbox" [(ngModel)]="show2" name="show2"   (click)="showcards()">&nbsp;Machine learning </a>
+                            <a><input type="checkbox" [(ngModel)]="show3" name="show3"   (click)="showcards()">&nbsp;Java Programming</a>
+                            <a><input type="checkbox" [(ngModel)]="show4" name="show4"   (click)="showcards()">&nbsp;Angular</a>
                         </div>
-                        <a data-toggle="collapse" class="FilterBox" data-target="#demo2"> <input type="checkbox">&nbsp;IT and
+                        <a data-toggle="collapse" class="FilterBox" data-target="#demo2" style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox">&nbsp;IT and
                             Software </a>
-                        <div id="demo2" class="collapse FilterBox ">
+                        <div id="demo2" class="collapse FilterBox1">
                             <a><input type="checkbox">&nbsp;Ethical Hacking From Scratch</a>
                             <a><input type="checkbox">&nbsp;Aws Certified Solutions</a>
                             <a><input type="checkbox">&nbsp;Cyber Security</a>
                             <a><input type="checkbox">&nbsp;Linux</a>
                         </div>
-                        <a data-toggle="collapse" class="FilterBox" data-target="#demo3"> <input
+                        <a data-toggle="collapse" class="FilterBox" data-target="#demo3" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                 type="checkbox">&nbsp;Business Courses</a>
-                        <div id="demo3" class="collapse FilterBox ">
+                        <div id="demo3" class="collapse FilterBox1">
                             <a><input type="checkbox">&nbsp;The Complete Digital Marketing</a>
                             <a><input type="checkbox">&nbsp;Online business</a>
                             <a><input type="checkbox">&nbsp;Digital Marketing Instagram</a>
                             <a><input type="checkbox">&nbsp;Product Management and Marketing</a>
                         </div>
-                        <a data-toggle="collapse" class="FilterBox" data-target="#demo4"> <input
+                        <a data-toggle="collapse" class="FilterBox" data-target="#demo4" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                 type="checkbox">&nbsp;English Course</a>
-                        <div id="demo4" class="collapse FilterBox ">
+                        <div id="demo4" class="collapse FilterBox1">
                             <a><input type="checkbox">&nbsp;The Complete Digital Marketing</a>
                             <a><input type="checkbox">&nbsp;Online business</a>
                             <a><input type="checkbox">&nbsp;Digital Marketing Instagram</a>
                             <a><input type="checkbox">&nbsp;Product Management and Marketing</a>
                         </div>
-                        <a data-toggle="collapse" class="FilterBox" data-target="#demo5"> <input
+                        <a data-toggle="collapse" class="FilterBox" data-target="#demo5" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                 type="checkbox">&nbsp;French Courses</a>
-                        <div id="demo5" class="collapse FilterBox ">
+                        <div id="demo5" class="collapse FilterBox1">
                             <a><input type="checkbox">&nbsp;The Complete Digital Marketing</a>
                             <a><input type="checkbox">&nbsp;Online business</a>
                             <a><input type="checkbox">&nbsp;Digital Marketing Instagram</a>
@@ -92,7 +96,7 @@
             </div>
         </div>
         <div class="col-lg-9">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-12" style="margin-left: 52px;">
                     <div class="row">
                         <div class="col-lg-3">
@@ -150,56 +154,180 @@
                         </div>
                     </div>
                 </div>
-            </div><br><br><br>
+            </div><br><br><br> -->
 
-            <div class="row">
+            <div class="row" *ngIf="showfullcards==1">
                 <div class="col-lg-12" style="margin-left: 52px;">
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title"><b>Adaptive Skills to Cope with stressful situations. </b>
+                                    <h5 class="card-title"><b>Complete Digital Marketing Course </b>
                                     </h5>
-                                    <p class="card-text">Developing Adaptive skills for coping with stressful situations
-                                        occurring i...</p><br>
+                                    <p class="card-text">Complete Digital Marketing Course, Which includes Social Media SEO and Pages...</p><br>
                                     <button class="btn" data-toggle="modal"
                                         data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
                                     <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3" >
                             <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                                <img class="card-img-top" src="/assets/Images/course3.png" alt="Card image cap">
+                                <img class="card-img-top" src="/assets/Images/Course9.png" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title"><b>Angular - The Complete Guids</b></h5>
-                                    <p class="card-text">"Master Angular 10 (formerly ""Angular 2"") and build awesome,
-                                        reactive
-                                        websites...</p>
-                                    <button routerLink="/StartMyCourse" class="btn">START COURSE</button>&nbsp;&nbsp;
+                                    <h5 class="card-title"><b>Online Business Development Course</b></h5>
+                                    <p class="card-text">Online Complete Business Development Course, Which includes BDA & its...</p><br>
+                                        <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
                                     <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3" >
                             <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <img class="card-img-top" src="/assets/Images/Course7.png" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title"><b>Anti Money Laundering</b></h5><br>
-                                    <p class="card-text">Anti Money Laundering</p><br><br>
+                                    <h5 class="card-title"><b>Digital Marketing Social Media SEO Course</b></h5>
+                                    <p class="card-text">Cpmplete Digital Marketing Social Media SEO Course, Which includes web pages Optimization & its...</p>
                                     <button class="btn" data-toggle="modal"
                                         data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
                                     <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3" >
                             <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <img class="card-img-top" src="/assets/Images/Course8.png" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title"><b>assess.01.image</b></h5><br>
-                                    <p class="card-text">Description</p><br><br>
+                                    <h5 class="card-title"><b>Product Management and Marketing Course</b></h5>
+                                    <p class="card-text">Cpmplete Product Management and Marketing Course, Which includes marketing &...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br>
+                <!-- <div class="col-lg-12" style="margin-left: 52px;">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Complete Digital Marketing Course </b>
+                                    </h5>
+                                    <p class="card-text">Complete Digital Marketing Course, Which includes Social Media SEO and Pages...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3" >
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course9.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Online Business Development Course</b></h5>
+                                    <p class="card-text">Online Complete Business Development Course, Which includes BDA & its...</p><br>
+                                        <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3" >
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course7.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Digital Marketing Social Media SEO Course</b></h5>
+                                    <p class="card-text">Cpmplete Digital Marketing Social Media SEO Course, Which includes web pages Optimization & its...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3" >
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course8.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Product Management and Marketing Course</b></h5>
+                                    <p class="card-text">Cpmplete Product Management and Marketing Course, Which includes marketing &...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br>
+                <div class="col-lg-12" style="margin-left: 52px;">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Complete Digital Marketing Course </b>
+                                    </h5>
+                                    <p class="card-text">Complete Digital Marketing Course, Which includes Social Media SEO and Pages...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br> -->
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12" style="margin-left: 52px;">
+                    <div class="row">
+                        <div class="col-lg-3" *ngIf="show==1">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Complete Digital Marketing Course </b>
+                                    </h5>
+                                    <p class="card-text">Complete Digital Marketing Course, Which includes Social Media SEO and Pages...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3" *ngIf="show1==1">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course9.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Online Business Development Course</b></h5>
+                                    <p class="card-text">Online Complete Business Development Course, Which includes BDA & its...</p><br>
+                                        <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3" *ngIf="show2==1">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course7.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Digital Marketing Social Media SEO Course</b></h5>
+                                    <p class="card-text">Cpmplete Digital Marketing Social Media SEO Course, Which includes web pages Optimization & its...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3" *ngIf="show3==1">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course8.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Product Management and Marketing Course</b></h5>
+                                    <p class="card-text">Cpmplete Product Management and Marketing Course, Which includes marketing &...</p>
                                     <button class="btn" data-toggle="modal"
                                         data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
                                     <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
@@ -210,7 +338,7 @@
                 </div>
             </div><br><br><br>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-12" style="margin-left: 52px;">
                     <div class="row">
                         <div class="col-lg-3">
@@ -226,8 +354,8 @@
                         </div>
                     </div>
                 </div>
-            </div><br><br><br>
-            <div class="row">
+            </div><br><br><br> -->
+            <div class="row" *ngIf="show==4" >
                 <div class="col-lg-12" style="text-align: center;">
                     <button class="ShowMore">Show more</button>
                 </div>
@@ -235,6 +363,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 <div id="enroll" class="modal fade" role="dialog">

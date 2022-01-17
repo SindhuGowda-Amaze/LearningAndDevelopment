@@ -502,9 +502,10 @@ hr.new4 {
 
 .VScroll {
   background-color: white;
-  height: 1000px;
+  /* height: 1000px; */
+  height: auto;
   overflow-y: scroll;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   border: gray;
 }
 
@@ -537,6 +538,12 @@ hr.new4 {
   margin-right: 10px;
   margin-top: 10px;
 }
+.FilterBox1 {
+  width: auto;
+  margin-left: 30px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
 
 .Filter1 {
   margin: 0px;
@@ -559,7 +566,7 @@ hr.new4 {
   color: white;
   background-color: #030a0f;
   border: none;
-  margin-left: 100px;
+  margin-left: 80px;
 }
 
 .CloseBTN {
@@ -576,4 +583,9 @@ hr.new4 {
 }
 .box{
   margin-right: 10px;
+}
+
+.Category{
+  margin-left: 45px;
+  margin-top: -30px;
 }
