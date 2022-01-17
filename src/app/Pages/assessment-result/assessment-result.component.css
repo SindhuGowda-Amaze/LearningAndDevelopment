@@ -26,3 +26,7 @@
     background-color: black;
     color: white;
 }
+.rowwidth{
+    height: 500px;
+    overflow-y: scroll;
+}
