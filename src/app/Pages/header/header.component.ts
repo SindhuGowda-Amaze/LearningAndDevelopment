@@ -6,11 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  company_name: any;
   temp:any
+  roleid:any;
+  role:any;
+  UserName:any;
+  constructor() { }
   ngOnInit(): void {
+  
     this.temp=sessionStorage.getItem('temp')
+    this.roleid = sessionStorage.getItem('roleid');
+    this.company_name = sessionStorage.getItem("company_name");
+    this.UserName = sessionStorage.getItem('UserName');
+    this.role = sessionStorage.getItem('role')
   }
 
   logout() {

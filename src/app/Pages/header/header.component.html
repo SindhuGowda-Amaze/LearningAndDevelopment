@@ -5,11 +5,13 @@
         </div>
 
         <div class="col-lg-1">
-            <h6 class="menutext" routerLink="/AdminDashboard">Dashboard</h6>
+            <h6 class="menutext"  *ngIf="roleid=='1' || roleid==2 " routerLink="/AdminDashboard">Dashboard</h6>
+            <h6 class="menutext"  *ngIf="roleid==4" routerLink="/Assessmentdashboard">Assessments</h6>
         </div>
         <div class="col-lg-1">
+            <h6 class="menutext"  *ngIf="roleid==4" routerLink="/ChapterDashboard">Chapter</h6>
             <h6 class=" dropdown-toggle menutext" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                aria-expanded="false">Set Up</h6>
+                aria-expanded="false" *ngIf="roleid==1">Set Up</h6>
             <ul class="dropdown-menu">
                 <li class="dropdown-item"><a class="menuitem" tabindex="-1" routerLink="/CourseDashboard">Course</a>
                 </li>
@@ -20,25 +22,25 @@
                 <li class="dropdown-item"><a class="menuitem" routerLink="/Employee">Employee</a></li>
 
             </ul>
+            <h6 class="menutext" *ngIf="roleid==2" routerLink="/MyCourseDashboard">My Course</h6>
+        </div>
+        <!-- <div class="col-lg-1">
+           
+        </div> -->
+        <div class="col-lg-1">
+            <h6 class="menutext"  *ngIf="roleid==2" routerLink="/Catalog">Catalog</h6>
         </div>
         <div class="col-lg-1">
-            <h6 class="menutext" routerLink="/MyCourseDashboard">My Course</h6>
+            <h6 class="menutext"  *ngIf="roleid==2" routerLink="/CourseCertificate">Certificate</h6>
         </div>
         <div class="col-lg-1">
-            <h6 class="menutext" routerLink="/Catalog">Catalog</h6>
+           
         </div>
-        <div class="col-lg-1">
-            <h6 class="menutext" routerLink="/CourseCertificate">Certificate</h6>
-        </div>
-        <div class="col-lg-1">
-            <h6 class="menutext" routerLink="/Assessmentdashboard">Assessments</h6>
-        </div>
-
-        <div class="col-lg-4"></div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-1"> Welcome {{UserName}} ({{role}})</div> 
         <div class="col-lg-1">
             <!-- <img src="assets/Images/notification.png" class="notify" routerLink="/Notification">&nbsp; &nbsp;&nbsp; -->
             <img src="assets/Images/logout.png" class="logout" (click)="logout()">&nbsp;
         </div>
     </div>
-    <!-- <div class="col-lg-1"> Welcome {{UserName}} ({{role}})</div> -->
 </div>
