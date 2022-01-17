@@ -84,7 +84,9 @@ this.showfullcards=1;
         location.href="/#/Catalog";
 
       }
-    })
+      
+    });
+    
   }
 
   show:any;
