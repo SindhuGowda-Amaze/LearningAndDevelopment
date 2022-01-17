@@ -13,6 +13,11 @@ export class LearningService {
 
     return this.http.get<any[]>(this.host + "/Vendor/GetLoginTypeMaster");
   }
+  public GetTrainer() {
+
+    return this.http.get<any[]>(this.baseURL + "/Master/GetTrainer");
+  }
+
   public GetRecruiterStaff() {
 
     return this.http.get<any[]>(this.host + "/User/GetRecruiterStaff");
