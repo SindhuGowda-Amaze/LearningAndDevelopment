@@ -36,6 +36,7 @@ import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form
 import { NgWizardConfig, NgWizardModule, THEME } from 'ng-wizard';
 // import { NgxFullCalendarModule } from '../../node_modules/ngx-fullcalendar';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
 
 const ngWizardConfig: NgWizardConfig = {
   theme: THEME.circles
@@ -67,7 +68,8 @@ const ngWizardConfig: NgWizardConfig = {
     LearningPathDashboardComponent,
     LearningPathDetailsComponent,
     AssessmentdashboardComponent,
-    AssessmentFormComponent
+    AssessmentFormComponent,
+    ManagerDashboardComponent
   ],
   imports: [
     NgbModule,

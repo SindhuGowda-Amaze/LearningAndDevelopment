@@ -26,6 +26,8 @@ import { LearningPathDashboardComponent } from './Pages/learning-path-dashboard/
 import { LearningPathDetailsComponent } from './Pages/learning-path-details/learning-path-details.component';
 import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
 import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
+import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
@@ -55,6 +57,7 @@ const routes: Routes = [
   { path: 'LearningPathDetails', component: LearningPathDetailsComponent },
   { path: 'Assessmentdashboard', component: AssessmentdashboardComponent },
   { path: 'AssessmentForm', component: AssessmentFormComponent },
+  { path: 'ManagerDashboard', component: ManagerDashboardComponent },
 
 
 

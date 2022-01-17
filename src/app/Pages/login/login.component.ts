@@ -80,8 +80,8 @@ export class LoginComponent implements OnInit {
     }
 
     else if (this.roleID == 3){
-      this.LearningService.GetRecruiterStaff().subscribe(data => {
-        let temp: any = data.filter(x => (x.email == this.userName || x.phoneNo == this.userName) && x.password == this.password);
+      this.LearningService.GetMyDetails().subscribe(data => {
+        let temp: any = data.filter(x => (x.emailID == this.userName || x.phoneNo == this.userName) && x.password == this.password);
         this.result = temp[0];
         debugger;
         // this.loader = true;
@@ -89,9 +89,9 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('UserName', this.result.name);
           sessionStorage.setItem('userid', this.result.id);
           sessionStorage.setItem('temp', '1');
-          sessionStorage.setItem('role', 'recruiter');
+          sessionStorage.setItem('role', 'Manager');
           sessionStorage.setItem('roleid', '3');
-          location.href = "#/AdminDashboard";
+          location.href = "#/ManagerDashboard";
           location.reload();
        
 
