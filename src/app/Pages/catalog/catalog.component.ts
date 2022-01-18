@@ -29,39 +29,17 @@ export class CatalogComponent implements OnInit {
   vendorstafflist:any;
   vendorstafflist1:any;
   count4:any;
-  
-  
 
   search:any;
   showfullcards:any;
 
   ngOnInit(): void {
   // this.showfullcards=1;
-  this.show = 1;
+  this.show1 = 1;
+  // this.show2 = 1;
+  // this.show3 = 1;
+    //  this.show = 0;
   }
-
-  // enroll(){
-  //   Swal.fire({
-  //     title: 'Enroll Confirmation',
-  //     text: "Please click on OK to proceed with course enrolment.",
-  //     icon: 'warning',
-  //     // icon: 'success',
-  //     showCloseButton: true,
-  //     showCancelButton: true,
-  //     confirmButtonColor: '#3085d6',
-  //     cancelButtonColor: '#d33',
-  //     confirmButtonText: 'OK'
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       Swal.fire(
-  //         'Enrolled',
-  //         'Successfully Assigned',
-  //         'success'
-  //       );
-  //       location.href="/Catalog";
-  //     }
-  //   })
-  // }
 
   enroll(){
     Swal.fire({
@@ -101,13 +79,17 @@ export class CatalogComponent implements OnInit {
   //  debugger
   //  this.showfullcards=0;
   // }
-  showcards(value:any){
+  showcards1(value:any){
     debugger
-    this.show=value;
+      this.show1=value;
    }
-   showcards1(value:any){
+   showcards2(value:any){
     debugger
-    this.show1=value;
+    this.show2=value;
+   }
+   showcards3(value:any){
+    debugger
+    this.show3=value;
    }
 
   //  Showcards1(value:any){
