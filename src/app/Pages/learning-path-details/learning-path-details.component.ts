@@ -11,5 +11,10 @@ export class LearningPathDetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+ 
+  
+
+
+
 
 }
