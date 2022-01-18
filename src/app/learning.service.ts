@@ -246,4 +246,22 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
+  public GetAttendance() {
+    return this.http.get<any[]>(
+      this.host + "/MobileUser/GetAttendance?UserID=1&SDate=01-01-2020&EDate=01-01-2020"
+    );
+  }
+
+  public InsertAttendanceWeb(data: any) {
+    debugger;
+    this.url = this.host + '/MobileUser/InsertAttendanceWeb';
+    return this.http.post(this.url, data);
+  }
+
+  public UpdateAttendanceWeb(data: any) {
+    debugger;
+    this.url = this.host + '/MobileUser/UpdateAttendanceWeb';
+    return this.http.post(this.url, data);
+  }
+
 }

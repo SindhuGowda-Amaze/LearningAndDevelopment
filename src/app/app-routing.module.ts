@@ -27,6 +27,8 @@ import { LearningPathDetailsComponent } from './Pages/learning-path-details/lear
 import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
 import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
+import { AttendenceDetailsComponent } from './Pages/attendence-details/attendence-details.component';
+
 
 
 const routes: Routes = [
@@ -58,6 +60,7 @@ const routes: Routes = [
   { path: 'Assessmentdashboard', component: AssessmentdashboardComponent },
   { path: 'AssessmentForm', component: AssessmentFormComponent },
   { path: 'ManagerDashboard', component: ManagerDashboardComponent },
+  { path: 'AttendenceDetails', component: AttendenceDetailsComponent },
 
 
 

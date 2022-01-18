@@ -6,11 +6,11 @@
 
         <div class="col-lg-1">
             <h6 class="menutext"  *ngIf="roleid=='1' || roleid==2 " routerLink="/AdminDashboard">Dashboard</h6>
-            <h6 class="menutext"  *ngIf="roleid==4" routerLink="/Assessmentdashboard">Assessments</h6>
+            <h6 class="menutext"  *ngIf="roleid==4" routerLink="/ChapterDashboard">Chapter</h6>
             <h6 class="menutext"  *ngIf="roleid==3" routerLink="/ManagerDashboard">Dashboard</h6>
         </div>
         <div class="col-lg-1">
-            <h6 class="menutext"  *ngIf="roleid==4" routerLink="/ChapterDashboard">Chapter</h6>
+            <h6 class="menutext"  *ngIf="roleid==4" routerLink="/Assessmentdashboard">Assessments</h6>
             <h6 class=" dropdown-toggle menutext" type="button" id="dropdownMenu1" data-toggle="dropdown"
                 aria-expanded="false" *ngIf="roleid==1">Set Up</h6>
             <ul class="dropdown-menu">
@@ -29,6 +29,7 @@
            
         </div> -->
         <div class="col-lg-1">
+            <h6 class="menutext"  *ngIf="roleid==4" routerLink="/AttendenceDetails">Attendence</h6>
             <h6 class="menutext" *ngIf="roleid==2 || roleid==3" routerLink="/Catalog">Catalog</h6>
         </div>
         <div class="col-lg-1">
