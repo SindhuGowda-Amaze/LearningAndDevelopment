@@ -28,19 +28,19 @@
                 </div>
                 <div class="row leavereq">
                     <div class="col-md-2">
-                        <input class="form-control inputfield" placeholder="Trainer Name">
+                        <input class="form-control inputfield" placeholder="Trainer Name" [(ngModel)]="TrainerName">
                     </div>
                     <div class="col-md-2">
-                        <input class="form-control inputfield" placeholder="Phone Number">
+                        <input class="form-control inputfield" placeholder="Phone Number" [(ngModel)]="PhoneNumber">
                     </div>
                     <div class="col-md-2">
-                        <input class="form-control inputfield" placeholder="Email ID">
+                        <input class="form-control inputfield" placeholder="Email ID" [(ngModel)]="EmailID">
                     </div>
                     <div class="col-md-3">
-                        <textarea class="form-control inputfield" placeholder="Address"></textarea>
+                        <textarea class="form-control inputfield" placeholder="Address" [(ngModel)]="Address"></textarea>
                     </div>
                     <div class="col-md-2">
-                        <input class="form-control inputfield" placeholder="Year of Experience">
+                        <input class="form-control inputfield" placeholder="Year of Experience" [(ngModel)]="YearOfExperience">
                     </div>
                 </div>
                 <div class="row leavereq">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="row leavereq">
                     <div class="col-md-2">
-                        <ngx-dropzone (change)="onSelect($event)" style="height: 60px;">
+                        <ngx-dropzone (change)="onSelect($event)" style="height: 60px;" [(ngModel)]="Resume">
                             <ngx-dropzone-label>Drop it here!</ngx-dropzone-label>
                             <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
                                 <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
@@ -65,21 +65,21 @@
                         </ngx-dropzone>
                     </div>
                     <div class="col-md-4">
-                        <textarea class="form-control inputfield" placeholder="Skills and Technology..."
-                            rows="4"></textarea>
+                        <textarea class="form-control inputfield" placeholder="Skills and Technology..." rows="4" [(ngModel)]="SkillsAndTechnology"></textarea>
                     </div>
                     <div class="col-md-2">
-                        <input class="form-control inputfield" placeholder="Trainer Fee/Course ">
+                        <input class="form-control inputfield" placeholder="Trainer Fee/Course " [(ngModel)]="TrainerFeePerCourse">
                     </div>
                 </div>
                 <br> 
                 <div class="row">
                     <div class="col-lg-9"></div>
                     <div class="col-lg-1">
-                        <button class="form-control " (click)="cancel()">Cancel</button>
+                        <button class="form-control " routerLink="/#/Trainer" (click)="cancel()">Cancel</button>
                     </div>
                     <div class="col-lg-1">
-                        <button class="form-control button1">Save</button>
+                        <button class="form-control button1" *ngIf="id==undefined" (click)="Submit()">Save</button>
+                        <button class="form-control button1" *ngIf="id!= undefined" (click)="Update()">Update</button>
                         <!-- <button class="form-control button1"  *ngIf="id==null || id==undefined" (click)="Save()">Save</button>    
                      <button class="form-control button1"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>    -->
                     </div>

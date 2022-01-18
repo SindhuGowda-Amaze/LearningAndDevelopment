@@ -48,30 +48,23 @@
                                     <th>Trainer Fee</th>
                                     <th>Actions</th>
                                 </tr>
-                                <!-- <tr *ngFor="let vendor of vendordetails|filter:search">
-                                    <td><img style="width: 100px;" src="{{vendor.vendor_Logo}}"></td>
-                                    <td>{{vendor.vendor_Name}}</td>
-                                    <td>{{vendor.phone_Number}}</td>
-                                    <td>{{vendor.email_ID}}</td>
-                                    <td>{{vendor.address}}</td>
-                                    <td><button class="button1" (click)="edit(vendor.id)">Edit</button> <br> <br>
-                                        <button class="button2" (click)="Ondelete(vendor.id)">Delete</button>
-                                    </td>
-                                </tr> -->
-                                <tr class="head">
-                                    <td>Pavan</td>
-                                    <td>978787778</td>
-                                    <td>pavan123@gmail.com</td>
-                                    <td>#24 2nd main, Jayanagar 8th block Bangalore-70</td>
-                                    <td>3</td>
-                                    <td><img class="pdfimg" src="../../../assets/Images/pdf.jpg"></td>
-                                    <td>Programing,good at debugging,good Interpersonal skills,</td>
-                                    <td>5000/Course</td>
-                                    <td><button class="button1" routerLink="/TrainerForm">Edit</button> <br><br>
-                                        <button class="button1" >Delete</button>
+                            </thead>
+                            <tbody>    
+                                <tr class="head" *ngFor="let details of result">
+                                    <td>{{details.name}}</td>
+                                    <td>{{details.phoneNo}}</td>
+                                    <td>{{details.email}}</td>
+                                    <td>{{details.address}}</td>
+                                    <td>{{details.yearOfExperience}}</td>
+                                    <!-- <td><img class="pdfimg" src="../../../assets/Images/pdf.jpg"></td> -->
+                                    <td>{{details.resume}}</td>
+                                    <td>{{details.skillAndTecchnology}}</td>
+                                    <td>{{details.trainerFee}}</td>
+                                    <td><button class="button1" routerLink="/TrainerForm" [routerLink]="['/TrainerForm', details.id]">Edit</button> <br><br>
+                                        <button class="button1" (click)="Ondelete(details.id)" >Delete</button>
                                     </td>
                                 </tr>
-                            </thead>
+                            </tbody>
                         </table>
                         <!-- <ng-template #noResults>
                             <p class="NoResultShow"> No results found for "{{search}}" </p>

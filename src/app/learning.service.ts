@@ -13,10 +13,7 @@ export class LearningService {
 
     return this.http.get<any[]>(this.host + "/Vendor/GetLoginTypeMaster");
   }
-  public GetTrainer() {
-
-    return this.http.get<any[]>(this.baseURL + "/Master/GetTrainer");
-  }
+  
 
   public GetRecruiterStaff() {
 
@@ -290,6 +287,30 @@ export class LearningService {
     debugger;
     return this.http.get<any[]>(
       this.baseURL + '/Master/GetCategoryMaster');
+  }
+
+  public GetTrainer() {
+    debugger
+    let APIURL = this.baseURL + "Master/GetTrainer";
+    return this.http.get<any[]>(APIURL);
+  }
+
+  public InsertTrainer(json : any) {
+    debugger
+    let APIURL = this.baseURL + "Master/InsertTrainer";
+    return this.http.post<any[]>(APIURL,json);
+  }
+
+  public UpdateTrainer(json : any) {    //not yet done
+    debugger
+    let APIURL = this.baseURL + "Master/UpdateTrainer";
+    return this.http.post<any[]>(APIURL,json);
+  }
+
+  public DeleteTrainer(id : any) {
+    debugger
+    let APIURL = this.baseURL + "Master/DeleteTrainer?ID="+id;
+    return this.http.get<any[]>(APIURL);
   }
   
 }
