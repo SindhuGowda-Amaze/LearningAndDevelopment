@@ -42,12 +42,12 @@
                         </div>
                     </div>
                     <div class="vertical-menu VScroll">
-                        <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;" (click)="showcards(1)" > <input
-                                type="checkbox" >&nbsp;Management</a>
                         <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;" > <input
-                                type="checkbox"   (click)="showcards1(2)" >&nbsp;IT and Software</a>
-                        <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;" (click)="showcards(3)"> <input
-                                type="checkbox">&nbsp;Development</a>
+                                type="checkbox" value="1" [(ngModel)]="show1" name="show1" (click)="showcards1(show1)" >&nbsp;IT and Software</a>
+                        <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;" > <input
+                                type="checkbox" value="1" [(ngModel)]="show2" name="show2" (click)="showcards2(show2)" >&nbsp; Digital Marketing</a>
+                        <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;" > <input
+                                type="checkbox" value="1" [(ngModel)]="show3" name="show3" (click)="showcards3(show3)">&nbsp;Development</a>
                         <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                 type="checkbox">&nbsp;Business Courses</a>
                         <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
@@ -114,7 +114,7 @@
             </div>
         </div>
         <div class="col-lg-9">
-            <!-- <div class="row">
+            <!-- <div class="row" *ngIf="show==0">
                 <div class="col-lg-12" style="margin-left: 52px;">
                     <div class="row">
                         <div class="col-lg-3">
@@ -172,9 +172,65 @@
                         </div>
                     </div>
                 </div>
-            </div><br><br><br> -->
+            </div> -->
 
-            <div class="row" *ngIf="show==1" >
+            <div class="row" *ngIf="show1==1"  >
+                <div class="col-lg-12" style="margin-left: 52px;">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="assets/Images/python-full-stack-developer-course.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Python Fullstack Developer Course </b>
+                                    </h5>
+                                    <p class="card-text">Complete Python Fullstack Developer, Which includes Frontend, backend & DataBase...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="assets/Images/MERN-Course.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>MERN Course</b></h5>
+                                    <p class="card-text">Complete MERN Course, Which includes MongoDB, Express Js, React Js & Node Js...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="assets/Images/Mean_Course.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>MEAN Course</b></h5>
+                                    <p class="card-text">Complete MEAN Course, Which includes MongoDB, Express Js, Angular & Node Js...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="assets/Images/Devops.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>DevOps Course</b></h5>
+                                    <p class="card-text">Cpmplete DevOps Course, Which includes Development & Operation...</p><br><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br><br>
+            </div>
+
+            <div class="row" *ngIf="show2==1" >
                 <div class="col-lg-12" style="margin-left: 52px;">
                     <div class="row">
                         <div class="col-lg-3">
@@ -231,7 +287,7 @@
                             </div>
                         </div>
                     </div>
-                </div><br><br>
+                </div><br><br><br>
                 <!-- <div class="col-lg-12" style="margin-left: 52px;">
                     <div class="row">
                         <div class="col-lg-3">
@@ -302,72 +358,9 @@
                         </div>
                     </div>
                 </div><br><br> -->
-            </div><br><br><br>
-
-
-
-            <div class="row" *ngIf="show1==2" >
-                <div class="col-lg-12" style="margin-left: 52px;">
-                    <div class="row">
-                        <div class="col-lg-3" *ngIf="show==1">
-                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                                <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"><b>Python Fullstack Developer Course </b>
-                                    </h5>
-                                    <p class="card-text">Complete Python Fullstack Developer, Which includes Frontend, backend & DataBase...</p><br>
-                                    <button class="btn" data-toggle="modal"
-                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3" *ngIf="show1==1">
-                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                                <img class="card-img-top" src="/assets/Images/Course9.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"><b>Online Business Development Course</b></h5>
-                                    <p class="card-text">Online Complete Business Development Course, Which includes BDA
-                                        & its...</p><br>
-                                    <button class="btn" data-toggle="modal"
-                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3" *ngIf="show2==1">
-                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                                <img class="card-img-top" src="/assets/Images/Course7.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"><b>Digital Marketing Social Media SEO Course</b></h5>
-                                    <p class="card-text">Cpmplete Digital Marketing Social Media SEO Course, Which
-                                        includes web pages Optimization & its...</p>
-                                    <button class="btn" data-toggle="modal"
-                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3" *ngIf="show3==1">
-                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                                <img class="card-img-top" src="/assets/Images/Course8.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"><b>Product Management and Marketing Course</b></h5>
-                                    <p class="card-text">Cpmplete Product Management and Marketing Course, Which
-                                        includes marketing &...</p>
-                                    <button class="btn" data-toggle="modal"
-                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><br><br><br>
-
-
-
-            <div class="row" *ngIf="show==3" >
+            </div>
+            
+            <div class="row" *ngIf="show3==1" >
                 <div class="col-lg-12" style="margin-left: 52px;">
                     <div class="row">
                         <div class="col-lg-3" *ngIf="show==1">
@@ -383,7 +376,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3" *ngIf="show1==1">
+                        <div class="col-lg-3">
                             <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <img class="card-img-top" src="/assets/Images/Course9.png" alt="Card image cap">
                                 <div class="card-body">
@@ -396,7 +389,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3" *ngIf="show2==1">
+                        <div class="col-lg-3">
                             <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <img class="card-img-top" src="/assets/Images/Course7.png" alt="Card image cap">
                                 <div class="card-body">
@@ -409,7 +402,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3" *ngIf="show3==1">
+                        <div class="col-lg-3">
                             <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <img class="card-img-top" src="/assets/Images/Course8.png" alt="Card image cap">
                                 <div class="card-body">
@@ -423,8 +416,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div><br><br><br>
+                </div><br><br><br>
+            </div>
 
             <!-- <div class="row">
                 <div class="col-lg-12" style="margin-left: 52px;">
