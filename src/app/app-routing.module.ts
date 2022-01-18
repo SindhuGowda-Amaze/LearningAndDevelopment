@@ -29,6 +29,9 @@ import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
 
 
+
+
+
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
 
@@ -58,6 +61,7 @@ const routes: Routes = [
   { path: 'Assessmentdashboard', component: AssessmentdashboardComponent },
   { path: 'AssessmentForm', component: AssessmentFormComponent },
   { path: 'ManagerDashboard', component: ManagerDashboardComponent },
+ 
 
 
 
