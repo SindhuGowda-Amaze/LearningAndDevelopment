@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2'
 
 
 @Component({
@@ -11,7 +12,7 @@ export class MyCourseDashboardComponent implements OnInit {
   constructor() { }
   show:any;
   ngOnInit(): void {
-    this.show=1;
+    this.show=2;
   }
   public flip1(event: { currentTarget: any; }) {
     debugger
@@ -29,6 +30,28 @@ export class MyCourseDashboardComponent implements OnInit {
   };
   Showcards(value:any){
    this.show=value;
+  }
+
+  enroll(){
+    Swal.fire({
+      title: 'Enroll Confirmation',
+      text: "Please click on OK to send Course Enrolment Request",
+      icon: 'warning',
+      // icon: 'success',
+      showCloseButton: true,
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'OK'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Request Sent',
+          'Your request has been sent to manager for Approval',
+          'success'
+        )
+      }
+    })
   }
 
 }
