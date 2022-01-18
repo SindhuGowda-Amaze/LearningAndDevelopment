@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LearningService } from 'src/app/learning.service';
+import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-start-my-course',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartMyCourseComponent implements OnInit {
 
-  constructor() { }
+  constructor(private LearningService: LearningService, private ActivatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.show = 1;
@@ -45,6 +48,20 @@ export class StartMyCourseComponent implements OnInit {
   showcards(value:any){
    debugger
    this.show=value;
+  }
+
+  // DisableStaff1(value: any) {
+
+  //   var eb = {
+
+  //     'ID': value,
+  //     'Enable_Disable': 0
+  //   }
+    
+  // }
+
+  DisableStaff1(){
+    this.show= 1;
   }
   
 
