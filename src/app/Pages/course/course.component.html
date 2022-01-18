@@ -33,18 +33,19 @@
                 </div>
                 <div class="row header">
                     <div class="col-lg-2">
-                        <select class="form-control" name="cars" id="Duration" [(ngModel)]="categoryName">
-                            <option value="Select">Select</option>
+                        <select class="form-control" name="categoryName" id="categoryName" [(ngModel)]="categoryName">
+                            <!-- <option value="Select">Select</option> -->
                             <option value="">Compliance</option>
                             <option value=""> Marketing</option>
                             <option value="">Communication Skills</option>
+                            <option value="">IT Software</option>
                         </select>
                     </div>
                     <div class="col-lg-3">
                         <input class="form-control" placeholder="Name" [(ngModel)]="name">
                     </div>
                     <div class="col-lg-3">
-                        <textarea class="form-control" placeholder="Description" rows="5"></textarea [(ngModel)]="description">
+                        <textarea class="form-control" placeholder="Description" rows="5" [(ngModel)]="description"></textarea>
                     </div>
                     <div class="col-lg-2">
                         <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto;">
@@ -56,7 +57,7 @@
                     </div>
                     <div class="col-lg-2">
                         <input class="form-control" placeholder="Name" [(ngModel)]="duration">
-                        <!-- <select class="form-control" name="cars" id="Duration">
+                        <!-- <select class="form-control" name="cars" id="Duration" [(ngModel)]="duration">
                             <option value="Select">Select</option>
                             <option value="3 Months">3 Months</option>
                             <option value="4 Months">4 Months</option>
@@ -82,11 +83,11 @@
                         <input class="form-control" placeholder="0" [(ngModel)]="fee">
                     </div>
                     <div class="col-lg-4">
-                        <textarea class="form-control" placeholder="Entry Criteria" rows="5"></textarea [(ngModel)]="entryCriteria">
+                        <textarea class="form-control" placeholder="Entry Criteria" rows="5" [(ngModel)]="entryCriteria"></textarea>
 
                     </div>
                     <div class="col-lg-4">
-                        <textarea class="form-control" placeholder="Exit Criteria" rows="5"></textarea [(ngModel)]="exitCriteria">
+                        <textarea class="form-control" placeholder="Exit Criteria" rows="5" [(ngModel)]="exitCriteria"></textarea>
                     </div>
                 </div><br>
                 <div class="row">
@@ -95,9 +96,9 @@
                         <button class="form-control " (click)="cancel()">Cancel</button>
                     </div>
                     <div class="col-lg-1">
-                        <button class="form-control button1" (click)="OnSubmit()">Save</button>
-                        <!-- <button class="form-control button1"  *ngIf="id==null || id==undefined" (click)="Save()">Save</button>    
-                     <button class="form-control button1"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>    -->
+                        <!-- <button class="form-control button1">Save</button> -->
+                        <button class="form-control button1"  *ngIf="id==null || id==undefined" (click)="Save()">Save</button>    
+                     <button class="form-control button1"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>   
                     </div>
                 </div>
             </div>

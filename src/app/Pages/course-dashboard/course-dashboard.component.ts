@@ -9,6 +9,9 @@ export class CourseDashboardComponent implements OnInit {
 
   constructor(public LearningService: LearningService) { }
   result: any;
+  id:any;
+  name:any;
+  search:any;
   ngOnInit(): void {
     this.GetCourse() ;
   }
@@ -16,6 +19,15 @@ export class CourseDashboardComponent implements OnInit {
   public GetCourse() {
     debugger
     this.LearningService.GetCourse().subscribe(
+      data => {
+        debugger
+        this.result = data;
+      })
+  }
+
+  public GetCategoryMaster() {
+    debugger
+    this.LearningService.GetCategoryMaster().subscribe(
       data => {
         debugger
         this.result = data;
@@ -34,4 +46,9 @@ export class CourseDashboardComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
+
+  Update(id:any){
+    
+        location.href="#/Course/"+id;
+  }
 }

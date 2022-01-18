@@ -285,5 +285,11 @@ export class LearningService {
     return this.http.get<any[]>(
       this.baseURL + "/Master/DeleteCourse?ID=" + ID);
   }
+
+  public GetCategoryMaster() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetCategoryMaster');
+  }
   
 }

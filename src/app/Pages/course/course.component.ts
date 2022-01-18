@@ -43,14 +43,14 @@ public GetCourse(){
     this.Course_Photo=this.result[0].photo;
     this.duration=this.result[0].duration;
     this.fee=this.result[0].fee;
-    this.entryCriteria=this.entryCriteria[0].remarks;
-    this.exitCriteria=this.exitCriteria[0].remarks;
+    this.entryCriteria=this.result[0].entryCriteria;
+    this.exitCriteria=this.result[0].exitCriteria;
 
       }
     ) 
   }
 
-  OnSubmit(){
+  Save(){
     debugger 
    var json = {  
       "categoryName": this.categoryName,
@@ -67,27 +67,41 @@ public GetCourse(){
         debugger
         let id = data;
         Swal.fire("saved Sucessfully");
-      location.href="/CourseDashboard"
+      location.href="#/CourseDashboard"
       })
   }
+
+  Update(){
+    debugger
+     var json = {
+      'ID': this.id,
+      "categoryName": this.categoryName,
+      "name": this.name,
+      "description":this.description,  
+      "photo": this.Course_Photo,
+      "duration": this.duration,
+      "fee":this.fee,
+      "entryCriteria":this.entryCriteria,
+      "exitCriteria":this.exitCriteria          
+      };
+    
+      this.LearningService.UpdateCourse(json).subscribe(
+        data => {
+        debugger
+        let result = data;
+        Swal.fire("Update Sucessfully");
+      location.href="#/CourseDashboard";
+      })
+    }
+
+
+
+    
   
   cancel() {
     location.href = "/CourseDashboard";
   }
   Course_Photo: any;
-
-  //   files: File[] = [];
-
-  // onSelect(event:any) {
-  //   console.log(event);
-  //   this.files.push(...event.addedFiles);
-  // }
-
-  // onRemove(event:any) {
-  //   console.log(event);
-  //   this.files.splice(this.files.indexOf(event), 1);
-  // }
-
 
   files: File[] = [];
   onSelect(event: { addedFiles: any; }) {
@@ -113,5 +127,6 @@ public GetCourse(){
       alert("ATTACHMENT UPLOADED");
     })
   }
+
 
 }
