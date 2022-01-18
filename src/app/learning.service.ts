@@ -29,7 +29,7 @@ export class LearningService {
       formdata.append('file_upload', files[i], files[i].name);
     }
     debugger
-    let APIURL = this.host + "Master/UploadImages/";
+    let APIURL = this.baseURL + "Master/UploadImages/";
     return this.http.post(APIURL, formdata);
   }
   public GetRoleType() {
@@ -291,5 +291,24 @@ export class LearningService {
     return this.http.get<any[]>(
       this.baseURL + '/Master/GetCategoryMaster');
   }
+
+  public GetAssessments() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetAssessments');
+  }
+
+  public InsertChapterAttachment(data: any) {
+    debugger;
+    this.url =  this.baseURL + '/Master/InsertChapterAttachment';
+    return this.http.post(this.url, data);
+  }
+
+  public InsertChapter(data: any) {
+    debugger;
+    this.url =  this.baseURL + '/Master/InsertChapter';
+    return this.http.post(this.url, data);
+  }
+
   
 }

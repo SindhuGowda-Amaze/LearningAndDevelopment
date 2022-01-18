@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LearningService } from 'src/app/learning.service';
 @Component({
   selector: 'app-assessmentdashboard',
   templateUrl: './assessmentdashboard.component.html',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssessmentdashboardComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public LearningService:LearningService) { }
+  result:any;
+  search:any;
   ngOnInit(): void {
+    this.GetAssessments();
   }
 
+  public GetAssessments() {
+    debugger
+    this.LearningService.GetAssessments().subscribe(
+      data => {
+        debugger
+        this.result = data;
+      })
+  }
 }
