@@ -13,6 +13,8 @@ export class CourseComponent implements OnInit {
   result: any;
   id:any;
   ngOnInit(): void {
+this.GetCategoryMaster();
+
     this.ActivatedRoute.params.subscribe(params => {
       debugger
       this.id = params["id"];
@@ -96,7 +98,15 @@ public GetCourse(){
 
 
 
-    
+    public GetCategoryMaster() {
+      debugger
+      this.LearningService.GetCategoryMaster().subscribe(
+        data => {
+          debugger
+          this.result = data;
+        })
+    }
+  
   
   cancel() {
     location.href = "/CourseDashboard";

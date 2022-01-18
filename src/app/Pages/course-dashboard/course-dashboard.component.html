@@ -17,11 +17,12 @@
                     <p class="Text">Filter By</p>
                 </div>
                 <div class="col-lg-3">
-                    <select class="form-control" name="cars" id="Duration" [(ngModel)]="name">
-                        <option value="Select">Select Category</option>
-                        <option  *ngFor="let details of result" value="">{{details.name}}</option>
+                    <select class="form-control" name="categoryName" id="categoryName" [(ngModel)]="categoryName">
+                        <!-- <option value="Select">Select</option> -->
+                        <option  *ngFor="let details of result" value="{{details.name}}">{{details.name}}</option>
                         <!-- <option value=""> Marketing</option>
-                        <option value="">Communication Skills</option> -->
+                        <option value="">Communication Skills</option>
+                        <option value="">IT Software</option> -->
                     </select>
                 </div>
                 <div class="col-lg-5">
