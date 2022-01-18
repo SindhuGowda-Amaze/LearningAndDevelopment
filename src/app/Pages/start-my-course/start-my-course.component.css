@@ -60,3 +60,12 @@
     margin-left: 100px;
     width: 150px;
   }
+  .ShowMore2 {
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    background-color: #030a0f;
+    border: none;
+    width: 150px;
+    margin-top: 10px;
+  }
