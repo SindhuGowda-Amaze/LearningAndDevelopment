@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LearningService } from 'src/app/learning.service';
 @Component({
   selector: 'app-course-dashboard',
   templateUrl: './course-dashboard.component.html',
@@ -7,9 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseDashboardComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public LearningService: LearningService) { }
+  result: any;
+  id:any;
+  name:any;
+  search:any;
   ngOnInit(): void {
+    this.GetCourse() ;
+  }
+
+  public GetCourse() {
+    debugger
+    this.LearningService.GetCourse().subscribe(
+      data => {
+        debugger
+        this.result = data;
+      })
+  }
+
+  public GetCategoryMaster() {
+    debugger
+    this.LearningService.GetCategoryMaster().subscribe(
+      data => {
+        debugger
+        this.result = data;
+      })
   }
 
   files: File[] = [];
@@ -24,4 +46,9 @@ export class CourseDashboardComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
+
+  Update(id:any){
+    
+        location.href="#/Course/"+id;
+  }
 }

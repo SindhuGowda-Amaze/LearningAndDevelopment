@@ -29,6 +29,9 @@ import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
 
 
+
+
+
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
 
@@ -36,6 +39,7 @@ const routes: Routes = [
   { path: 'Header', component: HeaderComponent },
   { path: 'Footer', component: FooterComponent },
   { path: 'Course', component: CourseComponent },
+  { path: 'Course/:id', component: CourseComponent},
   { path: 'Chapter', component: ChapterComponent },
   { path: 'Employee', component: EmployeeComponent },
   { path: 'EmployeeForm', component: EmployeeFormComponent},
@@ -58,6 +62,7 @@ const routes: Routes = [
   { path: 'Assessmentdashboard', component: AssessmentdashboardComponent },
   { path: 'AssessmentForm', component: AssessmentFormComponent },
   { path: 'ManagerDashboard', component: ManagerDashboardComponent },
+ 
 
 
 

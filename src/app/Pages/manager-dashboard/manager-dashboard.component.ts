@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LearningService } from 'src/app/learning.service';
+
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-manager-dashboard',
@@ -12,7 +12,7 @@ export class ManagerDashboardComponent implements OnInit {
   search: any;
   count: any;
   staffid: any;
-  constructor(public LearningService: LearningService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.staffid = localStorage.getItem('userid');

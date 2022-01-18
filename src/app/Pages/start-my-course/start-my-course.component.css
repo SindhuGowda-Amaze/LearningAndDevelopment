@@ -1,62 +1,75 @@
-.BackBTN{
-    padding:5px;
-    border-radius: 5px;
-    color:white;
-    background-color: #030a0f;
-    border:none;
-  }
+.BackBTN {
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  background-color: #030a0f;
+  border: none;
+}
 
-  .ViewCertificate{
-    padding: 5px;
-    border-radius: 5px;
-    color: white;
-    background-color: #030a0f;
-    border: none;
-    margin-left: 200px;
-  }
+.ViewCertificate {
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  background-color: #030a0f;
+  border: none;
+  margin-left: 200px;
+}
 
-  .HRline{
-    border-top: 1.5px solid #ddd9d9;
-  }
+.HRline {
+  border-top: 1.5px solid #ddd9d9;
+}
 
-  .VScroll {
-    background-color: white;
-    overflow-y: scroll;
-    overflow-x: scroll;
-    border: gray;
-  }
+.VScroll {
+  background-color: white;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  border: gray;
+}
 
-  .vertical-menu a {
-    background-color: #eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-  }
-  
-  .vertical-menu a:hover {
-    background-color: #ccc;
-  }
-  
-  .vertical-menu a.active {
-    background-color: black;
-    color: white;
-  }
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
 
-  .ShowMore {
-    padding: 8px;
-    border-radius: 5px;
-    color: white;
-    background-color: #030a0f;
-    border: none;
-    margin-left: 100px;
-  }
-  .ShowMore1 {
-    padding: 8px;
-    border-radius: 5px;
-    color: white;
-    background-color: #030a0f;
-    border: none;
-    margin-left: 100px;
-    width: 130px;
-  }
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: black;
+  color: white;
+}
+
+.ShowMore {
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  background-color: #030a0f;
+  border: none;
+  margin-left: 100px;
+}
+.ShowMore1 {
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  background-color: #030a0f;
+  border: none;
+  margin-left: 100px;
+  width: 150px;
+}
+.ShowMore2 {
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  background-color: #030a0f;
+  border: none;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.AssResults {
+  margin-bottom: 10px;
+}

@@ -11,6 +11,15 @@ export class ChapterDashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+
+
+
+
+
+
+  
   files: File[] = [];
 
   onSelect(event:any) {

@@ -246,4 +246,50 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
+  public GetAttendance() {
+    return this.http.get<any[]>(
+      this.host + "/MobileUser/GetAttendance?UserID=1&SDate=01-01-2020&EDate=01-01-2020"
+    );
+  }
+
+  public InsertAttendanceWeb(data: any) {
+    debugger;
+    this.url = this.host + '/MobileUser/InsertAttendanceWeb';
+    return this.http.post(this.url, data);
+  }
+
+  public UpdateAttendanceWeb(data: any) {
+    debugger;
+    this.url = this.host + '/MobileUser/UpdateAttendanceWeb';
+    return this.http.post(this.url, data);
+  }
+
+  public GetCourse() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetCourse');
+  }
+  public InsertCourse(data: any) {
+    debugger;
+    this.url =  this.baseURL + '/Master/InsertCourse';
+    return this.http.post(this.url, data);
+  }
+
+  public UpdateCourse(data: any) {
+    debugger;
+    this.url =  this.baseURL + '/Master/UpdateCourse';
+    return this.http.post(this.url, data);
+  }
+
+  public DeleteCourse(ID: any) {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/DeleteCourse?ID=" + ID);
+  }
+
+  public GetCategoryMaster() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetCategoryMaster');
+  }
+  
 }

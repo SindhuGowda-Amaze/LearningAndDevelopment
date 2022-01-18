@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,14 +30,17 @@ import { CourseCertificateComponent } from './Pages/course-certificate/course-ce
 import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.component';
 import { LearningPathDashboardComponent } from './Pages/learning-path-dashboard/learning-path-dashboard.component';
 import { LearningPathDetailsComponent } from './Pages/learning-path-details/learning-path-details.component';
-import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
-import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
+
 // import { NgxFullCalendarModule } from 'ngx-fullcalendar';
 // import { NgWizardModule } from 'ng-wizard';
 import { NgWizardConfig, NgWizardModule, THEME } from 'ng-wizard';
 // import { NgxFullCalendarModule } from '../../node_modules/ngx-fullcalendar';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
+import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
+
+
 
 const ngWizardConfig: NgWizardConfig = {
   theme: THEME.circles
@@ -69,12 +73,14 @@ const ngWizardConfig: NgWizardConfig = {
     LearningPathDetailsComponent,
     AssessmentdashboardComponent,
     AssessmentFormComponent,
-    ManagerDashboardComponent
+    ManagerDashboardComponent,
+  
   ],
   imports: [
     NgbModule,
     FormsModule,
     BrowserModule,
+    Ng2SearchPipeModule,
     AppRoutingModule,
     NgxDropzoneModule,
     // NgxFullCalendarModule,
