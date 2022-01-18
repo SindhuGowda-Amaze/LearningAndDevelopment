@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -79,6 +80,7 @@ const ngWizardConfig: NgWizardConfig = {
     NgbModule,
     FormsModule,
     BrowserModule,
+    Ng2SearchPipeModule,
     AppRoutingModule,
     NgxDropzoneModule,
     // NgxFullCalendarModule,
