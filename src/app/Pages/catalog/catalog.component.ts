@@ -36,7 +36,8 @@ export class CatalogComponent implements OnInit {
   showfullcards:any;
 
   ngOnInit(): void {
-this.showfullcards=1;
+  // this.showfullcards=1;
+  this.show = 1;
   }
 
   // enroll(){
@@ -93,14 +94,21 @@ this.showfullcards=1;
   show1:any;
   show2:any;
   show3:any;
-
   show4:any;
+  show5:any;
 
-  showcards(){
-   debugger
-   this.showfullcards=0;
-  }
-   
+  // showcards(){
+  //  debugger
+  //  this.showfullcards=0;
+  // }
+  showcards(value:any){
+    debugger
+    this.show=value;
+   }
+   showcards1(value:any){
+    debugger
+    this.show1=value;
+   }
 
   //  Showcards1(value:any){
   //   this.show1=value;
