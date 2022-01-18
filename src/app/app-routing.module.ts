@@ -24,9 +24,10 @@ import { CourseCertificateComponent } from './Pages/course-certificate/course-ce
 import { StartMyCourseComponent } from './Pages/start-my-course/start-my-course.component';
 import { LearningPathDashboardComponent } from './Pages/learning-path-dashboard/learning-path-dashboard.component';
 import { LearningPathDetailsComponent } from './Pages/learning-path-details/learning-path-details.component';
-import { AssessmentdashboardComponent } from './assessmentdashboard/assessmentdashboard.component';
-import { AssessmentFormComponent } from './assessment-form/assessment-form.component';
-import { ManagerDashboardComponent } from './manager-dashboard/manager-dashboard.component';
+import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
+import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
+import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
+
 
 
 
