@@ -12,6 +12,9 @@ export class LearningPathDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
  
+  back(){
+    location.href="#/LearningPathDashboard";
+  }
   
 
 
