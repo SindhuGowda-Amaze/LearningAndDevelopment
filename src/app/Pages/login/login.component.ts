@@ -43,13 +43,15 @@ export class LoginComponent implements OnInit {
 
     if (this.userName == 'admin' && this.password == '1') {
       debugger
+     // location.reload();
       sessionStorage.setItem('UserName', 'admin');
       sessionStorage.setItem('temp', '1');
       sessionStorage.setItem('role', 'Admin');
-       this.router.navigate(["/AdminDashboard"]);
+       this.router.navigate(["AdminDashboard"]);
+     //  location.reload();
       // location.href="/AdminDashboard"
       sessionStorage.setItem('roleid', '1');
-        // location.reload();
+        
 
       
     }
@@ -66,6 +68,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('role', 'Employee');
           sessionStorage.setItem('roleid', '2');
           location.href = "#/AdminDashboard";
+          location.reload();
        
 
         }

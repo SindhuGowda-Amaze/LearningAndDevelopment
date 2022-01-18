@@ -35,10 +35,10 @@
                     <div class="col-lg-2">
                         <select class="form-control" name="categoryName" id="categoryName" [(ngModel)]="categoryName">
                             <!-- <option value="Select">Select</option> -->
-                            <option value="">Compliance</option>
-                            <option value=""> Marketing</option>
+                            <option  *ngFor="let details of result" value="{{details.categoryName}}">{{details.categoryName}}</option>
+                            <!-- <option value=""> Marketing</option>
                             <option value="">Communication Skills</option>
-                            <option value="">IT Software</option>
+                            <option value="">IT Software</option> -->
                         </select>
                     </div>
                     <div class="col-lg-3">
