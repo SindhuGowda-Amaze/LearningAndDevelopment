@@ -39,6 +39,7 @@ const routes: Routes = [
   { path: 'Header', component: HeaderComponent },
   { path: 'Footer', component: FooterComponent },
   { path: 'Course', component: CourseComponent },
+  { path: 'Course/:id', component: CourseComponent},
   { path: 'Chapter', component: ChapterComponent },
   { path: 'Employee', component: EmployeeComponent },
   { path: 'EmployeeForm', component: EmployeeFormComponent},

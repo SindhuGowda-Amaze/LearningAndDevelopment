@@ -264,4 +264,26 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
+  public GetCourse() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetCourse');
+  }
+  public InsertCourse(data: any) {
+    debugger;
+    this.url =  this.baseURL + '/Master/InsertCourse';
+    return this.http.post(this.url, data);
+  }
+
+  public UpdateCourse(data: any) {
+    debugger;
+    this.url =  this.baseURL + '/Master/UpdateCourse';
+    return this.http.post(this.url, data);
+  }
+
+  public DeleteCourse(ID: any) {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/DeleteCourse?ID=" + ID);
+  }
+  
 }
