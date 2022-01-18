@@ -46,6 +46,7 @@ const routes: Routes = [
   { path: 'Catalog', component: CatalogComponent },
   { path: 'Trainer', component: TrainerComponent },
   { path: 'TrainerForm', component: TrainerFormComponent },
+  { path: 'TrainerForm/:id', component: TrainerFormComponent },
   { path: 'TrainerCourseMapping', component: TrainerCourseMappingComponent },
   { path: 'TrainerCourseMappingForm', component: TrainerCourseMappingFormComponent },
   { path: 'CourseDashboard', component: CourseDashboardComponent },
