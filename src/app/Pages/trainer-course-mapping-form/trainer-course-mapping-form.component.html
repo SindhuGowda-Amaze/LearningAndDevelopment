@@ -30,14 +30,14 @@
                     <div class="col-md-2">
                         <select class="form-control" name="cars" id="Duration">
                             <option value="Select">Select Trainer</option>
-                            <option value="">Pavan</option>
-                            <option value="">Faran</option>
-                            <option value="">Peeter</option>
+                            <option *ngFor="let details of result" value="{{details.name}}">{{details.name}}</option>
+                            <!-- <option value="">Faran</option>
+                            <option value="">Peeter</option> -->
                         </select>
                     </div>
                     <div class="col-md-2">
                         <select class="form-control" name="cars" id="Duration">
-                            <option value="Select">Select Category</option>
+                            <option value="Select">Select Co</option>
                             <option value="">Compliance</option>
                             <option value=""> Marketing</option>
                             <option value="">Communication Skills</option>
