@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LearningService } from 'src/app/learning.service';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-assessment-form',
   templateUrl: './assessment-form.component.html',
@@ -12,27 +13,29 @@ export class AssessmentFormComponent implements OnInit {
   result: any;
   result1: any;
   results: any;
-  id: any;
-  courseName:any;
-  courselist:any;
-  questionlist:any;
-  constructor(public LearningService:LearningService, public ActivatedRoute: ActivatedRoute) { }
+  courseid: any;
+  chapterid: any;
+  questionid: any;
+  courseName: any;
+  courselist: any;
+  questionlist: any;
+  constructor(public LearningService: LearningService, public ActivatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.GetQuestionMaster();
     this.ActivatedRoute.params.subscribe(params => {
       debugger
-      this.id = params["id"];
-      if (this.id != null && this.id != undefined) {
+      this.questionid = params["id"];
+      if (this.questionid != null && this.questionid != undefined) {
         this.GetQuestionMaster();
       }
     })
-    
+
     this.GetChapter();
     this.ActivatedRoute.params.subscribe(params => {
       debugger
-      this.id = params["id"];
-      if (this.id != null && this.id != undefined) {
+      this.chapterid = params["id"];
+      if (this.chapterid != null && this.chapterid != undefined) {
         this.GetChapter();
       }
     })
@@ -40,8 +43,8 @@ export class AssessmentFormComponent implements OnInit {
     this.GetCourse();
     this.ActivatedRoute.params.subscribe(params => {
       debugger
-      this.id = params["id"];
-      if (this.id != null && this.id != undefined) {
+      this.courseid = params["id"];
+      if (this.courseid != null && this.courseid != undefined) {
         this.GetCourse();
       }
     })
@@ -56,7 +59,7 @@ export class AssessmentFormComponent implements OnInit {
       })
   }
 
-  
+
 
   public GetChapter() {
     debugger
@@ -82,13 +85,13 @@ export class AssessmentFormComponent implements OnInit {
   }
   files1: File[] = [];
 
-  onSelect1(event:any) {
+  onSelect1(event: any) {
     console.log(event);
     this.files1.push(...event.addedFiles);
     this.uploadattachments1();
   }
-  
-  onRemove1(event:any) {
+
+  onRemove1(event: any) {
     console.log(event);
     this.files1.splice(this.files1.indexOf(event), 1);
   }
@@ -105,13 +108,13 @@ export class AssessmentFormComponent implements OnInit {
 
   files: File[] = [];
 
-  onSelect(event:any) {
+  onSelect(event: any) {
     console.log(event);
     this.files.push(...event.addedFiles);
     this.uploadattachments();
   }
-  
-  onRemove(event:any) {
+
+  onRemove(event: any) {
     console.log(event);
     this.files.splice(this.files.indexOf(event), 1);
   }
@@ -124,5 +127,37 @@ export class AssessmentFormComponent implements OnInit {
       alert("ATTACHMENT UPLOADED");
     })
   }
+  Question: any;
+  Option1: any;
+  Option2: any;
+  Option3: any;
+  Option4: any;
+  CorrectAnswer: any;
+  marks:any;
+  Save() {
+    debugger
+    var json = {
+      "CourseID": this.courseid,
+      "ChapterID": this.chapterid,
+      "QuestionID": this.questionid,
+      "Question": this.Question,
+      "Option1": this.Option1,
+      "Option2": this.Option2,
+      "Option3": this.Option3,
+      "Option4": this.Option4,
+      "CorrectAnswer": this.CorrectAnswer,
+      "marks": this.marks,
+
+    };
+    this.LearningService.InsertAssessments(json).subscribe(
+      data => {
+        debugger
+        let id = data;
+        Swal.fire("saved Sucessfully");
+        location.href = "#/Assessmentdashboard"
+      })
+  }
+
+
 
 }
