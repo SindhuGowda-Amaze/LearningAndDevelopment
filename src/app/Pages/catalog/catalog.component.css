@@ -23,7 +23,10 @@
     font-size: 25px;
     font-weight: bold;
 } */
-
+.des{
+  height: 80px;
+  overflow-y: scroll;
+}
 .btn {
   padding: 5px;
   width: 45%;

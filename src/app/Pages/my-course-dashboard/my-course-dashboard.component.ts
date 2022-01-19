@@ -14,15 +14,30 @@ export class MyCourseDashboardComponent implements OnInit {
   stafflist:any;
   userid:any;
   ngOnInit(): void {
+    
     this.userid = sessionStorage.getItem('userid')
 
-
+    this.GetCourse();
     this.LearningService.GetMyDetails().subscribe(data => {
       debugger
       this.stafflist = data.filter(x => x.id == this.userid);;
     });
     this.show=2;
   }
+
+  coursedetails:any;
+
+  public GetCourse() {
+    debugger
+    this.LearningService.GetCourse().subscribe(data => {
+      debugger
+      this.coursedetails = data;
+     
+      debugger
+    })
+  }
+
+
   public flip1(event: { currentTarget: any; }) {
     debugger
     var element = event.currentTarget;
@@ -35,7 +50,7 @@ export class MyCourseDashboardComponent implements OnInit {
       }
     }
 
-    this.show=1;
+   
   };
   Showcards(value:any){
    this.show=value;

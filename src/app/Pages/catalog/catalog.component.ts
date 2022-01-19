@@ -113,6 +113,11 @@ export class CatalogComponent implements OnInit {
   //   this.show3=value;
   //  }
 
+  // showcards(id)
+  // {
+  //   this.courselist=this.courselist.filter(x=>x.)
+  // }
+
 
   public GetCategoryMaster() {
     debugger
