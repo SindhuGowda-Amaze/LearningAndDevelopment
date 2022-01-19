@@ -11,18 +11,20 @@ export class AssessmentFormComponent implements OnInit {
   Attachment: any;
   result: any;
   id: any;
-
+  courseName:any;
+  courselist:any;
+  questionlist:any;
   constructor(public LearningService:LearningService, public ActivatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.GetQuestionMaster();
-    this.ActivatedRoute.params.subscribe(params => {
-      debugger
-      this.id = params["id"];
-      if (this.id != null && this.id != undefined) {
-        this.GetQuestionMaster();
-      }
-    })
+     this.GetQuestionMaster();
+    // this.ActivatedRoute.params.subscribe(params => {
+    //   debugger
+    //   this.id = params["id"];
+    //   if (this.id != null && this.id != undefined) {
+    //     this.GetQuestionMaster();
+    //   }
+    // })
   }
 
   public GetQuestionMaster() {
@@ -30,7 +32,16 @@ export class AssessmentFormComponent implements OnInit {
     this.LearningService.GetQuestionMaster().subscribe(
       data => {
         debugger
-        this.result = data;
+        this.questionlist = data;
+      })
+  }
+
+  public GetCourse() {
+    debugger
+    this.LearningService.GetCourse().subscribe(
+      data => {
+        debugger
+        this.courselist = data;
       })
   }
 

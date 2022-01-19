@@ -21,4 +21,6 @@ export class TrainerCourseMappingComponent implements OnInit {
         this.result = data;
       })
   }
+
+  
 }

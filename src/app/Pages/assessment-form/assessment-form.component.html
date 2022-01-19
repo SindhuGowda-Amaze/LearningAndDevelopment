@@ -33,11 +33,12 @@
                 </div>
                 <div class="row header">
                     <div class="col-lg-2">
-                        <select class="form-control" name="cars" id="Duration">
-                            <option value="Select">Select</option>
-                            <option value="">Compliance</option>
-                            <option value=""> Marketing</option>
+                        <select class="form-control" name="categoryName" id="courseName" [(ngModel)]="courseName">
+                            <!-- <option value="Select">Select</option> -->
+                            <option  *ngFor="let details of courselist" value="{{details.name}}">{{details.name}}</option>
+                            <!-- <option value=""> Marketing</option>
                             <option value="">Communication Skills</option>
+                            <option value="">IT Software</option> -->
                         </select>
                     </div>
                     <div class="col-lg-2">
@@ -49,8 +50,8 @@
                         </select>
                     </div>
                     <div class="col-lg-2">
-                        <select class="form-control" name="cars" id="Duration"  [(ngModel)]="id">
-                            <option *ngFor="let details of result" value="{{details.id}}">{{details.Type}}</option>
+                        <select class="form-control" name="id" id="id"  [(ngModel)]="id">
+                            <option *ngFor="let details of questionlist" value="{{details.id}}">{{details.type}}</option>
 
                             <!-- <option value="">Objective</option>
                             <option value=""> Subjective</option> -->
