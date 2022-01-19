@@ -333,12 +333,12 @@ export class LearningService {
 
   public GetChapterAttachmentByChapterID(chapterid:any) {
 
-    return this.http.get<any[]>(this.host + "/Master/GetChapterAttachmentByChapterID?ChapterID="+chapterid);
+    return this.http.get<any[]>(this.baseURL + "/Master/GetChapterAttachmentByChapterID?ChapterID="+chapterid);
   }
 
   public GetChapter() {
 
-    return this.http.get<any[]>(this.host + "/Master/GetChapter");
+    return this.http.get<any[]>(this.baseURL + "/Master/GetChapter");
   }
   
   
