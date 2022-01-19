@@ -49,10 +49,11 @@
                         </select>
                     </div>
                     <div class="col-lg-2">
-                        <select class="form-control" name="cars" id="Duration">
-                            <option value="Select">Select</option>
-                            <option value="">Objective</option>
-                            <option value=""> Subjective</option>
+                        <select class="form-control" name="cars" id="Duration"  [(ngModel)]="id">
+                            <option *ngFor="let details of result" value="{{details.id}}">{{details.Type}}</option>
+
+                            <!-- <option value="">Objective</option>
+                            <option value=""> Subjective</option> -->
                         </select>
                     </div>
                     <div class="col-lg-3">
