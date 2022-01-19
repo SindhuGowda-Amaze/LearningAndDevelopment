@@ -85,7 +85,6 @@ const ngWizardConfig: NgWizardConfig = {
     NgxDropzoneModule,
     // NgxFullCalendarModule,
     HttpClientModule,
-    FormsModule,
     NgWizardModule.forRoot(ngWizardConfig),
     NgxPaginationModule
   

@@ -44,7 +44,7 @@
                     <div class="vertical-menu VScroll"  *ngFor="let details of categorylist">
                         <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                 type="checkbox" value="1" [(ngModel)]="show1" name="show1"
-                                (click)="showcards1(show1)">&nbsp;{{details.name}}</a>
+                                (click)="showcards1(details.id)">&nbsp;{{details.name}}</a>
                                 <!-- IT and Software -->
                         <!-- <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                 type="checkbox" value="1" [(ngModel)]="show2" name="show2"
@@ -200,10 +200,10 @@
                                 <div class="card-body">
                                     <!-- <h5 class="card-title"><b>Python Fullstack Developer Course </b>
                                     </h5> -->
-                                    <h5 class="card-title"><b>{{details.name}}</b>
+                                    <h5 class="card-title"><b>{{details.name}}</b><br>
                                     </h5>
                                     <!-- <p class="card-text">Complete Python Fullstack Developer, Which includes Frontend, backend & DataBase...</p> -->
-                                    <p class="card-text">{{details.description}}</p>
+                                    <p class="card-text des">{{details.description}}</p>
                                     <button class="btn" data-toggle="modal"
                                         data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
                                     <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>

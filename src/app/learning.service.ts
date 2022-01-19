@@ -387,6 +387,18 @@ export class LearningService {
     this.url =  this.baseURL + '/Master/InsertTrainerCourseMapping';
     return this.http.post(this.url, data);
   }
+
+  public UpdateTrainerCourseMapping(json : any) {
+    debugger
+    let APIURL = this.baseURL + "Master/UpdateTrainerCourseMapping";
+    return this.http.post<any[]>(APIURL,json);
+  }
+
+  public DeleteTrainerCourseMapping(id : any) {
+    debugger
+    let APIURL = this.baseURL + "Master/DeleteTrainerCourseMapping?ID="+id;
+    return this.http.get<any[]>(APIURL);
+  }
   public UpdateChapter(data: any) {
     debugger;
     this.url = this.host + '/Master/UpdateChapter';

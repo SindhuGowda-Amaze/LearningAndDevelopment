@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  hostUrl:"local"
+  // hostUrl:"local"
+  hostUrl:"http://103.133.214.197/LearningandDevelopment/"
 };
 
 /*
