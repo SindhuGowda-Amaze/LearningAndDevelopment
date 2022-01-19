@@ -62,7 +62,8 @@ public GetCourse(){
       "duration": this.duration,
       "fee":this.fee,
       "entryCriteria":this.entryCriteria,
-      "exitCriteria":this.exitCriteria           
+      "exitCriteria":this.exitCriteria,
+      "CategoryID":this.categoryName      
     };
     this.LearningService.InsertCourse(json).subscribe(
       data => {

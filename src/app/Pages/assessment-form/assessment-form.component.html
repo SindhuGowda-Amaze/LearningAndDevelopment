@@ -34,7 +34,7 @@
                 <div class="row header">
                     <div class="col-lg-2">
                         <!-- <select class="form-control" name="" id=""> -->
-                        <select class="form-control" name="id" id="id"  [(ngModel)]="id">
+                        <select class="form-control" name="id" id="id"  [(ngModel)]="courseid">
                             <option *ngFor="let details of CourseList" value="{{details.id}}">{{details.name}}</option>
                             <!-- <option value="">Compliance</option>
                             <option value=""> Marketing</option>
@@ -42,7 +42,7 @@
                         </select>
                     </div>
                     <div class="col-lg-2">
-                        <select class="form-control" name="id" id="id"  [(ngModel)]="id">
+                        <select class="form-control" name="id" id="id"  [(ngModel)]="chapterid">
                             <option *ngFor="let details of ChapterList" value="{{details.id}}">{{details.name}}</option>
                             <!-- <option value="">Compliance</option>
                             <option value=""> Marketing</option>
@@ -50,7 +50,7 @@
                         </select>
                     </div>
                     <div class="col-lg-2">
-                        <select class="form-control" name="id" id="id"  [(ngModel)]="id">
+                        <select class="form-control" name="id" id="id"  [(ngModel)]="questionid">
                             <option *ngFor="let details of QuestionList" value="{{details.id}}">{{details.type}}</option>
 
                             <!-- <option value="">Objective</option>
@@ -58,10 +58,10 @@
                         </select>
                     </div>
                     <div class="col-lg-3">
-                        <textarea class="form-control" placeholder="Question.."></textarea>
+                        <textarea class="form-control" placeholder="Question.." [(ngModel)]="Question"></textarea>
                     </div>
                     <div class="col-lg-3">
-                       <textarea class="form-control" placeholder="Correct Answer.."></textarea>
+                       <textarea class="form-control" placeholder="Correct Answer.." [(ngModel)]="CorrectAnswer"></textarea>
                     </div>
 
                 </div> <br>
@@ -79,20 +79,26 @@
                     <div class="col-lg-2">
                         <p>Option4</p>
                     </div>
+                    <div class="col-lg-2">
+                        <p>Marks</p>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-2">
-                        <input class="form-control" placeholder="a">
+                        <input class="form-control" placeholder="a" [(ngModel)]="Option1">
                     </div>
                     <div class="col-lg-2">
-                        <input class="form-control" placeholder="b">
+                        <input class="form-control" placeholder="b" [(ngModel)]="Option2">
 
                     </div>
                     <div class="col-lg-2">
-                        <input class="form-control" placeholder="c">
+                        <input class="form-control" placeholder="c" [(ngModel)]="Option3">
                     </div>
                     <div class="col-lg-2">
-                        <input class="form-control" placeholder="d">
+                        <input class="form-control" placeholder="d" [(ngModel)]="Option4">
+                    </div>
+                    <div class="col-lg-2">
+                        <input class="form-control" placeholder="marks" [(ngModel)]="marks">
                     </div>
                 </div><br>
                 <div class="row">
@@ -101,7 +107,7 @@
                         <button class="form-control " (click)="cancel()">Cancel</button>
                     </div>
                     <div class="col-lg-1">
-                        <button class="form-control button1">Save</button>
+                        <button class="form-control button1" (click)="Save()">Save</button>
                         <!-- <button class="form-control button1"  *ngIf="id==null || id==undefined" (click)="Save()">Save</button>    
                      <button class="form-control button1"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>    -->
                     </div>

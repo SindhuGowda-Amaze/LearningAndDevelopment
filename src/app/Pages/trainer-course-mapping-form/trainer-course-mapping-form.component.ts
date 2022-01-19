@@ -35,7 +35,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
       debugger
       this.id = params["id"];
       if (this.id != null && this.id != undefined) {
-        this.GetAssessments();
+        this.GetTrainerCourseMapping();
       }
     })
 
@@ -51,8 +51,8 @@ export class TrainerCourseMappingFormComponent implements OnInit {
 
   
 
-  GetAssessments() {
-    this.LearningService.GetAssessments().subscribe(
+  GetTrainerCourseMapping() {
+    this.LearningService.GetTrainerCourseMapping().subscribe(
     data => {
     debugger
     this.result = data;
@@ -66,8 +66,6 @@ export class TrainerCourseMappingFormComponent implements OnInit {
     ) 
   }
 
-  
-
   Submit(){
     debugger 
    var json = {  
@@ -77,12 +75,12 @@ export class TrainerCourseMappingFormComponent implements OnInit {
       "BatchName": this.BatchName,
       "AllowedStudents": this.AllowedStudents
     };
-    this.LearningService.InsertAssessments(json).subscribe(
+    this.LearningService.InsertTrainerCourseMapping(json).subscribe(
       data => {
         debugger
         let id = data;
     alert("Successfully Submitted...!")
-      location.href="/#/CurrencyMaster"
+      location.href="/#/TrainerCourseMapping";
       })
   }
 
@@ -98,17 +96,14 @@ export class TrainerCourseMappingFormComponent implements OnInit {
       "AllowedStudents": this.AllowedStudents          
       };
     
-      this.LearningService.UpdateAssessments(json).subscribe(
+      this.LearningService.UpdateTrainerCourseMapping(json).subscribe(
         data => {
         debugger
         let result = data;
         Swal.fire("Successfully Updated...!");
-        location.href="/#/CurrencyMaster";
+        location.href="/#/TrainerCourseMapping";
       })
   }
-
-
-  
 
   public GetCourse() {
     debugger

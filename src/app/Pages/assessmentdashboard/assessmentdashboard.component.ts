@@ -10,6 +10,7 @@ export class AssessmentdashboardComponent implements OnInit {
   constructor(public LearningService:LearningService) { }
   result:any;
   search:any;
+  quetionlist:any;
   ngOnInit(): void {
     this.GetAssessments();
   }
@@ -19,7 +20,7 @@ export class AssessmentdashboardComponent implements OnInit {
     this.LearningService.GetAssessments().subscribe(
       data => {
         debugger
-        this.result = data;
+        this.quetionlist = data;
       })
   }
 }

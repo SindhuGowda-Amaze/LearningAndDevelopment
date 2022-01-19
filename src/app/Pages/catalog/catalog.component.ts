@@ -30,13 +30,28 @@ export class CatalogComponent implements OnInit {
   vendorstafflist1:any;
   count4:any;
   courseid:any;
+  stafflist:any;
   search:any;
   showfullcards:any;
   categorylist:any;
-
+  userid:any;
   ngOnInit(): void {
     this.GetCourse() ;
     this.show1 = 1; 
+    this.GetCategoryMaster();
+
+    this.userid = sessionStorage.getItem('userid')
+
+
+    this.LearningService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist = data.filter(x => x.id == this.userid);;
+    });
+  // this.showfullcards=1;
+  this.show1 = 1;
+  // this.show2 = 1;
+  // this.show3 = 1;
+    //  this.show = 0;
   }
 
   enroll(){
@@ -99,6 +114,11 @@ export class CatalogComponent implements OnInit {
   //  Showcards3(value:any){
   //   this.show3=value;
   //  }
+
+  // showcards(id)
+  // {
+  //   this.courselist=this.courselist.filter(x=>x.)
+  // }
 
 
   public GetCategoryMaster() {
