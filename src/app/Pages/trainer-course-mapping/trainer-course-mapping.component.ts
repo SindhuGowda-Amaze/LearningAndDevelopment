@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LearningService } from 'src/app/learning.service';
 @Component({
   selector: 'app-trainer-course-mapping',
   templateUrl: './trainer-course-mapping.component.html',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerCourseMappingComponent implements OnInit {
 
-  constructor() { }
+  constructor(public LearningService:LearningService) { }
 
   ngOnInit(): void {
   }
+  result:any;
 
+  public GetTrainerCourseMapping() {
+    debugger
+    this.LearningService.GetTrainerCourseMapping().subscribe(
+      data => {
+        debugger
+        this.result = data;
+      })
+  }
 }
