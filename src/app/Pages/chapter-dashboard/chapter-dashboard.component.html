@@ -7,7 +7,7 @@
                     <p class="Heading">Chapter Dashboard</p>
                 </div>
                 <div class="col-lg-2">
-                    <p class="Text" style="float:right; padding-right:50px;">Count:1</p>
+                    <p class="Text" style="float:right; padding-right:50px;">Count:{{coursedetails.length}}</p>
                 </div>
             </div>
             <hr class="HrLine">
@@ -17,17 +17,15 @@
                     <p class="Text">Filter By</p>
                 </div>
                 <div class="col-lg-3">
-                    <select class="form-control" name="cars" id="Duration">
-                        <option value="Select">Select Course</option>
-                        <option value="">Compliance</option>
-                        <option value=""> Marketing</option>
-                        <option value="">Communication Skills</option>
+                    <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
+                        <option value="0">Select Course</option>
+                        <option *ngFor="let details of courselist" value="{{details.id}}">{{details.name}}</option>
                     </select>
                 </div>
                 <div class="col-lg-5">
                     <!-- <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search"
                         name="search"> -->
-                    <input type="search" class="form-control" placeholder="Search for Name..">
+                    <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search">
                 </div>
             </div><br>
             <div class="row">
@@ -41,7 +39,6 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <!-- <table class="table" *ngIf="(vendordetails | filter: search).length > 0; else noResults"> -->
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="head">
@@ -53,7 +50,7 @@
                                     <th>Chapter Text</th>
                                     <th>Actions</th>
                                 </tr>
-                                <tr *ngFor="let details of coursedetails">
+                                <tr *ngFor="let details of coursedetails | filter: search">
                                     <td>{{details.courseName}}</td>
                                     <td>{{details.name}}</td>
                                     <td>{{details.description}}</td>

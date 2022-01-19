@@ -9,27 +9,33 @@ import swal from 'sweetalert2';
 })
 export class ChapterDashboardComponent implements OnInit {
   coursedetails: any;
+  search: any;
 
   constructor(private LearningService: LearningService) { }
+  courselist: any;
 
   ngOnInit(): void {
     this.GetChapter();
+    this.GetCourse();
   }
 
-  // public GetChapterAttachmentByChapterID() {
+  public GetCourse() {
+    debugger
+    this.LearningService.GetCourse().subscribe(
+      data => {
+        debugger
+        this.courselist = data;
+      })
+  }
 
-  //   this.GetChapterAttachmentByChapterID().subscribe(data => {   
-  //   this.coursedetails= data;  
-  //   })
-  // }
-
-
+  dummcoursedetails: any;
 
   public GetChapter() {
     debugger
     this.LearningService.GetChapter().subscribe(data => {
       debugger
       this.coursedetails = data;
+      this.dummcoursedetails = data;
       debugger
     })
   }
@@ -54,21 +60,21 @@ export class ChapterDashboardComponent implements OnInit {
     window.open('assets/Images/JAVA_PPT.ppt')
   }
 
-  edit(id: any){
+  edit(id: any) {
     debugger
-   location.href="/Chapter/"+ id;
+    location.href = "/Chapter/" + id;
   }
 
 
-  public Ondelete(id:any) {
+  public Ondelete(id: any) {
     this.LearningService.DeleteChapter(id).subscribe(
       data => {
         debugger
-        this. GetChapter();
+        this.GetChapter();
         swal.fire('Sucessfully Deleted');
       }
     )
-    
+
   }
 
 
@@ -85,8 +91,18 @@ export class ChapterDashboardComponent implements OnInit {
     })
   }
 
-  openAttchments(photo:any)
-  {
-window.open(photo,"_blank")
+  openAttchments(photo: any) {
+    window.open(photo, "_blank")
+  }
+  courseid: any;
+
+  getcourseid(even: any) {
+    this.courseid = even.target.value;
+    if (even.target.value != 0) {
+      this.coursedetails = this.dummcoursedetails.filter((x: { courseID: any; }) => x.courseID == this.courseid)
+    }
+    else{
+      this.GetChapter();
+    }
   }
 }
