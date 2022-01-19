@@ -46,4 +46,9 @@ export class TrainerComponent implements OnInit {
     )
   }
 
+  OpenPdf(pdf:any)
+  {
+    window.open(pdf,"_blank")
+  }
+
 }

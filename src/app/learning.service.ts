@@ -289,6 +289,12 @@ export class LearningService {
       this.baseURL + '/Master/GetCategoryMaster');
   }
 
+  public GetQuestionMaster() {
+    debugger
+    let APIURL = this.baseURL + "Master/GetQuestionMaster";
+    return this.http.get<any[]>(APIURL);
+  }
+
   public GetTrainer() {
     debugger
     let APIURL = this.baseURL + "Master/GetTrainer";
@@ -341,7 +347,17 @@ export class LearningService {
     return this.http.get<any[]>(this.baseURL + "/Master/GetChapter");
   }
   
-  
+  public GetTrainerCourseMapping() {
+    debugger
+    let APIURL = this.baseURL + "Master/GetTrainerCourseMapping";
+    return this.http.get<any[]>(APIURL);
+  }
+
+  public InsertTrainerCourseMapping(data: any) {
+    debugger;
+    this.url =  this.baseURL + '/Master/InsertTrainerCourseMapping';
+    return this.http.post(this.url, data);
+  }
 
   
 }

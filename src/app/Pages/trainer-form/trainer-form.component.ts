@@ -20,7 +20,8 @@ export class TrainerFormComponent implements OnInit {
   EmailID:any;
   Address:any;
   YearOfExperience:any;
-  Resume:any;
+  // Resume:any;
+  Company_logo:any;
   SkillsAndTechnology:any;
   TrainerFeePerCourse:any;
 
@@ -44,7 +45,7 @@ export class TrainerFormComponent implements OnInit {
     this.EmailID=this.result[0].email;
     this.Address=this.result[0].address;
     this.YearOfExperience=this.result[0].yearOfExperience;
-    this.Resume=this.result[0].resume;
+    this.Company_logo=this.result[0].resume;
     this.SkillsAndTechnology=this.result[0].skillAndTecchnology;
     this.TrainerFeePerCourse=this.result[0].trainerFee;
       }
@@ -59,7 +60,7 @@ export class TrainerFormComponent implements OnInit {
       "Email": this.EmailID,
       "Address": this.Address,
       "YearOfExperience": this.YearOfExperience,
-      "Resume": this.Resume,
+      "Resume":  this.Company_logo,
       "SkillAndTecchnology": this.SkillsAndTechnology,
       "TrainerFee": this.TrainerFeePerCourse
     };
@@ -81,7 +82,7 @@ export class TrainerFormComponent implements OnInit {
       "Email": this.EmailID,
       "Address": this.Address,
       "YearOfExperience": this.YearOfExperience,
-      "Resume": this.Resume,
+      "Resume": this.Company_logo,
       "SkillAndTecchnology": this.SkillsAndTechnology,
       "TrainerFee": this.TrainerFeePerCourse        
       };
@@ -95,7 +96,7 @@ export class TrainerFormComponent implements OnInit {
       })
   }
 
-
+  
 
   files: File[] = [];
   onSelect(event: { addedFiles: any; }) {
@@ -112,11 +113,11 @@ export class TrainerFormComponent implements OnInit {
   }
   public uploadattachments() {
     debugger
-    // this.RecruitmentServiceService.UploadImages(this.files).subscribe(res => {
-    //   debugger
-    //   this.Company_logo = res;
+    this.LearningService.AttachmentsUpload(this.files).subscribe(res => {
+      debugger
+      this.Company_logo = res;
       alert("ATTACHMENT UPLOADED");
-    // })
+    })
   }
   cancel() {
     location.href = "/Trainer";
