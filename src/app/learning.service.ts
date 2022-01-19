@@ -410,10 +410,5 @@ export class LearningService {
       this.baseURL + "/Master/DeleteChapter?ID=" + ID);
   }
 
-  public InsertAssessments(data: any) {
-    debugger;
-    this.url =  this.baseURL + '/Master/InsertAssessments';
-    return this.http.post(this.url, data);
-  }
-
+  
 }
