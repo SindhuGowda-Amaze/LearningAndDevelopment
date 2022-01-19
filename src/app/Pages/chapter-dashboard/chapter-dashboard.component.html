@@ -119,7 +119,7 @@
                         <br>
                         <img src="{{attchments.photo}}" *ngIf="attchments.attachmentType=='Image'" (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
                         <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Pdf'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                        <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Document'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                        <img src="assets/Images/word.png" *ngIf="attchments.attachmentType=='Document'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
                         <img src="assets/Images/files.png" *ngIf="attchments.attachmentType=='Ppt'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
                         <video controls style="height: 100px;width: 50%;" autoplay *ngIf="attchments.attachmentType=='video'" (click)="openAttchments(attchments.photo)">
                             <source src="{{attchments.photo}}"  (click)="openAttchments(attchments.photo)" type="video/mp4">
