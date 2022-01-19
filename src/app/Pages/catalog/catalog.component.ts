@@ -32,8 +32,11 @@ export class CatalogComponent implements OnInit {
 
   search:any;
   showfullcards:any;
+  categorylist:any;
 
   ngOnInit(): void {
+    this.GetCourse() ;
+    this.GetCategoryMaster();
   // this.showfullcards=1;
   this.show1 = 1;
   // this.show2 = 1;
@@ -103,5 +106,22 @@ export class CatalogComponent implements OnInit {
   //  }
 
 
+  public GetCategoryMaster() {
+    debugger
+    this.LearningService.GetCategoryMaster().subscribe(
+      data => {
+        debugger
+        this.categorylist = data;
+      })
+  }
 
+  courselist:any;
+  public GetCourse() {
+    debugger
+    this.LearningService.GetCourse().subscribe(
+      data => {
+        debugger
+        this.courselist = data;
+      })
+  }
 }

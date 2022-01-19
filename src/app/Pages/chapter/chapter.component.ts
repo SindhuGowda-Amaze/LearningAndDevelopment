@@ -23,6 +23,8 @@ export class ChapterComponent implements OnInit {
   files1: File[] = [];
 
   onSelect1(event: any) {
+    this.files1.length=0;
+    this.files1=[];
     console.log(event);
     this.files1.push(...event.addedFiles);
     this.uploadattachments1();
@@ -63,12 +65,18 @@ export class ChapterComponent implements OnInit {
   ChapterText: any;
   chapterID: any;
 
+  getCourseID(even:any)
+  {
+    debugger
+    this.CourseID=even.target.value;
+  }
+
   Save() {
     debugger
     var json = {
-      "courseID": this.CourseID,
-      "name": this.name,
-      "description": this.description,
+      "CourseID": this.CourseID,
+      "Name": this.name,
+      "Description": this.description,
       "chapterPhoto": this.ChapterPhoto,
       "chapterText": this.ChapterText,
     };
@@ -117,7 +125,7 @@ export class ChapterComponent implements OnInit {
     debugger
     this.LearningService.AttachmentsUpload(this.files).subscribe(res => {
       debugger
-      this.Course_Photo = res;
+      this.ChapterPhoto = res;
       alert("ATTACHMENT UPLOADED");
     })
   }
