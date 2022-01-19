@@ -17,8 +17,6 @@ export class AssessmentFormComponent implements OnInit {
   chapterid: any;
   questionid: any;
   courseName: any;
-  courselist: any;
-  questionlist: any;
   constructor(public LearningService: LearningService, public ActivatedRoute: ActivatedRoute) { }
   CourseList: any;
   ChapterList: any;
