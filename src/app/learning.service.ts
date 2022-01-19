@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import {environment} from "../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
@@ -7,7 +8,9 @@ export class LearningService {
   public baseURL = "http://103.133.214.197/LearningandDevelopment/";
   public host = "https://digioffice.amazeone.co/digiofficeapi";
   url:any;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    console.log("environment",environment.hostUrl);
+  }
 
   public GetLoginTypeMaster() {
 
@@ -313,7 +316,7 @@ export class LearningService {
     return this.http.post<any[]>(APIURL,json);
   }
 
-  public UpdateTrainer(json : any) {    //not yet done
+  public UpdateTrainer(json : any) {
     debugger
     let APIURL = this.baseURL + "Master/UpdateTrainer";
     return this.http.post<any[]>(APIURL,json);
@@ -324,11 +327,31 @@ export class LearningService {
     let APIURL = this.baseURL + "Master/DeleteTrainer?ID="+id;
     return this.http.get<any[]>(APIURL);
   }
+
   public GetAssessments() {
-    debugger;
-    return this.http.get<any[]>(
-      this.baseURL + '/Master/GetAssessments');
+    debugger
+    let APIURL = this.baseURL + "Master/GetAssessments";
+    return this.http.get<any[]>(APIURL);
   }
+
+  public InsertAssessments(json : any) {
+    debugger
+    let APIURL = this.baseURL + "Master/InsertAssessments";
+    return this.http.post<any[]>(APIURL,json);
+  }
+
+  public UpdateAssessments(json : any) {
+    debugger
+    let APIURL = this.baseURL + "Master/UpdateAssessments";
+    return this.http.post<any[]>(APIURL,json);
+  }
+
+  public DeleteAssessments(id : any) {
+    debugger
+    let APIURL = this.baseURL + "Master/DeleteAssessments?ID="+id;
+    return this.http.get<any[]>(APIURL);
+  }
+  
 
   public InsertChapterAttachment(data: any) {
     debugger;

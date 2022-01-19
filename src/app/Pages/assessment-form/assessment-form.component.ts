@@ -9,9 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 export class AssessmentFormComponent implements OnInit {
   Course_Photo: any;
   Attachment: any;
-  result: any;
-  result1: any;
-  results: any;
+  CourseList: any;
+  ChapterList: any;
+  QuestionList: any;
   id: any;
   courseName:any;
   courselist:any;
@@ -52,18 +52,16 @@ export class AssessmentFormComponent implements OnInit {
     this.LearningService.GetQuestionMaster().subscribe(
       data => {
         debugger
-        this.questionlist = data;
+        this.QuestionList = data;
       })
   }
-
-  
 
   public GetChapter() {
     debugger
     this.LearningService.GetChapter().subscribe(
       data => {
         debugger
-        this.results = data;
+        this.ChapterList = data;
       })
   }
   public GetCourse() {
@@ -71,7 +69,7 @@ export class AssessmentFormComponent implements OnInit {
     this.LearningService.GetCourse().subscribe(
       data => {
         debugger
-        this.result1 = data;
+        this.CourseList = data;
       })
   }
 

@@ -37,21 +37,21 @@
                         </select> -->
                     </div>
                     <div class="col-md-2">
-                        <select class="form-control" name="cars" id="Duration">
-                            <option value="Select">Select Course</option>
-                            <option value="">Compliance</option>
+                        <select class="form-control" name="id" id="id">
+                            <option *ngFor="let details of CourseList" value="{{details.id}}">{{details.name}}</option>
+                            <!-- <option value="">Compliance</option>
                             <option value=""> Marketing</option>
-                            <option value="">Communication Skills</option>
+                            <option value="">Communication Skills</option> -->
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <input class="form-control inputfield" placeholder="Email ID">
+                        <!-- <input class="form-control inputfield" placeholder="Email ID" [(ngModel)]="EmailID"> -->
                     </div>
                     <div class="col-md-2">
-                        <input type="date" class="form-control inputfield" placeholder="Start Date">
+                        <!-- <input type="date" class="form-control inputfield" placeholder="Start Date" [(ngModel)]="StartDate"> -->
                     </div>
                     <div class="col-md-2">
-                        <input type="date" class="form-control inputfield" placeholder="End Date">
+                        <!-- <input type="date" class="form-control inputfield" placeholder="End Date" [(ngModel)]="EndDate"> -->
                     </div>
                 </div><br>
                 <div class="row leavereq">
@@ -65,10 +65,10 @@
                 </div>
                 <div class="row leavereq">
                     <div class="col-md-4">
-                        <input class="form-control inputfield" placeholder="Batch Name">
+                        <!-- <input class="form-control inputfield" placeholder="Batch Name" [(ngModel)]="BatchName"> -->
                     </div>
                     <div class="col-md-3">
-                        <input class="form-control inputfield" placeholder="Allowed Students per Batch">
+                        <!-- <input class="form-control inputfield" placeholder="Allowed Students per Batch" [(ngModel)]="AllowedStudents"> -->
                     </div>
                 </div>
                 <br> 
