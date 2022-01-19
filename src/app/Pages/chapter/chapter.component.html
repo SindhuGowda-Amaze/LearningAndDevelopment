@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-lg-2">
                         <!-- <input class="form-control" placeholder="Course Nmae"> -->
-                        <select class="form-control" name="cars" id="Duration" [(ngModel)]="CourseID">
+                        <select class="form-control" name="cars" id="Duration" [(ngModel)]="CourseID" (change)="getCourseID($event)">
                             <option value="Select">Course Name</option>
                             <option  *ngFor="let details of result"  value="{{details.id}}">{{details.name}}</option>
                             <!-- <option value=""> Marketing</option>
@@ -37,7 +37,7 @@
                         </select>
                     </div>
                     <div class="col-lg-2">
-                        <input class="form-control" placeholder="Chapter Name" [(ngModel)]="name">
+                        <input class="form-control" placeholder="Chapter Name" [(ngModel)]="name" name="name">
                     </div>
                     <div class="col-lg-3">
                         <textarea class="form-control" placeholder="Description" [(ngModel)]="description"></textarea>

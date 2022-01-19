@@ -41,6 +41,7 @@ const routes: Routes = [
   { path: 'Course', component: CourseComponent },
   { path: 'Course/:id', component: CourseComponent},
   { path: 'Chapter', component: ChapterComponent },
+  { path: 'Chapter/:id', component: ChapterComponent },
   { path: 'Employee', component: EmployeeComponent },
   { path: 'EmployeeForm', component: EmployeeFormComponent},
   { path: 'Catalog', component: CatalogComponent },

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LearningService } from 'src/app/learning.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-chapter-dashboard',
@@ -53,6 +54,26 @@ export class ChapterDashboardComponent implements OnInit {
     window.open('assets/Images/JAVA_PPT.ppt')
   }
 
+  edit(id: any){
+    debugger
+   location.href="/Chapter/"+ id;
+  }
+
+
+  public Ondelete(id:any) {
+    this.LearningService.DeleteChapter(id).subscribe(
+      data => {
+        debugger
+        this. GetChapter();
+        swal.fire('Sucessfully Deleted');
+      }
+    )
+    
+  }
+
+
+
+
 
   Attachmentlist: any;
 
@@ -62,5 +83,10 @@ export class ChapterDashboardComponent implements OnInit {
       debugger
       this.Attachmentlist = data;
     })
+  }
+
+  openAttchments(photo:any)
+  {
+window.open(photo,"_blank")
   }
 }

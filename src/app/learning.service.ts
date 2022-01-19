@@ -358,6 +358,17 @@ export class LearningService {
     this.url =  this.baseURL + '/Master/InsertTrainerCourseMapping';
     return this.http.post(this.url, data);
   }
+  public UpdateChapter(data: any) {
+    debugger;
+    this.url = this.host + '/Master/UpdateChapter';
+    return this.http.post(this.url, data);
+  }
 
-  
+  public DeleteChapter(ID: any) {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/DeleteChapter?ID=" + ID);
+  }
+
+
+
 }
