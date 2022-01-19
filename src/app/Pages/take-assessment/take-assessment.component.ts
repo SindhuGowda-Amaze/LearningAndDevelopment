@@ -7,10 +7,11 @@ import Swal from 'sweetalert2';
   styleUrls: ['./take-assessment.component.css']
 })
 export class TakeAssessmentComponent implements OnInit {
-
+  loader:any;
   constructor() { }
 
   ngOnInit(): void {
+    this.loader=true;
   }
   submit(){
     Swal.fire({
@@ -28,8 +29,11 @@ export class TakeAssessmentComponent implements OnInit {
           'Your Answers is successfully Submitted.',
           'success'
         )
+       
       }
     })
+    this.loader=false;
+    location.href="#/AssessmentResult"
   }
 
   cancel(){

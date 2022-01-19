@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2'
-
+import { LearningService } from 'src/app/learning.service';
 
 @Component({
   selector: 'app-my-course-dashboard',
@@ -9,9 +9,18 @@ import Swal from 'sweetalert2'
 })
 export class MyCourseDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public LearningService:LearningService) { }
   show:any;
+  stafflist:any;
+  userid:any;
   ngOnInit(): void {
+    this.userid = sessionStorage.getItem('userid')
+
+
+    this.LearningService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist = data.filter(x => x.id == this.userid);;
+    });
     this.show=2;
   }
   public flip1(event: { currentTarget: any; }) {
@@ -53,5 +62,7 @@ export class MyCourseDashboardComponent implements OnInit {
       }
     })
   }
+
+  
 
 }

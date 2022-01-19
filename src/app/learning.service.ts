@@ -336,5 +336,18 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
+
+  public GetChapterAttachmentByChapterID(chapterid:any) {
+
+    return this.http.get<any[]>(this.host + "/Master/GetChapterAttachmentByChapterID?ChapterID="+chapterid);
+  }
+
+  public GetChapter() {
+
+    return this.http.get<any[]>(this.host + "/Master/GetChapter");
+  }
+  
+  
+
   
 }

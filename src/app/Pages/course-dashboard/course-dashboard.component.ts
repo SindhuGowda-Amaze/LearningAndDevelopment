@@ -10,8 +10,9 @@ export class CourseDashboardComponent implements OnInit {
   constructor(public LearningService: LearningService) { }
   result: any;
   id:any;
-  name:any;
+  categoryName:any;
   search:any;
+  result1:any;
   ngOnInit(): void {
     this.GetCourse() ;
   }
@@ -30,7 +31,7 @@ export class CourseDashboardComponent implements OnInit {
     this.LearningService.GetCategoryMaster().subscribe(
       data => {
         debugger
-        this.result = data;
+        this.result1 = data;
       })
   }
 

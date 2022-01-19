@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LearningService } from 'src/app/learning.service';
 
 @Component({
   selector: 'app-chapter-dashboard',
@@ -6,20 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chapter-dashboard.component.css']
 })
 export class ChapterDashboardComponent implements OnInit {
+  coursedetails:any;
 
-  constructor() { }
+  constructor(private LearningService:LearningService) { }
 
   ngOnInit(): void {
+    this.GetChapter();
   }
 
+  // public GetChapterAttachmentByChapterID() {
+     
+  //   this.GetChapterAttachmentByChapterID().subscribe(data => {   
+  //   this.coursedetails= data;  
+  //   })
+  // }
 
 
 
-
-
-
-
-  
+  public GetChapter() {
+     
+    this.LearningService.GetChapter().subscribe(data => {   
+    this.coursedetails = data;      
+    })
+  }
+ 
   files: File[] = [];
 
   onSelect(event:any) {
