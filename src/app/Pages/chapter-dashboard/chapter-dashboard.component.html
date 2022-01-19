@@ -7,7 +7,7 @@
                     <p class="Heading">Chapter Dashboard</p>
                 </div>
                 <div class="col-lg-2">
-                    <p class="Text" style="float:right; padding-right:50px;">Count:1</p>
+                    <p class="Text" style="float:right; padding-right:50px;">Count:{{coursedetails.length}}</p>
                 </div>
             </div>
             <hr class="HrLine">
@@ -17,17 +17,15 @@
                     <p class="Text">Filter By</p>
                 </div>
                 <div class="col-lg-3">
-                    <select class="form-control" name="cars" id="Duration">
-                        <option value="Select">Select Course</option>
-                        <option value="">Compliance</option>
-                        <option value=""> Marketing</option>
-                        <option value="">Communication Skills</option>
+                    <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
+                        <option value="0">Select Course</option>
+                        <option *ngFor="let details of courselist" value="{{details.id}}">{{details.name}}</option>
                     </select>
                 </div>
                 <div class="col-lg-5">
                     <!-- <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search"
                         name="search"> -->
-                    <input type="search" class="form-control" placeholder="Search for Name..">
+                    <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search">
                 </div>
             </div><br>
             <div class="row">
@@ -41,7 +39,6 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <!-- <table class="table" *ngIf="(vendordetails | filter: search).length > 0; else noResults"> -->
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="head">
@@ -53,20 +50,20 @@
                                     <th>Chapter Text</th>
                                     <th>Actions</th>
                                 </tr>
-                                <tr *ngFor="let details of coursedetails">
+                                <tr *ngFor="let details of coursedetails | filter: search">
                                     <td>{{details.courseName}}</td>
-                                    <td>{{details.chapterName}}</td>
+                                    <td>{{details.name}}</td>
                                     <td>{{details.description}}</td>
-                                    <td>{{details.chapterPhoto}}</td>
+                                    <td><img src="{{details.chapterPhoto}}" style="width:100px"></td>
 
-                                    <td><img class="pdfimg" src="assets/Images/files.png" style="width: 20px;"
+                                    <td><img class="pdfimg" src="../../../assets/Images/image.png" style="width: 20px;"
                                             data-toggle="modal" data-target="#exampleModal"
                                             (click)="ShowAttachments(details.id)">
 
                                     <td>{{details.chapterText}}</td>
-                                    <!-- <td><button class="button1" (click)="edit(vendor.id)">Edit</button> <br> <br>
-                                    <button class="button2" (click)="Ondelete(vendor.id)">Delete</button>
-                                </td> -->
+                                    <td><button class="button1" (click)="edit(details.id)">Edit</button> <br> <br>
+                                    <button class="button2" (click)="Ondelete(details.id)">Delete</button>
+                                </td>
                                 </tr>
 
 
@@ -118,12 +115,20 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-6" *ngFor="let attchments of Attachmentlist">
+                    <div class="col-lg-3" *ngFor="let attchments of Attachmentlist">
                         <br>
-                        <img src="{{attchments.photo}}" style="width: 96%;height: 100px;"><br><br>
-                    </div><br>
-                </div><br><br>
-            </div><br><br>
+                        <img src="{{attchments.photo}}" *ngIf="attchments.attachmentType=='Image'" (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                        <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Pdf'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                        <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Document'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                        <img src="assets/Images/files.png" *ngIf="attchments.attachmentType=='Ppt'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                        <video controls style="height: 100px;width: 50%;" autoplay *ngIf="attchments.attachmentType=='video'" (click)="openAttchments(attchments.photo)">
+                            <source src="{{attchments.photo}}"  (click)="openAttchments(attchments.photo)" type="video/mp4">
+                            <source src="{{attchments.photo}}"  (click)="openAttchments(attchments.photo)" type="video/ogg">
+                            Your browser does not support the video tag.
+                          </video>
+                    </div>
+                </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
