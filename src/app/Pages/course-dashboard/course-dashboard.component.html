@@ -17,12 +17,8 @@
                     <p class="Text">Filter By</p>
                 </div>
                 <div class="col-lg-3">
-                    <select class="form-control" name="categoryName" id="categoryName" [(ngModel)]="categoryName">
-                        <!-- <option value="Select">Select</option> -->
+                    <select class="form-control" name="categoryName" id="categoryName" [(ngModel)]="categoryName"> 
                         <option  *ngFor="let details of result" value="{{details.name}}">{{details.name}}</option>
-                        <!-- <option value=""> Marketing</option>
-                        <option value="">Communication Skills</option>
-                        <option value="">IT Software</option> -->
                     </select>
                 </div>
                 <div class="col-lg-5">
@@ -74,7 +70,11 @@
                                     <td>{{details.categoryName}}</td>
                                     <td>{{details.name}}</td>
                                     <td>{{details.description}}</td>
-                                    <td>{{details.photo}}<img class="image" src="assets/Images/course1.png" alt=""></td>
+                                    <td>
+
+                                        <img src="{{details.photo}}" width="50%" height="auto">
+                                    </td>
+                                    <!-- <img class="image" src="assets/Images/course1.png" alt=""> -->
                                     <td>{{details.duration}}</td>
                                     <td>{{details.fee}}</td>
                                     <td>{{details.entryCriteria}}</td>

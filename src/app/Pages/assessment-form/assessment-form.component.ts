@@ -13,7 +13,9 @@ export class AssessmentFormComponent implements OnInit {
   result1: any;
   results: any;
   id: any;
-
+  courseName:any;
+  courselist:any;
+  questionlist:any;
   constructor(public LearningService:LearningService, public ActivatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -50,9 +52,11 @@ export class AssessmentFormComponent implements OnInit {
     this.LearningService.GetQuestionMaster().subscribe(
       data => {
         debugger
-        this.result = data;
+        this.questionlist = data;
       })
   }
+
+  
 
   public GetChapter() {
     debugger

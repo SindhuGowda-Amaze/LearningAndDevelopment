@@ -28,16 +28,17 @@
                 </div>
                 <div class="row leavereq">
                     <div class="col-md-2">
-                        <select class="form-control" name="cars" id="Duration">
-                            <option value="Select">Select Trainer</option>
-                            <option *ngFor="let details of result" value="{{details.name}}">{{details.name}}</option>
-                            <!-- <option value="">Faran</option>
-                            <option value="">Peeter</option> -->
+                        <select class="form-control" name="id" id="id">
+                            <option *ngFor="let details of trainerlist" value="{{details.id}}">{{details.name}}</option>
                         </select>
+
+                        <!-- <select class="form-control" name="categoryName" id="categoryName" [(ngModel)]="categoryName"> 
+                            <option  *ngFor="let details of result" value="{{details.name}}">{{details.name}}</option>
+                        </select> -->
                     </div>
                     <div class="col-md-2">
                         <select class="form-control" name="cars" id="Duration">
-                            <option value="Select">Select Co</option>
+                            <option value="Select">Select Course</option>
                             <option value="">Compliance</option>
                             <option value=""> Marketing</option>
                             <option value="">Communication Skills</option>

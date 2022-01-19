@@ -345,7 +345,7 @@ export class LearningService {
 
   public GetChapterAttachmentByChapterID(chapterid:any) {
 
-    return this.http.get<any[]>(this.host + "/Master/GetChapterAttachmentByChapterID?ChapterID="+chapterid);
+    return this.http.get<any[]>(this.baseURL + "/Master/GetChapterAttachmentByChapterID?ChapterID="+chapterid);
   }
 
   // public GetChapter() {
@@ -353,7 +353,17 @@ export class LearningService {
   //   return this.http.get<any[]>(this.host + "/Master/GetChapter");
   // }
   
-  
+  public GetTrainerCourseMapping() {
+    debugger
+    let APIURL = this.baseURL + "Master/GetTrainerCourseMapping";
+    return this.http.get<any[]>(APIURL);
+  }
+
+  public InsertTrainerCourseMapping(data: any) {
+    debugger;
+    this.url =  this.baseURL + '/Master/InsertTrainerCourseMapping';
+    return this.http.post(this.url, data);
+  }
 
   
 }
