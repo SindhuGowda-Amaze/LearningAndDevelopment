@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { LearningService } from 'src/app/learning.service';
 import Swal from 'sweetalert2'
 @Component({
   selector: 'app-view-course',
@@ -7,9 +9,15 @@ import Swal from 'sweetalert2'
 })
 export class ViewCourseComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private ActivatedRoute:ActivatedRoute,private LearningService:LearningService ) { }
+  
+  courseid:any;
   ngOnInit(): void {
+    this.ActivatedRoute.params.subscribe(params => {
+      debugger
+       this.courseid = params['id'];
+       this.GetTrainerCourseMapping();
+    })
   }
   enroll(){
     Swal.fire({
@@ -48,6 +56,22 @@ export class ViewCourseComponent implements OnInit {
   public PreviewPdf() {
     window.open('assets/Images/JAVA-Stack-Brochure.pdf',"blank")
   }
+
+
+
+  coursedetails:any;
+
+  public GetTrainerCourseMapping() {
+    debugger
+    this.LearningService.GetTrainerCourseMapping().subscribe(data => {
+      debugger
+      this.coursedetails = data.filter(x=>x.courseID==this.courseid);
+      debugger
+    })
+  }
+
+
+
 
 
 }

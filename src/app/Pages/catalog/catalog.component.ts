@@ -29,19 +29,14 @@ export class CatalogComponent implements OnInit {
   vendorstafflist:any;
   vendorstafflist1:any;
   count4:any;
-
+  courseid:any;
   search:any;
   showfullcards:any;
   categorylist:any;
 
   ngOnInit(): void {
     this.GetCourse() ;
-    this.GetCategoryMaster();
-  // this.showfullcards=1;
-  this.show1 = 1;
-  // this.show2 = 1;
-  // this.show3 = 1;
-    //  this.show = 0;
+    this.show1 = 1; 
   }
 
   enroll(){

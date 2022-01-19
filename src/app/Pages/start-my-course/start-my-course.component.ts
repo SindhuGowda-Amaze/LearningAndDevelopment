@@ -8,11 +8,20 @@ import Swal from 'sweetalert2';
   templateUrl: './start-my-course.component.html',
   styleUrls: ['./start-my-course.component.css']
 })
-export class StartMyCourseComponent implements OnInit {
+export class StartMyCourseComponent implements OnInit { 
 
+  courseid:any;
+  coursedetails:any;
   constructor(private LearningService: LearningService, private ActivatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.ActivatedRoute.params.subscribe(params => {
+     debugger
+      this.courseid = params['id'];
+      this.GetChapter();
+
+    }
+    )
     this.show = 1;
   
   }
@@ -20,6 +29,18 @@ export class StartMyCourseComponent implements OnInit {
   clickEvent(){
     this.show= 1;
   }
+
+
+  public GetChapter() {
+    debugger
+    this.LearningService.GetChapter().subscribe(data => {
+      debugger
+      this.coursedetails = data.filter(x=>x.courseID==this.courseid);
+      debugger
+    })
+  }
+
+
 
 
   public PreviewVideo() {
