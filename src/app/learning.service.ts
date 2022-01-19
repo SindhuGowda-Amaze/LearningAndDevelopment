@@ -295,6 +295,12 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
+  public GetChapter() {
+    debugger
+    let APIURL = this.baseURL + "Master/GetChapter";
+    return this.http.get<any[]>(APIURL);
+  }
+
   public GetTrainer() {
     debugger
     let APIURL = this.baseURL + "Master/GetTrainer";
@@ -342,10 +348,10 @@ export class LearningService {
     return this.http.get<any[]>(this.baseURL + "/Master/GetChapterAttachmentByChapterID?ChapterID="+chapterid);
   }
 
-  public GetChapter() {
+  // public GetChapter() {
 
-    return this.http.get<any[]>(this.baseURL + "/Master/GetChapter");
-  }
+  //   return this.http.get<any[]>(this.host + "/Master/GetChapter");
+  // }
   
   public GetTrainerCourseMapping() {
     debugger

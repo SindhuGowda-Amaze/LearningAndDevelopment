@@ -10,8 +10,12 @@ export class AssessmentFormComponent implements OnInit {
   Course_Photo: any;
   Attachment: any;
   result: any;
+  result1: any;
+  results: any;
   id: any;
-
+  courseName:any;
+  courselist:any;
+  questionlist:any;
   constructor(public LearningService:LearningService, public ActivatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -23,6 +27,24 @@ export class AssessmentFormComponent implements OnInit {
         this.GetQuestionMaster();
       }
     })
+    
+    this.GetChapter();
+    this.ActivatedRoute.params.subscribe(params => {
+      debugger
+      this.id = params["id"];
+      if (this.id != null && this.id != undefined) {
+        this.GetChapter();
+      }
+    })
+
+    this.GetCourse();
+    this.ActivatedRoute.params.subscribe(params => {
+      debugger
+      this.id = params["id"];
+      if (this.id != null && this.id != undefined) {
+        this.GetCourse();
+      }
+    })
   }
 
   public GetQuestionMaster() {
@@ -30,7 +52,26 @@ export class AssessmentFormComponent implements OnInit {
     this.LearningService.GetQuestionMaster().subscribe(
       data => {
         debugger
-        this.result = data;
+        this.questionlist = data;
+      })
+  }
+
+  
+
+  public GetChapter() {
+    debugger
+    this.LearningService.GetChapter().subscribe(
+      data => {
+        debugger
+        this.results = data;
+      })
+  }
+  public GetCourse() {
+    debugger
+    this.LearningService.GetCourse().subscribe(
+      data => {
+        debugger
+        this.result1 = data;
       })
   }
 
