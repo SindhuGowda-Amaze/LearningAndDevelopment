@@ -57,7 +57,9 @@
                                     <td>{{details.address}}</td>
                                     <td>{{details.yearOfExperience}}</td>
                                     <!-- <td><img class="pdfimg" src="../../../assets/Images/pdf.jpg"></td> -->
-                                    <td>{{details.resume}}</td>
+                                    <td>
+                                        <img src="assets/pdf.jpg" *ngIf="details.nopdf=='0'" style="width: 30px;" (click)="OpenPdf(details.resumeUrl)">
+                                    </td>
                                     <td>{{details.skillAndTecchnology}}</td>
                                     <td>{{details.trainerFee}}</td>
                                     <td><button class="button1" routerLink="/TrainerForm" [routerLink]="['/TrainerForm', details.id]">Edit</button> <br><br>

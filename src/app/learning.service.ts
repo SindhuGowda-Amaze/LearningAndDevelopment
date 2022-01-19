@@ -289,6 +289,12 @@ export class LearningService {
       this.baseURL + '/Master/GetCategoryMaster');
   }
 
+  public GetQuestionMaster() {
+    debugger
+    let APIURL = this.baseURL + "Master/GetQuestionMaster";
+    return this.http.get<any[]>(APIURL);
+  }
+
   public GetTrainer() {
     debugger
     let APIURL = this.baseURL + "Master/GetTrainer";

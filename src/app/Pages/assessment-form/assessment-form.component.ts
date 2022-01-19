@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LearningService } from 'src/app/learning.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-assessment-form',
   templateUrl: './assessment-form.component.html',
@@ -8,11 +9,33 @@ import { LearningService } from 'src/app/learning.service';
 export class AssessmentFormComponent implements OnInit {
   Course_Photo: any;
   Attachment: any;
+  result: any;
+  id: any;
 
-  constructor(public LearningService:LearningService) { }
+  constructor(public LearningService:LearningService, public ActivatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.GetQuestionMaster();
+    this.ActivatedRoute.params.subscribe(params => {
+      debugger
+      this.id = params["id"];
+      if (this.id != null && this.id != undefined) {
+        this.GetQuestionMaster();
+      }
+    })
   }
+
+  public GetQuestionMaster() {
+    debugger
+    this.LearningService.GetQuestionMaster().subscribe(
+      data => {
+        debugger
+        this.result = data;
+      })
+  }
+
+
+
   cancel() {
     location.href = "/Assessmentdashboard";
   }
