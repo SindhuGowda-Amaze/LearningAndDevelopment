@@ -217,6 +217,8 @@
                                     <button class="btn" data-toggle="modal"
                                         data-target="#enroll" (click)="getcoureid(details.id)">ENROLL</button>&nbsp;&nbsp;
                                     <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button  [routerLink]="['/ViewCourse',details.id]"  class="btn" >VIEW COURSE</button>
                                 </div>
                             </div>
                         </div><br>

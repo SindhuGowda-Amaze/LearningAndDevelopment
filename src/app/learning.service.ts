@@ -305,6 +305,14 @@ public baseURL = "http://localhost:4199/";
     return this.http.get<any[]>(APIURL);
   }
 
+  public GetTrainerCourseMapping() {
+    debugger
+    let APIURL = this.baseURL + "Master/GetTrainerCourseMapping";
+    return this.http.get<any[]>(APIURL);
+  }
+
+
+
   public GetTrainer() {
     debugger
     let APIURL = this.baseURL + "Master/GetTrainer";
@@ -335,7 +343,6 @@ public baseURL = "http://localhost:4199/";
     return this.http.get<any[]>(APIURL);
   }
 
- 
 
   public UpdateAssessments(json : any) {
     debugger
@@ -373,11 +380,11 @@ public baseURL = "http://localhost:4199/";
   //   return this.http.get<any[]>(this.host + "/Master/GetChapter");
   // }
   
-  public GetTrainerCourseMapping() {
-    debugger
-    let APIURL = this.baseURL + "Master/GetTrainerCourseMapping";
-    return this.http.get<any[]>(APIURL);
-  }
+  // public GetTrainerCourseMapping() {
+  //   debugger
+  //   let APIURL = this.baseURL + "Master/GetTrainerCourseMapping";
+  //   return this.http.get<any[]>(APIURL);
+  // }
 
   public InsertTrainerCourseMapping(data: any) {
     debugger;

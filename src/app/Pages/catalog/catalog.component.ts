@@ -29,6 +29,7 @@ export class CatalogComponent implements OnInit {
   vendorstafflist:any;
   vendorstafflist1:any;
   count4:any;
+  courseid:any;
   stafflist:any;
   search:any;
   showfullcards:any;
@@ -37,6 +38,7 @@ export class CatalogComponent implements OnInit {
   manager:any;
   ngOnInit(): void {
     this.GetCourse() ;
+    this.show1 = 1; 
     this.GetCategoryMaster();
 
     this.userid = sessionStorage.getItem('userid')
