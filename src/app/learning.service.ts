@@ -334,7 +334,11 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
- 
+  public InsertAssessments(data: any) {
+    debugger;
+    this.url =  this.baseURL + '/Master/InsertAssessments';
+    return this.http.post(this.url, data);
+  }
 
   public UpdateAssessments(json : any) {
     debugger
