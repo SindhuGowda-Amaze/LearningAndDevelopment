@@ -413,6 +413,13 @@ export class LearningService {
     return this.http.get<any[]>(
       this.baseURL + "/Master/DeleteChapter?ID=" + ID);
   }
+   
+  public InsertAssessments(json : any) {
+    debugger
+    let APIURL = this.baseURL + "Master/InsertAssessments";
+    return this.http.post<any[]>(APIURL,json);
+  }
+
 
   
 }

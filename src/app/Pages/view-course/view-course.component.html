@@ -1,107 +1,90 @@
-
-    <div class="card card1">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-lg-9">
-                    <h1>Java Programming</h1>
-                    <table>
-                        <tr>
-                            <td>
-                                <p>Java Programming introduces computer programming using the Java Programming Language
-                                    with
-                                    object-oriented programming principles. You will get to know about OOP’s Concepts,
-                                    Classes, and Objects, Threads, Files, Applets, Swings, and Act. Emphasis is laid on
-                                    Event-Driven Programming Methods including manipulating and creating objects,
-                                    classes
-                                    using Java for Network Level Programming, and Middleware Development.</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <hr>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <p>Trainer :</p>
-                        </div>
-                        <div class="col-lg-6">
-                            <p>Pavan Kumar</p>
-                        </div>
+<div class="card card1">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-9">
+                <h1>{{coursedetails[0].courseName}}</h1>
+                <table>
+                    <tr>
+                        <td>
+                            <p>{{coursedetails[0].courseDescription}}</p>
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <p>Trainer :</p>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <p>No of Hours :
-
-                        </div>
-                        <div class="col-lg-6">
-                            <p>2 hrs/day</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <p>Start Date :</p>
-
-                        </div>
-                        <div class="col-lg-6">
-                            <p>30th Jan 2021 </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <p>End Date :</p>
-
-                        </div>
-                        <div class="col-lg-6">
-                            <p>30th March 2021</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <p>Entry Criteria :
-                            <p>
-                        </div>
-                        <div class="col-lg-6">
-                            <p>Basic knowledge in communication and a good understanding of English</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <p>Exit Criteria :
-                            <p>
-                        </div>
-                        <div class="col-lg-6">
-                            <p>YOU WILL BE ELIGIBLE FOR A CERTIFICATE ONLY IF AVERAGE ASSIGNMENT SCORE >=10/25 AND EXAM
-                                SCORE >= 30/75. </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <p>Entry Criteria :
-                            <p>
-                        </div>
-                        <div class="col-lg-6">
-                            <p>Basic knowledge in communication and a good understanding of Java</p>
-                        </div>
-                    </div>
-                </div> 
-                    <div class="col-lg-3">
-                        <img src="assets/Images/course1.png">
-                    </div> 
-            </div> <br> <br>
-            <div class="row">
-                <div class="col-lg-5"></div>
-                <div class="col-lg-4">
-                    <div> <button class="button" data-toggle="modal" data-target="#enroll" >ENROLL</button><br>
+                    <div class="col-lg-6">
+                        <p>{{coursedetails[0].trainerName}}</p>
                     </div>
                 </div>
-            </div> 
-        </div>
-    </div> <br>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <p>No of Hours :
 
-    <div class="container-fluid">
-        <div class="card card2">
-            <div class="row">
-                <div class="col-lg-7">
-                    <p style="font-size: 20px; text-align: center; padding:10px;"> Sample Chapter</p>
-                    <div class="card chapter">
+                    </div>
+                    <div class="col-lg-6">
+                        <p>{{coursedetails[0].noofHours}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <p>Start Date :</p>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <p>{{coursedetails[0].startDate}} </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <p>End Date :</p>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <p>{{coursedetails[0].endDate}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <p>Entry Criteria :
+                        <p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p>{{coursedetails[0].courseEntryCriteria}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <p>Exit Criteria :
+                        <p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p>{{coursedetails[0].courseExitCriteria}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <img style="width:100%;height:auto" src="{{coursedetails[0].photo}}">
+            </div>
+        </div> <br> <br>
+        <div class="row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-4">
+                <div> <button class="button" data-toggle="modal" data-target="#enroll">ENROLL</button><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <br>
+
+<div class="container-fluid">
+    <div class="card card2">
+        <div class="row">
+            <div class="col-lg-7">
+                <p style="font-size: 20px; text-align: center; padding:10px;"> Sample Chapter</p>
+                <!-- <div class="card chapter">
                         <div class="row">
                             <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo">
                                 <a href="#demo" class="chapter" data-toggle="collapse"
@@ -171,50 +154,27 @@
                             </div>
                             <hr>
                         </div>
-                    </div>
-                    <div class="card chapter">
-                        <div class="row">
-                            <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo2">
-                                <a href="#demo2" class="chapter" data-toggle="collapse" style="font-size: 18px;">Java
-                                    Programming</a>
-                            </div>
+                    </div> -->
+                <div class="card chapter" *ngFor="let details of chapterdetails">
+                    <div class="row">
+                        <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo2">
+                            <a href="#demo2" class="chapter" data-toggle="collapse" style="font-size: 18px;"
+                                (click)="GetDetails(details.name)">
+                                {{details.name}}</a>
                         </div>
+
+
                         <div id="demo2" class="collapse">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h3 class="chapter">Java Programming
-                                        <br>
-                                    </h3>
                                     <p class="chapter" style="margin-left: 50px;">
-                                        Java Programming Syllabus contains the topics and subtopics to be covered as a
-                                        part
-                                        of
-                                        the
-                                        curriculum. We
-                                        have provided an overview of topics to be prepared during the learning process.
-                                        Right
-                                        from the basic
-                                        one to
-                                        detailed topic students can access the complete Java Programming Exam Syllabus.
-                                        It
-                                        is
-                                        necessary that
-                                        students pay attention to the syllabus at the beginning of the academic session
-                                        itself
-                                        so that you
-                                        can
-                                        prepare in accordance. Plan your studies in advance with the preparation
-                                        resources
-                                        available and
-                                        score
-                                        better grades in the exam.
-                                        <br><br>
+                                        {{details.description}} </p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-8">
                                     <!-- <img src="assets/Images/java.jpg"
-                                style="width: 50%; height: auto;margin-bottom: 10px;"> -->
+                                    style="width: 50%; height: auto;margin-bottom: 10px;"> -->
                                 </div>
                                 <hr>
                                 <div class="col-lg-4">
@@ -230,22 +190,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <p style="font-size: 20px; text-align: center;padding:10px;">Chapter List </p>
-                    <div class="card chapter">
-                        <div class="row">
-                            <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo3">
-                                <a href="#demo3" class="chapter" data-toggle="collapse" style="font-size: 18px;">View
-                                    Chapter List</a>
-                            </div>
+            </div>
+            <div class="col-lg-5">
+                <p style="font-size: 20px; text-align: center;padding:10px;">Chapter List </p>
+                <div class="card chapter">
+                    <div class="row">
+                        <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo3">
+                            <a href="#demo3" class="chapter" data-toggle="collapse" style="font-size: 18px;">View
+                                Chapter List</a>
+
+
                         </div>
-                        <div id="demo3" class="collapse">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <ul>
-                                        <p><img style="width:20px;" src="assets/Images/openbook.png">&nbsp; Basic Java
-                                            constructs like loops and data types</p>
-                                        <p><img style="width:20px;" src="assets/Images/openbook.png"> &nbsp;String
+                    </div>
+                    <div id="demo3" class="collapse">
+                        <div class="row">
+                            <div class="col-lg-8">
+
+                                <ul *ngFor="let details of chapterdetails">
+
+                                    {{details.name}}
+                                    <!-- <p><img style="width:20px;" src="assets/Images/openbook.png"> </p> -->
+
+                                    <!-- <p><img style="width:20px;" src="assets/Images/openbook.png"> &nbsp;String
                                             Handlings
                                         </p>
                                         <p><img style="width:20px;" src="assets/Images/openbook.png"> &nbsp;Collection
@@ -261,9 +227,8 @@
                                         </p>
                                         <p><img style="width:20px;" src="assets/Images/openbook.png">
                                             &nbsp;Serialisation &
-                                            De-serialisation</p>
-                                    </ul>
-                                </div>
+                                            De-serialisation</p> -->
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -271,63 +236,64 @@
             </div>
         </div>
     </div>
+</div>
 
 
-    <div id="enroll" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Enroll for Course</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <label class="Text">Name:</label>
-                        </div>
-                        <div class="col-lg-5">
-                            <!-- <select class="form-control" [(ngModel)]="Hired">
+<div id="enroll" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Enroll for Course</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text">Name:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <!-- <select class="form-control" [(ngModel)]="Hired">
                             <option value="">Select </option>
                             <option>Yes</option>  
                             <option>No</option> 
                         </select> -->
-                            <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
-                                placeholder="Peeter Ferin" disabled>
-                        </div>
-                    </div> <br>
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <label class="Text" style="font-weight: bold;">Phone No:</label>
-                        </div>
-                        <div class="col-lg-5">
-                            <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
-                                placeholder="9843873473" disabled>
-                        </div>
-                    </div> <br>
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <label class="Text" style="font-weight: bold;">Email:</label>
-                        </div>
-                        <div class="col-lg-5">
-                            <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
-                                placeholder="Ferin123@gmail.com" disabled>
-                        </div>
-                    </div> <br>
-                    <div class="row">
-                        <div class="col-lg-5"></div>
-                        <div class="col-lg-2">
-                            <button class="form-control Save" (click)="enroll()" data-dismiss="modal">Enroll</button>
-                        </div>
+                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
+                            placeholder="Peeter Ferin" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text" style="font-weight: bold;">Phone No:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
+                            placeholder="9843873473" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text" style="font-weight: bold;">Email:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
+                            placeholder="Ferin123@gmail.com" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-5"></div>
+                    <div class="col-lg-2">
+                        <button class="form-control Save" (click)="enroll()" data-dismiss="modal">Enroll</button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <hr>
-                    <div class="col-lg-10"></div>
-                    <div class="col-lg-2">
-                        <button data-dismiss="modal" class="CloseBTN">Close</button>
-                    </div>
+            </div>
+            <div class="modal-footer">
+                <hr>
+                <div class="col-lg-10"></div>
+                <div class="col-lg-2">
+                    <button data-dismiss="modal" class="CloseBTN">Close</button>
                 </div>
             </div>
         </div>
     </div>
-    <br>
+</div>
+<br>
