@@ -344,11 +344,11 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
-  // public InsertAssessments(json : any) {
-  //   debugger
-  //   let APIURL = this.baseURL + "Master/InsertAssessments";
-  //   return this.http.post<any[]>(APIURL,json);
-  // }
+  public InsertAssessments(json : any) {
+    debugger
+    let APIURL = this.baseURL + "Master/InsertAssessments";
+    return this.http.post<any[]>(APIURL,json);
+  }
 
   public UpdateAssessments(json: any) {
     debugger
