@@ -52,6 +52,9 @@ export class AssessmentFormComponent implements OnInit {
         this.GetCourse();
       }
     })
+
+    // this.show = 1;
+    // this.show2 = 1;
   }
 
   public GetQuestionMaster() {
@@ -161,6 +164,19 @@ export class AssessmentFormComponent implements OnInit {
         location.href = "#/Assessmentdashboard"
       })
   }
+
+  show:any;
+  show2:any;
+
+  // ShowObjectives(value:any){
+  //   debugger
+  //   this.show=value;
+  // }
+  // ShowSubjectives(value:any){
+  //   debugger
+  //   this.show2=value;
+  // }
+ 
 
 
 
