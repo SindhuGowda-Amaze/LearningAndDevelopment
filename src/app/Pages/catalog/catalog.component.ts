@@ -62,7 +62,7 @@ export class CatalogComponent implements OnInit {
  
 
   course:any
-  courseid:any;
+
   name:any;
   mobile:any;
   emailID:any;
