@@ -44,16 +44,16 @@
                     <div class="vertical-menu VScroll"  >
                         <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;" *ngFor="let details of categorylist"> <input
                                 type="checkbox" value="1" [(ngModel)]="course1" name="course1"
-                                (change)="filtercourse(details.name)">&nbsp;{{details.name}}</a>
+                                (change)="filtercourse(details.name)">{{details.name}}</a>
 
                      <a *ngFor="let details of categorylist1" class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                     type="checkbox" value="1" [(ngModel)]="course" name="course"
-                                    (change)="filtercourse(details.name)">&nbsp;{{details.name}}</a>
+                                    (change)="filtercourse(details.name)">{{details.name}}</a>
 
                    
                     <a *ngFor="let details of categorylist2" class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                         type="checkbox" value="1" [(ngModel)]="course2" name="course2"
-                                        (change)="filtercourse(details.name)">&nbsp;{{details.name}}</a> <br>
+                                        (change)="filtercourse(details.name)">{{details.name}}</a> <br>
                        <button  style="background-color: rgb(66, 66, 66); color: white;" (click)="GetCourse()">Clear Filter </button>
                                 <!-- IT and Software -->
                         <!-- <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
@@ -215,9 +215,7 @@
                                     <!-- <p class="card-text">Complete Python Fullstack Developer, Which includes Frontend, backend & DataBase...</p> -->
                                     <p class="card-text des">{{details.description}}</p>
                                     <button class="btn" data-toggle="modal"
-                                        data-target="#enroll" (click)="getcoureid(details.id)">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE
-                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                        data-target="#enroll" (click)="getcoureid(details.id)">ENROLL</button>
                                     <button  [routerLink]="['/ViewCourse',details.id]"  class="btn" >VIEW COURSE</button>
                                 </div>
                             </div>
