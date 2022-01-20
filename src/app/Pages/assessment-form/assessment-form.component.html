@@ -64,12 +64,12 @@
                         </textarea> -->
                         <textarea class="form-control" placeholder="Correct Answer.." *ngIf="questionid==2" [(ngModel)]="CorrectAnswer">
                         </textarea>
-                        <select class="form-control" name="" id="" *ngIf="questionid==1" >
-                            <option value="">Select Options</option>
-                            <option value="">A</option>
-                            <option value="">B</option>
-                            <option value="">C</option>
-                            <option value="">D</option>
+                        <select class="form-control" name="" id="" *ngIf="questionid==1" [(ngModel)]="CorrectAnswer">
+                            <option value="CorrectAnswer">Select Options</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
                         </select>
                     </div>
                 </div> <br>
