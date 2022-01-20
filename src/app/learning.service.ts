@@ -304,6 +304,14 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
+  public GetTrainerCourseMapping() {
+    debugger
+    let APIURL = this.baseURL + "Master/GetTrainerCourseMapping";
+    return this.http.get<any[]>(APIURL);
+  }
+
+
+
   public GetTrainer() {
     debugger
     let APIURL = this.baseURL + "Master/GetTrainer";
@@ -376,11 +384,11 @@ export class LearningService {
   //   return this.http.get<any[]>(this.host + "/Master/GetChapter");
   // }
   
-  public GetTrainerCourseMapping() {
-    debugger
-    let APIURL = this.baseURL + "Master/GetTrainerCourseMapping";
-    return this.http.get<any[]>(APIURL);
-  }
+  // public GetTrainerCourseMapping() {
+  //   debugger
+  //   let APIURL = this.baseURL + "Master/GetTrainerCourseMapping";
+  //   return this.http.get<any[]>(APIURL);
+  // }
 
   public InsertTrainerCourseMapping(data: any) {
     debugger;
