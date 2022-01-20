@@ -77,7 +77,4 @@ export class MyCourseDashboardComponent implements OnInit {
       }
     })
   }
-
-  
-
 }
