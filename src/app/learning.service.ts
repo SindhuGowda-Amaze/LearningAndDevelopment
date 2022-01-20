@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import {environment} from "../environments/environment";
+import { environment } from "../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
 export class LearningService {
-//public baseURL = "http://localhost:4199/";
-   public baseURL = "http://103.133.214.197/LearningandDevelopment/";
+  //public baseURL = "http://localhost:4199/";
+  public baseURL = "http://103.133.214.197/LearningandDevelopment/";
   public host = "https://digioffice.amazeone.co/digiofficeapi";
-  
-  url:any;
-  constructor(private http: HttpClient) { 
-    console.log("environment",environment.hostUrl);
+
+  url: any;
+  constructor(private http: HttpClient) {
+    console.log("environment", environment.hostUrl);
   }
 
   public GetLoginTypeMaster() {
 
     return this.http.get<any[]>(this.host + "/Vendor/GetLoginTypeMaster");
   }
-  
+
 
   public GetRecruiterStaff() {
 
@@ -88,7 +88,7 @@ export class LearningService {
     );
   }
 
-  
+
   public GetVisaDetails() {
     return this.http.get<any[]>(
       this.host + "/Master/GetVisaDetails"
@@ -174,7 +174,7 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
-  
+
   public UpdatePositionDetails(data: any) {
     debugger;
     this.url = this.host + '/Master/UpdatePositionDetails';
@@ -273,13 +273,13 @@ export class LearningService {
   }
   public InsertCourse(data: any) {
     debugger;
-    this.url =  this.baseURL + '/Master/InsertCourse';
+    this.url = this.baseURL + '/Master/InsertCourse';
     return this.http.post(this.url, data);
   }
 
   public UpdateCourse(data: any) {
     debugger;
-    this.url =  this.baseURL + '/Master/UpdateCourse';
+    this.url = this.baseURL + '/Master/UpdateCourse';
     return this.http.post(this.url, data);
   }
 
@@ -320,21 +320,21 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
-  public InsertTrainer(json : any) {
+  public InsertTrainer(json: any) {
     debugger
     let APIURL = this.baseURL + "Master/InsertTrainer";
-    return this.http.post<any[]>(APIURL,json);
+    return this.http.post<any[]>(APIURL, json);
   }
 
-  public UpdateTrainer(json : any) {
+  public UpdateTrainer(json: any) {
     debugger
     let APIURL = this.baseURL + "Master/UpdateTrainer";
-    return this.http.post<any[]>(APIURL,json);
+    return this.http.post<any[]>(APIURL, json);
   }
 
-  public DeleteTrainer(id : any) {
+  public DeleteTrainer(id: any) {
     debugger
-    let APIURL = this.baseURL + "Master/DeleteTrainer?ID="+id;
+    let APIURL = this.baseURL + "Master/DeleteTrainer?ID=" + id;
     return this.http.get<any[]>(APIURL);
   }
 
@@ -345,42 +345,42 @@ export class LearningService {
   }
 
 
-  public UpdateAssessments(json : any) {
+  public UpdateAssessments(json: any) {
     debugger
     let APIURL = this.baseURL + "Master/UpdateAssessments";
-    return this.http.post<any[]>(APIURL,json);
+    return this.http.post<any[]>(APIURL, json);
   }
 
-  public DeleteAssessments(id : any) {
+  public DeleteAssessments(id: any) {
     debugger
-    let APIURL = this.baseURL + "Master/DeleteAssessments?ID="+id;
+    let APIURL = this.baseURL + "Master/DeleteAssessments?ID=" + id;
     return this.http.get<any[]>(APIURL);
   }
-  
+
 
   public InsertChapterAttachment(data: any) {
     debugger;
-    this.url =  this.baseURL + '/Master/InsertChapterAttachment';
+    this.url = this.baseURL + '/Master/InsertChapterAttachment';
     return this.http.post(this.url, data);
   }
 
   public InsertChapter(data: any) {
     debugger;
-    this.url =  this.baseURL + '/Master/InsertChapter';
+    this.url = this.baseURL + '/Master/InsertChapter';
     return this.http.post(this.url, data);
   }
 
 
-  public GetChapterAttachmentByChapterID(chapterid:any) {
+  public GetChapterAttachmentByChapterID(chapterid: any) {
 
-    return this.http.get<any[]>(this.baseURL + "/Master/GetChapterAttachmentByChapterID?ChapterID="+chapterid);
+    return this.http.get<any[]>(this.baseURL + "/Master/GetChapterAttachmentByChapterID?ChapterID=" + chapterid);
   }
 
   // public GetChapter() {
 
   //   return this.http.get<any[]>(this.host + "/Master/GetChapter");
   // }
-  
+
   // public GetTrainerCourseMapping() {
   //   debugger
   //   let APIURL = this.baseURL + "Master/GetTrainerCourseMapping";
@@ -389,19 +389,19 @@ export class LearningService {
 
   public InsertTrainerCourseMapping(data: any) {
     debugger;
-    this.url =  this.baseURL + '/Master/InsertTrainerCourseMapping';
+    this.url = this.baseURL + '/Master/InsertTrainerCourseMapping';
     return this.http.post(this.url, data);
   }
 
-  public UpdateTrainerCourseMapping(json : any) {
+  public UpdateTrainerCourseMapping(json: any) {
     debugger
     let APIURL = this.baseURL + "Master/UpdateTrainerCourseMapping";
-    return this.http.post<any[]>(APIURL,json);
+    return this.http.post<any[]>(APIURL, json);
   }
 
-  public DeleteTrainerCourseMapping(id : any) {
+  public DeleteTrainerCourseMapping(id: any) {
     debugger
-    let APIURL = this.baseURL + "Master/DeleteTrainerCourseMapping?ID="+id;
+    let APIURL = this.baseURL + "Master/DeleteTrainerCourseMapping?ID=" + id;
     return this.http.get<any[]>(APIURL);
   }
   public UpdateChapter(data: any) {
@@ -414,16 +414,16 @@ export class LearningService {
     return this.http.get<any[]>(
       this.baseURL + "/Master/DeleteChapter?ID=" + ID);
   }
-   
-  public InsertAssessments(json : any) {
+
+  public InsertAssessments(json: any) {
     debugger
     let APIURL = this.baseURL + "Master/InsertAssessments";
-    return this.http.post<any[]>(APIURL,json);
+    return this.http.post<any[]>(APIURL, json);
   }
 
   public InsertEnroll(data: any) {
     debugger;
-    this.url =  this.baseURL + '/Master/InsertEnroll';
+    this.url = this.baseURL + '/Master/InsertEnroll';
     return this.http.post(this.url, data);
   }
 
@@ -442,6 +442,11 @@ export class LearningService {
     debugger;
     this.url = this.baseURL + '/Master/UpdateErollmentStatusRejected';
     return this.http.post(this.url, data);
+  }
+
+  public GetApproveCourse(staffid:any) {
+
+    return this.http.get<any[]>(this.baseURL + "/Master/GetApproveCourse?StaffID=" + staffid);
   }
 
 }

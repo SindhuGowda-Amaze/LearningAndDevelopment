@@ -17,7 +17,14 @@ export class MyCourseDashboardComponent implements OnInit {
     
     this.userid = sessionStorage.getItem('userid')
 
-    this.GetCourse();
+    // this.GetCourse();
+    // this.LearningService.GetMyDetails().subscribe(data => {
+    //   debugger
+    //   this.stafflist = data.filter(x => x.id == this.userid);;
+    // });
+    // this.show=2;
+
+    this. GetApproveCourse();
     this.LearningService.GetMyDetails().subscribe(data => {
       debugger
       this.stafflist = data.filter(x => x.id == this.userid);;
@@ -27,14 +34,15 @@ export class MyCourseDashboardComponent implements OnInit {
 
   coursedetails:any;
 
-  public GetCourse() {
+  public GetApproveCourse() {
     debugger
-    this.LearningService.GetCourse().subscribe(data => {
+    this.LearningService.GetApproveCourse(this.userid).subscribe(data => {
       debugger
       this.coursedetails = data;
      
       debugger
     })
+    this.show=2;
   }
 
 
