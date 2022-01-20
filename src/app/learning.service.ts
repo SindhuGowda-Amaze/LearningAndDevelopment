@@ -420,13 +420,6 @@ public baseURL = "http://localhost:4199/";
     return this.http.post<any[]>(APIURL,json);
   }
 
-
-  public InsertAssessments(data: any) {
-    debugger;
-    this.url =  this.baseURL + '/Master/InsertAssessments';
-    return this.http.post(this.url, data);
-  }
-
   public InsertEnroll(data: any) {
     debugger;
     this.url =  this.baseURL + '/Master/InsertEnroll';
