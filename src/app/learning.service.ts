@@ -5,8 +5,8 @@ import {environment} from "../environments/environment";
   providedIn: 'root'
 })
 export class LearningService {
-public baseURL = "http://localhost:4199/";
-   //public baseURL = "http://103.133.214.197/LearningandDevelopment/";
+// public baseURL = "http://localhost:4199/";
+   public baseURL = "http://103.133.214.197/LearningandDevelopment/";
   public host = "https://digioffice.amazeone.co/digiofficeapi";
   url:any;
   constructor(private http: HttpClient) { 
@@ -414,11 +414,11 @@ public baseURL = "http://localhost:4199/";
       this.baseURL + "/Master/DeleteChapter?ID=" + ID);
   }
    
-  // public InsertAssessments(json : any) {
-  //   debugger
-  //   let APIURL = this.baseURL + "Master/InsertAssessments";
-  //   return this.http.post<any[]>(APIURL,json);
-  // }
+  public InsertAssessments(json : any) {
+    debugger
+    let APIURL = this.baseURL + "Master/InsertAssessments";
+    return this.http.post<any[]>(APIURL,json);
+  }
 
   public InsertEnroll(data: any) {
     debugger;
