@@ -1,15 +1,26 @@
 <div class="row">
-    <div class="col-lg-9">
+    <div class="col-lg-8">
         <div class="row">
-            <div class="col-lg-12">
-                <img src='assets/Images/Basics_of_java.jpg' alt="1st Course Assessment"
-                    style="width: 70%; height: 80%;margin-left: 175px;">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-5" *ngIf="show==1" >
+                <img src="{{chapterphoto}}" alt="1st Course Assessment"
+                    style="width:500px; height:300px; margin-left:20px;" >
                 <hr style="margin-left: 15px;">
             </div>
-        </div><br>
+            <div class="col-lg-12" *ngIf="show==2">
+                <video controls style="height: 80%; width: 100%;" autoplay >
+                    <source src="{{Attachmentlist[0].photo}}"  type="video/mp4">
+                    <source src="{{Attachmentlist[0].photo}}"  type="video/ogg">
+                    Your browser does not support the video tag.
+                  </video>
+            </div> 
+            <div class="col-lg-12" *ngIf="show==5" style="width: 70%; height: 80%;margin-left: 175px;" ><br><br>
+                <h5>{{noattachments}}</h5> <br><br>
+            </div>
+        </div><br> 
         <div class="row" style="margin-left: 15px; margin-top: -70px;">
-            <div class="col-lg-6">
-                <h2>JAVA</h2>
+            <div class="col-lg-6" >
+                <h2>{{coursename}}</h2>
             </div>
             <div class="col-lg-2">
             </div>
@@ -31,9 +42,9 @@
                 <button routerLink="/Catalog" class="BackBTN">Back</button>
                 <h2>Course Contents </h2><br>
                 <div  *ngFor="let details of coursedetails">
-                    <h5>
+                    <h5 (click)="getcoursedetails(details)">
                         <img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;">
-                        {{details.name}}
+                         {{details.name}}
                     </h5>
                     <hr class="HRline">
                 </div>
@@ -82,16 +93,12 @@
                      to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br> -->
             </div>
         </div>
+        <!-- routerLink="/TakeAssessment" -->
         <div class="row" style="margin-left: 15px;">
             <div class="col-lg-8">
-                <h3 routerLink="/TakeAssessment">1. Basics of JAVA:</h3>
-                <h6>Java is a high-level, general-purpose, object-oriented, and secure 
-                    programming language developed by James Gosling at Sun Microsystems, 
-                    Inc. in 1991. It is formally known as OAK. In 1995, Sun Microsystem 
-                    changed the name to Java. In 2009, Sun Microsystem takeover by Oracle Corporation.</h6>
-                <h6>When we consider a Java program, it can be defined as a collection of objects that 
-                    communicate via invoking each other's methods. Let us now briefly look into what 
-                    do class, object, methods, and instance variables mean.</h6>
+                <h3>{{chaptername}}</h3>
+                <h6>{{chapterdescription}}</h6>
+                
             </div>
         </div><br>
         <div class="row" style="margin-left: 15px;">

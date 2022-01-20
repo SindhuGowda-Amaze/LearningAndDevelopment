@@ -35,13 +35,14 @@ export class CatalogComponent implements OnInit {
   showfullcards:any;
   categorylist:any;
   userid:any;
+  manager:any;
   ngOnInit(): void {
     this.GetCourse() ;
     this.show1 = 1; 
     this.GetCategoryMaster();
 
     this.userid = sessionStorage.getItem('userid')
-
+    this.manager = sessionStorage.getItem('manager')
 
     this.LearningService.GetMyDetails().subscribe(data => {
       debugger
@@ -53,8 +54,18 @@ export class CatalogComponent implements OnInit {
   // this.show3 = 1;
     //  this.show = 0;
   }
+  public getcoureid(id:any){
+    this.courseid=id
+  }
 
-  enroll(){
+
+ 
+
+  course:any
+  name:any;
+  mobile:any;
+  emailID:any;
+  enroll(name:any, mobile:any,emailID:any){
     Swal.fire({
       title: 'Enroll Confirmation',
       text: "Please click on OK to send Course Enrolment Request",
@@ -68,18 +79,33 @@ export class CatalogComponent implements OnInit {
     }).then((result) => {
 
       if (result.isConfirmed) {
+      debugger
+         var json = {  
+            "staffid": this.userid,
+            "manager": this.manager,
+           "courseid":this.courseid,
+            "status":'Manager Pending',
+            "employeeName":name,
+            "phoneNo":mobile,
+            "email":emailID  
+          };
+          this.LearningService.InsertEnroll(json).subscribe(
+            data => {
+              debugger
+              let id = data;
+              Swal.fire("saved Sucessfully");
+            location.href="#/Catalog"
+            })
         Swal.fire(
           'Request Sent',
           'Your request has been sent to manager for Approval',
           'success'
         );
         location.href="/#/Catalog";
-
       }
-      
     });
+    } 
     
-  }
 
   show:any;
   show1:any;
@@ -87,6 +113,8 @@ export class CatalogComponent implements OnInit {
   show3:any;
   show4:any;
   show5:any;
+  course1:any;
+  course2:any;
 
   // showcards(){
   //  debugger
@@ -120,13 +148,17 @@ export class CatalogComponent implements OnInit {
   //   this.courselist=this.courselist.filter(x=>x.)
   // }
 
-
+  categorylist1:any;
+  categorylist2:any;
   public GetCategoryMaster() {
     debugger
     this.LearningService.GetCategoryMaster().subscribe(
       data => {
         debugger
-        this.categorylist = data;
+        
+        this.categorylist = data.slice(0, 1);
+        this.categorylist1 = data.slice(1, 2);
+        this.categorylist2 = data.slice(2, 3);
       })
   }
 
@@ -136,7 +168,25 @@ export class CatalogComponent implements OnInit {
     this.LearningService.GetCourse().subscribe(
       data => {
         debugger
-        this.courselist = data;
+        this.courselist = data
+        
       })
+      this.show1=1;
   }
+
+
+  public filtercourse(name:any){
+    debugger
+    this.LearningService.GetCourse().subscribe(
+      data => {
+        debugger
+        this.courselist = data.filter(x=>x.categoryName==name);
+      })
+      this.show1=1;
+  }
+  
 }
+function Save() {
+  throw new Error('Function not implemented.');
+}
+

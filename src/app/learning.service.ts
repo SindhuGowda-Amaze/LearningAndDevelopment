@@ -5,7 +5,8 @@ import {environment} from "../environments/environment";
   providedIn: 'root'
 })
 export class LearningService {
-  public baseURL = "http://103.133.214.197/LearningandDevelopment/";
+public baseURL = "http://localhost:4199/";
+   //public baseURL = "http://103.133.214.197/LearningandDevelopment/";
   public host = "https://digioffice.amazeone.co/digiofficeapi";
   
   url:any;
@@ -343,11 +344,6 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
-  public InsertAssessments(data: any) {
-    debugger;
-    this.url =  this.baseURL + '/Master/InsertAssessments';
-    return this.http.post(this.url, data);
-  }
 
   public UpdateAssessments(json : any) {
     debugger
@@ -418,6 +414,34 @@ export class LearningService {
     return this.http.get<any[]>(
       this.baseURL + "/Master/DeleteChapter?ID=" + ID);
   }
+   
+  // public InsertAssessments(json : any) {
+  //   debugger
+  //   let APIURL = this.baseURL + "Master/InsertAssessments";
+  //   return this.http.post<any[]>(APIURL,json);
+  // }
 
-  
+  public InsertEnroll(data: any) {
+    debugger;
+    this.url =  this.baseURL + '/Master/InsertEnroll';
+    return this.http.post(this.url, data);
+  }
+
+  public GetEnroll() {
+
+    return this.http.get<any[]>(this.baseURL + "/Master/GetEnroll");
+  }
+
+  public UpdateErollmentStatusApproved(data: any) {
+    debugger;
+    this.url = this.baseURL + '/Master/UpdateErollmentStatusApproved';
+    return this.http.post(this.url, data);
+  }
+
+  public UpdateErollmentStatusRejected(data: any) {
+    debugger;
+    this.url = this.baseURL + '/Master/UpdateErollmentStatusRejected';
+    return this.http.post(this.url, data);
+  }
+
 }

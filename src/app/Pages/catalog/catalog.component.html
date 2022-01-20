@@ -41,10 +41,20 @@
                             <h4 class="Category">Select Course Category</h4>
                         </div>
                     </div>
-                    <div class="vertical-menu VScroll"  *ngFor="let details of categorylist">
-                        <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
-                                type="checkbox" value="1" [(ngModel)]="show1" name="show1"
-                                (click)="showcards1(details.id)">&nbsp;{{details.name}}</a>
+                    <div class="vertical-menu VScroll"  >
+                        <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;" *ngFor="let details of categorylist"> <input
+                                type="checkbox" value="1" [(ngModel)]="course1" name="course1"
+                                (change)="filtercourse(details.name)">&nbsp;{{details.name}}</a>
+
+                     <a *ngFor="let details of categorylist1" class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
+                                    type="checkbox" value="1" [(ngModel)]="course" name="course"
+                                    (change)="filtercourse(details.name)">&nbsp;{{details.name}}</a>
+
+                   
+                    <a *ngFor="let details of categorylist2" class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
+                                        type="checkbox" value="1" [(ngModel)]="course2" name="course2"
+                                        (change)="filtercourse(details.name)">&nbsp;{{details.name}}</a> <br>
+                       <button  style="background-color: rgb(66, 66, 66); color: white;" (click)="GetCourse()">Clear Filter </button>
                                 <!-- IT and Software -->
                         <!-- <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                 type="checkbox" value="1" [(ngModel)]="show2" name="show2"
@@ -205,6 +215,8 @@
                                     <!-- <p class="card-text">Complete Python Fullstack Developer, Which includes Frontend, backend & DataBase...</p> -->
                                     <p class="card-text des">{{details.description}}</p>
                                     <button class="btn" data-toggle="modal"
+                                        data-target="#enroll" (click)="getcoureid(details.id)">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE
                                         data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
                                     <button  [routerLink]="['/ViewCourse',details.id]"  class="btn" >VIEW COURSE</button>
                                 </div>
@@ -491,7 +503,7 @@
                             <option>Yes</option>  
                             <option>No</option> 
                         </select> -->
-                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
+                        <input class="form-control" name="name" id="name" [(ngModel)]="name"
                             placeholder="{{item.name}}" disabled>
                     </div>
                 </div> <br>
@@ -500,7 +512,7 @@
                         <label class="Text" style="font-weight: bold;">Phone No:</label>
                     </div>
                     <div class="col-lg-5">
-                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
+                        <input class="form-control" name="mobile" id="mobile" [(ngModel)]="mobile"
                             placeholder="{{item.mobile}}" disabled>
                     </div>
                 </div> <br>
@@ -509,14 +521,14 @@
                         <label class="Text" style="font-weight: bold;">Email:</label>
                     </div>
                     <div class="col-lg-5">
-                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
+                        <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
                             placeholder="item.emailID" disabled>
                     </div>
                 </div> <br>
                 <div class="row">
                     <div class="col-lg-5"></div>
                     <div class="col-lg-2">
-                        <button class="form-control Save" (click)="enroll()" data-dismiss="modal">Enroll</button>
+                        <button class="form-control Save" (click)="enroll(item.name,item.mobile,item.emailID)"  data-dismiss="modal">Enroll</button>
                     </div>
                 </div>
             </div>

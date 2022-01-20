@@ -12,7 +12,16 @@ export class StartMyCourseComponent implements OnInit {
 
   courseid:any;
   coursedetails:any;
+  coursename:any;
+  chaptername:any;
+  chapterdescription:any;
+  chapterphoto:any;
+  noattachments:any;
+ 
+
   constructor(private LearningService: LearningService, private ActivatedRoute:ActivatedRoute) { }
+   
+  Attachmentlist:any;
 
   ngOnInit(): void {
     this.ActivatedRoute.params.subscribe(params => {
@@ -37,6 +46,29 @@ export class StartMyCourseComponent implements OnInit {
       debugger
       this.coursedetails = data.filter(x=>x.courseID==this.courseid);
       debugger
+      this.coursename=this.coursedetails[0].courseName
+      this.chaptername=this.coursedetails[0].name
+      this.chapterdescription=this.coursedetails[0].description    
+      this.chapterphoto=this.coursedetails[0].chapterPhoto  
+      this.ShowAttachments(this.coursedetails[0].id)
+      this.show=1
+    })
+  }
+
+  getcoursedetails(details:any){
+      this.coursename=details.courseName
+      this.chaptername=details.name
+      this.chapterdescription=details.description 
+      this.chapterphoto=details.chapterPhoto
+      this.ShowAttachments(details.id)
+      this.show=1
+  }
+
+  ShowAttachments(id: any) {
+    debugger
+    this.LearningService.GetChapterAttachmentByChapterID(id).subscribe(data => {
+      debugger
+      this.Attachmentlist = data;
     })
   }
 
@@ -44,9 +76,23 @@ export class StartMyCourseComponent implements OnInit {
 
 
   public PreviewVideo() {
-    // window.open('assets/Images/Java_Course.mp4');
-    this.show=6;
-    this.show=7;
+    debugger
+   if(this.Attachmentlist.length!=0){
+     this.Attachmentlist=this.Attachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='video')
+     if(this.Attachmentlist.length!=0){
+      this.show=2
+     }
+     else{
+      this.noattachments="No Videos Found"
+      this.show=5
+    }
+    
+   }
+   else{
+     this.noattachments="No Videos Found"
+     this.show=5
+   }
+
   }
   public PreviewPdf() {
     window.open('assets/Images/Java_Assessment_Qts.pdf')

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-
+import { LearningService } from 'src/app/learning.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-manager-dashboard',
@@ -12,12 +12,15 @@ export class ManagerDashboardComponent implements OnInit {
   search: any;
   count: any;
   staffid: any;
-  constructor() { }
+  manager: any;
+  constructor(public LearningService: LearningService) { }
 
   ngOnInit(): void {
     this.staffid = localStorage.getItem('userid');
+    this.manager = localStorage.getItem('manager');
     this.GetCandidateReg()
     // this.insertdetails()
+    this.GetEnroll();
   }
 
   public GetCandidateReg() {
@@ -37,22 +40,75 @@ export class ManagerDashboardComponent implements OnInit {
 
     // }
   }
-  id:any;
-  public getid(id:any){
-  this.id = id
+  result: any;
+  public GetEnroll() {
+    debugger
+    this.LearningService.GetEnroll().subscribe(
+      data => {
+        debugger
+        // this.result = data.filter(x => x.manager == this.manager );
+        this.result = data
+
+
+      })
   }
-  public Accept(){}
-  public Reject(){}
-  public Acceptcandidate(){
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Approved!!',
-      showConfirmButton: false,
-      timer: 1500
-    })
+
+  id: any;
+  public getid(id: any) {
+    this.id = id
   }
-  public Rejecttcandidate(){}
+  // public Accept(){
+
+  // }
+  // public Reject(){}
+
+  public Acceptcandidate() {
+    debugger
+    var json = {
+      "ID": this.id,
+      "Status": 'Manager Approved'
+    };
+
+    this.LearningService.UpdateErollmentStatusApproved(json).subscribe(
+      data => {
+        debugger
+        let result = data;
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Approved!!',
+          showConfirmButton: false,
+          timer: 1500
+
+        })
+        this.GetEnroll();
+      })
+
+  }
+
+  public Rejecttcandidate() {
+    debugger
+    var json = {
+      "ID": this.id,
+      "Status": 'Manager Rejected'
+    };
+
+    this.LearningService.UpdateErollmentStatusRejected(json).subscribe(
+      data => {
+        debugger
+        let result = data;
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Rejected!!',
+          showConfirmButton: false,
+          timer: 1500
+
+        })
+        this.GetEnroll();
+      })
+
+    }
 }
 
 
