@@ -78,7 +78,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
     this.LearningService.InsertTrainerCourseMapping(json).subscribe(
       data => {
         debugger
-        let id = data;
+        let trainerlist = data;
     alert("Successfully Submitted...!")
       location.href="/#/TrainerCourseMapping";
       })
