@@ -4,8 +4,7 @@
             <div class="col-lg-4"></div>
             <div class="col-lg-5" *ngIf="show==1" >
                 <img src="{{chapterphoto}}" alt="1st Course Assessment"
-                    style="width:500px; height:300px; margin-left:20px;" >
-                <!-- <hr style="margin-left: 15px;"> -->
+                    style="width:500px; height:300px; margin-left:20px;">
             </div> 
             <div class="col-lg-12" *ngIf="show==2">
                 <video controls style="height: 80%; width: 100%;" autoplay >
@@ -20,7 +19,7 @@
         </div><br><br> <br><br>
         <div class="row" style="margin-left: 15px;">
             <div class="col-lg-8" >
-                <p>{{coursename}}</p>
+                <p style="font-size: 25px;">{{coursename}}</p>
             </div>
             <div class="col-lg-4" style="text-align: right;">
                 <br>
@@ -95,14 +94,15 @@
         <div class="row" style="margin-left: 15px;">
             <div class="col-lg-8">
                 <h3>{{chaptername}}</h3>
-                <h6>{{chapterdescription}}</h6>               
+                <h6>{{coursedescription}}</h6>               
             </div>
         </div><br>
         <div class="row" style="margin-left: 15px;">
             <div class="col-lg-2">
             </div>
             <div class="col-lg-8" style="text-align: center;">
-                <p style="font-size: medium;">No Assessment Test for this chapter</p>
+                <!-- <p style="font-size: medium;">Take Assesment</p> -->
+                <button Style="border-radius:5px;" routerLink="/TakeAssessment">Take Assesment</button>
             </div>
             <div class="col-lg-2">
             </div>

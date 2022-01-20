@@ -344,6 +344,11 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
+  // public InsertAssessments(json : any) {
+  //   debugger
+  //   let APIURL = this.baseURL + "Master/InsertAssessments";
+  //   return this.http.post<any[]>(APIURL,json);
+  // }
 
   public UpdateAssessments(json: any) {
     debugger
@@ -413,12 +418,6 @@ export class LearningService {
   public DeleteChapter(ID: any) {
     return this.http.get<any[]>(
       this.baseURL + "/Master/DeleteChapter?ID=" + ID);
-  }
-
-  public InsertAssessments(json: any) {
-    debugger
-    let APIURL = this.baseURL + "Master/InsertAssessments";
-    return this.http.post<any[]>(APIURL, json);
   }
 
   public InsertEnroll(data: any) {

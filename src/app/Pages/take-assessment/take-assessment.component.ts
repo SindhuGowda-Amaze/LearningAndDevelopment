@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-
+import { LearningService } from 'src/app/learning.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-take-assessment',
   templateUrl: './take-assessment.component.html',
@@ -8,9 +9,10 @@ import Swal from 'sweetalert2';
 })
 export class TakeAssessmentComponent implements OnInit {
   loader:any;
-  constructor() { }
+  constructor(public LearningService: LearningService, public ActivatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.GetAssessments() ;
     this.loader=true;
   }
   submit(){
@@ -38,5 +40,18 @@ export class TakeAssessmentComponent implements OnInit {
 
   cancel(){
     location.href="#/StartMyCourse"
+  }
+
+  quetionlist:any;
+  count:any;
+  public GetAssessments() {
+    debugger
+    this.LearningService.GetAssessments().subscribe(
+      data => {
+        debugger
+        this.quetionlist = data;
+        
+        // this.count = this.quetionlist.length;
+      })
   }
 }

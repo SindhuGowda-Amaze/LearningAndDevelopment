@@ -17,6 +17,7 @@ export class StartMyCourseComponent implements OnInit {
   chapterdescription:any;
   chapterphoto:any;
   noattachments:any;
+  coursedescription:any;
  
 
   constructor(private LearningService: LearningService, private ActivatedRoute:ActivatedRoute) { }
@@ -58,7 +59,7 @@ export class StartMyCourseComponent implements OnInit {
   getcoursedetails(details:any){
       this.coursename=details.courseName
       this.chaptername=details.name
-      this.chapterdescription=details.description 
+      this.coursedescription=details.description 
       this.chapterphoto=details.chapterPhoto
       this.ShowAttachments(details.id)
       this.show=1
