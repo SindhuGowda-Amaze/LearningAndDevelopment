@@ -9,12 +9,12 @@ import { LearningService } from 'src/app/learning.service';
 })
 export class MyCourseDashboardComponent implements OnInit {
 
-  constructor(public LearningService:LearningService) { }
-  show:any;
-  stafflist:any;
-  userid:any;
+  constructor(public LearningService: LearningService) { }
+  show: any;
+  stafflist: any;
+  userid: any;
   ngOnInit(): void {
-    
+
     this.userid = sessionStorage.getItem('userid')
 
     this.GetCourse();
@@ -22,17 +22,17 @@ export class MyCourseDashboardComponent implements OnInit {
       debugger
       this.stafflist = data.filter(x => x.id == this.userid);;
     });
-    this.show=2;
+    this.show = 2;
   }
 
-  coursedetails:any;
+  coursedetails: any;
 
   public GetCourse() {
     debugger
     this.LearningService.GetCourse().subscribe(data => {
       debugger
       this.coursedetails = data;
-     
+
       debugger
     })
   }
@@ -50,13 +50,21 @@ export class MyCourseDashboardComponent implements OnInit {
       }
     }
 
-   
+
   };
-  Showcards(value:any){
-   this.show=value;
+  Showcards(value: any) {
+    this.show = value;
+    if (value == 1) {
+      this.GetCourse();
+    }
+    else if(value == 2)
+    {
+      
+    }
+  
   }
 
-  enroll(){
+  enroll() {
     Swal.fire({
       title: 'Enroll Confirmation',
       text: "Please click on OK to send Course Enrolment Request",
