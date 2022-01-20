@@ -65,6 +65,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('UserName', this.result.name);
           sessionStorage.setItem('userid', this.result.id);
           sessionStorage.setItem('temp', '1');
+          sessionStorage.setItem('manager',this.result.supervisor)
           sessionStorage.setItem('role', 'Employee');
           sessionStorage.setItem('roleid', '2');
           location.href = "#/AdminDashboard";

@@ -27,30 +27,35 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <table class="table tablebordered">
+                    <table class="table tablebordered" >
                         <thead>
                             <tr class="head">
                                 <th>Employee Name</th>
                                 <th>Phone No</th>
+                                <th>Email</th>
                                 <th>Course Name</th>
-                                <th>Request sent Date</th>
-                                <th>Actions</th>
+                                <!-- <th>Request sent Date</th> -->
+                              
+                                <th>Action</th>
                             </tr>
-                            <tr>
-                                <td>Karan</td>
-                                <td>9283938239</td>
-                                <td>Advanced Java Concepts</td>
-                                <td>10-01-2022</td>
+                            <tr *ngFor="let details of result">
+                                <td>{{details.employeeName}}</td>
+                                <td>{{details.phoneNo}}</td>
+                                <td>{{details.email}}</td>
+                                <td>{{details.courseName}}</td>
+                               
+                               
                                 <td>
                                     <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                                         (click)="getid(job.id)">Selected</button> <br><br>
                                     <button class="btn btn-primary" style="background-color:#dc3545; border:none"
                                         data-toggle="modal" data-target="#Reject"
                                         (click)="getid(job.id)">Rejected</button> -->
-
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                                     <p *ngIf="details.status=='Manager Approved'||details.status=='Manager Rejected'">{{details.status}}</p>
+                                        <button *ngIf="details.status!='Manager Approved'||details.status!='Manager Rejected'" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="getid(details.id)"
                                      >Approve</button> <br><br>
-                                    <button class="btn btn-primary" style="background-color:#dc3545; border:none"
+
+                                    <button *ngIf="details.status!='Manager Approved'||details.status!='Manager Rejected'"  class="btn btn-primary" style="background-color:#dc3545; border:none" (click)="getid(details.id)"
                                         data-toggle="modal" data-target="#Reject"
                                       >Reject</button>
                                     <!-- <button class="btn btn-primary"
@@ -60,25 +65,25 @@
                       <button class="btn btn-danger"
                           *ngIf="job.interviewRejected=='0'&&job.interviewSelected=='0'"
                           (click)="Reject(job.id,job.interviewercomments)">Rejected</button> -->
-                                </td>
+                                <!-- </td>
                             </tr>
                             <tr>
                                 <td>Priya</td>
                                 <td>9283938239</td>
                                 <td>Abstraction Concepts</td>
-                                <td>05-01-2022</td>
+                             <td>05-01-2022</td> 
                                 <td>
-                                    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                                   <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                                         (click)="getid(job.id)">Selected</button> <br><br>
                                     <button class="btn btn-primary" style="background-color:#dc3545; border:none"
                                         data-toggle="modal" data-target="#Reject"
                                         (click)="getid(job.id)">Rejected</button> -->
 
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                                        <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                                      >Approve</button> <br><br>
                                     <button class="btn btn-primary" style="background-color:#dc3545; border:none"
                                         data-toggle="modal" data-target="#Reject"
-                                      >Reject</button>
+                                      >Reject</button> -->
                                     <!-- <button class="btn btn-primary"
                           *ngIf="job.interviewRejected=='0'&&job.interviewSelected=='0'"
                           (click)="Accept(job.id,job.interviewercomments)">Selected</button> &nbsp;
@@ -166,7 +171,7 @@
                     <div class="col-lg-2">
                         <button class="btn btn-primary "
                             style="background-color:#dc3545; border:none ; margin-left: 10%;"
-                            (click)="Rejecttcandidate()">Rejeted</button>
+                            (click)="Rejecttcandidate()"  data-dismiss="modal">Rejected</button>
                     </div>
                 </div> <br>
 
