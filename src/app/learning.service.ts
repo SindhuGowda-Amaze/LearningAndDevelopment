@@ -8,6 +8,7 @@ export class LearningService {
 //public baseURL = "http://localhost:4199/";
    public baseURL = "http://103.133.214.197/LearningandDevelopment/";
   public host = "https://digioffice.amazeone.co/digiofficeapi";
+  
   url:any;
   constructor(private http: HttpClient) { 
     console.log("environment",environment.hostUrl);
@@ -414,17 +415,10 @@ export class LearningService {
       this.baseURL + "/Master/DeleteChapter?ID=" + ID);
   }
    
-  // public InsertAssessments(json : any) {
-  //   debugger
-  //   let APIURL = this.baseURL + "Master/InsertAssessments";
-  //   return this.http.post<any[]>(APIURL,json);
-  // }
-
-
-  public InsertAssessments(data: any) {
-    debugger;
-    this.url =  this.baseURL + '/Master/InsertAssessments';
-    return this.http.post(this.url, data);
+  public InsertAssessments(json : any) {
+    debugger
+    let APIURL = this.baseURL + "Master/InsertAssessments";
+    return this.http.post<any[]>(APIURL,json);
   }
 
   public InsertEnroll(data: any) {
