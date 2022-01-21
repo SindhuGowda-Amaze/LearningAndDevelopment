@@ -24,12 +24,16 @@
             </div>
         </div>
         <div class="col-lg-3">
-            <div class="card1" style="background-color: white; height:310px;width: 350px; border-radius: 10px;">
-                <img class="card-img-top" style="width:100%;height:auto" src="/assets/Images/course1.png"
+            <div class="card1 " style="background-color: white; height:310px;width: 350px; border-radius: 10px;">              
+                <img class="card-img-top" style="width:200px;height:auto; margin-left: 15px; margin-top: 15px;"
+                src="{{latestcoursedetails.photo}}"
                     alt="Card image cap">
                 <div class="card-body">
                     <div class="row">
-                        <p style="margin-left:15px;font-size:18px;">Last Assigned</p>
+                        <p style="margin-left:15px;font-size:18px;">Last Assigned</p> <br>
+                        <div class="row">
+                            <p style="margin-left:30px;font-size:15px;">{{latestcoursedetails.name}}</p>
+                        </div>               
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
@@ -38,7 +42,7 @@
                     </div><br>
                     <div class="row">
                         <div class="col-lg-6">
-                            <button href="#" routerLink="/StartMyCourse" type="button"
+                            <button href="#" [routerLink]="['/StartMyCourse',latestcoursedetails.id]" type="button"
                                 class="btn btn-outline-secondary">Start
                                 Course</button>
                         </div>
@@ -217,9 +221,9 @@
                         <br>
                         <div class="row title_outer1">
                             <div class="col-lg-12">
-                                <img style="width:200px;height: auto;" src="{{details.photo}}">
+                                <img style="width:166px;height:auto;" src="{{details.photo}}">
                             </div>
-                        </div>
+                        </div> <br>
                         <div class="row">
                             <div class="col-lg-12">
                                 <p style="font-size: 15px;">{{details.name}}</p>
@@ -233,7 +237,7 @@
                             <div class="col-lg-4">
                                 <p>1 Items[s]</p>
                             </div>
-                        </div>
+                        </div> 
                         <div class="row">
                             <div class="col-lg-12">
                                 <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
