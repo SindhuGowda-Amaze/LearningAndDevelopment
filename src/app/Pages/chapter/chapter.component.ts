@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 import { LearningService } from 'src/app/learning.service';
+import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-chapter',
@@ -11,11 +12,54 @@ export class ChapterComponent implements OnInit {
   Course_Photo: any
   Attachment: any[] = [];
   result: any;
-  constructor(public LearningService: LearningService) { }
+
+  constructor(public LearningService: LearningService, private ActivatedRoute: ActivatedRoute) { }
+
+  id: any;
+  CourseID: any;
+  courseID: any;
+  Name: any;
+  name: any;
+  Description: any;
+  description: any;
+  ChapterPhoto: any;
+  ChapterText: any;
+  chapterID: any;
+
+  CourseName: any;
+  courseName: any;
+  chapterPhoto: any;
+  chapterText: any;
+
 
   ngOnInit(): void {
     this.GetCourse();
+
+    this.ActivatedRoute.params.subscribe(params => {
+      this.id = params['id'];
+      if (this.id != undefined && this.id != null) {
+        this.GetChapter();
+      }
+    })
   }
+
+  public GetChapter(){
+    this.LearningService.GetChapter().subscribe(
+      data => {
+      this.result = data;
+      debugger
+      this.result=this.result.filter((x: { id: any; })=>x.id==Number(this.id));
+      this.CourseName=this.result[0].courseID;
+      this.Name=this.result[0].name;
+      this.Description=this.result[0].description;
+      this.ChapterPhoto=this.result[0].chapterPhoto;
+      this.ChapterText=this.result[0].chapterText;
+  
+        }
+      ) 
+    }
+
+   
   cancel() {
     location.href = "/ChapterDashboard";
   }
@@ -58,27 +102,43 @@ export class ChapterComponent implements OnInit {
   }
 
 
-  CourseID: any;
-  name: any;
-  description: any;
-  ChapterPhoto: any;
-  ChapterText: any;
-  chapterID: any;
-
+  
   getCourseID(even:any)
   {
     debugger
     this.CourseID=even.target.value;
   }
 
+ 
+
+  Update(){
+    debugger
+     var json = {
+      "ID": this.id,
+      "CourseName": this.courseID,
+      "Name": this.name,
+      "Description": this.description,
+      "ChapterPhoto": this.chapterPhoto,
+      "ChapterText": this.chapterText        
+      };
+    
+      this.LearningService.UpdateChapter(json).subscribe(
+        data => {
+        debugger
+        let result = data;
+        Swal.fire("Successfully Updated...!");
+        location.href="/#/ChapterDashboard";
+      })
+  }
+
   Save() {
     debugger
     var json = {
-      "CourseID": this.CourseID,
+      "CourseName": this.courseID,
       "Name": this.name,
       "Description": this.description,
-      "chapterPhoto": this.ChapterPhoto,
-      "chapterText": this.ChapterText,
+      "ChapterPhoto": this.chapterPhoto,
+      "ChapterText": this.chapterText 
     };
     this.LearningService.InsertChapter(json).subscribe(
       data => {

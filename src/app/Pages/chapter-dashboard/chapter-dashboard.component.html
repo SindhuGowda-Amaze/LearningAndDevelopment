@@ -57,7 +57,7 @@
                                             (click)="ShowAttachments(details.id)">
 
                                     <td>{{details.chapterText}}</td>
-                                    <td><button class="button1" (click)="edit(details.id)">Edit</button> <br> <br>
+                                    <td><button class="button1" routerLink="/Chapter" [routerLink]="['/Chapter', details.id]">Edit</button> <br> <br>
                                     <button class="button2" (click)="Ondelete(details.id)">Delete</button>
                                 </td>
                                 </tr>
