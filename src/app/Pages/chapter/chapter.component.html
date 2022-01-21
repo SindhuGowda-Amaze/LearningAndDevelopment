@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-lg-2">
                         <!-- <input class="form-control" placeholder="Course Nmae"> -->
-                        <select class="form-control" name="cars" id="Duration" [(ngModel)]="CourseID" (change)="getCourseID($event)">
+                        <select class="form-control" name="cars" id="Duration" [(ngModel)]="courseID" (change)="getCourseID($event)">
                             <option value="Select">Course Name</option>
                             <option  *ngFor="let details of result"  value="{{details.id}}">{{details.name}}</option>
                             <!-- <option value=""> Marketing</option>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8" style="text-align: justify;">
-                        <textarea class="form-control" placeholder="Chapter text" rows="10" [(ngModel)]="ChapterText"></textarea>
+                        <textarea class="form-control" placeholder="Chapter text" rows="10" [(ngModel)]="chapterText"></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -90,7 +90,11 @@
                         <button class="form-control  button1">Cancel</button>
                     </div>
                     <div class="col-lg-1">
-                        <button class="form-control Save" (click)="Save()">Save</button>
+                        <button class="form-control Save" *ngIf="id==undefined" (click)="Save()">Save</button>
+                        <button class="form-control Save" *ngIf="id!= undefined" (click)="Update()">Update</button>
+
+                        
+                        
                         <!-- <button class="form-control button1"  *ngIf="id==null || id==undefined" (click)="Save()">Save</button>    
                      <button class="form-control button1"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>    -->
                     </div>
