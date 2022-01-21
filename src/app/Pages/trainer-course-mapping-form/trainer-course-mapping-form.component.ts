@@ -23,6 +23,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
   trainerlist:any;
   ngOnInit(): void {
     this.GetTrainer();
+
     // this.ActivatedRoute.params.subscribe(params => {
     //   debugger
     //   this.id = params["id"];
@@ -47,6 +48,8 @@ export class TrainerCourseMappingFormComponent implements OnInit {
     //     this.GetCourse();
     //   }
     // })
+    this.TrainerID=0;
+    this.CourseID=0;
   }
 
   trainerName:any;
