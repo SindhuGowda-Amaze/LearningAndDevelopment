@@ -102,12 +102,12 @@
                 <h6>{{coursedescription}}</h6>               
             </div>
         </div><br>
-        <div class="row" style="margin-left: 15px;">
+        <div class="row" style="margin-left: 15px;"  *ngFor="let details of coursedetails">
             <div class="col-lg-2">
             </div>
             <div class="col-lg-8" style="text-align: center;">
                 <!-- <p style="font-size: medium;">Take Assesment</p> -->
-                <button Style="border-radius:5px;" routerLink="/TakeAssessment">Take Assesment</button>
+                <button Style="border-radius:5px;"[routerLink]="['/TakeAssessment',details.id]" >Take Assesment</button>
             </div>
             <div class="col-lg-2">
             </div>

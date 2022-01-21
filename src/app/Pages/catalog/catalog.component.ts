@@ -118,6 +118,8 @@ export class CatalogComponent implements OnInit {
   show5:any;
   course1:any;
   course2:any;
+  course3:any;
+  course4:any;
 
   // showcards(){
   //  debugger
@@ -153,6 +155,8 @@ export class CatalogComponent implements OnInit {
 
   categorylist1:any;
   categorylist2:any;
+  categorylist3:any;
+  categorylist4:any;
   public GetCategoryMaster() {
     debugger
     this.LearningService.GetCategoryMaster().subscribe(
@@ -162,6 +166,8 @@ export class CatalogComponent implements OnInit {
         this.categorylist = data.slice(0, 1);
         this.categorylist1 = data.slice(1, 2);
         this.categorylist2 = data.slice(2, 3);
+        this.categorylist3 = data.slice(3, 4);
+        this.categorylist4 = data.slice(4, 5);
       })
   }
 

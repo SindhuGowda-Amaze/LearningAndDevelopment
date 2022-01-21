@@ -57,6 +57,7 @@ const routes: Routes = [
   { path: 'ViewCourse/:id', component: ViewCourseComponent },
   { path: 'MyCourseDashboard', component: MyCourseDashboardComponent },
   { path: 'TakeAssessment', component: TakeAssessmentComponent },
+  { path: 'TakeAssessment/:id', component: TakeAssessmentComponent },
   { path: 'AssessmentResult', component: AssessmentResultComponent },
   { path: 'CourseCertificate', component: CourseCertificateComponent },
   { path: 'StartMyCourse', component: StartMyCourseComponent },

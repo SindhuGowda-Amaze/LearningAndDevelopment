@@ -35,14 +35,27 @@
                     <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"
                         *ngFor="let details of categorylist"> <input type="checkbox" value="1" [(ngModel)]="course1"
                             name="course1" (change)="filtercourse(details.name)">{{details.name}}</a>
+
                     <a *ngFor="let details of categorylist1" class="FilterBox"
                         style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox" value="1"
                             [(ngModel)]="course" name="course"
                             (change)="filtercourse(details.name)">{{details.name}}</a>
+
                     <a *ngFor="let details of categorylist2" class="FilterBox"
                         style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox" value="1"
                             [(ngModel)]="course2" name="course2"
+                            (change)="filtercourse(details.name)">{{details.name}}</a>
+
+                    <a *ngFor="let details of categorylist3" class="FilterBox"
+                        style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox" value="1"
+                            [(ngModel)]="course3" name="course3"
+                            (change)="filtercourse(details.name)">{{details.name}}</a> 
+
+                    <a *ngFor="let details of categorylist4" class="FilterBox"
+                        style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox" value="1"
+                            [(ngModel)]="course4" name="course4"
                             (change)="filtercourse(details.name)">{{details.name}}</a> <br>
+
                     <button style="background-color: rgb(66, 66, 66); color: white;" (click)="GetCourse()">Clear
                         Filter </button>
                     <!-- IT and Software -->
@@ -120,7 +133,7 @@
             <div class="row" *ngIf="show1==1">
                 <div class="col-lg-12" style="margin-left: 52px;">
                     <div class="row">
-                        <div class="col-lg-3"  *ngFor="let details of courselist | filter:search">
+                        <div class="col-lg-3" *ngFor="let details of courselist | filter:search">
                             <!-- <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <img class="card-img-top" src="assets/Images/python-full-stack-developer-course.jpg" alt="Card image cap">
                                 <div class="card-body">
@@ -133,7 +146,7 @@
                                 </div>
                             </div> -->
 
-                            <div class="card1" style="background-color: white; height: 325px;width: 250px;" >
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <!-- <img class="card-img-top" src="assets/Images/python-full-stack-developer-course.jpg" alt="Card image cap"> -->
                                 <img class="card-img-top" src="{{details.photo}}" alt="Card image cap">
                                 <div class="card-body">
@@ -145,17 +158,19 @@
                                     <p class="card-text CardBody">{{details.description}}</p>
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <button class="btn" data-toggle="modal"data-target="#enroll" (click)="getcoureid(details.id)">ENROLL</button>
+                                            <button class="btn" data-toggle="modal" data-target="#enroll"
+                                                (click)="getcoureid(details.id)">ENROLL</button>
                                         </div>
                                         <div class="col-lg-6">
-                                            <button  [routerLink]="['/ViewCourse',details.id]"  class="btn" >VIEW COURSE</button>
+                                            <button [routerLink]="['/ViewCourse',details.id]" class="btn">VIEW
+                                                COURSE</button>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div><br>
-                        
+
                         <!-- <div class="col-lg-3">
                             <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <img class="card-img-top" src="assets/Images/MERN-Course.png" alt="Card image cap">
@@ -419,55 +434,56 @@
 
 
 
-<div id="enroll" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Enroll for Course</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body" *ngFor="let item of stafflist">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <label class="Text">Name:</label>
-                    </div>
-                    <div class="col-lg-5">
-                        <input class="form-control" name="name" id="name" [(ngModel)]="name" placeholder="{{item.name}}"
-                            disabled>
-                    </div>
-                </div> <br>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <label class="Text" style="font-weight: bold;">Phone No:</label>
-                    </div>
-                    <div class="col-lg-5">
-                        <input class="form-control" name="mobile" id="mobile" [(ngModel)]="mobile"
-                            placeholder="{{item.mobile}}" disabled>
-                    </div>
-                </div> <br>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <label class="Text" style="font-weight: bold;">Email:</label>
-                    </div>
-                    <div class="col-lg-5">
-                        <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
-                            placeholder="{{item.emailID}}" disabled>
-                    </div>
-                </div> <br>
-                <div class="row">
-                    <div class="col-lg-5"></div>
-                    <div class="col-lg-2">
-                        <button class="form-control Save" (click)="enroll(item.name,item.mobile,item.emailID)"
-                            data-dismiss="modal">Enroll</button>
+            <div id="enroll" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Enroll for Course</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body" *ngFor="let item of stafflist">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="Text">Name:</label>
+                                </div>
+                                <div class="col-lg-5">
+                                    <input class="form-control" name="name" id="name" [(ngModel)]="name"
+                                        placeholder="{{item.name}}" disabled>
+                                </div>
+                            </div> <br>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="Text" style="font-weight: bold;">Phone No:</label>
+                                </div>
+                                <div class="col-lg-5">
+                                    <input class="form-control" name="mobile" id="mobile" [(ngModel)]="mobile"
+                                        placeholder="{{item.mobile}}" disabled>
+                                </div>
+                            </div> <br>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class="Text" style="font-weight: bold;">Email:</label>
+                                </div>
+                                <div class="col-lg-5">
+                                    <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
+                                        placeholder="{{item.emailID}}" disabled>
+                                </div>
+                            </div> <br>
+                            <div class="row">
+                                <div class="col-lg-5"></div>
+                                <div class="col-lg-2">
+                                    <button class="form-control Save"
+                                        (click)="enroll(item.name,item.mobile,item.emailID)"
+                                        data-dismiss="modal">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <hr>
+                            <div class="col-lg-2">
+                                <button data-dismiss="modal" class="CloseBTN">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <hr>
-                <div class="col-lg-2">
-                    <button data-dismiss="modal" class="CloseBTN">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
+            </div>-->

@@ -1,115 +1,154 @@
-<div class="container-fluid" style="padding-left: 20px; background-color: white;">
-    <div class="row">
+<div class="container-fluid card">
+    <div class="container-fluid">
+        <div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5 style="text-align: center;text-transform: uppercase;"><b><u>Amaze Recruitments(2020-21)</u></b>
+                    </h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <h6 style="text-align: left;"><b>Time Allowed : 60 Min</b></h6>
+                </div>
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-3">
+                    <label id="timeleft" style="font-size: 18px; margin-left: 38px;"><b>Time left : </b></label>
+                    <label style="font-size: 18px;" id="demo"></label>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5 style="float:left"><b>General Instructions:</b></h5>
+                    <br>
+                    <p><b>
+                            <br>
+                            1 : DO NOT REFRESH THE PAGE
+                            <br>
+                            2 : Figures provided in this test are drawn to scale unless otherwise indicated.
+                            <br>
+                            3 : All figures lie in a plane unless otherwise indicated.
+                            <br>
+                            4 : Unless otherwise indicated, the domain of a given function f is the set of all real
+                            numbers x for which f of x is a real number.
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <br>
+    <div class="row" *ngIf="startTest=='0'">
         <div class="col-lg-12">
-            <h1>Java Programming</h1>
-            <hr>
+            <h3>
+                <marquee direction="left" style="color: red;" scrollamount="20"><b>Please Click on Start Test To Start
+                        The Test..(Do Not Refresh The Page).</b></marquee>
+            </h3>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <p style="text-align: center;"><button type="button" class="addButton" *ngIf="startTest=='0'"
+                        (click)="startTestContainer()">Start Test</button></p>
+            </div>
         </div>
     </div>
-    <div class="row heading">
-        <div class="col-lg-12">
-            <h6>Fundamental Concepts of OOP’s</h6>
+    <br>
+    <div class="container-fluid" *ngIf="show=='1' && startTest=='1'">
+        <div class="row">
+            <div class="col-lg-12">
+                <table>
+                    <tr>
+                        <th style="width:10px;text-align: center;background-color: white;color:black">Question Num.
+                        </th>
+                        <th style="width:500px;text-align: center;background-color: white;color:black">Question
+                        </th>
+
+                    </tr>
+                    <tr *ngFor="let list of questionList;index as i">
+                        <td style="width:10px;text-align: center;background-color: white;color:black">
+                            {{i+1}} </td>
+                        <td style="width:10px;background-color: white;color:black">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <b>
+                                        <div [innerHtml]="list.question"></div>
+                                    </b>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="radio" value="{{list.option3}}" name="{{list.answer}}"
+                                                [(ngModel)]='list.userAnswer'>&nbsp;
+                                            <div [innerHtml]="list.option3"></div>
+                                            <!-- {{list.option3}} -->
+
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="radio" value="{{list.option4}}" name="{{list.answer}}"
+                                                [(ngModel)]='list.userAnswer'>&nbsp;
+                                            <div [innerHtml]="list.option4"></div>
+                                            <!-- {{list.option4}} -->
+
+                                        </div>
+                                        <div class="col-lg-1">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="radio" value="{{list.option1}}" name="{{list.answer}}"
+                                                [(ngModel)]='list.userAnswer'>&nbsp;
+                                            <div [innerHtml]="list.option1"></div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="radio" value="{{list.option2}}" name="{{list.answer}}"
+                                                [(ngModel)]='list.userAnswer'>
+                                            &nbsp;
+                                            <div [innerHtml]="list.option2"></div>
+                                        </div>
+                                        <div class="col-lg-1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="row" *ngIf="list.questionTypeID==2">
+                                <div class="col-lg-12">
+                                    <ckeditor [editor]="Editor" [(ngModel)]='list.userAnswer'></ckeditor>
+                                    <br>
+
+                                </div>
+                            </div> -->
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </div><br>
-    <div class="row"style="padding-left: 20px; ">
-        <div class="col-lg-10 colwidth" >
-            <h3><u>Subjective Type Questions</u></h3><br>
-            <!-- <p >Q1. Why is Java a platform independent language?</p> <br> -->
-            <p  *ngFor="let details of quetionlist" >{{count}} {{details.question}}</p>
-            <textarea class="form-control" placeholder="write your answer here..." rows="2"></textarea><br>
-            <!-- <textarea class="form-control" placeholder="write your answer here..." rows="2" *ngFor="let details of quetionlist" >{{details.correctAnswer}}</textarea><br> -->
-            <!-- <p  *ngFor="let details of quetionlist" >{{details.question}}</p> -->
-            <!-- <p>Q2. What are the benefits of using Multithreading?</p> <br> -->
-            <textarea class="form-control" placeholder="write your answer here..." rows="2"></textarea><br>
-            <p>Q3. What is Thread in Java?</p> <br>
-            <textarea class="form-control" placeholder="write your answer here..." rows="2"></textarea><br>
-            <p>Q4.What are the two ways of implementing thread in Java?</p> <br>
-            <textarea class="form-control" placeholder="write your answer here..." rows="2"></textarea><br>
-            <p>Q5.What's the difference between thread and process?</p> <br>
-            <textarea class="form-control" placeholder="write your answer here..." rows="2"></textarea><br>
 
-            <h3><u>Objective Type Questions</u></h3><br>
-            <p>Q1. Java is a __________ language</p>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;pure object oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;not a pure object oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Procedure oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;none of the above<br><br>
-            
-            <p>Q2. What is multithreaded programming?</p>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;It’s a process in which two different processes run simultaneously<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp; It’s a process in which two or more parts of same process run simultaneously<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp; It’s a process in which many different process are able to access same information<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;It’s a process in which a single process can access information from many sources<br><br>
-            <p>Q3. Which of these are types of multitasking</p>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Process based<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Thread based<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Process and Thread based<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;none of the above<br><br>
-
-            <p>Q4.  Thread priority in Java is?</p>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Integer<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Float<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp; double<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;long<br><br>
-            <p>Q5. Java is a __________ language</p>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;pure object oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;not a pure object oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Procedure oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;none of the above<br><br>
-            <p>Q6. Java is a __________ language</p>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;pure object oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;not a pure object oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Procedure oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;none of the above<br><br>
-            <p>Q7. Java is a __________ language</p>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;pure object oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;not a pure object oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Procedure oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;none of the above<br><br>
-            <p>Q8. Java is a __________ language</p>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;pure object oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;not a pure object oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Procedure oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;none of the above<br><br>
-
-        </div>
-        <div class="col-lg-2">
-            <div class="row">
-                <div class=" col-lg-12">  <p style="margin-left: 30px;">Subjective Questions </p></div>
-            </div> <hr>  
-            <div class="row">
-                <div class="col-lg-6">
-                    <p>Answered</p>
-                </div>
-                <div class="col-lg-6">
-                    <p>Not Answered</p>
-                </div>
-            </div> <br><br><br>
-            <div class="row">
-                <div class=" col-lg-12">  <p style="margin-left: 30px;">Objective Questions </p></div>
-            </div> <hr>  
-            <div class="row">
-                <div class="col-lg-6">
-                    <p>Answered</p>
-                </div>
-                <div class="col-lg-6">
-                    <p>Not Answered</p>
-                </div>
-            </div> <br><br><br>    
+        <br>
+        <div class="row" *ngIf="show=='1' && startTest=='1'">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4" style="text-align: center;">
+                <button type="button" class="addButton" (click)="submitAnswer()">Submit</button>
+            </div>
+            <div class="col-lg-4">
+            </div>
         </div>
     </div>
-    <hr>
-    <div class="row" style="padding: 20px; ">
-        <!-- <div class="col-lg-2">
-            <button class="form-control button" routerLink="/StartMyCourse">Course Content</button>
-        </div> -->
-        <div class="col-lg-3"></div>
-        <div class="col-lg-1">
-            <button class="form-control button" (click)="cancel()">Cancel</button>
-        </div>
-        <div class="col-lg-1">
-            <button class="form-control button"  (click)="submit()">Submit</button>
-        </div>
-    </div>
+    <br>
 </div>
-
-<br>
