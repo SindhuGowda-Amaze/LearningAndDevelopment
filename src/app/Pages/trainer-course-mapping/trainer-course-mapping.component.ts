@@ -6,16 +6,17 @@ import { LearningService } from 'src/app/learning.service';
   styleUrls: ['./trainer-course-mapping.component.css']
 })
 export class TrainerCourseMappingComponent implements OnInit {
-
+search:any;
   constructor(public LearningService:LearningService) { }
 
   ngOnInit(): void {
+    this.GetTrainerCourseMappingDashboard();
   }
   Trainerdetails:any;
 
-  public GetTrainerCourseMapping() {
+  public GetTrainerCourseMappingDashboard() {
     debugger
-    this.LearningService.GetTrainerCourseMapping().subscribe(
+    this.LearningService.GetTrainerCourseMappingDashboard().subscribe(
       data => {
         debugger
         this.Trainerdetails = data;

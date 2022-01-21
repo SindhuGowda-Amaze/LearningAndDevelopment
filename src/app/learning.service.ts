@@ -448,4 +448,9 @@ export class LearningService {
     return this.http.get<any[]>(this.baseURL + "/Master/GetApproveCourse?StaffID=" + staffid);
   }
 
+  public GetTrainerCourseMappingDashboard() {
+
+    return this.http.get<any[]>(this.baseURL + "/Master/GetTrainerCourseMappingDashboard");
+  }
+
 }

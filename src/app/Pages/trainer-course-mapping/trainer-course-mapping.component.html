@@ -17,9 +17,9 @@
                     <p class="Text">Filter By</p>
                 </div>
                 <div class="col-lg-6">
-                    <!-- <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search"
-                        name="search"> -->
-                        <input type="search" class="form-control" placeholder="Search for Name..">
+                    <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search"
+                        name="search">
+                    <!-- <input type="search" class="form-control" placeholder="Search for Name.."> -->
                 </div>
                 <div class="col-lg-1"></div>
             </div><br>
@@ -34,8 +34,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <!-- <table class="table" *ngIf="(vendordetails | filter: search).length > 0; else noResults"> -->
-                            <table class="table table-bordered">
+                        <table class="table" *ngIf="(Trainerdetails | filter: search).length > 0; else noResults">
+                            <!-- <table class="table table-bordered"> -->
                             <thead>
                                 <tr class="head">
                                     <th>Trainer Name</th>
@@ -47,10 +47,19 @@
                                     <th>Allowed Students per Batch</th>
                                     <th>Actions</th>
                                 </tr>
-                                <!-- <tr *ngFor="let details of Trainerdetails">
-                                   <td>{{details.}}</td>   
-                                </tr>  -->
-                               <!-- <tr *ngFor="let vendor of result|filter:search">
+                                <tr *ngFor="let details of Trainerdetails">
+                                   <td>{{details.trainerName}}</td>   
+                                    <td>{{details.courseName}}</td>   
+                                    <td>{{details.email}}</td>   
+                                    <td>{{details.startDate}}</td>   
+                                    <td>{{details.endDate}}</td>   
+                                    <td>{{details.batchName}}</td>   
+                                    <td>{{details.noOfStudentsEnrolled}}</td>   
+                                    <td><button class="button1" routerLink="/TrainerCourseMappingForm">Edit</button> <br> <br>
+                                        <button class="button2" >Delete</button>
+                                    </td>     
+                                </tr> 
+                                <!-- <tr *ngFor="let vendor of result|filter:search">
                                     <td><img style="width: 100px;" src="{{vendor.vendor_Logo}}"></td>
                                     <td>{{result.vendor_Name}}</td>
                                     <td>{{result.phone_Number}}</td>
@@ -70,7 +79,7 @@
                                         <button class="button2" >Delete</button>
                                     </td>
                                  </tr> -->
-                               <!-- <tr class="head">
+                                <!-- <tr class="head">
                                     <td>Pavan</td>
                                     <td>Active listening and Customer Satisfaction</td>
                                     <td>pavan123@gmail.com</td>
@@ -84,9 +93,9 @@
                                 </tr> -->
                             </thead>
                         </table>
-                        <!-- <ng-template #noResults>
+                        <ng-template #noResults>
                             <p class="NoResultShow"> No results found for "{{search}}" </p>
-                        </ng-template> -->
+                        </ng-template>
                     </div>
                 </div>
             </div>

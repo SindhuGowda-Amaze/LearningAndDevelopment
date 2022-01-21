@@ -16,48 +16,68 @@
                         Filter By
                     </div>
                     <div class="col-lg-3">
-                        <input class="form-control" placeholder="Search" >
+                        <input class="form-control" placeholder="Search" [(ngModel)]="search">
                     </div>
-                    <div class="col-lg-6"></div>
+                    <div class="col-lg-3">
+                        <select class="form-control" name="cars" id="Duration" (change)="staffid($event)">
+                            <option value="0">Select Employee</option>
+                            <option *ngFor="let details of result" value="{{details.id}}">{{details.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3"></div>
                     <div class="col-lg-2">
                         <p class="count">Count :{{count}}</p>
                     </div>
                 </div> <br>
             </div><br>
-
+            <div class="row">
+                <div class="col-lg-8 View ">
+                    <ul>
+                        <li [ngClass]="{'underlinetext': show=='2'}"><a class="active"
+                            [ngClass]="{'underlinetext': show==2}" (click)="Showcards(2)">New Request
+                        </a></li>
+                        <li [ngClass]="{'underlinetext': show=='1'}"><a class="active" (click)="Showcards(1)">
+                                <ul>Approved</ul>
+                            </a></li>
+                        <li [ngClass]="{'underlinetext': show=='3'}"><a class="active" (click)="Showcards(3)">Rejected</a>
+                        </li>
+                    </ul>
+                </div>
+            </div><hr>
             <div class="row">
                 <div class="col-lg-12">
-                    <table class="table tablebordered" >
+                    <table class="table tablebordered" *ngIf="(result | filter: search).length > 0; else noResults">
                         <thead>
                             <tr class="head">
                                 <th>Employee Name</th>
                                 <th>Phone No</th>
                                 <th>Email</th>
                                 <th>Course Name</th>
-                                <!-- <th>Request sent Date</th> -->
-                              
+                                <th>Request sent Date</th>
+
                                 <th>Action</th>
                             </tr>
-                            <tr *ngFor="let details of result">
+                            <tr *ngFor="let details of result|filter:search">
                                 <td>{{details.employeeName}}</td>
                                 <td>{{details.phoneNo}}</td>
                                 <td>{{details.email}}</td>
                                 <td>{{details.courseName}}</td>
-                               
-                               
+                                <td>{{details.modifiedDate}}</td>
                                 <td>
                                     <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                                         (click)="getid(job.id)">Selected</button> <br><br>
                                     <button class="btn btn-primary" style="background-color:#dc3545; border:none"
                                         data-toggle="modal" data-target="#Reject"
                                         (click)="getid(job.id)">Rejected</button> -->
-                                     <p *ngIf="details.status=='Manager Approved'||details.status=='Manager Rejected'">{{details.status}}</p>
-                                        <button *ngIf="details.status=='Manager Pending'" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="getid(details.id)"
-                                     >Approve</button> <br><br>
+                                    <p *ngIf="details.status=='Manager Approved'||details.status=='Manager Rejected'">
+                                        {{details.status}}</p>
+                                    <button *ngIf="details.status=='Manager Pending'" class="btn btn-primary"
+                                        data-toggle="modal" data-target="#exampleModal"
+                                        (click)="getid(details.id)">Approve</button> <br><br>
 
-                                    <button *ngIf="details.status=='Manager Pending'"  class="btn btn-primary" style="background-color:#dc3545; border:none" (click)="getid(details.id)"
-                                        data-toggle="modal" data-target="#Reject"
-                                      >Reject</button>
+                                    <button *ngIf="details.status=='Manager Pending'" class="btn btn-primary"
+                                        style="background-color:#dc3545; border:none" (click)="getid(details.id)"
+                                        data-toggle="modal" data-target="#Reject">Reject</button>
                                     <!-- <button class="btn btn-primary"
                           *ngIf="job.interviewRejected=='0'&&job.interviewSelected=='0'"
                           (click)="Accept(job.id,job.interviewercomments)">Selected</button> &nbsp;
@@ -65,7 +85,7 @@
                       <button class="btn btn-danger"
                           *ngIf="job.interviewRejected=='0'&&job.interviewSelected=='0'"
                           (click)="Reject(job.id,job.interviewercomments)">Rejected</button> -->
-                                <!-- </td>
+                                    <!-- </td>
                             </tr>
                             <tr>
                                 <td>Priya</td>
@@ -79,7 +99,7 @@
                                         data-toggle="modal" data-target="#Reject"
                                         (click)="getid(job.id)">Rejected</button> -->
 
-                                        <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                                    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                                      >Approve</button> <br><br>
                                     <button class="btn btn-primary" style="background-color:#dc3545; border:none"
                                         data-toggle="modal" data-target="#Reject"
@@ -95,6 +115,9 @@
                             </tr>
                         </thead>
                     </table>
+                    <ng-template #noResults>
+                        <p>no results found for "{{search}}" </p>
+                    </ng-template>
                 </div>
             </div>
         </div>
@@ -171,7 +194,7 @@
                     <div class="col-lg-2">
                         <button class="btn btn-primary "
                             style="background-color:#dc3545; border:none ; margin-left: 10%;"
-                            (click)="Rejecttcandidate()"  data-dismiss="modal">Rejected</button>
+                            (click)="Rejecttcandidate()" data-dismiss="modal">Rejected</button>
                     </div>
                 </div> <br>
 

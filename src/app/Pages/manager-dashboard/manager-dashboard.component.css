@@ -71,3 +71,38 @@
     .count{
       font-size: 16px;
     }
+
+    .underlinetext
+{
+  text-decoration: 3px solid rgb(72, 83, 238) underline;
+  color: rgb(72, 83, 238);
+  height: 4px;
+}
+.underlinetext li a:hover {
+  text-decoration: 3px solid rgb(72, 83, 238) underline;
+  color:   rgb(72, 83, 238)
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+
+li {
+  float: left;
+}
+
+li  {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: 3px solid rgb(72, 83, 238) underline;
+  color:   rgb(72, 83, 238)
+}

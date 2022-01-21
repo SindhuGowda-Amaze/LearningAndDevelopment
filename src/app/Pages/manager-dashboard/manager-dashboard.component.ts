@@ -16,11 +16,13 @@ export class ManagerDashboardComponent implements OnInit {
   constructor(public LearningService: LearningService) { }
 
   ngOnInit(): void {
+    this.Showcards(2);
+    this.show = 2;
     this.staffid = localStorage.getItem('userid');
     this.manager = localStorage.getItem('manager');
-    this.GetCandidateReg()
+   // this.GetCandidateReg()
     // this.insertdetails()
-    this.GetEnroll();
+    //this.GetEnroll();
   }
 
   public GetCandidateReg() {
@@ -41,6 +43,7 @@ export class ManagerDashboardComponent implements OnInit {
     // }
   }
   result: any;
+
   public GetEnroll() {
     debugger
     this.LearningService.GetEnroll().subscribe(
@@ -48,7 +51,8 @@ export class ManagerDashboardComponent implements OnInit {
         debugger
         // this.result = data.filter(x => x.manager == this.manager );
         this.result = data
-
+        this.dummemployeedetails=data
+        this.count = this.result.length;
 
       })
   }
@@ -108,6 +112,54 @@ export class ManagerDashboardComponent implements OnInit {
         this.GetEnroll();
       })
 
+    }
+
+    employeedetails:any;
+    dummemployeedetails:any;
+    getstaffid(even: any) {
+      this.staffid = even.target.value;
+      if (even.target.value != 0) {
+        this.result = this.dummemployeedetails.filter((x: { employeeId: any; }) => x.employeeId == this.staffid)
+      }
+      else{
+        this.GetEnroll();
+      }
+    }
+
+    show:any;
+    Showcards(value: any) {
+      this.show = value;
+      if (value == 1) {
+        this.LearningService.GetEnroll().subscribe(
+          data => {
+            debugger
+            // this.result = data.filter(x => x.manager == this.manager );
+            this.result = data.filter(x => x.status == 'Manager Approved' );
+            this.count = this.result.length;
+          })
+        // this.GetCourse();
+      }
+      else if (value == 2) {
+        this.LearningService.GetEnroll().subscribe(
+          data => {
+            debugger
+            // this.result = data.filter(x => x.manager == this.manager );
+            this.result = data.filter(x => x.status == 'Manager Pending' );
+            this.count = this.result.length;
+          })
+        // this.GetApproveCourse();
+      }
+      else if (value == 3) {
+        this.LearningService.GetEnroll().subscribe(
+          data => {
+            debugger
+            // this.result = data.filter(x => x.manager == this.manager );
+            this.result = data.filter(x => x.status == 'Manager Rejected' );
+            this.count = this.result.length;
+          })
+        // this.GetApproveCourse();
+      }
+  
     }
 }
 

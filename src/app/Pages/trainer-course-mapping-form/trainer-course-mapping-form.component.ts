@@ -23,13 +23,13 @@ export class TrainerCourseMappingFormComponent implements OnInit {
   trainerlist:any;
   ngOnInit(): void {
     this.GetTrainer();
-    this.ActivatedRoute.params.subscribe(params => {
-      debugger
-      this.id = params["id"];
-      if (this.id != null && this.id != undefined) {
-        this.GetTrainer();
-      }
-    })
+    // this.ActivatedRoute.params.subscribe(params => {
+    //   debugger
+    //   this.id = params["id"];
+    //   if (this.id != null && this.id != undefined) {
+    //     this.GetTrainer();
+    //   }
+    // })
 
     this.ActivatedRoute.params.subscribe(params => {
       debugger
@@ -40,16 +40,17 @@ export class TrainerCourseMappingFormComponent implements OnInit {
     })
 
     this.GetCourse();
-    this.ActivatedRoute.params.subscribe(params => {
-      debugger
-      this.id = params["id"];
-      if (this.id != null && this.id != undefined) {
-        this.GetCourse();
-      }
-    })
+    // this.ActivatedRoute.params.subscribe(params => {
+    //   debugger
+    //   this.id = params["id"];
+    //   if (this.id != null && this.id != undefined) {
+    //     this.GetCourse();
+    //   }
+    // })
   }
 
-  
+  trainerName:any;
+  courseName:any;
 
   GetTrainerCourseMapping() {
     this.LearningService.GetTrainerCourseMapping().subscribe(
@@ -57,11 +58,13 @@ export class TrainerCourseMappingFormComponent implements OnInit {
     debugger
     this.result = data;
 		this.result=this.result.filter((x: { id: any; })=>x.id==Number(this.id));
-		this.EmailID=this.result[0].currencyName;
-		this.StartDate=this.result[0].countryName;
-    this.EndDate=this.result[0].description;
-    this.BatchName=this.result[0].description;
-    this.AllowedStudents=this.result[0].description;
+    this.trainerName=this.result[0].trainerName;
+    this.courseName=this.result[0].courseName;
+		this.EmailID=this.result[0].emailID;
+		this.StartDate=this.result[0].startDate;
+    this.EndDate=this.result[0].endDate;
+    this.BatchName=this.result[0].batchName;
+    this.AllowedStudents=this.result[0].allowedStudents;
       }
     ) 
   }
@@ -69,11 +72,13 @@ export class TrainerCourseMappingFormComponent implements OnInit {
   Submit(){
     debugger 
    var json = {  
-      "EmailID": this.EmailID,
-      "StartDate": this.StartDate,
-      "EndDate": this.EndDate,
-      "BatchName": this.BatchName,
-      "AllowedStudents": this.AllowedStudents
+     "trainerID":this.TrainerID,
+     "courseID":this.CourseID,
+      "emailID": this.EmailID,
+      "startDate": this.StartDate,
+      "endDate": this.EndDate,
+      "batchName": this.BatchName,
+      "allowedStudents": this.AllowedStudents
     };
     this.LearningService.InsertTrainerCourseMapping(json).subscribe(
       data => {
@@ -89,11 +94,13 @@ export class TrainerCourseMappingFormComponent implements OnInit {
     debugger
      var json = {
       "ID": this.id,
-      "EmailID": this.EmailID,
-      "StartDate": this.StartDate,
-      "EndDate": this.EndDate,
-      "BatchName": this.BatchName,
-      "AllowedStudents": this.AllowedStudents          
+      "trainerID":this.TrainerID,
+      "courseID":this.CourseID,
+      "emailID": this.EmailID,
+      "startDate": this.StartDate,
+      "endDate": this.EndDate,
+      "batchName": this.BatchName,
+      "allowedStudents": this.AllowedStudents          
       };
     
       this.LearningService.UpdateTrainerCourseMapping(json).subscribe(
@@ -105,6 +112,12 @@ export class TrainerCourseMappingFormComponent implements OnInit {
       })
   }
 
+  CourseID:any;
+  getCourseID(even:any)
+  {
+    debugger
+    this.CourseID=even.target.value;
+  }
   public GetCourse() {
     debugger
     this.LearningService.GetCourse().subscribe(
@@ -114,6 +127,12 @@ export class TrainerCourseMappingFormComponent implements OnInit {
       })
   }
 
+TrainerID:any
+  getTrainerID(even:any)
+  {
+    debugger
+    this.TrainerID=even.target.value;
+  }
   public GetTrainer() {
     debugger
     this.LearningService.GetTrainer().subscribe(

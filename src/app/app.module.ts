@@ -13,6 +13,7 @@ import { FooterComponent } from './Pages/footer/footer.component';
 import { TrainerComponent } from './Pages/trainer/trainer.component';
 import { TrainerFormComponent } from './Pages/trainer-form/trainer-form.component';
 import { TrainerCourseMappingComponent } from './Pages/trainer-course-mapping/trainer-course-mapping.component';
+import { TrainerCourseMappingFormComponent } from './Pages/trainer-course-mapping-form/trainer-course-mapping-form.component';
 import { CourseDashboardComponent } from './Pages/course-dashboard/course-dashboard.component';
 import { ChapterDashboardComponent } from './Pages/chapter-dashboard/chapter-dashboard.component';
 import { CourseComponent } from './Pages/course/course.component';
@@ -55,6 +56,7 @@ const ngWizardConfig: NgWizardConfig = {
     TrainerComponent,
     TrainerFormComponent,
     TrainerCourseMappingComponent,
+    TrainerCourseMappingFormComponent,
     CourseDashboardComponent,
     ChapterDashboardComponent,
     CourseComponent,
