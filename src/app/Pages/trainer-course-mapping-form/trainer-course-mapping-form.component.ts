@@ -74,7 +74,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
    var json = {  
      "trainerID":this.TrainerID,
      "courseID":this.CourseID,
-      "emailID": this.EmailID,
+      // "emailID": this.EmailID,
       "startDate": this.StartDate,
       "endDate": this.EndDate,
       "batchName": this.BatchName,
