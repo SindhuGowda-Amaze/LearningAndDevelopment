@@ -12,35 +12,47 @@ export class ViewCourseComponent implements OnInit {
   constructor(private ActivatedRoute: ActivatedRoute, private LearningService: LearningService) { }
 
   courseid: any;
+  userid:any;
+  manager:any;
+  stafflist:any;
   ngOnInit(): void {
+    
+    this.userid = sessionStorage.getItem('userid')
+    this.manager = sessionStorage.getItem('manager')
     this.ActivatedRoute.params.subscribe(params => {
       debugger
       this.courseid = params['id'];
       this.GetTrainerCourseMapping();
       this.GetChapter()
     })
+
+
+    this.LearningService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist = data.filter(x => x.id == this.userid);;
+    });
   }
-  enroll() {
-    Swal.fire({
-      title: 'Enroll Confirmation',
-      text: "Please click on OK to send Course Enrolment Request",
-      icon: 'warning',
-      // icon: 'success',
-      showCloseButton: true,
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'OK'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          'Request Sent',
-          'Your request has been sent to manager for Approval',
-          'success'
-        )
-      }
-    })
-  }
+  // enroll() {
+  //   Swal.fire({
+  //     title: 'Enroll Confirmation',
+  //     text: "Please click on OK to send Course Enrolment Request",
+  //     icon: 'warning',
+  //     // icon: 'success',
+  //     showCloseButton: true,
+  //     showCancelButton: true,
+  //     confirmButtonColor: '#3085d6',
+  //     cancelButtonColor: '#d33',
+  //     confirmButtonText: 'OK'
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       Swal.fire(
+  //         'Request Sent',
+  //         'Your request has been sent to manager for Approval',
+  //         'success'
+  //       )
+  //     }
+  //   })
+  // }
   public flip1(event: { currentTarget: any; }) {
     debugger
     var element = event.currentTarget;
@@ -94,5 +106,52 @@ export class ViewCourseComponent implements OnInit {
   }
 
 
+
+
+  course:any
+  name:any;
+  mobile:any;
+  emailID:any;
+  enroll(name:any, mobile:any,emailID:any){
+    Swal.fire({
+      title: 'Enroll Confirmation',
+      text: "Please click on OK to send Course Enrolment Request",
+      icon: 'warning',
+      // icon: 'success',
+      showCloseButton: true,
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'OK'
+    }).then((result) => {
+
+      if (result.isConfirmed) {
+      debugger
+         var json = {  
+            "staffid": this.userid,
+            "manager": this.manager,
+           "courseid":this.courseid,
+            "status":'Manager Pending',
+            "employeeName":name,
+            "phoneNo":mobile,
+            "email":emailID  
+          };
+          this.LearningService.InsertEnroll(json).subscribe(
+            data => {
+              debugger
+              let id = data;
+              Swal.fire("saved Sucessfully");
+            location.href="#/Catalog"
+            })
+        Swal.fire(
+          'Request Sent',
+          'Your request has been sent to manager for Approval',
+          'success'
+        );
+        location.href="/#/Catalog";
+      }
+    });
+    } 
+    
 }
 

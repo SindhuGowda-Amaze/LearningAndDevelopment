@@ -29,6 +29,12 @@ export class ChapterDashboardComponent implements OnInit {
   }
 
   dummcoursedetails: any;
+  id: any;
+  courseName: any;
+  name: any;
+  description: any;
+  chapterPhoto: any;
+  chapterText: any;
 
   public GetChapter() {
     debugger
@@ -39,6 +45,23 @@ export class ChapterDashboardComponent implements OnInit {
       debugger
     })
   }
+
+    // public GetChapter(){
+    // this.LearningService.GetChapter().subscribe(
+    //   data => {
+    //   this.coursedetails = data;
+    //   this.dummcoursedetails = data;
+    //   debugger
+    //   this.coursedetails=this.coursedetails.filter((x: { id: any; })=>x.id==Number(this.id));
+    //   this.courseName=this.coursedetails[0].courseName;
+    //   this.name=this.coursedetails[0].name;
+    //   this.description=this.coursedetails[0].description;
+    //   this.chapterPhoto=this.coursedetails[0].chapterPhoto;
+    //   this.chapterText=this.coursedetails[0].chapterText;
+  
+    //     }
+    //   ) 
+    // }
 
   files: File[] = [];
 
@@ -62,7 +85,7 @@ export class ChapterDashboardComponent implements OnInit {
 
   edit(id: any) {
     debugger
-    location.href = "/Chapter/" + id;
+    location.href = "/#/Chapter/" + id;
   }
 
 

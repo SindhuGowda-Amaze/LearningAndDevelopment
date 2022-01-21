@@ -65,11 +65,13 @@ export class StartMyCourseComponent implements OnInit {
       this.show=1
   }
 
+  dummAttachmentlist:any;
   ShowAttachments(id: any) {
     debugger
     this.LearningService.GetChapterAttachmentByChapterID(id).subscribe(data => {
       debugger
       this.Attachmentlist = data;
+      this.dummAttachmentlist = data;
     })
   }
 
@@ -79,7 +81,7 @@ export class StartMyCourseComponent implements OnInit {
   public PreviewVideo() {
     debugger
    if(this.Attachmentlist.length!=0){
-     this.Attachmentlist=this.Attachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='video')
+     this.Attachmentlist=this.dummAttachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='video')
      if(this.Attachmentlist.length!=0){
       this.show=2
      }
@@ -96,7 +98,25 @@ export class StartMyCourseComponent implements OnInit {
 
   }
   public PreviewPdf() {
-    window.open('assets/Images/Java_Assessment_Qts.pdf')
+
+    if(this.Attachmentlist.length!=0){
+      this.Attachmentlist=this.dummAttachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='Pdf')
+      if(this.Attachmentlist.length!=0){
+      //  this.show=3
+       window.open(this.Attachmentlist[0].photo,"_blank")
+      }
+      else{
+       this.noattachments="No Pdf Available"
+       this.show=5
+     }
+     
+    }
+    else{
+      this.noattachments="No Pdf Available"
+      this.show=5
+    }
+
+   
   }
   public PreviewPPT() {
     window.open('assets/Images/JAVA_PPT.ppt')
@@ -105,7 +125,26 @@ export class StartMyCourseComponent implements OnInit {
     window.open('assets/Images/Java_Test_Words.docx')
   }
   public PreviewIMG() {
-    window.open('assets/Images/Java_CourseIMG.jpg')
+    // window.open('assets/Images/Java_CourseIMG.jpg')
+debugger
+    if(this.Attachmentlist.length!=0){
+      debugger
+      this.Attachmentlist=this.dummAttachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='Image')
+      if(this.Attachmentlist.length!=0){
+       this.show=4
+       debugger
+      //  window.open(this.Attachmentlist[0].photo,"_blank")
+      }
+      else{
+       this.noattachments="No Image Available"
+       this.show=5
+     }
+     
+    }
+    else{
+      this.noattachments="No Image Available"
+      this.show=5
+    }
   }
 
   show:any;

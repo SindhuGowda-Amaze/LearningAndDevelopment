@@ -13,6 +13,10 @@
                     Your browser does not support the video tag.
                   </video>
             </div> 
+            <div class="col-lg-5" *ngIf="show==4">
+                <img src="{{Attachmentlist[0].photo}}" alt="1st Course Assessment"
+                    style="width:500px; height:300px; margin-left:20px;">
+            </div> 
             <div class="col-lg-12" *ngIf="show==5" style="width: 70%; height: 80%;margin-left: 175px;" ><br><br>
                 <h5>{{noattachments}}</h5> <br><br>
             </div>
@@ -40,7 +44,8 @@
                 <h2>Course Contents </h2><br>
                 <div  *ngFor="let details of coursedetails">
                     <h5 (click)="getcoursedetails(details)">
-                        <img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;">
+                        <!-- <img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;"> -->
+                        <img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 7%;">
                          {{details.name}}
                     </h5>
                     <hr class="HRline">
@@ -75,11 +80,11 @@
 
             </div>
         </div><br><br><br><br><br><br>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-8" *ngIf="show==5">
                 <button routerLink="/CourseCertificate" class="ShowMore2">View My Certificate</button>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <div class="row" style="margin-left: 15px;">

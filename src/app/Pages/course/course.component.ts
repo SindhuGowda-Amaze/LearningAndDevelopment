@@ -33,7 +33,7 @@ this.GetCategoryMaster();
   entryCriteria:any;
   exitCriteria:any;
 
-public GetCourse(){
+  public GetCourse(){
   this.LearningService.GetCourse().subscribe(
     data => {
     debugger
@@ -69,13 +69,13 @@ public GetCourse(){
       data => {
         debugger
         let id = data;
-        Swal.fire("saved Sucessfully");
+        Swal.fire("Saved Sucessfully");
       location.href="#/CourseDashboard"
       })
   }
 
-  Update(){
-    debugger
+    Update(){
+     debugger
      var json = {
       'ID': this.id,
       "categoryName": this.categoryName,

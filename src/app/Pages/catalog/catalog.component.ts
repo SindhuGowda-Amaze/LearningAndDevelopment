@@ -36,6 +36,9 @@ export class CatalogComponent implements OnInit {
   categorylist:any;
   userid:any;
   manager:any;
+
+
+
   ngOnInit(): void {
     this.GetCourse() ;
     this.show1 = 1; 
@@ -168,7 +171,8 @@ export class CatalogComponent implements OnInit {
     this.LearningService.GetCourse().subscribe(
       data => {
         debugger
-        this.courselist = data
+        this.courselist = data;
+        this.count = this.courselist.length;
         
       })
       this.show1=1;

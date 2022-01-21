@@ -85,7 +85,7 @@ export class ChapterComponent implements OnInit {
         debugger
         this.chapterID = data;
         this.insertAttchmentFiles()
-        Swal.fire("saved Sucessfully");
+        Swal.fire("Saved Sucessfully");
         location.href = "#/ChapterDashboard"
       })
   }
