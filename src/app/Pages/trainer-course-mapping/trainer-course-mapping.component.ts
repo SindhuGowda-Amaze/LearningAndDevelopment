@@ -11,16 +11,16 @@ export class TrainerCourseMappingComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  result:any;
+  Trainerdetails:any;
 
   public GetTrainerCourseMapping() {
     debugger
     this.LearningService.GetTrainerCourseMapping().subscribe(
       data => {
         debugger
-        this.result = data;
+        this.Trainerdetails = data;
       })
   }
 
-  
+
 }
