@@ -33,7 +33,7 @@ this.GetCategoryMaster();
   entryCriteria:any;
   exitCriteria:any;
 
-public GetCourse(){
+  public GetCourse(){
   this.LearningService.GetCourse().subscribe(
     data => {
     debugger
@@ -74,8 +74,8 @@ public GetCourse(){
       })
   }
 
-  Update(){
-    debugger
+    Update(){
+     debugger
      var json = {
       'ID': this.id,
       "categoryName": this.categoryName,
