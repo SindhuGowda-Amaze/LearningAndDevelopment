@@ -420,15 +420,6 @@ export class LearningService {
       this.baseURL + "/Master/DeleteChapter?ID=" + ID);
   }
    
-<<<<<<< HEAD
-
-=======
-  public InsertAssessments(json : any) {
-    debugger
-    let APIURL = this.baseURL + "Master/InsertAssessments";
-    return this.http.post<any[]>(APIURL,json);
-  }
->>>>>>> d75a9398c0dfd19649bcc0cdc5a19f73e22d35c3
 
   public InsertEnroll(data: any) {
     debugger;
