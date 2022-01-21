@@ -22,6 +22,9 @@ export class TrainerCourseMappingFormComponent implements OnInit {
   constructor(public LearningService:LearningService, public ActivatedRoute:ActivatedRoute) { }
   trainerlist:any;
   ngOnInit(): void {
+
+    this.TrainerID=0;
+    this.CourseID=0;
     this.GetTrainer();
     // this.ActivatedRoute.params.subscribe(params => {
     //   debugger
@@ -60,7 +63,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
 		this.result=this.result.filter((x: { id: any; })=>x.id==Number(this.id));
     this.trainerName=this.result[0].trainerName;
     this.courseName=this.result[0].courseName;
-		this.EmailID=this.result[0].emailID;
+		// this.EmailID=this.result[0].emailID;
 		this.StartDate=this.result[0].startDate;
     this.EndDate=this.result[0].endDate;
     this.BatchName=this.result[0].batchName;
