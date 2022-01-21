@@ -9,41 +9,28 @@ import { LearningService } from 'src/app/learning.service';
 })
 export class MyCourseDashboardComponent implements OnInit {
 
-  constructor(public LearningService:LearningService) { }
-  show:any;
-  stafflist:any;
-  userid:any;
+  constructor(public LearningService: LearningService) { }
+  show: any;
+  stafflist: any;
+  userid: any;
   ngOnInit(): void {
-    
+
     this.userid = sessionStorage.getItem('userid')
 
-    // this.GetCourse();
-    // this.LearningService.GetMyDetails().subscribe(data => {
-    //   debugger
-    //   this.stafflist = data.filter(x => x.id == this.userid);;
-    // });
-    // this.show=2;
-
-    this. GetApproveCourse();
+   this.Showcards(2);
     this.LearningService.GetMyDetails().subscribe(data => {
       debugger
       this.stafflist = data.filter(x => x.id == this.userid);;
     });
-    this.show=2;
+    // this.show=2;
+
+    
+
+    this.show = 2;
   }
 
-  coursedetails:any;
+  coursedetails: any;
 
-  public GetApproveCourse() {
-    debugger
-    this.LearningService.GetApproveCourse(this.userid).subscribe(data => {
-      debugger
-      this.coursedetails = data;
-     
-      debugger
-    })
-    this.show=2;
-  }
 
 
   public flip1(event: { currentTarget: any; }) {
@@ -58,13 +45,41 @@ export class MyCourseDashboardComponent implements OnInit {
       }
     }
 
-   
+
   };
-  Showcards(value:any){
-   this.show=value;
+  Showcards(value: any) {
+    this.show = value;
+    if (value == 1) {
+      this.GetCourse();
+    }
+    else if (value == 2) {
+      this.GetApproveCourse();
+    }
+
   }
 
-  enroll(){
+
+  public GetApproveCourse() {
+    debugger
+    this.LearningService.GetApproveCourse(this.userid).subscribe(data => {
+      debugger
+      this.coursedetails = data;
+
+      debugger
+    })
+  }
+
+
+  GetCourse() {
+    this.LearningService.GetCourse().subscribe(data => {
+      debugger
+      this.coursedetails = data;
+    });
+  }
+
+
+
+  enroll() {
     Swal.fire({
       title: 'Enroll Confirmation',
       text: "Please click on OK to send Course Enrolment Request",
