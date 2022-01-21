@@ -55,15 +55,20 @@ export class MyCourseDashboardComponent implements OnInit {
     else if (value == 2) {
       this.GetApproveCourse();
     }
+   else if (value == 3) {
+      this.GetCourse();
+    }
 
   }
 
+  latestcoursedetails:any;
 
   public GetApproveCourse() {
     debugger
     this.LearningService.GetApproveCourse(this.userid).subscribe(data => {
       debugger
       this.coursedetails = data;
+      this.latestcoursedetails = data[0];
 
       debugger
     })

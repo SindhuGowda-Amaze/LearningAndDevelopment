@@ -2,23 +2,13 @@
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-4"></div>
-        <!-- <div class="col-lg-4" style="text-align: right; padding-top: 15px;">
-            <input class="InputBox" type="text" placeholder="What do you want to learn?" name="search">
-            <button type="submit" class="Btn">
-                <i class="fa fa-search">
-            </i></button>
-        </div> -->
         <div class="col-lg-4" style="text-align: right; padding-top: 15px;">
-            <!-- <input class="form-control" type="search" placeholder="What do you want to learn?" [(ngModel)]="search"> -->
-            <!-- <button type="submit" class="Btn">
-                <i class="fa fa-search"></i>
-            </button> -->
+            <input class="form-control" type="search" placeholder="What do you want to learn?">
         </div>
     </div><br>
-
     <div class="row">
-        <div class="col-lg-5">
-            <h3 style="padding-left: 30px;">Viewing {{count}} result(s)</h3>
+        <div class="col-lg-6">
+            <h3 style="padding-left:30px;">Viewing result(s)</h3>
         </div>
         <div class="col-lg-2">
             <h3 class="Filter1">Filter for</h3>
@@ -34,38 +24,29 @@
     <hr class="HRline">
     <br>
     <div class="row">
-        <div class="col-lg-3 ">
-            <div class="row ">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h4 class="Category">Select Course Category</h4>
-
-                            
-
-                        </div>
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="Category">Select Course Category</h4>
                     </div>
-                    <div class="vertical-menu VScroll"  >
-                        <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;" *ngFor="let details of categorylist | filter:search"> <input
-                                type="checkbox" value="1" [(ngModel)]="course1" name="course1"
-                                (change)="filtercourse(details.name)"> {{details.name}}</a>
-
-                     <a *ngFor="let details of categorylist1 | filter:search" class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
-                                    type="checkbox" value="1" [(ngModel)]="course" name="course"
-                                    (change)="filtercourse(details.name)"> {{details.name}}</a>
-
-                   
-                    <a *ngFor="let details of categorylist2 | filter:search" class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
-                                        type="checkbox" value="1" [(ngModel)]="course2" name="course2"
-                                        (change)="filtercourse(details.name)"> {{details.name}}</a> <br>
-                       <button  style="background-color: rgb(66, 66, 66); color: white;" (click)="GetCourse()">Clear Filter </button>
-                               
-                       <ng-template #noResults>
-                        <p class="NoResultShow"> No results found for "{{search}}" </p> 
-                       </ng-template>
-                      
-                      <!-- IT and Software -->
-                        <!-- <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
+                </div>
+                <div class="vertical-menu VScroll">
+                    <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"
+                        *ngFor="let details of categorylist"> <input type="checkbox" value="1" [(ngModel)]="course1"
+                            name="course1" (change)="filtercourse(details.name)">{{details.name}}</a>
+                    <a *ngFor="let details of categorylist1" class="FilterBox"
+                        style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox" value="1"
+                            [(ngModel)]="course" name="course"
+                            (change)="filtercourse(details.name)">{{details.name}}</a>
+                    <a *ngFor="let details of categorylist2" class="FilterBox"
+                        style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox" value="1"
+                            [(ngModel)]="course2" name="course2"
+                            (change)="filtercourse(details.name)">{{details.name}}</a> <br>
+                    <button style="background-color: rgb(66, 66, 66); color: white;" (click)="GetCourse()">Clear
+                        Filter </button>
+                    <!-- IT and Software -->
+                    <!-- <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                 type="checkbox" value="1" [(ngModel)]="show2" name="show2"
                                 (click)="showcards2(show2)">&nbsp; Digital Marketing</a>
                         <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
@@ -78,7 +59,7 @@
                         <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                 type="checkbox">&nbsp;French Courses</a> -->
 
-                        <!-- <a data-toggle="collapse" class="FilterBox" data-target="#demo" style="background-color: rgb(66, 66, 66); color: white;"> <input
+                    <!-- <a data-toggle="collapse" class="FilterBox" data-target="#demo" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                 type="checkbox" >&nbsp;Management</a>
                         <div id="demo" class="collapse FilterBox1">
                             <a><input class="box" type="checkbox" [(ngModel)]="show" name="show"   (click)="showcards()">&nbsp;Complete Digital Marketing</a>
@@ -132,71 +113,10 @@
                             <a><input type="checkbox">&nbsp;Digital Marketing Instagram</a>
                             <a><input type="checkbox">&nbsp;Product Management and Marketing</a>
                         </div> -->
-                    </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-9">
-            <!-- <div class="row" *ngIf="show==0">
-                <div class="col-lg-12" style="margin-left: 52px;">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                                <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"><b>Active listening and Customer Satisfaction</b></h5>
-                                    <p class="card-text">Active Listening for increasing customer satisfaction and
-                                        effectively
-                                        maste....</p><br>
-                                    <button routerLink="/StartMyCourse" class="btn" id="fixedbutton">START
-                                        COURSE</button>&nbsp;&nbsp;
-                                    <button routerLink="/ViewCourse" class="btn" id="fixedbutton">VIEW COURSE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                                <img class="card-img-top" src="/assets/Images/course2.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"><b>2016 SPi Global Overview</b></h5>
-                                    <p class="card-text">2016 SPi Global VMV</p><br><br>
-                                    <button routerLink="/StartMyCourse" class="btn" id="fixedbutton">START
-                                        COURSE</button>&nbsp;&nbsp;
-                                    <button routerLink="/ViewCourse" class="btn" id="fixedbutton">VIEW COURSE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                                <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"><b>Active Listening to Boost Sales </b></h5>
-                                    <p class="card-text">Active listening for boosting sales and avoiding passive
-                                        listening.</p><br>
-                                    <button class="btn" data-toggle="modal"
-                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
-                                <img class="card-img-top" src="/assets/Images/course3.png" alt="Card image cap"
-                                    style="height: 120px;">
-                                <div class="card-body">
-                                    <h5 class="card-title"><b>Adaptive skills</b></h5><br>
-                                    <p class="card-text">Developing Adaptive skills for coping with stressful situations
-                                    </p><br>
-                                    <button class="btn" data-toggle="modal"
-                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
-                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
             <div class="row" *ngIf="show1==1">
                 <div class="col-lg-12" style="margin-left: 52px;">
                     <div class="row">
@@ -485,7 +405,7 @@
                         </div>
                     </div>
                 </div>
-            </div><br><br><br> -->
+            </div>
             <div class="row" *ngIf="show==4">
                 <div class="col-lg-12" style="text-align: center;">
                     <button class="ShowMore">Show more</button>
@@ -512,13 +432,8 @@
                         <label class="Text">Name:</label>
                     </div>
                     <div class="col-lg-5">
-                        <!-- <select class="form-control" [(ngModel)]="Hired">
-                            <option value="">Select </option>
-                            <option>Yes</option>  
-                            <option>No</option> 
-                        </select> -->
-                        <input class="form-control" name="name" id="name" [(ngModel)]="name"
-                            placeholder="{{item.name}}" disabled>
+                        <input class="form-control" name="name" id="name" [(ngModel)]="name" placeholder="{{item.name}}"
+                            disabled>
                     </div>
                 </div> <br>
                 <div class="row">
@@ -536,13 +451,14 @@
                     </div>
                     <div class="col-lg-5">
                         <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
-                            placeholder="item.emailID" disabled>
+                            placeholder="{{item.emailID}}" disabled>
                     </div>
                 </div> <br>
                 <div class="row">
                     <div class="col-lg-5"></div>
                     <div class="col-lg-2">
-                        <button class="form-control Save" (click)="enroll(item.name,item.mobile,item.emailID)"  data-dismiss="modal">Enroll</button>
+                        <button class="form-control Save" (click)="enroll(item.name,item.mobile,item.emailID)"
+                            data-dismiss="modal">Enroll</button>
                     </div>
                 </div>
             </div>
@@ -554,5 +470,4 @@
             </div>
         </div>
     </div>
-</div>
-<br>
+</div>-->
