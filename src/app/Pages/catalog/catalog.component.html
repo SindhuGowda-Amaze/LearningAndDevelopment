@@ -117,19 +117,289 @@
         </div>
         <div class="col-lg-9">
             <div class="row" *ngIf="show1==1">
-                <div class="col-lg-3" *ngFor="let details of courselist">
-                    <div class="card1" style="background-color: white; height: 325px;width: 260px;" >
-                        <img class="card-img-top" src="{{details.photo}}" alt="Card image cap">
-                        <div class="card-body">
-                            <div class="card-title " style="font-size: 15px; ">
-                                <p><u>{{details.name}}</u></p>
-                                <p class="card-text des">{{details.description}}</p>
+                <div class="col-lg-12" style="margin-left: 52px;">
+                    <div class="row">
+                        <div class="col-lg-3"  *ngFor="let details of courselist">
+                            <!-- <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="assets/Images/python-full-stack-developer-course.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Python Fullstack Developer Course </b>
+                                    </h5>
+                                    <p class="card-text">Complete Python Fullstack Developer, Which includes Frontend, backend & DataBase...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div> -->
+
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;" >
+                                <!-- <img class="card-img-top" src="assets/Images/python-full-stack-developer-course.jpg" alt="Card image cap"> -->
+                                <img class="card-img-top" src="{{details.photo}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title"><b>Python Fullstack Developer Course </b>
+                                    </h5> -->
+                                    <h5 class="card-title CardHead"><b>{{details.name}}</b><br>
+                                    </h5>
+                                    <!-- <p class="card-text">Complete Python Fullstack Developer, Which includes Frontend, backend & DataBase...</p> -->
+                                    <p class="card-text CardBody">{{details.description}}</p>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <button class="btn" data-toggle="modal"data-target="#enroll" (click)="getcoureid(details.id)">ENROLL</button>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <button  [routerLink]="['/ViewCourse',details.id]"  class="btn" >VIEW COURSE</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
                             </div>
-                            <p>
-                                <button class="btn" data-toggle="modal" data-target="#enroll"
-                                    (click)="getcoureid(details.id)">ENROLL</button>
-                                <button [routerLink]="['/ViewCourse',details.id]" class="btn">VIEW COURSE</button>
-                            </p>
+                        </div><br>
+                        <!-- <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="assets/Images/MERN-Course.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>MERN Course</b></h5>
+                                    <p class="card-text">Complete MERN Course, Which includes MongoDB, Express Js, React
+                                        Js & Node Js...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="assets/Images/Mean_Course.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>MEAN Course</b></h5>
+                                    <p class="card-text">Complete MEAN Course, Which includes MongoDB, Express Js,
+                                        Angular & Node Js...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="assets/Images/Devops.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>DevOps Course</b></h5>
+                                    <p class="card-text">Cpmplete DevOps Course, Which includes Development &
+                                        Operation...</p><br><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div><br><br><br>
+                </div><br><br><br>
+            </div>
+
+            <div class="row" *ngIf="show2==1">
+                <div class="col-lg-12" style="margin-left: 52px;">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Complete Digital Marketing Course </b>
+                                    </h5>
+                                    <p class="card-text">Complete Digital Marketing Course, Which includes Social Media
+                                        SEO and Pages...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course9.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Online Business Development Course</b></h5>
+                                    <p class="card-text">Online Complete Business Development Course, Which includes BDA
+                                        & its...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course7.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Digital Marketing Social Media SEO Course</b></h5>
+                                    <p class="card-text">Cpmplete Digital Marketing Social Media SEO Course, Which
+                                        includes web pages Optimization & its...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course8.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Product Management and Marketing Course</b></h5>
+                                    <p class="card-text">Cpmplete Product Management and Marketing Course, Which
+                                        includes marketing &...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br><br>
+                <!-- <div class="col-lg-12" style="margin-left: 52px;">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Complete Digital Marketing Course </b>
+                                    </h5>
+                                    <p class="card-text">Complete Digital Marketing Course, Which includes Social Media SEO and Pages...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3" >
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course9.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Online Business Development Course</b></h5>
+                                    <p class="card-text">Online Complete Business Development Course, Which includes BDA & its...</p><br>
+                                        <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3" >
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course7.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Digital Marketing Social Media SEO Course</b></h5>
+                                    <p class="card-text">Cpmplete Digital Marketing Social Media SEO Course, Which includes web pages Optimization & its...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3" >
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course8.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Product Management and Marketing Course</b></h5>
+                                    <p class="card-text">Cpmplete Product Management and Marketing Course, Which includes marketing &...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br>
+                <div class="col-lg-12" style="margin-left: 52px;">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/course1.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Complete Digital Marketing Course </b>
+                                    </h5>
+                                    <p class="card-text">Complete Digital Marketing Course, Which includes Social Media SEO and Pages...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br> -->
+            </div>
+
+            <div class="row" *ngIf="show3==1">
+                <div class="col-lg-12" style="margin-left: 52px;">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="assets/Images/AutoCad.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Auto CAD Course </b>
+                                    </h5>
+                                    <p class="card-text">Complete Auto CAD Course, Which includes All types of 2D
+                                        Drawing sketch &...</p><br>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="assets/Images/SolidEdge.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Solid Edge 3D Course</b></h5>
+                                    <p class="card-text">Complete Solid Edge 3D Course, Which includes All types of 3D &
+                                        2D Drawing sketch for Machine designing &...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="assets/Images/3D_CAMD.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>3D CAMD Course</b></h5>
+                                    <p class="card-text">Complete 3D CAMD Course, Which includes All types of 3D & 2D
+                                        Drawing sketchs for Robotics & Aerotrix designing...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course8.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Product Management and Marketing Course</b></h5>
+                                    <p class="card-text">Cpmplete Product Management and Marketing Course, Which
+                                        includes marketing &...</p>
+                                    <button class="btn" data-toggle="modal"
+                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div><br><br><br>
+            </div>
+
+            <!-- <div class="row">
+                <div class="col-lg-12" style="margin-left: 52px;">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card1" style="background-color: white; height: 325px;width: 250px;">
+                                <img class="card-img-top" src="/assets/Images/Course9.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>assess.new.01</b></h5><br>
+                                    <p class="card-text">Description</p><br><br>
+                                    <button routerLink="/StartMyCourse" class="btn">START COURSE</button>&nbsp;&nbsp;
+                                    <button routerLink="/ViewCourse" class="btn">VIEW COURSE</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
