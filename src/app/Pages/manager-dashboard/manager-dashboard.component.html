@@ -52,10 +52,10 @@
                                         data-toggle="modal" data-target="#Reject"
                                         (click)="getid(job.id)">Rejected</button> -->
                                      <p *ngIf="details.status=='Manager Approved'||details.status=='Manager Rejected'">{{details.status}}</p>
-                                        <button *ngIf="details.status!='Manager Approved'||details.status!='Manager Rejected'" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="getid(details.id)"
+                                        <button *ngIf="details.status=='Manager Pending'" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="getid(details.id)"
                                      >Approve</button> <br><br>
 
-                                    <button *ngIf="details.status!='Manager Approved'||details.status!='Manager Rejected'"  class="btn btn-primary" style="background-color:#dc3545; border:none" (click)="getid(details.id)"
+                                    <button *ngIf="details.status=='Manager Pending'"  class="btn btn-primary" style="background-color:#dc3545; border:none" (click)="getid(details.id)"
                                         data-toggle="modal" data-target="#Reject"
                                       >Reject</button>
                                     <!-- <button class="btn btn-primary"

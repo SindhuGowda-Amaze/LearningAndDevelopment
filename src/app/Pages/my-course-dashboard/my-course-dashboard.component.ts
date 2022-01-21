@@ -17,25 +17,20 @@ export class MyCourseDashboardComponent implements OnInit {
 
     this.userid = sessionStorage.getItem('userid')
 
-    this.GetCourse();
+   this.Showcards(2);
     this.LearningService.GetMyDetails().subscribe(data => {
       debugger
       this.stafflist = data.filter(x => x.id == this.userid);;
     });
+    // this.show=2;
+
+    
+
     this.show = 2;
   }
 
   coursedetails: any;
 
-  public GetCourse() {
-    debugger
-    this.LearningService.GetCourse().subscribe(data => {
-      debugger
-      this.coursedetails = data;
-
-      debugger
-    })
-  }
 
 
   public flip1(event: { currentTarget: any; }) {
@@ -57,12 +52,32 @@ export class MyCourseDashboardComponent implements OnInit {
     if (value == 1) {
       this.GetCourse();
     }
-    else if(value == 2)
-    {
-      
+    else if (value == 2) {
+      this.GetApproveCourse();
     }
-  
+
   }
+
+
+  public GetApproveCourse() {
+    debugger
+    this.LearningService.GetApproveCourse(this.userid).subscribe(data => {
+      debugger
+      this.coursedetails = data;
+
+      debugger
+    })
+  }
+
+
+  GetCourse() {
+    this.LearningService.GetCourse().subscribe(data => {
+      debugger
+      this.coursedetails = data;
+    });
+  }
+
+
 
   enroll() {
     Swal.fire({
