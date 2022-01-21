@@ -48,7 +48,7 @@
                         <textarea class="form-control" placeholder="Description" rows="5" [(ngModel)]="description"></textarea>
                     </div>
                     <div class="col-lg-2">
-                        <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto;">
+                        <ngx-dropzone (change)="onSelect($event)" style="width:100% ;height: auto; text-align: center;">
                             <ngx-dropzone-label>Please Attach Photo!</ngx-dropzone-label>
                             <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
                                 <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>

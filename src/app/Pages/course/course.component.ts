@@ -69,7 +69,7 @@ this.GetCategoryMaster();
       data => {
         debugger
         let id = data;
-        Swal.fire("saved Sucessfully");
+        Swal.fire("Saved Sucessfully");
       location.href="#/CourseDashboard"
       })
   }
