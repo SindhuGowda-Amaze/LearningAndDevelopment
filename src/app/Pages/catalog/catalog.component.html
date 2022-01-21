@@ -210,14 +210,19 @@
                                 <div class="card-body">
                                     <!-- <h5 class="card-title"><b>Python Fullstack Developer Course </b>
                                     </h5> -->
-                                    <h5 class="card-title"><b>{{details.name}}</b><br>
+                                    <h5 class="card-title CardHead"><b>{{details.name}}</b><br>
                                     </h5>
                                     <!-- <p class="card-text">Complete Python Fullstack Developer, Which includes Frontend, backend & DataBase...</p> -->
-                                    <p class="card-text des">{{details.description}}</p>
-                                    <button class="btn" data-toggle="modal"data-target="#enroll" (click)="getcoureid(details.id)">ENROLL</button>&nbsp;&nbsp;
-                                    <!-- <button routerLink="/ViewCourse" class="btn">VIEW COURSE
-                                        data-target="#enroll">ENROLL</button>&nbsp;&nbsp; -->
-                                    <button  [routerLink]="['/ViewCourse',details.id]"  class="btn" >VIEW COURSE</button>
+                                    <p class="card-text CardBody">{{details.description}}</p>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <button class="btn" data-toggle="modal"data-target="#enroll" (click)="getcoureid(details.id)">ENROLL</button>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <button  [routerLink]="['/ViewCourse',details.id]"  class="btn" >VIEW COURSE</button>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div><br>

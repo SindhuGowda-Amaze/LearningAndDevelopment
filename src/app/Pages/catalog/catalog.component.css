@@ -23,15 +23,36 @@
     font-size: 25px;
     font-weight: bold;
 } */
-.des{
-  height: 80px;
+.CardHead {
+  height: 40px;
+  overflow-y: scroll;
+  font-size: 15px;
+  /* overflow-y: hidden; */
+}
+.CardBody {
+  height: 85px;
   overflow-y: scroll;
 }
 .btn {
-  padding: 5px;
-  width: 45%;
+  padding: 0px;
+  width: 110%;
   font-size: 12px;
+  background-color: darkgrey;
+  margin-left: 12px;
 }
+
+/* .EnrollBTN{
+  background-color: darkgrey;
+  font-size: 11px;
+  width: 110%;
+  margin-left: 10px;
+}
+.ViewCourseBTN{
+  background-color: darkgrey;
+  font-size: 11px;
+  width: 110%;
+  margin-left: 10px;
+} */
 .Number {
   text-align: center;
   padding-top: 22px;
@@ -83,7 +104,7 @@ div {
   box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%);
   border-radius: 10px;
   width: 250px;
-  margin-bottom: 20px;;
+  margin-bottom: 20px;
 }
 
 .backflip {
@@ -485,10 +506,10 @@ hr.new4 {
   border-color: grey;
 }
 
-.Btn {
+/* .Btn {
   height: 30px;
   width: 30px;
-}
+} */
 
 .HRline {
   border: 0;
@@ -585,11 +606,11 @@ hr.new4 {
   background-color: transparent;
   color: black;
 }
-.box{
+.box {
   margin-right: 10px;
 }
 
-.Category{
+.Category {
   margin-left: 45px;
   margin-top: -30px;
 }
