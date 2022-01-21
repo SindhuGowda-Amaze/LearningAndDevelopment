@@ -9,7 +9,7 @@
             </i></button>
         </div> -->
         <div class="col-lg-4" style="text-align: right; padding-top: 15px;">
-            <input class="form-control" type="search" placeholder="What do you want to learn?">
+            <!-- <input class="form-control" type="search" placeholder="What do you want to learn?" [(ngModel)]="search"> -->
             <!-- <button type="submit" class="Btn">
                 <i class="fa fa-search"></i>
             </button> -->
@@ -17,17 +17,18 @@
     </div><br>
 
     <div class="row">
-        <div class="col-lg-6">
-            <h3 style="padding-left: 30px;">Viewing 12 result(s)</h3>
+        <div class="col-lg-5">
+            <h3 style="padding-left: 30px;">Viewing {{count}} result(s)</h3>
         </div>
         <div class="col-lg-2">
             <h3 class="Filter1">Filter for</h3>
         </div>
-        <div class="col-lg-2">
-            <input class="form-control" type="search" placeholder="Search for Trainers">
+        <div class="col-lg-3">
+            <!-- <input class="form-control" type="search" placeholder="Search for Trainers" [(ngModel)]="search"> -->
+            <input class="form-control" type="search" placeholder="What do you want to learn?" [(ngModel)]="search">
         </div>
         <div class="col-lg-2">
-            <input class="form-control" type="date" placeholder="By Dates" id="date" name="date">
+            <input class="form-control" type="date" placeholder="By Dates" id="date" name="date" [(ngModel)]="search">
         </div>
     </div>
     <hr class="HRline">
@@ -39,23 +40,31 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h4 class="Category">Select Course Category</h4>
+
+                            
+
                         </div>
                     </div>
                     <div class="vertical-menu VScroll"  >
-                        <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;" *ngFor="let details of categorylist"> <input
+                        <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;" *ngFor="let details of categorylist | filter:search"> <input
                                 type="checkbox" value="1" [(ngModel)]="course1" name="course1"
-                                (change)="filtercourse(details.name)">{{details.name}}</a>
+                                (change)="filtercourse(details.name)"> {{details.name}}</a>
 
-                     <a *ngFor="let details of categorylist1" class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
+                     <a *ngFor="let details of categorylist1 | filter:search" class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                     type="checkbox" value="1" [(ngModel)]="course" name="course"
-                                    (change)="filtercourse(details.name)">{{details.name}}</a>
+                                    (change)="filtercourse(details.name)"> {{details.name}}</a>
 
                    
-                    <a *ngFor="let details of categorylist2" class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
+                    <a *ngFor="let details of categorylist2 | filter:search" class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                         type="checkbox" value="1" [(ngModel)]="course2" name="course2"
-                                        (change)="filtercourse(details.name)">{{details.name}}</a> <br>
+                                        (change)="filtercourse(details.name)"> {{details.name}}</a> <br>
                        <button  style="background-color: rgb(66, 66, 66); color: white;" (click)="GetCourse()">Clear Filter </button>
-                                <!-- IT and Software -->
+                               
+                       <ng-template #noResults>
+                        <p class="NoResultShow"> No results found for "{{search}}" </p> 
+                       </ng-template>
+                      
+                      <!-- IT and Software -->
                         <!-- <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"> <input
                                 type="checkbox" value="1" [(ngModel)]="show2" name="show2"
                                 (click)="showcards2(show2)">&nbsp; Digital Marketing</a>
@@ -191,7 +200,7 @@
             <div class="row" *ngIf="show1==1">
                 <div class="col-lg-12" style="margin-left: 52px;">
                     <div class="row">
-                        <div class="col-lg-3"  *ngFor="let details of courselist">
+                        <div class="col-lg-3"  *ngFor="let details of courselist | filter:search">
                             <!-- <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <img class="card-img-top" src="assets/Images/python-full-stack-developer-course.jpg" alt="Card image cap">
                                 <div class="card-body">
@@ -226,6 +235,7 @@
                                 </div>
                             </div>
                         </div><br>
+                        
                         <!-- <div class="col-lg-3">
                             <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <img class="card-img-top" src="assets/Images/MERN-Course.png" alt="Card image cap">
