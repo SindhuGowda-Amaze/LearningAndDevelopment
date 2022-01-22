@@ -39,13 +39,15 @@ export class StartMyCourseComponent implements OnInit {
   clickEvent(){
     this.show= 1;
   }
-
-
+  ID:any;
+  chapterdetails:any;
   public GetChapter() {
     debugger
     this.LearningService.GetChapter().subscribe(data => {
       debugger
       this.coursedetails = data.filter(x=>x.courseID==this.courseid);
+      // this.chapterdetails = data.filter(x=>x.ID==this.ID && x.courseID==this.courseid);
+      this.chapterdetails = data.filter(x=>x.courseID==this.courseid);
       debugger
       this.coursename=this.coursedetails[0].courseName
       this.chaptername=this.coursedetails[0].name
