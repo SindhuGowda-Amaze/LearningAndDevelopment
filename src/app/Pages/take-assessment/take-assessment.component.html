@@ -3,7 +3,7 @@
         <div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h5 style="text-align: center;text-transform: uppercase;"><b><u>Amaze Recruitments(2020-21)</u></b>
+                    <h5 style="text-align: center;text-transform: uppercase;"><b><u>Chapter Wise Assessment</u></b>
                     </h5>
                 </div>
             </div>
@@ -42,7 +42,7 @@
     </div>
 
 
-
+  
     <br>
     <div class="row" *ngIf="startTest=='0'">
         <div class="col-lg-12">
@@ -52,15 +52,22 @@
             </h3>
         </div>
         <br>
+      
         <div class="row">
             <div class="col-lg-12">
-                <p style="text-align: center;"><button type="button" class="addButton" *ngIf="startTest=='0'"
+                <p style="text-align: center;margin-left: 20px;"><button type="button" class="addButton button" *ngIf="startTest=='0'"
                         (click)="startTestContainer()">Start Test</button></p>
             </div>
         </div>
     </div>
     <br>
     <div class="container-fluid" *ngIf="show=='1' && startTest=='1'">
+        <div class="row">
+            <div class="col-lg-10"></div>
+            <div class="col-lg-2">
+                <p >Total no of Question:{{count}}<br>Total Marks:{{count}}</p>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-12">
                 <table>
