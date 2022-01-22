@@ -28,7 +28,6 @@ export class ChapterComponent implements OnInit {
 
   CourseName: any;
   courseName: any;
-  chapterPhoto: any;
   chapterText: any;
 
 
@@ -118,7 +117,7 @@ export class ChapterComponent implements OnInit {
       "CourseName": this.courseID,
       "Name": this.name,
       "Description": this.description,
-      "ChapterPhoto": this.chapterPhoto,
+      "ChapterPhoto": this.ChapterPhoto,
       "ChapterText": this.chapterText        
       };
     
@@ -134,10 +133,10 @@ export class ChapterComponent implements OnInit {
   Save() {
     debugger
     var json = {
-      "CourseName": this.courseID,
+      "courseID": this.courseID,
       "Name": this.name,
       "Description": this.description,
-      "ChapterPhoto": this.chapterPhoto,
+      "ChapterPhoto": this.ChapterPhoto,
       "ChapterText": this.chapterText 
     };
     this.LearningService.InsertChapter(json).subscribe(

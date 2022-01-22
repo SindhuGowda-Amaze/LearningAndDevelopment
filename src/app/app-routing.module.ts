@@ -50,6 +50,7 @@ const routes: Routes = [
   { path: 'TrainerForm/:id', component: TrainerFormComponent },
   { path: 'TrainerCourseMapping', component: TrainerCourseMappingComponent },
   { path: 'TrainerCourseMappingForm', component: TrainerCourseMappingFormComponent },
+  { path: 'TrainerCourseMappingForm/:id', component: TrainerCourseMappingFormComponent },
   { path: 'CourseDashboard', component: CourseDashboardComponent },
   { path: 'ChapterDashboard', component: ChapterDashboardComponent },
   { path: 'AdminDashboard', component: AdminDashboardComponent },

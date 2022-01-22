@@ -23,5 +23,8 @@ search:any;
       })
   }
 
-
+  edit(id: any) {
+    debugger
+    location.href = "/#/TrainerCourseMappingForm/" + id;
+  }
 }

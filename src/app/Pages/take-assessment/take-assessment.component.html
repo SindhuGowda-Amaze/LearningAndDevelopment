@@ -96,12 +96,12 @@
                                         <div class="col-lg-1">
                                         </div>
                                         <div class="col-lg-5">
-                                            <input type="radio" value="{{list.option1}}" name="{{list.answer}}"id="{{list.answer}}"
+                                            <input type="radio" value="{{list.option1}}" name="{{list.option1}}"id="{{list.option1}}"
                                                 [(ngModel)]='list.userAnswer'>&nbsp;
                                             <div [innerHtml]="list.option1"></div>
                                         </div>
                                         <div class="col-lg-5">
-                                            <input type="radio" value="{{list.option2}}" name="{{list.answer}}"id="{{list.answer}}"
+                                            <input type="radio" value="{{list.option2}}" name="{{list.option2}}"id="{{list.option2}}"
                                                 [(ngModel)]='list.userAnswer'>
                                             &nbsp;
                                             <div [innerHtml]="list.option2"></div>
@@ -115,14 +115,14 @@
                                                 <div class="col-lg-1">
                                                 </div>
                                                 <div class="col-lg-5">
-                                                    <input type="radio" value="{{list.option3}}" name="{{list.answer}}" id="{{list.answer}}"
+                                                    <input type="radio" value="{{list.option3}}" name="{{list.option3}}" id="{{list.option3}}"
                                                         [(ngModel)]='list.userAnswer'>&nbsp;
                                                     <div [innerHtml]="list.option3"></div>
                                                     <!-- {{list.option3}} -->
         
                                                 </div>
                                                 <div class="col-lg-5">
-                                                    <input type="radio" value="{{list.option4}}" name="{{list.answer}}" id="{{list.answer}}"
+                                                    <input type="radio" value="{{list.option4}}" name="{{list.option4}}" id="{{list.option4}}"
                                                         [(ngModel)]='list.userAnswer'>&nbsp;
                                                     <div [innerHtml]="list.option4"></div>
                                                     <!-- {{list.option4}} -->
@@ -151,7 +151,10 @@
         <div class="row" *ngIf="show=='1' && startTest=='1'">
             <div class="col-lg-4">
             </div>
-            <div class="col-lg-4" style="text-align: center;">
+             <div class="col-lg-2">
+            <button class="form-control button" routerLink="/StartMyCourse">Cancel</button>
+        </div>
+            <div class="col-lg-2" style="text-align: center;">
                 <button type="button" class="addButton" (click)="submitAnswer()">Submit</button>
             </div>
             <div class="col-lg-4">

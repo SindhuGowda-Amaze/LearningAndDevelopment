@@ -177,7 +177,7 @@ export class TakeAssessmentComponent implements OnInit {
   public submitAnswer() {
     debugger;
     for (var i = 0; i < this.questionList.length; i++) {
-      if (this.questionList[i].answer == this.questionList[i].userAnswer) {
+      if (this.questionList[i].correctAnswer == this.questionList[i].userAnswer) {
         this.marks = this.marks + 1;
       }
     }
@@ -197,7 +197,7 @@ export class TakeAssessmentComponent implements OnInit {
       for (var i = 0; i < this.questionList.length; i++) {
         var ett = {
           'QuestionID': this.questionList[i].id,
-          'CorrectAnswer': this.questionList[i].answer,
+          'CorrectAnswer': this.questionList[i].correctAnswer,
           'UserAnswer': this.questionList[i].userAnswer,
           'TestResponseID': this.testResponseID,
           'ObtainedMarks': this.marks

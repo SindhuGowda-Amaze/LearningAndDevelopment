@@ -26,6 +26,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
 
     this.TrainerID=0;
     this.CourseID=0;
+    this.BatchName=0;
     this.GetTrainer();
     this.GetBatch();
 
@@ -53,9 +54,9 @@ export class TrainerCourseMappingFormComponent implements OnInit {
     //     this.GetCourse();
     //   }
     // })
-    this.TrainerID=0;
-    this.CourseID=0;
-    this.BatchName=0;
+    // this.TrainerID=0;
+    // this.CourseID=0;
+    // this.BatchName=0;
   }
 
   trainerName:any;
@@ -72,7 +73,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
 		// this.EmailID=this.result[0].emailID;
 		this.StartDate=this.result[0].startDate;
     this.EndDate=this.result[0].endDate;
-    this.BatchName=this.result[0].batchName;
+    this.BatchName=this.result[0].batchID;
     this.AllowedStudents=this.result[0].noOfStudentsEnrolled;
       }
     ) 
@@ -86,8 +87,8 @@ export class TrainerCourseMappingFormComponent implements OnInit {
       // "emailID": this.EmailID,
       "startDate": this.StartDate,
       "endDate": this.EndDate,
-      "batchName": this.BatchName,
-      "allowedStudents": this.AllowedStudents
+      "batchID": this.BatchName,
+      "noOfStudentsEnrolled": this.AllowedStudents
     };
     this.LearningService.InsertTrainerCourseMapping(json).subscribe(
       data => {
@@ -105,11 +106,11 @@ export class TrainerCourseMappingFormComponent implements OnInit {
       "ID": this.id,
       "trainerID":this.TrainerID,
       "courseID":this.CourseID,
-      "emailID": this.EmailID,
+      // "emailID": this.EmailID,
       "startDate": this.StartDate,
       "endDate": this.EndDate,
-      "batchName": this.BatchName,
-      "allowedStudents": this.AllowedStudents          
+      "batchID": this.BatchName,
+      "noOfStudentsEnrolled": this.AllowedStudents         
       };
     
       this.LearningService.UpdateTrainerCourseMapping(json).subscribe(

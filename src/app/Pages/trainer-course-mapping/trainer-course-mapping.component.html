@@ -55,7 +55,7 @@
                                     <td>{{details.endDate}}</td>   
                                     <td>{{details.batchName}}</td>   
                                     <td>{{details.noOfStudentsEnrolled}}</td>   
-                                    <td><button class="button1" routerLink="/TrainerCourseMappingForm">Edit</button> <br> <br>
+                                    <td><button class="button1" (click)="edit(details.id)">Edit</button> <br> <br>
                                         <button class="button2" >Delete</button>
                                     </td>     
                                 </tr> 
