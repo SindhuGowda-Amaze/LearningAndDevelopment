@@ -466,4 +466,16 @@ export class LearningService {
     return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts");
   }
 
+  public InsertTestResponse(data: any) {
+    debugger;
+    this.url = this.baseURL + '/Master/InsertTestResponse';
+    return this.http.post(this.url, data);
+  }
+
+  public InsertTestResponseDetails(data: any) {
+    debugger;
+    this.url = this.baseURL + '/Master/InsertTestResponseDetails';
+    return this.http.post(this.url, data);
+  }
+
 }

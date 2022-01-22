@@ -47,6 +47,7 @@ export class TakeAssessmentComponent implements OnInit {
   }
   courseid:any;
   ngOnInit(): void {
+    this.userid = sessionStorage.getItem('userid');
     this.marks = 0;
     this.show = 1;
     this.message = "";
@@ -171,44 +172,44 @@ export class TakeAssessmentComponent implements OnInit {
    
    
   }
-  public submitAnswer(){}
+  // public submitAnswer(){}
 
-  // public submitAnswer() {
-  //   debugger;
-  //   for (var i = 0; i < this.questionList.length; i++) {
-  //     if (this.questionList[i].answer == this.questionList[i].userAnswer) {
-  //       this.marks = this.marks + 1;
-  //     }
-  //   }
-  //   if (this.marks >= 20) {
-  //     this.testResult = 'Pass'
-  //   } else {
-  //     this.testResult = 'Fail';
-  //   }
-  //   var Entityy = {
-  //     'TestResult': this.testResult,
-  //     'UserID': this.userid,
-  //     'ObtainedMarks': this.marks
-  //   }
-  //   this.AmazeService.InsertTestResponse(Entityy).subscribe(data => {
-  //     debugger
-  //     this.testResponseID = data;
-  //     for (var i = 0; i < this.questionList.length; i++) {
-  //       var ett = {
-  //         'QuestionID': this.questionList[i].id,
-  //         'CorrectAnswer': this.questionList[i].answer,
-  //         'UserAnswer': this.questionList[i].userAnswer,
-  //         'TestResponseID': this.testResponseID,
-  //         'ObtainedMarks': this.marks
-  //       }
-  //       this.AmazeService.InsertTestResponseDetails(ett).subscribe(data => {
-  //       });
-  //     }
-  //     Swal.fire('You have submited test successfully...');
-  //     this.show = 0;
-  //     this.startTest = "";
-  //   })
-  // }
+  public submitAnswer() {
+    debugger;
+    for (var i = 0; i < this.questionList.length; i++) {
+      if (this.questionList[i].answer == this.questionList[i].userAnswer) {
+        this.marks = this.marks + 1;
+      }
+    }
+    if (this.marks >= 20) {
+      this.testResult = 'Pass'
+    } else {
+      this.testResult = 'Fail';
+    }
+    var Entityy = {
+      'TestResult': this.testResult,
+      'UserID': this.userid,
+      'ObtainedMarks': this.marks
+    }
+    this.AmazeService.InsertTestResponse(Entityy).subscribe(data => {
+      debugger
+      this.testResponseID = data;
+      for (var i = 0; i < this.questionList.length; i++) {
+        var ett = {
+          'QuestionID': this.questionList[i].id,
+          'CorrectAnswer': this.questionList[i].answer,
+          'UserAnswer': this.questionList[i].userAnswer,
+          'TestResponseID': this.testResponseID,
+          'ObtainedMarks': this.marks
+        }
+        this.AmazeService.InsertTestResponseDetails(ett).subscribe(data => {
+        });
+      }
+      Swal.fire('You have submited test successfully...');
+      this.show = 0;
+      this.startTest = "";
+    })
+  }
 
   // countdownTimeStart(endtime) {
   //   this.interval = setInterval(() => {

@@ -70,7 +70,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
 		this.StartDate=this.result[0].startDate;
     this.EndDate=this.result[0].endDate;
     this.BatchName=this.result[0].batchName;
-    this.AllowedStudents=this.result[0].allowedStudents;
+    this.AllowedStudents=this.result[0].noOfStudentsEnrolled;
       }
     ) 
   }
