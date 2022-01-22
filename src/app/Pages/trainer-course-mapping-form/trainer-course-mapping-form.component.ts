@@ -11,6 +11,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
   id:any;
   result:any;
   CourseList:any;
+  BatchList:any;
 
 
   EmailID:any;
@@ -26,6 +27,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
     this.TrainerID=0;
     this.CourseID=0;
     this.GetTrainer();
+    this.GetBatch();
 
     // this.ActivatedRoute.params.subscribe(params => {
     //   debugger
@@ -53,6 +55,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
     // })
     this.TrainerID=0;
     this.CourseID=0;
+    this.BatchName=0;
   }
 
   trainerName:any;
@@ -130,6 +133,21 @@ export class TrainerCourseMappingFormComponent implements OnInit {
       data => {
         debugger
         this.CourseList = data;
+      })
+  }
+
+  // BatchName:any;
+  getBatchName(even:any)
+  {
+    debugger
+    this.BatchName=even.target.value;
+  }
+  public GetBatch() {
+    debugger
+    this.LearningService.GetBatch().subscribe(
+      data => {
+        debugger
+        this.BatchList = data;
       })
   }
 

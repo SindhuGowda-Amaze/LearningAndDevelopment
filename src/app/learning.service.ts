@@ -316,6 +316,12 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
+  public GetBatch() {
+    debugger
+    let APIURL = this.baseURL + "Master/GetBatch";
+    return this.http.get<any[]>(APIURL);
+  }
+
   public InsertTrainer(json: any) {
     debugger
     let APIURL = this.baseURL + "Master/InsertTrainer";
