@@ -48,7 +48,7 @@ export class ChapterComponent implements OnInit {
       this.result = data;
       debugger
       this.result=this.result.filter((x: { id: any; })=>x.id==Number(this.id));
-      this.CourseName=this.result[0].courseID;
+      this.courseID=this.result[0].courseID;
       this.Name=this.result[0].name;
       this.Description=this.result[0].description;
       this.ChapterPhoto=this.result[0].chapterPhoto;

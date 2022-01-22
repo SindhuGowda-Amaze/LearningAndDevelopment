@@ -62,8 +62,7 @@ this.GetCategoryMaster();
       "duration": this.duration,
       "fee":this.fee,
       "entryCriteria":this.entryCriteria,
-      "exitCriteria":this.exitCriteria,
-      "CategoryID":this.categoryName      
+      "exitCriteria":this.exitCriteria,    
     };
     this.LearningService.InsertCourse(json).subscribe(
       data => {

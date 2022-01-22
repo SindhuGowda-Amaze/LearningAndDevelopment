@@ -35,7 +35,7 @@
                     <div class="col-lg-2">
                         <select class="form-control" name="categoryName" id="categoryName" [(ngModel)]="categoryName">
                             <!-- <option value="Select">Select</option> -->
-                            <option  *ngFor="let details of result" value="0">{{details.name}}</option>
+                            <option  *ngFor="let details of result" value="{{details.name}}">{{details.name}}</option>
                         </select>
                     </div>
                     <div class="col-lg-3">
