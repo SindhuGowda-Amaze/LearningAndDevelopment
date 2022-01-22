@@ -108,7 +108,7 @@ export class TakeAssessmentComponent implements OnInit {
     this.AmazeService.GetAssessments().subscribe(data => {
       debugger
       this.questionList = data;
-      this.questionList = this.questionList.filter((x: { courseID: number; }) => x.courseID == this.courseid)
+      this.questionList = this.questionList.filter((x: { chapterID: number; }) => x.chapterID == this.courseid)
     })
     //this.changeReloadBit();
     // var callDuration = this.elementRef.nativeElement.querySelector('#time');
