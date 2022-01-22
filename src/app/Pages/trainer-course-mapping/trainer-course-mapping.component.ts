@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LearningService } from 'src/app/learning.service';
+import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-trainer-course-mapping',
   templateUrl: './trainer-course-mapping.component.html',
@@ -7,7 +9,7 @@ import { LearningService } from 'src/app/learning.service';
 })
 export class TrainerCourseMappingComponent implements OnInit {
 search:any;
-  constructor(public LearningService:LearningService) { }
+  constructor(private ActivatedRoute: ActivatedRoute, private LearningService: LearningService) { }
 
   ngOnInit(): void {
     this.GetTrainerCourseMappingDashboard();
@@ -22,6 +24,17 @@ search:any;
         this.Trainerdetails = data;
       })
   }
+
+  public Ondelete(id:any) {
+    this.LearningService.DeleteTrainerCourseMapping(id).subscribe(
+      data => {
+        debugger
+        Swal.fire('Successfully Deleted...!');
+        this.GetTrainerCourseMappingDashboard();
+      }
+    )
+  }
+
 
 
 }

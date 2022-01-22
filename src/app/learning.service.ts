@@ -466,6 +466,7 @@ export class LearningService {
     return this.http.get<any[]>(this.baseURL + "/Master/GetTrainerCourseMappingDashboard");
   }
 
+ 
 
   public GetAllCounts() {
 
