@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LearningService } from 'src/app/learning.service';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public LearningService: LearningService) { }
 temp:any;
   ngOnInit(): void {
-    this.temp=sessionStorage.getItem('temp')
+    this.temp=sessionStorage.getItem('temp');
+    this.GetAllCounts()
   }
 
   public flip1(event: { currentTarget: any; }) {
@@ -26,4 +27,16 @@ temp:any;
     }
   };
 
+
+
+
+  countlist:any;
+  public GetAllCounts() {
+    debugger
+    this.LearningService.GetAllCounts().subscribe(
+      data => {
+        debugger
+        this.countlist = data[0];
+      })
+  }
 }
