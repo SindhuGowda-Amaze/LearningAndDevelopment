@@ -20,15 +20,14 @@ export class ChapterComponent implements OnInit {
   courseID: any;
   Name: any;
   name: any;
-  Description: any;
+
   description: any;
   ChapterPhoto: any;
-  ChapterText: any;
   chapterID: any;
-
   CourseName: any;
   courseName: any;
   chapterText: any;
+  show:any;
 
 
   ngOnInit(): void {
@@ -39,11 +38,15 @@ export class ChapterComponent implements OnInit {
     this.ActivatedRoute.params.subscribe(params => {
       this.id = params['id'];
       if (this.id != undefined && this.id != null) {
+        this.show=1
         this.GetChapter();
+      }
+      else{
+        this.show=0;
       }
     })
   }
-
+  showChapterPhoto:any;
   public GetChapter(){
     this.LearningService.GetChapter().subscribe(
       data => {
@@ -51,10 +54,12 @@ export class ChapterComponent implements OnInit {
       debugger
       this.result=this.result.filter((x: { id: any; })=>x.id==Number(this.id));
       this.courseID=this.result[0].courseID;
-      this.Name=this.result[0].name;
-      this.Description=this.result[0].description;
-      this.ChapterPhoto=this.result[0].chapterPhoto;
-      this.ChapterText=this.result[0].chapterText;
+      this.name=this.result[0].name;
+      this.description=this.result[0].description;
+      this.ChapterPhoto=this.result[0].orginalChapterPhoto;
+      this.showChapterPhoto=this.result[0].chapterPhoto;
+      this.chapterText=this.result[0].chapterText;
+      this.chapterID=this.result[0].courseID;
   
         }
       ) 
@@ -92,13 +97,13 @@ export class ChapterComponent implements OnInit {
     })
   }
 
-
+  courselist:any;
   public GetCourse() {
     debugger
     this.LearningService.GetCourse().subscribe(
       data => {
         debugger
-        this.result = data;
+        this.courselist = data;
       })
   }
 
@@ -107,7 +112,7 @@ export class ChapterComponent implements OnInit {
   getCourseID(even:any)
   {
     debugger
-    this.CourseID=even.target.value;
+    this.courseID=even.target.value;
   }
 
  
@@ -120,7 +125,7 @@ export class ChapterComponent implements OnInit {
     debugger
      var json = {
       "ID": this.id,
-      "CourseName": this.courseID,
+      "courseID": this.courseID,
       "Name": this.name,
       "Description": this.description,
       "ChapterPhoto": this.ChapterPhoto,
