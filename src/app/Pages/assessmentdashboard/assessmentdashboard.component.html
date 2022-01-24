@@ -103,7 +103,7 @@
                                     <td>{{item.weightage}}</td>
                                 
                                     <td><button class="button1" routerLink="/AssessmentForm">Edit</button> <br> <br>
-                                        <button class="button2">Delete</button>
+                                        <button class="button2" (click)="Ondelete(item.id)" >Delete</button>
                                     </td>
                                 </tr>
                             </thead>
