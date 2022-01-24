@@ -21,52 +21,52 @@
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-2">
-            <p style="margin-left:15px;">Employee Name  </p>
+            <p style="margin-left:15px;">Employee Name {{staffanme}} </p>
         </div>
         <div class="col-lg-1">
-           <input class="form-control" placeholder="Kumar">
+            <input class="form-control">
         </div>
     </div><br>
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-2">
-            <p style="margin-left:15px;">Course Name  </p>
+            <p style="margin-left:15px;">Course Name {{CourseName}}</p>
         </div>
-        <div class="col-lg-2">           
+        <div class="col-lg-2">
             <input class="form-control" placeholder="Java Programming">
         </div>
     </div><br>
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-2">
-            <p style="margin-left:15px;">Chapter Name </p>
+            <p style="margin-left:15px;">Chapter Name {{Chaptername}}</p>
         </div>
         <div class="col-lg-2">
-           <input class="form-control" placeholder="Oops Concept">
+            <input class="form-control" placeholder="Oops Concept">
         </div>
     </div> <br>
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-2">
-            <p style="margin-left:15px;">Assessment Date </p>
+            <p style="margin-left:15px;">Assessment Date {{date}} </p>
         </div>
         <div class="col-lg-2">
-         <input class="form-control" placeholder="18-01-2022">
+            <input class="form-control" placeholder="18-01-2022">
         </div>
     </div><br>
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-2">
-            <p style="margin-left:15px;">No. Of Questions </p>
+            <p style="margin-left:15px;">No. Of Questions {{Totalmarks}} </p>
         </div>
         <div class="col-lg-2">
             <input class="form-control" placeholder="15">
-           </div>
+        </div>
     </div><br>
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-2">
-            <p style="margin-left:15px;">Correct Answers </p>
+            <p style="margin-left:15px;">Correct Answers {{Totalmarks}}</p>
         </div>
         <div class="col-lg-2">
             <input class="form-control" placeholder="10">
@@ -75,7 +75,7 @@
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-2">
-            <p style="margin-left:15px;">Wrong Answers </p>
+            <p style="margin-left:15px;">Wrong Answers {{Totalmarks}}</p>
         </div>
         <div class="col-lg-2">
             <input class="form-control" placeholder="5">
@@ -84,7 +84,7 @@
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-2">
-            <p style="margin-left:15px;">Final Result </p>
+            <p style="margin-left:15px;">Final Result {{TestResult}}</p>
         </div>
         <div class="col-lg-2">
             <input class="form-control" placeholder="Pass">
@@ -117,41 +117,35 @@
     </div> -->
     <hr>
     <!-- <p>Your Subjective type test result: <span style="color: red;">Pending!!!!!</span></p><br> -->
-    <button data-toggle="collapse" data-target="#demo" class="button" >view Answered Sheet</button><br>
-   <br>
+    <button data-toggle="collapse" (click)="getdetailslist()" data-target="#demo" class="button">view Answered
+        Sheet</button><br>
+    <br>
     <div class="row rowwidth" id="demo" class="collapse">
-       
-        <div class="col-lg-8 colwidth">
-            <p>Q1. Why is Java a platform independent language?</p> 
-            <textarea class="form-control"
-                placeholder="because it does not depend on any type of platform. Hence, Java is platform-independent language. In Java, programs are compiled into byte code and that byte code is platform-independent."
-                rows="2"></textarea><br>
+        <div class="row">
+            <div class="col-lg-12">
+                <table>
+                    <tr>
+                        <th>Question</th>
+                        <th>Correct Answer</th>
+                        <th>User Answer</th>
+                        <th>Weightage</th>
 
-            <p><span style="color: green;"> Correct Answer: </span>Whenever we enter a statement “javac filename.java”
-                or
-                compile a code in java, javac compiles the code. And it creates an intermediate code called Byte
-                Code.This is where java makes difference between all different programming languages.It creates a
-                .class file, which is considered as byte code.</p>
+                    </tr>
+                    <tr *ngFor="let list of detailslist">
 
-            <p>Q2. Father of Java is _____________</p>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Bjarne Stroustrup<br><br>
-            <input type="radio" checked>&nbsp;&nbsp;&nbsp;&nbsp;Dennis Ritchie<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;James Gosling<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;none of the above<br><br>
-
-            <p><span style="color: green;"> Correct Answer: </span>James Gosling</p>
-            <p>Q3. Which are Pillers of OOps Concepts?</p> <br>
-            <textarea class="form-control"
-            placeholder=Abstraction,Encapsulation,Inheritance,Polymorphism
-            rows="2"></textarea><br>
-            <p><span style="color: green;"> Correct Answer:</span>The four pillars of object-oriented programming are:Abstraction,Encapsulation,Inheritance,Polymorphism</p>
-            <p>Q4. Java is a __________ language</p>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;pure object oriented<br><br>
-            <input type="radio" checked>&nbsp;&nbsp;&nbsp;&nbsp;not a pure object oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;Procedure oriented<br><br>
-            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;none of the above<br><br>
-            <p><span style="color: green;"> Correct Answer: </span>not a pure object oriented</p>
+                        <td>{{list.question}}</td>
+                        <td>{{list.correctAnswer}}</td>
+                        <td>{{list.userAnswer}}</td>
+                        <td>{{list.weightage}}</td>
+                    </tr>
+                </table>
+            </div>
         </div>
+        <!-- <div class="col-lg-8 colwidth" *ngFor="let item of detailslist">
+            <p>Q1. {{item.question}}</p> <br>
+            <p>Correct Answer {{item.correctAnswer}}</p> <br>
+            <p>User Answer {{item.userAnswer}}</p>
+        </div> -->
     </div>
 </div>
 <hr>
