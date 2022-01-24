@@ -110,6 +110,10 @@ export class ChapterComponent implements OnInit {
 
  
 
+
+
+
+
   Update(){
     debugger
      var json = {
@@ -161,9 +165,6 @@ export class ChapterComponent implements OnInit {
           debugger
          
         })
-
-
-
     }
   }
 
