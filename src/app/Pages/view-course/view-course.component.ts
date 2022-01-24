@@ -15,6 +15,7 @@ export class ViewCourseComponent implements OnInit {
   userid:any;
   manager:any;
   stafflist:any;
+  count: any;
   ngOnInit(): void {
     
     this.userid = sessionStorage.getItem('userid')
@@ -78,6 +79,7 @@ export class ViewCourseComponent implements OnInit {
       data => {
         debugger
         this.chapterdetails = data.filter(x => x.courseID == this.courseid);
+        this.count = this.chapterdetails.length;
       })
   }
 

@@ -34,7 +34,7 @@
 
                     </div>
                     <div class="col-lg-6">
-                        <p>{{coursedetails[0].startDate}} </p>
+                        <p>{{coursedetails[0].startDate|date}} </p>
                     </div>
                 </div>
                 <div class="row">
@@ -43,7 +43,7 @@
 
                     </div>
                     <div class="col-lg-6">
-                        <p>{{coursedetails[0].endDate}}</p>
+                        <p>{{coursedetails[0].endDate|date}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -85,7 +85,8 @@
             <div class="col-lg-7 ">
                 <!-- <p style="font-size: 20px; text-align: center; padding:10px;"> Sample Chapter</p> -->
 
-                <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo4" style="font-size: 20px; text-align: center; padding:10px;color: black;">
+                <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo4"
+                    style="font-size: 20px; text-align: center; padding:10px;color: black;">
                     <a href="#demo4" class="chapter" data-toggle="collapse" style="font-size: 18px;color: black;">
                         Sample Chapter</a>
                 </div>
@@ -93,74 +94,62 @@
                 <div id="demo4" class="collapse">
                     <div class="card chapter" *ngFor="let details of chapterdetails">
                         <div class="row">
-                            <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo2">
+                            <div class="col-lg-10 chapter" data-toggle="collapse" id="#demo2">
                                 <a href="#demo2" class="chapter" data-toggle="collapse" style="font-size: 18px;"
                                     (click)="GetDetails(details.name)">
-                                    {{details.name}}</a>
+                                  <u>{{details.name}}</u>  </a>
                             </div>
                             <div id="demo2" class="collapse">
                                 <div class="row">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-10">
                                         <p class="chapter" style="margin-left: 50px;">
                                             {{details.description}} </p>
                                     </div>
+                                    <div class="col-lg-1"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-8">
-                                    </div>
-                                    <hr>
-                                    <div class="col-lg-4">
-                                        <br>COURSE MATERIAL<br><br>
+                                    <div class="col-lg-4" style="margin-left: 50px;">
+                                        <br><p><u>COURSE MATERIAL</u></p> <br>
                                         <img class="image" src="assets/Images/pdf.jpg" style="width:20%; height: auto;"
-                                            (click)="PreviewPdf()">
+                                            (click)="PreviewPdf()"> &nbsp; &nbsp;
                                         <img class="image" src="../../../assets/Images/Video_lcon.png"
                                             style="width: 20%; height: auto;" (click)="PreviewPdf()"><br>
                                     </div>
-                                </div>
-
-                                <hr>
+                                    <div class="col-lg-7"></div>
+                                </div> <br>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-
             </div>
             <div class="col-lg-5">
-                <!-- <p style="font-size: 20px; text-align: center;padding:10px;">Chapter List </p> -->
-
-                <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo5"
+                <div class="row">
+                    <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo5"
                     style="font-size: 20px; text-align: center;padding:10px;">
-                    <a href="#demo5" class="chapter" data-toggle="collapse" style="font-size: 18px;color: black;">Chapter List
-                       </a>
+                    <a href="#demo5" class="chapter" data-toggle="collapse"
+                        style="font-size: 18px;color: black;">Chapter List
+                    </a>
+                   </div>
                 </div>
+             
 
                 <div id="demo5" class="collapse">
+                    <div class="row">
+                        <div class="col-lg-9"></div>
+                        <div class="col-lg-3">
+                            <p>Count : {{count}}</p>
+                        </div>
+                    </div>
                     <div class="card chapter">
                         <div class="row">
                             <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo3">
-                                <!-- <a href="#demo3" class="chapter" data-toggle="collapse" style="font-size: 18px;">View
-                                    Chapter List</a> -->
-
-                                    <ul *ngFor="let details of chapterdetails">
-
-                                        {{details.name}}
-                                    </ul>
+                                <ul *ngFor="let details of chapterdetails">
+                                    {{details.name}}
+                                </ul>
                             </div>
                         </div>
-                        <!-- <div id="demo3" class="collapse">
-                            <div class="row">
-                                <div class="col-lg-8">
-
-                                  
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>

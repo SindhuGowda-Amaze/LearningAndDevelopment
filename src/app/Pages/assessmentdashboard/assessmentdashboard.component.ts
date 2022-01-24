@@ -12,6 +12,7 @@ export class AssessmentdashboardComponent implements OnInit {
   constructor(private ActivatedRoute: ActivatedRoute, private LearningService: LearningService) { }
   result:any;
   search:any;
+  count:any;
   quetionlist:any;
   ngOnInit(): void {
     this.GetAssessments();
@@ -23,6 +24,7 @@ export class AssessmentdashboardComponent implements OnInit {
       data => {
         debugger
         this.quetionlist = data;
+        this.count = this.quetionlist.length;
       })
   }
 
