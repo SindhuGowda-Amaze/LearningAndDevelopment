@@ -48,6 +48,7 @@ import { StaffresultComponent } from './Pages/staffresult/staffresult.component'
 
 
 
+
 const ngWizardConfig: NgWizardConfig = {
   theme: THEME.circles
 };
@@ -98,7 +99,6 @@ const ngWizardConfig: NgWizardConfig = {
     HttpClientModule,
     NgWizardModule.forRoot(ngWizardConfig),
     NgxPaginationModule,
-    CKEditorModule,
    // AngularEditorModule,
    
   
