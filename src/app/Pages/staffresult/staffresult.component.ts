@@ -169,7 +169,7 @@ export class StaffresultComponent implements OnInit {
     debugger
     this.LearningService.GetTestResponseDetails().subscribe(data => {
       debugger
-      this.detailslist = data.filter(x => x.testResponseID == 40);
+      this.detailslist = data.filter(x => x.testResponseID == 44);
     });
   }
 }
