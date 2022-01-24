@@ -1,1 +1,66 @@
-<p>category-dashboard works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-10">
+                    <p class="Heading">Category Dashboard</p>
+                </div>
+                <div class="col-lg-2">
+                    <p class="Text" style="float:right; padding-right:50px;">Count: {{count}}</p>
+                </div>
+            </div>
+            <hr class="HrLine">
+
+            <div class="row FilterClass ">
+                <div class="col-lg-1">
+                    <p class="Text">Filter By </p>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control" name="cars" id="Duration">
+                        <option value="0">Select Category</option>
+                        <option>A</option>
+                        <option>B</option>
+                    </select>
+                </div>
+                <div class="col-lg-5">
+                        <input type="search" class="form-control" placeholder="Search for Categoy...">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-9"></div>
+                <div class="col-lg-3">
+                    <button class="button" routerLink="/CategoryForm">Add</button>
+                </div>
+            </div> <br>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="head" >
+                                    <th>Sl No.</th>
+                                    <th>Category Name</th>
+                                    <th>Description</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="header" *ngFor="let details of result index as i">
+                                    <td>{{i+1}}</td>
+                                    <td>{{details.name}}</td>
+                                    <td style="word-wrap: break-word; width: 65%;">{{details.description}}</td>
+                                    <td>
+                                        <button class="button1" routerLink="/CategoryForm" [routerLink]="['/CategoryForm', details.id]">Edit</button><br><br>
+                                        <button class="button2" (click)="Ondelete(details.id)" >Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
