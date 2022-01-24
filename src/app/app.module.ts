@@ -92,7 +92,8 @@ const ngWizardConfig: NgWizardConfig = {
     // NgxFullCalendarModule,
     HttpClientModule,
     NgWizardModule.forRoot(ngWizardConfig),
-    NgxPaginationModule
+    NgxPaginationModule,
+   
   
   ],
   providers: [],
