@@ -18,6 +18,7 @@ export class CourseDashboardComponent implements OnInit {
   count:any;
   courseid:any;
   categoryid:any;
+  dummresult:any;
   
   coursedetails:any;
   ngOnInit(): void {
@@ -31,6 +32,7 @@ export class CourseDashboardComponent implements OnInit {
       data => {
         debugger
         this.result = data;
+        this.dummresult = data;
         this.count = this.result.length;
       
       })
@@ -91,6 +93,7 @@ export class CourseDashboardComponent implements OnInit {
     this.courseid = even.target.value;
     if (even.target.value != 0) {
       this.coursedetails = this.dummcoursedetails.filter((x: { courseID: any; }) => x.courseID == this.courseid)
+      
     }
     else{
       this.GetCourse();
@@ -100,9 +103,14 @@ export class CourseDashboardComponent implements OnInit {
 
   categorydetails:any;
   getcategoryid(even:any){
+    debugger
     this.categoryid=even.target.value;
     if(even.target.value !=0){
-      this.categorylist = this.categorydetails.filter((x: { ID: any; }) => x.ID == this.categoryid)
+      this.result = this.dummresult.filter((x: { categoryName: any; }) => x.categoryName == this.categoryid)
+      this.count = this.result.length;
+    }
+    else{
+      this.GetCourse();
     }
   }
 

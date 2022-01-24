@@ -17,9 +17,9 @@
                     <p class="Text">Filter By </p>
                 </div>
                 <div class="col-lg-3">
-                    <select class="form-control" name="cars" id="Duration" change="getcategoryid($event)" >
+                    <select class="form-control"  id="Duration" (change)="getcategoryid($event)" >
                         <option value="0">Select Category</option>
-                        <option *ngFor="let cat  of categorylist" value="{{cat.id}}">{{cat.name}}</option>
+                        <option *ngFor="let cat  of categorylist" value="{{cat.name}}">{{cat.name}}</option>
                     </select>
                 </div>
                 <div class="col-lg-5">
