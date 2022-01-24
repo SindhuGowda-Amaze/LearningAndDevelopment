@@ -44,6 +44,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 //import { AngularEditorModule } from '@kolkov/angular-editor';
 import { CategoryDashboardComponent } from './category-dashboard/category-dashboard.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
+import { StaffresultComponent } from './Pages/staffresult/staffresult.component';
 
 
 
@@ -82,6 +83,7 @@ const ngWizardConfig: NgWizardConfig = {
     ManagerDashboardComponent,
     CategoryDashboardComponent,
     CategoryFormComponent,
+    StaffresultComponent,
   
   ],
   imports: [
