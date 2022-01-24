@@ -9,3 +9,9 @@
     color: black;
     border: 2px solid;
 }
+ /* .bgimage{
+    background-image: url('../../../assets/Images/imagelearning.png');
+    height: 100vh;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+} */

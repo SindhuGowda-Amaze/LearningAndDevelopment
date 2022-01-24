@@ -1,7 +1,7 @@
 
 import Swal from 'sweetalert2';
 import { LearningService } from 'src/app/learning.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
 
 //import Swal from 'sweetalert2';
@@ -43,7 +43,7 @@ export class TakeAssessmentComponent implements OnInit {
   Email: any;
   email: any;
   emailID: any;
-  constructor(private AmazeService: LearningService, private ActivatedRoute: ActivatedRoute, private elementRef: ElementRef) {
+  constructor(private AmazeService: LearningService, private ActivatedRoute: ActivatedRoute, private elementRef: ElementRef,public router:Router) {
   }
   courseid:any;
   ngOnInit(): void {
@@ -72,12 +72,13 @@ export class TakeAssessmentComponent implements OnInit {
     
     this.ActivatedRoute.params.subscribe(params => {
       debugger
-       this.courseid = params['id'];
+       this.courseid = params['courseid'];
+       this.chapterid = params['chapterid'];
 
      }
      )
   }
-
+  chapterid:any;
   public validateohone() {
     if (this.PhoneNumber.length < 10) {
       this.invalidphone = 0;
@@ -103,14 +104,20 @@ export class TakeAssessmentComponent implements OnInit {
 
   // }
   count:any;
+  totalmarks:any;
   public startTestContainer() {
     debugger
     this.startTest = 1;
     this.AmazeService.GetAssessments().subscribe(data => {
       debugger
       this.questionList = data;
-   
-      this.questionList = this.questionList.filter((x: { chapterID: number; }) => x.chapterID == this.courseid)
+      this.totalmarks=0;
+      this.questionList = this.questionList.filter((x: { chapterID: any; courseID:any}) => x.chapterID == this.chapterid && x.courseID==this.courseid);
+      for (let i=0;i<=this.questionList.length;i++){
+        debugger
+      
+        this.totalmarks= this.totalmarks + this.questionList[i].weightage;
+      }
       this.count = this.questionList.length;
     })
     //this.changeReloadBit();
@@ -173,15 +180,22 @@ export class TakeAssessmentComponent implements OnInit {
    
   }
   // public submitAnswer(){}
-
+  correctansers:any;
+  wrongansers:any
   public submitAnswer() {
     debugger;
+    this.correctansers=0;
+    this.wrongansers=0;
     for (var i = 0; i < this.questionList.length; i++) {
       if (this.questionList[i].correctAnswer == this.questionList[i].userAnswer) {
         this.marks = this.marks + 1;
+        this.correctansers= this.correctansers+1;
+      }
+      else{
+        this.wrongansers= this.wrongansers+1;
       }
     }
-    if (this.marks >= 20) {
+    if (this.marks >= this.questionList.length/2) {
       this.testResult = 'Pass'
     } else {
       this.testResult = 'Fail';
@@ -189,7 +203,13 @@ export class TakeAssessmentComponent implements OnInit {
     var Entityy = {
       'TestResult': this.testResult,
       'UserID': this.userid,
-      'ObtainedMarks': this.marks
+      'ObtainedMarks': this.marks,
+      'CourseID':this.courseid,
+      'ChapterID':this.chapterid,
+      'Totalmarks':this.totalmarks,
+      // 'CorrectAnsswers':this.wrongansers,
+      // 'wrongansers':this.wrongansers,
+
     }
     this.AmazeService.InsertTestResponse(Entityy).subscribe(data => {
       debugger
@@ -208,8 +228,10 @@ export class TakeAssessmentComponent implements OnInit {
       Swal.fire('You have submited test successfully...');
       this.show = 0;
       this.startTest = "";
+      this.router.navigate(['/AssessmentResult', this.testResponseID]);
     })
-    location.href="/#/AssessmentResult";
+    //location.href="/#/AssessmentResult/";
+
   }
 
   // countdownTimeStart(endtime) {

@@ -42,6 +42,8 @@ import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { CategoryDashboardComponent } from './category-dashboard/category-dashboard.component';
+import { CategoryFormComponent } from './category-form/category-form.component';
 
 
 
@@ -78,6 +80,8 @@ const ngWizardConfig: NgWizardConfig = {
     AssessmentdashboardComponent,
     AssessmentFormComponent,
     ManagerDashboardComponent,
+    CategoryDashboardComponent,
+    CategoryFormComponent,
   
   ],
   imports: [

@@ -27,6 +27,8 @@ import { LearningPathDetailsComponent } from './Pages/learning-path-details/lear
 import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
 import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
+import { CategoryDashboardComponent } from './category-dashboard/category-dashboard.component';
+import { CategoryFormComponent } from './category-form/category-form.component';
 
 
 
@@ -39,11 +41,11 @@ const routes: Routes = [
   { path: 'Header', component: HeaderComponent },
   { path: 'Footer', component: FooterComponent },
   { path: 'Course', component: CourseComponent },
-  { path: 'Course/:id', component: CourseComponent},
+  { path: 'Course/:id', component: CourseComponent },
   { path: 'Chapter', component: ChapterComponent },
   { path: 'Chapter/:id', component: ChapterComponent },
   { path: 'Employee', component: EmployeeComponent },
-  { path: 'EmployeeForm', component: EmployeeFormComponent},
+  { path: 'EmployeeForm', component: EmployeeFormComponent },
   { path: 'Catalog', component: CatalogComponent },
   { path: 'Trainer', component: TrainerComponent },
   { path: 'TrainerForm', component: TrainerFormComponent },
@@ -58,8 +60,8 @@ const routes: Routes = [
   { path: 'ViewCourse/:id', component: ViewCourseComponent },
   { path: 'MyCourseDashboard', component: MyCourseDashboardComponent },
   { path: 'TakeAssessment', component: TakeAssessmentComponent },
-  { path: 'TakeAssessment/:id', component: TakeAssessmentComponent },
-  { path: 'AssessmentResult', component: AssessmentResultComponent },
+  { path: 'TakeAssessment/:courseid/:chapterid', component: TakeAssessmentComponent },
+  { path: 'AssessmentResult/:id', component: AssessmentResultComponent },
   { path: 'CourseCertificate', component: CourseCertificateComponent },
   { path: 'StartMyCourse', component: StartMyCourseComponent },
   { path: 'StartMyCourse/:id', component: StartMyCourseComponent },
@@ -68,6 +70,9 @@ const routes: Routes = [
   { path: 'Assessmentdashboard', component: AssessmentdashboardComponent },
   { path: 'AssessmentForm', component: AssessmentFormComponent },
   { path: 'ManagerDashboard', component: ManagerDashboardComponent },
+
+  { path: 'CategoryDashboard', component: CategoryDashboardComponent },
+  { path: 'CategoryForm', component: CategoryFormComponent },
  
 
 
