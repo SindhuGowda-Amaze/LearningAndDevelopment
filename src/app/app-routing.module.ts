@@ -73,6 +73,7 @@ const routes: Routes = [
 
   { path: 'CategoryDashboard', component: CategoryDashboardComponent },
   { path: 'CategoryForm', component: CategoryFormComponent },
+  { path: 'CategoryForm/:id', component: CategoryFormComponent },
  
 
 

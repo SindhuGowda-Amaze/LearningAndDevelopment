@@ -40,11 +40,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
 import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
-
-import { AngularEditorModule } from '@kolkov/angular-editor';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+//import { AngularEditorModule } from '@kolkov/angular-editor';
 import { CategoryDashboardComponent } from './category-dashboard/category-dashboard.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 
 
@@ -97,7 +97,7 @@ const ngWizardConfig: NgWizardConfig = {
     HttpClientModule,
     NgWizardModule.forRoot(ngWizardConfig),
     NgxPaginationModule,
-    AngularEditorModule,
+   // AngularEditorModule,
    
   
   ],

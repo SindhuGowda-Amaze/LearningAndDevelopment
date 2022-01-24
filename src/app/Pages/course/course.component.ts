@@ -110,7 +110,7 @@ export class CourseComponent implements OnInit {
   
   
   cancel() {
-    location.href = "/CourseDashboard";
+    location.href = "/#/CourseDashboard";
   }
   Course_Photo: any;
 
