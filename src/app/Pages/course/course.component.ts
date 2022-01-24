@@ -13,7 +13,8 @@ export class CourseComponent implements OnInit {
   result: any;
   id:any;
   ngOnInit(): void {
-this.GetCategoryMaster();
+    this.categoryName=0;
+  this.GetCategoryMaster();
 
     this.ActivatedRoute.params.subscribe(params => {
       debugger

@@ -32,7 +32,9 @@ export class ChapterComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.courseID=0;
     this.GetCourse();
+    
 
     this.ActivatedRoute.params.subscribe(params => {
       this.id = params['id'];

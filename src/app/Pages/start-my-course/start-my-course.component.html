@@ -43,12 +43,12 @@
                 <button routerLink="/Catalog" class="BackBTN">Back</button>
                 <h2>Course Contents </h2><br>
                 <div  *ngFor="let details of coursedetails">
-                    <h5 (click)="getcoursedetails(details)">
+                    <h5  (click)="getcoursedetails(details)"  >
                         <!-- <img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;"> -->
-                        <img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 7%;">
+                        <img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 7%;" >
                          {{details.name}}
                     </h5>
-                    <button Style="border-radius:5px; margin-left: 230px;" [routerLink]="['/TakeAssessment',details.id]" id="id" name="id">Take Assesment</button>
+                    <button Style="border-radius:5px; margin-left: 230px;" [routerLink]="['/TakeAssessment',details.id]" id="id" name="id">Take Assessment</button>
                     <hr class="HRline">
                 </div>
                
