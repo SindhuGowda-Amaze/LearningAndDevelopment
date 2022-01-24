@@ -21,7 +21,7 @@
                     <div class="col-lg-3">
                         <select class="form-control" name="cars" id="Duration" (change)="staffid($event)">
                             <option value="0">Select Employee</option>
-                            <option *ngFor="let details of result" value="{{details.id}}">{{details.name}}</option>
+                            <option *ngFor="let details of result" value="{{details.id}}">{{details.employeeName}}</option>
                         </select>
                     </div>
                     <div class="col-lg-3"></div>
@@ -61,8 +61,8 @@
                                 <td>{{details.employeeName}}</td>
                                 <td>{{details.phoneNo}}</td>
                                 <td>{{details.email}}</td>
-                                <td>{{details.courseName}}</td>
-                                <td>{{details.modifiedDate}}</td>
+                                <td>{{details.name}}</td>
+                                <td>{{details.modifiedDate|date}}</td>
                                 <td>
                                     <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                                         (click)="getid(job.id)">Selected</button> <br><br>

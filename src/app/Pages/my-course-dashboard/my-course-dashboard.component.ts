@@ -13,6 +13,7 @@ export class MyCourseDashboardComponent implements OnInit {
   show: any;
   stafflist: any;
   userid: any;
+  search: any;
   ngOnInit(): void {
 
     this.userid = sessionStorage.getItem('userid')

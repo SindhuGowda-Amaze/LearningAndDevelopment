@@ -22,16 +22,16 @@
                     <div class="col-lg-2">
                         <p>Chapter Photo</p>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3" *ngIf="show==0">
                         <p>Attachment</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-2">
                         <!-- <input class="form-control" placeholder="Course Nmae"> -->
-                        <select class="form-control" name="cars" id="Duration" [(ngModel)]="courseID" (change)="getCourseID($event)">
+                        <select class="form-control" name="courseID" [(ngModel)]="courseID"  (change)="getCourseID($event)">
                             <option value="0">Course Name</option>
-                            <option *ngFor="let details of result"  value="{{details.id}}">{{details.name}}</option>
+                            <option *ngFor="let details of courselist"  value="{{details.id}}">{{details.name}}</option>
                             <!-- <option value=""> Marketing</option>
                             <option value="">Communication Skills</option> -->
                         </select>
@@ -49,8 +49,9 @@
                                 <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                             </ngx-dropzone-preview>
                         </ngx-dropzone>
+                        <img src="{{showChapterPhoto}}" style="width: 100px;height:auto">
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3" *ngIf="show==0">
                         <!-- <img class="image" src="assets/Images/youtube.png">&nbsp;&nbsp;
                         <img  class="image" src="assets/Images/word.png">&nbsp;&nbsp;
                         <img  class="image" src="assets/Images/pdf.png">&nbsp;&nbsp;
@@ -81,7 +82,8 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8" style="text-align: justify;">
-                        <textarea class="form-control" placeholder="Chapter text" rows="10" [(ngModel)]="chapterText"></textarea>
+                        <!-- <ckeditor [editor]="Editor" [(ngModel)]="chapterText"></ckeditor> -->
+                        <!-- <textarea class="form-control" placeholder="Chapter text" rows="10" [(ngModel)]="chapterText"></textarea> -->
                     </div>
                 </div>
                 <div class="row">

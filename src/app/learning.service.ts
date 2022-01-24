@@ -325,7 +325,7 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
-  
+
 
   public GetTrainerCourseMapping() {
     debugger
@@ -372,10 +372,10 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
-  public InsertAssessments(json : any) {
+  public InsertAssessments(json: any) {
     debugger
     let APIURL = this.baseURL + "Master/InsertAssessments";
-    return this.http.post<any[]>(APIURL,json);
+    return this.http.post<any[]>(APIURL, json);
   }
 
   public UpdateAssessments(json: any) {
@@ -397,7 +397,7 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
-  
+
 
 
   public GetChapterAttachmentByChapterID(chapterid: any) {
@@ -481,7 +481,7 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
-  public GetApproveCourse(staffid:any) {
+  public GetApproveCourse(staffid: any) {
 
     return this.http.get<any[]>(this.baseURL + "/Master/GetApproveCourse?StaffID=" + staffid);
   }
@@ -491,7 +491,7 @@ export class LearningService {
     return this.http.get<any[]>(this.baseURL + "/Master/GetTrainerCourseMappingDashboard");
   }
 
- 
+
 
   public GetAllCounts() {
 
@@ -510,4 +510,15 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
+  //Prashant api service
+  public GetTestResponse() {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/GetTestResponse"
+    );
+  }
+  public GetTestResponseDetails() {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/GetTestResponseDetails"
+    );
+  }
 }
