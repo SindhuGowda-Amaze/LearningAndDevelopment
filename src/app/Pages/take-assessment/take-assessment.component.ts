@@ -195,7 +195,7 @@ export class TakeAssessmentComponent implements OnInit {
         this.wrongansers= this.wrongansers+1;
       }
     }
-    if (this.marks >= this.questionList.length/2) {
+    if (this.marks >= this.totalmarks/2) {
       this.testResult = 'Pass'
     } else {
       this.testResult = 'Fail';
@@ -214,21 +214,27 @@ export class TakeAssessmentComponent implements OnInit {
     this.AmazeService.InsertTestResponse(Entityy).subscribe(data => {
       debugger
       this.testResponseID = data;
-      for (var i = 0; i < this.questionList.length; i++) {
-        var ett = {
-          'QuestionID': this.questionList[i].id,
-          'CorrectAnswer': this.questionList[i].correctAnswer,
-          'UserAnswer': this.questionList[i].userAnswer,
-          'TestResponseID': this.testResponseID,
-          'ObtainedMarks': this.marks
+      if(this.testResponseID==0){
+        Swal.fire('You Already took this Test');
+        this.ngOnInit();
+      }else{
+        for (var i = 0; i < this.questionList.length; i++) {
+          var ett = {
+            'QuestionID': this.questionList[i].id,
+            'CorrectAnswer': this.questionList[i].correctAnswer,
+            'UserAnswer': this.questionList[i].userAnswer,
+            'TestResponseID': this.testResponseID,
+            'ObtainedMarks': this.marks
+          }
+          this.AmazeService.InsertTestResponseDetails(ett).subscribe(data => {
+          });
         }
-        this.AmazeService.InsertTestResponseDetails(ett).subscribe(data => {
-        });
+        Swal.fire('You have submited test successfully...');
+        this.show = 0;
+        this.startTest = "";
+        this.router.navigate(['/AssessmentResult', this.testResponseID]);
       }
-      Swal.fire('You have submited test successfully...');
-      this.show = 0;
-      this.startTest = "";
-      this.router.navigate(['/AssessmentResult', this.testResponseID]);
+     
     })
     //location.href="/#/AssessmentResult/";
 
