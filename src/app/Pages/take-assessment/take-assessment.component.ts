@@ -209,6 +209,7 @@ export class TakeAssessmentComponent implements OnInit {
       this.show = 0;
       this.startTest = "";
     })
+    location.href="/#/AssessmentResult";
   }
 
   // countdownTimeStart(endtime) {
