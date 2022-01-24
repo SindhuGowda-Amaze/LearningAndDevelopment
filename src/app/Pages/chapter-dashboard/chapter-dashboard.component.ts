@@ -46,23 +46,6 @@ export class ChapterDashboardComponent implements OnInit {
     })
   }
 
-    // public GetChapter(){
-    // this.LearningService.GetChapter().subscribe(
-    //   data => {
-    //   this.coursedetails = data;
-    //   this.dummcoursedetails = data;
-    //   debugger
-    //   this.coursedetails=this.coursedetails.filter((x: { id: any; })=>x.id==Number(this.id));
-    //   this.courseName=this.coursedetails[0].courseName;
-    //   this.name=this.coursedetails[0].name;
-    //   this.description=this.coursedetails[0].description;
-    //   this.chapterPhoto=this.coursedetails[0].chapterPhoto;
-    //   this.chapterText=this.coursedetails[0].chapterText;
-  
-    //     }
-    //   ) 
-    // }
-
   files: File[] = [];
 
   onSelect(event: any) {
@@ -99,14 +82,6 @@ export class ChapterDashboardComponent implements OnInit {
     )
 
   }
-
-
-  
-
-
-
-
-
 
   Attachmentlist: any;
 

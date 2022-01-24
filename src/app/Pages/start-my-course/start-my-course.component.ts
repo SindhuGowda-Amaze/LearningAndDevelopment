@@ -65,6 +65,7 @@ export class StartMyCourseComponent implements OnInit {
       this.chapterphoto=details.chapterPhoto
       this.ShowAttachments(details.id)
       this.show=1
+      
   }
 
   dummAttachmentlist:any;
@@ -73,6 +74,7 @@ export class StartMyCourseComponent implements OnInit {
     this.LearningService.GetChapterAttachmentByChapterID(id).subscribe(data => {
       debugger
       this.Attachmentlist = data;
+      
       this.dummAttachmentlist = data;
     })
   }

@@ -29,6 +29,7 @@ search:any;
     debugger
     location.href = "/#/TrainerCourseMappingForm/" + id;
   }
+  
   public Ondelete(id:any) {
     this.LearningService.DeleteTrainerCourseMapping(id).subscribe(
       data => {

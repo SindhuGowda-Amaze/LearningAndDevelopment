@@ -45,6 +45,13 @@ export class LearningService {
       this.host + "/Announcement/GetMyDetails"
     );
   }
+
+  public DeleteMyDetails(id: any) {
+    debugger
+    let APIURL = this.baseURL + "Master/DeleteMyDetails?ID=" + id;
+    return this.http.get<any[]>(APIURL);
+  }
+
   public GetPositionDetails() {
     return this.http.get<any[]>(
       this.host + "/Master/GetPositionDetails"
