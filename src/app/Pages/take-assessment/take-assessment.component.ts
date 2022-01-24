@@ -207,8 +207,8 @@ export class TakeAssessmentComponent implements OnInit {
       'CourseID':this.courseid,
       'ChapterID':this.chapterid,
       'Totalmarks':this.totalmarks,
-      // 'CorrectAnsswers':this.wrongansers,
-      // 'wrongansers':this.wrongansers,
+      'CorrectAnswers':this.wrongansers,
+      'wronganswers':this.wrongansers,
 
     }
     this.AmazeService.InsertTestResponse(Entityy).subscribe(data => {
