@@ -64,7 +64,7 @@
                         </textarea> -->
                         <textarea class="form-control" placeholder="Correct Answer.." *ngIf="questionid==2" [(ngModel)]="CorrectAnswer">
                         </textarea>
-                        <select class="form-control" name="" id="" *ngIf="questionid==1" [(ngModel)]="CorrectAnswer">
+                        <select class="form-control" name="CorrectAnswer" id="CorrectAnswer" (change)="getCorrectAnswer($event)" *ngIf="questionid==1" [(ngModel)]="CorrectAnswer" >
                             <option value="CorrectAnswer">Select Options</option>
                             <option value="A">A</option>
                             <option value="B">B</option>
@@ -111,7 +111,7 @@
                         <input class="form-control" placeholder="d" [(ngModel)]="Option4">
                     </div>
                     <div class="col-lg-2">
-                        <input class="form-control" placeholder="marks" [(ngModel)]="marks">
+                        <input class="form-control" placeholder="Weightage" [(ngModel)]="Weightage">
                     </div>
                 </div><br>
                 <!-- <div class="row" *ngIf="show2==1">

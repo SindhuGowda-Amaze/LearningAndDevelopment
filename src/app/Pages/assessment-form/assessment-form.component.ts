@@ -140,7 +140,7 @@ export class AssessmentFormComponent implements OnInit {
   Option3: any;
   Option4: any;
   CorrectAnswer: any;
-  marks:any;
+  Weightage: any;
   Save() {
     debugger
     var json = {
@@ -153,7 +153,7 @@ export class AssessmentFormComponent implements OnInit {
       "Option3": this.Option3,
       "Option4": this.Option4,
       "CorrectAnswer": this.CorrectAnswer,
-      "marks": this.marks,
+      "weightage": this.Weightage,
 
     };
     this.LearningService.InsertAssessments(json).subscribe(
@@ -165,8 +165,26 @@ export class AssessmentFormComponent implements OnInit {
       })
   }
 
-  show:any;
-  show2:any;
+  getCorrectAnswer(event: any) {
+    debugger
+    let value: any = event.target.value;
+    if (value == 'A') {
+      this.CorrectAnswer = this.Option1;
+    }
+    if (value == 'B') {
+      this.CorrectAnswer = this.Option2;
+    }
+    if (value == 'C') {
+      this.CorrectAnswer = this.Option3;
+    }
+    if (value == 'D') {
+      this.CorrectAnswer = this.Option4;
+    }
+
+
+  }
+  show: any;
+  show2: any;
 
   // ShowObjectives(value:any){
   //   debugger
@@ -176,7 +194,7 @@ export class AssessmentFormComponent implements OnInit {
   //   debugger
   //   this.show2=value;
   // }
- 
+
 
 
 
