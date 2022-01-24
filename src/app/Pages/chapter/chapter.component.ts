@@ -3,7 +3,8 @@ import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 import { LearningService } from 'src/app/learning.service';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
-// import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import * as ClassicEditor from '@ckeditor/ckeditor5-angular';
+
 @Component({
   selector: 'app-chapter',
   templateUrl: './chapter.component.html',
@@ -15,7 +16,7 @@ export class ChapterComponent implements OnInit {
   result: any;
 
   constructor(public LearningService: LearningService, private ActivatedRoute: ActivatedRoute) { }
-  // public Editor = ClassicEditor;  
+  public Editor = ClassicEditor;
   id: any;
   CourseID: any;
   courseID: any;
