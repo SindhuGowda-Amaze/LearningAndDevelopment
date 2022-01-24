@@ -25,7 +25,7 @@
             <div class="col-lg-8">
                 <p style="font-size: 25px;">{{coursename}}</p>
             </div>
-            <div class="col-lg-4" style="text-align: right;">
+            <div class="col-lg-4" style="text-align: right;" >
                 <br>
                 <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width:10%;"
                     (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,9 +43,11 @@
                 <button routerLink="/Catalog" class="BackBTN">Back</button>
                 <h2>Course Contents </h2><br>
                 <div *ngFor="let details of coursedetails">
+
                     <h5 (click)="getcoursedetails(details)">
                         <!-- <img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;"> -->
-                        <img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 7%;">
+                        <!-- <img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 7%;"> -->
+                        <input type="radio" id="details.id" name="details.id">
                         {{details.name}}
                     </h5>
                     <button Style="border-radius:5px; margin-left: 230px;"
