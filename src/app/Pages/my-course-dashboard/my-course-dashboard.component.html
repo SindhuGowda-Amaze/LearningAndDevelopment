@@ -159,8 +159,7 @@
                 <li [ngClass]="{'underlinetext': show=='1'}"><a class="active" (click)="Showcards(1)">
                         <ul>All</ul>
                     </a></li>
-                <li [ngClass]="{'underlinetext': show=='2'}"><a class="active" [ngClass]="{'underlinetext': show==2}"
-                        (click)="Showcards(2)">Enrolled Training
+                <li [ngClass]="{'underlinetext': show=='2'}"><a class="active" (click)="Showcards(2)">Enrolled Training
                     </a></li>
                 <li [ngClass]="{'underlinetext': show=='3'}"><a class="active" (click)="Showcards(3)">New Training</a>
                 </li>
@@ -169,12 +168,12 @@
             </ul>
         </div>
         <div class="col-lg-4">
-            <input style="margin-top: 10px;" class="form-control" placeholder="Search">
+            <input style="margin-top: 10px;" class="form-control" placeholder="Search" [(ngModel)]="search">
         </div>
     </div> <br><br>
     <div >
         <div class="row">
-            <div class="col-lg-3" *ngFor="let details of coursedetails">
+            <div class="col-lg-3" *ngFor="let details of coursedetails | filter:search ">
                 <div class="card1" style="background-color: white; height: 310px;width:350px;border-radius: 10px;"
                     (click)="flip1($event)">
                     <div class="back">

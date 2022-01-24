@@ -27,6 +27,8 @@ import { LearningPathDetailsComponent } from './Pages/learning-path-details/lear
 import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
 import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
+import { CategoryDashboardComponent } from './category-dashboard/category-dashboard.component';
+import { CategoryFormComponent } from './category-form/category-form.component';
 
 
 
@@ -69,6 +71,9 @@ const routes: Routes = [
   { path: 'AssessmentForm', component: AssessmentFormComponent },
   { path: 'ManagerDashboard', component: ManagerDashboardComponent },
 
+  { path: 'CategoryDashboard', component: CategoryDashboardComponent },
+  { path: 'CategoryForm', component: CategoryFormComponent },
+ 
 
 
 

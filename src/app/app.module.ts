@@ -40,6 +40,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
 import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
+import { CategoryDashboardComponent } from './category-dashboard/category-dashboard.component';
+import { CategoryFormComponent } from './category-form/category-form.component';
 
 
 
@@ -76,6 +78,8 @@ const ngWizardConfig: NgWizardConfig = {
     AssessmentdashboardComponent,
     AssessmentFormComponent,
     ManagerDashboardComponent,
+    CategoryDashboardComponent,
+    CategoryFormComponent,
   
   ],
   imports: [
@@ -88,7 +92,8 @@ const ngWizardConfig: NgWizardConfig = {
     // NgxFullCalendarModule,
     HttpClientModule,
     NgWizardModule.forRoot(ngWizardConfig),
-    NgxPaginationModule
+    NgxPaginationModule,
+   
   
   ],
   providers: [],
