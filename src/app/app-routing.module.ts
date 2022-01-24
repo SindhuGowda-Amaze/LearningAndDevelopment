@@ -29,9 +29,7 @@ import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
 import { CategoryDashboardComponent } from './Pages/category-dashboard/category-dashboard.component';
 import { CategoryFormComponent } from './Pages/category-form/category-form.component';
-
-
-
+import { StaffresultComponent } from './Pages/staffresult/staffresult.component';
 
 
 const routes: Routes = [
@@ -74,6 +72,7 @@ const routes: Routes = [
   { path: 'CategoryDashboard', component: CategoryDashboardComponent },
   { path: 'CategoryForm', component: CategoryFormComponent },
   { path: 'CategoryForm/:id', component: CategoryFormComponent },
+  { path: 'Staffresult', component: StaffresultComponent },
  
 
 
