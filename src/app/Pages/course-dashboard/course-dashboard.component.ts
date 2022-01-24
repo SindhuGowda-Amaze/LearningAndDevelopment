@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LearningService } from 'src/app/learning.service';
+import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-course-dashboard',
   templateUrl: './course-dashboard.component.html',
@@ -7,7 +9,7 @@ import { LearningService } from 'src/app/learning.service';
 })
 export class CourseDashboardComponent implements OnInit {
 
-  constructor(public LearningService: LearningService) { }
+  constructor(private ActivatedRoute: ActivatedRoute, private LearningService: LearningService) { }
   result: any;
   id:any;
   categoryName:any;
@@ -66,6 +68,16 @@ export class CourseDashboardComponent implements OnInit {
       this.dummcoursedetails = data;
       debugger
     })
+  }
+
+  public Ondelete(id:any) {
+    this.LearningService.DeleteCourse(id).subscribe(
+      data => {
+        debugger
+        Swal.fire('Successfully Deleted...!');
+        this.GetCourse();
+      }
+    )
   }
 
   dummcoursedetails:any;
