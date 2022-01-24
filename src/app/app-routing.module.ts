@@ -27,12 +27,9 @@ import { LearningPathDetailsComponent } from './Pages/learning-path-details/lear
 import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
 import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
-import { CategoryDashboardComponent } from './category-dashboard/category-dashboard.component';
-import { CategoryFormComponent } from './category-form/category-form.component';
+import { CategoryDashboardComponent } from './Pages/category-dashboard/category-dashboard.component';
+import { CategoryFormComponent } from './Pages/category-form/category-form.component';
 import { StaffresultComponent } from './Pages/staffresult/staffresult.component';
-
-
-
 
 
 const routes: Routes = [
