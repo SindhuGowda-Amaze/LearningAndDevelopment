@@ -40,11 +40,12 @@ export class CatalogComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.userid = sessionStorage.getItem('userid');
     this.GetCourse();
     this.show1 = 1;
     this.GetCategoryMaster();
 
-    this.userid = sessionStorage.getItem('userid')
+
     this.manager = sessionStorage.getItem('manager')
 
     this.LearningService.GetMyDetails().subscribe(data => {
@@ -174,10 +175,10 @@ export class CatalogComponent implements OnInit {
   courselist: any;
   public GetCourse() {
     debugger
-    this.LearningService.GetEnroll().subscribe(
+    this.LearningService.GetCoursesByUserID(this.userid).subscribe(
       data => {
         debugger
-        this.courselist = data.filter(x => x.status != 'Manager Approved' && x.staffID == this.userid);
+        this.courselist = data;
         this.count = this.courselist.length;
 
       })
@@ -187,10 +188,10 @@ export class CatalogComponent implements OnInit {
 
   public filtercourse(name: any) {
     debugger
-    this.LearningService.GetEnroll().subscribe(
+    this.LearningService.GetCoursesByUserID(this.userid).subscribe(
       data => {
         debugger
-        this.courselist = data.filter(x => x.categoryName == name && x.status != 'Manager Approved' && x.staffID == this.userid);
+        this.courselist = data.filter(x => x.categoryName == name);
       })
     this.show1 = 1;
   }

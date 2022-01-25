@@ -439,6 +439,12 @@ export class LearningService {
     let APIURL = this.baseURL + "Master/GetChapter";
     return this.http.get<any[]>(APIURL);
   }
+  public GetCertification() {
+    debugger
+    let APIURL = this.baseURL + "Master/GetCertification";
+    return this.http.get<any[]>(APIURL);
+  }
+
 
   public GetChapterListByEmployeeID(EmployeeID: any) {
     debugger
@@ -452,6 +458,14 @@ export class LearningService {
     let APIURL = this.baseURL + "Master/InsertChapter";
     return this.http.post<any[]>(APIURL, json);
   }
+
+  public InsertCertification(json: any) {
+    debugger
+    let APIURL = this.baseURL + "Master/InsertCertification";
+    return this.http.post<any[]>(APIURL, json);
+  }
+
+
 
   public UpdateChapter(json: any) {
     debugger

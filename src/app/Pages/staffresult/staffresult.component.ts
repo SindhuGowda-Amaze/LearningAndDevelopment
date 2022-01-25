@@ -15,6 +15,7 @@ export class StaffresultComponent implements OnInit {
   count: any;
   staffid: any;
   manager: any;
+  courselist: any;
   constructor(public LearningService: LearningService) { }
 
   ngOnInit(): void {
@@ -22,28 +23,19 @@ export class StaffresultComponent implements OnInit {
     this.show = 2;
     this.staffid = localStorage.getItem('userid');
     this.manager = localStorage.getItem('manager');
-    // this.GetCandidateReg()
-    // this.insertdetails()
-    //this.GetEnroll();
-  }
 
-  public GetCandidateReg() {
-    debugger
-    // if (this.staffid == undefined) {
-    //   this.LearningService.GetCandidateRegistration().subscribe(data => {
-    //     this.joblist = data.filter(x => x.scheduled == 1 && x.interviewRejected == 0 && x.interviewSelected == 0);
-    //     this.count = this.joblist.length;
-    //   })
-    // }
-    // else {
-    //   this.LearningService.GetCandidateRegistration().subscribe(data => {
-    //     debugger
-    //     this.joblist = data.filter(x => x.scheduled == 1 && x.interviewRejected == 0 && x.interviewSelected == 0 && x.staffID == this.staffid);
-    //     this.count = this.joblist.length;
-    //   })
+    this.LearningService.GetMyDetails().subscribe(
+      data => {
+        debugger
+        // this.result = data.filter(x => x.manager == this.manager );
+        this.result = data.filter(x => x.supervisor == sessionStorage.getItem('userid'));
+      })
 
-    // }
+
+
   }
+  courseID: any;
+
   result: any;
 
   public GetEnroll() {
@@ -165,13 +157,50 @@ export class StaffresultComponent implements OnInit {
   }
 
   detailslist: any;
-  public getdetailslist() {
+  public getdetailslist(details: any) {
     debugger
-    this.LearningService.GetTestResponseDetails().subscribe(data => {
+    this.empid = details.id;
+    this.LearningService.GetTestResponse().subscribe(data => {
       debugger
-      this.detailslist = data.filter(x => x.testResponseID == 44);
+      this.detailslist = data.filter(x => x.userID == details.id);
     });
+
+    this.LearningService.GetApproveCourse(details.id).subscribe(
+      data => {
+        debugger
+        this.courselist = data;
+      })
   }
+  empid: any
+  MarksObtained: any;
+  TotalMarks: any;
+  public getdetailslist1() {
+    debugger
+    this.LearningService.GetApproveCourse(this.empid).subscribe(
+      data => {
+        debugger
+        this.courselist = data;
+      })
+  }
+
+  public AllocateCertificate() {
+    debugger
+    var entity = {
+      'CourseID': this.courseID,
+      'EmployeeID': this.empid,
+      'MarksObtained': this.MarksObtained,
+      'TotalMarks': this.TotalMarks
+    }
+    this.LearningService.InsertCertification(entity).subscribe(
+      data => {
+        debugger
+        Swal.fire('Certificate Alloted Successfully');
+        location.reload();
+      })
+
+  }
+
+
 }
 
 
