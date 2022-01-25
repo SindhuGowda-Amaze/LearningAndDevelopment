@@ -15,6 +15,7 @@ export class StaffresultComponent implements OnInit {
   count: any;
   staffid: any;
   manager: any;
+  courselist: any;
   constructor(public LearningService: LearningService) { }
 
   ngOnInit(): void {
@@ -31,8 +32,9 @@ export class StaffresultComponent implements OnInit {
       })
 
 
-  }
 
+  }
+  courseID: any;
 
   result: any;
 
@@ -157,11 +159,48 @@ export class StaffresultComponent implements OnInit {
   detailslist: any;
   public getdetailslist(details: any) {
     debugger
+    this.empid = details.id;
     this.LearningService.GetTestResponse().subscribe(data => {
       debugger
       this.detailslist = data.filter(x => x.userID == details.id);
     });
+
+    this.LearningService.GetApproveCourse(details.id).subscribe(
+      data => {
+        debugger
+        this.courselist = data;
+      })
   }
+  empid: any
+  MarksObtained: any;
+  TotalMarks: any;
+  public getdetailslist1() {
+    debugger
+    this.LearningService.GetApproveCourse(this.empid).subscribe(
+      data => {
+        debugger
+        this.courselist = data;
+      })
+  }
+
+  public AllocateCertificate() {
+    debugger
+    var entity = {
+      'CourseID': this.courseID,
+      'EmployeeID': this.empid,
+      'MarksObtained': this.MarksObtained,
+      'TotalMarks': this.TotalMarks
+    }
+    this.LearningService.InsertCertification(entity).subscribe(
+      data => {
+        debugger
+        Swal.fire('Certificate Alloted Successfully');
+        location.reload();
+      })
+
+  }
+
+
 }
 
 
