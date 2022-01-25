@@ -25,7 +25,7 @@
             <div class="col-lg-8">
                 <p style="font-size: 25px;">{{coursename}}</p>
             </div>
-            <div class="col-lg-4" style="text-align: right;" >
+            <div class="col-lg-4" style="text-align: right; ">
                 <br>
                 <img src="assets/Images/Video_lcon.png" *ngIf="showvideo==1" alt="video_icon" style="width:10%;"
                     (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -54,9 +54,15 @@
                         <input type="radio" id="details.id" name="details.id">
                         {{details.name}}
                     </h5>
-                    <button Style="border-radius:5px; margin-left: 350px;" class="BackBTN"
+                    <p style="display: inline;">
+                        <button Style="border-radius:5px; margin-left: 350px;" class="BackBTN"
                         [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id">Take
-                        Assessment</button>
+                        Assessment</button><br>
+                        <!-- <button Style="border-radius:5px; margin-left: 350px;" class="BackBTN"
+                        [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id">Take
+                        ReTest</button> -->
+                    </p>
+                   
                     <hr class="HRline">
                 </div>
 

@@ -75,7 +75,7 @@ export class AssessmentFormComponent implements OnInit {
     this.LearningService.GetChapter().subscribe(
       data => {
         debugger
-        this.ChapterList = data;
+        this.ChapterList = data.filter(x=>x.ID==this.courseid);
       })
   }
   public GetCourse() {
