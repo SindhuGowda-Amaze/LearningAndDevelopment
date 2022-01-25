@@ -162,7 +162,7 @@ export class AssessmentFormComponent implements OnInit {
       data => {
         debugger
         let id = data;
-        Swal.fire("saved Sucessfully");
+        Swal.fire("Saved Sucessfully");
         location.href = "#/Assessmentdashboard"
       })
   }

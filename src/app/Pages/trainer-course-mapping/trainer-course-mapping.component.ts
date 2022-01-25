@@ -9,6 +9,8 @@ import Swal from 'sweetalert2';
 })
 export class TrainerCourseMappingComponent implements OnInit {
 search:any;
+count:any;
+
   constructor(private ActivatedRoute: ActivatedRoute, private LearningService: LearningService) { }
 
   ngOnInit(): void {
@@ -22,6 +24,7 @@ search:any;
       data => {
         debugger
         this.Trainerdetails = data;
+        this.count = this.Trainerdetails.length;
       })
   }
 
