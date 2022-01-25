@@ -43,23 +43,16 @@
                                 <th>Employee Name</th>
                                 <th>Phone No</th>
                                 <th>Email</th>
-                                <th>Course Name</th>
-                                <th>Obtained Marks</th>
-                                <th>Result</th>
                                 <th>Action</th>
                             </tr>
-                            <tr>
-                                <td>Kumar </td>
-                                <td>9975766322</td>
-                                <td>kumar@amazeinc.in</td>
-                                <td>Andriod Develpoment</td>
-                                <td>13</td>
-                                <td>Pass</td>
+                            <tr *ngFor="let details of result|filter:search">
+                                <td>{{details.name}}</td>
+                                <td>{{details.phoneNo}}</td>
+                                <td>{{details.emailID}}</td>
                                 <td>
-                                    <button data-toggle="collapse" (click)="getdetailslist()" data-target="#demo"
-                                        class="btn btn-primary">view Answered
-                                        Sheet</button><br>
-
+                                    <button (click)="getdetailslist(details)" data-toggle="modal" data-target="#myModal"
+                                        class="btn btn-primary">View Details
+                                    </button><br>
                                 </td>
                             </tr>
                         </thead>
@@ -73,30 +66,41 @@
         <div class="col-lg-1"></div>
     </div>
 </div>
-<div class="row rowwidth" id="demo" class="collapse">
-    <div class="row">
-        <div class="col-lg-12">
-            <table>
-                <tr>
-                    <th>Question</th>
-                    <th>Correct Answer</th>
-                    <th>User Answer</th>
-                    <th>Weightage</th>
 
-                </tr>
-                <tr *ngFor="let list of detailslist">
 
-                    <td>{{list.question}}</td>
-                    <td>{{list.correctAnswer}}</td>
-                    <td>{{list.userAnswer}}</td>
-                    <td>{{list.weightage}}</td>
-                </tr>
-            </table>
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Details</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table>
+                            <tr>
+                                <th>Course Name</th>
+                                <th>Chapter Name</th>
+                                <th>Total Marks</th>
+                                <th>Obtained Marks</th>
+                                <th>Result</th>
+
+                            </tr>
+                            <tr *ngFor="let list of detailslist">
+                                <td>{{list.coursename}}</td>
+                                <td>{{list.chaptername}}</td>
+                                <td>{{list.totalmarks}}</td>
+                                <td>{{list.obtainedMarks}}</td>
+                                <td>{{list.testResult}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
         </div>
     </div>
-    <!-- <div class="col-lg-8 colwidth" *ngFor="let item of detailslist">
-        <p>Q1. {{item.question}}</p> <br>
-        <p>Correct Answer {{item.correctAnswer}}</p> <br>
-        <p>User Answer {{item.userAnswer}}</p>
-    </div> -->
 </div>
