@@ -1,6 +1,6 @@
 <div class="container-fluid" style="background-color: #f2f2f2;">
     <!-- <div *ngIf="temp=='1'"> <app-AppComponent></app-AppComponent></div> -->
-   
+
     <div class="row" style="margin-left: 10px;">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
@@ -10,18 +10,12 @@
                         (click)="flip1($event)">
                         <div class="back">
                             <br>
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
-                                        margin-left: 5px;"></i>
+                            <div class="row" style="overflow: auto;height: 230px;">
+                                <p style="margin-left: 20px; font-size: 17px;"><u>Course List</u></p>
+                                <div class="col-lg-12" *ngFor="let details of coursedetails">
+                                    <span>{{details.name}}</span>
                                 </div>
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-7">
-                                    <label class="name">Course Title<br>
-                                        <div class="din-Medium1">Description</div>
-                                        <div class="din-Medium1">Photo</div>
-                                    </label>
-                                </div>
+
                             </div>
                             <hr class="new4">
                             <div class="backflip">
@@ -57,9 +51,8 @@
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="card1" style="background-color: white; height: 325px;width: 275px;"
-                        (click)="flip1($event)">
-                        <div class="back">
+                    <div class="card1" style="background-color: white; height: 325px;width: 275px;">
+                        <!-- <div class="back">
                             <br>
                             <div class="row">
                                 <div class="col-lg-2">
@@ -77,12 +70,9 @@
                             <hr class="new4">
                             <div class="backflip">
                                 <button class="bcakbtn">BACK</button>
-
-
                                 <a href="#/VendorJobOpenings"><button class="viewall">VIEW ALL</button></a>
-                                <!-- <button class="viewall" (click)="Regularization()" routerLink="/JobRecruitements/">VIEW ALL</button> -->
                             </div>
-                        </div>
+                        </div> -->
                         <div class="front">
                             <br>
                             <div class="row title_outer1">
@@ -103,14 +93,13 @@
                                 </div>
                                 <div class="col-lg-4"></div>
                             </div><br><br><br><br>
-                            <button class="clickbutton1">VIEW DETAILS</button>
+                            <button class="clickbutton1" data-toggle="modal" data-target="#enroll">VIEW DETAILS</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="card1" style="background-color: white; height: 325px;width: 275px;"
-                        (click)="flip1($event)">
-                        <div class="back">
+                    <div class="card1" style="background-color: white; height: 325px;width: 275px;">
+                        <!-- <div class="back">
                             <br>
                             <div class="row">
                                 <div class="col-lg-2">
@@ -128,12 +117,9 @@
                             <hr class="new4">
                             <div class="backflip">
                                 <button class="bcakbtn">BACK</button>
-
-
                                 <button class="viewall">VIEW ALL</button>
-                                <!-- <button class="viewall" (click)="Regularization()" routerLink="/JobRecruitements/">VIEW ALL</button> -->
                             </div>
-                        </div>
+                        </div> -->
                         <div class="front">
                             <br>
                             <div class="row title_outer1">
@@ -154,14 +140,14 @@
                                 </div>
                                 <div class="col-lg-4"></div>
                             </div><br><br><br><br>
-                            <button class="clickbutton1">VIEW DETAILS</button>
+                            <button class="clickbutton1" data-toggle="modal" data-target="#enroll1">VIEW
+                                DETAILS</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="card1" style="background-color: white; height: 325px;width: 275px;"
-                        (click)="flip1($event)">
-                        <div class="back">
+                <div class="col-lg-3" *ngIf="showenrolment=='1'">
+                    <div class="card1" style="background-color: white; height: 325px;width: 275px;">
+                        <!-- <div class="back">
                             <br>
                             <div class="row">
                                 <div class="col-lg-2">
@@ -182,9 +168,8 @@
 
 
                                 <a href="#/VendorJobOpenings"><button class="viewall">VIEW ALL</button></a>
-                                <!-- <button class="viewall" (click)="Regularization()" routerLink="/JobRecruitements/">VIEW ALL</button> -->
                             </div>
-                        </div>
+                        </div> -->
                         <div class="front">
                             <br>
                             <div class="row title_outer1">
@@ -205,23 +190,15 @@
                                 </div>
                                 <div class="col-lg-4"></div>
                             </div><br><br><br><br>
-                            <button class="clickbutton1">VIEW DETAILS</button>
+                            <button class="clickbutton1" data-toggle="modal" data-target="#enroll2">VIEW
+                                DETAILS</button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-1"></div>
-    </div><br><br><br>
 
-    <div class="row" style="margin-left: 10px;">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="card1" style="background-color: white; height: 325px;width: 275px;"
-                        (click)="flip1($event)">
-                        <div class="back">
+                <div class="col-lg-3" *ngIf="showenrolment=='0'">
+                    <div class="card1" style="background-color: white; height: 325px;width: 275px;">
+                        <!-- <div class="back">
                             <br>
                             <div class="row">
                                 <div class="col-lg-2">
@@ -239,12 +216,9 @@
                             <hr class="new4">
                             <div class="backflip">
                                 <button class="bcakbtn">BACK</button>
-
-
-                                <a href="#/VendorJobOpenings"><button class="viewall">VIEW ALL</button></a>
-                                <!-- <button class="viewall" (click)="Regularization()" routerLink="/JobRecruitements/">VIEW ALL</button> -->
+                                <a><button class="viewall" data-toggle="modal" data-target="#enroll4">VIEW ALL</button></a>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="front">
                             <br>
                             <div class="row title_outer1">
@@ -265,12 +239,187 @@
                                 </div>
                                 <div class="col-lg-4"></div>
                             </div><br><br><br><br>
-                            <button class="clickbutton1">VIEW DETAILS</button>
+                            <button class="clickbutton1" data-toggle="modal" data-target="#enroll2">VIEW
+                                DETAILS</button>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="col-lg-1"></div>
     </div><br><br><br>
+
+
+
+
+
+
+
+
+
+
+    <div class="row" style="margin-left: 10px;" *ngIf="showenrolment=='1'">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="card1" style="background-color: white; height: 325px;width: 275px;"
+                        >
+                        <!-- <div class="back">
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
+                                        margin-left: 5px;"></i>
+                                </div>
+                                <div class="col-lg-1"></div>
+                                <div class="col-lg-7">
+                                    <label class="name">Trainers<br>
+                                        <div class="din-Medium1">Description</div>
+                                        <div class="din-Medium1">Photo</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <hr class="new4">
+                            <div class="backflip">
+                                <button class="bcakbtn">BACK</button>
+
+
+                                <a href="#/VendorJobOpenings"><button class="viewall" data-toggle="modal" data-target="#enroll2">VIEW ALL</button></a>
+
+                            </div>
+                        </div> -->
+                        <div class="front">
+                            <br>
+                            <div class="row title_outer1">
+                                <div class="col-lg-1">
+                                </div>
+                                <div class="col-lg-1">
+                                    <i class="fa fa-calendar calend" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-lg-9">
+                                    <h1 class="cardlabel" style="color: #555;font-size: 25px;margin-top: 0px;">Trainers
+                                    </h1>
+                                </div>
+                            </div><br><br>
+                            <div class="row">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4" style="text-align: center;">
+                                    <h6 class="Number">{{countlist.trainersCount}}</h6>
+                                </div>
+                                <div class="col-lg-4"></div>
+                            </div><br><br><br><br>
+                            <button class="clickbutton1" data-toggle="modal" data-target="#enroll2">VIEW DETAILS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div><br><br><br>
+</div>
+
+
+
+
+
+<div id="enroll" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="text-align: center;">
+            <div class="modal-header">
+                <h4 class="modal-title">Course And Chapterlist</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="text-align: center;">
+                    <div class="col-lg-12">
+                        <table style="width: 100%;">
+                            <tr style="font-size: 20px;">
+                                <th>Course Name </th>
+                                <th>Chapter Name </th>
+                            </tr> <br>
+                            <tr *ngFor="let details of chapterlist">
+                                <td>{{details.courseName}}</td>
+                                <td>{{details.chapterName}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div> <br>
+            </div>
+            <div class="modal-footer">
+                <hr>
+                <div class="col-lg-2">
+                    <button data-dismiss="modal" class="CloseBTN">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="enroll1" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="text-align: center;">
+            <div class="modal-header" style="text-align: center;">
+                <h4 class="modal-title">Chapter And Assesmentlist</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="text-align: center;">
+                    <div class="col-lg-12">
+                        <table  style="width: 100%;">
+                            <tr style="font-size: 20px;">
+                                <th>Chapter Name</th>
+                                <th>Assesment Name</th>
+                            </tr> <br>
+                            <tr *ngFor="let details of assesmentlist">
+                                <td>{{details.chapterName}}</td>
+                                <td>{{details.assesmentName}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div> <br>
+            </div>
+            <div class="modal-footer">
+                <hr>
+                <div class="col-lg-2">
+                    <button data-dismiss="modal" class="CloseBTN">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="enroll2" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="text-align: center;">
+            <div class="modal-header" style="text-align: center;">
+                <h4 class="modal-title">Course And Trainerlist</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="text-align: center; width: 100%;">
+                    <div class="col-lg-12">
+                        <table style="width: 100%;">
+                            <tr>
+                                <th>Trainer name</th>
+                                <th>Course Name</th>
+                            </tr> <br>
+                            <tr *ngFor="let details of trainerlist">
+                                <td>{{details.trainerName}}</td>
+                                <td>{{details.courseName}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div> <br>
+            </div>
+            <div class="modal-footer">
+                <hr>
+                <div class="col-lg-2">
+                    <button data-dismiss="modal" class="CloseBTN">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
