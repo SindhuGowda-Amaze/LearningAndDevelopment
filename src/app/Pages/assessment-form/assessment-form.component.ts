@@ -90,7 +90,7 @@ export class AssessmentFormComponent implements OnInit {
 
 
   cancel() {
-    location.href = "/Assessmentdashboard";
+    location.href = "/#/Assessmentdashboard";
   }
   files1: File[] = [];
 

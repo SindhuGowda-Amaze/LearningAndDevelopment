@@ -22,28 +22,18 @@ export class StaffresultComponent implements OnInit {
     this.show = 2;
     this.staffid = localStorage.getItem('userid');
     this.manager = localStorage.getItem('manager');
-    // this.GetCandidateReg()
-    // this.insertdetails()
-    //this.GetEnroll();
+
+    this.LearningService.GetMyDetails().subscribe(
+      data => {
+        debugger
+        // this.result = data.filter(x => x.manager == this.manager );
+        this.result = data.filter(x => x.supervisor == sessionStorage.getItem('userid'));
+      })
+
+
   }
 
-  public GetCandidateReg() {
-    debugger
-    // if (this.staffid == undefined) {
-    //   this.LearningService.GetCandidateRegistration().subscribe(data => {
-    //     this.joblist = data.filter(x => x.scheduled == 1 && x.interviewRejected == 0 && x.interviewSelected == 0);
-    //     this.count = this.joblist.length;
-    //   })
-    // }
-    // else {
-    //   this.LearningService.GetCandidateRegistration().subscribe(data => {
-    //     debugger
-    //     this.joblist = data.filter(x => x.scheduled == 1 && x.interviewRejected == 0 && x.interviewSelected == 0 && x.staffID == this.staffid);
-    //     this.count = this.joblist.length;
-    //   })
 
-    // }
-  }
   result: any;
 
   public GetEnroll() {
@@ -165,11 +155,11 @@ export class StaffresultComponent implements OnInit {
   }
 
   detailslist: any;
-  public getdetailslist() {
+  public getdetailslist(details: any) {
     debugger
-    this.LearningService.GetTestResponseDetails().subscribe(data => {
+    this.LearningService.GetTestResponse().subscribe(data => {
       debugger
-      this.detailslist = data.filter(x => x.testResponseID == 44);
+      this.detailslist = data.filter(x => x.userID == details.id);
     });
   }
 }
