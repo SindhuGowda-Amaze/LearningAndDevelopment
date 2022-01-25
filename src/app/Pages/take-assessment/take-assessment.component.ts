@@ -184,59 +184,72 @@ export class TakeAssessmentComponent implements OnInit {
   wrongansers:any
   public submitAnswer() {
     debugger;
-   
-    this.correctansers=0;
-    this.wrongansers=0;
+    let notansred:any=0;
     for (var i = 0; i < this.questionList.length; i++) {
-      if (this.questionList[i].correctAnswer == this.questionList[i].userAnswer) {
-        this.marks = this.marks + 1;
-        this.correctansers= this.correctansers+1;
-      }
-      else{
-        this.wrongansers= this.wrongansers+1;
+      if (this.questionList[i].userAnswer == '') {
+        notansred=notansred+1
       }
     }
-    if (this.marks >= this.totalmarks/2) {
-      this.testResult = 'Pass'
-    } else {
-      this.testResult = 'Fail';
-    }
-    var Entityy = {
-      'TestResult': this.testResult,
-      'UserID': this.userid,
-      'ObtainedMarks': this.marks,
-      'CourseID':this.courseid,
-      'ChapterID':this.chapterid,
-      'Totalmarks':this.totalmarks,
-      'CorrectAnswers':this.wrongansers,
-      'wronganswers':this.wrongansers,
 
+    if(notansred>0){
+      Swal.fire('You have not Answered '+ notansred +' Questions')
     }
-    this.AmazeService.InsertTestResponse(Entityy).subscribe(data => {
-      debugger
-      this.testResponseID = data;
-      if(this.testResponseID==10){
-        Swal.fire('You Already took this Test');
-        this.ngOnInit();
-      }else{
-        for (var i = 0; i < this.questionList.length; i++) {
-          var ett = {
-            'QuestionID': this.questionList[i].id,
-            'CorrectAnswer': this.questionList[i].correctAnswer,
-            'UserAnswer': this.questionList[i].userAnswer,
-            'TestResponseID': this.testResponseID,
-            'ObtainedMarks': this.marks
-          }
-          this.AmazeService.InsertTestResponseDetails(ett).subscribe(data => {
-          });
+    else{
+      this.correctansers=0;
+      this.wrongansers=0;
+      for (var i = 0; i < this.questionList.length; i++) {
+        if (this.questionList[i].correctAnswer == this.questionList[i].userAnswer) {
+          this.marks = this.marks + 1;
+         this.correctansers= this.correctansers + 1;
         }
-        Swal.fire('You have submited test successfully...');
-        this.show = 0;
-        this.startTest = "";
-        this.router.navigate(['/AssessmentResult', this.testResponseID]);
+        else{
+          this.wrongansers= this.wrongansers + 1;
+        }
       }
-     
-    })
+      if (this.marks >= this.totalmarks/2) {
+        this.testResult = 'Pass'
+      } else {
+        this.testResult = 'Fail';
+      }
+      var Entityy = {
+        'TestResult': this.testResult,
+        'UserID': this.userid,
+        'ObtainedMarks': this.marks,
+        'CourseID':this.courseid,
+        'ChapterID':this.chapterid,
+        'Totalmarks':this.totalmarks,
+        'CorrectAnswers':this.correctansers,
+        'wronganswers':this.wrongansers,
+  
+      }
+      this.AmazeService.InsertTestResponse(Entityy).subscribe(data => {
+        debugger
+        this.testResponseID = data;
+        if(this.testResponseID==10){
+          Swal.fire('You Already took this Test');
+          this.ngOnInit();
+        }else{
+          for (var i = 0; i < this.questionList.length; i++) {
+            var ett = {
+              'QuestionID': this.questionList[i].id,
+              'CorrectAnswer': this.questionList[i].correctAnswer,
+              'UserAnswer': this.questionList[i].userAnswer,
+              'TestResponseID': this.testResponseID,
+              'ObtainedMarks': this.marks
+            }
+            this.AmazeService.InsertTestResponseDetails(ett).subscribe(data => {
+            });
+          }
+          Swal.fire('You have submited test successfully...');
+          this.show = 0;
+          this.startTest = "";
+          this.router.navigate(['/AssessmentResult', this.testResponseID]);
+        }
+       
+      })
+    }
+
+   
     //location.href="/#/AssessmentResult/";
 
   }
