@@ -82,7 +82,9 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8" style="text-align: justify;">
-                        <textarea class="form-control" placeholder="Chapter text" rows="10" [(ngModel)]="chapterText"></textarea>
+                        <ckeditor id="chapterText" name="chapterText" [(ngModel)]="chapterText"
+                        data="<p>Enter Answer Here !</p>"></ckeditor>
+                      <!-- <textarea class="form-control" placeholder="Chapter text" rows="10" [(ngModel)]="chapterText"></textarea>  -->
                     </div>
                 </div>
                 <div class="row">

@@ -301,6 +301,24 @@ export class LearningService {
       this.baseURL + '/Master/GetCategoryMaster');
   }
 
+  public InsertCategoryMaster(json: any) {
+    debugger
+    let APIURL = this.baseURL + "Master/InsertCategoryMaster";
+    return this.http.post<any[]>(APIURL, json);
+  }
+
+  public UpdateCategoryMaster(json: any) {
+    debugger
+    let APIURL = this.baseURL + "Master/UpdateCategoryMaster";
+    return this.http.post<any[]>(APIURL, json);
+  }
+
+  public DeleteCategoryMaster(id: any) {
+    debugger
+    let APIURL = this.baseURL + "Master/DeleteCategoryMaster?ID=" + id;
+    return this.http.get<any[]>(APIURL);
+  }
+
   public GetQuestionMaster() {
     debugger
     let APIURL = this.baseURL + "Master/GetQuestionMaster";

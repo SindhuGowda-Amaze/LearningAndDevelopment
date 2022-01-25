@@ -62,7 +62,7 @@
                     <div class="col-lg-3">
                         <!-- <textarea class="form-control" placeholder="Correct Answer.." [(ngModel)]="CorrectAnswer">
                         </textarea> -->
-                        <ckeditor id="CorrectAnswer" name="CorrectAnswer" [(ngModel)]="CorrectAnswer"
+                        <ckeditor id="CorrectAnswer" name="CorrectAnswer" [(ngModel)]="CorrectAnswer" *ngIf="questionid==2"
                             data="<p>Enter Answer Here !</p>"></ckeditor>
                         <br>
                         <!-- <textarea class="form-control" placeholder="Correct Answer.." [(ngModel)]="CorrectAnswer">

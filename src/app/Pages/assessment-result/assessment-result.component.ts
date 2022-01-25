@@ -18,6 +18,9 @@ export class AssessmentResultComponent implements OnInit {
   CourseName: any;
   Chaptername: any;
   staffanme: any;
+  ObtainedMarks:any;
+  correctAnswers:any;
+  wronganswers:any;
   date: any;
   TestResult: any
   ngOnInit(): void {
@@ -50,7 +53,10 @@ export class AssessmentResultComponent implements OnInit {
         });
         this.Totalmarks = temp[0].totalmarks;
         this.date = temp[0].modifiedDate;
-        this.TestResult = temp[0].testResult
+        this.TestResult = temp[0].testResult;
+        this.ObtainedMarks=temp[0].obtainedMarks;
+        this.correctAnswers = temp[0].correctAnswers;
+        this.wronganswers = temp[0].wronganswers;
 
 
       });

@@ -21,7 +21,8 @@
                     <div class="col-lg-3">
                         <select class="form-control" name="cars" id="Duration" (change)="staffid($event)">
                             <option value="0">Select Employee</option>
-                            <option *ngFor="let details of result" value="{{details.id}}">{{details.name}}</option>
+                            <option *ngFor="let details of result" value="{{details.id}}">{{details.employeeName}}
+                            </option>
                         </select>
                     </div>
                     <div class="col-lg-3"></div>
@@ -31,19 +32,9 @@
                 </div> <br>
             </div><br>
             <div class="row">
-                <div class="col-lg-8 View ">
-                    <ul>
-                        <li [ngClass]="{'underlinetext': show=='2'}"><a class="active"
-                            [ngClass]="{'underlinetext': show==2}" (click)="Showcards(2)">New Request
-                        </a></li>
-                        <li [ngClass]="{'underlinetext': show=='1'}"><a class="active" (click)="Showcards(1)">
-                                <ul>Approved</ul>
-                            </a></li>
-                        <li [ngClass]="{'underlinetext': show=='3'}"><a class="active" (click)="Showcards(3)">Rejected</a>
-                        </li>
-                    </ul>
-                </div>
-            </div><hr>
+             
+            </div>
+            <hr>
             <div class="row">
                 <div class="col-lg-12">
                     <table class="table tablebordered" *ngIf="(result | filter: search).length > 0; else noResults">
@@ -53,16 +44,15 @@
                                 <th>Phone No</th>
                                 <th>Email</th>
                                 <th>Course Name</th>
-                                <th>Request sent Date</th>
-
+                                <th>Result</th>
                                 <th>Action</th>
                             </tr>
                             <tr *ngFor="let details of result|filter:search">
                                 <td>{{details.employeeName}}</td>
                                 <td>{{details.phoneNo}}</td>
                                 <td>{{details.email}}</td>
-                                <td>{{details.courseName}}</td>
-                                <td>{{details.modifiedDate}}</td>
+                                <td>{{details.name}}</td>
+                                <td>{{details.modifiedDate|date}}</td>
                                 <td>
                                     <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                                         (click)="getid(job.id)">Selected</button> <br><br>

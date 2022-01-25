@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxDropzoneModule } from 'ngx-dropzone';
-import { CKEditorModule } from 'ckeditor4-angular';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
@@ -41,9 +40,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AssessmentdashboardComponent } from './Pages/assessmentdashboard/assessmentdashboard.component';
 import { AssessmentFormComponent } from './Pages/assessment-form/assessment-form.component';
 import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-dashboard.component';
-import { CategoryDashboardComponent } from './category-dashboard/category-dashboard.component';
-import { CategoryFormComponent } from './category-form/category-form.component';
 
+//import { AngularEditorModule } from '@kolkov/angular-editor';
+import { CategoryDashboardComponent } from './Pages/category-dashboard/category-dashboard.component';
+import { CategoryFormComponent } from './Pages/category-form/category-form.component';
+import { StaffresultComponent } from './Pages/staffresult/staffresult.component';
+
+import { CKEditorModule } from 'ckeditor4-angular';
 
 
 const ngWizardConfig: NgWizardConfig = {
@@ -81,6 +84,7 @@ const ngWizardConfig: NgWizardConfig = {
     ManagerDashboardComponent,
     CategoryDashboardComponent,
     CategoryFormComponent,
+    StaffresultComponent,
   
   ],
   imports: [
@@ -95,6 +99,7 @@ const ngWizardConfig: NgWizardConfig = {
     HttpClientModule,
     NgWizardModule.forRoot(ngWizardConfig),
     NgxPaginationModule,
+   // AngularEditorModule,
    
   
   ],
