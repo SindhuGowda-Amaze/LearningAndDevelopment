@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-8">
         <div class="row">
-            <div class="col-lg-4"></div>
+            <div class="col-lg-2"></div>
             <div class="col-lg-5" *ngIf="show==1">
                 <img src="{{chapterphoto}}" alt="1st Course Assessment"
                     style="width:500px; height:300px; margin-left:20px;">
@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-4">
         <div class="row vertical-menu VScroll">
             <div class="col-lg-12">
                 <br>
@@ -50,9 +50,9 @@
                         <input type="radio" id="details.id" name="details.id">
                         {{details.name}}
                     </h5>
-                    <button Style="border-radius:5px; float: right;"
+                    <button Style="border-radius:5px; margin-left: 350px;" class="BackBTN"
                         [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id">Take
-                        Assesment</button>
+                        Assessment</button>
                     <hr class="HRline">
                 </div>
 
@@ -102,7 +102,7 @@
 </div>
 <!-- routerLink="/TakeAssessment" -->
 <div class="row" style="margin-left: 15px;">
-    <div class="col-lg-8">
+    <div class="col-lg-6">
         <h3>{{chaptername}}</h3>
         <h6>{{coursedescription}}</h6>
     </div>

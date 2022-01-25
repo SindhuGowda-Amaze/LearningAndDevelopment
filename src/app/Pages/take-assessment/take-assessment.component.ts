@@ -111,6 +111,7 @@ export class TakeAssessmentComponent implements OnInit {
     this.AmazeService.GetAssessments().subscribe(data => {
       debugger
       this.questionList = data;
+      this.count = this.questionList.length;
       this.totalmarks=0;
       this.questionList = this.questionList.filter((x: { chapterID: any; courseID:any}) => x.chapterID == this.chapterid && x.courseID==this.courseid);
       for (let i=0;i<=this.questionList.length;i++){
