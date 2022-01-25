@@ -23,7 +23,7 @@
         </div><br><br>
         <div class="row" style="margin-left: 15px;">
             <div class="col-lg-8">
-                <p style="font-size: 25px;">{{coursename}}</p>
+                <p style="font-size: 25px; padding-top: 20px;">{{coursename}}</p>
             </div>
             <div class="col-lg-4" style="text-align: right; ">
                 <br>
@@ -31,23 +31,49 @@
                     (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <img src="assets/pdf.jpg" *ngIf="showPdf==1" alt="video_icon" style="width:10%;"
                     (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/Images/image.png" *ngIf="showimage==1" alt="video_icon" style="width:30%;"
+                <img src="assets/Images/image.png" *ngIf="showimage==1" alt="video_icon" style="width:10%;"
                     (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <img src="assets/Images/files.png" *ngIf="showPpt==1" alt="video_icon" style="width:10%;"
                     (click)="PreviewPPT()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <img src="assets/Images/word.png" *ngIf="showDocument==1" alt="video_icon" style="width:10%;"
                     (click)="PreviewMSword()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
-        </div>
+        </div><br>
+        <div class="row" style="margin-left: 15px;">
+            <div class="col-lg-12">
+                <h3>{{chaptername}}</h3>
+                <h6>{{coursedescription}}</h6>
+            </div>
+        </div><br>
+        <div class="row" style="margin-left: 15px;" *ngFor="let details of chapterdetails">
+            <div class="col-lg-8">
+            </div>
+            <div class="col-lg-4" style="text-align: center;">
+                <!-- <p style="font-size: 15px;">Take Assesment</p> -->
+                <!-- <button Style="border-radius:5px;"[routerLink]="['/TakeAssessment',details.id]" >Take Assesment</button> -->
+                <!-- <button Style="border-radius:5px;" [routerLink]="['/TakeAssessment',details.id]" id="id" name="id">Take Assesment</button> -->
+            </div>
+            <!-- <div class="col-lg-2">
+            </div> -->
+        </div><br><br>
     </div>
     <div class="col-lg-4">
         <div class="row vertical-menu VScroll">
             <div class="col-lg-12">
                 <br>
-                <button routerLink="/MyCourseDashboard" class="BackBTN">Back</button>
-                <h2>Course Contents </h2><br>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2>Course Contents </h2>
+                    </div>
+                    <div class="col-lg-4">
+                        <!-- <button routerLink="/MyCourseDashboard" class="BackBTN">Back</button> -->
+                        <img src="assets/Images/back-arrow.png" style="width: 25%; float: right; cursor: pointer;" 
+                        alt="BackIMG" routerLink="/MyCourseDashboard">
+                    </div>
+                </div>
+                <hr class="HRline">
+                <br>
                 <div *ngFor="let details of coursedetails">
-
                     <h5 (click)="getcoursedetails(details)">
                         <!-- <img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;"> -->
                         <!-- <img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 7%;"> -->
@@ -123,23 +149,7 @@
     </div>
 </div> -->
 <!-- routerLink="/TakeAssessment" -->
-<div class="row" style="margin-left: 15px;">
-    <div class="col-lg-12">
-        <h3>{{chaptername}}</h3>
-        <h6>{{coursedescription}}</h6>
-    </div>
-</div><br>
-<div class="row" style="margin-left: 15px;" *ngFor="let details of chapterdetails">
-    <div class="col-lg-8">
-    </div>
-    <div class="col-lg-4" style="text-align: center;">
-        <!-- <p style="font-size: 15px;">Take Assesment</p> -->
-        <!-- <button Style="border-radius:5px;"[routerLink]="['/TakeAssessment',details.id]" >Take Assesment</button> -->
-        <!-- <button Style="border-radius:5px;" [routerLink]="['/TakeAssessment',details.id]" id="id" name="id">Take Assesment</button> -->
-    </div>
-    <div class="col-lg-2">
-    </div>
-</div><br><br>
+
 
 <!-- <div class="col-lg-9" *ngIf="show==2">
         <div class="row">
