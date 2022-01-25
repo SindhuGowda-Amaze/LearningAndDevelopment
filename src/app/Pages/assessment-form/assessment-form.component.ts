@@ -69,13 +69,13 @@ export class AssessmentFormComponent implements OnInit {
   }
 
 
-
+  dumchapterlist:any;
   public GetChapter() {
     debugger
     this.LearningService.GetChapter().subscribe(
       data => {
-        debugger
-        this.ChapterList = data.filter(x=>x.ID==this.courseid);
+        debugger     
+        this.dumchapterlist=data;
       })
   }
   public GetCourse() {
@@ -197,7 +197,9 @@ export class AssessmentFormComponent implements OnInit {
   //   this.show2=value;
   // }
 
-
-
+  getcourseid(even:any){
+    this.courseid=even.target.value;
+    this.ChapterList=this.dumchapterlist.filter((x: { courseID: any; })=>x.courseID==this.courseid)
+  }
 
 }
