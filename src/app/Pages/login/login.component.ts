@@ -47,10 +47,13 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('UserName', 'admin');
       sessionStorage.setItem('temp', '1');
       sessionStorage.setItem('role', 'Admin');
-       this.router.navigate(["AdminDashboard"]);
-     //  location.reload();
-      // location.href="/AdminDashboard"
       sessionStorage.setItem('roleid', '1');
+    
+      //  this.router.navigate(["AdminDashboard"]);
+     
+      location.href="#/AdminDashboard";
+      location.reload();
+    
         
 
       
@@ -70,15 +73,12 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('roleid', '2');
           location.href = "#/AdminDashboard";
           location.reload();
-       
-
         }
         else {
           Swal.fire('Username or Password is invalid');
           this.userName = "";
           this.password = "";
         }
-       
     }) 
      
     }
@@ -97,8 +97,6 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('roleid', '3');
           location.href = "#/ManagerDashboard";
           location.reload();
-       
-
         }
         else {
           Swal.fire('Username or Password is invalid');
