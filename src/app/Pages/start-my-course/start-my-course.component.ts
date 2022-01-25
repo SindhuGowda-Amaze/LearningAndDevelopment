@@ -29,7 +29,6 @@ export class StartMyCourseComponent implements OnInit {
      debugger
       this.courseid = params['id'];
       this.GetChapter();
-
     }
     )
     this.show = 1;
@@ -69,13 +68,47 @@ export class StartMyCourseComponent implements OnInit {
   }
 
   dummAttachmentlist:any;
+  showvideo:any;
+  showimage:any;
+  showPdf:any;
+  showDocument:any;
+  showPpt:any;
+
+
   ShowAttachments(id: any) {
     debugger
+    this.showvideo=0;
+    this.showimage=0;
+    this.showPdf=0;
+    this.showDocument=0;
+    this.showPpt=0;
+
     this.LearningService.GetChapterAttachmentByChapterID(id).subscribe(data => {
       debugger
-      this.Attachmentlist = data;
-      
+      this.Attachmentlist = data;     
       this.dummAttachmentlist = data;
+       if(this.dummAttachmentlist.length!=0){
+        var list=this.dummAttachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='video')
+        var list1=this.dummAttachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='Pdf')
+        var list2=this.dummAttachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='Image')
+        var list3=this.dummAttachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='Document')
+        var list4=this.dummAttachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='Ppt')
+        if(list.length!=0){
+         this.showvideo=1
+        }
+        if(list1.length!=0){
+          this.showPdf=1
+         }
+         if(list2.length!=0){
+          this.showimage=1
+         }
+         if(list3.length!=0){
+          this.showDocument=1
+         }
+         if(list4.length!=0){
+          this.showPpt=1
+         }
+       }    
     })
   }
 
@@ -118,15 +151,48 @@ export class StartMyCourseComponent implements OnInit {
     else{
       this.noattachments="No Pdf Available"
       this.show=5
-    }
-
-   
+    }  
   }
+
+
+
   public PreviewPPT() {
-    window.open('assets/Images/JAVA_PPT.ppt')
+    if(this.Attachmentlist.length!=0){
+      this.Attachmentlist=this.dummAttachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='Ppt')
+      if(this.Attachmentlist.length!=0){
+      //  this.show=3
+       window.open(this.Attachmentlist[0].photo,"_blank")
+      }
+      else{
+       this.noattachments="No Ppt Available"
+       this.show=5
+     }
+     
+    }
+    else{
+      this.noattachments="No Ppt Available"
+      this.show=5
+    }  
   }
   public PreviewMSword() {
-    window.open('assets/Images/Java_Test_Words.docx')
+
+    if(this.Attachmentlist.length!=0){
+      this.Attachmentlist=this.dummAttachmentlist.filter((x: { attachmentType: string; })=>x.attachmentType =='Document')
+      if(this.Attachmentlist.length!=0){
+      //  this.show=3
+       window.open(this.Attachmentlist[0].photo,"_blank")
+      }
+      else{
+       this.noattachments="No Document Available"
+       this.show=5
+     }
+     
+    }
+    else{
+      this.noattachments="No Document Available"
+      this.show=5
+    }  
+  
   }
   public PreviewIMG() {
     // window.open('assets/Images/Java_CourseIMG.jpg')

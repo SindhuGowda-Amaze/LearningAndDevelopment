@@ -9,9 +9,10 @@
     color: black;
     border: 2px solid;
 }
- /* .bgimage{
-    background-image: url('../../../assets/Images/imagelearning.png');
+ .bgimage{
+    background-image: url('../../../assets/Images/learn.jpg');
     height: 100vh;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-} */
+    background-repeat: no-repeat;
+    /* filter: blur(8px); */
+    /* -webkit-filter: blur(8px); */
+}
