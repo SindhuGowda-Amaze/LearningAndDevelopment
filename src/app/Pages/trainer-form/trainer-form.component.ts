@@ -119,7 +119,8 @@ export class TrainerFormComponent implements OnInit {
       alert("ATTACHMENT UPLOADED");
     })
   }
-  cancel() {
-    location.href = "/Trainer";
+
+  Cancel() {
+    location.href = "/#/Trainer";
   }
 }

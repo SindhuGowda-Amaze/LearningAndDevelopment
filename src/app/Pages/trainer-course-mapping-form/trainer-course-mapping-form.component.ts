@@ -168,6 +168,6 @@ TrainerID:any
   }
 
   cancel() {
-    location.href = "/TrainerCourseMapping";
+    location.href = "/#/TrainerCourseMapping";
   }
 }
