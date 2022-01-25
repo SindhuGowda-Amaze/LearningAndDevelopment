@@ -68,8 +68,8 @@ export class ChapterComponent implements OnInit {
     }
 
    
-  cancel() {
-    location.href = "/ChapterDashboard";
+  Cancel() {
+    location.href = "/#/ChapterDashboard";
   }
 
   files1: File[] = [];

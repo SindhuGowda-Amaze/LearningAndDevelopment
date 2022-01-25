@@ -20,10 +20,11 @@
 }
 
 .VScroll {
+  height: 400px;
   background-color: white;
   overflow-y: scroll;
-  overflow-x: scroll;
-  border: gray;
+  overflow-x:hidden;
+ 
 }
 
 .vertical-menu a {
