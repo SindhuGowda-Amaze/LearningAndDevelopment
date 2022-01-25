@@ -155,4 +155,9 @@
   height:auto;
   text-align: center;
 }
+.scroll{
+  height: 700px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
   
