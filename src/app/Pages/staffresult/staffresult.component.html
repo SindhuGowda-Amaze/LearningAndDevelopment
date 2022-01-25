@@ -12,22 +12,20 @@
 
             <div class="card"><br>
                 <div class="row FilterClass">
-                    <div class="col-lg-1">
-                        Filter By
-                    </div>
+
                     <div class="col-lg-3">
                         <input class="form-control" placeholder="Search" [(ngModel)]="search">
                     </div>
                     <div class="col-lg-3">
-                        <select class="form-control" name="cars" id="Duration" (change)="staffid($event)">
+                        <!-- <select class="form-control" name="cars" id="Duration" (change)="staffid($event)">
                             <option value="0">Select Employee</option>
                             <option *ngFor="let details of result" value="{{details.id}}">{{details.employeeName}}
                             </option>
-                        </select>
+                        </select> -->
                     </div>
                     <div class="col-lg-3"></div>
                     <div class="col-lg-2">
-                        <p class="count">Count :{{count}}</p>
+                        <!-- <p class="count">Count :{{count}}</p> -->
                     </div>
                 </div> <br>
             </div><br>
@@ -52,7 +50,8 @@
                                 <td>
                                     <button (click)="getdetailslist(details)" data-toggle="modal" data-target="#myModal"
                                         class="btn btn-primary">View Details
-                                    </button><br>
+                                    </button>&nbsp;&nbsp;&nbsp;&nbsp;
+
                                 </td>
                             </tr>
                         </thead>
@@ -72,8 +71,11 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Details</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Test Details</h4>
+
+                <button (click)="getdetailslist1()" data-toggle="modal" data-target="#Certificate"
+                    class="btn btn-primary">Allote Certificate
+                </button><br>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -95,6 +97,55 @@
                                 <td>{{list.testResult}}</td>
                             </tr>
                         </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="Certificate">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Allote Certificate</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-3">Course</div>
+                    <div class="col-lg-4">
+                        <select class="form-control" name="courseID" [(ngModel)]="courseID">
+                            <option value="0">Course Name</option>
+                            <option *ngFor="let details of courselist" value="{{details.id}}">{{details.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-3">Total Marks</div>
+                    <div class="col-lg-4">
+                        <input type="text" id="TotalMarks" name="TotalMarks" [(ngModel)]="TotalMarks"
+                            placeholder="Total Marks" class="form-control">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-3">Marks Obtained</div>
+                    <div class="col-lg-4">
+                        <input type="text" id="MarksObtained" name="MarksObtained" [(ngModel)]="MarksObtained"
+                            placeholder="Marks Obtained" class="form-control">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-4">
+                        <button (click)="AllocateCertificate()" class="btn btn-primary">Allote Certificate
+                        </button><br>
                     </div>
                 </div>
             </div>

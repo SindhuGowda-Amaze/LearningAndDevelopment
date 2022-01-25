@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { jsPDF } from "jspdf";
+import { LearningService } from 'src/app/learning.service';
 import html2canvas from 'html2canvas';
 @Component({
   selector: 'app-course-certificate',
@@ -8,16 +9,28 @@ import html2canvas from 'html2canvas';
 })
 export class CourseCertificateComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public LearningService: LearningService) { }
+  UserName: any;
   ngOnInit(): void {
+    debugger
+    this.UserName = sessionStorage.getItem('UserName');
+    this.getmycertiifcate();
+  }
+  mycertificates: any
+  public getmycertiifcate() {
+    debugger
+    this.LearningService.GetCertification().subscribe(
+      data => {
+        debugger
+        this.mycertificates = data.filter(x => x.employeeID == sessionStorage.getItem('userid'));
+      })
   }
   public convetToPDF1() {
     debugger
-   
+
     var data: any = document.getElementById('downloadaplication');
     html2canvas(data).then(canvas => {
-   debugger
+      debugger
       var margin = 5;
       var imgWidth = 208
       // var pageHeight = 295 - 10 * margin;
@@ -35,13 +48,13 @@ export class CourseCertificateComponent implements OnInit {
 
 
         doc.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
-      
+
         heightLeft -= pageHeight;
 
       }
       doc.deletePage(1)
       doc.save('Course Completion Certificate.pdf');
-      
+
       var pdf1 = doc.output('blob');
       var file = new File([pdf1], "Application.pdf");
       let body = new FormData();
@@ -49,7 +62,7 @@ export class CourseCertificateComponent implements OnInit {
       body.append('Dan', file);
       console.log('pdf', pdf1)
     }).then(() => {
-     
+
     });;
   }
 }
