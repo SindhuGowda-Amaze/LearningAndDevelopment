@@ -188,10 +188,10 @@ export class CatalogComponent implements OnInit {
 
   public filtercourse(name: any) {
     debugger
-    this.LearningService.GetEnroll().subscribe(
+    this.LearningService.GetCoursesByUserID(this.userid).subscribe(
       data => {
         debugger
-        this.courselist = data.filter(x => x.categoryName == name && x.status != 'Manager Approved' && x.staffID == this.userid);
+        this.courselist = data.filter(x => x.categoryName == name);
       })
     this.show1 = 1;
   }
