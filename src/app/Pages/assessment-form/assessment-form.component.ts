@@ -74,8 +74,7 @@ export class AssessmentFormComponent implements OnInit {
     debugger
     this.LearningService.GetChapter().subscribe(
       data => {
-        debugger
-      
+        debugger     
         this.dumchapterlist=data;
       })
   }
