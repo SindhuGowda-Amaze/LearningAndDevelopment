@@ -18,9 +18,9 @@ export class AssessmentResultComponent implements OnInit {
   CourseName: any;
   Chaptername: any;
   staffanme: any;
-  ObtainedMarks:any;
-  correctAnswers:any;
-  wronganswers:any;
+  ObtainedMarks: any;
+  correctAnswers: any;
+  wronganswers: any;
   date: any;
   TestResult: any
   ngOnInit(): void {
@@ -32,16 +32,17 @@ export class AssessmentResultComponent implements OnInit {
         debugger
         let temp: any = data.filter(x => x.id == this.id);
         let courseid = temp[0].courseID;
+        let chapterID = temp[0].chapterID;
         this.AmazeService.GetCourse().subscribe(data => {
           debugger
           let temp: any = data.filter(x => x.id == courseid);
           this.CourseName = temp[0].name
 
         });
-        let chapterID = temp[0].chapterID;
+
         this.AmazeService.GetChapter().subscribe(data => {
           debugger
-          let temp1: any = data.filter(x => x.id == courseid);
+          let temp1: any = data.filter(x => x.id == chapterID);
           this.Chaptername = temp1[0].name;
         });
         let UserID = temp[0].userID;
@@ -54,7 +55,7 @@ export class AssessmentResultComponent implements OnInit {
         this.Totalmarks = temp[0].totalmarks;
         this.date = temp[0].modifiedDate;
         this.TestResult = temp[0].testResult;
-        this.ObtainedMarks=temp[0].obtainedMarks;
+        this.ObtainedMarks = temp[0].obtainedMarks;
         this.correctAnswers = temp[0].correctAnswers;
         this.wronganswers = temp[0].wronganswers;
 
