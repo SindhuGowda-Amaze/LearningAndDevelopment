@@ -33,7 +33,7 @@
                 <div class="row header">
                     <div class="col-lg-2">
                         <!-- <select class="form-control" name="" id=""> -->
-                        <select class="form-control" name="id" id="id" [(ngModel)]="courseid">
+                        <select class="form-control" name="id" id="id" [(ngModel)]="courseid" (change)="getcourseid($event)">
                             <option *ngFor="let details of CourseList" value="{{details.id}}">{{details.name}}</option>
                             <!-- <option value="">Compliance</option>
                             <option value=""> Marketing</option>
