@@ -440,6 +440,13 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
+  public GetChapterListByEmployeeID(EmployeeID: any) {
+    debugger
+    let APIURL = this.baseURL + "Master/GetChapterListByEmployeeID?EmployeeID=" + EmployeeID;
+    return this.http.get<any[]>(APIURL);
+  }
+
+
   public InsertChapter(json: any) {
     debugger
     let APIURL = this.baseURL + "Master/InsertChapter";

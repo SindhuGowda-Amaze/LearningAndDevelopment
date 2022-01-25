@@ -111,11 +111,9 @@ export class TakeAssessmentComponent implements OnInit {
     this.AmazeService.GetAssessments().subscribe(data => {
       debugger
       this.questionList = data;
-     
       this.totalmarks=0;
       this.questionList = this.questionList.filter((x: { chapterID: any; courseID:any}) => x.chapterID == this.chapterid && x.courseID==this.courseid);
-      this.count = this.questionList.length;
-      for (let i=0;i<=this.questionList.length;i++){
+      for (let i=0;i<this.questionList.length;i++){
         debugger
       
         this.totalmarks= this.totalmarks + this.questionList[i].weightage;
@@ -186,6 +184,7 @@ export class TakeAssessmentComponent implements OnInit {
   wrongansers:any
   public submitAnswer() {
     debugger;
+   
     this.correctansers=0;
     this.wrongansers=0;
     for (var i = 0; i < this.questionList.length; i++) {
@@ -216,7 +215,7 @@ export class TakeAssessmentComponent implements OnInit {
     this.AmazeService.InsertTestResponse(Entityy).subscribe(data => {
       debugger
       this.testResponseID = data;
-      if(this.testResponseID==0){
+      if(this.testResponseID==10){
         Swal.fire('You Already took this Test');
         this.ngOnInit();
       }else{
