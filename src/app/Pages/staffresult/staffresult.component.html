@@ -12,7 +12,19 @@
 
             <div class="card"><br>
                 <div class="row FilterClass">
-
+                    <div class="col-lg-1">
+                        <label>Filter By</label>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="form-control" name="cars" id="Duration" (change)="staffid($event)">
+                            <option value="0">Select Department</option>
+                            <option *ngFor="let details of result" value="{{details.id}}">{{details.department}}
+                            </option>
+                        </select> 
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="month" class="form-control" placeholder="Search" [(ngModel)]="search">
+                    </div>
                     <div class="col-lg-3">
                         <input class="form-control" placeholder="Search" [(ngModel)]="search">
                     </div>
@@ -32,6 +44,20 @@
             <div class="row">
 
             </div>
+            <div class="row">
+                <div class="col-lg-8 View ">
+                    <ul>
+                        <li [ngClass]="{'underlinetext': show=='1'}"><a class="active" (click)="Showcards(1)">
+                                <ul>Course Not Started</ul>
+                            </a></li>
+                        <li [ngClass]="{'underlinetext': show=='2'}"><a class="active" (click)="Showcards(2)">Ongoing Courses
+                            </a></li>
+                        <li [ngClass]="{'underlinetext': show=='3'}"><a class="active" (click)="Showcards(3)">Completed Course</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div> 
             <hr>
             <div class="row">
                 <div class="col-lg-12">
@@ -74,7 +100,7 @@
                 <h4 class="modal-title">Test Details</h4>
 
                 <button (click)="getdetailslist1()" data-toggle="modal" data-target="#Certificate"
-                    class="btn btn-primary">Allote Certificate
+                    class="btn btn-primary">View Certificate
                 </button><br>
             </div>
             <div class="modal-body">

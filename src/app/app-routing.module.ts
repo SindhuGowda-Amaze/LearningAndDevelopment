@@ -29,6 +29,7 @@ import { ManagerDashboardComponent } from './Pages/manager-dashboard/manager-das
 import { CategoryDashboardComponent } from './Pages/category-dashboard/category-dashboard.component';
 import { CategoryFormComponent } from './Pages/category-form/category-form.component';
 import { StaffresultComponent } from './Pages/staffresult/staffresult.component';
+import { AssignCourseToEmployeeComponent } from './Pages/assign-course-to-employee/assign-course-to-employee.component';
 
 
 const routes: Routes = [
@@ -72,6 +73,7 @@ const routes: Routes = [
   { path: 'CategoryForm', component: CategoryFormComponent },
   { path: 'CategoryForm/:id', component: CategoryFormComponent },
   { path: 'Staffresult', component: StaffresultComponent },
+  { path: 'AssignCourseToEmployee', component: AssignCourseToEmployeeComponent },
  
 
 

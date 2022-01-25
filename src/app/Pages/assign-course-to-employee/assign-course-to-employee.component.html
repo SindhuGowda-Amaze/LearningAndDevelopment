@@ -1,0 +1,56 @@
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-10">
+                    <p class="Heading">Assign Course</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="row leavereq">
+
+                    <div class="col-lg-2">
+                        <p class="newFont">Employee Name <span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p class="newFont">Course Name <span style="color: red;">*</span></p>
+                    </div>
+                
+                 
+                </div>
+                <div class="row leavereq">
+                    <div class="col-lg-2">
+                        <select class="form-control" name="cars" id="Duration" [(ngModel)]="CourseID" (change)="getCourseID($event)">
+                            <option value="0">Select Course Name</option>
+                            <option  *ngFor="let details of CourseList"  value="{{details.id}}">{{details.name}}</option>
+                        </select>
+                    </div>
+                   
+                    <div class="col-lg-2">
+                        <select class="form-control" name="cars" id="Duration" [(ngModel)]="CourseID" (change)="getCourseID($event)">
+                            <option value="0">Select Course Name</option>
+                            <option  *ngFor="let details of CourseList"  value="{{details.id}}">{{details.name}}</option>
+                        </select>
+                    </div>
+                   
+                </div><br>
+                <br>    
+                <div class="row">
+                    <div class="col-lg-9"></div>
+                    <div class="col-lg-1">
+                        <button class="form-control " (click)="cancel()">Cancel</button>
+                    </div>
+                    <div class="col-lg-1">
+                        <button class="form-control button1" (click)="Save()">Enroll</button>
+                        <!-- <button class="form-control button1"  *ngIf="id==null || id==undefined" (click)="Submit()">Enroll</button>    
+                     <button class="form-control button1"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>    -->
+                    <!-- </div>
+
+                    <div class="col-lg-1"></div>
+                </div><br>
+            </div> <br>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div> --> 

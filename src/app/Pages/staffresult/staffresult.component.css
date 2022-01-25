@@ -122,3 +122,13 @@ th {
     background-color: burlywood;
     color: white;
 }
+.underlinetext
+{
+  text-decoration: 3px solid rgb(72, 83, 238) underline;
+  color: rgb(72, 83, 238);
+  height: 4px;
+}
+.underlinetext li a:hover {
+  text-decoration: 3px solid rgb(72, 83, 238) underline;
+  color:   rgb(72, 83, 238)
+}

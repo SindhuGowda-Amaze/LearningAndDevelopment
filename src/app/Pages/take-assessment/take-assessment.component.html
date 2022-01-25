@@ -52,112 +52,113 @@
             </h3>
         </div>
         <br>
+    </div>
 
-        <div class="row">
-            <div class="col-lg-12">
-                <p style="text-align: center;margin-left: 20px;"><button type="button" class="addButton button"
-                        *ngIf="startTest=='0'" (click)="startTestContainer()">Start Test</button></p>
-            </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p style="text-align: center;margin-left: 20px;"><button type="button" class="addButton button"
+                    *ngIf="startTest=='0'" (click)="startTestContainer()">Start Test</button></p>
         </div>
     </div>
-    <br>
-    <div class="container-fluid" *ngIf="show=='1' && startTest=='1'">
-        <div class="row">
-            <div class="col-lg-10"></div>
-            <div class="col-lg-2">
-                <p>Total no of Question:{{count}}<br>Total Marks:{{totalmarks}}</p>
-            </div>
+
+<br>
+<div class="container-fluid" *ngIf="show=='1' && startTest=='1'">
+    <div class="row">
+        <div class="col-lg-10"></div>
+        <div class="col-lg-2">
+            <p>Total no of Question:{{count}}<br>Total Marks:{{totalmarks}}</p>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <table>
-                    <tr>
-                        <th style="width:10px;text-align: center;background-color: white;color:black">Question Num.
-                        </th>
-                        <th style="width:500px;text-align: center;background-color: white;color:black">Question
-                        </th>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table>
+                <tr>
+                    <th style="width:10px;text-align: center;background-color: white;color:black">Question Num.
+                    </th>
+                    <th style="width:500px;text-align: center;background-color: white;color:black">Question
+                    </th>
 
-                    </tr>
-                    <tr *ngFor="let list of questionList;index as i">
-                        <td style="width:10px;text-align: center;background-color: white;color:black">
-                            </td>
-                        <td style="width:10px;background-color: white;color:black">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                  <b>
-                                    {{i+1}}<div [innerHtml]="list.question"></div>
-                                    </b>
-                                </div>
+                </tr>
+                <tr *ngFor="let list of questionList;index as i">
+                    <td style="width:10px;text-align: center;background-color: white;color:black">
+                    {{i+1}}</td>
+                    <td style="width:10px;background-color: white;color:black">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <b>
+                                    <div [innerHtml]="list.question"></div>
+                                </b>
                             </div>
-                            <br>
-                            <br>
+                        </div>
+                        <br>
+                        <br>
 
-                            <div class="row">
-                                <div class="col-lg-1">
-                                </div>
-                                <div class="col-lg-5">
-                                    <input type="radio" value="{{list.option1}}" name="{{list.option1}}"
-                                        id="{{list.option1}}" [(ngModel)]='list.userAnswer'>&nbsp;
-                                    <div [innerHtml]="list.option1"></div>
-                                </div>
-                                <div class="col-lg-5">
-                                    <input type="radio" value="{{list.option2}}" name="{{list.option2}}"
-                                        id="{{list.option2}}" [(ngModel)]='list.userAnswer'>
-                                    &nbsp;
-                                    <div [innerHtml]="list.option2"></div>
-                                </div>
-                                <div class="col-lg-1">
-                                </div>
+                        <div class="row">
+                            <div class="col-lg-1">
                             </div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="row">
-                                        <div class="col-lg-1">
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <input type="radio" value="{{list.option3}}" name="{{list.option3}}"
-                                                id="{{list.option3}}" [(ngModel)]='list.userAnswer'>&nbsp;
-                                            <div [innerHtml]="list.option3"></div>
-                                            <!-- {{list.option3}} -->
-
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <input type="radio" value="{{list.option4}}" name="{{list.option4}}"
-                                                id="{{list.option4}}" [(ngModel)]='list.userAnswer'>&nbsp;
-                                            <div [innerHtml]="list.option4"></div>
-                                            <!-- {{list.option4}} -->
-
-                                        </div>
-                                        <div class="col-lg-1">
-                                        </div>
+                            <div class="col-lg-5">
+                                <input type="radio" value="{{list.option1}}" name="{{list.option1}}"
+                                    id="{{list.option1}}" [(ngModel)]='list.userAnswer'>&nbsp;
+                                <div [innerHtml]="list.option1"></div>
+                            </div>
+                            <div class="col-lg-5">
+                                <input type="radio" value="{{list.option2}}" name="{{list.option2}}"
+                                    id="{{list.option2}}" [(ngModel)]='list.userAnswer'>
+                                &nbsp;
+                                <div [innerHtml]="list.option2"></div>
+                            </div>
+                            <div class="col-lg-1">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-1">
                                     </div>
-                                    <br>
+                                    <div class="col-lg-5">
+                                        <input type="radio" value="{{list.option3}}" name="{{list.option3}}"
+                                            id="{{list.option3}}" [(ngModel)]='list.userAnswer'>&nbsp;
+                                        <div [innerHtml]="list.option3"></div>
+                                        <!-- {{list.option3}} -->
+
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <input type="radio" value="{{list.option4}}" name="{{list.option4}}"
+                                            id="{{list.option4}}" [(ngModel)]='list.userAnswer'>&nbsp;
+                                        <div [innerHtml]="list.option4"></div>
+                                        <!-- {{list.option4}} -->
+
+                                    </div>
+                                    <div class="col-lg-1">
+                                    </div>
                                 </div>
+                                <br>
                             </div>
-                            <!-- <div class="row" *ngIf="list.questionTypeID==2">
+                        </div>
+                        <!-- <div class="row" *ngIf="list.questionTypeID==2">
                                 <div class="col-lg-12">
                                     <ckeditor [editor]="Editor" [(ngModel)]='list.userAnswer'></ckeditor>
                                     <br>
 
                                 </div>
                             </div> -->
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <br>
-        <div class="row" *ngIf="show=='1' && startTest=='1'">
-            <div class="col-lg-4">
-            </div>
-            <div class="col-lg-4" style="text-align: center;">
-                <button class="addButton button" routerLink="/MyCourseDashboard">Cancel</button>&nbsp;&nbsp;
-                <button type="button" class="addButton button" (click)="submitAnswer()">Submit</button>
-            </div>
-            <div class="col-lg-4">
-            </div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
+
     <br>
+    <div class="row" *ngIf="show=='1' && startTest=='1'">
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4" style="text-align: center;">
+            <button class="addButton button" routerLink="/MyCourseDashboard">Cancel</button>&nbsp;&nbsp;
+            <button type="button" class="addButton button" (click)="submitAnswer()">Submit</button>
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+</div>
+<br>
 </div>
