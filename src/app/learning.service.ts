@@ -500,9 +500,9 @@ export class LearningService {
 
 
 
-  public GetAllCounts() {
+  public GetAllCounts(staffid:any,typeid:any) {
 
-    return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts");
+    return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID="+staffid+'&TypeID='+typeid);
   }
 
   public InsertTestResponse(data: any) {
@@ -528,4 +528,33 @@ export class LearningService {
       this.baseURL + "/Master/GetTestResponseDetails"
     );
   }
+
+  public GetTrainerCourseMappingByEnroll() {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/GetTrainerCourseMappingByEnroll"
+    );
+  }
+
+  public GetAssessmentsByEnroll() {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/GetAssessmentsByEnroll"
+    );
+  }
+
+  public GetEnrollCourseChapters() {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/GetEnrollCourseChapters"
+    );
+  }
+
+
+
+
+
+
+
+
+
+
+
 }
