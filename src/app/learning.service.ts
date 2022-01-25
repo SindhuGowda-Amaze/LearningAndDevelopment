@@ -542,4 +542,10 @@ export class LearningService {
       this.baseURL + "/Master/GetTestResponseDetails"
     );
   }
+
+  public GetCoursesByUserID(staffid: any) {
+
+    return this.http.get<any[]>(this.baseURL + "/Master/GetCoursesByUserID?EmployeeID=" + staffid);
+  }
+
 }
