@@ -7,17 +7,15 @@
                     </h5>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3">
-                    <!-- <h6 style="text-align: left;"><b>Time Allowed : 60 Min</b></h6> -->
-                </div>
+            <!-- <div class="row">
                 <div class="col-lg-3">
                 </div>
                 <div class="col-lg-3">
-                    <!-- <label id="timeleft" style="font-size: 18px; margin-left: 38px;"><b>Time left : </b></label> -->
+                </div>
+                <div class="col-lg-3">
                     <label style="font-size: 18px;" id="demo"></label>
                 </div>
-            </div>
+            </div> -->
 
             <br>
             <div class="row">
@@ -40,9 +38,6 @@
             </div>
         </div>
     </div>
-
-
-
     <br>
     <div class="row" *ngIf="startTest=='0'">
         <div class="col-lg-12">
@@ -60,16 +55,15 @@
                     *ngIf="startTest=='0'" (click)="startTestContainer()">Start Test</button></p>
         </div>
     </div>
-
-<br>
-<div class="container-fluid" *ngIf="show=='1' && startTest=='1'">
-    <div class="row">
-        <div class="col-lg-10"></div>
-        <div class="col-lg-2">
-            <p>Total no of Question:{{count}}<br>Total Marks:{{totalmarks}}</p>
+    <br>
+    <div class="container-fluid" *ngIf="show=='1' && startTest=='1'">
+        <div class="row">
+            <div class="col-lg-10"></div>
+            <div class="col-lg-2">
+                <p>Total no of Question:{{count}}<br>Total Marks:{{totalmarks}}</p>
+            </div>
         </div>
-    </div>
-    <div class="row">
+         <div class="row">
         <div class="col-lg-12">
             <table>
                 <tr>
@@ -77,7 +71,6 @@
                     </th>
                     <th style="width:500px;text-align: center;background-color: white;color:black">Question
                     </th>
-
                 </tr>
                 <tr *ngFor="let list of questionList;index as i">
                     <td style="width:10px;text-align: center;background-color: white;color:black">
@@ -92,7 +85,6 @@
                         </div>
                         <br>
                         <br>
-
                         <div class="row">
                             <div class="col-lg-1">
                             </div>
@@ -119,46 +111,35 @@
                                         <input type="radio" value="{{list.option3}}" name="{{list.option3}}"
                                             id="{{list.option3}}" [(ngModel)]='list.userAnswer'>&nbsp;
                                         <div [innerHtml]="list.option3"></div>
-                                        <!-- {{list.option3}} -->
-
                                     </div>
                                     <div class="col-lg-5">
                                         <input type="radio" value="{{list.option4}}" name="{{list.option4}}"
                                             id="{{list.option4}}" [(ngModel)]='list.userAnswer'>&nbsp;
                                         <div [innerHtml]="list.option4"></div>
-                                        <!-- {{list.option4}} -->
-
                                     </div>
                                     <div class="col-lg-1">
                                     </div>
                                 </div>
                                 <br>
                             </div>
-                        </div>
-                        <!-- <div class="row" *ngIf="list.questionTypeID==2">
-                                <div class="col-lg-12">
-                                    <ckeditor [editor]="Editor" [(ngModel)]='list.userAnswer'></ckeditor>
-                                    <br>
-
-                                </div>
-                            </div> -->
+                        </div>                   
                     </td>
                 </tr>
             </table>
         </div>
     </div>
 
-    <br>
-    <div class="row" *ngIf="show=='1' && startTest=='1'">
-        <div class="col-lg-4">
-        </div>
-        <div class="col-lg-4" style="text-align: center;">
-            <button class="addButton button" routerLink="/MyCourseDashboard">Cancel</button>&nbsp;&nbsp;
-            <button type="button" class="addButton button" (click)="submitAnswer()">Submit</button>
-        </div>
-        <div class="col-lg-4">
+        <br>
+        <div class="row" *ngIf="show=='1' && startTest=='1'">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4" style="text-align: center;">
+                <button class="addButton button" routerLink="/MyCourseDashboard">Cancel</button>&nbsp;&nbsp;
+                <button type="button" class="addButton button" (click)="submitAnswer()">Submit</button>
+            </div>
+            <div class="col-lg-4">
+            </div>
         </div>
     </div>
-</div>
-<br>
+    <br>
 </div>

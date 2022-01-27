@@ -561,6 +561,11 @@ export class LearningService {
     );
   }
 
+  public GetCoursesByUserID(userid:any) {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/GetCoursesByUserID?EmployeeID="+userid
+    );
+  }
 
 
 
