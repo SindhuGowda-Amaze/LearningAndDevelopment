@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "../environments/environment";
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 @Injectable({
   providedIn: 'root'
 })
@@ -514,10 +515,14 @@ export class LearningService {
 
 
 
-  public GetAllCounts() {
+  public GetAllCounts(staffid:any,typeid:any) {
 
-    return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts");
+    return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID="+staffid+'&TypeID='+typeid);
   }
+  // public GetAllCounts() {
+
+  //   return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID=");
+  // }
 
   public InsertTestResponse(data: any) {
     debugger;
@@ -531,6 +536,17 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
+  // public GetCoursesByUserID(staffid:any,typeid:any) {
+
+  //   return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID="+staffid+'&TypeID='+typeid);
+  // }
+
+  public GetCoursesByUserID(staffid:any) {
+
+    return this.http.get<any[]>(this.baseURL + "/Master/GetCoursesByUserID?StaffID="+staffid);
+  }
+
+
   //Prashant api service
   public GetTestResponse() {
     return this.http.get<any[]>(
@@ -543,9 +559,37 @@ export class LearningService {
     );
   }
 
-  public GetCoursesByUserID(staffid: any) {
-
-    return this.http.get<any[]>(this.baseURL + "/Master/GetCoursesByUserID?EmployeeID=" + staffid);
+  public GetTrainerCourseMappingByEnroll() {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/GetTrainerCourseMappingByEnroll"
+    );
   }
+
+  public GetAssessmentsByEnroll() {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/GetAssessmentsByEnroll"
+    );
+  }
+
+  public GetEnrollCourseChapters() {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/GetEnrollCourseChapters"
+    );
+  }
+
+  public GetCoursesByUserID(userid:any) {
+    return this.http.get<any[]>(
+      this.baseURL + "/Master/GetCoursesByUserID?EmployeeID="+userid
+    );
+  }
+
+
+
+
+
+
+
+
+
 
 }

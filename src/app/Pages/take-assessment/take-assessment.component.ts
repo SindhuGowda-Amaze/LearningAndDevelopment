@@ -112,7 +112,8 @@ export class TakeAssessmentComponent implements OnInit {
       debugger
       this.questionList = data;
       this.totalmarks=0;
-      this.questionList = this.questionList.filter((x: { chapterID: any; courseID:any}) => x.chapterID == this.chapterid && x.courseID==this.courseid);
+     let tempquetin = this.questionList.filter((x: { chapterID: any; courseID:any}) => x.chapterID == this.chapterid && x.courseID==this.courseid);
+    this.questionList=this.shuffleArray(tempquetin);
       for (let i=0;i<this.questionList.length;i++){
         debugger
       
@@ -124,6 +125,16 @@ export class TakeAssessmentComponent implements OnInit {
     // var callDuration = this.elementRef.nativeElement.querySelector('#time');
     // this.startTimer(callDuration);
   }
+
+  public  shuffleArray(array:any) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
   // startTimer(display) {
   //   var timer = 1800;
   //   var minutes;

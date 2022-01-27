@@ -32,6 +32,7 @@
                     </div>
                 </div>
                 <div class="vertical-menu VScroll">
+                    
                     <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"
                         *ngFor="let details of categorylist"> <input type="checkbox" value="1" [(ngModel)]="course1"
                             name="course1" (change)="filtercourse(details.name)"> {{details.name}}</a>
