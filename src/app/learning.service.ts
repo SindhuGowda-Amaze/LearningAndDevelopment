@@ -519,6 +519,10 @@ export class LearningService {
 
     return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID="+staffid+'&TypeID='+typeid);
   }
+  // public GetAllCounts() {
+
+  //   return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID=");
+  // }
 
   public InsertTestResponse(data: any) {
     debugger;
@@ -539,7 +543,7 @@ export class LearningService {
 
   public GetCoursesByUserID(staffid:any) {
 
-    return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID="+staffid);
+    return this.http.get<any[]>(this.baseURL + "/Master/GetCoursesByUserID?StaffID="+staffid);
   }
 
 

@@ -1,10 +1,10 @@
-<!-- <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
             <div class="row">
                 <div class="col-lg-10">
-                    <p class="Heading">Assign Course</p>
+                    <p class="Heading">Assign Course To Employee </p>
                 </div>
             </div>
             <div class="card">
@@ -14,38 +14,44 @@
                         <p class="newFont">Employee Name <span style="color: red;">*</span></p>
                     </div>
                     <div class="col-lg-2">
-                        <p class="newFont">Course Name <span style="color: red;">*</span></p>
+                        <p class="newFont">Course <span style="color: red;">*</span></p>
                     </div>
-                
-                 
+                    <div class="col-lg-2">
+                        <p class="newFont">Assign Type <span style="color: red;">*</span></p>
+                    </div>
                 </div>
                 <div class="row leavereq">
-                    <div class="col-lg-2">
-                        <select class="form-control" name="cars" id="Duration" [(ngModel)]="CourseID" (change)="getCourseID($event)">
-                            <option value="0">Select Course Name</option>
-                            <option  *ngFor="let details of CourseList"  value="{{details.id}}">{{details.name}}</option>
+                    <div class="col-md-2">
+                        <!-- <select class="form-control" name="id" id="id" [(ngModel)]="courseid" (change)="getcourseid($event)">
+                            <option *ngFor="let details of stafflist" value="{{details.id}}">{{details.name}}</option> 
+                        </select> -->
+                        <select class="form-control" name="id" id="id" [(ngModel)]="userid">
+                            <option *ngFor="let details of stafflist" value="{{details.id}}">{{details.name}}</option> 
                         </select>
                     </div>
-                   
-                    <div class="col-lg-2">
-                        <select class="form-control" name="cars" id="Duration" [(ngModel)]="CourseID" (change)="getCourseID($event)">
-                            <option value="0">Select Course Name</option>
-                            <option  *ngFor="let details of CourseList"  value="{{details.id}}">{{details.name}}</option>
+                    <div class="col-md-2">
+                        <select class="form-control" name="id" id="id" [(ngModel)]="courseid">
+                            <option *ngFor="let details of courselist" value="{{details.id}}">{{details.name}}</option>
                         </select>
                     </div>
-                   
-                </div><br>
-                <br>    
+                    <div class="col-md-2">
+                        <select class="form-control" name="type" id="type" [(ngModel)]="type">
+                            <option value="Self">Self</option>
+                            <option value="Request to Manager">Request to Manager</option>
+                            <option value="Manager Assign">Manager Assign</option>
+                        </select>
+                    </div>
+                </div>
+              
+              
                 <div class="row">
                     <div class="col-lg-9"></div>
                     <div class="col-lg-1">
-                        <button class="form-control " (click)="cancel()">Cancel</button>
+                        <button class="form-control " (click)="Cancel()">Cancel</button>
                     </div>
-                    <div class="col-lg-1">
-                        <button class="form-control button1" (click)="Save()">Enroll</button>
-                        <!-- <button class="form-control button1"  *ngIf="id==null || id==undefined" (click)="Submit()">Enroll</button>    
-                     <button class="form-control button1"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>    -->
-                    <!-- </div>
+                    <div class="col-lg-1"  >
+                        <button class="form-control " data-toggle="modal" data-target="#enroll">ENROLL</button>
+                    </div>
 
                     <div class="col-lg-1"></div>
                 </div><br>
@@ -53,4 +59,67 @@
         </div>
         <div class="col-lg-1"></div>
     </div>
-</div> --> 
+</div>
+
+<div id="enroll" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Enroll for Course</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" *ngFor="let item of stafflist">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text">Name:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input class="form-control" name="name" id="name" [(ngModel)]="name"
+                            placeholder="{{item.name}}" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text" style="font-weight: bold;">Phone No:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input class="form-control" name="mobile" id="mobile" [(ngModel)]="mobile"
+                            placeholder="{{item.mobile}}" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text" style="font-weight: bold;">Email:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
+                            placeholder="{{item.emailID}}" disabled>
+                    </div>
+                </div> <br>
+                <!-- <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text" style="font-weight: bold;">Manager:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
+                            placeholder="{{item.emailID}}" disabled>
+                    </div>
+                </div> <br> -->
+                <div class="row">
+                    <div class="col-lg-5"></div>
+                    <div class="col-lg-2">
+                        <button class="form-control "
+                            (click)="enroll(item.name,item.mobile,item.emailID)"
+                            data-dismiss="modal">Enroll</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <hr>
+                <div class="col-lg-2">
+                    <button data-dismiss="modal" class="CloseBTN">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
