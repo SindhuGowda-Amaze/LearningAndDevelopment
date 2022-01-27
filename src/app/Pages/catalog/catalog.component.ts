@@ -265,10 +265,6 @@ export class CatalogComponent implements OnInit {
   
 
   }
-
-
-
-
 }
 function Save() {
   throw new Error('Function not implemented.');
