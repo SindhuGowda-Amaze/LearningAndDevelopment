@@ -35,27 +35,27 @@
                     
                     <a class="FilterBox" style="background-color: rgb(66, 66, 66); color: white;"
                         *ngFor="let details of categorylist"> <input type="checkbox" value="1" [(ngModel)]="course1"
-                            name="course1" (change)="filtercourse(details.name,1)">{{details.name}}</a>
+                            name="course1" (change)="filtercourse(details.name)"> {{details.name}}</a>
 
                     <a *ngFor="let details of categorylist1" class="FilterBox"
                         style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox" value="1"
                             [(ngModel)]="course" name="course"
-                            (change)="filtercourse(details.name,2)">{{details.name}}</a>
+                            (change)="filtercourse(details.name)"> {{details.name}}</a>
 
                     <a *ngFor="let details of categorylist2" class="FilterBox"
                         style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox" value="1"
                             [(ngModel)]="course2" name="course2"
-                            (change)="filtercourse(details.name,3)">{{details.name}}</a>
+                            (change)="filtercourse(details.name)"> {{details.name}}</a>
 
                     <a *ngFor="let details of categorylist3" class="FilterBox"
                         style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox" value="1"
                             [(ngModel)]="course3" name="course3"
-                            (change)="filtercourse(details.name,4)">{{details.name}}</a> 
+                            (change)="filtercourse(details.name)"> {{details.name}}</a> 
 
                     <a *ngFor="let details of categorylist4" class="FilterBox"
                         style="background-color: rgb(66, 66, 66); color: white;"> <input type="checkbox" value="1"
                             [(ngModel)]="course4" name="course4"
-                            (change)="filtercourse(details.name,5)">{{details.name}}</a> <br>
+                            (change)="filtercourse(details.name)"> {{details.name}}</a> <br>
 
                     <button style="background-color: rgb(66, 66, 66); color: white;" (click)="GetCourse()">Clear
                         Filter </button>
@@ -131,10 +131,11 @@
             </div>
         </div>
         <div class="col-lg-9">
+            <div class="row"  *ngIf="(courselist | filter: search).length > 0; else noResults">
             <div class="row" *ngIf="show1==1">
                 <div class="col-lg-12" style="margin-left: 52px;">
                     <div class="row">
-                        <div class="col-lg-3" *ngFor="let details of courselist | filter:search">
+                        <div class="col-lg-3" *ngFor="let details of courselist">
                             <!-- <div class="card1" style="background-color: white; height: 325px;width: 250px;">
                                 <img class="card-img-top" src="assets/Images/python-full-stack-developer-course.jpg" alt="Card image cap">
                                 <div class="card-body">
@@ -404,6 +405,10 @@
                     </div>
                 </div><br><br><br>
             </div>
+            </div> 
+            <ng-template #noResults>
+                <p class="NoResultShow"> No results found for "{{search}}" </p>
+            </ng-template>
 
             <!-- <div class="row">
                 <div class="col-lg-12" style="margin-left: 52px;">

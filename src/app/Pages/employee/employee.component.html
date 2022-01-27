@@ -20,7 +20,9 @@
                         [(ngModel)]="date" (change)="getdate($event)">
                 </div>
                 <div class="col-md-6">
-                    <input class="form-control" type="search" [(ngModel)]="term"
+                    <!-- <input class="form-control" type="search" [(ngModel)]="term"
+                        placeholder="search for Staff , Date of joining or Role"> -->
+                    <input class="form-control" type="search" [(ngModel)]="search"
                         placeholder="search for Staff , Date of joining or Role">
                 </div>
             </div>
@@ -44,7 +46,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <table class="table" id="lvs">
+                    <table class="table" id="lvs" *ngIf="(stafflist | filter: search).length > 0; else noResults">
                         <thead>
                             <tr>
                                 <!-- <th>Check Box</th> -->
@@ -84,6 +86,9 @@
                             </tr>
                         </tbody>
                     </table>
+                    <ng-template #noResults>
+                        <p class="NoResultShow"> No results found for "{{search}}" </p>
+                    </ng-template>
                 </div>
             </div>
             <div class="col-md-1">
