@@ -41,7 +41,7 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit(): void {
     this.userid = sessionStorage.getItem('userid')
-    this.GetCourse();
+    this.GetCoursesByUserID();
     this.show1 = 1;
     this.GetCategoryMaster();
 
@@ -173,16 +173,16 @@ export class CatalogComponent implements OnInit {
   }
 
   courselist: any;
-  public GetCourse() {
-    // debugger
-    // this.LearningService.GetCoursesByUserID(this.userid).subscribe(
-    //   data => {
-    //     debugger
-    //     this.courselist = data;
-    //     this.count = this.courselist.length;
+  public GetCoursesByUserID() {
+    debugger
+    this.LearningService.GetCoursesByUserID(this.userid).subscribe(
+      data => {
+        debugger
+        this.courselist = data;
+        this.count = this.courselist.length;
 
-    //   })
-    // this.show1 = 1;
+      })
+    this.show1 = 1;
   }
 
 

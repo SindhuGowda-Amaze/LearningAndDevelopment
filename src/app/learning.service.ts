@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "../environments/environment";
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 @Injectable({
   providedIn: 'root'
 })
@@ -530,6 +531,17 @@ export class LearningService {
     this.url = this.baseURL + '/Master/InsertTestResponseDetails';
     return this.http.post(this.url, data);
   }
+
+  // public GetCoursesByUserID(staffid:any,typeid:any) {
+
+  //   return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID="+staffid+'&TypeID='+typeid);
+  // }
+
+  public GetCoursesByUserID(staffid:any) {
+
+    return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID="+staffid);
+  }
+
 
   //Prashant api service
   public GetTestResponse() {
