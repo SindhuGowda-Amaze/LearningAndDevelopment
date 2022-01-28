@@ -18,6 +18,10 @@
   td{
     background-color: white
   }
+  th {
+    background-color: #02cfff !important;
+    color: #ffffff;
+  }
   /* .th{
     background-color: #e4e5e6;
     color:#404040;
@@ -28,21 +32,20 @@
    border-collapse: collapse; 
   }
   .Heading{
-  padding-left: 15px;
-  font-size: 20px;
-  color:black;
-  }
+    padding-left: 15px;
+    font-size: 20px;
+    color: #3247D5; font-family: 'Poppins';
+    }
   .head{
-  background-color: #e4e5e6;
-  color:#404040;
-  font-family: "DIN Bold";
+    font-family: 'Poppins';
   }
   .FilterClass{
   padding-left: 15px;
   }
   .count{
   text-align: right;
-  padding-right: 10px;;
+  padding-right: 10px;
+  color: #3247D5; font-family: 'Poppins';
   }
     .Button{
       background-color: #007bff;
@@ -115,4 +118,13 @@ li a:hover {
 .underlinetext li a:hover {
   text-decoration: 3px solid rgb(72, 83, 238) underline;
   color:   rgb(72, 83, 238)
+}
+.card{
+  width:100%;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+}
+.head{
+  font-family: 'Poppins';
 }
