@@ -43,11 +43,12 @@
   }
 
   .actionbuttons{
-    width: 85%;
+    width: 100%;
     border: none;
     background: #3247D5;
     text-align: center;
-    border-radius: 16px;
+    border-radius: 10px;
     color: white;
     margin-top: 6px;
+    padding: 5px;
   }
