@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     sessionStorage.clear();
-    location.href = "/Login";
+    location.href = "#/Login";
     //location.reload();
   }
 }
