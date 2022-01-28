@@ -190,3 +190,29 @@ input:checked + .slider:before {
   background-color:#02CFFF ;
   color:white;
 }
+.requestbtn{
+  text-transform: uppercase;
+font-weight: initial;
+text-shadow: initial;
+letter-spacing: 0.5px;
+background-color:#3247D5 ;
+color:white;
+border-radius: 5px;
+border:none;
+padding: 5px;
+width:60%;
+float: right;
+margin-right: 15px;
+font-size: 15px;
+font-weight: bold;
+}
+.upload{
+  width: 50%;
+  border: none;
+  background: #3247D5;
+  text-align: center;
+  border-radius: 6px;
+  color: white;
+  margin-top: 6px;
+  padding: 5px;
+}

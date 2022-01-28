@@ -46,3 +46,10 @@
    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
    border-radius: 12px;
 }
+.cancel{
+    padding:5px;
+    border-radius: 5px;
+    color:white;
+    background-color: #3247D5;
+    border:none;
+}
