@@ -47,8 +47,17 @@
     border: none;
     background: #3247D5;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 6px;
     color: white;
     margin-top: 6px;
     padding: 5px;
+  }
+  .addbtn{
+    padding:5px;
+    border-radius: 5px;
+    color:white;
+    background-color: #3247D5;
+    border:none;
+    width:92%;
+
   }
