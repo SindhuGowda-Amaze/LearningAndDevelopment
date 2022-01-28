@@ -1,32 +1,32 @@
 <div class="row" *ngIf="temp==1">
     <div class="col-md-2 sidenav" style="height: 100vh;margin-top: 75px;position: fixed;">
 
-        <a   routerLink="/AdminDashboard">
+        <a *ngIf="roleid=='1' || roleid=='2' "   routerLink="/AdminDashboard">
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; Dashboard
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a routerLink="/ChapterDashboard">
+        <a *ngIf="roleid=='4'" routerLink="/ChapterDashboard">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; ChapterDashboard
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a routerLink="/ManagerDashboard">
+        <a *ngIf="roleid=='3'" routerLink="/ManagerDashboard">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; Dashboard
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
 
-        <a routerLink="/Assessmentdashboard">
+        <a  *ngIf="roleid==4" routerLink="/Assessmentdashboard">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; Assessments
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
 
-        <a data-toggle="collapse" class="togglebtn button" data-target="#userapplications">
+        <a data-toggle="collapse" class="togglebtn button" data-target="#userapplications"  *ngIf="roleid==1">
 
             <i class="fa fa-gears icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; SETUP
@@ -57,37 +57,37 @@
             
             </a>
         </div>
-        <a routerLink="/MyCourseDashboard">
+        <a  *ngIf="roleid==2 || roleid==3"  routerLink="/MyCourseDashboard">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; My COURSE
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a   routerLink="/AttendenceDetails">
+        <a  *ngIf="roleid==4"   routerLink="/AttendenceDetails">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; ATTENDENCE
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a routerLink="/Catalog">
+        <a *ngIf="roleid==2 || roleid==3"  routerLink="/Catalog">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; CATALOG
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a routerLink="/CourseCertificate">
+        <a  *ngIf="roleid==2" routerLink="/CourseCertificate">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; CERTIFICATE
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a routerLink="/AssignCourseToEmployee">
+        <a *ngIf="roleid==3" routerLink="/AssignCourseToEmployee">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; ASSIGN COURSE
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a routerLink="/Staffresult">
+        <a *ngIf="roleid==3" routerLink="/Staffresult">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; ASSIGN RESULTS
