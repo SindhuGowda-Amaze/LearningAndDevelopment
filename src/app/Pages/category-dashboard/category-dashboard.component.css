@@ -157,3 +157,13 @@
   .Text{
     color:#0C275A;
   }
+  .actionbuttons {
+    width: 50%;
+    border: none;
+    background: #3247D5;
+    text-align: center;
+    border-radius: 6px;
+    color: white;
+    margin-top: 6px;
+    padding: 5px;
+  }
