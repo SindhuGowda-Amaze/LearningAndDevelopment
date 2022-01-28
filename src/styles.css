@@ -41,3 +41,13 @@
   input{
     font-size: 10px;
   }
+
+  .actionbuttons{
+    width: 85%;
+    border: none;
+    background: #3247D5;
+    text-align: center;
+    border-radius: 16px;
+    color: white;
+    margin-top: 6px;
+  }
