@@ -17,9 +17,12 @@ export class LoginComponent implements OnInit {
   password: any;
   username: any;
   loginTypeList: any;
-
+  temp:any;
   constructor(public LearningService: LearningService, private router: Router) { }
   ngOnInit(): void {
+    this.temp = sessionStorage.getItem('temp');
+
+
     if (localStorage.getItem('temp') == '1') {
       localStorage.clear();
       location.reload();

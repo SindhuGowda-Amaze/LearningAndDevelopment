@@ -52,6 +52,7 @@ import { SidebarComponent } from './Pages/sidebar/sidebar.component';
 
 
 
+
 const ngWizardConfig: NgWizardConfig = {
   theme: THEME.circles
 };

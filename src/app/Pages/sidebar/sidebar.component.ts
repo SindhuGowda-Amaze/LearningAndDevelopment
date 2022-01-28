@@ -17,7 +17,7 @@ export class SidebarComponent implements OnInit {
   show: any;
   ngOnInit(): void {
     this.temp = sessionStorage.getItem('temp')
-    this.roleid = sessionStorage.getItem('roledid');
+    this.roleid = sessionStorage.getItem('roleid');
     this.company_name = sessionStorage.getItem("company_name");
     this.UserName = sessionStorage.getItem('UserName');
     this.role = sessionStorage.getItem('role')

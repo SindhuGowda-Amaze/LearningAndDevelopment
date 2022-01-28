@@ -1,38 +1,39 @@
 <div class="container-fluid">  
     <div class="row">
-        <p class="headings">Staff Dashboard</p>
-    </div>
-    <hr><br>
-    <div class="card">
-        <br>
-      <div class="row" style="color:#0C275A;margin-left: 15px;">
-        <div class="col-md-2">
-            Filter By
+        <div class="col-md-12">
+            <div>
+                <p class="Heading">Staff Dashboard</p>
+            </div>
+       <div class="card">
+        <div class="row">
+            <div class="col-md-1">
+                Filter By
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" type="date" placeholder="Duration" id="date" name="date"
+                    [(ngModel)]="date" (change)="getdate($event)">
+            </div>
+            <div class="col-md-6">
+                <!-- <input class="form-control" type="search" [(ngModel)]="term"
+                    placeholder="search for Staff , Date of joining or Role"> -->
+                <input class="form-control" type="search" [(ngModel)]="search"
+                    placeholder="search for Staff , Date of joining or Role">
+            </div>
         </div>
-        <div class="col-md-2">
-            <input class="form-control" type="date" placeholder="Duration" id="date" name="date" [(ngModel)]="date"
-                (change)="getdate($event)">
-        </div>
-        <div class="col-md-6">
-            <input class="form-control" type="search" [(ngModel)]="term"
-                placeholder="search for Staff , Date of joining or Role">
-        </div>
-    </div> <br>
-</div> <br>
-    
-
-    <div class="row">
-        <div class="col-md-10">
-            <p class="show3res" style="color: #0C275A">SHOWING <span style="color: black;">{{stafflist.length}}</span>&nbsp;RESULTS
-            </p>
-        </div>
-        <div class="col-md-2">
-            <button class="form-control requestbtn" routerLink="/EmployeeForm">Add Staff</button>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-lg-12">
+       </div>
+<br>
+            <div class="row">
+                <div class="col-md-10">
+                    <p class="count">SHOWING <span style="color: black;">{{stafflist.length}}</span>&nbsp;RESULTS
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <button class="form-control addbtn" routerLink="/EmployeeForm">Add Staff</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
 
         </div>
     </div>
@@ -55,29 +56,35 @@
                 <tbody>
                     <tr *ngFor="let item of stafflist">
 
-                        <td style="color: #0C275A">000{{item.id}}</td>
-                        <td style="color: #0C275A">{{item.name}}</td>
-                        <td style="color: #0C275A">{{item.role}}</td>
-                        <td style="color: #0C275A">{{item.mobile}}</td>
-                        <td style="color: #0C275A">{{item.emailID}}</td>
-                        <td style="color: #0C275A">{{item.joiningDate|date}}</td>
-                        <td>
-                            <p *ngIf="item.manager==null">
-                                NA
-                            </p>
-                            <p *ngIf="item.manager!=null" style="color: #0C275A">
-                                {{item.manager}}
-                            </p>
-                        </td>
-                        <td> <button class="upload"
-                                [routerLink]="['/EmployeeForm',item.id]">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <button class="upload">Delete</button>&nbsp;
-                            <!-- <button class="upload" (click)="Ondelete(item.id)" >Delete</button>&nbsp; -->
-                        </td>
+                                <td>000{{item.id}}</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.role}}</td>
+                                <td>{{item.mobile}}</td>
+                                <td>{{item.emailID}}</td>
+                                <td>{{item.joiningDate|date}}</td>
+                                <td>
+                                    <p *ngIf="item.manager==null">
+                                        NA
+                                    </p>
+                                    <p *ngIf="item.manager!=null">
+                                        {{item.manager}}
+                                    </p>
+                                </td>
+                                <td> <button class="edit"
+                                        [routerLink]="['/EmployeeForm',item.id]">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="edit">Delete</button>&nbsp;
+                                    <!-- <button class="upload" (click)="Ondelete(item.id)" >Delete</button>&nbsp; -->
+                                </td>
 
-                    </tr>
-                </tbody>
-            </table>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ng-template #noResults>
+                        <p class="NoResultShow"> No results found for "{{search}}" </p>
+                    </ng-template>
+                </div>
+            </div>
+         
         </div>
     </div>
 
