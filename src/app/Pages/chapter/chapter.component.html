@@ -1,15 +1,13 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
+  
             <div class="row">
                 <div class="col-lg-2">
-                    <p class="course">Chapter Details </p>
+                    <p class="headings">Chapter Details </p>
                 </div>
             </div>
             <hr>
             <div class="card">
-                <div class="row">
+                <div class="row column">
                     <div class="col-lg-2">
                         <p>Course Name <span style="color: red;">*</span></p>
                     </div>
@@ -90,7 +88,7 @@
                 <div class="row">
                     <div class="col-lg-9"></div>
                     <div class="col-lg-1">
-                        <button class="form-control  button1" (click)="Cancel()">Cancel</button>
+                        <button class="form-control  Save" (click)="Cancel()">Cancel</button>
                     </div>
                     <div class="col-lg-1">
                         <button class="form-control Save" *ngIf="id==undefined" (click)="Save()">Save</button>
@@ -99,7 +97,5 @@
                     <div class="col-lg-1"></div>
                 </div><br>
             </div>
-        </div>
-    </div>
-    <div class="col-lg-1"></div>
+     
 </div>

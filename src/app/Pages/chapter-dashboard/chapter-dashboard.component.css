@@ -68,7 +68,7 @@
     padding:5px;
     border-radius: 5px;
     color:white;
-    background-color: #2F87CC;
+    background-color: #3247D5;
     border:none;
     width:100%;
 
@@ -78,7 +78,7 @@
     padding:5px;
     border-radius: 5px;
     color:white;
-    background-color: #2F87CC;
+    background-color: #3247D5;
     border:none;
     width:100%;
    
@@ -115,7 +115,7 @@
   font-weight: initial;
   text-shadow: initial;
   letter-spacing: 0.5px;
-  background-color:#2F87CC ;
+  background-color:#3247D5 ;
   color:white;
   border-radius: 5px;
   border:none;
@@ -132,13 +132,13 @@
   }  
   .Text{
     font-size: 18px;
+    color:#0C275A;
   }
 
   .NoResultShow{
     font-size: 16px;
   }
   .pdfimg{
-    width:100px;
     height: auto;
 }
 .photo{
@@ -160,4 +160,13 @@
   overflow-y: scroll;
   overflow-x: scroll;
 }
-  
+  .card{ 
+    width:100%;
+   background: #FFFFFF;
+   box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+   border-radius: 12px;
+  }
+  .head{
+    background-color:#02CFFF;
+    color:white;
+  }

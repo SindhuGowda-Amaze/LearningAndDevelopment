@@ -20,22 +20,29 @@
 
     border-radius: 5px;
     border:none;
-    background-color: #2f87cc;
+    background-color:#3247D5;
     color:white; 
     width:100%;
     font-size: 16px;
   }
-.button2{
+/* .button2{
     padding:5px;
     border-radius: 5px;
     color:white;
-    background-color: #2F87CC;
+    background-color:#3247D5;
     border:none;
     width:80%;
-    }
+    } */
 .head{
     font-size: 15px;
+    color:#0C275A;
 }
 .header{
     font-size: 12px;
+}
+.card{
+    width:100%;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
 }
