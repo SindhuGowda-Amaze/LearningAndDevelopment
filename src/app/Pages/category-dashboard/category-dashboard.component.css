@@ -34,7 +34,7 @@
   .Heading {
     padding-left: 15px;
     font-size: 20px;
-    color: black;
+
   }
   
   .header {
@@ -47,8 +47,8 @@
   }
   
   .head {
-    background-color: #dee2e6;
-    color: #404040;
+    background-color:#02CFFF;
+    color:white;
     font-family: "DIN Bold";
     padding: 3px;
   }
@@ -148,4 +148,13 @@
   .image {
     width: 70%;
     height: auto;
+  }
+  .card{
+    width:100%;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+  }
+  .Text{
+    color:#0C275A;
   }

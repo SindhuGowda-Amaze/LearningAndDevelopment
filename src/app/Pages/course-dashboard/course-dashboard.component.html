@@ -1,31 +1,30 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
             <div class="row">
                 <div class="col-lg-10">
-                    <p class="Heading">Course Dashboard</p>
+                    <p class="headings">Course Dashboard</p>
                 </div>
                 <div class="col-lg-2">
                     <p class="Text" style="float:right; padding-right:50px;">Count:{{count}}</p>
                 </div>
-            </div>
-            <hr class="HrLine">
-
+            </div><hr>
+          
+            <div class="card">
+                <br>
             <div class="row FilterClass ">
                 <div class="col-lg-1">
                     <p class="Text">Filter By </p>
                 </div>
                 <div class="col-lg-3">
-                    <select class="form-control"  id="Duration" (change)="getcategoryid($event)" >
-                        <option value="0">Select Category</option>
-                        <option *ngFor="let cat  of categorylist" value="{{cat.name}}">{{cat.name}}</option>
+                    <select  class="form-control FilterClass"  id="Duration" (change)="getcategoryid($event)" >
+                        <option class="FilterClass"  value="0">Select Category</option>
+                        <option class="FilterClass" *ngFor="let cat  of categorylist" value="{{cat.name}}">{{cat.name}}</option>
                     </select>
                 </div>
                 <div class="col-lg-5">
                         <input type="search" class="form-control" placeholder="Search for Course"  [(ngModel)]="search">
                 </div>
             </div><br>
+        </div> <br>
             <div class="row">
                 <div class="col-lg-9"></div>
                 <div class="col-lg-3">
@@ -34,10 +33,11 @@
             </div> <br>
 
 
+
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                            <table class="table table-bordered  | filter: search">
+                            <table class="table | filter: search">
                             <thead>
                                 <tr class="head">
                                     <th>Category Name</th>
@@ -71,7 +71,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="col-lg-1"></div>
+     
 </div>

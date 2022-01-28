@@ -1,18 +1,14 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
+<div class="container-fluid">      
+   
             <div class="row">
                 <div class="col-lg-2">
-                    <p class="course">Course Details </p>
+                    <p class="headings">Course Details </p>
                 </div>
                 <div class="col-lg-8"></div>
-                <!-- <div class="col-lg-2">
-                    <button class="button ">ADD</button>
-                </div> -->
             </div>
             <hr>
             <div class="card">
+                <br>
                 <div class="row head">
                     <div class="col-lg-2">
                         <p>Category</p>
@@ -34,7 +30,6 @@
                 <div class="row header">
                     <div class="col-lg-2">
                         <select class="form-control" name="categoryName" id="categoryName" [(ngModel)]="categoryName">
-                            <!-- <option value="Select">Select</option> -->
                             <option value="0">Select Category</option>
                             <option  *ngFor="let details of result" value="{{details.name}}">{{details.name}}</option>
                         </select>
@@ -99,7 +94,5 @@
                      <button class="form-control button1"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>   
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-1"></div>
+            </div>      
     </div>

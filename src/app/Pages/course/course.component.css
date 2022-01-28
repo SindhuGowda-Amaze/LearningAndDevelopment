@@ -35,7 +35,14 @@
     }
 .head{
     font-size: 15px;
+    color:#0C275A;
 }
 .header{
     font-size: 12px;
+}
+.card{
+    width:100%;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
 }

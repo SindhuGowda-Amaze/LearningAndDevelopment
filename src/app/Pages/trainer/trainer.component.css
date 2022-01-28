@@ -124,3 +124,21 @@
       width: 20%;
       height: auto;
   }
+  .card{  
+    width:100%;
+   background: #FFFFFF;
+   box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+   border-radius: 12px;
+  }
+
+  .newchange{
+background-color: #02CFFF;
+color:white;
+  }
+
+  .card{
+    background: #FFFFFF;
+    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+  }
+ 

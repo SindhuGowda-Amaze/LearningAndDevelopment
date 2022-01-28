@@ -4,9 +4,6 @@
 @import '~ng-wizard/themes/ng_wizard_theme_circles.min.css';
 @import '~ng-wizard/themes/ng_wizard_theme_dots.min.css';
 
-
-
-
 .container-fluid{
     font-family: 'Open Sans', sans-serif;
 }
@@ -40,4 +37,14 @@
   }
   input{
     font-size: 10px;
+  }
+  .headings{
+    color:#3247D5;
+    font-size: 20px;
+    margin-left: 20px;
+
+  }
+
+  .FilterClass{
+    color:#0C275A;
   }

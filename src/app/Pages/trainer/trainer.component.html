@@ -1,28 +1,25 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
             <div class="row">
                 <div class="col-lg-10">
-                    <p class="Heading">Trainer Dashboard</p>
+                    <p class="headings">Trainer Dashboard</p>
                 </div>
                 <div class="col-lg-2">
                     <p class="Text" style="float:right; padding-right:50px;">Count:1</p>
                 </div>
             </div>
             <hr class="HrLine">
-
+           <div class="card">
+               <br>
             <div class="row FilterClass ">
                 <div class="col-lg-1">
                     <p class="Text">Filter By</p>
                 </div>
                 <div class="col-lg-6">
-                    <!-- <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search"
-                        name="search"> -->
                         <input type="search" class="form-control" placeholder="Search for Name..">
                 </div>
                 <div class="col-lg-1"></div>
             </div><br>
+        </div> <br>
             <div class="row">
                 <div class="col-lg-9"></div>
                 <div class="col-lg-3">
@@ -35,9 +32,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- <table class="table" *ngIf="(vendordetails | filter: search).length > 0; else noResults"> -->
-                            <table class="table tablebordered">
+                            <table class="table">
                             <thead>
-                                <tr class="head">
+                                <tr class="newchange">
                                     <th>Name</th>
                                     <th>Phone Number</th>
                                     <th>Email Id</th>
@@ -51,11 +48,11 @@
                             </thead>
                             <tbody>    
                                 <tr class="head" *ngFor="let details of result">
-                                    <td>{{details.name}}</td>
-                                    <td>{{details.phoneNo}}</td>
-                                    <td>{{details.email}}</td>
-                                    <td>{{details.address}}</td>
-                                    <td>{{details.yearOfExperience}}</td>
+                                    <td style="color:#0C275A">{{details.name}}</td>
+                                    <td style="color:#0C275A">{{details.phoneNo}}</td>
+                                    <td style="color:#0C275A">{{details.email}}</td>
+                                    <td style="color:#0C275A">{{details.address}}</td>
+                                    <td style="color:#0C275A">{{details.yearOfExperience}}</td>
                                     <!-- <td><img class="pdfimg" src="../../../assets/Images/pdf.jpg"></td> -->
                                     <td>
                                         <img src="assets/pdf.jpg" *ngIf="details.nopdf=='0'" style="width: 30px;" (click)="OpenPdf(details.resumeUrl)">
@@ -74,7 +71,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="col-lg-1"></div>
+      
 </div>
