@@ -536,15 +536,7 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
-  // public GetCoursesByUserID(staffid:any,typeid:any) {
-
-  //   return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID="+staffid+'&TypeID='+typeid);
-  // }
-
-  public GetCoursesByUserID(staffid:any) {
-
-    return this.http.get<any[]>(this.baseURL + "/Master/GetCoursesByUserID?StaffID="+staffid);
-  }
+  
 
 
   //Prashant api service
