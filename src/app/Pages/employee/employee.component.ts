@@ -13,6 +13,7 @@ export class EmployeeComponent implements OnInit {
   constructor(private ActivatedRoute: ActivatedRoute, public LearningService: LearningService, public router: Router) { }
   stafflist: any;
   term: any;
+  search: any;
   ngOnInit(): void {
 
     // this.GetMyDetails();

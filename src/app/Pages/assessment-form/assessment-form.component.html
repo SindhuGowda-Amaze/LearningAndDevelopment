@@ -1,17 +1,17 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
+      
+        <div class="col-lg-12">
             <div class="row">
                 <div class="col-lg-2">
-                    <p class="course">Assessment Details </p>
+                    <p class="course Heading" >Assessment Details </p>
                 </div>
                 <div class="col-lg-8"></div>
                 <!-- <div class="col-lg-2">
                     <button class="button ">ADD</button>
                 </div> -->
             </div>
-            <hr>
+      
             <div class="card">
                 <div class="row head">
                     <div class="col-lg-2">
@@ -30,7 +30,7 @@
                         <p>Correct Answer</p>
                     </div>
                 </div>
-                <div class="row header">
+                <div class="row head">
                     <div class="col-lg-2">
                         <!-- <select class="form-control" name="" id=""> -->
                         <select class="form-control" name="id" id="id" [(ngModel)]="courseid" (change)="getcourseid($event)">
@@ -67,7 +67,7 @@
                         <br>
                         <!-- <textarea class="form-control" placeholder="Correct Answer.." [(ngModel)]="CorrectAnswer">
                         </textarea> -->
-                        <select class="form-control" name="CorrectAnswer" id="CorrectAnswer"
+                        <select class="form-control"  name="CorrectAnswer" id="CorrectAnswer"
                             (change)="getCorrectAnswer($event)" *ngIf="questionid==1" [(ngModel)]="CorrectAnswer">
                             <option value="CorrectAnswer">Select Options</option>
                             <option value="A">A</option>
@@ -77,7 +77,7 @@
                         </select>
                     </div>
                 </div> <br>
-                <div class="row">
+                <div class="row head">
                     <div class="col-lg-2" *ngIf="questionid==1">
                         <p>Option1</p>
                     </div>
@@ -101,7 +101,7 @@
                         <p>Weightage</p>
                     </div>
                 </div> -->
-                <div class="row">
+                <div class="row head">
                     <div class="col-lg-2" *ngIf="questionid==1">
                         <input class="form-control" placeholder="a" [(ngModel)]="Option1">
                     </div>
@@ -128,15 +128,14 @@
                 <div class="row">
                     <div class="col-lg-10"></div>
                     <div class="col-lg-1">
-                        <button class="form-control " (click)="cancel()">Cancel</button>
+                        <button class="form-control button1" (click)="cancel()">Cancel</button>
                     </div>
                     <div class="col-lg-1">
-                        <button class="form-control button1" (click)="Save()">Save</button>
+                        <button class="form-control actionbuttons" (click)="Save()">Save</button>
                         <!-- <button class="form-control button1"  *ngIf="id==null || id==undefined" (click)="Save()">Save</button>    
                      <button class="form-control button1"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>    -->
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-1"></div>
     </div>

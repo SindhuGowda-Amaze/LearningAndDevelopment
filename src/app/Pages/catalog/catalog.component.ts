@@ -93,7 +93,8 @@ export class CatalogComponent implements OnInit {
           "status": 'Manager Pending',
           "employeeName": name,
           "phoneNo": mobile,
-          "email": emailID
+          "email": emailID,
+          "type":'Request to Manager'
         };
         this.LearningService.InsertEnroll(json).subscribe(
           data => {
@@ -264,10 +265,6 @@ export class CatalogComponent implements OnInit {
   
 
   }
-
-
-
-
 }
 function Save() {
   throw new Error('Function not implemented.');

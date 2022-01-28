@@ -38,6 +38,7 @@
   input{
     font-size: 10px;
   }
+<<<<<<< HEAD
   .headings{
     color:#3247D5;
     font-size: 20px;
@@ -47,4 +48,25 @@
 
   .FilterClass{
     color:#0C275A;
+=======
+
+  .actionbuttons{
+    width: 100%;
+    border: none;
+    background: #3247D5;
+    text-align: center;
+    border-radius: 6px;
+    color: white;
+    margin-top: 6px;
+    padding: 5px;
+  }
+  .addbtn{
+    padding:5px;
+    border-radius: 5px;
+    color:white;
+    background-color: #3247D5;
+    border:none;
+    width:92%;
+
+>>>>>>> 65cf911d4af29069ea438ddaefe1733978678554
   }

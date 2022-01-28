@@ -15,9 +15,7 @@
     width:100%;
     vertical-align: middle;
   }
-  td{
-    background-color: white
-  }
+ 
   /* /* .th{
     background-color: #e4e5e6;
     color:#404040;
@@ -29,10 +27,11 @@
 
   } */
   .Heading{
-  padding-left: 15px;
-  font-size: 20px;
-  color:black;
-  }
+    padding-left: 15px;
+    font-size: 20px;
+    color: #3247D5; font-family: 'Poppins';
+    }
+    
   .header{
     background-color: #dee2e6;
     color:#404040;
@@ -41,6 +40,22 @@
    padding:5px;
 
   }
+  .card{
+   padding: 20px;
+    width:100%;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+ }
+
+ td{
+  background-color: white
+}
+.table th {
+  background-color: #02cfff !important;
+  color: #ffffff;
+}
+ 
   .head{
   background-color: #dee2e6;
   color:#404040;
@@ -68,9 +83,9 @@
     padding:5px;
     border-radius: 5px;
     color:white;
-    background-color: #2F87CC;
+    background-color: #3247D5;
     border:none;
-    width:100%;
+    width:92%;
 
   }
 

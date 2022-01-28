@@ -7,7 +7,7 @@
                     style="width:500px; height:300px; margin-left:20px;">
             </div>
             <div class="col-lg-12" *ngIf="show==2">
-                <video controls style="height: 80%; width: 100%;" >
+                <video controls style="height: 80%; width: 100%;">
                     <source src="{{Attachmentlist[0].photo}}" type="video/mp4">
                     <source src="{{Attachmentlist[0].photo}}" type="video/ogg">
                     Your browser does not support the video tag.
@@ -20,25 +20,29 @@
             <div class="col-lg-12" *ngIf="show==5" style="width: 70%; height: 80%;margin-left: 175px;"><br><br>
                 <h5>{{noattachments}}</h5> <br><br>
             </div>
-        </div><br><br>
+        </div><br><hr>
         <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <p style="font-size: 25px; padding-top: 20px;">{{coursename}}</p>
+            <div class="col-lg-8" style="border-radius: 20px;">
+                <p style="font-size: 25px; padding-top: 20px;"><u>{{coursename}}</u></p>
             </div>
             <div class="col-lg-4" style="text-align: right; ">
                 <br>
-                <img src="assets/Images/Video_lcon.png" *ngIf="showvideo==1" alt="video_icon" style="width:10%;"
-                    (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/pdf.jpg" *ngIf="showPdf==1" alt="video_icon" style="width:10%;"
-                    (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/Images/image.png" *ngIf="showimage==1" alt="video_icon" style="width:10%;"
-                    (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/Images/files.png" *ngIf="showPpt==1" alt="video_icon" style="width:10%;"
-                    (click)="PreviewPPT()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/Images/word.png" *ngIf="showDocument==1" alt="video_icon" style="width:10%;"
-                    (click)="PreviewMSword()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div style="width:50%;background-color:whitesmoke;border-radius: 20px;float: right;">
+
+                    <img src="assets/Images/Video_lcon.png" *ngIf="showvideo==1" alt="video_icon" style="width:20%;padding-top: 10px;"
+                        (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="assets/pdf.jpg" *ngIf="showPdf==1" alt="video_icon" style="width:20%;padding-top: 10px;"
+                        (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="assets/Images/image.png" *ngIf="showimage==1" alt="video_icon" style="width:20%;padding-top: 10px;"
+                        (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="assets/Images/files.png" *ngIf="showPpt==1" alt="video_icon" style="width:10%;padding-top: 10px;"
+                        (click)="PreviewPPT()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="assets/Images/word.png" *ngIf="showDocument==1" alt="video_icon" style="width:10%;padding-top: 10px;"
+                        (click)="PreviewMSword()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                </div>
             </div>
-        </div><br>
+        </div><hr>
         <div class="row" style="margin-left: 15px;">
             <div class="col-lg-12">
                 <h3>{{chaptername}}</h3>
@@ -67,8 +71,8 @@
                     </div>
                     <div class="col-lg-4">
                         <!-- <button routerLink="/MyCourseDashboard" class="BackBTN">Back</button> -->
-                        <img src="assets/Images/back-arrow.png" style="width: 25%; float: right; cursor: pointer;" 
-                        alt="BackIMG" routerLink="/MyCourseDashboard">
+                        <img src="assets/Images/back-arrow.png" style="width: 25%; float: right; cursor: pointer;"
+                            alt="BackIMG" routerLink="/MyCourseDashboard">
                     </div>
                 </div>
                 <hr class="HRline">
@@ -82,7 +86,8 @@
                     </h5>
 
                     <p style="display: inline;">
-                        <label style="margin-left: 350px;" *ngIf="details.obtainedMarks!=null">{{details.obtainedMarks/details.totalmarks
+                        <label style="margin-left: 350px;"
+                            *ngIf="details.obtainedMarks!=null">{{details.obtainedMarks/details.totalmarks
                             *100 | number : '1.2-2'}} %</label>
                         <button Style="border-radius:5px; margin-left: 350px;" class="btn btn-sm btn-primary"
                             *ngIf="details.teststatus=='nottaken'"
