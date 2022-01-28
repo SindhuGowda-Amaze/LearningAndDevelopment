@@ -37,7 +37,8 @@
   padding: 0px;
   width: 110%;
   font-size: 12px;
-  background-color: darkgrey;
+  background-color: #3247D5; 
+  color: white;
   margin-left: 12px;
 }
 
@@ -562,12 +563,7 @@ hr.new4 {
   color: white;
 }
 
-.FilterBox {
-  width: 95%;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-}
+
 .FilterBox1 {
   width: auto;
   margin-left: 30px;
@@ -619,3 +615,30 @@ hr.new4 {
   margin-left: 45px;
   margin-top: -30px;
 }
+ .Heading{
+  padding-left: 15px;
+  font-size: 20px;
+  color: #3247D5; 
+  font-family: 'Poppins';
+  }
+  .uppercard{
+   padding: 20px;
+    width:100%;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+ }
+
+ .FilterBox {
+  width: 95%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+
+}
+
+.filterboxtxt{
+  background-color:  #3247D5; 
+  color: white;
+}
+ 

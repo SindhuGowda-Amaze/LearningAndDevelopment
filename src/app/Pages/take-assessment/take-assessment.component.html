@@ -68,134 +68,87 @@
                 <p>Total no of Question: {{count}}<br>Total Marks: {{totalmarks}}</p>
             </div>
         </div>
-        <!-- <div class="row"> -->
-            <!-- <div class="col-lg-12"> -->
-                <table>
+        <div class="row">
+            <div class="col-lg-12">
+                <table style="width:100%;height:auto;">
                     <tr>
-                        <th style="width:10px;text-align: center;background-color: white;color:black">Question Num.
+                        <th style="width:10px;background-color: white;color:black">Question Num.
                         </th>
-                        <th style="width:500px;text-align: center;background-color: white;color:black">Question
+                        <th style="width:1000px;text-align: center;background-color: white;color:black">Question
                         </th>
-                    </tr>
-                    <tr *ngFor="let list of questionList;index as i">
-                        <td style="width:10px;text-align: center;background-color: white;color:black">
-                            </td>
-                        <td style="width:10px;background-color: white;color:black">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <b>
-                                        {{i+1}}<div [innerHtml]="list.question"></div>
-                                    </b>
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-
-                            <div class="row">
-                                <div class="col-lg-1">
-                                </div>
-                                <div class="col-lg-5">
-                                    <input type="radio" value="{{list.option1}}" name="{{list.option1}}"
-                                        id="{{list.option1}}" [(ngModel)]='list.userAnswer'>&nbsp;
-                                    <div [innerHtml]="list.option1"></div>
-                                </div>
-                                <div class="col-lg-5">
-                                    <input type="radio" value="{{list.option2}}" name="{{list.option2}}"
-                                        id="{{list.option2}}" [(ngModel)]='list.userAnswer'>
-                                    &nbsp;
-                                    <div [innerHtml]="list.option2"></div>
-                                </div>
-                                <div class="col-lg-1">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="row">
-                                        <div class="col-lg-1">
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <input type="radio" value="{{list.option3}}" name="{{list.option3}}"
-                                                id="{{list.option3}}" [(ngModel)]='list.userAnswer'>&nbsp;
-                                            <div [innerHtml]="list.option3"></div>
-
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <input type="radio" value="{{list.option4}}" name="{{list.option4}}"
-                                                id="{{list.option4}}" [(ngModel)]='list.userAnswer'>&nbsp;
-                                            <div [innerHtml]="list.option4"></div>
-
-                                        </div>
-                                        <div class="col-lg-1">
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-
-
-                <!-- <div class="row" > -->
-                    <!-- <div class="row" *ngFor="let list of questionList;index as i">
-                        <div class="col-lg-1">
-                        </div>
-                        <div class="col-lg-1">
-                            {{i+1}}
-                        </div>
-                        <div class="col-lg-10">
-                            <b>
-                                <div [innerHtml]="list.question"></div>
-                            </b><br>
-                            <div class="row" *ngFor="let list of questionList">
-                                <div class="col-lg-1">
-                                </div>
-                                <div class="col-lg-5">
-                                    <input type="radio" value="{{list.option1}}" name="{{list.option1}}"
-                                        id="{{list.option1}}" [(ngModel)]='list.userAnswer'>&nbsp;
-                                    <div [innerHtml]="list.option1"></div>
-                                </div>
-                                <div class="col-lg-5">
-                                    <input type="radio" value="{{list.option2}}" name="{{list.option2}}"
-                                        id="{{list.option2}}" [(ngModel)]='list.userAnswer'>
-                                    &nbsp;
-                                    <div [innerHtml]="list.option2"></div>
-                                </div>
-                                <div class="col-lg-1">
-                                </div>
-                            </div>
-                            <div class="row" *ngFor="let list of questionList">
-                                <div class="col-lg-12">
-                                    <div class="row">
-                                        <div class="col-lg-1">
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <input type="radio" value="{{list.option3}}" name="{{list.option3}}"
-                                                id="{{list.option3}}" [(ngModel)]='list.userAnswer'>&nbsp;
-                                            <div [innerHtml]="list.option3"></div>
-        
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <input type="radio" value="{{list.option4}}" name="{{list.option4}}"
-                                                id="{{list.option4}}" [(ngModel)]='list.userAnswer'>&nbsp;
-                                            <div [innerHtml]="list.option4"></div>
-        
-                                        </div>
-                                        <div class="col-lg-1">
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div> -->
+                    </tr> <br>
                     <br>
-                    
-                </div>
-
+                        <tr *ngFor="let list of questionList;index as i">
+                            <td style="width:10px;text-align: center;background-color: white;color:black">
+                                {{i+1}}</td>
+                            <td style="width:10px;background-color: white;color:black">
+                                <b>
+                                    <div [innerHtml]="list.question"></div>
+                                </b>
+                                <div class="row">
+                                    <div class="col-lg-1">
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <input type="radio" value="{{list.option1}}" name="{{list.option1}}"
+                                            id="{{list.option1}}" [(ngModel)]='list.userAnswer'>&nbsp;
+                                        <div [innerHtml]="list.option1"></div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <input type="radio" value="{{list.option2}}" name="{{list.option2}}"
+                                            id="{{list.option2}}" [(ngModel)]='list.userAnswer'>
+                                        &nbsp;
+                                        <div [innerHtml]="list.option2"></div>
+                                    </div>
+                                    <div class="col-lg-1">
+                                    </div>
+                                    <br>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-1">
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <input type="radio" value="{{list.option3}}" name="{{list.option3}}"
+                                                    id="{{list.option3}}" [(ngModel)]='list.userAnswer'>&nbsp;
+                                                <div [innerHtml]="list.option3"></div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <input type="radio" value="{{list.option4}}" name="{{list.option4}}"
+                                                    id="{{list.option4}}" [(ngModel)]='list.userAnswer'>&nbsp;
+                                                <div [innerHtml]="list.option4"></div>
+                                            </div>
+                                            <div class="col-lg-1">
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                   
+                </table>
             </div>
-        <!-- </div> -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <br>
         <div class="row" *ngIf="show=='1' && startTest=='1'">

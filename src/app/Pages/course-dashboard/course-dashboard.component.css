@@ -20,17 +20,6 @@
 td {
   background-color: white
 }
-
-/* /* .th{
-    background-color: #e4e5e6;
-    color:#404040;
-    font-family: "DIN Bold";
-  } */
-/* .table, th, td {
-  border: 1px solid lightgray;
-   border-collapse: collapse; 
-
-  } */
 .Heading {
   padding-left: 15px;
   font-size: 20px;
@@ -47,8 +36,8 @@ td {
 }
 
 .head {
-  background-color: #dee2e6;
-  color: #404040;
+  background-color: #02CFFF;
+  color:white;
   font-family: "DIN Bold";
   padding: 3px;
 }
@@ -121,7 +110,7 @@ li a:hover {
   font-weight: initial;
   text-shadow: initial;
   letter-spacing: 0.5px;
-  background-color: #2F87CC;
+  background-color: #3247D5;
   color: white;
   border-radius: 5px;
   border: none;
@@ -139,6 +128,7 @@ li a:hover {
 
 .Text {
   font-size: 18px;
+  color:#0C275A;
 }
 
 .NoResultShow {
@@ -148,4 +138,10 @@ li a:hover {
 .image {
   width: 70%;
   height: auto;
+}
+.card{
+  width:100%;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
 }

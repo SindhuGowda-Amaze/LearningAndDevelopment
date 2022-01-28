@@ -536,8 +536,6 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
-  
-
 
   //Prashant api service
   public GetTestResponse() {

@@ -1,52 +1,23 @@
-<div class="container-fluid" *ngIf="temp=='1'">
+<div class="container-fluid" *ngIf="temp=='1'" style="background: #3247D5; height:70px;">
+
     <div class="row">
-        <div class="col-lg-1">
-            <img src="/assets/Images/89_89_L.png" class="logo" alt="logo">
+        <div class="col-lg-4">
+            <img src="assets/Images/Logo_digiOffice_White.png" class="logo" alt="logo" routerLink="/CompanyDashboard">
         </div>
-
-        <div class="col-lg-1">
-            <h6 class="menutext"  *ngIf="roleid=='1' || roleid==2 " routerLink="/AdminDashboard">Dashboard</h6>
-            <h6 class="menutext"  *ngIf="roleid==4" routerLink="/ChapterDashboard">Chapter</h6>
-            <h6 class="menutext"  *ngIf="roleid==3" routerLink="/ManagerDashboard">Dashboard</h6>
-        </div>
-        
-        <div class="col-lg-1">
-            <h6 class="menutext"  *ngIf="roleid==4" routerLink="/Assessmentdashboard">Assessments</h6>
-            <h6 class=" dropdown-toggle menutext" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                aria-expanded="false" *ngIf="roleid==1">Set Up</h6>
-            <ul class="dropdown-menu">
-                <li class="dropdown-item"><a class="menuitem" tabindex="-1" routerLink="/CategoryDashboard">Category</a>
-                </li>
-                <li class="dropdown-item"><a class="menuitem" tabindex="-1" routerLink="/CourseDashboard">Course</a>
-                </li>
-                <li class="dropdown-item"><a class="menuitem" tabindex="-1" routerLink="/ChapterDashboard">Chapter</a>
-                </li>
-                <li class="dropdown-item"><a class="menuitem" routerLink="/Trainer">Trainer</a></li>
-                <li class="dropdown-item"><a class="menuitem" routerLink="/TrainerCourseMapping">Assign Trainer</a></li>
-                <li class="dropdown-item"><a class="menuitem" routerLink="/Employee">Employee</a></li>
-
-            </ul>
-            <h6 class="menutext" *ngIf="roleid==2 || roleid==3" routerLink="/MyCourseDashboard">My Course</h6>
-        </div>
-        <!-- <div class="col-lg-1">
-           
-        </div> -->
-        <div class="col-lg-1">
-            <h6 class="menutext"  *ngIf="roleid==4" routerLink="/AttendenceDetails">Attendence</h6>
-            <h6 class="menutext" *ngIf="roleid==2 || roleid==3" routerLink="/Catalog">Catalog</h6>
+        <div class="col-lg-5"></div>
+       
+        <div class="col-lg-1" style="margin-left: 100px;">
+            <img src="assets/Images/noti.png" style="    width: 30%;
+            margin-top: 15px;" >
+            <img src="assets/Images/Logo_out.1.png" class="logout" (click)="logout()" class="logout">
         </div>
         <div class="col-lg-1">
-            <h6 class="menutext" *ngIf="roleid==2" routerLink="/CourseCertificate">Certificate</h6>
-            <h6 class="menutext" *ngIf="roleid==3" routerLink="/AssignCourseToEmployee">Assign Course</h6>
-        </div>
-        <div class="col-lg-1">
-            <h6 class="menutext"  *ngIf="roleid==3" routerLink="/Staffresult">Assessment Results</h6>
-        </div>
-        <div class="col-lg-3"></div>
-        <div class="col-lg-1"> Welcome {{UserName}} ({{role}})</div> 
-        <div class="col-lg-1">
-            <!-- <img src="assets/Images/notification.png" class="notify" routerLink="/Notification">&nbsp; &nbsp;&nbsp; -->
-            <img src="assets/Images/logout.png" class="logout" (click)="logout()">&nbsp;
+            <img src="assets/Images/usr.png" style="    width: 30%;
+            margin-top: 15px;">
+            <p class="user">Hi {{UserName}}</p>
+            <!-- <p *ngIf="roleid=='6'">welcome {{UserName}},Employee</p>
+            <p *ngIf="roleid=='2'">welcome {{UserName}},Manager</p>
+            <p *ngIf="roleid=='9'">welcome {{UserName}},HR</p> -->
         </div>
     </div>
 </div>

@@ -41,7 +41,7 @@ export class AssignCourseToEmployeeComponent implements OnInit {
   public GetStaff(){
     this.LearningService.GetMyDetails().subscribe(data => {
       debugger
-      this.stafflist = data.filter(x => x.id == this.userid);;
+      this.stafflist = data
     });
   }
 

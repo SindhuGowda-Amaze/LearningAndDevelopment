@@ -1,17 +1,15 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
             <div class="row">
                 <div class="col-lg-10">
-                    <p class="Heading">Trainer and Course</p>
+                    <p class="headings">Trainer and Course</p>
                 </div>
                 <div class="col-lg-2">
                     <p class="Text" style="float:right; padding-right:50px;">Count: {{count}}</p>
                 </div>
             </div>
             <hr class="HrLine">
-
+          <div class="card">
+              <br>
             <div class="row FilterClass ">
                 <div class="col-lg-1">
                     <p class="Text">Filter By</p>
@@ -23,10 +21,11 @@
                 </div>
                 <div class="col-lg-1"></div>
             </div><br>
+        </div> <br>
             <div class="row">
                 <div class="col-lg-9"></div>
                 <div class="col-lg-3">
-                    <button class=button routerLink="/TrainerCourseMappingForm">Add</button>
+                    <button class="button" routerLink="/TrainerCourseMappingForm">Add</button>
                 </div>
             </div> <br>
 
@@ -35,7 +34,6 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <table class="table" *ngIf="(Trainerdetails | filter: search).length > 0; else noResults ">
-                            <!-- <table class="table table-bordered"> -->
                             <thead>
                                 <tr class="head">
                                     <th>Trainer Name</th>
@@ -48,49 +46,17 @@
                                     <th>Actions</th>
                                 </tr>
                                 <tr *ngFor="let details of Trainerdetails">
-                                   <td>{{details.trainerName}}</td>   
-                                    <td>{{details.courseName}}</td>   
-                                    <td>{{details.email}}</td>   
-                                    <td>{{details.startDate|date}}</td>   
-                                    <td>{{details.endDate|date}}</td>   
-                                    <td>{{details.batchName}}</td>   
-                                    <td>{{details.noOfStudentsEnrolled}}</td>   
-                                    <td><button class="button1" (click)="edit(details.id)">Edit</button> <br> <br>
+                                    <td style="color:#0C275A">{{details.trainerName}}</td>   
+                                    <td style="color:#0C275A">{{details.courseName}}</td>   
+                                    <td style="color:#0C275A">{{details.email}}</td>   
+                                    <td style="color:#0C275A">{{details.startDate|date}}</td>   
+                                    <td style="color:#0C275A">{{details.endDate|date}}</td>   
+                                    <td style="color:#0C275A">{{details.batchName}}</td>   
+                                    <td style="color:#0C275A">{{details.noOfStudentsEnrolled}}</td>   
+                                    <td style="color:#0C275A"><button class="button1" (click)="edit(details.id)">Edit</button> <br> <br>
                                         <button class="button2" (click)="Ondelete(details.id)" >Delete</button>
                                     </td>     
                                 </tr> 
-                                <!-- <tr *ngFor="let vendor of result|filter:search">
-                                    <td><img style="width: 100px;" src="{{vendor.vendor_Logo}}"></td>
-                                    <td>{{result.vendor_Name}}</td>
-                                    <td>{{result.phone_Number}}</td>
-                                    <td>{{result.email_ID}}</td>
-                                    <td>{{result.address}}</td>
-                                    <td><button class="button1" (click)="edit(vendor.id)">Edit</button> <br> <br>
-                                        <button class="button2" (click)="Ondelete(vendor.id)">Delete</button>
-                                    </td>
-                                    <td>Pavan</td>
-                                    <td>Active listening and Customer Satisfaction</td>
-                                    <td>pavan123@gmail.com</td>
-                                    <td>11-01-2022</td>
-                                    <td>11-03-2022</td>
-                                    <td>Batch1</td>
-                                    <td>20</td>
-                                    <td><button class="button1" routerLink="/TrainerCourseMappingForm">Edit</button> <br> <br>
-                                        <button class="button2" >Delete</button>
-                                    </td>
-                                 </tr> -->
-                                <!-- <tr class="head">
-                                    <td>Pavan</td>
-                                    <td>Active listening and Customer Satisfaction</td>
-                                    <td>pavan123@gmail.com</td>
-                                    <td>11-01-2022</td>
-                                    <td>11-03-2022</td>
-                                    <td>Batch1</td>
-                                    <td>20</td>
-                                    <td><button class="button1" routerLink="/TrainerCourseMappingForm">Edit</button> <br> <br>
-                                        <button class="button2" >Delete</button>
-                                    </td>
-                                </tr> -->
                             </thead>
                         </table>
                         <ng-template #noResults>
@@ -99,7 +65,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="col-lg-1"></div>
+     
 </div>
