@@ -1,11 +1,10 @@
 
-.card{
-    background-color: white;
-  }
-  
-  .card-padding{
-    padding:1%;
-  }
+.card {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+}
   .table{
   border-radius: 5px;
   }
