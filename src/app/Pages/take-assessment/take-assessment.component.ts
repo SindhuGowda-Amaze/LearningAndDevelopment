@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import { LearningService } from 'src/app/learning.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
-
+import * as ClassicEditor from '@ckeditor/ckeditor5-angular';
 //import Swal from 'sweetalert2';
 
 
@@ -13,7 +13,7 @@ import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
   styleUrls: ['./take-assessment.component.css']
 })
 export class TakeAssessmentComponent implements OnInit {
-
+  public Editor = ClassicEditor;
   url: any;
   userid: any;
   categoryid: any;
