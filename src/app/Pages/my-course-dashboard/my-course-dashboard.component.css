@@ -149,13 +149,17 @@ div {
 }
 .tagline{
   background-color: 1px solid silver; ;
-  color: 1px solid silver;
+  color: 1px solid black;
   height: 4px;
 }
 
 .attendance-day {
   font-size: 14px;
   text-transform: uppercase;
+}
+
+.tag{
+  height:1px solid silver;
 }
 
 .card1 {
