@@ -3,7 +3,6 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  
 }
 
 li {
@@ -20,62 +19,62 @@ li a {
 
 li a:hover {
   text-decoration: 3px solid rgb(72, 83, 238) underline;
-  color:   rgb(72, 83, 238)
+  color: rgb(72, 83, 238);
 }
-.card{
+.card {
   background-color: white;
 }
 
-.card-padding{
-  padding:1%;
+.card-padding {
+  padding: 1%;
 }
-.table{
-border-radius: 5px;
-}
-
-.Heading{
-padding-left: 15px;
-font-size: 14px;
-font-weight: bold;
-color: black;
-text-decoration-line: underline;
+.table {
+  border-radius: 5px;
 }
 
-.button{
-text-transform: uppercase;
-font-weight: initial;
-text-shadow: initial;
-letter-spacing: 0.5px;
-background-color:#2F87CC ;
-color:white;
-border-radius: 5px;
-border:none;
-padding: 5px;
-width:40%;
-float: right;
-margin-right: 15px;
-font-size: 15px;
-font-weight: bold;
+.Heading {
+  padding-left: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  text-decoration-line: underline;
+}
+
+.button {
+  text-transform: uppercase;
+  font-weight: initial;
+  text-shadow: initial;
+  letter-spacing: 0.5px;
+  background-color: #3247d5;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  width: 40%;
+  float: right;
+  margin-right: 15px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .edit {
   width: 85%;
   border: none;
-  background-color: #2F87CC ;
+  background-color: #2f87cc;
   text-align: center;
   border-radius: 16px;
   color: white;
   margin-top: 6px;
 }
 
-.FilterClass{
+.FilterClass {
   padding-left: 15px;
   color: black;
   font-size: 15px;
   font-weight: bold;
 }
 
-.View{
+.View {
   color: black;
   font-size: 15px;
   font-weight: bold;
@@ -87,45 +86,45 @@ font-weight: bold;
   vertical-align: middle;
   background-color: white;
 }
-td{
-  background-color: white
+td {
+  background-color: white;
 }
 .table th {
   background-color: #02cfff !important;
   color: #ffffff;
 }
 
-.HrLine{
+.HrLine {
   margin-left: 15px;
   margin-right: 15px;
 }
-.form-control{
+.form-control {
   font-size: 15px;
   font-weight: bold;
 }
-.newFont{
+.newFont {
   font-size: 15px;
   font-weight: bold;
 }
 
-.img{
+.img {
   width: 25px;
   height: 10%;
 }
-.img:hover{
-    background-color: chartreuse;
-    color: white;
+.img:hover {
+  background-color: chartreuse;
+  color: white;
 }
-.imgcancel{
+.imgcancel {
   width: 25px;
   height: 10%;
 }
-.imgcancel:hover{
+.imgcancel:hover {
   background-color: red;
   color: white;
 }
 
-.SelectData{
+.SelectData {
   text-align: center;
 }
 .switch {
@@ -135,7 +134,7 @@ td{
   height: 27px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -149,8 +148,8 @@ td{
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -161,16 +160,16 @@ td{
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -187,44 +186,44 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-.card{
-   padding: 20px;
-  width:100%;
-  background: #FFFFFF;
+.card {
+  padding: 20px;
+  width: 100%;
+  background: #ffffff;
   box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
   border-radius: 12px;
 }
-.table, th, td {
+.table,
+th,
+td {
   border: 1px solid lightgray;
-   border-collapse: collapse; 
-  }
-  .Heading{
-    padding-left: 15px;
-    font-size: 20px;
-    color: #3247D5; 
-    font-family: 'Poppins';
-    }
-  .head{
-    font-family: 'Poppins';
-  }
-  .FilterClass{
+  border-collapse: collapse;
+}
+.Heading {
   padding-left: 15px;
-  }
-  .count{
-  
+  font-size: 20px;
+  color: #3247d5;
+  font-family: "Poppins";
+}
+.head {
+  font-family: "Poppins";
+}
+.FilterClass {
+  padding-left: 15px;
+}
+.count {
   padding-right: 10px;
-  color: #3247D5; 
-  font-family: 'Poppins';
-  }
+  color: #3247d5;
+  font-family: "Poppins";
+}
 
-  .edit{
-    width: 50%;
-    border: none;
-    background: #3247D5;
-    text-align: center;
-    border-radius: 6px;
-    color: white;
-    margin-top: 6px;
-    padding: 5px;
-  }
-
+.edit {
+  width: 50%;
+  border: none;
+  background: #3247d5;
+  text-align: center;
+  border-radius: 6px;
+  color: white;
+  margin-top: 6px;
+  padding: 5px;
+}
