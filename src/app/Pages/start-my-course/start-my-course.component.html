@@ -20,7 +20,8 @@
             <div class="col-lg-12" *ngIf="show==5" style="width: 70%; height: 80%;margin-left: 175px;"><br><br>
                 <h5>{{noattachments}}</h5> <br><br>
             </div>
-        </div><br><hr>
+        </div><br>
+        <hr>
         <div class="row" style="margin-left: 15px;">
             <div class="col-lg-8" style="border-radius: 20px;">
                 <p style="font-size: 25px; padding-top: 20px; font-family: Poppins;
@@ -30,20 +31,25 @@
                 <br>
                 <div style="width:50%;background-color:whitesmoke;border-radius: 20px;float: right;">
 
-                    <img src="assets/Images/Video_lcon.png" *ngIf="showvideo==1" alt="video_icon" style="width:20%;padding-top: 10px;"
+                    <img src="assets/Images/Video_lcon.png" *ngIf="showvideo==1" alt="video_icon"
+                        style="width:20%;padding-top: 10px;"
                         (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <img src="assets/pdf.jpg" *ngIf="showPdf==1" alt="video_icon" style="width:20%;padding-top: 10px;"
                         (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="assets/Images/image.png" *ngIf="showimage==1" alt="video_icon" style="width:20%;padding-top: 10px;"
+                    <img src="assets/Images/image.png" *ngIf="showimage==1" alt="video_icon"
+                        style="width:20%;padding-top: 10px;"
                         (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="assets/Images/files.png" *ngIf="showPpt==1" alt="video_icon" style="width:10%;padding-top: 10px;"
+                    <img src="assets/Images/files.png" *ngIf="showPpt==1" alt="video_icon"
+                        style="width:10%;padding-top: 10px;"
                         (click)="PreviewPPT()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="assets/Images/word.png" *ngIf="showDocument==1" alt="video_icon" style="width:10%;padding-top: 10px;"
+                    <img src="assets/Images/word.png" *ngIf="showDocument==1" alt="video_icon"
+                        style="width:10%;padding-top: 10px;"
                         (click)="PreviewMSword()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                 </div>
             </div>
-        </div><hr>
+        </div>
+        <hr>
         <div class="row" style="margin-left: 15px;">
             <div class="col-lg-12">
                 <h3 style="color: #0C275A; font-family: Poppins;font-style: normal;
@@ -81,7 +87,8 @@
                 <hr class="HRline">
                 <br>
                 <div *ngFor="let details of coursedetails">
-                    <h5 (click)="getcoursedetails(details)" style="color: #0C275A; font-family: Poppins; font-weight: 600;">
+                    <h5 (click)="getcoursedetails(details)"
+                        style="color: #0C275A; font-family: Poppins; font-weight: 600;">
                         <!-- <img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;"> -->
                         <!-- <img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 7%;"> -->
                         <input type="radio" id="details.id" name="details.id">
@@ -93,22 +100,20 @@
                             *ngIf="details.obtainedMarks!=null">{{details.obtainedMarks/details.totalmarks
                             *100 | number : '1.2-2'}} %</label>
                         <button Style="border-radius: 5px;margin-left: 285px; background-color: #3247D5;
-                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;" 
-                        class="btn btn-sm btn-primary"
-                            *ngIf="details.teststatus=='nottaken'"
+                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;"
+                            class="btn btn-sm btn-primary" *ngIf="details.teststatus=='nottaken'"
                             [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id"> Take
                             Assessment</button><br>
-                        <button Style="border-radius: 5px;margin-left: 285px; background-color: #3247D5;
-                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;" 
-                        class="btn btn-sm btn-danger"
-                            *ngIf="details.teststatus=='Failed'"
+                        <button Style="border-radius: 5px;margin-left: 285px; 
+                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;"
+                            class="btn btn-sm btn-danger" *ngIf="details.teststatus=='Failed'"
                             [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id">&#10006;
                             Retake
                             Assessment</button>
-                        <button Style="border-radius: 5px;margin-left: 285px; background-color: #3247D5;
-                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;" 
-                        class="btn btn-sm btn-success"
-                            *ngIf="details.teststatus=='Passed'" id="id" name="id">&#10003;Assessment Passed
+                        <button Style="border-radius: 5px;margin-left: 285px; 
+                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;"
+                            class="btn btn-sm btn-success" *ngIf="details.teststatus=='Passed'" id="id"
+                            name="id">&#10003;Assessment Passed
                         </button><br>
                         <!-- <button Style="border-radius:5px; margin-left: 350px;" class="BackBTN"
                         [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id">Take
