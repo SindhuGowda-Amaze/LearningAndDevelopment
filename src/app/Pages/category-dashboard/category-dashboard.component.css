@@ -34,7 +34,7 @@
   .Heading {
     padding-left: 15px;
     font-size: 20px;
-    color: black;
+
   }
   
   .header {
@@ -47,8 +47,8 @@
   }
   
   .head {
-    background-color: #dee2e6;
-    color: #404040;
+    background-color:#02CFFF;
+    color:white;
     font-family: "DIN Bold";
     padding: 3px;
   }
@@ -64,8 +64,7 @@
   }
   
   .table {
-    border-radius: 5px;
-  
+    border-radius: 5px; 
   }
   
   
@@ -73,7 +72,7 @@
     padding: 5px;
     border-radius: 5px;
     color: white;
-    background-color: #2F87CC;
+    background-color: #3247D5;
     border: none;
     width: 100%;
   
@@ -83,7 +82,7 @@
     padding: 5px;
     border-radius: 5px;
     color: white;
-    background-color: #2F87CC;
+    background-color: #3247D5;
     border: none;
     width: 100%;
   
@@ -121,7 +120,7 @@
     font-weight: initial;
     text-shadow: initial;
     letter-spacing: 0.5px;
-    background-color: #2F87CC;
+    background-color: #3247D5;
     color: white;
     border-radius: 5px;
     border: none;
@@ -148,4 +147,23 @@
   .image {
     width: 70%;
     height: auto;
+  }
+  .card{
+    width:100%;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+  }
+  .Text{
+    color:#0C275A;
+  }
+  .actionbuttons {
+    width: 50%;
+    border: none;
+    background: #3247D5;
+    text-align: center;
+    border-radius: 6px;
+    color: white;
+    margin-top: 6px;
+    padding: 5px;
   }

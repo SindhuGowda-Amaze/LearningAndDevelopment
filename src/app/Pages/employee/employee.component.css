@@ -87,6 +87,13 @@ font-weight: bold;
   vertical-align: middle;
   background-color: white;
 }
+td{
+  background-color: white
+}
+.table th {
+  background-color: #02cfff !important;
+  color: #ffffff;
+}
 
 .HrLine{
   margin-left: 15px;
@@ -180,3 +187,44 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+.card{
+   padding: 20px;
+  width:100%;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+}
+.table, th, td {
+  border: 1px solid lightgray;
+   border-collapse: collapse; 
+  }
+  .Heading{
+    padding-left: 15px;
+    font-size: 20px;
+    color: #3247D5; 
+    font-family: 'Poppins';
+    }
+  .head{
+    font-family: 'Poppins';
+  }
+  .FilterClass{
+  padding-left: 15px;
+  }
+  .count{
+  
+  padding-right: 10px;
+  color: #3247D5; 
+  font-family: 'Poppins';
+  }
+
+  .edit{
+    width: 50%;
+    border: none;
+    background: #3247D5;
+    text-align: center;
+    border-radius: 6px;
+    color: white;
+    margin-top: 6px;
+    padding: 5px;
+  }
+

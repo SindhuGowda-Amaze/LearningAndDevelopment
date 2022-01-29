@@ -1,35 +1,36 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
+  
             <div class="row">
                 <div class="col-lg-10">
-                    <p class="Heading">Chapter Dashboard</p>
+                    <p class="headings">Chapter Dashboard</p>
                 </div>
                 <div class="col-lg-2">
                     <p class="Text" style="float:right; padding-right:50px;">Count:{{coursedetails.length}}</p>
                 </div>
             </div>
             <hr class="HrLine">
-
-            <div class="row FilterClass ">
-                <div class="col-lg-1">
-                    <p class="Text">Filter By</p>
-                </div>
-                <div class="col-lg-3">
-                    <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
-                        <option value="0">Select Course</option>
-                        <option *ngFor="let details of courselist" value="{{details.id}}">{{details.name}}</option>
-                    </select>
-                </div>
-                <div class="col-lg-5">
-                    <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search">
-                </div>
-            </div><br>
+            <div class="card">
+                <br>
+                <div class="row FilterClass ">
+                    <div class="col-lg-1">
+                        <p class="Text">Filter By</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
+                            <option value="0">Select Course</option>
+                            <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">{{details.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-5">
+                        <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search">
+                    </div>
+                </div><br>
+            </div> <br>
+           
             <div class="row">
                 <div class="col-lg-9"></div>
                 <div class="col-lg-3">
-                    <button class=button routerLink="/Chapter">Add</button>
+                    <button class="button" routerLink="/Chapter">Add</button>
                 </div>
             </div> <br>
             <div class="container-fluid">
@@ -47,16 +48,16 @@
                                     <th>Actions</th>
                                 </tr>
                                 <tr *ngFor="let details of coursedetails | filter: search">
-                                    <td>{{details.courseName}}</td>
-                                    <td>{{details.name}}</td>
-                                    <td>{{details.description}}</td>
-                                    <td><img src="{{details.chapterPhoto}}" style="width:100px"></td>
+                                    <td style="color:#0C275A">{{details.courseName}}</td>
+                                    <td style="color:#0C275A">{{details.name}}</td>
+                                    <td style="color:#0C275A">{{details.description}}</td>
+                                    <td style="color:#0C275A"><img src="{{details.chapterPhoto}}" style="width:100px"></td>
 
                                     <td><img class="pdfimg" src="../../../assets/Images/image.png" style="width: 20px;"
                                             data-toggle="modal" data-target="#exampleModal"
                                             (click)="ShowAttachments(details.id)">
 
-                                    <td [innerHTML]="details.chapterText"></td>
+                                    <td  style="color:#0C275A"      [innerHTML]="details.chapterText"></td>
                                     <!-- <td><button class="button1" (click)="Ondelete(details.id)" routerLink="/Chapter" [routerLink]="['/Chapter', details.id]">Edit</button> <br> <br> -->
                                         <td><button class="button1" (click)="edit(details.id)">Edit</button> <br> <br>
                                         <button class="button2" (click)="Ondelete(details.id)">Delete</button>
@@ -93,9 +94,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="col-lg-1"></div>
 </div>
 
 

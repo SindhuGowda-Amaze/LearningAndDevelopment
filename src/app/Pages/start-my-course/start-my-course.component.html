@@ -23,11 +23,12 @@
         </div><br><hr>
         <div class="row" style="margin-left: 15px;">
             <div class="col-lg-8" style="border-radius: 20px;">
-                <p style="font-size: 25px; padding-top: 20px;"><u>{{coursename}}</u></p>
+                <p style="font-size: 25px; padding-top: 20px; font-family: Poppins;
+                 color: #3247D5; font-weight: bold;"><u>{{coursename}}</u></p>
             </div>
             <div class="col-lg-4" style="text-align: right; ">
                 <br>
-                <div style="width:50%;background-color: rgb(214, 206, 206);border-radius: 20px;float: right;">
+                <div style="width:50%;background-color:whitesmoke;border-radius: 20px;float: right;">
 
                     <img src="assets/Images/Video_lcon.png" *ngIf="showvideo==1" alt="video_icon" style="width:20%;padding-top: 10px;"
                         (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -45,8 +46,10 @@
         </div><hr>
         <div class="row" style="margin-left: 15px;">
             <div class="col-lg-12">
-                <h3>{{chaptername}}</h3>
-                <h6>{{coursedescription}}</h6>
+                <h3 style="color: #0C275A; font-family: Poppins;font-style: normal;
+                font-weight: 600; font-size: 20px; line-height: 11px;">{{chaptername}}</h3>
+                <h6 style="color: #0C275A; font-family: Poppins;font-style: normal;
+                font-weight: normal;font-size: 16px;line-height: 17px;">{{coursedescription}}</h6>
             </div>
         </div><br>
         <div class="row" style="margin-left: 15px;" *ngFor="let details of chapterdetails">
@@ -67,7 +70,7 @@
                 <br>
                 <div class="row">
                     <div class="col-lg-8">
-                        <h2>Course Contents </h2>
+                        <h2 style="color: #3247D5; font-family: Poppins; font-weight: 600;">Course Contents </h2>
                     </div>
                     <div class="col-lg-4">
                         <!-- <button routerLink="/MyCourseDashboard" class="BackBTN">Back</button> -->
@@ -78,7 +81,7 @@
                 <hr class="HRline">
                 <br>
                 <div *ngFor="let details of coursedetails">
-                    <h5 (click)="getcoursedetails(details)">
+                    <h5 (click)="getcoursedetails(details)" style="color: #0C275A; font-family: Poppins; font-weight: 600;">
                         <!-- <img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;"> -->
                         <!-- <img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 7%;"> -->
                         <input type="radio" id="details.id" name="details.id">
@@ -89,16 +92,22 @@
                         <label style="margin-left: 350px;"
                             *ngIf="details.obtainedMarks!=null">{{details.obtainedMarks/details.totalmarks
                             *100 | number : '1.2-2'}} %</label>
-                        <button Style="border-radius:5px; margin-left: 350px;" class="btn btn-sm btn-primary"
+                        <button Style="border-radius: 5px;margin-left: 285px; background-color: #3247D5;
+                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;" 
+                        class="btn btn-sm btn-primary"
                             *ngIf="details.teststatus=='nottaken'"
                             [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id"> Take
                             Assessment</button><br>
-                        <button Style="border-radius:5px; margin-left: 350px;" class="btn btn-sm btn-danger"
+                        <button Style="border-radius: 5px;margin-left: 285px; background-color: #3247D5;
+                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;" 
+                        class="btn btn-sm btn-danger"
                             *ngIf="details.teststatus=='Failed'"
                             [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id">&#10006;
                             Retake
                             Assessment</button>
-                        <button Style="border-radius:5px; margin-left: 350px;" class="btn btn-sm btn-success"
+                        <button Style="border-radius: 5px;margin-left: 285px; background-color: #3247D5;
+                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;" 
+                        class="btn btn-sm btn-success"
                             *ngIf="details.teststatus=='Passed'" id="id" name="id">&#10003;Assessment Passed
                         </button><br>
                         <!-- <button Style="border-radius:5px; margin-left: 350px;" class="BackBTN"

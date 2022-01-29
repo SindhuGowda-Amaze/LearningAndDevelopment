@@ -48,6 +48,9 @@ import { StaffresultComponent } from './Pages/staffresult/staffresult.component'
 
 import { CKEditorModule } from 'ckeditor4-angular';
 import { AssignCourseToEmployeeComponent } from './Pages/assign-course-to-employee/assign-course-to-employee.component';
+import { SidebarComponent } from './Pages/sidebar/sidebar.component';
+
+
 
 
 const ngWizardConfig: NgWizardConfig = {
@@ -87,6 +90,7 @@ const ngWizardConfig: NgWizardConfig = {
     CategoryFormComponent,
     StaffresultComponent,
     AssignCourseToEmployeeComponent,
+    SidebarComponent,
   
   ],
   imports: [

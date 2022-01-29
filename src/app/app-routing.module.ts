@@ -30,6 +30,7 @@ import { CategoryDashboardComponent } from './Pages/category-dashboard/category-
 import { CategoryFormComponent } from './Pages/category-form/category-form.component';
 import { StaffresultComponent } from './Pages/staffresult/staffresult.component';
 import { AssignCourseToEmployeeComponent } from './Pages/assign-course-to-employee/assign-course-to-employee.component';
+import { SidebarComponent } from './Pages/sidebar/sidebar.component';
 
 
 const routes: Routes = [
@@ -74,6 +75,7 @@ const routes: Routes = [
   { path: 'CategoryForm/:id', component: CategoryFormComponent },
   { path: 'Staffresult', component: StaffresultComponent },
   { path: 'AssignCourseToEmployee', component: AssignCourseToEmployeeComponent },
+  { path: 'sidebar', component: SidebarComponent },
  
 
 
