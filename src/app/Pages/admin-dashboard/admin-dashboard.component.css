@@ -28,10 +28,15 @@
 
 .Number{
     text-align: center;
-    padding-top: 22px;
-    color: gray;
-    font-size: 60px;
+    padding: 15px;
+    color: black;
+    font-size: 40px;
     font-weight: bold;
+  
+}
+.CloseBTN{
+  background-color: blue;
+  color:white
 }
 
 
@@ -110,11 +115,11 @@ body {
   
   .viewall {
     width: 80px;
-    height: 33px;
+    height: 30px;
     border: none;
     border-radius: 5px;
     font-size: 12px;
-    background-color: #4282be;
+    background-color: #3247D5;
     font-weight: white;
     color: white;
     cursor: pointer;
@@ -151,14 +156,14 @@ body {
   
   .clickbutton1 {
     border: 2px solid;
-    background-color: white;
+    background-color:#3247D5;
     font-size: 13px;
     border-radius: 6px;
     padding: 4px;
     width: 150px;
-    margin-top: -10px;
-    color: #555;
-    border-color: #555;
+    margin-top: -99px;
+    color: white;
+    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%);
   }
   
   .backtext {
@@ -237,7 +242,9 @@ body {
   .title_outer1 {
     float: left;
     max-width: 98%;
-    padding: 3px 0;
+    padding: 34px;
+    margin: -21px;
+    border-radius: 9px;
   }
   
   .card_title {
