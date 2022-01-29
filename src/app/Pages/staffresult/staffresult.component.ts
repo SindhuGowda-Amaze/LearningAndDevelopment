@@ -31,8 +31,6 @@ export class StaffresultComponent implements OnInit {
         this.result = data.filter(x => x.supervisor == sessionStorage.getItem('userid'));
       })
 
-
-
   }
   courseID: any;
 

@@ -1,7 +1,7 @@
 <div class="row" *ngIf="temp==1">
     <div class="col-md-2 sidenav" style="height: 100vh;margin-top: 75px;position: fixed;">
 
-        <a *ngIf="roleid=='1' || roleid=='2' "   routerLink="/AdminDashboard">
+        <a *ngIf="roleid=='1' || roleid=='2' " routerLink="/AdminDashboard">
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; Dashboard
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
@@ -19,14 +19,14 @@
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
 
-        <a  *ngIf="roleid==4" routerLink="/Assessmentdashboard">
+        <a *ngIf="roleid==4" routerLink="/Assessmentdashboard">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; Assessments
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
 
-        <a data-toggle="collapse" class="togglebtn button" data-target="#userapplications"  *ngIf="roleid==1">
+        <a data-toggle="collapse" class="togglebtn button" data-target="#userapplications" *ngIf="roleid==1">
 
             <i class="fa fa-gears icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; SETUP
@@ -39,43 +39,44 @@
             </a>
             <a routerLink="/CourseDashboard">
                 <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp; COURSE
-               
+
             </a>
             <a routerLink="/ChapterDashboard">
                 <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp;CHAPTER
-              
+
             </a>
             <a routerLink="/Trainer">
                 <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp;TRAINER
-              
+
             </a>
             <a routerLink="/TrainerCourseMapping">
-                <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp;ASSIGN TRAINER
+                <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp;ASSIGN
+                TRAINER
             </a>
             <a routerLink="/Employee">
                 <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp;EMPLOYEE
-            
+
             </a>
         </div>
-        <a  *ngIf="roleid==2 || roleid==3"  routerLink="/MyCourseDashboard">
+        <a *ngIf="roleid==2 || roleid==3" routerLink="/MyCourseDashboard">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; My COURSE
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a  *ngIf="roleid==4"   routerLink="/AttendenceDetails">
+        <a *ngIf="roleid==4" routerLink="/AttendenceDetails">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; ATTENDENCE
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a *ngIf="roleid==2 || roleid==3"  routerLink="/Catalog">
+        <a *ngIf="roleid==2 || roleid==3" routerLink="/Catalog">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; CATALOG
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a  *ngIf="roleid==2" routerLink="/CourseCertificate">
+        <a *ngIf="roleid==2" routerLink="/CourseCertificate">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
             &nbsp; CERTIFICATE
@@ -90,11 +91,17 @@
         <a *ngIf="roleid==3" routerLink="/Staffresult">
 
             <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
-            &nbsp; ASSIGN RESULTS
+            &nbsp; RESULTS
+            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
+        </a>
+        <a *ngIf="roleid==3" routerLink="/Submitedtests">
+
+            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
+            &nbsp; Test Submitted
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
 
 
-        
+
     </div>
 </div>

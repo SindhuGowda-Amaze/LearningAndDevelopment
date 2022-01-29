@@ -515,9 +515,9 @@ export class LearningService {
 
 
 
-  public GetAllCounts(staffid:any,typeid:any) {
+  public GetAllCounts(staffid: any, typeid: any) {
 
-    return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID="+staffid+'&TypeID='+typeid);
+    return this.http.get<any[]>(this.baseURL + "/Master/GetAllCounts?StaffID=" + staffid + '&TypeID=' + typeid);
   }
   // public GetAllCounts() {
 
@@ -536,6 +536,16 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
+  public UpdateTestResponseDetails(data: any) {
+    debugger;
+    this.url = this.baseURL + '/Master/UpdateTestResponseDetails';
+    return this.http.post(this.url, data);
+  }
+  public UpdateTestResponse(data: any) {
+    debugger;
+    this.url = this.baseURL + '/Master/UpdateTestResponse';
+    return this.http.post(this.url, data);
+  }
 
   //Prashant api service
   public GetTestResponse() {
@@ -567,9 +577,9 @@ export class LearningService {
     );
   }
 
-  public GetCoursesByUserID(userid:any) {
+  public GetCoursesByUserID(userid: any) {
     return this.http.get<any[]>(
-      this.baseURL + "/Master/GetCoursesByUserID?EmployeeID="+userid
+      this.baseURL + "/Master/GetCoursesByUserID?EmployeeID=" + userid
     );
   }
 
