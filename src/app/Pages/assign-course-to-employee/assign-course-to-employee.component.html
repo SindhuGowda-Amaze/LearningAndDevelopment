@@ -25,7 +25,7 @@
                         <!-- <select class="form-control" name="id" id="id" [(ngModel)]="courseid" (change)="getcourseid($event)">
                             <option *ngFor="let details of stafflist" value="{{details.id}}">{{details.name}}</option> 
                         </select> -->
-                        <select class="form-control" name="id" id="id" [(ngModel)]="staffId">
+                        <select class="form-control" name="id" id="id" [(ngModel)]="staffId" >
                             <option *ngFor="let details of stafflist" value="{{details.id}}">{{details.name}}</option> 
                         </select>
                     </div>
@@ -50,8 +50,8 @@
                     <div class="col-lg-1">
                         <button class="form-control btn" (click)="Cancel()">Cancel</button>
                     </div>
-                    <div class="col-lg-1"  >
-                        <button class="form-control actionbuttons" data-toggle="modal" data-target="#enroll">ENROLL</button>
+                    <div class="col-lg-1" >
+                        <button class="form-control actionbuttons"  (click)="enroll()">ENROLL</button>
                     </div>
 
                     <div class="col-lg-1"></div>
@@ -61,7 +61,7 @@
     </div>
 </div>
 
-<div id="enroll" class="modal fade" role="dialog">
+<!-- <div id="enroll" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -105,7 +105,7 @@
                             placeholder="{{item.emailID}}" disabled>
                     </div>
                 </div> <br> -->
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-5"></div>
                     <div class="col-lg-2">
                         <button class="form-control "
@@ -122,4 +122,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> --> 

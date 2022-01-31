@@ -51,6 +51,7 @@ import { AssignCourseToEmployeeComponent } from './Pages/assign-course-to-employ
 import { SidebarComponent } from './Pages/sidebar/sidebar.component';
 import { CheckanswerComponent } from './Pages/checkanswer/checkanswer.component';
 import { SubmitedtestsComponent } from './Pages/submitedtests/submitedtests.component';
+import { AssignCourseDashboardComponent } from './Pages/assign-course-dashboard/assign-course-dashboard.component';
 
 
 
@@ -95,6 +96,7 @@ const ngWizardConfig: NgWizardConfig = {
     SidebarComponent,
     CheckanswerComponent,
     SubmitedtestsComponent,
+    AssignCourseDashboardComponent,
   
   ],
   imports: [

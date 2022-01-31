@@ -8,19 +8,19 @@ import Swal from 'sweetalert2';
   styleUrls: ['./assign-course-to-employee.component.css']
 })
 export class AssignCourseToEmployeeComponent implements OnInit {
- 
+
   constructor(private LearningService: LearningService, private ActivatedRoute: ActivatedRoute) { }
 
-  courselist:any;
-  userid:any;
-  stafflist:any;
-  type:any;
-  manager:any;
-  courseid:any;
+  courselist: any;
+  userid: any;
+  stafflist: any;
+  type: any;
+  manager: any;
+  courseid: any;
   name: any;
   mobile: any;
   emailID: any;
-  staffId:any;
+  staffId: any;
   ngOnInit(): void {
     this.userid = sessionStorage.getItem('userid');
     this.GetCourse();
@@ -38,59 +38,76 @@ export class AssignCourseToEmployeeComponent implements OnInit {
 
       })
   }
-  stafflist1:any;
-  public GetStaff(){
+  stafflist1: any;
+  public GetStaff() {
     this.LearningService.GetMyDetails().subscribe(data => {
       debugger
-      this.stafflist = data.filter(x=>x.id!=this.userid && x.role!='Admin')
+      this.stafflist = data.filter(x => x.id != this.userid && x.role != 'Admin')
+      // this.name= this.stafflist[0].employeeName
+      // this.mobile=this.stafflist[0].phoneNo
+      // this.emailID=this.stafflist[0].emailID
     });
   }
 
-  Cancel(){
+  Cancel() {
     location.reload();
   }
   public getcoureid(id: any) {
-    this.courseid = id
+    this.staffId = id
+  }
+
+  // public getdetails(name:any,mobile:any,emailID:any){
+  //   this.name=name,
+  //   this.mobile=mobile,
+  //   this.emailID=emailID
+
+  // }
+  public getdata(name: any) {
+    this.name = name
   }
 
 
-    enroll(name: any, mobile: any, emailID: any) {
-      Swal.fire({
-        title: 'Enroll Confirmation',
-        text: "Please click on OK to Assign Course To Employee",
-        icon: 'warning',
-        // icon: 'success',
-        showCloseButton: true,
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'OK'
-      }).then((result) => {
-  
-        if (result.isConfirmed) {
-          debugger
-          var json = {
-            "staffid": this.staffId,
-            "manager": this.manager,
-            "courseid": this.courseid,
-            "status": 'Manager Pending',
-            "employeeName": name,
-            "phoneNo": mobile,
-            "email": emailID,
-            "type":"Request to Manager"
-          };
-          this.LearningService.InsertEnroll(json).subscribe(
-            data => {
-              debugger
-              let id = data;
-            })
-          Swal.fire(
-            'Cousre Assigned Successfully!!!',
-            'success'
-          );
-          location.href = "/#/Catalog";
-        }
-      });
-    }
+  enroll() {
+    debugger
 
+    Swal.fire({
+      title: 'Enroll Confirmation',
+      text: "Please click on OK to Assign Course To Employee",
+      icon: 'warning',
+      // icon: 'success',
+      showCloseButton: true,
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'OK'
+    }).then((result) => {
+
+      if (result.isConfirmed) {
+        debugger
+        var json = {
+          "staffid": this.staffId,
+          "manager": this.manager,
+          "courseid": this.courseid,
+          "status": 'Manager Assign',
+          "employeeName": this.name,
+          "phoneNo": this.mobile,
+          "email": this.emailID,
+          "type": "Manager Assign"
+        };
+        this.LearningService.InsertEnroll(json).subscribe(
+          data => {
+            debugger
+            let id = data;
+          })
+        Swal.fire(
+          'Cousre Assigned Successfully!!!',
+          'success'
+        );
+        location.href = "/#/AssignCourseDashboard";
+      }
+    });
+  }
 }
+
+
+
