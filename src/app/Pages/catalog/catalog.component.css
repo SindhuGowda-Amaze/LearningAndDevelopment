@@ -580,26 +580,27 @@ hr.new4 {
   padding: 5px;
   border-radius: 5px;
   color: white;
-  background-color: #030a0f;
+  background-color: #3247D5;
   border: none;
   float: right;
   margin-bottom: 10px;
   margin-right: 40px;
 }
 .ShowMore {
-  padding: 8px;
+  padding: 2px;
   border-radius: 5px;
   color: white;
-  background-color: #030a0f;
+  background-color: #3247D5;
   border: none;
-  margin-left: 80px;
+  margin-left: 10px;
+margin-bottom: 10px;
 }
 
 .CloseBTN {
   padding: 5px;
   border-radius: 5px;
   color: white;
-  background-color: #030a0f;
+  background-color: #3247D5;
   border: none;
   float: right;
 }

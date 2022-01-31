@@ -31,6 +31,8 @@ import { CategoryFormComponent } from './Pages/category-form/category-form.compo
 import { StaffresultComponent } from './Pages/staffresult/staffresult.component';
 import { AssignCourseToEmployeeComponent } from './Pages/assign-course-to-employee/assign-course-to-employee.component';
 import { SidebarComponent } from './Pages/sidebar/sidebar.component';
+import { CheckanswerComponent } from './Pages/checkanswer/checkanswer.component';
+import { SubmitedtestsComponent } from './Pages/submitedtests/submitedtests.component';
 
 
 const routes: Routes = [
@@ -76,7 +78,8 @@ const routes: Routes = [
   { path: 'Staffresult', component: StaffresultComponent },
   { path: 'AssignCourseToEmployee', component: AssignCourseToEmployeeComponent },
   { path: 'sidebar', component: SidebarComponent },
- 
+  { path: 'Checkanswer/:id', component: CheckanswerComponent },
+  { path: 'Submitedtests', component: SubmitedtestsComponent },
 
 
 

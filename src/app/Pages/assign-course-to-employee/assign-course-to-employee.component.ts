@@ -20,6 +20,7 @@ export class AssignCourseToEmployeeComponent implements OnInit {
   name: any;
   mobile: any;
   emailID: any;
+  staffId:any;
   ngOnInit(): void {
     this.userid = sessionStorage.getItem('userid');
     this.GetCourse();
@@ -37,11 +38,11 @@ export class AssignCourseToEmployeeComponent implements OnInit {
 
       })
   }
-
+  stafflist1:any;
   public GetStaff(){
     this.LearningService.GetMyDetails().subscribe(data => {
       debugger
-      this.stafflist = data
+      this.stafflist = data.filter(x=>x.id!=this.userid && x.role!='Admin')
     });
   }
 
@@ -69,14 +70,14 @@ export class AssignCourseToEmployeeComponent implements OnInit {
         if (result.isConfirmed) {
           debugger
           var json = {
-            "staffid": this.userid,
+            "staffid": this.staffId,
             "manager": this.manager,
             "courseid": this.courseid,
             "status": 'Manager Pending',
             "employeeName": name,
             "phoneNo": mobile,
             "email": emailID,
-            "type":this.type
+            "type":"Request to Manager"
           };
           this.LearningService.InsertEnroll(json).subscribe(
             data => {

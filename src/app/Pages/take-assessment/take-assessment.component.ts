@@ -51,7 +51,7 @@ export class TakeAssessmentComponent implements OnInit {
     this.marks = 0;
     this.show = 1;
     this.message = "";
-    this.GetUsers();
+   // this.GetUsers();
     this.startTest=0;
   //  this.future = new Date(this.futureString);
     // this.activatedroute.params.subscribe(params => {
@@ -185,11 +185,7 @@ export class TakeAssessmentComponent implements OnInit {
     //   }
     // )
   }
-  public GetUsers() {
-    debugger
-   
-   
-  }
+
   // public submitAnswer(){}
   correctansers:any;
   wrongansers:any
@@ -209,13 +205,19 @@ export class TakeAssessmentComponent implements OnInit {
       this.correctansers=0;
       this.wrongansers=0;
       for (var i = 0; i < this.questionList.length; i++) {
-        if (this.questionList[i].correctAnswer == this.questionList[i].userAnswer) {
-          this.marks = this.marks + 1;
-         this.correctansers= this.correctansers + 1;
+        if(this.questionList[i].questionID==1){
+          if (this.questionList[i].correctAnswer == this.questionList[i].userAnswer) {
+            this.marks = this.marks +  this.questionList[i].weightage;
+           this.correctansers= this.correctansers +1;
+          }
+          else{
+            this.wrongansers= this.wrongansers + 1;
+          }
         }
-        else{
-          this.wrongansers= this.wrongansers + 1;
+        else if(this.questionList[i].questionID==2){
+          
         }
+      
       }
       if (this.marks >= this.totalmarks/2) {
         this.testResult = 'Pass'
@@ -246,7 +248,7 @@ export class TakeAssessmentComponent implements OnInit {
               'CorrectAnswer': this.questionList[i].correctAnswer,
               'UserAnswer': this.questionList[i].userAnswer,
               'TestResponseID': this.testResponseID,
-              'ObtainedMarks': this.marks
+              'ObtainedMarks':  this.questionList[i].correctAnswer==this.questionList[i].userAnswer?this.questionList[i].weightage:0
             }
             this.AmazeService.InsertTestResponseDetails(ett).subscribe(data => {
             });
@@ -254,7 +256,8 @@ export class TakeAssessmentComponent implements OnInit {
           Swal.fire('You have submited test successfully...');
           this.show = 0;
           this.startTest = "";
-          this.router.navigate(['/AssessmentResult', this.testResponseID]);
+        //  this.router.navigate(['/AssessmentResult', this.testResponseID]);
+        this.router.navigate(['/MyCourseDashboard']);
         }
        
       })
