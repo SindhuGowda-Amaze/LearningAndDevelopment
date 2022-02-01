@@ -30,6 +30,7 @@ export class ChapterComponent implements OnInit {
   courseName: any;
   chapterText: any;
   show:any;
+  Attachmentlist:any;
 
 
   ngOnInit(): void {
@@ -42,6 +43,12 @@ export class ChapterComponent implements OnInit {
       if (this.id != undefined && this.id != null) {
         this.show=1
         this.GetChapter();
+        
+        this.LearningService.GetChapterAttachmentByChapterID(this.id).subscribe(data => {
+          debugger
+          this.Attachmentlist = data;
+        })
+        
       }
       else{
         this.show=0;
@@ -117,6 +124,10 @@ export class ChapterComponent implements OnInit {
     this.courseID=even.target.value;
   }
 
+  
+  openAttchments(photo: any) {
+    window.open(photo, "_blank")
+  }
  
 
 
@@ -198,5 +209,20 @@ export class ChapterComponent implements OnInit {
       alert("ATTACHMENT UPLOADED");
     })
   }
+
+  photourl:any;
+  photoid:any;
+  Edit(attchments:any){
+    this.photourl=attchments.originalurl;
+    this.photoid=attchments.id
+
+  }
+
+
+
+
+
+
+
 
 }

@@ -54,7 +54,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of stafflist">
+                    <tr *ngFor="let item of stafflist|filter:search">
 
                                 <td>000{{item.id}}</td>
                                 <td>{{item.name}}</td>
