@@ -52,12 +52,12 @@
                                 <td>{{details.chaptername}}</td>
                                 <td>
                                     <button  [routerLink]="['/Checkanswer',details.id]"  *ngIf="details.checked!=1"
-                                        class="btn btn-primary">Check
+                                        class="button1 btn-primary">Check
                                     </button>
-                                    <button *ngIf="details.checked==1" class="btn btn-primary" id="show==1">Checked
+                                    <button *ngIf="details.checked==1" class="button1 btn-primary" id="show==1">Checked
                                     </button><br><br>
-                                    <!-- <button *ngIf="details.checked==1" [routerLink]="['/Checkanswer',details.id]" class="btn btn-primary" id="show==1">View
-                                    </button> -->
+                                    <button *ngIf="details.checked==1" [routerLink]="['/Checkanswer',details.id]" class="button1 btn-primary" id="show==1">View
+                                    </button>
 
                                 </td>
                             </tr>

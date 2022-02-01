@@ -4,9 +4,7 @@
 @import '~ng-wizard/themes/ng_wizard_theme_circles.min.css';
 @import '~ng-wizard/themes/ng_wizard_theme_dots.min.css';
 
-.container-fluid{
-    font-family: 'Open Sans', sans-serif;
-}
+
 @font-face {
     font-family: 'DIN Regular';
     src: 
@@ -30,8 +28,7 @@
       format('opentype');
   }
   body,button,p{
-    /* font-family: 'DIN Bold'; */
-    font-size: Poppins;
+    font-family: 'Poppins';
     font-size: 14px;
     font-weight: bold;
     cursor: pointer; 
@@ -66,5 +63,4 @@
     background-color: #3247D5;
     border:none;
     width:92%;
-
   }

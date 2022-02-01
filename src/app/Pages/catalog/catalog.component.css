@@ -239,18 +239,18 @@ td {
 .count-size {
   font-size: 14px;
   clear: both;
-  font-family: "DIN Medium";
+  font-family: 'Poppins';
   color: #555;
   line-height: 20px;
 }
 
 .din-regular {
-  font-family: "DIN Regular";
+  font-family: 'Poppins';
   font-size: 14px;
 }
 
 .din-Bold {
-  font-family: "DIN Bold";
+  font-family: 'Poppins';
   font-size: 14px;
 }
 
@@ -284,7 +284,7 @@ td {
 .backbtn {
   color: #777 !important;
   font-size: 12px;
-  font-family: "DIN Regular";
+  font-family: 'Poppins';
   line-height: 14px;
   box-sizing: border-box;
   display: block;
@@ -339,7 +339,7 @@ li {
 }
 
 .cardlabel {
-  font-family: "DIN Bold";
+  font-family: 'Poppins';
   font-size: 20px;
   margin-top: -1px;
 }
@@ -366,7 +366,7 @@ li {
 .holidayName {
   color: #777;
   font-size: 16px;
-  font-family: "DIN Medium";
+  font-family: 'Poppins';
   display: inline-block;
   width: 83%;
   margin-left: 10px;
@@ -375,7 +375,7 @@ li {
 .holiday-date-day-name {
   color: #777;
   font-size: 12px;
-  font-family: "DIN Regular";
+  font-family: 'Poppins';
   display: block;
   clear: both;
   line-height: 20px;
@@ -386,13 +386,13 @@ li {
 .count-size {
   font-size: 20px;
   clear: both;
-  font-family: "DIN Medium";
+  font-family: 'Poppins';
   color: #555;
   line-height: 20px;
 }
 
 .din-regular1 {
-  font-family: "DIN Regular";
+  font-family: 'Poppins';
   font-size: 14px;
 }
 
@@ -414,20 +414,20 @@ li {
 .count-size {
   font-size: 20px;
   clear: both;
-  font-family: "DIN Medium";
+  font-family: 'Poppins';
   color: #555;
   line-height: 20px;
 }
 
 .name {
-  font-family: "DIN Medium";
+  font-family: 'Poppins';
   font-size: 13px;
   margin-top: 3px;
   margin-left: -5px;
 }
 
 .name1 {
-  font-family: "DIN Medium";
+  font-family: 'Poppins';
   font-size: 13px;
   margin-top: 3px;
 }
@@ -447,13 +447,13 @@ li {
 }
 
 .din-Medium {
-  font-family: "DIN Medium";
+  font-family: 'Poppins';
   font-size: 13px;
   margin-top: -3px;
 }
 
 .din-Medium1 {
-  font-family: "DIN Medium";
+  font-family: 'Poppins';
   font-size: 11px;
   margin-top: -3px;
 }
@@ -495,7 +495,7 @@ hr.new4 {
 }
 
 .din-regular23 {
-  font-family: "DIN Medium";
+  font-family: 'Poppins';
   font-size: 11px;
   padding: 5px;
 }

@@ -19,7 +19,7 @@
   }
   .container-fluid{
   box-shadow: 2px,2px,10px solid silver;
-  font-family: 'DIN Bold';
+  font-family: 'Poppins';
       font-size: 12px;
       font-weight: bold;
       cursor: pointer; 
@@ -31,7 +31,7 @@
   color: #2f87cc;
   margin-top: 25px;
   font-weight: bold;
-  font-family: 'DIN Regular';
+  font-family: 'Poppins';
   }
   .user{
     position: absolute;
@@ -41,7 +41,7 @@
   top: 13.57%;
   bottom: 38.57%;
   
-  font-family: Poppins;
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: bold;
   font-size: 13px;

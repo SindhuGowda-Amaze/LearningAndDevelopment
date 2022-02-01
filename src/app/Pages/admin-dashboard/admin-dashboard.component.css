@@ -217,18 +217,18 @@ body {
   .count-size {
     font-size: 14px;
     clear: both;
-    font-family: 'DIN Medium';
+    font-family: 'Poppins';
     color: #555;
     line-height: 20px;
   }
   
   .din-regular {
-    font-family: 'DIN Regular';
+    font-family: 'Poppins';
     font-size: 14px;
   }
   
   .din-Bold {
-    font-family: 'DIN Bold';
+    font-family: 'Poppins';
     font-size: 14px;
   }
 
@@ -266,7 +266,7 @@ body {
   
     color: #777 !important;
     font-size: 12px;
-    font-family: 'DIN Regular';
+    font-family: 'Poppins';
     line-height: 14px;
     box-sizing: border-box;
     display: block;
@@ -323,7 +323,7 @@ body {
   }
   
   .cardlabel {
-    font-family: 'DIN Bold';
+    font-family: 'Poppins';
     font-size: 20px;
     margin-top: -1px;
   }
@@ -350,7 +350,7 @@ body {
   .holidayName {
     color: #777;
     font-size: 16px;
-    font-family: 'DIN Medium';
+    font-family: 'Poppins';
     display: inline-block;
     width: 83%;
     margin-left: 10px;
@@ -359,7 +359,7 @@ body {
   .holiday-date-day-name {
     color: #777;
     font-size: 12px;
-    font-family: 'DIN Regular';
+    font-family: 'Poppins';
     display: block;
     clear: both;
     line-height: 20px;
@@ -370,13 +370,13 @@ body {
   .count-size {
     font-size: 20px;
     clear: both;
-    font-family: 'DIN Medium';
+    font-family: 'Poppins';
     color: #555;
     line-height: 20px;
   }
   
   .din-regular1 {
-    font-family: 'DIN Regular';
+    font-family: 'Poppins';
     font-size: 14px;
   }
   
@@ -398,13 +398,13 @@ body {
   .count-size {
     font-size: 20px;
     clear: both;
-    font-family: 'DIN Medium';
+    font-family: 'Poppins';
     color: #555;
     line-height: 20px;
   }
   
   .name{
-    font-family: 'DIN Medium';
+    font-family: 'Poppins';
     font-size: 13px;
     margin-top: 3px;
     margin-left: -5px;
@@ -412,7 +412,7 @@ body {
   }
 
   .name1{
-    font-family: 'DIN Medium';
+    font-family: 'Poppins';
     font-size: 13px;
     margin-top: 3px;
   
@@ -433,13 +433,13 @@ body {
 }
 
 .din-Medium {
-    font-family: 'DIN Medium';
+  font-family: 'Poppins';
     font-size: 13px;
     margin-top: -3px;
 }
 
 .din-Medium1{
-    font-family: 'DIN Medium';
+  font-family: 'Poppins';
     font-size: 11px;
     margin-top: -3px;
 
@@ -485,7 +485,7 @@ hr.new4 {
 
 .din-regular23{
  
-    font-family: 'DIN Medium';
+  font-family: 'Poppins';
     font-size: 11px;
     padding: 5px;
 

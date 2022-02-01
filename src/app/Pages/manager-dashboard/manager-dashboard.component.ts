@@ -86,7 +86,7 @@ export class ManagerDashboardComponent implements OnInit {
           timer: 1500
 
         })
-        this.GetEnroll();
+        this.Showcards(1);
       })
 
   }
@@ -110,7 +110,7 @@ export class ManagerDashboardComponent implements OnInit {
           timer: 1500
 
         })
-        this.GetEnroll();
+        this.Showcards(3);
       })
 
     }

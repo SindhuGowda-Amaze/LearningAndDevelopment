@@ -1,475 +1,451 @@
-<div class="row">
-    <div class="col-lg-8">
-        <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-5" *ngIf="show==1">
-                <img src="{{chapterphoto}}" alt="1st Course Assessment"
-                    style="width:500px; height:300px; margin-left:20px;">
-            </div>
-            <div class="col-lg-12" *ngIf="show==2">
-                <video controls style="height: 80%; width: 100%;">
-                    <source src="{{Attachmentlist[0].photo}}" type="video/mp4">
-                    <source src="{{Attachmentlist[0].photo}}" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="col-lg-5" *ngIf="show==4">
-                <img src="{{Attachmentlist[0].photo}}" alt="1st Course Assessment"
-                    style="width:100%; height:300px; margin-left:20px;">
-            </div>
-            <div class="col-lg-12" *ngIf="show==5" style="width: 70%; height: 80%;margin-left: 175px;"><br><br>
-                <h5>{{noattachments}}</h5> <br><br>
-            </div>
-        </div><br>
-        <hr>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8" style="border-radius: 20px;">
-                <p style="font-size: 25px; padding-top: 20px; font-family: Poppins;
-                 color: #3247D5; font-weight: bold;"><u>{{coursename}}</u></p>
-            </div>
-            <div class="col-lg-4" style="text-align: right; ">
-                <br>
-                <div style="width:50%;background-color:whitesmoke;border-radius: 20px;float: right;">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-5" *ngIf="show==1">
+                    <img src="{{chapterphoto}}" alt="1st Course Assessment"
+                        style="width:500px; height:300px; margin-left:20px;">
+                </div>
+                <div class="col-lg-12" *ngIf="show==2">
+                    <video controls style="height: 80%; width: 100%;">
+                        <source src="{{Attachmentlist[0].photo}}" type="video/mp4">
+                        <source src="{{Attachmentlist[0].photo}}" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="col-lg-5" *ngIf="show==4">
+                    <img src="{{Attachmentlist[0].photo}}" alt="1st Course Assessment"
+                        style="width:100%; height:300px; margin-left:20px;">
+                </div>
+                <div class="col-lg-12" *ngIf="show==5" style="width: 70%; height: 80%;margin-left: 175px;"><br><br>
+                    <h5>{{noattachments}}</h5> <br><br>
+                </div>
+            </div><br>
+            <hr>
+            <div class="row" style="margin-left: 15px;">
+                <div class="col-lg-8" style="border-radius: 20px;">
+                    <p style="font-size: 25px; padding-top: 20px; font-family: Poppins;
+                     color: #3247D5; font-weight: bold;"><u>{{coursename}}</u></p>
+                </div>
+                <div class="col-lg-4" style="text-align: right; ">
+                    <br>
+                    <div style="width:60%;background-color:whitesmoke;border-radius: 20px;float: right;">
 
-                    <img src="assets/Images/Video_lcon.png" *ngIf="showvideo==1" alt="video_icon"
-                        style="width:20%;padding-top: 10px;"
-                        (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="assets/pdf.jpg" *ngIf="showPdf==1" alt="video_icon" style="width:20%;padding-top: 10px;"
-                        (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="assets/Images/image.png" *ngIf="showimage==1" alt="video_icon"
-                        style="width:20%;padding-top: 10px;"
-                        (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="assets/Images/files.png" *ngIf="showPpt==1" alt="video_icon"
-                        style="width:10%;padding-top: 10px;"
-                        (click)="PreviewPPT()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="assets/Images/word.png" *ngIf="showDocument==1" alt="video_icon"
-                        style="width:10%;padding-top: 10px;"
-                        (click)="PreviewMSword()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="assets/Images/Video_lcon.png" *ngIf="showvideo==1" alt="video_icon"
+                            style="width:20%;padding-top: 10px;"
+                            (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="assets/pdf.jpg" *ngIf="showPdf==1" alt="video_icon"
+                            style="width:20%;padding-top: 10px;"
+                            (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="assets/Images/image.png" *ngIf="showimage==1" alt="video_icon"
+                            style="width:20%;padding-top: 10px;"
+                            (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="assets/Images/files.png" *ngIf="showPpt==1" alt="video_icon"
+                            style="width:10%;padding-top: 10px;"
+                            (click)="PreviewPPT()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="assets/Images/word.png" *ngIf="showDocument==1" alt="video_icon"
+                            style="width:10%;padding-top: 10px;"
+                            (click)="PreviewMSword()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+                    </div>
                 </div>
             </div>
+            <hr>
+            <div class="row" style="margin-left: 15px;">
+                <div class="col-lg-12">
+                    <h3 style="color: #0C275A; font-family: Poppins;font-style: normal;
+                    font-weight: 600; font-size: 20px; line-height: 11px;">{{chaptername}}</h3>
+                    <h6 style="color: #0C275A; font-family: Poppins;font-style: normal;
+                    font-weight: normal;font-size: 16px;line-height: 17px;">{{coursedescription}}</h6>
+                </div>
+            </div><br>
+            <div class="row" style="margin-left: 15px;" *ngFor="let details of chapterdetails">
+                <div class="col-lg-8">
+                </div>
+                <div class="col-lg-4" style="text-align: center;">
+                    <!-- <p style="font-size: 15px;">Take Assesment</p> -->
+                    <!-- <button Style="border-radius:5px;"[routerLink]="['/TakeAssessment',details.id]" >Take Assesment</button> -->
+                    <!-- <button Style="border-radius:5px;" [routerLink]="['/TakeAssessment',details.id]" id="id" name="id">Take Assesment</button> -->
+                </div>
+
+            </div><br><br>
         </div>
-        <hr>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-12">
-                <h3 style="color: #0C275A; font-family: Poppins;font-style: normal;
-                font-weight: 600; font-size: 20px; line-height: 11px;">{{chaptername}}</h3>
-                <h6 style="color: #0C275A; font-family: Poppins;font-style: normal;
-                font-weight: normal;font-size: 16px;line-height: 17px;">{{coursedescription}}</h6>
-            </div>
-        </div><br>
-        <div class="row" style="margin-left: 15px;" *ngFor="let details of chapterdetails">
-            <div class="col-lg-8">
-            </div>
-            <div class="col-lg-4" style="text-align: center;">
-                <!-- <p style="font-size: 15px;">Take Assesment</p> -->
-                <!-- <button Style="border-radius:5px;"[routerLink]="['/TakeAssessment',details.id]" >Take Assesment</button> -->
-                <!-- <button Style="border-radius:5px;" [routerLink]="['/TakeAssessment',details.id]" id="id" name="id">Take Assesment</button> -->
-            </div>
-            <!-- <div class="col-lg-2">
-            </div> -->
-        </div><br><br>
-    </div>
-    <div class="col-lg-4">
-        <div class="row vertical-menu VScroll">
-            <div class="col-lg-12">
-                <br>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <h2 style="color: #3247D5; font-family: Poppins; font-weight: 600;">Course Contents </h2>
+        <div class="col-lg-4">
+            <div class="row vertical-menu VScroll">
+                <div class="col-lg-12">
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2 style="color: #3247D5; font-weight: 600;">CHAPTERS </h2>
+                        </div>
+                        <div class="col-lg-4">
+                            <!-- <button routerLink="/MyCourseDashboard" class="BackBTN">Back</button> -->
+                            <img src="assets/Images/back-arrow.png"
+                                style="width: 25%; float: right; cursor: pointer;color: #3247D5;" alt="BackIMG"
+                                routerLink="/MyCourseDashboard">
+                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        <!-- <button routerLink="/MyCourseDashboard" class="BackBTN">Back</button> -->
-                        <img src="assets/Images/back-arrow.png" style="width: 25%; float: right; cursor: pointer;"
-                            alt="BackIMG" routerLink="/MyCourseDashboard">
-                    </div>
-                </div>
-                <hr class="HRline">
-                <br>
-                <div *ngFor="let details of coursedetails">
-                    <h5 (click)="getcoursedetails(details)"
-                        style="color: #0C275A; font-family: Poppins; font-weight: 600;">
-                        <!-- <img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;"> -->
-                        <!-- <img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 7%;"> -->
-                        <input type="radio" id="details.id" name="details.id">
-                        {{details.name}}
-                    </h5>
-
-                    <p style="display: inline;">
-                        <label style="margin-left: 350px;"
-                            *ngIf="details.obtainedMarks!=null">{{details.obtainedMarks/details.totalmarks
-                            *100 | number : '1.2-2'}} %</label>
-                        <button Style="border-radius: 5px;margin-left: 285px; background-color: #3247D5;
-                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;"
-                            class="btn btn-sm btn-primary" *ngIf="details.teststatus=='nottaken'"
-                            [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id"> Take
-                            Assessment</button><br>
-                        <button Style="border-radius: 5px;margin-left: 285px; 
-                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;"
-                            class="btn btn-sm btn-danger" *ngIf="details.teststatus=='Failed'"
-                            [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id">&#10006;
-                            Retake
-                            Assessment</button>
-                        <button Style="border-radius: 5px;margin-left: 285px; 
-                        color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;"
-                            class="btn btn-sm btn-success" *ngIf="details.teststatus=='Passed'" id="id"
-                            name="id">&#10003;Assessment Passed
-                        </button><br>
-                        <!-- <button Style="border-radius:5px; margin-left: 350px;" class="BackBTN"
-                        [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id">Take
-                        ReTest</button> -->
-                    </p>
-
                     <hr class="HRline">
+                    <br>
+                    <div *ngFor="let details of coursedetails">
+                        <h5 (click)="getcoursedetails(details)"
+                            style="color: #0C275A; font-family: Poppins; font-weight: 600;">
+
+                            <input type="radio" id="details.id" name="details.id">
+                            {{details.name}}
+                        </h5>
+
+                        <p style="display: inline;">
+                            <label style="margin-left: 350px;"
+                                *ngIf="details.obtainedMarks!=null">{{details.obtainedMarks/details.totalmarks
+                                *100 | number : '1.2-2'}} %</label>
+                            <button
+                                Style="border-radius: 5px;margin-left: 285px; background-color: #3247D5;
+                            color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;"
+                                class="btn btn-sm btn-primary" *ngIf="details.teststatus=='nottaken'"
+                                [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id"> Take
+                                Assessment</button><br>
+                            <button
+                                Style="border-radius: 5px;margin-left: 285px; 
+                            color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;"
+                                class="btn btn-sm btn-danger" *ngIf="details.teststatus=='Failed'"
+                                [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id"
+                                name="id">&#10006;
+                                Retake
+                                Assessment</button>
+                            <button
+                                Style="border-radius: 5px;margin-left: 285px; 
+                            color: #FFFFFF; font-family: Poppins; font-style: normal;font-weight: 600; font-size: 11px;"
+                                class="btn btn-sm btn-success" *ngIf="details.teststatus=='Passed'" id="id"
+                                name="id">&#10003;Assessment Passed
+                            </button><br>
+
+
+                            <hr class="HRline">
+                    </div>
                 </div>
-
-                <!-- <h5 (click)="showcards(2)">
-                    <img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;">
-                    2. Basics of JAVA simple questions.
-                </h5>
-                <hr class="HRline">
-                <h5 (click)="showcards(3)">
-                    <img src="assets/Images/Correct_icon.png" alt="video_icon" style="width: 7%;">
-                    3. JAVA Fullstack developer roadmap
-                </h5>
-                <hr class="HRline">
-                <h5 (click)="showcards(4)">
-                    <img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 6%;">
-                    4. Basics of JAVA Documents
-                </h5>
-                <hr class="HRline">
-                <h5 (click)="showcards(5)">
-                    <img src="assets/Images/Round_icon.jpg" alt="video_icon" style="width: 6%;">
-                    5. JAVA course scope & details
-                </h5>
-                <hr class="HRline">
-                <a routerLink="/AssessmentResult" *ngIf="show==2" class="AssResults"
-                    style="background-color: white; text-decoration: underline;">View Chapter 2 Assessment
-                    Results</a>
-                <a routerLink="/AssessmentResult" *ngIf="show==4" class="AssResults"
-                    style="background-color: white; text-decoration: underline;">View Chapter 4 Assessment
-                    Results</a> -->
-
-            </div>
-        </div><br>
-        <!-- <div class="row">
-            <div class="col-lg-8" *ngIf="show==5">
-                <button routerLink="/CourseCertificate" class="ShowMore2">View My Certificate</button>
-            </div>
-        </div> -->
+            </div><br>
+        </div>
     </div>
-</div>
-<!-- <div class="row" style="margin-left: 15px; background-color: white;">
-    <div class="col-lg-8">
-         <h5>Java is one of the most popular and widely used programming language and platform.
-                     A platform is an environment that helps to develop and run programs written in any programming language.
-                    Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
-                     to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br> 
-    </div>
-</div> -->
-<!-- routerLink="/TakeAssessment" -->
-
-<!-- <div class="col-lg-9" *ngIf="show==2">
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="assets/Images/Java_Basic_Questions.jpg" alt="Basics Java Questions"
+    <div class="row">
+        <div class="col-lg-12">
+            <img src="assets/Images/Java_Basic_Questions.jpg" alt="Basics Java Questions"
                 style="width: 60%; height: 70%;margin-left: 255px;">
-                <hr style="margin-left: 15px;">
-            </div>
+            <hr style="margin-left: 15px;">
         </div>
-        <div class="row" style="margin-left: 15px; margin-top: -190px;">
-            <div class="col-lg-6">
-                <h2>Basics of JAVA simple questions.</h2>
-            </div>
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-4" style="text-align: right;">
-                <br>
-                <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"  (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;" (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;" (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            </div>
-        </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h5>Java is one of the most popular and widely used programming language and platform.
-                     A platform is an environment that helps to develop and run programs written in any programming language.
-                    Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
-                     to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
-            </div>
-        </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h3 routerLink="/TakeAssessment">2. Assessment for Basics of JAVA simple questions.</h3><br>
-            </div>
-        </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-8" style="text-align: center;">
-                <button routerLink="/TakeAssessment" class="ShowMore1">Take My Assessment</button>
-            </div>
-            <div class="col-lg-2">
-            </div>
-        </div><br><br>
     </div>
-    <div class="col-lg-9" *ngIf="show==3">
-        <div class="row">
-            <div class="col-lg-12">
-                <img src='assets/Images/Java_CourseIMG.jpg' alt="1st Course Assessment"
+    <div class="row" style="margin-left: 15px; margin-top: -190px;">
+        <div class="col-lg-6">
+            <h2>Basics of JAVA simple questions.</h2>
+        </div>
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-4" style="text-align: right;">
+            <br>
+            <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;"
+                (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h5>Java is one of the most popular and widely used programming language and platform.
+                A platform is an environment that helps to develop and run programs written in any programming language.
+                Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
+                to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h3 routerLink="/TakeAssessment">2. Assessment for Basics of JAVA simple questions.</h3><br>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8" style="text-align: center;">
+            <button routerLink="/TakeAssessment" class="ShowMore1">Take My Assessment</button>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div><br><br>
+</div>
+<div class="col-lg-9" *ngIf="show==3">
+    <div class="row">
+        <div class="col-lg-12">
+            <img src='assets/Images/Java_CourseIMG.jpg' alt="1st Course Assessment"
                 style="width: 70%; height: 80%;margin-left: 175px;">
-                <hr style="margin-left: 15px;">
-            </div>
+            <hr style="margin-left: 15px;">
         </div>
-        <div class="row" style="margin-left: 15px; margin-top: -70px;">
-            <div class="col-lg-6">
-                <h2>JAVA Fullstack Developer</h2>
-            </div>
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-4" style="text-align: right;">
-                <br>
-                <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"  (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;" (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;" (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            </div>
-        </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h5>Java is one of the most popular and widely used programming language and platform.
-                     A platform is an environment that helps to develop and run programs written in any programming language.
-                    Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
-                     to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
-            </div>
-        </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h3 routerLink="/TakeAssessment">3. Details of JAVA Fullstack Developer Roadmap:</h3>
-                <h6>A full-stack Java developer works end to end on the application stack, 
-                    right from developing the front end, the backend module & the database.</h6>
-                <h6>Speaking of working on the front-end module of the application. 
-                    The developer should have the knowledge of HTML, basic CSS & JavaScript. 
-                    Besides these fundamental technologies, companies prefer to use frameworks 
-                    such as React, Angular, Vue etc. to write their front end module.</h6>
-            </div>
-        </div><br>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-8" style="text-align: center;">
-                <p style="font-size: medium;">No Assessment Test for this chapter</p>
-            </div>
-            <div class="col-lg-2">
-            </div>
-        </div><br><br>
     </div>
-    <div class="col-lg-9" *ngIf="show==4">
-        <div class="row">
-            <div class="col-lg-12">
-                <img src='assets/Images/Java_Documentation.jpg' alt="1st Course Assessment"
+    <div class="row" style="margin-left: 15px; margin-top: -70px;">
+        <div class="col-lg-6">
+            <h2>JAVA Fullstack Developer</h2>
+        </div>
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-4" style="text-align: right;">
+            <br>
+            <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;"
+                (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h5>Java is one of the most popular and widely used programming language and platform.
+                A platform is an environment that helps to develop and run programs written in any programming language.
+                Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
+                to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h3 routerLink="/TakeAssessment">3. Details of JAVA Fullstack Developer Roadmap:</h3>
+            <h6>A full-stack Java developer works end to end on the application stack,
+                right from developing the front end, the backend module & the database.</h6>
+            <h6>Speaking of working on the front-end module of the application.
+                The developer should have the knowledge of HTML, basic CSS & JavaScript.
+                Besides these fundamental technologies, companies prefer to use frameworks
+                such as React, Angular, Vue etc. to write their front end module.</h6>
+        </div>
+    </div><br>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8" style="text-align: center;">
+            <p style="font-size: medium;">No Assessment Test for this chapter</p>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div><br><br>
+</div>
+<div class="col-lg-9" *ngIf="show==4">
+    <div class="row">
+        <div class="col-lg-12">
+            <img src='assets/Images/Java_Documentation.jpg' alt="1st Course Assessment"
                 style="width: 70%; height: 80%;margin-left: 175px;">
-                <hr style="margin-left: 15px;">
-            </div>
+            <hr style="margin-left: 15px;">
         </div>
-        <div class="row" style="margin-left: 15px; margin-top: -70px;">
-            <div class="col-lg-6">
-                <h2>Basics of JAVA Documents</h2>
-            </div>
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-4" style="text-align: right;">
-                <br>
-                <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"  (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;" (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;" (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            </div>
-        </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h5>Java is one of the most popular and widely used programming language and platform.
-                     A platform is an environment that helps to develop and run programs written in any programming language.
-                    Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
-                     to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
-            </div>
-        </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h3 routerLink="/TakeAssessment">4. Details of Basics of JAVA Documents:</h3>
-                <h6>Whether you are working on a new cutting edge app or simply ramping 
-                    up on new technology, Java documentation has all the information you 
-                    need to make your project a smashing success. Use the rich set of code 
-                    samples, tutorials, developer guides, API documentation, and more to
-                     quickly develop your prototype and scale it up to a real world application.</h6>
-                <h6>Java ME Embedded is designed for resource-constrained devices like wireless 
-                    modules for M2M, industrial control, smart-grid infrastructure, environmental 
-                    sensors and tracking, and more.</h6>
-            </div>
-        </div><br>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-8" style="text-align: center;">
-                <button routerLink="/TakeAssessment" class="ShowMore1">Take My Assessment</button>
-            </div>
-            <div class="col-lg-2">
-            </div>
-        </div><br><br>
     </div>
-    <div class="col-lg-9" *ngIf="show==5">
-        <div class="row">
-            <div class="col-lg-12">
-                <img src='assets/Images/Java_Scope.jpg' alt="1st Course Assessment"
+    <div class="row" style="margin-left: 15px; margin-top: -70px;">
+        <div class="col-lg-6">
+            <h2>Basics of JAVA Documents</h2>
+        </div>
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-4" style="text-align: right;">
+            <br>
+            <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;"
+                (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h5>Java is one of the most popular and widely used programming language and platform.
+                A platform is an environment that helps to develop and run programs written in any programming language.
+                Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
+                to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h3 routerLink="/TakeAssessment">4. Details of Basics of JAVA Documents:</h3>
+            <h6>Whether you are working on a new cutting edge app or simply ramping
+                up on new technology, Java documentation has all the information you
+                need to make your project a smashing success. Use the rich set of code
+                samples, tutorials, developer guides, API documentation, and more to
+                quickly develop your prototype and scale it up to a real world application.</h6>
+            <h6>Java ME Embedded is designed for resource-constrained devices like wireless
+                modules for M2M, industrial control, smart-grid infrastructure, environmental
+                sensors and tracking, and more.</h6>
+        </div>
+    </div><br>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8" style="text-align: center;">
+            <button routerLink="/TakeAssessment" class="ShowMore1">Take My Assessment</button>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div><br><br>
+</div>
+<div class="col-lg-9" *ngIf="show==5">
+    <div class="row">
+        <div class="col-lg-12">
+            <img src='assets/Images/Java_Scope.jpg' alt="1st Course Assessment"
                 style="width: 65%; height: 65%;margin-left: 215px;">
-                <hr style="margin-left: 15px;">
-            </div>
+            <hr style="margin-left: 15px;">
         </div>
-        <div class="row" style="margin-left: 15px; margin-top: -200px;">
-            <div class="col-lg-6">
-                <h2>JAVA Course Scope & Details</h2>
-            </div>
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-4" style="text-align: right;">
-                <br>
-                <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"  (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;" (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;" (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </div>
-        </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h5>Java is one of the most popular and widely used programming language and platform.
-                     A platform is an environment that helps to develop and run programs written in any programming language.
-                    Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
-                     to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
-            </div>
-        </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h3 routerLink="/TakeAssessment">5. Details of JAVA Scope & Details:</h3>
-                <h6>The scope of work for Java developers is very broad as they perform tasks from 
-                    designing user interfaces to testing dynamic applications. Due to the wide range 
-                    of Java, developers who work in Java have to collaborate with other professionals 
-                    such as web designers and software engineers.</h6>
-                <h6>The popularity and demand of Java developers can be gauged by the fact 
-                    that the world’s top brands like Twitter, LinkedIn, eBay, Amazon, etc., 
-                    use Java to create a cohesive infrastructure between their web application and backend systems.</h6>
-            </div>
-        </div><br>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-8" style="text-align: center;">
-                <p style="font-size: medium;">No Assessment Test for this chapter</p>
-            </div>
-            <div class="col-lg-2">
-            </div>
-        </div><br><br>
     </div>
-
-    <div class="col-lg-9" *ngIf="show==6">
-        <div class="row">
-            <div class="col-lg-12">
-                <video style="width: 70%; height: 80%;margin-left: 175px;" controls>
-                    <source src="assets/Images/Java_Course.mp4" type="video/mp4">
-                    <source src="assets/Images/Java_Course.mp4" type="video/ogg">
-                    Your browser does not support the video tag.
-                  </video>
-                <hr style="margin-left: 15px;">
-            </div>
-        </div><br>
-        <div class="row" style="margin-left: 15px; margin-top: -70px;">
-            <div class="col-lg-6">
-                <h2>JAVA</h2>
-            </div>
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-4" style="text-align: right;">
-                <br>
-                <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"  (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;" (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;" (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            </div>
+    <div class="row" style="margin-left: 15px; margin-top: -200px;">
+        <div class="col-lg-6">
+            <h2>JAVA Course Scope & Details</h2>
         </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h5>Java is one of the most popular and widely used programming language and platform.
-                     A platform is an environment that helps to develop and run programs written in any programming language.
-                    Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
-                     to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
-            </div>
+        <div class="col-lg-2">
         </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h3 routerLink="/TakeAssessment">1. Basics of JAVA:</h3>
-                <h6>Java is a high-level, general-purpose, object-oriented, and secure 
-                    programming language developed by James Gosling at Sun Microsystems, 
-                    Inc. in 1991. It is formally known as OAK. In 1995, Sun Microsystem 
-                    changed the name to Java. In 2009, Sun Microsystem takeover by Oracle Corporation.</h6>
-                <h6>When we consider a Java program, it can be defined as a collection of objects that 
-                    communicate via invoking each other's methods. Let us now briefly look into what 
-                    do class, object, methods, and instance variables mean.</h6>
-            </div>
-        </div><br>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-8" style="text-align: center;">
-                <p style="font-size: medium;">No Assessment Test for this chapter</p>
-            </div>
-            <div class="col-lg-2">
-            </div>
-        </div><br><br>
+        <div class="col-lg-4" style="text-align: right;">
+            <br>
+            <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;"
+                (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
     </div>
-    <div class="col-lg-9" *ngIf="show==7">
-        <div class="row">
-            <div class="col-lg-12">
-                <video style="width: 70%; height: 80%;margin-left: 175px;" controls>
-                    <source src="assets/Images/Java_Course.mp4" type="video/mp4">
-                    <source src="assets/Images/Java_Course.mp4" type="video/ogg">
-                    Your browser does not support the video tag.
-                  </video>
-                <hr style="margin-left: 15px;">
-            </div>
-        </div><br>
-        <div class="row" style="margin-left: 15px; margin-top: -80px;">
-            <div class="col-lg-6">
-                <h2>Basics of JAVA simple questions.</h2>
-            </div>
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-4" style="text-align: right;">
-                <br>
-                <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"  (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;" (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;" (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h5>Java is one of the most popular and widely used programming language and platform.
+                A platform is an environment that helps to develop and run programs written in any programming language.
+                Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
+                to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h3 routerLink="/TakeAssessment">5. Details of JAVA Scope & Details:</h3>
+            <h6>The scope of work for Java developers is very broad as they perform tasks from
+                designing user interfaces to testing dynamic applications. Due to the wide range
+                of Java, developers who work in Java have to collaborate with other professionals
+                such as web designers and software engineers.</h6>
+            <h6>The popularity and demand of Java developers can be gauged by the fact
+                that the world’s top brands like Twitter, LinkedIn, eBay, Amazon, etc.,
+                use Java to create a cohesive infrastructure between their web application and backend systems.</h6>
+        </div>
+    </div><br>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8" style="text-align: center;">
+            <p style="font-size: medium;">No Assessment Test for this chapter</p>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div><br><br>
+</div>
 
-            </div>
+<div class="col-lg-9" *ngIf="show==6">
+    <div class="row">
+        <div class="col-lg-12">
+            <video style="width: 70%; height: 80%;margin-left: 175px;" controls>
+                <source src="assets/Images/Java_Course.mp4" type="video/mp4">
+                <source src="assets/Images/Java_Course.mp4" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            <hr style="margin-left: 15px;">
         </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h5>Java is one of the most popular and widely used programming language and platform.
-                     A platform is an environment that helps to develop and run programs written in any programming language.
-                    Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
-                     to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
-            </div>
+    </div><br>
+    <div class="row" style="margin-left: 15px; margin-top: -70px;">
+        <div class="col-lg-6">
+            <h2>JAVA</h2>
         </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-8">
-                <h3 routerLink="/TakeAssessment">2. Assessment for Basics of JAVA simple questions.</h3><br>
-            </div>
+        <div class="col-lg-2">
         </div>
-        <div class="row" style="margin-left: 15px;">
-            <div class="col-lg-2">
-            </div>
-            <div class="col-lg-8" style="text-align: center;">
-                <button routerLink="/TakeAssessment" class="ShowMore1">Take My Assessment</button>
-            </div>
-            <div class="col-lg-2">
-            </div>
-        </div><br><br>
-    </div> -->
+        <div class="col-lg-4" style="text-align: right;">
+            <br>
+            <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;"
+                (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h5>Java is one of the most popular and widely used programming language and platform.
+                A platform is an environment that helps to develop and run programs written in any programming language.
+                Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
+                to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h3 routerLink="/TakeAssessment">1. Basics of JAVA:</h3>
+            <h6>Java is a high-level, general-purpose, object-oriented, and secure
+                programming language developed by James Gosling at Sun Microsystems,
+                Inc. in 1991. It is formally known as OAK. In 1995, Sun Microsystem
+                changed the name to Java. In 2009, Sun Microsystem takeover by Oracle Corporation.</h6>
+            <h6>When we consider a Java program, it can be defined as a collection of objects that
+                communicate via invoking each other's methods. Let us now briefly look into what
+                do class, object, methods, and instance variables mean.</h6>
+        </div>
+    </div><br>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8" style="text-align: center;">
+            <p style="font-size: medium;">No Assessment Test for this chapter</p>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div><br><br>
+</div>
+<div class="col-lg-9" *ngIf="show==7">
+    <div class="row">
+        <div class="col-lg-12">
+            <video style="width: 70%; height: 80%;margin-left: 175px;" controls>
+                <source src="assets/Images/Java_Course.mp4" type="video/mp4">
+                <source src="assets/Images/Java_Course.mp4" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            <hr style="margin-left: 15px;">
+        </div>
+    </div><br>
+    <div class="row" style="margin-left: 15px; margin-top: -80px;">
+        <div class="col-lg-6">
+            <h2>Basics of JAVA simple questions.</h2>
+        </div>
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-4" style="text-align: right;">
+            <br>
+            <img src="assets/Images/Video_lcon.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/pdf.jpg" alt="video_icon" style="width: 10%;"
+                (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/Images/image.png" alt="video_icon" style="width: 10%;"
+                (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h5>Java is one of the most popular and widely used programming language and platform.
+                A platform is an environment that helps to develop and run programs written in any programming language.
+                Java is fast, reliable and secure. From desktop to web applications, scientific supercomputers
+                to gaming consoles, cell phones to the Internet, Java is used in every nook and corner.</h5><br>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-8">
+            <h3 routerLink="/TakeAssessment">2. Assessment for Basics of JAVA simple questions.</h3><br>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8" style="text-align: center;">
+            <button routerLink="/TakeAssessment" class="ShowMore1">Take My Assessment</button>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div><br><br>
+</div>
