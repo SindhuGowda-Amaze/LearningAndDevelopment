@@ -257,7 +257,7 @@ export class TakeAssessmentComponent implements OnInit {
           this.show = 0;
           this.startTest = "";
         //  this.router.navigate(['/AssessmentResult', this.testResponseID]);
-        this.router.navigate(['/MyCourseDashboard']);
+        this.router.navigate(['#/MyCourseDashboard']);
         }
        
       })

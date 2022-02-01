@@ -39,7 +39,7 @@
                         <div class="col-lg-12">
                             <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
                         </div>
-                    </div><br>
+                    </div>
                     <div class="row">
                         <div class="col-lg-6">
                             <button href="#" [routerLink]="['/StartMyCourse',latestcoursedetails.id]" type="button"
@@ -221,7 +221,7 @@
                         <br>
                         <div class="row title_outer1">
                             <div class="col-lg-12">
-                                <img style="width:130px;height:auto;" src="{{details.photo}}">
+                                <img style="width:120px;height:auto;overflow-y: hidden;" src="{{details.photo}}">
                             </div>
                         </div> <br>
                         <div class="row">
@@ -229,7 +229,7 @@
                                 <p style="font-size: 15px;">{{details.name}}</p>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" >
                             <div class="col-lg-4">
                                 <p style="font-size: 12px;">Not Started </p>
                             </div>
@@ -244,10 +244,10 @@
                             </div>
                         </div><br>
                         <div class="row">
-                            <div class="col-lg-6">
-                                <button type="button" class="btn btn-outline-secondary" [routerLink]="['/StartMyCourse',details.id]">Start Course</button>
-                            </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-5">
+                                <button type="button" class="btn btn-outline-secondary" [routerLink]="['/StartMyCourse',details.id]">START COURSE</button>
+                            </div>&nbsp;&nbsp;&nbsp;
+                            <div class="col-lg-5">
                                 <button type="button" class="btn btn-outline-secondary">Flip For Details</button>
                             </div>
                         </div>

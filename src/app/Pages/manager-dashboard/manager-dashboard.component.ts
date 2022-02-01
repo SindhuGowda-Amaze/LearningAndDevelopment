@@ -13,6 +13,7 @@ export class ManagerDashboardComponent implements OnInit {
   count: any;
   staffid: any;
   manager: any;
+  ename:any;
   constructor(public LearningService: LearningService) { }
 
   ngOnInit(): void {
@@ -85,7 +86,7 @@ export class ManagerDashboardComponent implements OnInit {
           timer: 1500
 
         })
-        this.GetEnroll();
+        this.Showcards(1);
       })
 
   }
@@ -109,7 +110,7 @@ export class ManagerDashboardComponent implements OnInit {
           timer: 1500
 
         })
-        this.GetEnroll();
+        this.Showcards(3);
       })
 
     }

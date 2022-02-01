@@ -50,7 +50,7 @@ export class AssignCourseToEmployeeComponent implements OnInit {
   }
 
   Cancel() {
-    location.reload();
+    location.href = "#/AssignCourseDashboard";
   }
   public getcoureid(id: any) {
     this.staffId = id
@@ -65,7 +65,7 @@ export class AssignCourseToEmployeeComponent implements OnInit {
   public getdata(name: any) {
     this.name = name
   }
-
+name123:any;
 
   enroll() {
     debugger
@@ -89,7 +89,7 @@ export class AssignCourseToEmployeeComponent implements OnInit {
           "manager": this.manager,
           "courseid": this.courseid,
           "status": 'Manager Assign',
-          "employeeName": this.name,
+          "employeeName": this.name123,
           "phoneNo": this.mobile,
           "email": this.emailID,
           "type": "Manager Assign"
@@ -103,7 +103,7 @@ export class AssignCourseToEmployeeComponent implements OnInit {
           'Cousre Assigned Successfully!!!',
           'success'
         );
-        location.href = "/#/AssignCourseDashboard";
+        location.href = "#/AssignCourseDashboard";
       }
     });
   }

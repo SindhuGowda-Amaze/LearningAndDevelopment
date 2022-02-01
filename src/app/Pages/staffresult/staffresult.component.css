@@ -61,6 +61,9 @@
       border:none;
       border-radius: 5px;
     }
+  .btn{
+background-color: #3247d5;
+    }
     .selected{
       padding:5px;
       border-radius: 5px;
@@ -156,6 +159,6 @@ th {
   color:white;
   background-color: #3247D5;
   border:none;
-  width:15%;
+  width:20%;
 }
 

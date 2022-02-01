@@ -30,7 +30,7 @@ count:any;
 
   edit(id: any) {
     debugger
-    location.href = "/#/TrainerCourseMappingForm/" + id;
+    location.href = "#/TrainerCourseMappingForm/" + id;
   }
   
   public Ondelete(id:any) {

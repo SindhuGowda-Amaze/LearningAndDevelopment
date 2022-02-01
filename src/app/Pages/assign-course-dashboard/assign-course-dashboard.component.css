@@ -47,7 +47,7 @@
   .header{
     background-color: #dee2e6;
     color:#404040;
-    font-family: "DIN Bold";
+    font-family: 'Poppins';
     font-size: 12px;
    padding:5px;
 
@@ -60,8 +60,15 @@
 .button
 {
     border: none;
+    width:100%;
+    border-radius: 5px;
+    background-color: #3247D5;
+    color:white;
+    font-size: 15px;
+}
+.button1{
+    border: none;
     width:50%;
-    height:auto;
     border-radius: 5px;
     background-color: #3247D5;
     color:white;

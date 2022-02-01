@@ -76,7 +76,7 @@ export class ChapterComponent implements OnInit {
 
    
   Cancel() {
-    location.href = "/#/ChapterDashboard";
+    location.href = "#/ChapterDashboard";
   }
 
   files1: File[] = [];
@@ -149,28 +149,35 @@ export class ChapterComponent implements OnInit {
         data => {
         debugger
         let result = data;
-        Swal.fire("Successfully Updated...!");
+        Swal.fire("Updated Successfully ...!");
         location.href="/#/ChapterDashboard";
       })
   }
 
   Save() {
     debugger
-    var json = {
-      "courseID": this.courseID,
-      "Name": this.name,
-      "Description": this.description,
-      "ChapterPhoto": this.ChapterPhoto,
-      "ChapterText": this.chapterText 
-    };
-    this.LearningService.InsertChapter(json).subscribe(
-      data => {
-        debugger
-        this.chapterID = data;
-        this.insertAttchmentFiles()
-        Swal.fire("Saved Sucessfully");
-        location.href = "#/ChapterDashboard"
-      })
+    if(this.courseID==undefined || this.name==undefined||this.description==undefined || this.ChapterPhoto==undefined|| this.chapterText==undefined)
+    {
+      Swal.fire("Please fill all the fields");
+    }
+    else{
+      var json = {
+        "courseID": this.courseID,
+        "Name": this.name,
+        "Description": this.description,
+        "ChapterPhoto": this.ChapterPhoto,
+        "ChapterText": this.chapterText 
+      };
+      this.LearningService.InsertChapter(json).subscribe(
+        data => {
+          debugger
+          this.chapterID = data;
+          this.insertAttchmentFiles()
+          Swal.fire("Saved Successfully");
+          location.href = "#/ChapterDashboard"
+        })
+    }
+    
   }
 
 
