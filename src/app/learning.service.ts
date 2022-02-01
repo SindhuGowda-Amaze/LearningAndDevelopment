@@ -503,6 +503,12 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
+  public UpdateChapterAttachment(data: any) {
+    debugger;
+    this.url = this.baseURL + '/Master/UpdateChapterAttachment';
+    return this.http.post(this.url, data);
+  }
+
   public GetApproveCourse(staffid: any) {
 
     return this.http.get<any[]>(this.baseURL + "/Master/GetApproveCourse?StaffID=" + staffid);

@@ -210,6 +210,34 @@ export class ChapterComponent implements OnInit {
     })
   }
 
+
+
+
+
+
+
+
+
+  edit(){
+    debugger
+     var json = {
+           "ID": this.photoid,
+           "ChapterAttachmentUrl": this.photourl,
+      };   
+      this.LearningService.UpdateChapterAttachment(json).subscribe(
+        data => {
+        debugger
+        let result = data;
+        Swal.fire("Successfully Updated...!");
+        this.LearningService.GetChapterAttachmentByChapterID(this.id).subscribe(data => {
+          debugger
+          this.Attachmentlist = data;
+          this.files1=[];
+        })
+      })
+  }
+
+
   photourl:any;
   photoid:any;
   Edit(attchments:any){
@@ -220,9 +248,32 @@ export class ChapterComponent implements OnInit {
 
 
 
+  image:any
+  clickonimage(photo:any){
+   this.image=photo;
+  }
 
 
 
+  
+  onSelect2(event: any) {
+    this.files1.length=0;
+    this.files1=[];
+    console.log(event);
+    this.files1.push(...event.addedFiles);
+    this.uploadattachments2();
+  }
+
+  file1: any;
+  public uploadattachments2() {
+    debugger
+    this.LearningService.AttachmentsUpload(this.files1).subscribe(res => {
+      debugger
+      this.photourl = res;
+      console.log("Attchaments",this.Attachment);
+      alert("ATTACHMENT UPLOADED");
+    })
+  }
 
 
 }

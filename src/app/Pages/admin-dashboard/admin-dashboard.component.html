@@ -11,9 +11,8 @@
                         <div class="back">
                             <br>
                             <div class="row" style="overflow: auto;height: 230px;">
-                                <p style="margin-left: 20px; font-size: 17px;">Course List</p>
-                                
-                                <div class="col-lg-12 card-header" style="background: #02CFFF;" *ngFor="let details of coursedetails">
+                                <p style="margin-left: 20px; font-size: 17px;">Course List</p>                               
+                                <div class="col-lg-12 card-header" style="background: #02CFFF;font-size: 15px;" *ngFor="let details of coursedetails">
                                     <span>{{details.name}}</span>
                                 </div>
 
@@ -30,17 +29,13 @@
                         <div class="front" >
                             <br>
                             <div class="row title_outer1"style="background-color:#02CFFF;">
-                                <div class="col-lg-1">
+                                <div class="col-lg-2">
+                                    <p class="fa fa-calendar calend" style="color:white" aria-hidden="true">
+                                    </p>                                                                                                     
                                 </div>
-                                <div class="col-lg-1">
-                                    <i class="fa fa-calendar calend" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-lg-9">
-                                    <h1 class="cardlabel" style="color: white;
-                                    font-size: 37px;
-                                    margin-top: 0px;">Courses
-                                    </h1>
-                                </div>
+                                <div class="col-lg-10">
+                                    <p style="font-size:28px;color:white">Courses</p>
+                                </div>                          
                             </div><br><br>
                             <div class="row">
                                 <div class="col-lg-4"></div>
@@ -234,32 +229,7 @@
         <div class="col-lg-10">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="card1" style="background-color: white; height: 300px;width: 295px;"
-                        >
-                        <!-- <div class="back">
-                            <br>
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 43px;color:maroon; margin-top: 5px;
-                                        margin-left: 5px;"></i>
-                                </div>
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-7">
-                                    <label class="name">Trainers<br>
-                                        <div class="din-Medium1">Description</div>
-                                        <div class="din-Medium1">Photo</div>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr class="new4">
-                            <div class="backflip">
-                                <button class="bcakbtn">BACK</button>
-
-
-                                <a href="#/VendorJobOpenings"><button class="viewall" data-toggle="modal" data-target="#enroll2">VIEW ALL</button></a>
-
-                            </div>
-                        </div> -->
+                    <div class="card1" style="background-color: white; height: 300px;width: 295px;">   
                         <div class="front">
                             <br>
                             <div class="row title_outer1" style="background-color:#FF756D">
@@ -278,7 +248,7 @@
                             <div class="row">
                                 <div class="col-lg-4"></div>
                                 <div class="col-lg-4" style="text-align: center;">
-                                    <h6 class="Number">{{countlist.trainersCount}}</h6>
+                                    <p class="Number">{{countlist.trainersCount}}</p>
                                 </div>
                                 <div class="col-lg-4"></div>
                             </div><br><br><br><br>

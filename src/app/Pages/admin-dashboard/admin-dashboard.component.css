@@ -323,9 +323,8 @@ body {
   }
   
   .cardlabel {
-    font-family: 'DIN Bold';
     font-size: 20px;
-    margin-top: -1px;
+   
   }
   
   ::-webkit-scrollbar {

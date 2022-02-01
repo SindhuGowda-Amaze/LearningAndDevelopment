@@ -107,4 +107,15 @@ export class ChapterDashboardComponent implements OnInit {
       this.GetChapter();
     }
   }
+
+  photo:any;
+  Showimage(chapterPhoto:any){
+    this.photo=chapterPhoto;
+
+  }
+
+
+
+
+
 }
