@@ -50,7 +50,7 @@ export class AssignCourseToEmployeeComponent implements OnInit {
   }
 
   Cancel() {
-    location.reload();
+    location.href = "#/AssignCourseDashboard";
   }
   public getcoureid(id: any) {
     this.staffId = id
@@ -103,7 +103,7 @@ export class AssignCourseToEmployeeComponent implements OnInit {
           'Cousre Assigned Successfully!!!',
           'success'
         );
-        location.href = "/#/AssignCourseDashboard";
+        location.href = "#/AssignCourseDashboard";
       }
     });
   }

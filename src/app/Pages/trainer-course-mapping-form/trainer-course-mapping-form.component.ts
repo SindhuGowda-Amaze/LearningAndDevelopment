@@ -95,7 +95,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
         debugger
         let trainerlist = data;
     alert("Successfully Submitted...!")
-      location.href="/#/TrainerCourseMapping";
+      location.href="#/TrainerCourseMapping";
       })
   }
 
@@ -118,7 +118,7 @@ export class TrainerCourseMappingFormComponent implements OnInit {
         debugger
         let result = data;
         Swal.fire("Successfully Updated...!");
-        location.href="/#/TrainerCourseMapping";
+        location.href="#/TrainerCourseMapping";
       })
   }
 
@@ -168,6 +168,6 @@ TrainerID:any
   }
 
   cancel() {
-    location.href = "/#/TrainerCourseMapping";
+    location.href = "#/TrainerCourseMapping";
   }
 }

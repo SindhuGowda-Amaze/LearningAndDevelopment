@@ -30,7 +30,8 @@
       format('opentype');
   }
   body,button,p{
-    font-family: 'DIN Bold';
+    /* font-family: 'DIN Bold'; */
+    font-size: Poppins;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer; 

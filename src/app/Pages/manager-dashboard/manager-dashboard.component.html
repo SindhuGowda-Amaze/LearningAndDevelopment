@@ -19,7 +19,7 @@
                         <input class="form-control" placeholder="Search" [(ngModel)]="search">
                     </div>
                     <div class="col-lg-3">
-                        <select class="form-control" name="cars" id="Duration" (change)="staffid($event)">
+                        <select class="form-control" name="cars" id="Duration" (change)="staffid($event)" >
                             <option value="0">Select Employee</option>
                             <option *ngFor="let details of result" value="{{details.id}}">{{details.employeeName}}
                             </option>
@@ -55,7 +55,7 @@
                                 <th>Phone No</th>
                                 <th>Email</th>
                                 <th>Course Name</th>
-                                <th>Result</th>
+                                <th>Request sent date</th>
                                 <th>Action</th>
                             </tr>
                             <tr *ngFor="let details of result|filter:search">
