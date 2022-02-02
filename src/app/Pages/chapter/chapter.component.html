@@ -42,7 +42,7 @@
                         <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                     </ngx-dropzone-preview>
                 </ngx-dropzone>
-                <img src="{{showChapterPhoto}}" style="width: 100px;height:auto">
+                <img src="{{showChapterPhoto}}" data-toggle="modal1" data-target="#exampleModal1" style="width: 100px;height:auto">
             </div>
             <div class="col-lg-3" *ngIf="show==0">
                 <ngx-dropzone (change)="onSelect1($event)" style="width:100% ;height: auto;">
@@ -58,14 +58,8 @@
                     </ngx-dropzone-preview>
                 </ngx-dropzone>
             </div>
-
         </div> <br>
-
-
-
-
         <div class="row">
-
             <div class="col-lg-3">
                 <p>Chapter Text</p>
             </div>
@@ -77,28 +71,34 @@
             </div>
         </div>
         <br>
-
-        <div class="row">
-            <div class="col-lg-2" *ngFor="let attchments of Attachmentlist">
+        <div class="card" style="width:60%">
+            <div class="row">
                 <br>
-                <img src="{{attchments.photo}}" *ngIf="attchments.attachmentType=='Image'"
-                    (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Pdf'"
-                    (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                <img src="assets/Images/word.png" *ngIf="attchments.attachmentType=='Document'"
-                    (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                <img src="assets/Images/files.png" *ngIf="attchments.attachmentType=='Ppt'"
-                    (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                <video controls style="height: 100px;width: 50%;" *ngIf="attchments.attachmentType=='video'"
-                    (click)="openAttchments(attchments.photo)">
-                    <source src="{{attchments.photo}}" (click)="openAttchments(attchments.photo)" type="video/mp4">
-                    <source src="{{attchments.photo}}" (click)="openAttchments(attchments.photo)" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video><br><br>            
-                <button style="border:none;border-radius:5px;" (click)="Edit(attchments)">EDIT</button>
-            </div>
-           
-        </div> <br>
+                <div class="col-lg-4" *ngFor="let attchments of Attachmentlist">
+                    <img src="{{attchments.photo}}" *ngIf="attchments.attachmentType=='Image'"
+                        (click)="openAttchments(attchments.photo)" style="width:100px;height:100px;">
+                    <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Pdf'"
+                        (click)="openAttchments(attchments.photo)" style="width:100px;height:100px;">
+                    <img src="assets/Images/word.png" *ngIf="attchments.attachmentType=='Document'"
+                        (click)="openAttchments(attchments.photo)" style="width:100px;height:100px;">
+                    <img src="assets/Images/files.png" *ngIf="attchments.attachmentType=='Ppt'"
+                        (click)="openAttchments(attchments.photo)" style="width:100px;height:100px;">
+                    <video controls style="height:100px;width: 50%;" *ngIf="attchments.attachmentType=='video'"
+                        (click)="openAttchments(attchments.photo)">
+                        <source src="{{attchments.photo}}" (click)="openAttchments(attchments.photo)" type="video/mp4">
+                        <source src="{{attchments.photo}}" (click)="openAttchments(attchments.photo)" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video><br><br>
+                    <div class="row">
+                        <div class="col-lg-2" style="margin-left: 15px;">
+                            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"
+                        (click)="Edit(attchments)">EDIT</button>
+                        </div>
+                    </div>              
+                </div>
+            </div> <br>
+        </div>
+
         <div class="row">
             <div class="col-lg-9"></div>
             <div class="col-lg-1">
@@ -119,35 +119,52 @@
 
 
 
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Attachments</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Update Here</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-4" *ngFor="let attchments of Attachmentlist">
-                        <br>
-                        <img src="{{attchments.photo}}" *ngIf="attchments.attachmentType=='Image'" (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                        <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Pdf'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                        <img src="assets/Images/word.png" *ngIf="attchments.attachmentType=='Document'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                        <img src="assets/Images/files.png" *ngIf="attchments.attachmentType=='Ppt'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                        <video controls style="height: 100px;width: 50%;"  *ngIf="attchments.attachmentType=='video'" (click)="openAttchments(attchments.photo)">
-                            <source src="{{attchments.photo}}"  (click)="openAttchments(attchments.photo)" type="video/mp4">
-                            <source src="{{attchments.photo}}"  (click)="openAttchments(attchments.photo)" type="video/ogg">
-                            Your browser does not support the video tag.
-                          </video>
+                    <div class="col-lg-4">
+                        <ngx-dropzone (change)="onSelect2($event)" style="width:100% ;height: auto;">
+                            <ngx-dropzone-label>
+                                <img class="image" src="assets/Images/youtube.png">&nbsp;&nbsp;
+                                <img class="image" src="assets/Images/word.png">&nbsp;&nbsp;
+                                <img class="image" src="assets/Images/pdf.png">&nbsp;&nbsp;
+                                <img class="image" src="assets/Images/image.png">&nbsp;&nbsp;
+                                <img class="image" src="assets/Images/files.png">&nbsp;&nbsp;
+                            </ngx-dropzone-label>
+                            <ngx-dropzone-preview *ngFor="let f of files1" [removable]="true" (removed)="onRemove1(f)">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-preview>
+                        </ngx-dropzone>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10"></div>
+                    <div class="col-lg-2">
+                        <button type="button" class="btn btn-outline-primary" (click)="edit()">Update</button>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
         </div>
     </div>
-</div> -->
+</div>
+
+
+

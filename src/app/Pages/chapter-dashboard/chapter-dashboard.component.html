@@ -51,7 +51,11 @@
                                     <td style="color:#0C275A">{{details.courseName}}</td>
                                     <td style="color:#0C275A">{{details.name}}</td>
                                     <td style="color:#0C275A">{{details.description}}</td>
-                                    <td style="color:#0C275A"><img src="{{details.chapterPhoto}}" style="width:100px"></td>
+                                    <td style="color:#0C275A"><img src="{{details.chapterPhoto}}"
+                                        data-toggle="modal" data-target="#exampleModal1" 
+                                        (click)="Showimage(details.chapterPhoto)"  style="width:100px">
+                                        
+                                    </td>
 
                                     <td><img class="pdfimg" src="assets/Images/image.png" style="width: 20px;"
                                             data-toggle="modal" data-target="#exampleModal"
@@ -63,29 +67,6 @@
                                         <button class="button2" (click)="Ondelete(details.id)">Delete</button>
                                 </td>
                                 </tr>
-                                <!-- <tr class="header"> 
-                                    <td>2016 JAVA Overview</td>
-                                    <td>Foundamentals of JAVA </td>
-                                    <td>Java is a popular programming language.
-                                        Java is used to develop mobile apps, web apps, desktop apps, games and much
-                                        more.</td>
-                                    <td><img class="pdfimg" src="assets/Images/java.jpg" data-toggle="modal" data-target="#exampleModal" ></td>
-                                    <td><img class="file" src="assets/Images/files.png" (click)="PreviewPPT()">&nbsp;&nbsp;
-                                        <img class="video" src="assets/Images/youtube.png" (click)="PreviewVideo()">
-                                    </td>
-                                    <td>
-                                        
-                                        Java is a programming language and a platform. Java is a high level, robust,
-                                        object-oriented and secure programming language.
-                                        Java was developed by Sun Microsystems (which is now the subsidiary of Oracle)
-                                        in the year 1995. James Gosling is known as the father of Java. Before Java, its
-                                        name was Oak. Since Oak was already a registered company, so James Gosling and
-                                        his team changed the name from Oak to Java.
-                                    </td>
-                                    <td><button class="button1" routerLink="/Chapter">Edit</button> <br> <br>
-                                        <button class="button2">Delete</button>
-                                    </td>
-                                </tr> -->
                             </thead>
                         </table>
                         <ng-template #noResults>
@@ -122,6 +103,34 @@
                             <source src="{{attchments.photo}}"  (click)="openAttchments(attchments.photo)" type="video/ogg">
                             Your browser does not support the video tag.
                           </video>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-8" >
+                        <br>
+                        <img src="{{photo}}" style="width:100%;height:auto;">
                     </div>
                 </div>
             </div>
