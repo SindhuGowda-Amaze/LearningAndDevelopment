@@ -17,11 +17,7 @@
     font-size: 15px;
 }
 
-.button1{
 
-    margin-top: 6px;
- 
-  }
 .button2{
     padding:5px;
     border-radius: 5px;
@@ -60,20 +56,20 @@
 .button
 {
     border: none;
-    width:100%;
-    border-radius: 5px;
-    background-color: #3247D5;
-    color:white;
-    font-size: 15px;
-}
-.button1{
-    border: none;
     width:50%;
     border-radius: 5px;
     background-color: #3247D5;
     color:white;
     font-size: 15px;
 }
+/* .button1{
+    border: none;
+    width:50%;
+    border-radius: 5px;
+    background-color: #3247D5;
+    color:white;
+    font-size: 15px;
+} */
 .course{
     font-size: 15px;
 }

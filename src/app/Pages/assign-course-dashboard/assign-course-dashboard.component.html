@@ -27,7 +27,7 @@
     <div class="row">
         <div class="col-lg-10"></div>
         <div class="col-lg-2">
-            <button class="form-control button" routerLink="/AssignCourseToEmployee">Add</button>
+            <button class="form-control addbtn" routerLink="/AssignCourseToEmployee">Add</button>
         </div>
     </div> <br>
 
@@ -44,13 +44,11 @@
                     </thead>
                     <tbody>
                         <tr class="header" *ngFor="let details of result|filter:search">
-                            <td>{{details.employeeName}}</td>
-                            <td>{{details.name}}</td>
-
+                            <td style="font-size: 15px;">{{details.employeeName}}</td>
+                            <td style="font-size: 15px;">{{details.name}}</td>
                             <td>
-                                <!-- <button class="actionbuttons" routerLink="/CategoryForm" [routerLink]="['/CategoryForm', details.id]">Edit</button><br><br> -->
-                                <button class="form-control button1" (click)="Ondelete(details.id)">Delete</button><br>
-                                <button class="form-control button1" (click)="Ondelete(details.id)">Edit</button>
+                                <button class="form-control button" (click)="Ondelete(details.id)">Delete</button><br>
+                                <button class="form-control button" (click)="Ondelete(details.id)">Edit</button>
                             </td>
                         </tr>
                     </tbody>

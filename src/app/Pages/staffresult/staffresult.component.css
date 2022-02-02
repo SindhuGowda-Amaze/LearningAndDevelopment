@@ -10,7 +10,6 @@
   }
   
   .newFont{
-   
     color:black;
     width:100%;
     vertical-align: middle;
@@ -18,10 +17,10 @@
   td{
     background-color: white
   }
-  .table th {
+  /* .table th {
     background-color: #02cfff !important;
     color: #ffffff;
-  }
+  } */
   /* .th{
     background-color: #e4e5e6;
     color:#404040;
@@ -36,11 +35,7 @@
     font-size: 20px;
     color: #3247D5; font-family: 'Poppins';
     }
-  .head{
-    font-family: 'Poppins';
-  }
   .card{
-   
     width:100%;
     background: #FFFFFF;
     box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
@@ -121,12 +116,8 @@ table {
     width: 100%;
 }
 
-td,
-th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
+
+
 
 th {
   background-color: #02cfff !important;

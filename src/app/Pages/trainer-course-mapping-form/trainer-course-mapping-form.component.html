@@ -78,12 +78,12 @@
                 <div class="row">
                     <div class="col-lg-9"></div>
                     <div class="col-lg-1">
-                        <button class="form-control  button1" (click)="cancel()">Cancel</button>
+                        <button class="form-control  cancel" (click)="cancel()">Cancel</button>
                     </div>
                     <div class="col-lg-1">
                         <!-- <button class="form-control button1" (click)="Save()">Save</button> -->
-                        <button class="form-control button1"  *ngIf="id==null || id==undefined" (click)="Submit()">Save</button>    
-                     <button class="form-control button1"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>   
+                        <button class="form-control cancel"  *ngIf="id==null || id==undefined" (click)="Submit()">Save</button>    
+                     <button class="form-control cancel"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>   
                     </div>
 
                     <div class="col-lg-1"></div>

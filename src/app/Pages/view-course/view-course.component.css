@@ -1,13 +1,14 @@
 .card1{
     margin: 10px;
-    background-color: rgb(73, 90, 107);
-    color: white;
+    background-color:#F3F8FF;
+    color: #0C275A ;
+   
 }
 button{
     padding:10px;
     border-radius: 5px;
-    color:black;
-    background-color: white;
+    color:white;
+    background-color: #3247D5;
     border:none;
     float: right;
     margin-bottom: 5px;
@@ -52,5 +53,6 @@ button{
   } */
   .card2{
     margin: 10px;
-    color: black;
+    background-color: 
+    #F3F8FF;
 }
