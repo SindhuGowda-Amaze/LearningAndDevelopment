@@ -18,10 +18,12 @@ export class LoginComponent implements OnInit {
   username: any;
   loginTypeList: any;
   temp:any;
+  showpassword: any;
+  companycode:any;
   constructor(public LearningService: LearningService, private router: Router) { }
   ngOnInit(): void {
     this.temp = sessionStorage.getItem('temp');
-
+    this.showpassword = 0;
 
     if (localStorage.getItem('temp') == '1') {
       localStorage.clear();
@@ -29,7 +31,27 @@ export class LoginComponent implements OnInit {
 
     }
     //   this.GetLoginTypeMaster();
+    
   }
+
+  // public getroleid(event: any) {
+  //   this.roledid = event.target.value;
+  //  this.username = sessionStorage.getItem('UserName')
+
+  // }
+
+  public getcompanycode() {
+    debugger
+    sessionStorage.setItem('companycode', this.companycode);
+    if (this.companycode == 1001) {
+      sessionStorage.setItem('apiurl', 'http://103.133.214.197/digiOfficeV4API');
+      
+    }
+    else if (this.companycode == 1002) {
+      sessionStorage.setItem('apiurl', 'http://103.133.214.197/Dynamic_NCNDAAPI');
+    }
+  }
+
   GetLoginTypeMaster() {
 
     this.LearningService.GetLoginTypeMaster().subscribe(data => {
@@ -40,6 +62,17 @@ export class LoginComponent implements OnInit {
   public getRoleID(even: any) {
     debugger
     this.roleID = even.target.value;
+  }
+
+
+  Showhidepassword() {
+    debugger
+    if (this.showpassword == 0) {
+      this.showpassword = 1;
+    }
+    else {
+      this.showpassword = 0;
+    }
   }
 
   public login() {

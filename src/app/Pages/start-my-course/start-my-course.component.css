@@ -21,6 +21,9 @@
   border-top: 1.5px solid #ddd9d9;
 }
 
+.card{
+  padding: 20px;
+}
 .VScroll {
   height: 650px;
   background-color: white;
