@@ -7,16 +7,14 @@
        <div class="card">
         <div class="row">
             <div class="col-md-1">
-                Filter By
+               <p class="filter">  Filter By</p>
             </div>
             <div class="col-md-2">
                 <input class="form-control" type="date" placeholder="Duration" id="date" name="date"
                     [(ngModel)]="date" (change)="getdate($event)">
             </div>
             <div class="col-md-6">
-                <!-- <input class="form-control" type="search" [(ngModel)]="term"
-                    placeholder="search for Staff , Date of joining or Role"> -->
-                <input class="form-control" type="search" [(ngModel)]="search"
+                <input class="form-control search" type="search" [(ngModel)]="search"
                     placeholder="search for Staff , Date of joining or Role">
             </div>
         </div>
@@ -24,11 +22,11 @@
 <br>
             <div class="row">
                 <div class="col-md-9">
-                    <p class="count">SHOWING <span style="color: black;">{{stafflist.length}}</span>&nbsp;RESULTS
+                    <p class="show">SHOWING <span style="color: black;">{{stafflist.length}}</span>&nbsp;RESULTS
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <button class="form-control button" routerLink="/EmployeeForm">Add Staff</button>
+                    <button class=" addnew" routerLink="/EmployeeForm">Add Staff</button>
                 </div>
             </div>
             <br>
@@ -39,9 +37,9 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <table class="table tab" id="lvs">
+            <table class="table " >
                 <thead>
-                    <tr >
+                    <tr  >
                         <th>Employee Id</th>
                         <th>Employee Name</th>
                         <th>Role</th>
@@ -53,7 +51,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of stafflist|filter:search">
+                    <tr  *ngFor="let item of stafflist|filter:search">
 
                                 <td>000{{item.id}}</td>
                                 <td>{{item.name}}</td>
@@ -62,10 +60,10 @@
                                 <td>{{item.emailID}}</td>
                                 <td>{{item.joiningDate|date}}</td>
                                 <td>
-                                    <p *ngIf="item.manager==null">
+                                    <p class="tabletext" *ngIf="item.manager==null">
                                         NA
                                     </p>
-                                    <p *ngIf="item.manager!=null">
+                                    <p  class="tabletext" *ngIf="item.manager!=null">
                                         {{item.manager}}
                                     </p>
                                 </td>

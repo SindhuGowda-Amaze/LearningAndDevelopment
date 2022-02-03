@@ -80,19 +80,7 @@ li a:hover {
   font-weight: bold;
 }
 
-.table td {
-  color: #494949;
-  font-size: 12px;
-  vertical-align: middle;
-  background-color: white;
-}
-td {
-  background-color: white;
-}
-.table th {
-  background-color: #02cfff !important;
-  color: #ffffff;
-}
+
 
 .HrLine {
   margin-left: 15px;
@@ -178,6 +166,17 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+
+ 
+.table{
+  border-radius: 5px;
+ 
+}
+th,td{
+  border: 1px #404040;
+  border-collapse: collapse;
+}
+
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
@@ -193,12 +192,7 @@ input:checked + .slider:before {
   box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
   border-radius: 12px;
 }
-.table,
-th,
-td {
-  border: 1px solid lightgray;
-  border-collapse: collapse;
-}
+
 .Heading {
   padding-left: 15px;
   font-size: 20px;
@@ -226,4 +220,9 @@ td {
   color: white;
   margin-top: 6px;
   padding: 5px;
+}
+
+.show{
+  font-size: 15px;
+  color:#3247D5;
 }

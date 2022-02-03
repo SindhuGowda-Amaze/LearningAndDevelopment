@@ -14,22 +14,17 @@
     width:100%;
     vertical-align: middle;
   }
-  td{
-    background-color: white
-  }
-  /* .table th {
+  
+  .table th {
     background-color: #02cfff !important;
     color: #ffffff;
-  } */
+  }
   /* .th{
     background-color: #e4e5e6;
     color:#404040;
     font-family: "DIN Bold";
   } */
-  /* .table, th, td {
-  border: 1px solid lightgray;
-   border-collapse: collapse; 
-  } */
+
   .Heading{
     padding-left: 15px;
     font-size: 20px;
@@ -118,10 +113,9 @@ table {
 
 
 
-
-th {
-  background-color: #02cfff !important;
-  color: #ffffff;
+th,td{
+  border: 1px #404040;
+  border-collapse: collapse;
 }
 .underlinetext
 {

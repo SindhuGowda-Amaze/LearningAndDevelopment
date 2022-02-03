@@ -86,7 +86,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('roleid', '1');
 
       //  this.router.navigate(["AdminDashboard"]);
-
+      localStorage.setItem("clickname","Admin Dashboard")
       location.href = "#/AdminDashboard";
       location.reload();
 
@@ -110,6 +110,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('role', 'Employee');
           debugger
           sessionStorage.setItem('roleid', '2');
+          localStorage.setItem("clickname","Admin Dashboard")
           location.href = "#/AdminDashboard";
           location.reload();
         }
@@ -134,6 +135,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('temp', '1');
           sessionStorage.setItem('role', 'Manager');
           sessionStorage.setItem('roleid', '3');
+          localStorage.setItem("clickname","Manager Dashboard")
           location.href = "#/ManagerDashboard";
           location.reload();
         }
@@ -161,6 +163,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('temp', '1');
           sessionStorage.setItem('role', 'Trainer');
           sessionStorage.setItem('roleid', '4');
+          localStorage.setItem("clickname","Assessment Dashboard")
           location.href = "#/Assessmentdashboard";
           location.reload();
 

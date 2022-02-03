@@ -15,9 +15,7 @@
     width:100%;
     vertical-align: middle;
   }
-  td{
-    background-color: white
-  }
+ 
   /* /* .th{
     background-color: #e4e5e6;
     color:#404040;
@@ -28,11 +26,19 @@
    border-collapse: collapse; 
 
   } */
-  .Heading{
-  padding-left: 15px;
-  font-size: 20px;
-  color:black;
+
+
+
+   
+  .table{
+    border-radius: 5px;
+   
   }
+  th,td{
+    border: 1px #404040;
+    border-collapse: collapse;
+  }
+
   .head{
   background-color: #dee2e6;
   color:#404040;
@@ -51,10 +57,8 @@
     border-radius: 5px;
    
   }
-  th,td{
-    border: 1px #404040;
-    border-collapse: collapse;
-  }
+ 
+
   
   .button1{
     padding:3px;

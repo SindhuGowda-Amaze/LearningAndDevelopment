@@ -230,7 +230,7 @@
                     </div><br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <p style="font-size: 15px;">{{details.name}}</p>
+                            <p style="font-size: 15px; overflow-y: auto;height: 30px;">{{details.name}}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -249,7 +249,7 @@
                     </div><br>
                     <div class="row">
                         <div class="col-lg-6">
-                            <button class="edit" routerLink="['/StartMyCourse',details.id]" *ngIf="show==2">Start
+                            <button class="edit" routerLink="['/StartMyCourse',details.id]" *ngIf="show==2||show==1">Start
                                 Course</button>
                             <button class="edit" data-toggle="modal" data-target="#enroll" *ngIf="show==3" (click)="getcourseid(details.id)">
                                 Enroll</button>

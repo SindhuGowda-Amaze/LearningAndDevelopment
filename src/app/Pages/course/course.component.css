@@ -33,10 +33,7 @@
     border:none;
     width:80%;
     } */
-.head{
-    font-size: 15px;
-    color:#0C275A;
-}
+
 .header{
     font-size: 12px;
 }
@@ -46,3 +43,27 @@
     box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
     border-radius: 12px;
 }
+
+
+.headings{
+    height: 15px;
+    left: 221px;
+    top: 100px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 15px;
+    letter-spacing: 0.5px;
+    color: #3247D5;
+    }
+
+    .head{
+        height: 17px;
+       left: 17.5%;
+       right: 76.67%;
+       top: 331px;
+       font-weight: normal;
+       font-size: 13px;
+       line-height: 17px;
+      color: #0C275A;
+    }

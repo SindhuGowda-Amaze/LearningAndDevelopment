@@ -1,30 +1,3 @@
-/* .Dashboard{
-    text-align: Center;
-    background-color: #21a4da;
-    width:100%;
-    height:auto;
-    padding:5px;
-    color:white;
-    font-size: 24px;
-}
-
-.text{
-    text-align: left;
-    color:gray;
-    font-size: 20px;
-    font-weight: bold;
-   padding-top: 8px;
-   padding-left: 3px;
-}
-.Number{
-    text-align: center;
-    padding-top: 17px;
-    color:gray;
-    font-size: 25px;
-    font-weight: bold;
-} */
-
-
 
 .Number{
       text-align: center;
@@ -39,10 +12,6 @@
   border-radius: 5px;
   color:white
 }
-
-
-
-
 body {
     margin: 0;
     width: 100%;
@@ -86,7 +55,10 @@ body {
     transform-style: preserve-3d;
     cursor: pointer;
     box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%);
-    border-radius: 10px;
+    border-radius: 15px;
+    background-color:white; 
+     height: 325px;
+     width: 275px;
    
   }
   
@@ -242,10 +214,13 @@ body {
   
   .title_outer1 {
     float: left;
-    max-width: 98%;
-    padding: 34px;
+    width: 276px;
+    height:80px;
+    top: 90px;
     margin: -21px;
-    border-radius: 9px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+    background-color: #02CFFF ;
   }
   
   .card_title {
@@ -262,6 +237,55 @@ body {
     clear: both;
     margin: 5px 0;
   }
+
+   .top{
+    background: #02CFFF ;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+   }
+   
+   .top1{
+    background: #FBB584 ;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+   }
+
+   .top2{
+    background: #95A0E2 ;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+   }
+
+   .top3{
+    background: #FF756D ;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+   }
+
+   .top4{
+    background: #02CFFF  ;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+   }
+
+
+
+
+
+
+
+
+
+  .font{
+    color:white;
+    font-size: 19px;
+    line-height: 15px;
+    margin-top: 30px;
+  }
+
+
+
+
   
   .backbtn {
   
@@ -323,10 +347,7 @@ body {
     overflow-y: scroll;
   }
   
-  .cardlabel {
-    font-family: 'Poppins';
-    font-size: 20px; 
-  }
+ 
   
   ::-webkit-scrollbar {
     width: 5px;
@@ -427,9 +448,11 @@ body {
 }
 
 .calend{
-    font-size:30px;
-    color: #2F87CC;
-    margin-left:-20px;
+   height: 20.01px;
+  left: 16.94%;
+  right: 81.67%;
+  margin-top: 30px;
+  color:white;
 }
 
 .din-Medium {
@@ -497,3 +520,12 @@ letter-spacing: .5px;
 margin-top: 10px;
 }
 
+.cardhead {
+  position: absolute;
+  width: 286px;
+  height: 80px;
+  left: 222px;
+  top: 90px;
+  background: #02CFFF;
+  border-radius: 15px;
+}

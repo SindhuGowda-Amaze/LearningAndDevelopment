@@ -41,7 +41,9 @@
      border-collapse: collapse; 
    
   } */
-
+ .newFont{
+   color:#0C275A ;
+ }
   .Save{
     padding:7px;
     border-radius: 5px;

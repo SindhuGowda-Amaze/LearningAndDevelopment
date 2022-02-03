@@ -35,21 +35,17 @@
   }
   .user{
     position: absolute;
-    left: 45%;
-  
-  right: 6.04%;
-  top: 13.57%;
-  bottom: 38.57%;
-  
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 16px;
-  /* identical to box height, or 123% */
-  
-  
-  color: #FFFFFF;
+    /* left: 45%; */
+    /* right: 6.04%; */
+    /* top: 13.57%; */
+    bottom: 38.57%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFFFFF;
+    Width: 64px;
+    Height: 12px;
   }
   
   .dropdown-submenu>.dropdown-menu {
@@ -226,5 +222,57 @@
     opacity: 10px;
   }
   
+  .text{
+    font-size: 18px;
+    margin-top: 25px;
+    color:white;
+    text-indent: 20px;
+  }
   
+  .time {
+    height: 65%;
+    background: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 17%;
+    margin-top: 4px;
+    margin-right: 10px;
+    left: 20.56%;
+    right: 75.28%;
+    top: 25.71%;
+    bottom: 24.29%;
+background: #FFFFFF;
+border: 1px solid #DBDBDB;
+box-sizing: border-box;
+border-radius: 4px;
+  }
   
+  .time1 {
+    text-align: center;
+    letter-spacing: -0.05em;
+    color: #0C275A;
+    margin-top: 4px;
+    font-size: 27px;
+  }
+
+  .notification{
+   left: 83.61%;
+   right: 15.16%;
+   bottom: 34.29%;
+   Width:17.64px; 
+   Height:22px;     
+   margin-top: 20px;
+  }
+
+  .logout{
+    height: 29.617019653320312px;
+    width: 26.893611907958984px;
+    border-radius: 0px;
+    margin-top: 15px;
+    left: 17.45%;
+    right: 18.51%;
+    top: 7.45%;
+    bottom: 0%;
+  }
+
