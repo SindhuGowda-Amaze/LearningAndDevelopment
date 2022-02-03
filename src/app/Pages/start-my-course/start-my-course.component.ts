@@ -120,7 +120,8 @@ export class StartMyCourseComponent implements OnInit {
     if (this.Attachmentlist.length != 0) {
       this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'video')
       if (this.Attachmentlist.length != 0) {
-        this.show = 2
+        // this.show = 2
+        window.open(this.Attachmentlist[0].photo, "_blank")
       }
       else {
         this.noattachments = "No Videos Found"

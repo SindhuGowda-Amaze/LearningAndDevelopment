@@ -36,12 +36,15 @@ export class SidebarComponent implements OnInit {
 
     evt.currentTarget.className += " active";
   }
-
+   
+  active:any;
   Dashboard(){
+    this.active=2;
     localStorage.setItem("clickname","Dashboard")
   }
 
   chapterdashboard(){
+    this.active=3;
     localStorage.setItem("clickname","Chapter  Dashboard")
   }
 
