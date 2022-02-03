@@ -4,24 +4,44 @@
         <div class="col-lg-10 maindiv">
             <div class="inndercard">
                 <img src="assets/Images/Logo_digiOffice_Colored.png">
-                <input type="text" class="inputclass" placeholder="Company Code" [(ngModel)]="companycode"
-                    (ngModelChange)="getcompanycode()" name="companycode">
+                <div class="input-group ">
+                    <input type="text" class="inputclass" [(ngModel)]="companycode" (ngModelChange)="getcompanycode()"
+                        name="companycode">
+                    <label class="placeholder">Company Code</label>
+                </div>
+                <div class="input-group ">
+                    <select class="inputclass inputclass1" (change)="getRoleID($event)">
+                        <option selected>Select</option>
+                        <option value="1">Admin</option>
+                        <option value="2">Employee</option>
+                        <option value="3">Manager</option>
+                        <option value="4">Trainer</option>
+                    </select>
+                </div>
+                <div class="input-group ">
+                    <input type="text" class="inputclass" [(ngModel)]="userName" name="username">
+                    <label class="placeholder">Username</label>
+                </div>
 
-                <select class="inputclass" (change)="getRoleID($event)">
-                    <option selected>Select</option>
-                    <option value="1">Admin</option>
-                    <option value="2">Employee</option>
-                    <option value="3">Manager</option>
-                    <option value="4">Trainer</option>
-                </select>
 
-                <input type="text" class="inputclass" placeholder="Username" [(ngModel)]="userName" name="username">
 
-                <input *ngIf="showpassword==0" type="password" class="inputclass" placeholder="Password"
-                    [(ngModel)]="password" name="password" />
-                <input *ngIf="showpassword==1" type="text" class="inputclass" placeholder="Password"
-                    [(ngModel)]="password" name="password" />
-                <span class="fa fa-fw fa-eye field-icon toggle-password" (click)="Showhidepassword()"></span>
+                <div class="input-group ">
+
+                    <input *ngIf="showpassword==0" type="password" class="inputclass" [(ngModel)]="password"
+                        name="password" />
+                    <input *ngIf="showpassword==1" type="text" class="inputclass" [(ngModel)]="password"
+                        name="password" />
+                    <span class="fa fa-fw fa-eye field-icon toggle-password" style="color: #3247D5;
+                    margin-left: -224px;
+                    margin-top: 18px;" (click)="Showhidepassword()"></span>
+
+                    <span class="highlight"></span>
+
+                    <span class="bar"></span>
+
+                    <label class="placeholder">Password</label>
+
+                </div>
                 <div class="btnalign">
                     <a>Forgot Password</a>
                     <button type="button" class="loginbtn" (click)="login()">Login</button>
@@ -52,8 +72,8 @@
     <br>
     <br>
     <br> -->
-    <!-- https://www.highreshdwallpapers.com/wp-content/uploads/2014/01/HD-Beautiful-Architecture-Wallpaper-1920x1080.jpg -->
-     <!-- <div class="row">
+<!-- https://www.highreshdwallpapers.com/wp-content/uploads/2014/01/HD-Beautiful-Architecture-Wallpaper-1920x1080.jpg -->
+<!-- <div class="row">
        <br>
         <div class="col-lg-1">
 
@@ -67,15 +87,15 @@
             background: white;
             border-radius: 12px;
         "> -->
-            <!-- <br>
+<!-- <br>
             <p style="font-size: 16px;font-weight: 500;">LOGIN</p> -->
-           <!-- <br>
+<!-- <br>
             <select class="form-control" (change)="getRoleID($event)" style="width:77%;margin-left: 66px;" >
               
                 <option selected disabled >Select</option> -->
-                <!-- <option *ngFor="let list of loginTypeList" value="{{list.id}}">{{list.loginType}}</option> -->
-                <!-- <option value="6">Admin</option> -->
-                <!-- <option value="1">Admin</option>  
+<!-- <option *ngFor="let list of loginTypeList" value="{{list.id}}">{{list.loginType}}</option> -->
+<!-- <option value="6">Admin</option> -->
+<!-- <option value="1">Admin</option>  
                 <option value="2">Employee</option>             
                 <option value="3">Manager</option>
                 <option value="4">Trainer</option>

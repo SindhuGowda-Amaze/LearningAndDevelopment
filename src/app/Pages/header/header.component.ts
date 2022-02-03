@@ -8,18 +8,19 @@ import { interval } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   company_name: any;
-  temp:any
-  roleid:any;
-  role:any;
-  UserName:any;
-  page:any;
-  time:any;
-  hh:any;
-  mm:any;
-  ampm:any;
+  temp: any
+  roleid: any;
+  role: any;
+  UserName: any;
+  page: any;
+  time: any;
+  hh: any;
+  mm: any;
+  ampm: any;
   constructor() { }
   ngOnInit(): void {
-   
+
+
     setInterval(() => {
       var time = new Date();
       this.time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
@@ -31,10 +32,10 @@ export class HeaderComponent implements OnInit {
     }, 1000);
 
     interval(1000).subscribe((x => {
-      this.page=localStorage.getItem('clickname')
+      this.page = localStorage.getItem('clickname')
     }));
-    
-    this.temp=sessionStorage.getItem('temp')
+
+    this.temp = sessionStorage.getItem('temp')
     this.roleid = sessionStorage.getItem('roleid');
     this.company_name = sessionStorage.getItem("company_name");
     this.UserName = sessionStorage.getItem('UserName');

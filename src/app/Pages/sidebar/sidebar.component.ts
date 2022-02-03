@@ -13,6 +13,8 @@ export class SidebarComponent implements OnInit {
   UserName: any;
   company_name: any;
   role: any;
+
+
   temp: any;
   show: any;
   ngOnInit(): void {
@@ -25,9 +27,9 @@ export class SidebarComponent implements OnInit {
 
 
 
-  public highlight(evt:any) {
+  public highlight(evt: any) {
     debugger
-     var i, tablinks;
+    var i, tablinks;
     //  localStorage.setItem("clickname",name)
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
@@ -48,62 +50,62 @@ export class SidebarComponent implements OnInit {
     localStorage.setItem("clickname","Chapter  Dashboard")
   }
 
-  assessments(){
-    localStorage.setItem("clickname","Assessments")
+  assessments() {
+    localStorage.setItem("clickname", "Assessments")
   }
 
-  setup(){
-    localStorage.setItem("clickname","SETUP")
-  }
- 
-  category(){
-    localStorage.setItem("clickname","CATEGORY")
+  setup() {
+    localStorage.setItem("clickname", "SETUP")
   }
 
-  course(){
-    localStorage.setItem("clickname","COURSE")
+  category() {
+    localStorage.setItem("clickname", "CATEGORY")
   }
 
-  chapter(){
-    localStorage.setItem("clickname","CHAPTER")
+  course() {
+    localStorage.setItem("clickname", "COURSE")
   }
 
-  trainer(){
-    localStorage.setItem("clickname","TRAINER")
+  chapter() {
+    localStorage.setItem("clickname", "CHAPTER")
   }
 
-  assigntrainer(){
-    localStorage.setItem("clickname","ASSIGN TRAINER")
+  trainer() {
+    localStorage.setItem("clickname", "TRAINER")
   }
 
-  employee(){
-    localStorage.setItem("clickname","EMPLOYEE")
+  assigntrainer() {
+    localStorage.setItem("clickname", "ASSIGN TRAINER")
   }
 
-  mycourse(){
-    localStorage.setItem("clickname","My COURSE")
-  }
-  attendence(){
-    localStorage.setItem("clickname","ATTENDENCE")
-  }
-  catalog(){
-    localStorage.setItem("clickname","CATALOG")
+  employee() {
+    localStorage.setItem("clickname", "EMPLOYEE")
   }
 
-  certificate(){
-    localStorage.setItem("clickname","CERTIFICATE")
+  mycourse() {
+    localStorage.setItem("clickname", "My COURSE")
+  }
+  attendence() {
+    localStorage.setItem("clickname", "ATTENDENCE")
+  }
+  catalog() {
+    localStorage.setItem("clickname", "CATALOG")
   }
 
-  assigncourse(){
-    localStorage.setItem("clickname","ASSIGN COURSE")
+  certificate() {
+    localStorage.setItem("clickname", "CERTIFICATE")
   }
 
-  results(){
-    localStorage.setItem("clickname","RESULTS")
+  assigncourse() {
+    localStorage.setItem("clickname", "ASSIGN COURSE")
   }
 
-  testsubmit(){
-    localStorage.setItem("clickname","Test Submitted")
+  results() {
+    localStorage.setItem("clickname", "RESULTS")
+  }
+
+  testsubmit() {
+    localStorage.setItem("clickname", "Test Submitted")
   }
 
 
