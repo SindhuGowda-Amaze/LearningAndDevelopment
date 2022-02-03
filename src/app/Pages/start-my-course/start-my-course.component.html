@@ -2,14 +2,19 @@
     <div class="row">
         <div class="col-lg-8">
             <div class="row">
-                <div class="col-lg-6" style="border-radius: 20px;">
-
-                    <p style="font-size: 25px; padding-top: 20px; font-family: Poppins;
-                         color: #3247D5; font-weight: bold;"><u>{{coursename}}</u></p><br>
-                    <p style="color: #3247D5;">Course Materials</p>
-
+                <div class="col-lg-12">
+                    <p style="font-size: 19px; padding-top: 20px;
+                    color: #3247D5; font-weight: bold;"><u>{{coursename}}</u></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" *ngIf="show==1">
+                    <img src="{{chapterphoto}}" alt="1st Course Assessment"
+                        style="width:400px; height:200px; padding-right:20px;">
+                </div>
+                <div class="col-lg-6" style="border-radius: 20px;">               
+                    <p style="color:#0C275A;font-size: 13px;"><b>Course Materials</b></p>
                     <div style="width:70%;border-radius: 20px;float: left;">
-
                         <img src="assets/Images/Video_lcon.png" *ngIf="showvideo==1" alt="video_icon"
                             style="width:10%;padding-top: 10px;"
                             (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -28,10 +33,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6" *ngIf="show==1">
-                    <img src="{{chapterphoto}}" alt="1st Course Assessment"
-                        style="width:400px; height:200px; padding-right:20px;">
-                </div>
+               
                 <div class="col-lg-12" *ngIf="show==2">
                     <video controls style="height: 80%; width: 100%;">
                         <source src="{{Attachmentlist[0].photo}}" type="video/mp4">
@@ -79,10 +81,9 @@
                     <br>
                     <div class="row">
                         <div class="col-lg-8">
-                            <h2 style="color: #3247D5; font-weight: 600;">CHAPTERS </h2>
+                            <h2 style="color: #3247D5; font-weight: 600; font-size: 19px;">CHAPTERS </h2>
                         </div>
                         <div class="col-lg-4">
-                            <!-- <button routerLink="/MyCourseDashboard" class="BackBTN">Back</button> -->
                             <img src="assets/Images/back-arrow.png"
                                 style="width: 25%; float: right; cursor: pointer;color: #3247D5;" alt="BackIMG"
                                 routerLink="/MyCourseDashboard">
@@ -93,7 +94,6 @@
                     <div *ngFor="let details of coursedetails">
                         <h5 (click)="getcoursedetails(details)"
                             style="color: #0C275A; font-family: Poppins; font-weight: 600;">
-
                             <input type="radio" id="details.id" name="details.id">
                             {{details.name}}
                         </h5>

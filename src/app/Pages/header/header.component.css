@@ -35,10 +35,8 @@
   }
   .user{
     position: absolute;
-    /* left: 45%; */
     /* right: 6.04%; */
-    /* top: 13.57%; */
-    bottom: 38.57%;
+    bottom: 33.57%;
     font-style: normal;
     font-weight: bold;
     font-size: 13px;

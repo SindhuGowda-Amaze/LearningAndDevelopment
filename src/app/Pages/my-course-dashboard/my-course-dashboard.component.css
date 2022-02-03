@@ -597,5 +597,31 @@ margin-top: -19px;
   border:none;
   border-radius: 5px;
   width:75%;
+}
+.lastassigned{
+  font-size: 19px;
+  color:#3247D5;
+  font-weight: bold;
+  margin-left: 15px;
+}
+.coursename{
+  font-size: 13px;
+  color:#0C275A ;
+  margin-left: 30px
+}
+.active{
+  color:#0C275A ;
+  font-size: 19px;
+}
+
+.name2{
+  color:#3247D5;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.startdate{
+  color:#0C275A ;
+  font-size: 13px;
 
 }
