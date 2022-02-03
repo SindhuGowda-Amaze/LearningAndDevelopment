@@ -34,7 +34,7 @@
             <div class="col-lg-12">
                 <table class="table" *ngIf="(Trainerdetails | filter: search).length > 0; else noResults ">
                     <thead>
-                        <tr >
+                        <tr>
                             <th>Trainer Name</th>
                             <th>Course Name</th>
                             <th>Email Id</th>
@@ -44,7 +44,7 @@
                             <th>Allowed Students per Batch</th>
                             <th>Actions</th>
                         </tr>
-                        <tr  *ngFor="let details of Trainerdetails|filter:search">
+                        <tr *ngFor="let details of Trainerdetails|filter:search">
                             <td style="color:#0C275A">{{details.trainerName}}</td>
                             <td style="color:#0C275A">{{details.courseName}}</td>
                             <td style="color:#0C275A">{{details.email}}</td>
@@ -52,9 +52,17 @@
                             <td style="color:#0C275A">{{details.endDate|date}}</td>
                             <td style="color:#0C275A">{{details.batchName}}</td>
                             <td style="color:#0C275A">{{details.noOfStudentsEnrolled}}</td>
-                            <td style="color:#0C275A"><button class="edit" (click)="edit(details.id)">Edit</button>
+                            <td style="color:#0C275A">
+
+                                <!-- <button class="edit" (click)="edit(details.id)">Edit</button>
                                 <br> <br>
-                                <button class="edit" (click)="Ondelete(details.id)">Delete</button>
+                                <button class="edit" (click)="Ondelete(details.id)">Delete</button> -->
+
+                                <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width: 8%;"
+                                (click)="edit(details.id)"> &nbsp;&nbsp;
+
+                                <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON"
+                                (click)="Ondelete(details.id)" style="width: 8%;">
                             </td>
                         </tr>
                     </thead>

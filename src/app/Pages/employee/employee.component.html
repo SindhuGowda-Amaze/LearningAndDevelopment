@@ -1,25 +1,25 @@
-<div class="container-fluid">  
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
             <div>
                 <p class="headings">Staff Dashboard</p>
             </div>
-       <div class="card">
-        <div class="row">
-            <div class="col-md-1">
-               <p class="filter">  Filter By</p>
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-1">
+                        <p class="filter"> Filter By</p>
+                    </div>
+                    <div class="col-md-2">
+                        <input class="form-control" type="date" placeholder="Duration" id="date" name="date"
+                            [(ngModel)]="date" (change)="getdate($event)">
+                    </div>
+                    <div class="col-md-6">
+                        <input class="form-control search" type="search" [(ngModel)]="search"
+                            placeholder="search for Staff , Date of joining or Role">
+                    </div>
+                </div>
             </div>
-            <div class="col-md-2">
-                <input class="form-control" type="date" placeholder="Duration" id="date" name="date"
-                    [(ngModel)]="date" (change)="getdate($event)">
-            </div>
-            <div class="col-md-6">
-                <input class="form-control search" type="search" [(ngModel)]="search"
-                    placeholder="search for Staff , Date of joining or Role">
-            </div>
-        </div>
-       </div>
-<br>
+            <br>
             <div class="row">
                 <div class="col-md-9">
                     <p class="show">SHOWING <span style="color: black;">{{stafflist.length}}</span>&nbsp;RESULTS
@@ -33,25 +33,25 @@
             <div class="row">
                 <div class="col-lg-12">
 
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table " >
-                <thead>
-                    <tr  >
-                        <th>Employee Id</th>
-                        <th>Employee Name</th>
-                        <th>Role</th>
-                        <th>Phone Number</th>
-                        <th>Email</th>
-                        <th>Date Of Joining</th>
-                        <th>Manager</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr  *ngFor="let item of stafflist|filter:search">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table ">
+                        <thead>
+                            <tr>
+                                <th>Employee Id</th>
+                                <th>Employee Name</th>
+                                <th>Role</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                                <th>Date Of Joining</th>
+                                <th>Manager</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of stafflist|filter:search">
 
                                 <td>000{{item.id}}</td>
                                 <td>{{item.name}}</td>
@@ -63,13 +63,21 @@
                                     <p class="tabletext" *ngIf="item.manager==null">
                                         NA
                                     </p>
-                                    <p  class="tabletext" *ngIf="item.manager!=null">
+                                    <p class="tabletext" *ngIf="item.manager!=null">
                                         {{item.manager}}
                                     </p>
                                 </td>
-                                <td> <button class="edit"
-                                        [routerLink]="['/EmployeeForm',item.id]">Edit</button> &nbsp;&nbsp;&nbsp;
-                                    <button class=" edit">Delete</button>&nbsp;
+                                <td>
+                                    <!-- <button class="edit" [routerLink]="['/EmployeeForm',item.id]">Edit</button>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <button class=" edit">Delete</button>&nbsp; -->
+
+                                    <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width: 5%;"
+                                        [routerLink]="['/EmployeeForm',item.id]">
+                                    &nbsp;&nbsp;
+
+                                    <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON"
+                                        (click)="Ondelete(item.id)" style="width: 5%;">
                                 </td>
                             </tr>
                         </tbody>
@@ -79,7 +87,7 @@
                     </ng-template>
                 </div>
             </div>
-         
+
         </div>
     </div>
 

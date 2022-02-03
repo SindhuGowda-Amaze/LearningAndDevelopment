@@ -47,6 +47,13 @@ export class LearningService {
     );
   }
 
+  // public GetMyDetails() {
+  //   debugger
+  //   let APIURL = this.baseURL + "Master/GetMyDetails";
+  //   return this.http.get<any[]>(APIURL);
+  // }
+
+
   public DeleteMyDetails(id: any) {
     debugger
     let APIURL = this.baseURL + "Master/DeleteMyDetails?ID=" + id;
