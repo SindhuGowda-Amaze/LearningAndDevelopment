@@ -102,3 +102,15 @@ background: #FFFFFF;
   }
 
 
+  .Active1 {
+    display: inline-flex;
+    color: #3247D5;
+  }
+  .Active2 {
+    display: none;
+    color: #949393;
+  }
+  .Active3 {
+    color: #949393;
+  }
+  

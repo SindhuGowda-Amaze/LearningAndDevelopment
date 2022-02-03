@@ -1,96 +1,108 @@
 <div class="row  tab" *ngIf="temp==1">
     <div class="col-md-2 sidenav" style="height: 100vh;margin-top: 75px;position: fixed;">
 
-        <a *ngIf="roleid=='1' || roleid=='2' " class="tablinks"   (click)="highlight($event)" (click)="Dashboard()" routerLink="/AdminDashboard">
-            <i class="fa fa-users dashboard" ></i> &nbsp;
-                Dashboard          
-        </a>
-        <a *ngIf="roleid=='4'" routerLink="/ChapterDashboard" class="tablinks" (click)="highlight($event)" (click)="chapterdashboard()" >
+        <a *ngIf="roleid=='1' || roleid=='2' " class="tablinks" (click)="highlight($event)" (click)="Dashboard()"
+            routerLink="/AdminDashboard">
+            <!-- <i class="fa fa-users dashboard"></i> &nbsp; -->
+            <img src="assets/64/Staff.png" style="width: 13%;  margin-right: 17px;"
+                [ngClass]="active == 2 ? 'Active1' : 'Active2'" />
+            <img [ngClass]="active != 2 ? 'Active1' : 'Active2'" src="assets/Images/64_GREY/64/Staff.png"
+                style="width: 13%;  margin-right: 17px;">
+            &nbsp;
+            <span [ngClass]="active == 2 ? 'Active1' : 'Active3'"> Dashboard</span>
 
-            <i class="fa fa-users  dashboard" ></i>
-            &nbsp; Chapter  
-           
         </a>
-        <a *ngIf="roleid=='3'" routerLink="/ManagerDashboard" class="tablinks"   (click)="highlight($event)" (click)="Dashboard()">
+        <a *ngIf="roleid=='4'" routerLink="/ChapterDashboard" class="tablinks" (click)="highlight($event)"
+            (click)="chapterdashboard()">
 
-            <i class="fa fa-users  dashboard" ></i>
+            <i class="fa fa-users  dashboard"></i>
+            &nbsp; Chapter
+
+        </a>
+        <a *ngIf="roleid=='3'" routerLink="/ManagerDashboard" class="tablinks" (click)="highlight($event)"
+            (click)="Dashboard()">
+
+            <i class="fa fa-users  dashboard"></i>
             &nbsp; Dashboard
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
 
-        <a *ngIf="roleid==4" routerLink="/Assessmentdashboard" class="tablinks"   (click)="highlight($event)" (click)="assessments()">
+        <a *ngIf="roleid==4" routerLink="/Assessmentdashboard" class="tablinks" (click)="highlight($event)"
+            (click)="assessments()">
 
             <i class="fa fa-users dashboard "></i>
             &nbsp; Assessments
-            
+
         </a>
 
-        <a data-toggle="collapse" class="togglebtn button" data-target="#userapplications" *ngIf="roleid==1" class="tablinks"  
-         (click)="highlight($event)" (click)="setup()">
+        <a data-toggle="collapse" class="togglebtn button" data-target="#userapplications" *ngIf="roleid==1"
+            class="tablinks" (click)="highlight($event)" (click)="setup()">
 
-            <i class="fa fa-gears  dashboard   " ></i>
+            <i class="fa fa-gears  dashboard   "></i>
             &nbsp; SETUP
-            
+
         </a>
 
-        <div id="userapplications" class="collapse" style="padding-left: 7%;" >
-            <a routerLink="/CategoryDashboard" class="tablinks"   (click)="highlight($event)" (click)="category()">
-                <img  class="dashboard" src="assets/Images/Vector.png" /> &nbsp; CATEGORY
+        <div id="userapplications" class="collapse" style="padding-left: 7%;">
+            <a routerLink="/CategoryDashboard" class="tablinks" (click)="highlight($event)" (click)="category()">
+                <img class="dashboard" src="assets/Images/Vector.png" /> &nbsp; CATEGORY
             </a>
-            <a routerLink="/CourseDashboard" class="tablinks"   (click)="highlight($event)" (click)="course()">
-                <img  class="dashboard"  src="assets/Images/Vector.png"/> &nbsp; COURSE
+            <a routerLink="/CourseDashboard" class="tablinks" (click)="highlight($event)" (click)="course()">
+                <img class="dashboard" src="assets/Images/Vector.png" /> &nbsp; COURSE
 
             </a>
-            <a routerLink="/ChapterDashboard" class="tablinks"   (click)="highlight($event)" (click)="chapter()">
-                <img  class="dashboard" src="assets/Images/Vector.png"/> &nbsp;CHAPTER
+            <a routerLink="/ChapterDashboard" class="tablinks" (click)="highlight($event)" (click)="chapter()">
+                <img class="dashboard" src="assets/Images/Vector.png" /> &nbsp;CHAPTER
 
             </a>
-            <a routerLink="/Trainer" class="tablinks"   (click)="highlight($event)" (click)="trainer()">
-                <img  class="dashboard" src="assets/Images/Vector.png" /> &nbsp;TRAINER
+            <a routerLink="/Trainer" class="tablinks" (click)="highlight($event)" (click)="trainer()">
+                <img class="dashboard" src="assets/Images/Vector.png" /> &nbsp;TRAINER
 
             </a>
-            <a routerLink="/TrainerCourseMapping" class="tablinks"   (click)="highlight($event)" (click)="assigntrainer()">
-                <img  class="dashboard" src="assets/Images/Vector.png" /> &nbsp;ASSIGN
+            <a routerLink="/TrainerCourseMapping" class="tablinks" (click)="highlight($event)"
+                (click)="assigntrainer()">
+                <img class="dashboard" src="assets/Images/Vector.png" /> &nbsp;ASSIGN
                 TRAINER
             </a>
-            <a routerLink="/Employee" class="tablinks"   (click)="highlight($event)" (click)="employee()" >
-                <img  class="dashboard" src="assets/Images/Vector.png"/> &nbsp;EMPLOYEE
+            <a routerLink="/Employee" class="tablinks" (click)="highlight($event)" (click)="employee()">
+                <img class="dashboard" src="assets/Images/Vector.png" /> &nbsp;EMPLOYEE
 
             </a>
         </div>
-        <a *ngIf="roleid==2 || roleid==3" routerLink="/MyCourseDashboard" class="tablinks"  
-         (click)="highlight($event)" (click)="mycourse()">
-         <i class="fa fa-book dashboard" aria-hidden="true"></i>
+        <a *ngIf="roleid==2 || roleid==3" routerLink="/MyCourseDashboard" class="tablinks" (click)="highlight($event)"
+            (click)="mycourse()">
+            <i class="fa fa-book dashboard" aria-hidden="true"></i>
             <!-- <i class="fa fa-users "></i> -->
-            &nbsp; My COURSE          
+            &nbsp; My COURSE
         </a>
-        <a *ngIf="roleid==4" routerLink="/AttendenceDetails" class="tablinks"   (click)="highlight($event)" (click)="attendence()">
+        <a *ngIf="roleid==4" routerLink="/AttendenceDetails" class="tablinks" (click)="highlight($event)"
+            (click)="attendence()">
             <i class="fa fa-users dashboard "></i>
             &nbsp; ATTENDENCE
         </a>
-        <a *ngIf="roleid==2 || roleid==3" routerLink="/Catalog" class="tablinks"   (click)="highlight($event)" (click)="catalog()">
+        <a *ngIf="roleid==2 || roleid==3" routerLink="/Catalog" class="tablinks" (click)="highlight($event)"
+            (click)="catalog()">
             <i class="fa fa-users dashboard "></i>
-            &nbsp; CATALOG         
+            &nbsp; CATALOG
         </a>
-        <a *ngIf="roleid==2" routerLink="/CourseCertificate" class="tablinks"  
-         (click)="highlight($event)" click)="certificate()">
+        <a *ngIf="roleid==2" routerLink="/CourseCertificate" class="tablinks" (click)="highlight($event)"
+            click)="certificate()">
             <i class="fa fa-users dashboard "></i>
-          &nbsp; CERTIFICATE           
+            &nbsp; CERTIFICATE
         </a>
-        <a *ngIf="roleid==3" routerLink="/AssignCourseDashboard" class="tablinks" 
-          (click)="highlight($event)" (click)="assigncourse()">
+        <a *ngIf="roleid==3" routerLink="/AssignCourseDashboard" class="tablinks" (click)="highlight($event)"
+            (click)="assigncourse()">
             <i class="fa fa-users dashboard "></i>
             &nbsp; ASSIGN COURSE
-             </a>
-        <a *ngIf="roleid==3" routerLink="/Staffresult" class="tablinks" 
-          (click)="highlight($event)" (click)="results()">
-            <i class="fa fa-users dashboard"></i>
-            &nbsp; RESULTS           
         </a>
-        <a *ngIf="roleid==3" routerLink="/Submitedtests" class="tablinks"  
-         (click)="highlight($event)" (click)="testsubmit()">
+        <a *ngIf="roleid==3" routerLink="/Staffresult" class="tablinks" (click)="highlight($event)" (click)="results()">
+            <i class="fa fa-users dashboard"></i>
+            &nbsp; RESULTS
+        </a>
+        <a *ngIf="roleid==3" routerLink="/Submitedtests" class="tablinks" (click)="highlight($event)"
+            (click)="testsubmit()">
             <i class="fa fa-users dashboard "></i>
-            &nbsp; Test Submitted            
+            &nbsp; Test Submitted
         </a>
     </div>
 </div>
