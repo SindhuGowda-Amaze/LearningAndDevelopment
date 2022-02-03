@@ -39,7 +39,7 @@
             <div class="col-lg-12">
                 <table class="table" *ngIf="(coursedetails | filter: search).length > 0; else noResults">
                     <thead>
-                        <tr >
+                        <tr>
                             <th>Course Name</th>
                             <th>Chapter Name</th>
                             <th>Description</th>
@@ -51,19 +51,25 @@
                         <tr *ngFor="let details of coursedetails | filter: search">
                             <td>{{details.courseName}}</td>
                             <td>{{details.name}}</td>
-                            <td >{{details.description}}</td>
-                            <td ><img src="{{details.chapterPhoto}}" data-toggle="modal"
-                                    data-target="#exampleModal1" (click)="Showimage(details.chapterPhoto)"
-                                    style="width:100px">
+                            <td>{{details.description}}</td>
+                            <td><img src="{{details.chapterPhoto}}" data-toggle="modal" data-target="#exampleModal1"
+                                    (click)="Showimage(details.chapterPhoto)" style="width:100px">
                             </td>
                             <td><img class="pdfimg" src="assets/Images/image.png" style="width: 20px;"
                                     data-toggle="modal" data-target="#exampleModal"
                                     (click)="ShowAttachments(details.id)">
-                            
-                            <td [innerHTML]="details.chapterText">                            
-                            </td>                          
-                            <td><button class="edit" (click)="edit(details.id)">Edit</button> <br> <br>
-                                <button class="edit" (click)="Ondelete(details.id)">Delete</button>
+
+                            <td [innerHTML]="details.chapterText">
+                            </td>
+                            <td>
+                                <!-- <button class="edit" (click)="edit(details.id)">Edit</button> <br> <br>
+                                <button class="edit" (click)="Ondelete(details.id)">Delete</button> -->
+
+                                <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width: 35%;"
+                                (click)="edit(details.id)"> &nbsp;
+
+                                <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON"
+                                (click)="Ondelete(details.id)" style="width: 35%;">
                             </td>
                         </tr>
                     </thead>
@@ -117,7 +123,7 @@
                 <div class="col-lg-3">
                     <button type="button" class="btn btn-secondary button" data-dismiss="modal">Close</button>
                 </div>
-              
+
             </div>
         </div>
     </div>

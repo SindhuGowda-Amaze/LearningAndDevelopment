@@ -62,8 +62,15 @@
                                     <td>{{details.fee}}</td>
                                     <td>{{details.entryCriteria}}</td>
                                     <td>{{details.exitCriteria}}</td>
-                                    <td><button class="edit" (click)="Update(details.id)">Edit</button> <br> <br>
-                                        <button class="edit" (click)="Ondelete(details.id)">Delete</button>
+                                    <td>
+                                        <!-- <button class="edit" (click)="Update(details.id)">Edit</button> <br> <br>
+                                        <button class="edit" (click)="Ondelete(details.id)">Delete</button> -->
+
+                                        <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width: 25%;"
+                                        (click)="Update(details.id)"> &nbsp;&nbsp;
+
+                                        <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON"
+                                        (click)="Ondelete(details.id)" style="width: 25%;">
                                     </td>
                                 </tr>
                             </thead>
