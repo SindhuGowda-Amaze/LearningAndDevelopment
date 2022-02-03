@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   ampm: any;
   constructor() { }
   ngOnInit(): void {
-
+    this.temp = sessionStorage.getItem('temp');
 
     setInterval(() => {
       var time = new Date();
@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
       this.page = localStorage.getItem('clickname')
     }));
 
-    this.temp = sessionStorage.getItem('temp')
+
     this.roleid = sessionStorage.getItem('roleid');
     this.company_name = sessionStorage.getItem("company_name");
     this.UserName = sessionStorage.getItem('UserName');
@@ -43,8 +43,9 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    sessionStorage.clear();
     localStorage.clear();
+    sessionStorage.clear();
+
     location.href = "#/Login";
     location.reload();
   }
