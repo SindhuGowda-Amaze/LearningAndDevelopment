@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
 
     setInterval(() => {
       var time = new Date();
-      this.time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+      this.time = time.toLocaleString('en-US', { hour: '2-digit', minute: 'numeric', hour12: true });
       let temp: any = this.time.split(':');
       this.hh = temp[0];
       let temp1: any = this.time.split(':')[1].split(" ");
