@@ -88,7 +88,7 @@ export class AssignCourseToEmployeeComponent implements OnInit {
             'Cousre Assigned Successfully!!!',
             'success'
           );
-          location.href = "/#/Catalog";
+          location.href = "#/Catalog";
         }
       });
     }
