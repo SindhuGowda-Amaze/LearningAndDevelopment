@@ -2,15 +2,18 @@
    
     <div class="uppercard">
         <div class="row">
-            <div class="col-lg-6">
-                <h3 class="Heading" style="padding-left:30px;">Viewing <span style="color: black; font-weight: 600;">{{count}} </span>Results</h3>
+            
+            <div class="col-lg-1">
+                <p class="filter">Filter By</p>
             </div>
-            <div class="col-lg-3">
-                <p class="Filter1">Filter By</p>
-            </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <!-- <input class="form-control" type="search" placeholder="Search for Trainers" [(ngModel)]="search"> -->
                 <input class="form-control" type="search" placeholder="What do you want to learn?" [(ngModel)]="search">
+            </div>
+            <div class="col-lg-7">
+                <!-- <h3 class="Heading" style="padding-left:30px;">Viewing 
+                    <span style="color: black; font-weight: 600;">{{count}} </span>Results</h3> -->
+                    <p class="Count">Count: {{count}} </p>
             </div>
             <!-- <div class="col-lg-2">
                 <input class="form-control" type="date" placeholder="By Dates" id="date" name="date" [(ngModel)]="search">
@@ -73,11 +76,12 @@
                                     <!-- <p class="card-text">Complete Python Fullstack Developer, Which includes Frontend, backend & DataBase...</p> -->
                                     <p class="card-text CardBody">{{details.description}}</p>
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-5">
                                             <button class="btn" data-toggle="modal" data-target="#enroll"
                                                 (click)="getcoureid(details.id)">ENROLL</button>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-2"></div>
+                                        <div class="col-lg-5">
                                             <button [routerLink]="['/ViewCourse',details.id]" class="btn">VIEW
                                                 COURSE</button>
                                         </div>
