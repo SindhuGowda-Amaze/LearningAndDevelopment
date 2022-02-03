@@ -19,19 +19,9 @@
                         <p>{{coursedetails[0].trainerName}}</p>
                     </div>
                 </div>
-                <!-- <div class="row">
-                    <div class="col-lg-2">
-                        <p>No of Hours :
-
-                    </div>
-                    <div class="col-lg-6">
-                        <p>{{coursedetails[0].noofHours}}</p>
-                    </div>
-                </div> -->
                 <div class="row">
                     <div class="col-lg-2">
                         <p>Start Date :</p>
-
                     </div>
                     <div class="col-lg-6">
                         <p>{{coursedetails[0].startDate|date}} </p>
@@ -40,7 +30,6 @@
                 <div class="row">
                     <div class="col-lg-2">
                         <p>End Date :</p>
-
                     </div>
                     <div class="col-lg-6">
                         <p>{{coursedetails[0].endDate|date}}</p>
@@ -168,7 +157,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Enroll for Course</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="row">
+                    <div class="col-lg-11"></div>
+                    <div class="col-lg-1">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+               
             </div>
             <div class="modal-body" *ngFor="let item of stafflist">
                 <div class="row">
@@ -199,7 +194,7 @@
                     </div>
                 </div> <br>
                 <div class="row">
-                    <div class="col-lg-5"></div>
+                    <div class="col-lg-7"></div>
                     <div class="col-lg-2">
                         <button class="form-control Save" (click)="enroll(item.name,item.mobile,item.emailID)"
                             data-dismiss="modal">Enroll</button>
@@ -208,10 +203,10 @@
             </div>
             <div class="modal-footer">
                 <hr>
-                <div class="col-lg-10"></div>
+                <!-- <div class="col-lg-10"></div>
                 <div class="col-lg-2">
-                    <button data-dismiss="modal" class="CloseBTN">Close</button>
-                </div>
+                    <button data-dismiss="modal" class="CloseBTN">Close</button> 
+                </div>-->
             </div>
         </div>
     </div>
