@@ -129,14 +129,14 @@ body {
   
   .clickbutton1 {
     border: 2px solid;
-    background-color: #fff;
+    background-color: #3247D5;
     font-size: 13px;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 4px;
     width: 150px;
     margin-top: -10px;
-    color: #555;
-    border-color: #555;
+    color: white;
+   
   }
   
   .backtext {
@@ -269,23 +269,14 @@ body {
    }
 
 
-
-
-
-
-
-
-
   .font{
     color:white;
     font-size: 19px;
     line-height: 15px;
     margin-top: 30px;
-  }
-
-
-
-
+    font-weight: bold;
+    margin-left: 20px;
+}
   
   .backbtn {
   
@@ -449,10 +440,11 @@ body {
 
 .calend{
    height: 20.01px;
-  left: 16.94%;
+  left: 20.94%;
   right: 81.67%;
   margin-top: 30px;
   color:white;
+  margin-left: 15px;
 }
 
 .din-Medium {
@@ -528,4 +520,8 @@ margin-top: 10px;
   top: 90px;
   background: #02CFFF;
   border-radius: 15px;
+}
+
+.chaptername{
+  font-size: 12px;
 }

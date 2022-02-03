@@ -15,14 +15,6 @@
    
   }
 
-  /* .icon28{
-    font-size: 22px;
-    color: #3247D5;
-  } */
-
-  /* .icon{
-    color: #3247D5;
-  } */
   
   .sidenav a {
     padding: 24px 0px 9px 0px;
@@ -98,7 +90,15 @@ background: #FFFFFF;
   } */
   
   .tab .active {
-    /* background-color: #f18235; */
     color: #3247D5;
     width: 100%;
   }
+
+  .dashboard{
+  margin-left:10px;
+  height:20px ;
+  width:18px;
+  color:#3247D5;
+  }
+
+

@@ -242,10 +242,10 @@
     right: 75.28%;
     top: 25.71%;
     bottom: 24.29%;
-background: #FFFFFF;
-border: 1px solid #DBDBDB;
-box-sizing: border-box;
-border-radius: 4px;
+   background: #FFFFFF;
+   border: 1px solid #DBDBDB;
+   box-sizing: border-box;
+    border-radius: 4px;
   }
   
   .time1 {
@@ -276,3 +276,10 @@ border-radius: 4px;
     bottom: 0%;
   }
 
+  .time2{
+    text-align: center;
+    letter-spacing: -0.05em;
+    color: #0C275A;
+    margin-top: 4px;
+    font-size: 25px;
+  }

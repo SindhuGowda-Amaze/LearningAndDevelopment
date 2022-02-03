@@ -60,10 +60,8 @@
                                     data-toggle="modal" data-target="#exampleModal"
                                     (click)="ShowAttachments(details.id)">
                             
-                            <td [innerHTML]="details.chapterText">
-                            
-                            </td>
-                           
+                            <td [innerHTML]="details.chapterText">                            
+                            </td>                          
                             <td><button class="edit" (click)="edit(details.id)">Edit</button> <br> <br>
                                 <button class="edit" (click)="Ondelete(details.id)">Delete</button>
                             </td>
@@ -115,8 +113,11 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                <div class="col-lg-9"></div>
+                <div class="col-lg-3">
+                    <button type="button" class="btn btn-secondary button" data-dismiss="modal">Close</button>
+                </div>
+              
             </div>
         </div>
     </div>
@@ -143,7 +144,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="b" data-dismiss="modal">Close</button>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
         </div>
