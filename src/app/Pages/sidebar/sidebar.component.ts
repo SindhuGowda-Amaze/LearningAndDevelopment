@@ -60,6 +60,7 @@ export class SidebarComponent implements OnInit {
   }
 
   category() {
+    this.active=3;
     localStorage.setItem("clickname", "CATEGORY")
   }
 
