@@ -38,19 +38,20 @@ export class SidebarComponent implements OnInit {
 
     evt.currentTarget.className += " active";
   }
-   
-  active:any;
-  Dashboard(){
-    this.active=2;
-    localStorage.setItem("clickname","Dashboard")
+
+  active: any;
+  Dashboard() {
+    this.active = 2;
+    localStorage.setItem("clickname", "Dashboard")
   }
 
-  chapterdashboard(){
-    this.active=3;
-    localStorage.setItem("clickname","Chapter  Dashboard")
+  chapterdashboard() {
+    this.active = 'Chapter';
+    localStorage.setItem("clickname", "Chapter  Dashboard")
   }
 
   assessments() {
+    this.active = 'Assessments';
     localStorage.setItem("clickname", "Assessments")
   }
 
@@ -83,12 +84,15 @@ export class SidebarComponent implements OnInit {
   }
 
   mycourse() {
+    this.active = 'mycourse';
     localStorage.setItem("clickname", "My COURSE")
   }
   attendence() {
+    this.active = 'ATTENDENCE';
     localStorage.setItem("clickname", "ATTENDENCE")
   }
   catalog() {
+    this.active = 'catalogue';
     localStorage.setItem("clickname", "CATALOG")
   }
 
@@ -97,14 +101,17 @@ export class SidebarComponent implements OnInit {
   }
 
   assigncourse() {
+    this.active = 'ASSIGNCourse';
     localStorage.setItem("clickname", "ASSIGN COURSE")
   }
 
   results() {
+    this.active = 'result';
     localStorage.setItem("clickname", "RESULTS")
   }
 
   testsubmit() {
+    this.active = 'submitest';
     localStorage.setItem("clickname", "Test Submitted")
   }
 
