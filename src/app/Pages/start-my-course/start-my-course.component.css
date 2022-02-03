@@ -82,3 +82,19 @@
 .underlinetext{
   background-color: grey;
 }
+
+.newbutton{
+border-radius: 5px;
+ color: #FFFFFF;
+ font-size: 13px;
+ margin-left:140px
+}
+
+.newbutton1{
+  border-radius: 5px;
+ color: #FFFFFF;
+ font-size: 13px;
+ margin-left:120px;
+ margin-top: 0px;
+}
+

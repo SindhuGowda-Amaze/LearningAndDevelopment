@@ -39,20 +39,25 @@
                         <thead>
                             <tr>
                                 <th>Employee Name</th>
-                                <th>Phone No</th>
-                                <th>Email</th>
-                                <th>Action</th>
+                                <th>Course Name</th>
+                                <th>Assigned Date</th>
+                                <th>Course Start Date</th>
+                                <th>Course End Date</th>
+                                <th>Percentage</th>
+                                <th>Department</th>
+                                <th>Certificate</th>
                             </tr>
                             <tr *ngFor="let details of result|filter:search">
                                 <td>{{details.name}}</td>
-                                <td>{{details.phoneNo}}</td>
-                                <td>{{details.emailID}}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td>
-                                    <button (click)="getdetailslist(details)" data-toggle="modal" data-target="#myModal"
-                                        class="btn btn-primary button1">View Details
-                                    </button>&nbsp;&nbsp;&nbsp;&nbsp;
-
-                                </td>
+                                    <button class="viewcertificate" routerLink="/CourseCertificate">ViewCertificate</button>
+                                </td>                           
                             </tr>
                         </thead>
                     </table>

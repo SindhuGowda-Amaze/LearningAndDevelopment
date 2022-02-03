@@ -154,6 +154,23 @@ export class ViewCourseComponent implements OnInit {
       }
     });
     } 
+
+    
+  public highlight(evt:any) {
+    debugger
+     var i, tablinks;
+    //  localStorage.setItem("clickname",name)
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    evt.currentTarget.className += " active";
+  }
+
+
+
+
     
 }
 

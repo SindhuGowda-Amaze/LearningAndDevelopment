@@ -1,93 +1,9 @@
 <!-- <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-10">
-            <p class="Dashboard">Assessment Dashboard</p>
-        </div>
-        <div class="col-lg-2">
-            <p class="Text" style="float:right; padding-right:50px; color: #3247D5; font-family: 'Poppins';">
-                Count: {{count}}</p>
-        </div>
-    </div> <br>
-    <div class="card">
-        <div class="row">
-            <div class="col-lg-1">
-                <p>Filter By</p>
-            </div>
-            <div class="col-lg-3">
-                <select class="form-control" name="cars" id="Duration">
-                    <option value="Select">Select Course</option>
-                    <option value="">Compliance</option>
-                    <option value=""> Marketing</option>
-                    <option value="">Communication Skills</option>
-                </select>
-            </div>
-            <div class="col-lg-3">
-                <select class="form-control" name="cars" id="Duration">
-                    <option value="Select">Select Question Type</option>
-                    <option value="">Objective</option>
-                    <option value=""> Subjective</option>
-                </select>
-            </div>
-            <div class="col-lg-5">
-                <input type="search" class="form-control" placeholder="Search for Name..">
-            </div>
-        </div>
-    </div> <br>
-    <div class="row">
-        <div class="col-lg-10"></div>
-        <div class="col-lg-2">
-            <button class="addbtn" routerLink="/AssessmentForm">Add</button>
-        </div>
-    </div> <br>
-</div>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12">
-            <table>
-                <thead>
-                    <tr class="head">
-                        <th>Course Name</th>
-                        <th>Chapter Name</th>
-                        <th>QuestionType</th>
-                        <th>Question</th>
-                        <th>Option1</th>
-                        <th>Option2</th>
-                        <th>Option3</th>
-                        <th>Option4</th>
-                        <th>Correct Answer</th>
-                        <th>Weightage</th>
-                        <th>Actions</th>
-                    </tr>
-                    <tr class="header" *ngFor="let item of quetionlist">
-                        <td>{{item.coursename}}</td>
-                        <td>{{item.chaptername}}</td>
-                        <td>{{item.type}}</td>
-                        <td>{{item.question}}</td>
-                        <td>{{item.option1}}</td>
-                        <td>{{item.option2}}</td>
-                        <td>{{item.option3}}</td>
-                        <td>{{item.option4}}</td>
-                        <td>{{item.correctAnswer}}</td>
-                        <td>{{item.weightage}}</td>
-                        <td><button class="actionbuttons" routerLink="/AssessmentForm">Edit</button>
-                            &nbsp;&nbsp;&nbsp;<br>
-                            <br>
-                            <button class="actionbuttons" (click)="Ondelete(item.id)">Delete</button>
-                        </td>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
-</div> -->
-
-<div class="container-fluid">
-    <div class="row">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-lg-10">
-                    <p class="Heading">Assessment Dashboard</p>
+                    <p class="headings">Assessment Dashboard</p>
                 </div>
                 <div class="col-lg-2">
                     <p class="Text" style="float:right; color: #0C275A ;">
@@ -100,7 +16,7 @@
 <div class="card">
     <div class="row FilterClass ">
         <div class="col-lg-1">
-            <p class="Text">Filter By</p>
+            <p class="filter">Filter By</p>
         </div>
         <div class="col-lg-3">
             <select class="form-control"  name="cars" id="Duration">
@@ -118,7 +34,7 @@
             </select>
         </div>
         <div class="col-lg-5">
-            <input type="search"  class="form-control" placeholder="Search for Name..">
+            <input type="search"  class="form-control search" placeholder="Search for Name..">
         </div>
     </div>
 </div>
@@ -127,7 +43,7 @@
 <div class="row">
     <div class="col-lg-10"></div>
     <div class="col-lg-2">
-        <button class="add" routerLink="/AssessmentForm">Add</button>
+        <button class="addnew" routerLink="/AssessmentForm">Add</button>
     </div>
 </div> <br>
 
@@ -172,4 +88,104 @@
             </ng-template>
         </div>
     </div>
+</div> -->
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-10">
+                    <p class="headings">Assessment Dashboard</p>
+                </div>
+                <div class="col-lg-2">
+                    <p class="Text" style="float:right; color: #0C275A ;">
+                        Count: {{count}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="card">
+    <div class="row FilterClass ">
+        <div class="col-lg-1">
+            <p class="filter">Filter By</p>
+        </div>
+        <div class="col-lg-3">
+            <select class="form-control"  name="cars" id="Duration">
+                <option value="Select">Select Course</option>
+                <option value="">Compliance</option>
+                <option value=""> Marketing</option>
+                <option value="">Communication Skills</option>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <select class="form-control" name="cars" id="Duration">
+                <option value="Select">Select Question Type</option>
+                <option value="">Objective</option>
+                <option value=""> Subjective</option>
+            </select>
+        </div>
+        <div class="col-lg-5">
+            <input type="search"  class="form-control search" placeholder="Search for Name..">
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-lg-10"></div>
+    <div class="col-lg-2">
+        <button class="addnew" routerLink="/AssessmentForm">Add</button>
+    </div>
+</div> <br>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 scroll"  style="height:500px">
+            <table class="table">                   
+                <thead>
+                    <tr class="head">
+                        <th>Employee Name</th>
+                        <th>Course Name</th>
+                        <th>Chapter Name</th>
+                        <th>Assessment Date </th>
+                        <th>Status</th>
+                        <th>Score</th>
+                        <!-- <th>QuestionType</th>
+                        <th>Question</th>
+                        <th>Option1</th>
+                        <th>Option2</th>
+                        <th>Option3</th>
+                        <th>Option4</th> 
+                        <th>Correct Answer</th>
+                        <th>Weightage</th>-->
+                        <th>Actions</th>
+                    </tr>
+                    <tr class="header" *ngFor="let item of quetionlist">
+                        <!-- <td>{{item.coursename}}</td>
+                        <td>{{item.chaptername}}</td>
+                         <td>{{item.type}}</td>
+                        <td>{{item.question}}</td>
+                        <td>{{item.option1}}</td>
+                        <td>{{item.option2}}</td>
+                        <td>{{item.option3}}</td>
+                        <td>{{item.option4}}</td>
+                        <td>{{item.correctAnswer}}</td>
+                        <td>{{item.weightage}}</td> -->
+                        <!-- <td><button class="addbutton" routerLink="/AssessmentForm">View Assessment</button> <br>
+                            <br>
+                            <button class="addbutton" (click)="Ondelete(item.id)">Delete</button>
+                        </td> -->
+                    </tr>
+                </thead>
+            </table>
+            <ng-template #noResults>
+                <p class="NoResultShow"> No results found for "{{search}}" </p>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+

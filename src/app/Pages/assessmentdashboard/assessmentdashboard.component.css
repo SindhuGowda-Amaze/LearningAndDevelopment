@@ -23,9 +23,9 @@
     border-radius: 12px;
  }
 
- td{
+ /* td{
   background-color: white
-}
+} */
 
   .head{
   background-color: #02CFFF ;
@@ -41,7 +41,7 @@
   padding-right: 10px;;
   }
   .table{
-    border-radius: 5px;
+    border-radius: 10px;
    
   }
 
@@ -158,4 +158,13 @@
 .Heading{
   color:#3247D5;
   font-size: 20px;
+}
+
+.addbutton{
+  color:white;
+  background-color: #3247D5;
+  border:none;
+  border-radius: 5px;
+  height:30px;
+
 }

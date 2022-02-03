@@ -147,3 +147,11 @@ th,td{
   width:20%;
 }
 
+.viewcertificate{
+  color:white;
+  background-color: #3247D5;
+  border-radius: 5px;
+  border:none;
+  width:85%;
+  height:30px;
+}
