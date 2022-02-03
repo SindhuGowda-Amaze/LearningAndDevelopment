@@ -114,7 +114,10 @@ export class ChapterDashboardComponent implements OnInit {
 
   }
 
-
+  view(desc:any){
+    this.description=desc;
+    
+  }
 
 
 

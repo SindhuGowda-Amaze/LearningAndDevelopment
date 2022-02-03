@@ -51,25 +51,34 @@
                         <tr *ngFor="let details of coursedetails | filter: search">
                             <td>{{details.courseName}}</td>
                             <td>{{details.name}}</td>
-                            <td>{{details.description}}</td>
-                            <td><img src="{{details.chapterPhoto}}" data-toggle="modal" data-target="#exampleModal1"
+                            <td style="height:20px">{{details.shortdescription}}
+                                <span style="color:#3247D5" (click)="view(details.description)" data-toggle="modal"
+                                    data-target="#exampleModal3">....Viewmore</span>
+                            </td>
+                            <td><img src="{{details.chapterPhoto}}" data-toggle="modal" data-target="#exampleModal2"
                                     (click)="Showimage(details.chapterPhoto)" style="width:100px">
                             </td>
                             <td><img class="pdfimg" src="assets/Images/image.png" style="width: 20px;"
                                     data-toggle="modal" data-target="#exampleModal"
                                     (click)="ShowAttachments(details.id)">
 
-                            <td [innerHTML]="details.chapterText">
+                            <td>
+                                <span  
+                                [innerHTML]="details.chapterdescription"></span>
+                                  <span style="color:#3247D5;    float: right;
+                                  margin-block: -18px;"
+                                  data-toggle="modal"
+                                  data-target="#exampleModal3" (click)="view(details.chapterText)">......Viewmore</span>
                             </td>
                             <td>
                                 <!-- <button class="edit" (click)="edit(details.id)">Edit</button> <br> <br>
                                 <button class="edit" (click)="Ondelete(details.id)">Delete</button> -->
 
-                                <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width: 35%;"
-                                (click)="edit(details.id)"> &nbsp;
+                                <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width:10%;"
+                                    (click)="edit(details.id)"> &nbsp;
 
                                 <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON"
-                                (click)="Ondelete(details.id)" style="width: 35%;">
+                                    (click)="Ondelete(details.id)" style="width:10%;">
                             </td>
                         </tr>
                     </thead>
@@ -150,6 +159,36 @@
             <div class="modal-footer">
                 <button type="button" class="b" data-dismiss="modal">Close</button>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 19px;color:#3247D5">Description</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12" style="color:#0C275A ;font-size: 13px;">
+                        <p [innerHTML]="description"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-lg-9"></div>
+                <!-- <div class="col-lg-3">
+                    <button type="button" class="btn btn-secondary button" data-dismiss="modal">Close</button>
+                </div> -->
+
             </div>
         </div>
     </div>
