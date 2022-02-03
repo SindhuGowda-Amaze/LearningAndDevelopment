@@ -23,4 +23,87 @@ export class SidebarComponent implements OnInit {
     this.role = sessionStorage.getItem('role')
   }
 
+
+
+  public highlight(evt:any) {
+    debugger
+     var i, tablinks;
+    //  localStorage.setItem("clickname",name)
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    evt.currentTarget.className += " active";
+  }
+
+  Dashboard(){
+    localStorage.setItem("clickname","Dashboard")
+  }
+
+  chapterdashboard(){
+    localStorage.setItem("clickname","Chapter  Dashboard")
+  }
+
+  assessments(){
+    localStorage.setItem("clickname","Assessments")
+  }
+
+  setup(){
+    localStorage.setItem("clickname","SETUP")
+  }
+ 
+  category(){
+    localStorage.setItem("clickname","CATEGORY")
+  }
+
+  course(){
+    localStorage.setItem("clickname","COURSE")
+  }
+
+  chapter(){
+    localStorage.setItem("clickname","CHAPTER")
+  }
+
+  trainer(){
+    localStorage.setItem("clickname","TRAINER")
+  }
+
+  assigntrainer(){
+    localStorage.setItem("clickname","ASSIGN TRAINER")
+  }
+
+  employee(){
+    localStorage.setItem("clickname","EMPLOYEE")
+  }
+
+  mycourse(){
+    localStorage.setItem("clickname","My COURSE")
+  }
+  attendence(){
+    localStorage.setItem("clickname","ATTENDENCE")
+  }
+  catalog(){
+    localStorage.setItem("clickname","CATALOG")
+  }
+
+  certificate(){
+    localStorage.setItem("clickname","CERTIFICATE")
+  }
+
+  assigncourse(){
+    localStorage.setItem("clickname","ASSIGN COURSE")
+  }
+
+  results(){
+    localStorage.setItem("clickname","RESULTS")
+  }
+
+  testsubmit(){
+    localStorage.setItem("clickname","Test Submitted")
+  }
+
+
+
+
 }

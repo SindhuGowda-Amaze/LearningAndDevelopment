@@ -1,99 +1,85 @@
 <div class="container-fluid">
-  
-            <div class="row">
-                <div class="col-lg-10">
-                    <p class="headings">Chapter Dashboard</p>
-                </div>
-                <div class="col-lg-2">
-                    <p class="Text" style="float:right; padding-right:50px;">Count:{{coursedetails.length}}</p>
-                </div>
-            </div>
-            <!-- <hr class="HrLine"> -->
-            <div class="card">
-                <br>
-                <div class="row FilterClass ">
-                    <div class="col-lg-1">
-                        <p class="Text">Filter By</p>
-                    </div>
-                    <div class="col-lg-3">
-                        <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
-                            <option value="0">Select Course</option>
-                            <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">{{details.name}}</option>
-                        </select>
-                    </div>
-                    <div class="col-lg-5">
-                        <input type="search" class="form-control" placeholder="Search for Name.." [(ngModel)]="search">
-                    </div>
-                </div><br>
-            </div> <br>
-           
-            <div class="row">
-                <div class="col-lg-9"></div>
-                <div class="col-lg-3">
-                    <button class="button" routerLink="/Chapter">Add</button>
-                </div>
-            </div> <br>
-            <div class="container-fluid">
-                <div class="row scroll">
-                    <div class="col-lg-12">
-                        <table class="table table-bordered" *ngIf="(coursedetails | filter: search).length > 0; else noResults">
-                            <thead>
-                                <tr class="head" >
-                                    <th>Course Name</th>
-                                    <th>Chapter Name</th>
-                                    <th>Description</th>
-                                    <th style="width:15%">Chapter Photo</th>
-                                    <th>Attachment</th>
-                                    <th>Chapter Text</th>
-                                    <th>Actions</th>
-                                </tr>
-                                <tr *ngFor="let details of coursedetails | filter: search">
-                                    <td style="color:#0C275A">{{details.courseName}}</td>
-                                    <td style="color:#0C275A">{{details.name}}</td>
-                                    <td style="color:#0C275A">{{details.description}}</td>
-                                    <td style="color:#0C275A"><img src="{{details.chapterPhoto}}" style="width:100px"></td>
 
-                                    <td><img class="pdfimg" src="../../../assets/Images/image.png" style="width: 20px;"
-                                            data-toggle="modal" data-target="#exampleModal"
-                                            (click)="ShowAttachments(details.id)">
-
-                                    <td  style="color:#0C275A"      [innerHTML]="details.chapterText"></td>
-                                    <!-- <td><button class="button1" (click)="Ondelete(details.id)" routerLink="/Chapter" [routerLink]="['/Chapter', details.id]">Edit</button> <br> <br> -->
-                                        <td><button class="button1" (click)="edit(details.id)">Edit</button> <br> <br>
-                                        <button class="button2" (click)="Ondelete(details.id)">Delete</button>
-                                </td>
-                                </tr>
-                                <!-- <tr class="header"> 
-                                    <td>2016 JAVA Overview</td>
-                                    <td>Foundamentals of JAVA </td>
-                                    <td>Java is a popular programming language.
-                                        Java is used to develop mobile apps, web apps, desktop apps, games and much
-                                        more.</td>
-                                    <td><img class="pdfimg" src="assets/Images/java.jpg" data-toggle="modal" data-target="#exampleModal" ></td>
-                                    <td><img class="file" src="assets/Images/files.png" (click)="PreviewPPT()">&nbsp;&nbsp;
-                                        <img class="video" src="assets/Images/youtube.png" (click)="PreviewVideo()">
-                                    </td>
-                                    <td>
-                                        
-                                        Java is a programming language and a platform. Java is a high level, robust,
-                                        object-oriented and secure programming language.
-                                        Java was developed by Sun Microsystems (which is now the subsidiary of Oracle)
-                                        in the year 1995. James Gosling is known as the father of Java. Before Java, its
-                                        name was Oak. Since Oak was already a registered company, so James Gosling and
-                                        his team changed the name from Oak to Java.
-                                    </td>
-                                    <td><button class="button1" routerLink="/Chapter">Edit</button> <br> <br>
-                                        <button class="button2">Delete</button>
-                                    </td>
-                                </tr> -->
-                            </thead>
-                        </table>
-                        <ng-template #noResults>
-                            <p class="NoResultShow"> No results found for "{{search}}" </p>
-                        </ng-template>
-                    </div>
-                </div>
+    <div class="row">
+        <div class="col-lg-10">
+            <p class="headings">Chapter Dashboard</p>
+        </div>
+        <div class="col-lg-2">
+            <p class="count" style="float:right; padding-right:50px;">Count:{{coursedetails.length}}</p>
+        </div>
+    </div>
+    <!-- <hr class="HrLine"> -->
+    <div class="card">
+        <br>
+        <div class="row FilterClass ">
+            <div class="col-lg-1">
+                <p class="filter">Filter By</p>
             </div>
+            <div class="col-lg-3">
+                <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
+                    <option value="0">Select Course</option>
+                    <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">
+                        {{details.name}}</option>
+                </select>
+            </div>
+            <div class="col-lg-5">
+                <input type="search" class="form-control search" placeholder="Search for Name.." [(ngModel)]="search">
+            </div>
+        </div><br>
+    </div> <br>
+
+    <div class="row">
+        <div class="col-lg-9"></div>
+        <div class="col-lg-3">
+            <button class="addnew" routerLink="/Chapter">Add</button>
+        </div>
+    </div> <br>
+    <div class="container-fluid">
+        <div class="row scroll">
+            <div class="col-lg-12">
+                <table class="table" *ngIf="(coursedetails | filter: search).length > 0; else noResults">
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Chapter Name</th>
+                            <th>Description</th>
+                            <th style="width:15%">Chapter Photo</th>
+                            <th>Attachment</th>
+                            <th>Chapter Text</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr *ngFor="let details of coursedetails | filter: search">
+                            <td>{{details.courseName}}</td>
+                            <td>{{details.name}}</td>
+                            <td>{{details.description}}</td>
+                            <td><img src="{{details.chapterPhoto}}" data-toggle="modal" data-target="#exampleModal1"
+                                    (click)="Showimage(details.chapterPhoto)" style="width:100px">
+                            </td>
+                            <td><img class="pdfimg" src="assets/Images/image.png" style="width: 20px;"
+                                    data-toggle="modal" data-target="#exampleModal"
+                                    (click)="ShowAttachments(details.id)">
+
+                            <td [innerHTML]="details.chapterText">
+                            </td>
+                            <td>
+                                <!-- <button class="edit" (click)="edit(details.id)">Edit</button> <br> <br>
+                                <button class="edit" (click)="Ondelete(details.id)">Delete</button> -->
+
+                                <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width: 35%;"
+                                (click)="edit(details.id)"> &nbsp;
+
+                                <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON"
+                                (click)="Ondelete(details.id)" style="width: 35%;">
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+                <ng-template #noResults>
+                    <p class="NoResultShow"> No results found for "{{search}}" </p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -104,7 +90,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Attachemnts</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Attachments</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -113,20 +99,56 @@
                 <div class="row">
                     <div class="col-lg-4" *ngFor="let attchments of Attachmentlist">
                         <br>
-                        <img src="{{attchments.photo}}" *ngIf="attchments.attachmentType=='Image'" (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                        <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Pdf'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                        <img src="assets/Images/word.png" *ngIf="attchments.attachmentType=='Document'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                        <img src="assets/Images/files.png" *ngIf="attchments.attachmentType=='Ppt'"  (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
-                        <video controls style="height: 100px;width: 50%;"  *ngIf="attchments.attachmentType=='video'" (click)="openAttchments(attchments.photo)">
-                            <source src="{{attchments.photo}}"  (click)="openAttchments(attchments.photo)" type="video/mp4">
-                            <source src="{{attchments.photo}}"  (click)="openAttchments(attchments.photo)" type="video/ogg">
+                        <img src="{{attchments.photo}}" *ngIf="attchments.attachmentType=='Image'"
+                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                        <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Pdf'"
+                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                        <img src="assets/Images/word.png" *ngIf="attchments.attachmentType=='Document'"
+                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                        <img src="assets/Images/files.png" *ngIf="attchments.attachmentType=='Ppt'"
+                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                        <video controls style="height: 100px;width: 50%;" *ngIf="attchments.attachmentType=='video'"
+                            (click)="openAttchments(attchments.photo)">
+                            <source src="{{attchments.photo}}" (click)="openAttchments(attchments.photo)"
+                                type="video/mp4">
+                            <source src="{{attchments.photo}}" (click)="openAttchments(attchments.photo)"
+                                type="video/ogg">
                             Your browser does not support the video tag.
-                          </video>
+                        </video>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <div class="col-lg-9"></div>
+                <div class="col-lg-3">
+                    <button type="button" class="btn btn-secondary button" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <br>
+                        <img src="{{photo}}" style="width:100%;height:auto;">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="b" data-dismiss="modal">Close</button>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
         </div>

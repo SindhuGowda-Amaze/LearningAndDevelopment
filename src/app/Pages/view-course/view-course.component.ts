@@ -150,10 +150,27 @@ export class ViewCourseComponent implements OnInit {
           'Your request has been sent to manager for Approval',
           'success'
         );
-        location.href="/#/Catalog";
+        location.href="#/Catalog";
       }
     });
     } 
+
+    
+  public highlight(evt:any) {
+    debugger
+     var i, tablinks;
+    //  localStorage.setItem("clickname",name)
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    evt.currentTarget.className += " active";
+  }
+
+
+
+
     
 }
 

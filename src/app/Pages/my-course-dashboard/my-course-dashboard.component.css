@@ -1,53 +1,51 @@
-.start{
-    border:none;
-    border-radius: 5px;
-    color:black;
-    background-color: whitesmoke;
+.start {
+  border: none;
+  border-radius: 5px;
+  color: black;
+  background-color: whitesmoke;
 }
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li  {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover {
-    text-decoration: 3px solid rgb(72, 83, 238) underline;
-    color:   rgb(72, 83, 238)
-  }
-  
-  .View{
-      font-size: 15px;
-      color:gray;
-  }
- 
-  .hrline{
-    background-color: 1px solid silver; ;
-   color: 1px solid silver;
-   height: 4px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-  }
- .img{
+li {
+  float: left;
+}
+
+li {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: 3px solid rgb(72, 83, 238) underline;
+  color: rgb(72, 83, 238);
+}
+
+.View {
+  font-size: 15px;
+  color: gray;
+}
+
+.hrline {
+  background-color: 1px solid silver;
+  color: 1px solid silver;
+  height: 4px;
+}
+.img {
   width: 250px;
-   height:auto;
- }
- 
-.start:hover{
-    background-color: black;
-    color: white;
+  height: auto;
+}
+
+.start:hover {
+  background-color: black;
+  color: white;
 }
 /* .rowwidth{
   width: 100%;
@@ -80,37 +78,34 @@ ul {
     font-weight: bold;
 } */
 
-.btn-danger{
+.btn-danger {
   background-color: rgb(245, 214, 214);
   border-radius: 20px;
   width: 100%;
   padding: 2px;
   border: transparent;
 }
-.btn-success{
+.btn-success {
   background-color: rgb(177, 243, 191);
   border-radius: 20px;
   width: 100%;
   padding: 2px;
   border: transparent;
 }
-.btn-light{
+.btn-light {
   background-color: rgb(177, 224, 243);
   border-radius: 20px;
   width: 100%;
   padding: 2px;
 }
 
-.Number{
+.Number {
   text-align: center;
   padding-top: 22px;
   color: gray;
   font-size: 60px;
   font-weight: bold;
 }
-
-
-
 
 body {
   margin: 0;
@@ -124,7 +119,6 @@ body {
 
 div {
   width: 100%;
-
 }
 
 .container {
@@ -134,7 +128,7 @@ div {
   perspective: 1000px;
 }
 
- /* .card {
+/* .card {
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
@@ -144,11 +138,11 @@ div {
   height: 325px;
   overflow-y: scroll;
 }  */
-.View{
+.View {
   padding-left: 25px;
 }
-.tagline{
-  background-color: 1px solid silver; ;
+.tagline {
+  background-color: 1px solid silver;
   color: 1px solid black;
   height: 4px;
 }
@@ -158,8 +152,8 @@ div {
   text-transform: uppercase;
 }
 
-.tag{
-  height:1px solid silver;
+.tag {
+  height: 1px solid silver;
 }
 
 .card1 {
@@ -205,11 +199,10 @@ div {
   font-weight: white;
   color: white;
   cursor: pointer;
-
 }
 
-
-.front, .back {
+.front,
+.back {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -218,8 +211,8 @@ div {
   backface-visibility: hidden;
 }
 
-
-.front1, .back1 {
+.front1,
+.back1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -253,13 +246,12 @@ div {
 }
 
 .completetext {
-  color: #2F87CC;
+  color: #2f87cc;
   font-size: 14px;
 }
 
 .back {
   transform: rotateY(180deg);
-
 }
 
 td {
@@ -279,7 +271,8 @@ td {
   text-align: center;
 }
 
-.vertical-middle, .vertical-middle .table-cell {
+.vertical-middle,
+.vertical-middle .table-cell {
   vertical-align: middle;
 }
 
@@ -293,27 +286,25 @@ td {
   height: 13%;
   border-collapse: collapse;
   margin: 3px;
-
 }
 
 .count-size {
   font-size: 14px;
   clear: both;
-  font-family: 'DIN Medium';
+  font-family: "DIN Medium";
   color: #555;
   line-height: 20px;
 }
 
 .din-regular {
-  font-family: 'DIN Regular';
+  font-family: "DIN Regular";
   font-size: 14px;
 }
 
 .din-Bold {
-  font-family: 'DIN Bold';
+  font-family: "DIN Bold";
   font-size: 14px;
 }
-
 
 .title_outer {
   float: left;
@@ -321,11 +312,11 @@ td {
   padding: 3px 0;
 }
 
-.title_outer1 {
+/* .title_outer1 {
   float: left;
   max-width: 98%;
   padding: 3px 0;
-}
+} */
 
 .card_title {
   font-size: 18px;
@@ -343,10 +334,9 @@ td {
 }
 
 .backbtn {
-
   color: #777 !important;
   font-size: 12px;
-  font-family: 'DIN Regular';
+  font-family: "DIN Regular";
   line-height: 14px;
   box-sizing: border-box;
   display: block;
@@ -373,7 +363,8 @@ td {
   vertical-align: middle;
 }
 
-.Hiliday_list li .holiday_cell .holiday-icon-sheet, .Hiliday_list li .holiday_cell .holidayName {
+.Hiliday_list li .holiday_cell .holiday-icon-sheet,
+.Hiliday_list li .holiday_cell .holidayName {
   vertical-align: middle;
 }
 
@@ -381,7 +372,6 @@ td {
   width: 35px;
   height: 35px;
   display: inline-block;
-
 }
 
 /* li {
@@ -396,14 +386,13 @@ td {
 } */
 
 .holidayflow {
-
   flex-flow: column-reverse;
   height: 235px;
   overflow-y: scroll;
 }
 
 .cardlabel {
-  font-family: 'DIN Bold';
+  font-family: "DIN Bold";
   font-size: 20px;
   margin-top: -1px;
 }
@@ -419,7 +408,7 @@ td {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #2F87CC;
+  background: #2f87cc;
 }
 
 /* Handle on hover */
@@ -430,7 +419,7 @@ td {
 .holidayName {
   color: #777;
   font-size: 16px;
-  font-family: 'DIN Medium';
+  font-family: "DIN Medium";
   display: inline-block;
   width: 83%;
   margin-left: 10px;
@@ -439,7 +428,7 @@ td {
 .holiday-date-day-name {
   color: #777;
   font-size: 12px;
-  font-family: 'DIN Regular';
+  font-family: "DIN Regular";
   display: block;
   clear: both;
   line-height: 20px;
@@ -450,13 +439,13 @@ td {
 .count-size {
   font-size: 20px;
   clear: both;
-  font-family: 'DIN Medium';
+  font-family: "DIN Medium";
   color: #555;
   line-height: 20px;
 }
 
 .din-regular1 {
-  font-family: 'DIN Regular';
+  font-family: "DIN Regular";
   font-size: 14px;
 }
 
@@ -464,122 +453,186 @@ td {
   border-right-style: hidden;
   width: 272px;
   border-left-style: hidden;
-  margin-top: 10px
+  margin-top: 10px;
 }
 
-.leavetble1{
+.leavetble1 {
   border-right-style: hidden;
-    width: 272px;
-    border-left-style: hidden;
-    margin-top: -10px;
-    height: 56px;
+  width: 272px;
+  border-left-style: hidden;
+  margin-top: -10px;
+  height: 56px;
 }
 
 .count-size {
   font-size: 20px;
   clear: both;
-  font-family: 'DIN Medium';
+  font-family: "DIN Medium";
   color: #555;
   line-height: 20px;
 }
 
-.name{
-  font-family: 'DIN Medium';
+.name {
+  font-family: "DIN Medium";
   font-size: 13px;
   margin-top: 3px;
   margin-left: -5px;
-
 }
 
-.name1{
-  font-family: 'DIN Medium';
+.name1 {
+  font-family: "DIN Medium";
   font-size: 13px;
   margin-top: 3px;
-
 }
 
-.upload{
-margin-left: -19px;
-border-radius: 6px;
-height: 28px;
-background-color: #36acdd;
-color:white
+.upload {
+  margin-left: -19px;
+  border-radius: 6px;
+  height: 28px;
+  background-color: #36acdd;
+  color: white;
 }
 
-.calend{
-  font-size:30px;
-  color: #2F87CC;
-  margin-left:-20px;
+.calend {
+  font-size: 30px;
+  color: #2f87cc;
+  margin-left: -20px;
 }
 
 .din-Medium {
-  font-family: 'DIN Medium';
+  font-family: "DIN Medium";
   font-size: 13px;
   margin-top: -3px;
 }
 
-.din-Medium1{
-  font-family: 'DIN Medium';
+.din-Medium1 {
+  font-family: "DIN Medium";
   font-size: 11px;
   margin-top: -3px;
-
-} 
+}
 
 hr.new4 {
   border: 1px solid whitesmoke;
-  width:230px;
-  margin-top:3px;
+  width: 230px;
+  margin-top: 3px;
 }
 
-
-.anniversary{
-transform: rotate(90deg);
+.anniversary {
+  transform: rotate(90deg);
   margin-top: 10px;
   background-color: #36acdd;
   color: white;
   border-top-left-radius: 12px;
 }
 
-.newjoinee{
-transform: rotate(90deg);
-      width: 149px;
-      margin-top: 20px;
-      margin-left: -30px;
-      background-color: #36acdd;
-      color: white;
-      border-top-right-radius: 14px;
+.newjoinee {
+  transform: rotate(90deg);
+  width: 149px;
+  margin-top: 20px;
+  margin-left: -30px;
+  background-color: #36acdd;
+  color: white;
+  border-top-right-radius: 14px;
 }
 
-.wish{
-color: #555;
-font-size: 20px;
-margin-top: -40px;
-margin-left: -30px;
+.wish {
+  color: #555;
+  font-size: 20px;
+  margin-top: -40px;
+  margin-left: -30px;
 }
 
-.wishdate{
-margin-top: -19px;
+.wishdate {
+  margin-top: -19px;
   margin-left: -21px;
 }
 
-
-.din-regular23{
-
-  font-family: 'DIN Medium';
-  font-size: 11px;
-  padding: 5px;
-
-}
-
-.underlinetext
-{
+.underlinetext {
   text-decoration: 3px solid rgb(72, 83, 238) underline;
   color: rgb(72, 83, 238);
   height: 4px;
 }
 .underlinetext li a:hover {
   text-decoration: 3px solid rgb(72, 83, 238) underline;
-  color:   rgb(72, 83, 238)
+  color: rgb(72, 83, 238);
 }
 
+.button {
+  background-color: #3247d5;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
 
+.CloseBTN {
+  color: white;
+  background-color: #3247d5;
+  border: none;
+  border-radius: 5px;
+  width: 75%;
+}
+.Save {
+  color: white;
+  background-color: #3247d5;
+  border: none;
+  border-radius: 5px;
+  width:75%;
+}
+.lastassigned{
+  font-size: 19px;
+  color:#3247D5;
+  font-weight: bold;
+  margin-left: 15px;
+}
+.coursename{
+  font-size: 13px;
+  color:#0C275A ;
+  margin-left: 30px
+}
+.active{
+  color:#0C275A ;
+  font-size: 19px;
+}
+
+.name2{
+  color:#3247D5;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.startdate{
+  color:#0C275A ;
+  font-size: 13px;
+}
+
+.CARDHead {
+  color: #3247d5;
+  font-family: Poppins;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+}
+
+.CARDHead2 {
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 12px;
+  letter-spacing: 0px;
+  color: #0c275a;
+}
+
+.CARDHead3 {
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 12px;
+  letter-spacing: 0px;
+  color: #0c275a;
+  width: 90px;
+  margin-top: 5px;
+}

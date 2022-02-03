@@ -71,12 +71,12 @@ export class CategoryFormComponent implements OnInit {
         debugger
         let result = data;
         Swal.fire("Successfully Updated...!");
-        location.href="/#/CategoryDashboard";
+        location.href="#/CategoryDashboard";
       })
   }
 
   Cancel() {
-    location.href = "/#/CategoryDashboard";
+    location.href = "#/CategoryDashboard";
   }
 
 }

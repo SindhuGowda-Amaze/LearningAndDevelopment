@@ -14,7 +14,18 @@ export class EmployeeComponent implements OnInit {
   stafflist: any;
   term: any;
   search: any;
+  id: any;
+
   ngOnInit(): void {
+
+    // this.GetMyDetails();
+    // this.ActivatedRoute.params.subscribe(params => {
+    //   debugger
+    //   this.id = params["id"];
+    //   if (this.id != null && this.id != undefined) {
+    //     this.GetMyDetails();
+    //   }
+    // })
 
     // this.GetMyDetails();
     debugger
@@ -44,5 +55,11 @@ export class EmployeeComponent implements OnInit {
   //     }
   //   )
   // }
+
+  Ondelete(id:any){
+    
+  }
+
+
 
 }

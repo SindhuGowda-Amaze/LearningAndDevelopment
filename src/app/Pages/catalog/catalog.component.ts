@@ -100,7 +100,6 @@ export class CatalogComponent implements OnInit {
           data => {
             debugger
             let id = data;
-            Swal.fire("saved Sucessfully");
             location.href = "#/Catalog"
           })
         Swal.fire(
@@ -108,7 +107,7 @@ export class CatalogComponent implements OnInit {
           'Your request has been sent to manager for Approval',
           'success'
         );
-        location.href = "/#/Catalog";
+        location.href = "#/Catalog";
       }
     });
   }

@@ -4,7 +4,7 @@
                     <p class="headings">Course Dashboard</p>
                 </div>
                 <div class="col-lg-2">
-                    <p class="Text" style="float:right; padding-right:50px;">Count:{{count}}</p>
+                    <p class="count" style="float:right; padding-right:50px;">Count:{{count}}</p>
                 </div>
             </div>
           
@@ -12,23 +12,23 @@
                 <br>
             <div class="row FilterClass ">
                 <div class="col-lg-1">
-                    <p class="Text">Filter By </p>
+                    <p class="filter">Filter By </p>
                 </div>
                 <div class="col-lg-3">
-                    <select  class="form-control FilterClass"  id="Duration" (change)="getcategoryid($event)" >
+                    <select  class="form-control "  id="Duration" (change)="getcategoryid($event)" >
                         <option class="FilterClass"  value="0">Select Category</option>
                         <option class="FilterClass" *ngFor="let cat  of categorylist" value="{{cat.name}}">{{cat.name}}</option>
                     </select>
                 </div>
                 <div class="col-lg-5">
-                        <input type="search" class="form-control" placeholder="Search for Course"  [(ngModel)]="search">
+                        <input type="search" class="form-control search" placeholder="Search for Course"  [(ngModel)]="search">
                 </div>
             </div><br>
         </div> <br>
             <div class="row">
                 <div class="col-lg-9"></div>
                 <div class="col-lg-3">
-                    <button class="button" routerLink="/Course">Add</button>
+                    <button class="addnew" routerLink="/Course">Add</button>
                 </div>
             </div> <br>
 
@@ -37,9 +37,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                            <table class="table | filter: search">
+                            <table class="table"  *ngIf="(result | filter: search).length > 0; else noResults">
                             <thead>
-                                <tr class="head">
+                                <tr>
                                     <th>Category Name</th>
                                     <th>Course Name</th>
                                     <th>Description</th>
@@ -50,20 +50,27 @@
                                     <th>Exit Criteria</th>
                                     <th>Actions</th>
                                 </tr>
-                                <tr class="header" *ngFor="let details of result | filter: search">
+                                <tr  *ngFor="let details of result | filter: search">
                                     <td>{{details.categoryName}}</td>
                                     <td>{{details.name}}</td>
                                     <td>{{details.description}}</td>
                                     <td>
-
-                                        <img src="{{details.photo}}" width="50%" height="auto">
+                                        <img (click)="clickonimage(details.photo)"  data-toggle="modal" data-target="#exampleModal"
+                                         src="{{details.photo}}" width="50%" height="auto">
                                     </td>
                                     <td>{{details.duration}}</td>
                                     <td>{{details.fee}}</td>
                                     <td>{{details.entryCriteria}}</td>
                                     <td>{{details.exitCriteria}}</td>
-                                    <td><button class="actionbuttons " (click)="Update(details.id)">Edit</button> <br> <br>
-                                        <button class="actionbuttons" (click)="Ondelete(details.id)" >Delete</button>
+                                    <td>
+                                        <!-- <button class="edit" (click)="Update(details.id)">Edit</button> <br> <br>
+                                        <button class="edit" (click)="Ondelete(details.id)">Delete</button> -->
+
+                                        <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width: 25%;"
+                                        (click)="Update(details.id)"> &nbsp;&nbsp;
+
+                                        <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON"
+                                        (click)="Ondelete(details.id)" style="width: 25%;">
                                     </td>
                                 </tr>
                             </thead>
@@ -75,4 +82,32 @@
                 </div>
             </div>
      
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-8" >
+                        <br>
+                        <img src="{{image}}" style="width:100%;height:auto;">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
 </div>

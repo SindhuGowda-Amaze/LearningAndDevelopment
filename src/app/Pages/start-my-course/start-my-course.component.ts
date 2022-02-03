@@ -243,5 +243,15 @@ export class StartMyCourseComponent implements OnInit {
     this.show = 1;
   }
 
+  showcard:any;
+  clickcard(){
+  this.showcard=1;
+  }
+
+
+
+
+
+
 
 }

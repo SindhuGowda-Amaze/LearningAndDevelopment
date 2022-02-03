@@ -24,6 +24,7 @@ export class CourseDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.GetCourse() ;
     this.GetCategoryMaster();
+
   }
 
   public GetCourse() {
@@ -114,8 +115,11 @@ export class CourseDashboardComponent implements OnInit {
     }
   }
 
-
-
+   image:any
+  clickonimage(photo:any){
+   this.image=photo;
+  }
+ 
 
 
 }

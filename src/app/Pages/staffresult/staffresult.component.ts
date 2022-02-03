@@ -117,7 +117,7 @@ export class StaffresultComponent implements OnInit {
       this.GetEnroll();
     }
   }
-
+  result1:any;
   show: any;
   Showcards(value: any) {
     this.show = value;
@@ -126,8 +126,8 @@ export class StaffresultComponent implements OnInit {
         data => {
           debugger
           // this.result = data.filter(x => x.manager == this.manager );
-          this.result = data.filter(x => x.status == 'Manager Approved');
-          this.count = this.result.length;
+          this.result1 = data.filter(x => x.status == 'Manager Approved');
+          this.count = this.result1.length;
         })
       // this.GetCourse();
     }
@@ -136,8 +136,8 @@ export class StaffresultComponent implements OnInit {
         data => {
           debugger
           // this.result = data.filter(x => x.manager == this.manager );
-          this.result = data.filter(x => x.status == 'Manager Pending');
-          this.count = this.result.length;
+          this.result1 = data.filter(x => x.status == 'Manager Pending');
+          this.count = this.result1.length;
         })
       // this.GetApproveCourse();
     }
@@ -146,8 +146,8 @@ export class StaffresultComponent implements OnInit {
         data => {
           debugger
           // this.result = data.filter(x => x.manager == this.manager );
-          this.result = data.filter(x => x.status == 'Manager Rejected');
-          this.count = this.result.length;
+          this.result1 = data.filter(x => x.status == 'Manager Rejected');
+          this.count = this.result1.length;
         })
       // this.GetApproveCourse();
     }

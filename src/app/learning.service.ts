@@ -47,6 +47,13 @@ export class LearningService {
     );
   }
 
+  // public GetMyDetails() {
+  //   debugger
+  //   let APIURL = this.baseURL + "Master/GetMyDetails";
+  //   return this.http.get<any[]>(APIURL);
+  // }
+
+
   public DeleteMyDetails(id: any) {
     debugger
     let APIURL = this.baseURL + "Master/DeleteMyDetails?ID=" + id;
@@ -500,6 +507,12 @@ export class LearningService {
   public UpdateErollmentStatusRejected(data: any) {
     debugger;
     this.url = this.baseURL + '/Master/UpdateErollmentStatusRejected';
+    return this.http.post(this.url, data);
+  }
+
+  public UpdateChapterAttachment(data: any) {
+    debugger;
+    this.url = this.baseURL + '/Master/UpdateChapterAttachment';
     return this.http.post(this.url, data);
   }
 

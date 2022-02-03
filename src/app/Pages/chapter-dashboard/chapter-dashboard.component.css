@@ -15,28 +15,13 @@
     width:100%;
     vertical-align: middle;
   }
-  td{
-    background-color: white
-  }
-  /* /* .th{
-    background-color: #e4e5e6;
-    color:#404040;
-    font-family: "DIN Bold";
-  } */
-  /* .table, th, td {
-  border: 1px solid lightgray;
-   border-collapse: collapse; 
 
-  } */
-  .Heading{
-  padding-left: 15px;
-  font-size: 20px;
-  color:black;
-  }
+ 
+ 
   .header{
     background-color: #dee2e6;
     color:#404040;
-    font-family: "DIN Bold";
+    font-family: 'Poppins';
     font-size: 12px;
    padding:5px;
 
@@ -44,7 +29,7 @@
   .head{
   background-color: #dee2e6;
   color:#404040;
-  font-family: "DIN Bold";
+  font-family: 'Poppins';
   font-size: 15px;
  padding:5px;
   }
@@ -130,10 +115,10 @@
   .FilterClass{
     padding-left: 15px;
   }  
-  .Text{
+  /* .Text{
     font-size: 18px;
     color:#0C275A;
-  }
+  } */
 
   .NoResultShow{
     font-size: 16px;
@@ -170,3 +155,6 @@
     background-color:#02CFFF;
     color:white;
   }
+
+
+

@@ -15,22 +15,12 @@
     width:100%;
     vertical-align: middle;
   }
-  td{
-    background-color: white
-  }
+ 
   th {
     background-color: #02cfff !important;
     color: #ffffff;
   }
-  /* .th{
-    background-color: #e4e5e6;
-    color:#404040;
-    font-family: "DIN Bold";
-  } */
-  .table, th, td {
-  border: 1px solid lightgray;
-   border-collapse: collapse; 
-  }
+
   .Heading{
     padding-left: 15px;
     font-size: 20px;
@@ -45,7 +35,8 @@
   .count{
   text-align: right;
   padding-right: 10px;
-  color: #3247D5; font-family: 'Poppins';
+  color: #0C275A ; 
+  font-size: 18px;
   }
     .Button{
       background-color: #007bff;

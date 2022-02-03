@@ -30,6 +30,7 @@ export class ChapterComponent implements OnInit {
   courseName: any;
   chapterText: any;
   show:any;
+  Attachmentlist:any;
 
 
   ngOnInit(): void {
@@ -42,6 +43,12 @@ export class ChapterComponent implements OnInit {
       if (this.id != undefined && this.id != null) {
         this.show=1
         this.GetChapter();
+        
+        this.LearningService.GetChapterAttachmentByChapterID(this.id).subscribe(data => {
+          debugger
+          this.Attachmentlist = data;
+        })
+        
       }
       else{
         this.show=0;
@@ -69,7 +76,7 @@ export class ChapterComponent implements OnInit {
 
    
   Cancel() {
-    location.href = "/#/ChapterDashboard";
+    location.href = "#/ChapterDashboard";
   }
 
   files1: File[] = [];
@@ -117,6 +124,10 @@ export class ChapterComponent implements OnInit {
     this.courseID=even.target.value;
   }
 
+  
+  openAttchments(photo: any) {
+    window.open(photo, "_blank")
+  }
  
 
 
@@ -138,28 +149,35 @@ export class ChapterComponent implements OnInit {
         data => {
         debugger
         let result = data;
-        Swal.fire("Successfully Updated...!");
+        Swal.fire("Updated Successfully ...!");
         location.href="/#/ChapterDashboard";
       })
   }
 
   Save() {
     debugger
-    var json = {
-      "courseID": this.courseID,
-      "Name": this.name,
-      "Description": this.description,
-      "ChapterPhoto": this.ChapterPhoto,
-      "ChapterText": this.chapterText 
-    };
-    this.LearningService.InsertChapter(json).subscribe(
-      data => {
-        debugger
-        this.chapterID = data;
-        this.insertAttchmentFiles()
-        Swal.fire("Saved Sucessfully");
-        location.href = "#/ChapterDashboard"
-      })
+    if(this.courseID==undefined || this.name==undefined||this.description==undefined || this.ChapterPhoto==undefined|| this.chapterText==undefined)
+    {
+      Swal.fire("Please fill all the fields");
+    }
+    else{
+      var json = {
+        "courseID": this.courseID,
+        "Name": this.name,
+        "Description": this.description,
+        "ChapterPhoto": this.ChapterPhoto,
+        "ChapterText": this.chapterText 
+      };
+      this.LearningService.InsertChapter(json).subscribe(
+        data => {
+          debugger
+          this.chapterID = data;
+          this.insertAttchmentFiles()
+          Swal.fire("Saved Successfully");
+          location.href = "#/ChapterDashboard"
+        })
+    }
+    
   }
 
 
@@ -198,5 +216,75 @@ export class ChapterComponent implements OnInit {
       alert("ATTACHMENT UPLOADED");
     })
   }
+
+
+
+
+
+
+
+
+
+  edit(){
+    debugger
+     var json = {
+           "ID": this.photoid,
+           "ChapterAttachmentUrl": this.photourl,
+      };   
+      this.LearningService.UpdateChapterAttachment(json).subscribe(
+        data => {
+        debugger
+        let result = data;
+        Swal.fire("Successfully Updated...!");
+        this.LearningService.GetChapterAttachmentByChapterID(this.id).subscribe(data => {
+          debugger
+          this.Attachmentlist = data;
+          this.files1=[];
+        })
+      })
+  }
+
+
+  photourl:any;
+  photoid:any;
+  Edit(attchments:any){
+    this.photourl=attchments.originalurl;
+    this.photoid=attchments.id
+
+  }
+
+
+
+  image:any
+  clickonimage(photo:any){
+   this.image=photo;
+  }
+
+
+
+  
+  onSelect2(event: any) {
+    this.files1.length=0;
+    this.files1=[];
+    console.log(event);
+    this.files1.push(...event.addedFiles);
+    this.uploadattachments2();
+  }
+
+  file1: any;
+  public uploadattachments2() {
+    debugger
+    this.LearningService.AttachmentsUpload(this.files1).subscribe(res => {
+      debugger
+      this.photourl = res;
+      console.log("Attchaments",this.Attachment);
+      alert("ATTACHMENT UPLOADED");
+    })
+  }
+
+
+
+
+
 
 }

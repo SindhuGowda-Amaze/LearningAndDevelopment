@@ -1,107 +1,96 @@
-<div class="row" *ngIf="temp==1">
+<div class="row  tab" *ngIf="temp==1">
     <div class="col-md-2 sidenav" style="height: 100vh;margin-top: 75px;position: fixed;">
 
-        <a *ngIf="roleid=='1' || roleid=='2' " routerLink="/AdminDashboard">
-            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
+        <a *ngIf="roleid=='1' || roleid=='2' " class="tablinks"   (click)="highlight($event)" (click)="Dashboard()" routerLink="/AdminDashboard">
+            <i class="fa fa-users dashboard" ></i> &nbsp;
+                Dashboard          
+        </a>
+        <a *ngIf="roleid=='4'" routerLink="/ChapterDashboard" class="tablinks" (click)="highlight($event)" (click)="chapterdashboard()" >
+
+            <i class="fa fa-users  dashboard" ></i>
+            &nbsp; Chapter  
+           
+        </a>
+        <a *ngIf="roleid=='3'" routerLink="/ManagerDashboard" class="tablinks"   (click)="highlight($event)" (click)="Dashboard()">
+
+            <i class="fa fa-users  dashboard" ></i>
             &nbsp; Dashboard
             <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a *ngIf="roleid=='4'" routerLink="/ChapterDashboard">
 
-            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
-            &nbsp; ChapterDashboard
-            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
-        </a>
-        <a *ngIf="roleid=='3'" routerLink="/ManagerDashboard">
+        <a *ngIf="roleid==4" routerLink="/Assessmentdashboard" class="tablinks"   (click)="highlight($event)" (click)="assessments()">
 
-            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
-            &nbsp; Dashboard
-            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
-        </a>
-
-        <a *ngIf="roleid==4" routerLink="/Assessmentdashboard">
-
-            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
+            <i class="fa fa-users dashboard "></i>
             &nbsp; Assessments
-            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
+            
         </a>
 
-        <a data-toggle="collapse" class="togglebtn button" data-target="#userapplications" *ngIf="roleid==1">
+        <a data-toggle="collapse" class="togglebtn button" data-target="#userapplications" *ngIf="roleid==1" class="tablinks"  
+         (click)="highlight($event)" (click)="setup()">
 
-            <i class="fa fa-gears icon28" style="width: 20px;    margin-right: 17px;"></i>
+            <i class="fa fa-gears  dashboard   " ></i>
             &nbsp; SETUP
-            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
+            
         </a>
 
-        <div id="userapplications" class="collapse" style="padding-left: 7%;">
-            <a routerLink="/CategoryDashboard">
-                <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp; CATEGORY
+        <div id="userapplications" class="collapse" style="padding-left: 7%;" >
+            <a routerLink="/CategoryDashboard" class="tablinks"   (click)="highlight($event)" (click)="category()">
+                <img  class="dashboard" src="assets/Images/Vector.png" /> &nbsp; CATEGORY
             </a>
-            <a routerLink="/CourseDashboard">
-                <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp; COURSE
+            <a routerLink="/CourseDashboard" class="tablinks"   (click)="highlight($event)" (click)="course()">
+                <img  class="dashboard"  src="assets/Images/Vector.png"/> &nbsp; COURSE
 
             </a>
-            <a routerLink="/ChapterDashboard">
-                <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp;CHAPTER
+            <a routerLink="/ChapterDashboard" class="tablinks"   (click)="highlight($event)" (click)="chapter()">
+                <img  class="dashboard" src="assets/Images/Vector.png"/> &nbsp;CHAPTER
 
             </a>
-            <a routerLink="/Trainer">
-                <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp;TRAINER
+            <a routerLink="/Trainer" class="tablinks"   (click)="highlight($event)" (click)="trainer()">
+                <img  class="dashboard" src="assets/Images/Vector.png" /> &nbsp;TRAINER
 
             </a>
-            <a routerLink="/TrainerCourseMapping">
-                <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp;ASSIGN
+            <a routerLink="/TrainerCourseMapping" class="tablinks"   (click)="highlight($event)" (click)="assigntrainer()">
+                <img  class="dashboard" src="assets/Images/Vector.png" /> &nbsp;ASSIGN
                 TRAINER
             </a>
-            <a routerLink="/Employee">
-                <img src="../../assets/Images/Vector.png" style="width: 20px;    margin-right: 17px;" /> &nbsp;EMPLOYEE
+            <a routerLink="/Employee" class="tablinks"   (click)="highlight($event)" (click)="employee()" >
+                <img  class="dashboard" src="assets/Images/Vector.png"/> &nbsp;EMPLOYEE
 
             </a>
         </div>
-        <a *ngIf="roleid==2 || roleid==3" routerLink="/MyCourseDashboard">
-
-            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
-            &nbsp; My COURSE
-            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
+        <a *ngIf="roleid==2 || roleid==3" routerLink="/MyCourseDashboard" class="tablinks"  
+         (click)="highlight($event)" (click)="mycourse()">
+         <i class="fa fa-book dashboard" aria-hidden="true"></i>
+            <!-- <i class="fa fa-users "></i> -->
+            &nbsp; My COURSE          
         </a>
-        <a *ngIf="roleid==4" routerLink="/AttendenceDetails">
-
-            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
+        <a *ngIf="roleid==4" routerLink="/AttendenceDetails" class="tablinks"   (click)="highlight($event)" (click)="attendence()">
+            <i class="fa fa-users dashboard "></i>
             &nbsp; ATTENDENCE
-            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
         </a>
-        <a *ngIf="roleid==2 || roleid==3" routerLink="/Catalog">
-
-            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
-            &nbsp; CATALOG
-            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
+        <a *ngIf="roleid==2 || roleid==3" routerLink="/Catalog" class="tablinks"   (click)="highlight($event)" (click)="catalog()">
+            <i class="fa fa-users dashboard "></i>
+            &nbsp; CATALOG         
         </a>
-        <a *ngIf="roleid==2" routerLink="/CourseCertificate">
-
-            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
-            &nbsp; CERTIFICATE
-            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
+        <a *ngIf="roleid==2" routerLink="/CourseCertificate" class="tablinks"  
+         (click)="highlight($event)" click)="certificate()">
+            <i class="fa fa-users dashboard "></i>
+          &nbsp; CERTIFICATE           
         </a>
-        <a *ngIf="roleid==3" routerLink="/AssignCourseToEmployee">
-
-            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
+        <a *ngIf="roleid==3" routerLink="/AssignCourseDashboard" class="tablinks" 
+          (click)="highlight($event)" (click)="assigncourse()">
+            <i class="fa fa-users dashboard "></i>
             &nbsp; ASSIGN COURSE
-            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
+             </a>
+        <a *ngIf="roleid==3" routerLink="/Staffresult" class="tablinks" 
+          (click)="highlight($event)" (click)="results()">
+            <i class="fa fa-users dashboard"></i>
+            &nbsp; RESULTS           
         </a>
-        <a *ngIf="roleid==3" routerLink="/Staffresult">
-
-            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
-            &nbsp; RESULTS
-            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
+        <a *ngIf="roleid==3" routerLink="/Submitedtests" class="tablinks"  
+         (click)="highlight($event)" (click)="testsubmit()">
+            <i class="fa fa-users dashboard "></i>
+            &nbsp; Test Submitted            
         </a>
-        <a *ngIf="roleid==3" routerLink="/Submitedtests">
-
-            <i class="fa fa-users icon28" style="width: 20px;    margin-right: 17px;"></i>
-            &nbsp; Test Submitted
-            <!-- <img src="assets/images/downarrow.png" style="width: 20px;margin-left: 104px;"> -->
-        </a>
-
-
-
     </div>
 </div>

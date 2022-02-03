@@ -15,9 +15,7 @@
     width:100%;
     vertical-align: middle;
   }
-  td{
-    background-color: white
-  }
+
   .Heading{
   padding-left: 15px;
   font-size: 20px;
@@ -26,7 +24,7 @@
   .head{
   background-color:#02CFFF ;
   color:white;
-  font-family: "DIN Bold";
+  font-family: 'Poppins';
   font-size: 15px;
  padding:5px;
   }

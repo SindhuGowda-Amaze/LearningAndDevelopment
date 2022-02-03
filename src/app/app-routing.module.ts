@@ -33,6 +33,7 @@ import { AssignCourseToEmployeeComponent } from './Pages/assign-course-to-employ
 import { SidebarComponent } from './Pages/sidebar/sidebar.component';
 import { CheckanswerComponent } from './Pages/checkanswer/checkanswer.component';
 import { SubmitedtestsComponent } from './Pages/submitedtests/submitedtests.component';
+import { AssignCourseDashboardComponent } from './Pages/assign-course-dashboard/assign-course-dashboard.component';
 
 
 const routes: Routes = [
@@ -71,7 +72,6 @@ const routes: Routes = [
   { path: 'Assessmentdashboard', component: AssessmentdashboardComponent },
   { path: 'AssessmentForm', component: AssessmentFormComponent },
   { path: 'ManagerDashboard', component: ManagerDashboardComponent },
-
   { path: 'CategoryDashboard', component: CategoryDashboardComponent },
   { path: 'CategoryForm', component: CategoryFormComponent },
   { path: 'CategoryForm/:id', component: CategoryFormComponent },
@@ -80,6 +80,7 @@ const routes: Routes = [
   { path: 'sidebar', component: SidebarComponent },
   { path: 'Checkanswer/:id', component: CheckanswerComponent },
   { path: 'Submitedtests', component: SubmitedtestsComponent },
+  { path: 'AssignCourseDashboard', component: AssignCourseDashboardComponent },
 
 
 

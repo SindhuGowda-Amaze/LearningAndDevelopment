@@ -15,53 +15,23 @@
     width:100%;
     vertical-align: middle;
   }
- 
-  /* /* .th{
-    background-color: #e4e5e6;
-    color:#404040;
-    font-family: "DIN Bold";
-  } */
-  /* .table, th, td {
-  border: 1px solid lightgray;
-   border-collapse: collapse; 
 
-  } */
-  .Heading{
-    padding-left: 15px;
-    font-size: 20px;
-    color: #3247D5; font-family: 'Poppins';
-    }
-    
-  .header{
-    background-color: #dee2e6;
-    color:#404040;
-    font-family: "DIN Bold";
-    font-size: 12px;
-   padding:5px;
-
-  }
   .card{
    padding: 20px;
-    width:100%;
     background: #FFFFFF;
     box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
     border-radius: 12px;
  }
 
- td{
+ /* td{
   background-color: white
-}
-.table th {
-  background-color: #02cfff !important;
-  color: #ffffff;
-}
- 
+} */
+
   .head{
-  background-color: #dee2e6;
-  color:#404040;
-  font-family: "DIN Bold";
-  font-size: 15px;
- padding:5px;
+  background-color: #02CFFF ;
+  color:white;
+  font-size: 12px;
+ 
   }
   .FilterClass{
   padding-left: 15px;
@@ -71,13 +41,10 @@
   padding-right: 10px;;
   }
   .table{
-    border-radius: 5px;
+    border-radius: 10px;
    
   }
-  th,td{
-    border: 1px #404040;
-    border-collapse: collapse;
-  }
+
   
   .button1{
     padding:5px;
@@ -171,3 +138,33 @@
   text-align: center;
 }
   
+.Dashboard{
+  color:#3247D5;
+  font-size: 20px;
+}
+
+.scroll{
+  overflow-x: scroll;
+  overflow-x: scroll;
+}
+
+.add{
+  width:60%;
+  background-color: #3247D5;
+  color:white;
+  border:none;
+  border-radius: 5px;
+}
+.Heading{
+  color:#3247D5;
+  font-size: 20px;
+}
+
+.addbutton{
+  color:white;
+  background-color: #3247D5;
+  border:none;
+  border-radius: 5px;
+  height:30px;
+
+}

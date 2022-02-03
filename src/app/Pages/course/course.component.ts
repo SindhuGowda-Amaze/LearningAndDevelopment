@@ -92,7 +92,7 @@ export class CourseComponent implements OnInit {
         data => {
         debugger
         let result = data;
-        Swal.fire("Update Sucessfully");
+        Swal.fire("Updated Successfully");
       location.href="#/CourseDashboard";
       })
     }
@@ -110,7 +110,7 @@ export class CourseComponent implements OnInit {
   
   
   cancel() {
-    location.href = "/#/CourseDashboard";
+    location.href = "#/CourseDashboard";
   }
   Course_Photo: any;
 

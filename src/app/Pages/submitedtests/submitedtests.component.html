@@ -1,40 +1,35 @@
 <div class="container-fluid">
     <div class="row">
-
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="Heading">Submitted Tests</p><br>
-
-                    <!-- <hr class="HrLine"> -->
+                    <p class="headings">Submitted Tests</p><br>
                 </div>
             </div>
 
             <div class="card"><br>
-                <div class="row head">
-                    <div class="col-lg-1">
-                        <p style="padding-left: 15px;">Filter By</p>
+                <div class="row">
+                    <div class="col-lg-1" style="margin-left: 10px;">
+                        <p class="filter">Filter By</p>
                     </div>
                     <div class="col-lg-3">
-                        <input type="date" class="form-control" placeholder="Search" [(ngModel)]="search">
+                        <input type="date" class="form-control search" placeholder="Search" [(ngModel)]="search">
                     </div>
                     <div class="col-lg-3">
-                        <input class="form-control" placeholder="Search" [(ngModel)]="search">
+                        <input class="form-control search" placeholder="Search" [(ngModel)]="search">
                     </div>
                     <div class="col-lg-3">
                     </div>
                     <div class="col-lg-3"></div>
                     <div class="col-lg-2">
-                        <!-- <p class="count">Count :{{count}}</p> -->
                     </div>
                 </div> <br>
             </div><br>
             <div class="row">
             </div>
-            <hr>
             <div class="row">
                 <div class="col-lg-12">
-                    <table class="table tablebordered head">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>Employee Name</th>
@@ -51,10 +46,12 @@
                                 <td>{{details.coursename}}</td>
                                 <td>{{details.chaptername}}</td>
                                 <td>
-                                    <button  [routerLink]="['/Checkanswer',details.id]"
-                                        class="btn btn-primary">Check
+                                    <button  [routerLink]="['/Checkanswer',details.id]"  *ngIf="details.checked!=1"
+                                        class="button1 btn-primary">Check
                                     </button>
-                                    <button *ngIf="details.checked==1" class="btn btn-primary">Checked
+                                    <button *ngIf="details.checked==1" class="button1 btn-primary" id="show==1">Checked
+                                    </button><br><br>
+                                    <button *ngIf="details.checked==1" [routerLink]="['/Checkanswer',details.id]" class="button1 btn-primary" id="show==1">View
                                     </button>
 
                                 </td>

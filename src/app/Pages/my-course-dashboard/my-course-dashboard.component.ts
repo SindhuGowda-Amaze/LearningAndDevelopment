@@ -17,6 +17,7 @@ export class MyCourseDashboardComponent implements OnInit {
   ngOnInit(): void {
 
     this.userid = sessionStorage.getItem('userid')
+    this.manager = sessionStorage.getItem('manager')
 
    this.Showcards(2);
     this.LearningService.GetMyDetails().subscribe(data => {
@@ -62,6 +63,11 @@ export class MyCourseDashboardComponent implements OnInit {
 
   }
 
+  getcourseid(id:any)
+  {
+    this.courseid=id;
+  }
+
   latestcoursedetails:any;
 
   public GetApproveCourse() {
@@ -83,9 +89,13 @@ export class MyCourseDashboardComponent implements OnInit {
     });
   }
 
-
-
-  enroll() {
+  manager:any;
+  course: any
+  name: any;
+  mobile: any;
+  emailID: any;
+  courseid:any;
+  enroll(name: any, mobile: any, emailID: any) {
     Swal.fire({
       title: 'Enroll Confirmation',
       text: "Please click on OK to send Course Enrolment Request",
@@ -97,13 +107,33 @@ export class MyCourseDashboardComponent implements OnInit {
       cancelButtonColor: '#d33',
       confirmButtonText: 'OK'
     }).then((result) => {
+
       if (result.isConfirmed) {
+        debugger
+        var json = {
+          "staffid": this.userid,
+          "manager": this.manager,
+          "courseid": this.courseid,
+          "status": 'Manager Pending',
+          "employeeName": name,
+          "phoneNo": mobile,
+          "email": emailID,
+          "type":'Request to Manager'
+        };
+        this.LearningService.InsertEnroll(json).subscribe(
+          data => {
+            debugger
+            let id = data;
+            location.href = "#/Catalog"
+          })
         Swal.fire(
           'Request Sent',
           'Your request has been sent to manager for Approval',
           'success'
-        )
+        );
+        location.href = "#/Catalog";
       }
-    })
+    });
   }
+
 }
