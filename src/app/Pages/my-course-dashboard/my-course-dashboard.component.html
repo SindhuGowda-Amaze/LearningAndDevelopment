@@ -249,8 +249,10 @@
                     </div><br>
                     <div class="row">
                         <div class="col-lg-6">
-                            <button class="edit" routerLink="['/StartMyCourse',details.id]">Start
+                            <button class="edit" routerLink="['/StartMyCourse',details.id]" *ngIf="show==2">Start
                                 Course</button>
+                            <button class="edit" data-toggle="modal" data-target="#enroll" *ngIf="show==3" (click)="getcourseid(details.id)">
+                                Enroll</button>
                         </div>
 
                         <div class="col-lg-6">
@@ -272,19 +274,14 @@
                 <h4 class="modal-title">Enroll for Course</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" *ngFor="let item of stafflist">
                 <div class="row">
                     <div class="col-lg-3">
                         <label class="Text">Name:</label>
                     </div>
                     <div class="col-lg-5">
-                        <!-- <select class="form-control" [(ngModel)]="Hired">
-                            <option value="">Select </option>
-                            <option>Yes</option>  
-                            <option>No</option> 
-                        </select> -->
-                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
-                            placeholder="Peeter Ferin" disabled>
+                        <input class="form-control" name="name" id="name" [(ngModel)]="name"
+                            placeholder="{{item.name}}" disabled>
                     </div>
                 </div> <br>
                 <div class="row">
@@ -292,8 +289,8 @@
                         <label class="Text" style="font-weight: bold;">Phone No:</label>
                     </div>
                     <div class="col-lg-5">
-                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
-                            placeholder="9843873473" disabled>
+                        <input class="form-control" name="mobile" id="mobile" [(ngModel)]="mobile"
+                            placeholder="{{item.mobile}}" disabled>
                     </div>
                 </div> <br>
                 <div class="row">
@@ -301,25 +298,34 @@
                         <label class="Text" style="font-weight: bold;">Email:</label>
                     </div>
                     <div class="col-lg-5">
-                        <input class="form-control" name="NoofpositionsHired" id="NoofpositionsHired"
-                            placeholder="Ferin123@gmail.com" disabled>
+                        <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
+                            placeholder="{{item.emailID}}" disabled>
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label class="Text" style="font-weight: bold;">Manager:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
+                            placeholder="{{item.emailID}}" disabled>
                     </div>
                 </div> <br>
                 <div class="row">
                     <div class="col-lg-5"></div>
                     <div class="col-lg-2">
-                        <button class="form-control Save" (click)="enroll()" data-dismiss="modal">Enroll</button>
+                        <button class="form-control Save"
+                            (click)="enroll(item.name,item.mobile,item.emailID)"
+                            data-dismiss="modal">Enroll</button>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <hr>
-                <div class="col-lg-10"></div>
                 <div class="col-lg-2">
-                    <button data-dismiss="modal" class="CloseBTN">Close</button>
+                    <button data-dismiss="modal" class="form-control CloseBTN">Close</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<br>

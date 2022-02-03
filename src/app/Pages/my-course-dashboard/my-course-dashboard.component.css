@@ -563,13 +563,7 @@ margin-top: -19px;
 }
 
 
-.din-regular23{
 
-  font-family: 'Poppins';
-  font-size: 11px;
-  padding: 5px;
-
-}
 
 .underlinetext
 {
@@ -589,3 +583,19 @@ margin-top: -19px;
   border:none;
 }
 
+.CloseBTN{
+  color:white;
+  background-color: #3247D5;
+  border:none;
+  border-radius: 5px;
+  width:75%;
+}
+.Save
+{
+  color:white;
+  background-color: #3247D5;
+  border:none;
+  border-radius: 5px;
+  width:75%;
+
+}

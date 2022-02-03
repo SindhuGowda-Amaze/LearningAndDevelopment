@@ -90,7 +90,7 @@
                     <p class="Heading">Assessment Dashboard</p>
                 </div>
                 <div class="col-lg-2">
-                    <p class="Text" style="float:right; padding-right:50px; color: #3247D5; font-family: 'Poppins';">
+                    <p class="Text" style="float:right; color: #0C275A ;">
                         Count: {{count}}</p>
                 </div>
             </div>
@@ -103,7 +103,7 @@
             <p class="Text">Filter By</p>
         </div>
         <div class="col-lg-3">
-            <select class="form-control" style=" font-family: 'Poppins';" name="cars" id="Duration">
+            <select class="form-control"  name="cars" id="Duration">
                 <option value="Select">Select Course</option>
                 <option value="">Compliance</option>
                 <option value=""> Marketing</option>
@@ -111,14 +111,14 @@
             </select>
         </div>
         <div class="col-lg-3">
-            <select class="form-control" style=" font-family: 'Poppins';" name="cars" id="Duration">
+            <select class="form-control" name="cars" id="Duration">
                 <option value="Select">Select Question Type</option>
                 <option value="">Objective</option>
                 <option value=""> Subjective</option>
             </select>
         </div>
         <div class="col-lg-5">
-            <input type="search" style=" font-family: 'Poppins';" class="form-control" placeholder="Search for Name..">
+            <input type="search"  class="form-control" placeholder="Search for Name..">
         </div>
     </div>
 </div>
@@ -127,15 +127,16 @@
 <div class="row">
     <div class="col-lg-10"></div>
     <div class="col-lg-2">
-        <button class="edit" routerLink="/AssessmentForm">Add</button>
+        <button class="add" routerLink="/AssessmentForm">Add</button>
     </div>
 </div> <br>
 
+<div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
-            <table class="table scroll">
+        <div class="col-lg-12 scroll"  style="height:500px">
+            <table class="table">                   
                 <thead>
-                    <tr class="head" style="overflow-y: auto;">
+                    <tr class="head">
                         <th>Course Name</th>
                         <th>Chapter Name</th>
                         <th>QuestionType</th>
@@ -148,7 +149,7 @@
                         <th>Weightage</th>
                         <th>Actions</th>
                     </tr>
-                    <tr class="header" *ngFor="let item of quetionlist" style="overflow-y: auto;">
+                    <tr class="header" *ngFor="let item of quetionlist">
                         <td>{{item.coursename}}</td>
                         <td>{{item.chaptername}}</td>
                         <td>{{item.type}}</td>
@@ -166,5 +167,9 @@
                     </tr>
                 </thead>
             </table>
+            <ng-template #noResults>
+                <p class="NoResultShow"> No results found for "{{search}}" </p>
+            </ng-template>
         </div>
     </div>
+</div>
