@@ -1,26 +1,30 @@
 <div class="row  tab" *ngIf="temp==1">
     <div class="col-md-2 sidenav" style="height: 100vh;margin-top: 75px;position: fixed;">
 
-        <a *ngIf="roleid=='1' || roleid=='2' " class="tablinks" (click)="highlight($event)" (click)="Dashboard()"
-            routerLink="/AdminDashboard">
-            <!-- <i class="fa fa-users dashboard"></i> &nbsp; -->
-            <img src="assets/64/Staff.png" style="width: 13%;  margin-right: 17px;"
+        <a   *ngIf="roleid=='1'||roleid=='2'"  class="tablinks"   (click)="highlight($event)" (click)="Dashboard()" routerLink="/AdminDashboard">
+            <!-- <i class="fa fa-users dashboard" ></i> &nbsp; -->
+            <img src="assets/Images/people.png" style="width:13% ;margin-right: 17px;"
                 [ngClass]="active == 2 ? 'Active1' : 'Active2'" />
-            <img [ngClass]="active != 2 ? 'Active1' : 'Active2'" src="assets/Images/64_GREY/64/Staff.png"
-                style="width: 13%;  margin-right: 17px;">
+            <img [ngClass]="active != 2 ? 'Active1' : 'Active2'" src="assets/Images/New folder/people (1).png" 
+                style="width:13%; margin-right: 17px;">
             &nbsp;
-            <span [ngClass]="active == 2 ? 'Active1' : 'Active3'"> Dashboard</span>
-
+            <span [ngClass]="active == 2 ? 'Active1' : 'Active3'"> Dashboard  </span>                      
         </a>
-        <a *ngIf="roleid=='4'" routerLink="/ChapterDashboard" class="tablinks" (click)="highlight($event)"
-            (click)="chapterdashboard()">
 
-            <i class="fa fa-users  dashboard"></i>
-            &nbsp; Chapter
 
-        </a>
-        <a *ngIf="roleid=='3'" routerLink="/ManagerDashboard" class="tablinks" (click)="highlight($event)"
-            (click)="Dashboard()">
+        <a *ngIf="roleid=='4'" routerLink="/ChapterDashboard" class="tablinks" (click)="highlight($event)" (click)="chapterdashboard()" >
+            <!-- <i class="fa fa-users  dashboard" ></i> -->
+            <img src="assets/Images/New folder/chapter.png" style="width:13% ;margin-right: 17px;"
+            [ngClass]="active != 3 ? 'Active1' : 'Active3'" />
+        <img [ngClass]="active == 3 ? 'Active1' : 'Active3'" src="assets/Images/chapter1.png" 
+            style="width:13%; margin-right: 17px;">
+          &nbsp;
+        <span [ngClass]="active == 3 ? 'Active1' : 'Active3'"> Chapter</span>                      
+       </a>
+            
+           
+        
+        <a *ngIf="roleid=='3'" routerLink="/ManagerDashboard" class="tablinks"   (click)="highlight($event)" (click)="Dashboard()">
 
             <i class="fa fa-users  dashboard"></i>
             &nbsp; Dashboard
@@ -51,8 +55,13 @@
                 <img class="dashboard" src="assets/Images/Vector.png" /> &nbsp; COURSE
 
             </a>
+<<<<<<< HEAD
+            <a routerLink="/ChapterDashboard" class="tablinks"   (click)="highlight($event)" (click)="chapter()">
+                <!-- <img  class="dashboard" src="assets/Images/Vector.png"/> &nbsp;CHAPTER -->
+=======
             <a routerLink="/ChapterDashboard" class="tablinks" (click)="highlight($event)" (click)="chapter()">
                 <img class="dashboard" src="assets/Images/Vector.png" /> &nbsp;CHAPTER
+>>>>>>> fc1837b6ee117b5b3e68f40b544f151397e6b677
 
             </a>
             <a routerLink="/Trainer" class="tablinks" (click)="highlight($event)" (click)="trainer()">

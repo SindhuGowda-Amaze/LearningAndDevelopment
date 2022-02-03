@@ -13,7 +13,7 @@ export class SidebarComponent implements OnInit {
   UserName: any;
   company_name: any;
   role: any;
-  active: any;
+
 
   temp: any;
   show: any;
@@ -38,15 +38,16 @@ export class SidebarComponent implements OnInit {
 
     evt.currentTarget.className += " active";
   }
-
-  Dashboard() {
-    this.active = 2;
-    localStorage.setItem("clickname", "Dashboard")
+   
+  active:any;
+  Dashboard(){
+    this.active=2;
+    localStorage.setItem("clickname","Dashboard")
   }
 
-  chapterdashboard() {
-    
-    localStorage.setItem("clickname", "Chapter  Dashboard")
+  chapterdashboard(){
+    this.active=3;
+    localStorage.setItem("clickname","Chapter  Dashboard")
   }
 
   assessments() {
