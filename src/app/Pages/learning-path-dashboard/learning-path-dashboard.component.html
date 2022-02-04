@@ -1043,12 +1043,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let details1 of result1">
                                         <td></td>
-                                        <td style="font-size: 15px;">Harry</td>
-                                        <td style="font-size: 15px;">Python Fullstack Developer</td>
+                                        <td style="font-size: 15px;" *ngFor="let details of result" >{{details.name}}</td>
+                                        <td style="font-size: 15px;" >{{details1.name}}</td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td></td>
                                         <td style="font-size: 15px;">Chriss</td>
                                         <td style="font-size: 15px;">JAVA Fullstack Developer</td>
@@ -1067,7 +1067,7 @@
                                         <td>&nbsp;</td>
                                         <td style="font-size: 15px;">Akash SJ</td>
                                         <td style="font-size: 15px;">Digital Marketing</td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
@@ -1104,14 +1104,14 @@
                                 <tbody>
                                     <tr>
                                         <td>&nbsp;</td>
-                                        <td style="font-size: 15px;">Java Fullstack Developer</td>
-                                        <td style="font-size: 15px;">M John</td>
+                                        <td style="font-size: 15px;" *ngFor="let details1 of result1" >{{details1.name}}</td>
+                                        <td style="font-size: 15px;" *ngFor="let details of result" >{{details.name}}</td>
                                         <td style="font-size: 15px;">15/06/2021</td>
                                         <td style="font-size: 15px;">01/07/2021</td>
                                         <td style="font-size: 15px;">05/10/2021</td>
                                         <td style="font-size: 15px;">100%</td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td></td>
                                         <td style="font-size: 15px;">Angular Developer</td>
                                         <td style="font-size: 15px;">Akash kumar</td>
@@ -1155,7 +1155,7 @@
                                         <td style="font-size: 15px;">06/07/2021</td>
                                         <td style="font-size: 15px;">04/10/2021</td>
                                         <td style="font-size: 15px;">100%</td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
