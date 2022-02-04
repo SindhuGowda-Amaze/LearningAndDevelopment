@@ -92,9 +92,6 @@ export class AdminDashboardComponent implements OnInit {
                 debugger
                 this.chapterlist = data.filter(x=>x.staffID==this.userid&&x.status=='Manager Approved');
               })
-
-
-
     }
     else
     {

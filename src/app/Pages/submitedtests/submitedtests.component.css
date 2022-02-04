@@ -15,9 +15,9 @@
     width:100%;
     vertical-align: middle;
   }
-  td{
+  /* td{
     background-color: white
-  }
+  } */
   .table th {
     background-color: #02cfff !important;
     color: #ffffff;

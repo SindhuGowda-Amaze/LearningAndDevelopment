@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
+import { LearningService } from 'src/app/learning.service';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,7 @@ export class HeaderComponent implements OnInit {
   hh: any;
   mm: any;
   ampm: any;
-  constructor() { }
+  constructor(private LearningService:LearningService) { }
   ngOnInit(): void {
     this.temp = sessionStorage.getItem('temp');
 
@@ -43,11 +44,25 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    this.insertattdancelogout();
     localStorage.clear();
     sessionStorage.clear();
 
     location.href = "#/Login";
     location.reload();
+  }
+
+  public insertattdancelogout() {
+    debugger
+    var entity = {
+      'loginid': localStorage.getItem('loginid'),
+      'LogoutDate': new Date()
+    }
+
+    this.LearningService.UpdateAttendance_New(entity).subscribe(
+      data => {
+        debugger
+      })
   }
 
 

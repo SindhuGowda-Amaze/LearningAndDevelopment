@@ -15,8 +15,53 @@ export class AssessmentdashboardComponent implements OnInit {
   count:any;
   quetionlist:any;
   ngOnInit(): void {
+   this. GetAssessmentResult()
     this.GetAssessments();
+    this.GetCourse();
   }
+
+
+
+  courseid:any;
+  coursedetails:any;
+  dummcoursedetails:any;
+  getcourseid(even: any) {
+    this.courseid = even.target.value;
+    if (even.target.value != 0) {
+      this.coursedetails = this.dummcoursedetails.filter((x: { courseID: any; }) => x.courseID == this.courseid)
+    }
+
+  }
+
+
+
+
+   
+
+  courselist:any;
+  public GetCourse() {
+    debugger
+    this.LearningService.GetCourse().subscribe(
+      data => {
+        debugger
+        this.courselist = data;
+      })
+  }
+
+
+  assessmentlist:any;
+  public GetAssessmentResult() {
+    debugger
+    this.LearningService.GetAssessmentResult().subscribe(
+      data => {
+        debugger
+        this.assessmentlist = data;
+      })
+  }
+
+
+
+
 
   public GetAssessments() {
     debugger
@@ -37,4 +82,16 @@ export class AssessmentdashboardComponent implements OnInit {
       }
     )
   }
+
+
+  // checkbutton(){
+  //   location.href="/Checkanswer"
+  // }
+
+
+
+
+
+
+
 }

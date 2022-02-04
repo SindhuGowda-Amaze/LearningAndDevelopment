@@ -101,7 +101,7 @@
                 </div>
                 <div class="col-lg-2">
                     <p class="Text" style="float:right; color: #0C275A ;">
-                        Count: {{count}}</p>
+                        Count:</p>
                 </div>
             </div>
         </div>
@@ -113,20 +113,13 @@
             <p class="filter">Filter By</p>
         </div>
         <div class="col-lg-3">
-            <select class="form-control"  name="cars" id="Duration">
-                <option value="Select">Select Course</option>
-                <option value="">Compliance</option>
-                <option value=""> Marketing</option>
-                <option value="">Communication Skills</option>
+            <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
+                <option value="0">Select Course</option>
+                <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">
+                    {{details.name}}</option>
             </select>
         </div>
-        <div class="col-lg-3">
-            <select class="form-control" name="cars" id="Duration">
-                <option value="Select">Select Question Type</option>
-                <option value="">Objective</option>
-                <option value=""> Subjective</option>
-            </select>
-        </div>
+       
         <div class="col-lg-5">
             <input type="search"  class="form-control search" placeholder="Search for Name..">
         </div>
@@ -149,8 +142,8 @@
                     <tr class="head">
                         <th>Employee Name</th>
                         <th>Course Name</th>
-                        <th>Chapter Name</th>
-                        <th>Assessment Date </th>
+                        <th>Chapter Name</th>                      
+                        <th>Assessment Name</th>
                         <th>Status</th>
                         <th>Score</th>
                         <!-- <th>QuestionType</th>
@@ -163,7 +156,18 @@
                         <th>Weightage</th>-->
                         <th>Actions</th>
                     </tr>
-                    <tr class="header" *ngFor="let item of quetionlist">
+                    <tr class="header" *ngFor="let details  of assessmentlist  ">
+
+                     <td>{{details.employeeID}}</td>
+                     <td>{{details.courseName}}</td>
+                     <td>{{details.chapterName}}</td>
+                     <td>{{details.asesmentName}}</td>
+                     <td></td>
+                     <td></td>
+                     <td style="width:50px">
+                       <button class="button"  routerLink="/Checkanswer">Check</button>
+                     </td>
+
                         <!-- <td>{{item.coursename}}</td>
                         <td>{{item.chaptername}}</td>
                          <td>{{item.type}}</td>
@@ -189,3 +193,34 @@
 </div>
 
 
+<div id="enroll2" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="text-align: center;">
+            <div class="modal-header" style="text-align: center;">
+                <h4 class="modal-title">Course And Trainerlist</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="text-align: center; width: 100%;">
+                    <div class="col-lg-12">
+                        <table style="width: 100%;">
+                            <tr>
+                              
+                            </tr> <br>
+                            <tr >
+                                
+                            </tr>
+                        </table>
+                    </div>
+
+                </div> <br>
+            </div>
+            <div class="modal-footer">
+                <hr>
+                <!-- <div class="col-lg-2">
+                    <button data-dismiss="modal" class="CloseBTN">Close</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

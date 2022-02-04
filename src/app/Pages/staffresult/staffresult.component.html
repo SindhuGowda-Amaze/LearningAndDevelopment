@@ -11,13 +11,13 @@
                     <div class="col-lg-1" style="margin-left: 10px;">
                         <p class="filter">Filter By</p>
                     </div>
-                    <div class="col-lg-3">
+                    <!-- <div class="col-lg-3">
                         <select class="form-control search" name="cars" id="Duration" (change)="staffid($event)">
                             <option value="0">Select Department</option>
                             <option *ngFor="let details of result" value="{{details.id}}">{{details.department}}
                             </option>
                         </select> 
-                    </div>
+                    </div> -->
                     <div class="col-lg-3">
                         <input type="month" class="form-control search" placeholder="Search" [(ngModel)]="search">
                     </div>
@@ -54,7 +54,7 @@
                                 <td>16-02-2022</td>
                                 <td>69%</td>
                                 <td>
-                                    <button class="viewcertificate" routerLink="/CourseCertificate">ViewCertificate</button>
+                                    <button class="viewcertificate" >ViewCertificate</button>
                                 </td>  
 
                             </tr>
@@ -127,7 +127,6 @@
             <div class="modal-header">
                 <h4 class="modal-title">Allote Certificate</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-
             </div>
             <div class="modal-body">
                 <div class="row">

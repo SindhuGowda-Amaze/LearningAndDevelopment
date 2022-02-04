@@ -6,7 +6,6 @@
                     <p class="headings">Submitted Tests</p><br>
                 </div>
             </div>
-
             <div class="card"><br>
                 <div class="row">
                     <div class="col-lg-1" style="margin-left: 10px;">
@@ -49,8 +48,8 @@
                                     <button  [routerLink]="['/Checkanswer',details.id]"  *ngIf="details.checked!=1"
                                         class="button1 btn-primary">Check
                                     </button>
-                                    <button *ngIf="details.checked==1" class="button1 btn-primary" id="show==1">Checked
-                                    </button><br><br>
+                                    <!-- <button *ngIf="details.checked==1" class="button1 btn-primary" id="show==1">Checked
+                                    </button><br><br> -->
                                     <button *ngIf="details.checked==1" [routerLink]="['/Checkanswer',details.id]" class="button1 btn-primary" id="show==1">View
                                     </button>
 

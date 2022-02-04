@@ -27,7 +27,7 @@ export class MyCourseDashboardComponent implements OnInit {
     // this.show=2;
 
     
-
+    this.GetAllCounts();
     this.show = 2;
   }
 
@@ -135,5 +135,25 @@ export class MyCourseDashboardComponent implements OnInit {
       }
     });
   }
+
+  countlist: any;
+  public GetAllCounts() {
+    debugger
+    
+      this.LearningService.GetAllCounts(0, 2).subscribe(
+        data => {
+          debugger
+          this.countlist = data[0];
+        })
+    
+
+  }
+
+
+
+
+
+
+
 
 }

@@ -130,16 +130,18 @@
             <!-- <i class="fa fa-users "></i> -->
 
         </a>
-        <a *ngIf="roleid==4" routerLink="/AttendenceDetails" class="tablinks" (click)="highlight($event)"
+        <a *ngIf="roleid==4" routerLink="/AttendanceNew" class="tablinks" (click)="highlight($event)"
             (click)="attendence()">
             <img src="assets/Images/people.png" style="width:13% ;margin-right: 17px;"
-                [ngClass]="active == 'ATTENDENCE' ? 'Active1' : 'Active2'" />
-            <img [ngClass]="active != 'ATTENDENCE' ? 'Active1' : 'Active2'"
+                [ngClass]="active == 'ATTENDANCE' ? 'Active1' : 'Active2'" />
+            <img [ngClass]="active != 'ATTENDANCE' ? 'Active1' : 'Active2'"
                 src="assets/Images/New folder/people (1).png" style="width:13%; margin-right: 17px;">
             &nbsp;
-            <span [ngClass]="active == 'ATTENDENCE' ? 'Active1' : 'Active3'"> ATTENDENCE </span>
+            <span [ngClass]="active == 'ATTENDANCE' ? 'Active1' : 'Active3'"> ATTENDANCE </span>
             &nbsp;
         </a>
+
+
         <a *ngIf="roleid==2 || roleid==3" routerLink="/Catalog" class="tablinks" (click)="highlight($event)"
             (click)="catalog()">
             <img src="assets/Images/catalogue.png" style="width:13% ;margin-right: 17px;"
@@ -182,7 +184,6 @@
                 style="width:13%; margin-right: 17px;">
             &nbsp;
             <span [ngClass]="active == 'submitest' ? 'Active1' : 'Active3'"> Test Submitted </span>
-
         </a>
     </div>
 </div>

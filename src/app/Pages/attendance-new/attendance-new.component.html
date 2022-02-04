@@ -1,0 +1,53 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-lg-10">
+            <p class="headings">Attendance Details</p>
+        </div>
+        <div class="col-lg-2">
+            <p class="count">Count: </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <br>
+        <div class="row FilterClass ">
+            <div class="col-lg-1">
+                <p class="filter" style="margin-left: 15px;">Filter By </p>
+            </div>
+            <div class="col-lg-5">
+                <input type="search" class="form-control search" placeholder="Search"
+                  >
+            </div>
+        </div> <br>
+    </div> <br>
+ <br>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <!-- <th>Course Name</th> -->
+                                    <th>Employee Name</th>
+                                    <th>Logindate</th>
+                                    <th>LoginTime</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let details of Attendance">
+                                    <!-- <td></td> -->
+                                    <td></td>
+                                    <td>{{details.loginTime}}</td>
+                                    <td>{{details.logouttime}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

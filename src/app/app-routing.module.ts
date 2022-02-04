@@ -34,6 +34,8 @@ import { SidebarComponent } from './Pages/sidebar/sidebar.component';
 import { CheckanswerComponent } from './Pages/checkanswer/checkanswer.component';
 import { SubmitedtestsComponent } from './Pages/submitedtests/submitedtests.component';
 import { AssignCourseDashboardComponent } from './Pages/assign-course-dashboard/assign-course-dashboard.component';
+import { AttendanceNewComponent } from './Pages/attendance-new/attendance-new.component';
+
 
 
 const routes: Routes = [
@@ -79,8 +81,10 @@ const routes: Routes = [
   { path: 'AssignCourseToEmployee', component: AssignCourseToEmployeeComponent },
   { path: 'sidebar', component: SidebarComponent },
   { path: 'Checkanswer/:id', component: CheckanswerComponent },
+  { path: 'Checkanswer', component: CheckanswerComponent },
   { path: 'Submitedtests', component: SubmitedtestsComponent },
   { path: 'AssignCourseDashboard', component: AssignCourseDashboardComponent },
+  {path:'AttendanceNew',component:AttendanceNewComponent}
 
 
 

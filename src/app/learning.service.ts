@@ -597,9 +597,33 @@ export class LearningService {
   }
 
 
+ 
+  public GetAttendance_New() {
+
+    return this.http.get<any[]>(this.baseURL + "/Master/GetAttendance_New");
+  }
 
 
+  public InsertAttendance_New(data: any) {
+    debugger;
+    this.url = this.baseURL + '/Master/InsertAttendance_New';
+    debugger
+    return this.http.post(this.url, data);
+  }
 
+ 
+  public UpdateAttendance_New(data: any) {
+    debugger;
+    this.url = this.baseURL + '/Master/UpdateAttendance_New';
+    return this.http.post(this.url, data);
+  }
+
+
+  public GetAssessmentResult() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetAssessmentResult');
+  }
 
 
 

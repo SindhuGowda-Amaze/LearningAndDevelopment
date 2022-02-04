@@ -17,9 +17,9 @@ export class LoginComponent implements OnInit {
   password: any;
   username: any;
   loginTypeList: any;
-  temp:any;
+  temp: any;
   showpassword: any;
-  companycode:any;
+  companycode: any;
   constructor(public LearningService: LearningService, private router: Router) { }
   ngOnInit(): void {
     this.temp = sessionStorage.getItem('temp');
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
     }
     //   this.GetLoginTypeMaster();
-    
+
   }
 
   // public getroleid(event: any) {
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     sessionStorage.setItem('companycode', this.companycode);
     if (this.companycode == 1001) {
       sessionStorage.setItem('apiurl', 'http://103.133.214.197/digiOfficeV4API');
-      
+
     }
     else if (this.companycode == 1002) {
       sessionStorage.setItem('apiurl', 'http://103.133.214.197/Dynamic_NCNDAAPI');
@@ -86,7 +86,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('roleid', '1');
 
       //  this.router.navigate(["AdminDashboard"]);
-      localStorage.setItem("clickname","Admin Dashboard")
+      localStorage.setItem("clickname", "Admin Dashboard")
       location.href = "#/AdminDashboard";
       location.reload();
 
@@ -104,13 +104,14 @@ export class LoginComponent implements OnInit {
           debugger
           sessionStorage.setItem('UserName', this.result.name);
           sessionStorage.setItem('userid', this.result.id);
-          console.log("Employeid",this.result.id)
+          console.log("Employeid", this.result.id)
           sessionStorage.setItem('temp', '1');
           sessionStorage.setItem('manager', this.result.supervisor)
           sessionStorage.setItem('role', 'Employee');
+          this.Insertattdnace()
           debugger
           sessionStorage.setItem('roleid', '2');
-          localStorage.setItem("clickname","Admin Dashboard")
+          localStorage.setItem("clickname", "Admin Dashboard")
           location.href = "#/AdminDashboard";
           location.reload();
         }
@@ -135,7 +136,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('temp', '1');
           sessionStorage.setItem('role', 'Manager');
           sessionStorage.setItem('roleid', '3');
-          localStorage.setItem("clickname","Manager Dashboard")
+          localStorage.setItem("clickname", "Manager Dashboard")
           location.href = "#/ManagerDashboard";
           location.reload();
         }
@@ -163,11 +164,9 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('temp', '1');
           sessionStorage.setItem('role', 'Trainer');
           sessionStorage.setItem('roleid', '4');
-          localStorage.setItem("clickname","Assessment Dashboard")
+          localStorage.setItem("clickname", "Assessment Dashboard")
           location.href = "#/Assessmentdashboard";
           location.reload();
-
-
         }
         else {
           Swal.fire('Username or Password is invalid');
@@ -178,6 +177,24 @@ export class LoginComponent implements OnInit {
       })
 
     }
+  }
+
+
+
+
+  public Insertattdnace() {
+    debugger
+    var entity = {
+      'EmpID': sessionStorage.getItem('userid'),
+      'LoginDate': new Date()
+    }
+    this.LearningService.InsertAttendance_New(entity).subscribe(
+      (data:any) => {
+        debugger
+     localStorage.setItem('loginid',data);
+      
+      })
+
   }
 }
 
