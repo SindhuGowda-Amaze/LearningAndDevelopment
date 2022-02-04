@@ -56,31 +56,37 @@ export class SidebarComponent implements OnInit {
   }
 
   setup() {
+    this.active = 'setup'
     localStorage.setItem("clickname", "SETUP")
   }
 
   category() {
-    this.active=3;
+    this.active = 'category';
     localStorage.setItem("clickname", "CATEGORY")
   }
 
   course() {
+    this.active = 'course'
     localStorage.setItem("clickname", "COURSE")
   }
 
   chapter() {
+    this.active = 'chapter'
     localStorage.setItem("clickname", "CHAPTER")
   }
 
   trainer() {
+    this.active = 'trainer'
     localStorage.setItem("clickname", "TRAINER")
   }
 
   assigntrainer() {
+    this.active = 11;
     localStorage.setItem("clickname", "ASSIGN TRAINER")
   }
 
   employee() {
+    this.active = 'employee'
     localStorage.setItem("clickname", "EMPLOYEE")
   }
 
