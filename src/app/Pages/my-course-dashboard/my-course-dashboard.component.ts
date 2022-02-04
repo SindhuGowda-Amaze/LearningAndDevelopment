@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2'
 import { LearningService } from 'src/app/learning.service';
 
@@ -9,12 +10,14 @@ import { LearningService } from 'src/app/learning.service';
 })
 export class MyCourseDashboardComponent implements OnInit {
 
-  constructor(public LearningService: LearningService) { }
+  constructor(private ActivatedRoute: ActivatedRoute, private LearningService: LearningService) { }
   show: any;
   stafflist: any;
   userid: any;
   search: any;
   ngOnInit(): void {
+
+    this.GetTrainerCourseMapping();
 
     this.userid = sessionStorage.getItem('userid')
     this.manager = sessionStorage.getItem('manager')
@@ -32,6 +35,16 @@ export class MyCourseDashboardComponent implements OnInit {
   }
 
   coursedetails: any;
+  result: any;
+
+  public GetTrainerCourseMapping() {
+    debugger
+    this.LearningService.GetTrainerCourseMapping().subscribe(
+      data => {
+        debugger
+        this.result = data;
+      })
+  }
 
 
 

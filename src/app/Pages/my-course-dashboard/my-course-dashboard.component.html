@@ -172,11 +172,11 @@
                     </div>
                     <div class="row startdate">
                         <div class="col-lg-6">
-                            <p >Start Date </p>
+                            <p >Start Date: {{details.startDate}} </p>
                         </div>
                       
                         <div class="col-lg-6">
-                            <p style="float:right">End Date</p>
+                            <p style="float:right" >End Date: {{details.endDate}} </p>
                         </div>
                     </div>
                     <div class="row">
@@ -192,6 +192,9 @@
                             <button class="edit" data-toggle="modal" data-target="#enroll" *ngIf="show==3"
                                 (click)="getcourseid(details.id)">
                                 Enroll</button>
+                            <button class="edit" data-toggle="modal" data-target="#enroll" *ngIf="show==4"
+                                (click)="getcourseid(details.id)">
+                                Completed</button>
                         </div>
                         <!-- <div class="col-lg-6">
                             <button class="edit">Details</button>
@@ -215,7 +218,7 @@
             <div class="modal-body" *ngFor="let item of stafflist">
                 <div class="row">
                     <div class="col-lg-3">
-                        <label class="Text">Name:</label>
+                        <label class="Text" style="font-weight: bold;">Name:</label>
                     </div>
                     <div class="col-lg-5">
                         <input class="form-control" name="name" id="name" [(ngModel)]="name" placeholder="{{item.name}}"

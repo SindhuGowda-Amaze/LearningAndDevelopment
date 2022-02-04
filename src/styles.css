@@ -110,6 +110,17 @@
     line-height: 13px;
     color: #0C275A;
     }
+
+    .filter2{
+    margin-top: 10px;
+    height: 13px;
+    float: right;
+    top: 180px;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 13px;
+    color: #0C275A;
+    }
     
     .search{
     left: 0%;

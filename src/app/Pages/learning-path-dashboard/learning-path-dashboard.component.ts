@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2'
+import { LearningService } from 'src/app/learning.service';
+import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-learning-path-dashboard',
@@ -8,10 +10,53 @@ import Swal from 'sweetalert2'
 })
 export class LearningPathDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ActivatedRoute: ActivatedRoute, private LearningService: LearningService) { }
+  search: any;
+  id: any;
+  result: any;
+  result1: any;
+  result2: any;
 
   ngOnInit(): void {
+    this.GetEmployee();
+    this.GetCourse();
+    this.GetTrainerCourseMapping();
+    this.ActivatedRoute.params.subscribe(params => {
+      debugger
+      this.id = params["id"];
+      if (this.id != null && this.id != undefined) {
+        this.GetEmployee();
+      }
+    })
   }
+
+  public GetEmployee() {
+    debugger
+    this.LearningService.GetEmployee().subscribe(
+      data => {
+        debugger
+        this.result = data;
+      })
+  }
+
+  public GetCourse() {
+    debugger
+    this.LearningService.GetCourse().subscribe(
+      data => {
+        debugger
+        this.result1 = data;
+      })
+  }
+  public GetTrainerCourseMapping() {
+    debugger
+    this.LearningService.GetTrainerCourseMapping().subscribe(
+      data => {
+        debugger
+        this.result2 = data;
+      })
+  }
+
+
   enroll(){
     Swal.fire({
       title: 'Enroll Confirmation',
