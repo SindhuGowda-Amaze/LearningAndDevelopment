@@ -1,5 +1,61 @@
-.card{
-  background: #FFFFFF;
-box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
-border-radius: 12px;
+.card {
+  background: #ffffff;
+  box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+}
+
+.VerticalGreyLine1 {
+  width: 2px;
+  height: 16.5%;
+  border-radius: 100px;
+  position: absolute;
+  top: 43px;
+  bottom: 0;
+  background: #dad4db;
+  margin-left: 175px;
+  margin-top: 91px;
+}
+.VerticalGreyLine2 {
+  width: 2px;
+  height: 16.5%;
+  border-radius: 100px;
+  position: absolute;
+  top: 43px;
+  bottom: 0;
+  background: #dad4db;
+  margin-left: 175px;
+  margin-top: 187px;
+}
+
+.btn-danger {
+  background-color: #FBB584;
+  border-radius: 20px;
+  border: transparent;
+  color: #0c275a;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  width: 140px;
+}
+
+.btn-light {
+  background-color: #95A0E2;
+  border-radius: 20px;
+  border: transparent;
+  color: #0c275a;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  width: 140px;
+}
+
+.btn-success {
+  background-color: #FF756D;
+  border-radius: 20px;
+  border: transparent;
+  color: #0c275a;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  width: 140px;
 }
