@@ -341,7 +341,11 @@ export class LearningService {
     return this.http.get<any[]>(APIURL);
   }
 
-
+  public GetEmployee() {
+    debugger
+    let APIURL = this.baseURL + "Master/GetEmployee";
+    return this.http.get<any[]>(APIURL);
+  }
 
   public GetTrainer() {
     debugger

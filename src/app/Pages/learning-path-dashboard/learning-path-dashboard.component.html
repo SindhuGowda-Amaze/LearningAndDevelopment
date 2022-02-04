@@ -870,13 +870,19 @@
                <P class="filter2">Employee Name:</P>
            </div>
            <div class="col-lg-3">
-            <select  class="form-control "  id="" >
+            <!-- <select  class="form-control "  id="Duration" (change)="getcategoryid($event)">
                 <option class="FilterClass"  value="0">Select Employee Name</option>
                 <option class="FilterClass">Emp 1</option>
                 <option class="FilterClass">Emp 2</option>
                 <option class="FilterClass">Emp 3</option>
                 <option class="FilterClass">Emp 4</option>
+            </select> -->
+
+            <select  class="form-control ">
+                <option class="FilterClass"  value="0">Select Employee Name</option>
+                <option class="FilterClass" *ngFor="let details of result" value="{{details.name}}">{{details.name}}</option>
             </select>
+
            </div>
            <div class="col-lg-1"></div>
            <div class="col-lg-2">
@@ -981,12 +987,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let details1 of result1">
                                         <td></td>
-                                        <td style="font-size: 15px;">Harry</td>
-                                        <td style="font-size: 15px;">Python Fullstack Developer</td>
+                                        <td style="font-size: 15px;" *ngFor="let details of result" >{{details.name}}</td>
+                                        <td style="font-size: 15px;" >{{details1.name}}</td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td></td>
                                         <td style="font-size: 15px;">Chriss</td>
                                         <td style="font-size: 15px;">JAVA Fullstack Developer</td>
@@ -1005,7 +1011,7 @@
                                         <td>&nbsp;</td>
                                         <td style="font-size: 15px;">Akash SJ</td>
                                         <td style="font-size: 15px;">Digital Marketing</td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
