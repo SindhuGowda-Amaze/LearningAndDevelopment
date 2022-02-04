@@ -15,10 +15,12 @@ export class LearningPathDashboardComponent implements OnInit {
   id: any;
   result: any;
   result1: any;
+  result2: any;
 
   ngOnInit(): void {
     this.GetEmployee();
     this.GetCourse();
+    this.GetTrainerCourseMapping();
     this.ActivatedRoute.params.subscribe(params => {
       debugger
       this.id = params["id"];
@@ -43,6 +45,14 @@ export class LearningPathDashboardComponent implements OnInit {
       data => {
         debugger
         this.result1 = data;
+      })
+  }
+  public GetTrainerCourseMapping() {
+    debugger
+    this.LearningService.GetTrainerCourseMapping().subscribe(
+      data => {
+        debugger
+        this.result2 = data;
       })
   }
 

@@ -989,7 +989,7 @@
                                 <tbody>
                                     <tr *ngFor="let details1 of result1">
                                         <td></td>
-                                        <td style="font-size: 15px;" *ngFor="let details of result" >{{details.name}}</td>
+                                        <td style="font-size: 15px;" >{{details1.name}}</td>
                                         <td style="font-size: 15px;" >{{details1.name}}</td>
                                     </tr>
                                     <!-- <tr>
@@ -1045,7 +1045,7 @@
                                 <tbody>
                                     <tr *ngFor="let details1 of result1">
                                         <td></td>
-                                        <td style="font-size: 15px;" *ngFor="let details of result" >{{details.name}}</td>
+                                        <td style="font-size: 15px;" >{{details1.name}}</td>
                                         <td style="font-size: 15px;" >{{details1.name}}</td>
                                     </tr>
                                     <!-- <tr>
@@ -1102,13 +1102,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let details1 of result1">
                                         <td>&nbsp;</td>
-                                        <td style="font-size: 15px;" *ngFor="let details1 of result1" >{{details1.name}}</td>
-                                        <td style="font-size: 15px;" *ngFor="let details of result" >{{details.name}}</td>
-                                        <td style="font-size: 15px;">15/06/2021</td>
-                                        <td style="font-size: 15px;">01/07/2021</td>
-                                        <td style="font-size: 15px;">05/10/2021</td>
+                                        <td style="font-size: 15px;">{{details1.name}}</td>
+                                        <td style="font-size: 15px;">{{details1.name}}</td>
+                                        <td style="font-size: 15px;"></td>
+                                        <td style="font-size: 15px;">{{details1.startDate}}</td>
+                                        <td style="font-size: 15px;">{{details1.endDate}}</td>
                                         <td style="font-size: 15px;">100%</td>
                                     </tr>
                                     <!-- <tr>
