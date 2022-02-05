@@ -20,6 +20,7 @@ export class StaffresultComponent implements OnInit {
 
   ngOnInit(): void {
     // this.Showcards(2);
+    this.getdetailslist();
     this.show = 2;
     this.staffid = localStorage.getItem('userid');
     this.manager = localStorage.getItem('manager');
@@ -48,6 +49,19 @@ export class StaffresultComponent implements OnInit {
 
       })
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   id: any;
   public getid(id: any) {
@@ -155,19 +169,20 @@ export class StaffresultComponent implements OnInit {
   }
 
   detailslist: any;
-  public getdetailslist(details: any) {
+  public getdetailslist() {
     debugger
-    this.empid = details.id;
+    // this.empid = details.id;
     this.LearningService.GetTestResponse().subscribe(data => {
       debugger
-      this.detailslist = data.filter(x => x.userID == details.id);
+      this.detailslist =data;
+      //  data.filter(x => x.userID == details.id);
     });
 
-    this.LearningService.GetApproveCourse(details.id).subscribe(
-      data => {
-        debugger
-        this.courselist = data;
-      })
+    // this.LearningService.GetApproveCourse(details.id).subscribe(
+    //   data => {
+    //     debugger
+    //     this.courselist = data;
+    //   })
   }
   empid: any
   MarksObtained: any;

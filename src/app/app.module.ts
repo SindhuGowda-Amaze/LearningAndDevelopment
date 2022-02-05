@@ -53,6 +53,7 @@ import { CheckanswerComponent } from './Pages/checkanswer/checkanswer.component'
 import { SubmitedtestsComponent } from './Pages/submitedtests/submitedtests.component';
 import { AssignCourseDashboardComponent } from './Pages/assign-course-dashboard/assign-course-dashboard.component';
 import { AttendanceNewComponent } from './Pages/attendance-new/attendance-new.component';
+import { EmployeeAssessmentResultComponent } from './Pages/employee-assessment-result/employee-assessment-result.component';
 
 
 
@@ -100,6 +101,7 @@ const ngWizardConfig: NgWizardConfig = {
     SubmitedtestsComponent,
     AssignCourseDashboardComponent,
     AttendanceNewComponent,
+    EmployeeAssessmentResultComponent,
 
   
   ],
