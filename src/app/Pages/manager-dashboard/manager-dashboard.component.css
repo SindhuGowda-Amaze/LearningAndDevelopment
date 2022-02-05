@@ -119,3 +119,13 @@ li a:hover {
 .head{
   font-family: 'Poppins';
 }
+
+.NoResultShow {
+  color: #0c275a;
+  font-size: 19px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  margin-left: 38px;
+}

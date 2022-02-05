@@ -37,7 +37,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <table class="table ">
+                    <table class="table" *ngIf="(stafflist | filter: search).length > 0; else noResults">
                         <thead>
                             <tr>
                                 <th>Employee Id</th>

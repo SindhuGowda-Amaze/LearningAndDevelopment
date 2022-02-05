@@ -576,32 +576,36 @@ hr.new4 {
   background-color: #3247d5;
   border: none;
   border-radius: 5px;
-  width:75%;
+  width: 75%;
 }
-.lastassigned{
+.lastassigned {
   font-size: 19px;
-  color:#3247D5;
+  color: #3247d5;
   font-weight: bold;
   margin-left: 15px;
 }
-.coursename{
+.coursename {
   font-size: 13px;
-  color:#0C275A ;
-  margin-left: 30px
+  color: #0c275a;
+  margin-left: 30px;
 }
-.active{
-  color:#0C275A ;
+.active {
+  color: #0c275a;
   font-size: 19px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
 }
 
-.name2{
-  color:#3247D5;
+.name2 {
+  color: #3247d5;
   font-size: 19px;
   font-weight: bold;
 }
 
-.startdate{
-  color:#0C275A ;
+.startdate {
+  color: #0c275a;
   font-size: 13px;
 }
 
@@ -635,4 +639,14 @@ hr.new4 {
   color: #0c275a;
   width: 90px;
   margin-top: 5px;
+}
+
+.NoResultShow {
+  color: #0c275a;
+  font-size: 19px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  margin-left: 38px;
 }
