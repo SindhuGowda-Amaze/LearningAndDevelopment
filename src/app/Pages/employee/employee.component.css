@@ -226,3 +226,13 @@ th,td{
   font-size: 15px;
   color:#3247D5;
 }
+
+.NoResultShow {
+  color: #0c275a;
+  font-size: 19px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  margin-left: 38px;
+}
