@@ -120,8 +120,14 @@
     font-size: 18px;
   }
 
-  .NoResultShow{
-    font-size: 16px;
+  .NoResultShow {
+    color: #0c275a;
+    font-size: 19px;
+  
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    margin-left: 38px;
   }
   
   .pdfimg{
