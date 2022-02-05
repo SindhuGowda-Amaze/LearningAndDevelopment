@@ -18,9 +18,11 @@ export class HeaderComponent implements OnInit {
   hh: any;
   mm: any;
   ampm: any;
+  loginid:any;
   constructor(private LearningService:LearningService) { }
   ngOnInit(): void {
     this.temp = sessionStorage.getItem('temp');
+    this.loginid=localStorage.getItem('loginid')
 
     setInterval(() => {
       var time = new Date();
@@ -55,7 +57,7 @@ export class HeaderComponent implements OnInit {
   public insertattdancelogout() {
     debugger
     var entity = {
-      'loginid': localStorage.getItem('loginid'),
+      'loginid': this.loginid,
       'LogoutDate': new Date()
     }
 

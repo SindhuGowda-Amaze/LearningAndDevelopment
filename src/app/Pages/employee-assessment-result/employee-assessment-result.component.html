@@ -1,11 +1,11 @@
 <div class="container-fluid">
-    <div class="row">      
+    <div class="row">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-lg-12">
                     <p class="headings">Employee Assessment Results</p><br>
                 </div>
-            </div> 
+            </div>
             <div class="card"><br>
                 <div class="row ">
                     <div class="col-lg-1" style="margin-left: 10px;">
@@ -47,17 +47,19 @@
                                 <th>Certificate</th>
                             </tr>
 
-                             <tr *ngFor="let details of detailslist|filter:search">
+                            <tr *ngFor="let details of detailslist|filter:search">
                                 <td>{{details.staffname}}</td>
                                 <td>{{details.coursename}}</td>
-                                <td></td>
+                                <td>{{details.assignedDate}}</td>
                                 <td>{{details.startDate}}</td>
                                 <td>{{details.endDate}}</td>
-                                <td></td>
+                                <td>{{details.obtainedMarks/details.totalmarks
+                                    *100 | number : '1.2-2'}} %</td>
                                 <td>
-                                    <button class="viewcertificate" routerLink="/CourseCertificate">ViewCertificate</button>
-                                </td>                           
-                            </tr> 
+                                    <button class="viewcertificate" data-toggle="modal" data-target="#Certificate"
+                                        (click)="view(details.staffname,details.coursename)">ViewCertificate</button>
+                                </td>
+                            </tr>
                         </thead>
                     </table>
                     <ng-template #noResults>
@@ -70,12 +72,12 @@
 </div>
 
 
-<div class="modal" id="myModal">
+<!-- 
+ <div class="modal" id="myModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Test Details</h4>
-
                 <button (click)="getdetailslist1()" data-toggle="modal" data-target="#Certificate"
                     class="btn btn-primary button2">View Certificate
                 </button><br>
@@ -108,8 +110,11 @@
             </div>
         </div>
     </div>
-</div>
-<div class="modal" id="Certificate">
+</div> -->
+
+
+<!-- 
+ <div class="modal" id="Certificate">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -146,7 +151,7 @@
                 <div class="row">
                     <div class="col-lg-3"></div>
                     <div class="col-lg-4">
-                        <button (click)="AllocateCertificate()" class="btn btn-primary ">Allote Certificate
+                        <button  class="btn btn-primary ">Allote Certificate
                         </button><br>
                     </div>
                 </div>
@@ -156,12 +161,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> --> -->
 
 
-
-
-<div class="modal" id="myModal">
+<!-- 
+ <div class="modal" id="myModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -196,4 +200,51 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+
+
+
+<div class="modal" id="Certificate">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+                <h4 class="modal-title"> Certificate</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div> -->
+            <!-- <div class="modal-body"> -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div
+                        style="position:absolute;left:50%;margin-left:-421px;top:0px;width:842px;height:595px;border-style:outset;overflow:hidden;background-color: white;">
+                        <div style="position:absolute;left:300.76px;top:84.60px" class="cls_002"><span
+                                class="cls_002">Learning And Development </span></div>
+                        <div style="position:absolute;left:225.12px;top:162.60px" class="cls_003"><span
+                                class="cls_003">CERTIFICATE OF COMPLETION</span></div>
+                        <div style="position:absolute;left:355.68px;top:252.52px" class="cls_004"><span
+                                class="cls_004">Presented to</span></div>
+                        <div style="position:absolute;left:350.40px;top:283.88px" class="cls_005"><span
+                                class="cls_005">{{Staff}}</span></div>
+                        <div style="position:absolute;left:257.04px;top:336.24px;" class="cls_006"><span
+                                class="cls_0061">{{Course}}</span></div>
+                        <!-- <div style="position:absolute;left:339.84px;top:369.88px" class="cls_004"><span
+                                        class="cls_004">XXXX</span></div>
+                                <div style="position:absolute;left:409.20px;top:369.88px" class="cls_004"><span
+                                        class="cls_004">XXX X XXXI</span></div> -->
+                        <div style="position:absolute;left:379.68px;top:430.80px" class="cls_006"><span
+                                class="cls_006">Provided by</span></div>
+                        <div style="position:absolute;left:380.68px;top:450.32px" class="cls_007"><span
+                                class="cls_007">Amaze</span>
+                        </div>
+                        <div style="position:absolute;left:383.76px;top:481.44px" class="cls_006"><span class="cls_006">
+                                JAN 2022</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+
+        </div>
+    </div>

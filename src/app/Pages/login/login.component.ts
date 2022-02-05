@@ -104,11 +104,12 @@ export class LoginComponent implements OnInit {
           debugger
           sessionStorage.setItem('UserName', this.result.name);
           sessionStorage.setItem('userid', this.result.id);
+         this.Insertattdnace(this.result.id)
           console.log("Employeid", this.result.id)
           sessionStorage.setItem('temp', '1');
           sessionStorage.setItem('manager', this.result.supervisor)
           sessionStorage.setItem('role', 'Employee');
-          this.Insertattdnace()
+       
           debugger
           sessionStorage.setItem('roleid', '2');
           localStorage.setItem("clickname", "Admin Dashboard")
@@ -182,17 +183,17 @@ export class LoginComponent implements OnInit {
 
 
 
-  public Insertattdnace() {
+  public async Insertattdnace(id:any) {
     debugger
     var entity = {
-      'EmpID': sessionStorage.getItem('userid'),
+      'EmpID': id,
       'LoginDate': new Date()
     }
     this.LearningService.InsertAttendance_New(entity).subscribe(
-      (data:any) => {
+      async( data:any) => {
         debugger
      localStorage.setItem('loginid',data);
-      
+      return 0;
       })
 
   }
