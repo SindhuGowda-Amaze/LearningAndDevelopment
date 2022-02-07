@@ -27,10 +27,10 @@
     color:#404040;
     font-family: "DIN Bold";
   } */
-  /* .table, th, td {
+  .table, th {
   border: 1px solid lightgray;
    border-collapse: collapse; 
-  } */
+  }
   .Heading{
     padding-left: 15px;
     font-size: 20px;

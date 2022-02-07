@@ -11,13 +11,7 @@
                     <div class="col-lg-1" style="margin-left: 10px;">
                         <p class="filter">Filter By</p>
                     </div>
-                    <!-- <div class="col-lg-3">
-                        <select class="form-control search" name="cars" id="Duration" (change)="staffid($event)">
-                            <option value="0">Select Department</option>
-                            <option *ngFor="let details of result" value="{{details.id}}">{{details.department}}
-                            </option>
-                        </select> 
-                    </div> -->
+
                     <div class="col-lg-3">
                         <input type="month" class="form-control search" placeholder="Search" [(ngModel)]="search">
                     </div>
@@ -58,6 +52,7 @@
                                 <td>
                                     <button class="viewcertificate" data-toggle="modal" data-target="#Certificate"
                                         (click)="view(details.staffname,details.coursename)">ViewCertificate</button>
+
                                 </td>
                             </tr>
                         </thead>
@@ -205,6 +200,9 @@
 
 
 
+
+
+
 <div class="modal" id="Certificate">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -212,39 +210,34 @@
                 <h4 class="modal-title"> Certificate</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div> -->
-            <!-- <div class="modal-body"> -->
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div
-                        style="position:absolute;left:50%;margin-left:-421px;top:0px;width:842px;height:595px;border-style:outset;overflow:hidden;background-color: white;">
-                        <div style="position:absolute;left:300.76px;top:84.60px" class="cls_002"><span
-                                class="cls_002">Learning And Development </span></div>
-                        <div style="position:absolute;left:225.12px;top:162.60px" class="cls_003"><span
-                                class="cls_003">CERTIFICATE OF COMPLETION</span></div>
-                        <div style="position:absolute;left:355.68px;top:252.52px" class="cls_004"><span
-                                class="cls_004">Presented to</span></div>
-                        <div style="position:absolute;left:350.40px;top:283.88px" class="cls_005"><span
-                                class="cls_005">{{Staff}}</span></div>
-                        <div style="position:absolute;left:257.04px;top:336.24px;" class="cls_006"><span
-                                class="cls_0061">{{Course}}</span></div>
-                        <!-- <div style="position:absolute;left:339.84px;top:369.88px" class="cls_004"><span
-                                        class="cls_004">XXXX</span></div>
-                                <div style="position:absolute;left:409.20px;top:369.88px" class="cls_004"><span
-                                        class="cls_004">XXX X XXXI</span></div> -->
-                        <div style="position:absolute;left:379.68px;top:430.80px" class="cls_006"><span
-                                class="cls_006">Provided by</span></div>
-                        <div style="position:absolute;left:380.68px;top:450.32px" class="cls_007"><span
-                                class="cls_007">Amaze</span>
-                        </div>
-                        <div style="position:absolute;left:383.76px;top:481.44px" class="cls_006"><span class="cls_006">
-                                JAN 2022</span></div>
+            <div id="downloadaplication"
+                style="position:absolute;left:50%;margin-left:-421px;top:0px;width:842px;height:595px;border-style:outset;overflow:hidden;background-color: white;">
+                <div style="position:absolute;left:300.76px;top:84.60px" class="cls_002"><span class="cls_002">Learning
+                        And Development </span></div>
+                <div style="position:absolute;left:225.12px;top:162.60px" class="cls_003"><span
+                        class="cls_003">CERTIFICATE OF COMPLETION</span></div>
+                <div style="position:absolute;left:355.68px;top:252.52px" class="cls_004"><span
+                        class="cls_004">Presented to</span></div>
+                <div style="position:absolute;left:350.40px;top:283.88px" class="cls_005"><span
+                        class="cls_005">{{Staff}}</span></div>
+                <div style="position:absolute;left:257.04px;top:336.24px;" class="cls_006"><span
+                        class="cls_0061">{{Course}}</span></div>
+                <div style="position:absolute;left:379.68px;top:430.80px" class="cls_006"><span class="cls_006">Provided
+                        by</span></div>
+                <div style="position:absolute;left:380.68px;top:450.32px" class="cls_007"><span
+                        class="cls_007">Amaze</span>
+                </div>
+                <div style="position:absolute;left:383.76px;top:481.44px" class="cls_006"><span class="cls_006">
+                        JAN 2022</span></div>
+                <div class="row">
+                    <div class="col-lg-10"></div>
+                    <div class="col-lg-2">
+                        <button style="background-color: #3247D5;color:white;border-radius: 5px;border:none;margin-top: 10px;"
+                            (click)="download()">Download</button>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-
+                <button type="button" class="cancel" data-dismiss="modal">Close</button>
             </div>
-
         </div>
-    </div>

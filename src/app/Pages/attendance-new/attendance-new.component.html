@@ -31,7 +31,6 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <!-- <th>Course Name</th> -->
                                     <th>Employee Name</th>
                                     <th>Login Date</th>
                                     <th>Login Time</th>
@@ -40,8 +39,7 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let details of Attendance">
-                                    <!-- <td></td> -->
-                                    <td></td>
+                                    <td>{{details.employeename}}</td>
                                     <td>{{details.loginDate}}</td>
                                     <td>{{details.loginTime}}</td>
                                     <td>{{details.logouttime}}</td>

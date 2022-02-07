@@ -27,12 +27,12 @@
   background-color: white
 } */
 
-  .head{
+  /* .head{
   background-color: #02CFFF ;
   color:white;
   font-size: 12px;
  
-  }
+  } */
   .FilterClass{
   padding-left: 15px;
   }
@@ -145,7 +145,7 @@
 
 .scroll{
   overflow-x: scroll;
-  overflow-x: scroll;
+  overflow-y: scroll;
 }
 
 .add{

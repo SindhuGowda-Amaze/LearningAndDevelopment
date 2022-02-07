@@ -27,6 +27,16 @@ export class AttendanceNewComponent implements OnInit {
 
 
 
+  // public GetEnroll(){
+  //   this.LearningService.GetEnroll().subscribe(
+  //     data => {
+  //       debugger
+  //       // this.result = data.filter(x => x.manager == this.manager );
+  //       // this.result = data.filter(x => x.status == 'Manager Assigned' );
+  //       this.result =  data.filter(x => x.type == 'Manager Assign')
+  //       this.count = this.result.length;
+  //     })
+  // }
 
 
   
