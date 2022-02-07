@@ -33,7 +33,7 @@
             </select>
         </div>
         <div class="col-lg-4">
-            <input type="search" class="form-control search" placeholder="Search for Name..">
+            <input type="search" class="form-control search" placeholder="Search for Name.." [(ngModel)]="search">
         </div>
     </div>
     <br>
@@ -49,7 +49,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 scroll" style="height:500px">
-            <table class="table">
+            <table class="table" *ngIf="(quetionlist | filter: search).length > 0; else noResults">
                 <thead>
                     <tr class="head">
                         <th>Course Name</th>
@@ -64,7 +64,7 @@
                         <th>Weightage</th>
                         <th>Actions</th>
                     </tr>
-                    <tr class="header" *ngFor="let item of quetionlist">
+                    <tr class="header" *ngFor="let item of quetionlist | filter: search">
                         <td>{{item.coursename}}</td>
                         <td>{{item.chaptername}}</td>
                         <td>{{item.type}}</td>
