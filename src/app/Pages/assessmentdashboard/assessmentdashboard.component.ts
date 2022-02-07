@@ -25,6 +25,7 @@ export class AssessmentdashboardComponent implements OnInit {
   courseid:any;
   coursedetails:any;
   dummcoursedetails:any;
+
   getcourseid(even: any) {
     debugger
     this.courseid = even.target.value;
@@ -39,6 +40,10 @@ export class AssessmentdashboardComponent implements OnInit {
 
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2dc3fbd791904d00dca64f34f4e1141114103e1e
   courselist:any;
   public GetCourse() {
     debugger

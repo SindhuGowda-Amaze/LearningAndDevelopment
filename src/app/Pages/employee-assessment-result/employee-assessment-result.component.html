@@ -1,69 +1,72 @@
 <div class="container-fluid">
+
     <div class="row">
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="headings">Employee Assessment Results</p><br>
-                </div>
-            </div>
-            <div class="card"><br>
-                <div class="row ">
-                    <div class="col-lg-1" style="margin-left: 10px;">
-                        <p class="filter">Filter By</p>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <input type="month" class="form-control search" placeholder="Search" [(ngModel)]="search">
-                    </div>
-                    <div class="col-lg-3">
-                        <input class="form-control search" placeholder="Search" [(ngModel)]="search">
-                    </div>
-                    <div class="col-lg-3">
-                    </div>
-                    <div class="col-lg-3"></div>
-                    <div class="col-lg-2">
-                    </div>
-                </div> <br>
-            </div><br>
-            <div class="row">
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Employee Name</th>
-                                <th>Course Name</th>
-                                <th>Assigned Date</th>
-                                <th>Course Start Date</th>
-                                <th>Course End Date</th>
-                                <th>Percentage</th>
-                                <th>Certificate</th>
-                            </tr>
-
-                            <tr *ngFor="let details of detailslist|filter:search">
-                                <td>{{details.staffname}}</td>
-                                <td>{{details.coursename}}</td>
-                                <td>{{details.assignedDate}}</td>
-                                <td>{{details.startDate}}</td>
-                                <td>{{details.endDate}}</td>
-                                <td>{{details.obtainedMarks/details.totalmarks
-                                    *100 | number : '1.2-2'}} %</td>
-                                <td>
-                                    <button class="viewcertificate" data-toggle="modal" data-target="#Certificate"
-                                        (click)="view(details.staffname,details.coursename)">ViewCertificate</button>
-
-                                </td>
-                            </tr>
-                        </thead>
-                    </table>
-                    <ng-template #noResults>
-                        <p>no results found for "{{search}}" </p>
-                    </ng-template>
-                </div>
-            </div>
+        <div class="col-lg-10">
+            <p class="headings">Employee Assessment Results</p>
+        </div>
+        <div class="col-lg-2">
+            <p class="count">Count: {{detailslist.length}}</p>
         </div>
     </div>
+
+    <div class="card"><br>
+        <div class="row">
+            <div class="col-lg-1" style="margin-left: 10px;">
+                <p class="filter">Filter By</p>
+            </div>
+
+            <div class="col-lg-3">
+                <input type="date" class="form-control search" placeholder="Search" [(ngModel)]="search">
+            </div>
+            <div class="col-lg-3">
+                <input class="form-control search" placeholder="Search" [(ngModel)]="search">
+            </div>
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-2">
+            </div>
+        </div> <br>
+    </div><br>
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table" *ngIf="(detailslist | filter: search).length > 0; else noResults">
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Course Name</th>
+                        <th>Assigned Date</th>
+                        <th>Course Start Date</th>
+                        <th>Course End Date</th>
+                        <th>Percentage</th>
+                        <th>Certificate</th>
+                    </tr>
+
+                    <tr *ngFor="let details of detailslist|filter:search">
+                        <td>{{details.staffname}}</td>
+                        <td>{{details.coursename}}</td>
+                        <td>{{details.assignedDate}}</td>
+                        <td>{{details.startDate}}</td>
+                        <td>{{details.endDate}}</td>
+                        <td>{{details.obtainedMarks/details.totalmarks
+                            *100 | number : '1.2-2'}} %</td>
+                        <td>
+                            <button class="viewcertificate" data-toggle="modal" data-target="#Certificate"
+                                (click)="view(details.staffname,details.coursename)">ViewCertificate</button>
+
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+            <ng-template #noResults>
+                <p class="NoResultShow">No results found for "{{search}}" </p>
+            </ng-template>
+        </div>
+    </div>
+
+
 </div>
 
 
@@ -156,7 +159,7 @@
             </div>
         </div>
     </div>
-</div> --> -->
+</div> -->
 
 
 <!-- 
@@ -232,7 +235,8 @@
                 <div class="row">
                     <div class="col-lg-10"></div>
                     <div class="col-lg-2">
-                        <button style="background-color: #3247D5;color:white;border-radius: 5px;border:none;margin-top: 10px;"
+                        <button
+                            style="background-color: #3247D5;color:white;border-radius: 5px;border:none;margin-top: 10px;"
                             (click)="download()">Download</button>
                     </div>
                 </div>
