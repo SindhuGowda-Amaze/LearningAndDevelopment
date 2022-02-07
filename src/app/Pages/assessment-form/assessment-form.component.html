@@ -21,10 +21,13 @@
                     </div>
                     <div class="col-lg-3">
                         <p>Question</p>
-                    </div>
+                    </div>            
                     <div class="col-lg-3" *ngIf="questionid==1 || questionid==2">
                         <p>Correct Answer</p>
                     </div>
+
+
+
                 </div>
                 <div class="row head">
                     <div class="col-lg-2">
@@ -46,6 +49,8 @@
                     <div class="col-lg-3">
                         <textarea class="form-control" placeholder="Question.." [(ngModel)]="Question"></textarea>
                     </div>
+
+                    
                     <div class="col-lg-3">
                         <ckeditor id="CorrectAnswer" name="CorrectAnswer" [(ngModel)]="CorrectAnswer" *ngIf="questionid==2"
                             data="<p>Enter Answer Here !</p>"></ckeditor>
@@ -76,6 +81,9 @@
                     <div class="col-lg-2">
                         <p>Weightage</p>
                     </div>
+                    <div class="col-lg-2">
+                        <p>Assessment Name</p>
+                    </div>
                 </div>
                 <div class="row head">
                     <div class="col-lg-2" *ngIf="questionid==1">
@@ -92,6 +100,9 @@
                     </div>
                     <div class="col-lg-2">
                         <input class="form-control" placeholder="Weightage" [(ngModel)]="Weightage">
+                    </div>
+                    <div class="col-lg-2">
+                       <input class="form-control" placeholder="Assessment Name" [(ngModel)]="AssessmentName">
                     </div>
                 </div><br>
                 <div class="row">
