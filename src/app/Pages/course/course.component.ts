@@ -52,6 +52,15 @@ export class CourseComponent implements OnInit {
       }
     ) 
   }
+categoryid:any;
+
+  GetCategoryid(even:any)
+  {
+    debugger
+    var list=even.target.value.split(",");
+this.categoryName=list[0]
+this.categoryid=list[1];
+  }
 
   Save(){
     debugger 
@@ -64,6 +73,7 @@ export class CourseComponent implements OnInit {
       "fee":this.fee,
       "entryCriteria":this.entryCriteria,
       "exitCriteria":this.exitCriteria,    
+      "CategoryID":this.categoryid
     };
     this.LearningService.InsertCourse(json).subscribe(
       data => {

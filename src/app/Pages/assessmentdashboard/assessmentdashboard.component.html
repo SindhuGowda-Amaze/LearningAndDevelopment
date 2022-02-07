@@ -14,6 +14,7 @@
     </div>
 </div>
 <div class="card">
+    <br>
     <div class="row FilterClass ">
         <div class="col-lg-1">
             <p class="filter">Filter By</p>
@@ -26,15 +27,17 @@
             </select>
         </div>
         <div class="col-lg-3">
-            <select class="form-control" name="cars" id="Duration">
-                <option value="Select">Select Question Type</option>
+            <select class="form-control" name="cars" id="Duration" (change)="getquestion($event)">
+                <option value="0">Select Question Type</option>
+                <option style="color:#0C275A" *ngFor="let details of questiontype"  value="{{details.id}}">
+                    {{details.type}}</option>
             
             </select>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-4">
             <input type="search"  class="form-control search" placeholder="Search for Name..">
         </div>
-    </div>
+    </div> <br>
 </div>
 <br>
 <br>
@@ -74,9 +77,9 @@
                         <td>{{item.option4}}</td>
                         <td>{{item.correctAnswer}}</td>
                         <td>{{item.weightage}}</td>
-                        <td><button class="actionbuttons" routerLink="/AssessmentForm">Edit</button> <br>
+                        <td><button class="addbutton" routerLink="/AssessmentForm">Edit</button> <br>
                             <br>
-                            <button class="actionbuttons" (click)="Ondelete(item.id)">Delete</button>
+                            <button class="addbutton" (click)="Ondelete(item.id)">Delete</button>
                         </td>
                     </tr>
                 </thead>

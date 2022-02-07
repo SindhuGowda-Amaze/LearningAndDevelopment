@@ -30,6 +30,7 @@ export class ChapterComponent implements OnInit {
   courseName: any;
   chapterText: any;
   show:any;
+  generalInstructions:any;
   Attachmentlist:any;
 
 
@@ -166,7 +167,8 @@ export class ChapterComponent implements OnInit {
         "Name": this.name,
         "Description": this.description,
         "ChapterPhoto": this.ChapterPhoto,
-        "ChapterText": this.chapterText 
+        "ChapterText": this.chapterText ,
+        "GeneralInstructions":this.generalInstructions
       };
       this.LearningService.InsertChapter(json).subscribe(
         data => {

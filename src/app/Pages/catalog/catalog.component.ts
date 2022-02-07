@@ -166,11 +166,13 @@ export class CatalogComponent implements OnInit {
       data => {
         debugger
 
-        this.categorylist = data.slice(0, 1);
-        this.categorylist1 = data.slice(1, 2);
-        this.categorylist2 = data.slice(2, 3);
-        this.categorylist3 = data.slice(3, 4);
-        this.categorylist4 = data.slice(4, 5);
+        this.categorylist = data;
+        console.log("categorylist",this.categorylist)
+        // .slice(0, 1);
+        // this.categorylist1 = data.slice(1, 2);
+        // this.categorylist2 = data.slice(2, 3);
+        // this.categorylist3 = data.slice(3, 4);
+        // this.categorylist4 = data.slice(4, 5);
       })
   }
 
@@ -188,79 +190,91 @@ export class CatalogComponent implements OnInit {
     this.show1 = 1;
   }
 
-
   public filtercourse(name: any,value:any) {
     debugger
-    if(value==1)
-    {
-      if (this.course1 == true) {
-        this.LearningService.GetCoursesByUserID(this.userid).subscribe(
-          data => {
+    this.LearningService.GetCoursesByUserID(this.userid).subscribe(
+      data => {
+        debugger
+        this.courselist = data.filter(x => x.categoryID == value);
+        this.count = this.courselist.length;
+        for(let i=0;i<this.categorylist.length;i++)
+        {
+          if(this.categorylist[i].id==value)
+          {
             debugger
-            this.courselist = data.filter(x => x.categoryName == name);
-          })
-        this.show1 = 1;
-      }
-      else {
-        this.GetCourse();
-      }
-    }
-    else if(value==2)
-    {
-      if (this.course == true) {
-        this.LearningService.GetCoursesByUserID(this.userid).subscribe(
-          data => {
-            debugger
-            this.courselist = data.filter(x => x.categoryName == name);
-          })
-        this.show1 = 1;
-      }
-      else {
-        this.GetCourse();
-      }
-    }
-    else if(value==3)
-    {
-      if (this.course2 == true) {
-        this.LearningService.GetCoursesByUserID(this.userid).subscribe(
-          data => {
-            debugger
-            this.courselist = data.filter(x => x.categoryName == name);
-          })
-        this.show1 = 1;
-      }
-      else {
-        this.GetCourse();
-      }
-    }
-    else if(value==4)
-    {
-      if (this.course3 == true) {
-        this.LearningService.GetCoursesByUserID(this.userid).subscribe(
-          data => {
-            debugger
-            this.courselist = data.filter(x => x.categoryName == name);
-          })
-        this.show1 = 1;
-      }
-      else {
-        this.GetCourse();
-      }
-    }
-    else if(value==5)
-    {
-      if (this.course4 == true) {
-        this.LearningService.GetCoursesByUserID(this.userid).subscribe(
-          data => {
-            debugger
-            this.courselist = data.filter(x => x.categoryName == name);
-          })
-        this.show1 = 1;
-      }
-      else {
-        this.GetCourse();
-      }
-    }
+          }
+          else{
+            this.categorylist[i]["checked"]=false;
+          }
+        }
+      })
+    this.show1 = 1;
+
+    // if(value==1)
+    // {
+    //   if (this.course1 == true) {
+       
+    //   }
+    //   else {
+    //     this.GetCourse();
+    //   }
+    // }
+    // else if(value==2)
+    // {
+    //   if (this.course == true) {
+    //     this.LearningService.GetCoursesByUserID(this.userid).subscribe(
+    //       data => {
+    //         debugger
+    //         this.courselist = data.filter(x => x.categoryName == name);
+    //       })
+    //     this.show1 = 1;
+    //   }
+    //   else {
+    //     this.GetCourse();
+    //   }
+    // }
+    // else if(value==3)
+    // {
+    //   if (this.course2 == true) {
+    //     this.LearningService.GetCoursesByUserID(this.userid).subscribe(
+    //       data => {
+    //         debugger
+    //         this.courselist = data.filter(x => x.categoryName == name);
+    //       })
+    //     this.show1 = 1;
+    //   }
+    //   else {
+    //     this.GetCourse();
+    //   }
+    // }
+    // else if(value==4)
+    // {
+    //   if (this.course3 == true) {
+    //     this.LearningService.GetCoursesByUserID(this.userid).subscribe(
+    //       data => {
+    //         debugger
+    //         this.courselist = data.filter(x => x.categoryName == name);
+    //       })
+    //     this.show1 = 1;
+    //   }
+    //   else {
+    //     this.GetCourse();
+    //   }
+    // }
+    // else if(value==5)
+    // {
+    //   if (this.course4 == true) {
+    //     this.LearningService.GetCoursesByUserID(this.userid).subscribe(
+    //       data => {
+    //         debugger
+    //         this.courselist = data.filter(x => x.categoryName == name);
+    //       })
+    //     this.show1 = 1;
+    //   }
+    //   else {
+    //     this.GetCourse();
+    //   }
+    // }
   
 
   }

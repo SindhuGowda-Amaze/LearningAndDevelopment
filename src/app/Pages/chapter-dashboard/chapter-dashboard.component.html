@@ -101,16 +101,17 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-4" *ngFor="let attchments of Attachmentlist">
+                    <div class="col-lg-3" *ngFor="let attchments of Attachmentlist">
                         <br>
                         <img src="{{attchments.photo}}" *ngIf="attchments.attachmentType=='Image'"
-                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                            (click)="openAttchments(attchments.photo)" style="width: 171px; height: 117px;">
+                           
                         <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Pdf'"
-                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                            (click)="openAttchments(attchments.photo)" style="width: 171px; height: 117px;">
                         <img src="assets/Images/word.png" *ngIf="attchments.attachmentType=='Document'"
-                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                            (click)="openAttchments(attchments.photo)" style="width: 171px; height: 117px;">
                         <img src="assets/Images/files.png" *ngIf="attchments.attachmentType=='Ppt'"
-                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                            (click)="openAttchments(attchments.photo)" style="width: 171px; height: 117px;">
                         <video controls style="height: 100px;width: 50%;" *ngIf="attchments.attachmentType=='video'"
                             (click)="openAttchments(attchments.photo)">
                             <source src="{{attchments.photo}}" (click)="openAttchments(attchments.photo)"
