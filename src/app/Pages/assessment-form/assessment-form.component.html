@@ -49,14 +49,14 @@
                     <div class="col-lg-3">
                         <ckeditor id="CorrectAnswer" name="CorrectAnswer" [(ngModel)]="CorrectAnswer" *ngIf="questionid==2"
                             data="<p>Enter Answer Here !</p>"></ckeditor>
-                        <br>
+                            
                         <select class="form-control"  name="CorrectAnswer" id="CorrectAnswer"
                             (change)="getCorrectAnswer($event)" *ngIf="questionid==1" [(ngModel)]="CorrectAnswer">
                             <option value="CorrectAnswer">Select Options</option>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
+                            <option value="A">Option1</option>
+                            <option value="B">Option2</option>
+                            <option value="C">Option3</option>
+                            <option value="D">Option4</option>
                         </select>
                     </div>
                 </div> <br>

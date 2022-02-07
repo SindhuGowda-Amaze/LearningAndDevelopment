@@ -32,11 +32,9 @@
   .FilterClass{
   padding-left: 15px;
   }
-  .count{
-  text-align: right;
-  padding-right: 10px;
-  color: #0C275A ; 
-  font-size: 18px;
+  .count {
+    text-align: right;
+    padding-right: 10px;
   }
     .Button{
       background-color: #007bff;
@@ -62,9 +60,9 @@
       color:white;
       background-color:red ;
     }
-    .count{
+    /* .count{
       font-size: 16px;
-    }
+    } */
 
     .underlinetext
 {
@@ -128,4 +126,8 @@ li a:hover {
   font-style: normal;
   font-weight: 600;
   margin-left: 38px;
+}
+
+FilterClass {
+  padding-left: 15px;
 }

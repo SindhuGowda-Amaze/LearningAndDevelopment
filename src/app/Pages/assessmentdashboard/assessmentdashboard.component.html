@@ -105,33 +105,38 @@
             </div>
         </div>
     </div>
-</div>
-<div class="card">
-    <div class="row FilterClass ">
-        <div class="col-lg-1">
-            <p class="filter">Filter By</p>
+
+    <div class="card">
+        <br>
+        <div class="row FilterClass">
+            <div class="col-lg-1">
+                <p class="filter">Filter By</p>
+            </div>
+            <div class="col-lg-3">
+                <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
+                    <option value="0">Select Course</option>
+                    <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">
+                        {{details.name}}</option>
+                </select>
+            </div>
+           
+            <div class="col-lg-5">
+                <input type="search"  class="form-control search" placeholder="Search for Name.." [(ngModel)]="search">
+            </div>
         </div>
-        <div class="col-lg-3">
-            <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
-                <option value="0">Select Course</option>
-                <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">
-                    {{details.name}}</option>
-            </select>
-        </div>
-       
-        <div class="col-lg-5">
-            <input type="search"  class="form-control search" placeholder="Search for Name.." [(ngModel)]="search">
-        </div>
+        <br>
     </div>
-</div>
-<br>
-<br>
+
+    <br>
 <div class="row">
     <div class="col-lg-10"></div>
     <div class="col-lg-2">
         <button class="addnew" routerLink="/AssessmentForm">Add</button>
     </div>
 </div> <br>
+</div>
+
+
 
 <div class="container-fluid">
     <div class="row">
