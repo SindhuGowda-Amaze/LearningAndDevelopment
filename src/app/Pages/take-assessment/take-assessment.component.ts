@@ -196,6 +196,7 @@ export class TakeAssessmentComponent implements OnInit {
       if (this.questionList[i].userAnswer == '') {
         notansred=notansred+1
       }
+      
     }
 
     if(notansred>0){
