@@ -629,7 +629,11 @@ export class LearningService {
       this.baseURL + '/Master/GetAssessmentResult');
   }
 
-
+  public GetCourseDropdown() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetCourseDropdown');
+  }
 
 
 

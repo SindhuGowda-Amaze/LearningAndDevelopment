@@ -143,6 +143,8 @@ export class AssessmentFormComponent implements OnInit {
   Option4: any;
   CorrectAnswer: any;
   Weightage: any;
+  AssessmentName:any;
+  
   Save() {
     debugger
     var json = {
@@ -156,6 +158,7 @@ export class AssessmentFormComponent implements OnInit {
       "Option4": this.Option4,
       "CorrectAnswer": this.CorrectAnswer,
       "weightage": this.Weightage,
+      "AssessmentName":this.AssessmentName
 
     };
     this.LearningService.InsertAssessments(json).subscribe(

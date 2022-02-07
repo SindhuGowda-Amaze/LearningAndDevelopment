@@ -26,22 +26,23 @@ export class AssessmentdashboardComponent implements OnInit {
   coursedetails:any;
   dummcoursedetails:any;
   getcourseid(even: any) {
+    debugger
     this.courseid = even.target.value;
     if (even.target.value != 0) {
-      this.coursedetails = this.dummcoursedetails.filter((x: { courseID: any; }) => x.courseID == this.courseid)
+      debugger
+      this.quetionlist = this.dummquetionlist.filter((x: { courseID: any; }) => x.courseID == this.courseid)
+    }
+    else{
+      debugger
+      this.GetAssessments()
     }
 
   }
 
-
-
-
-   
-
   courselist:any;
   public GetCourse() {
     debugger
-    this.LearningService.GetCourse().subscribe(
+    this.LearningService.GetCourseDropdown().subscribe(
       data => {
         debugger
         this.courselist = data;
@@ -58,17 +59,14 @@ export class AssessmentdashboardComponent implements OnInit {
         this.assessmentlist = data;
       })
   }
-
-
-
-
-
+  dummquetionlist:any;
   public GetAssessments() {
     debugger
     this.LearningService.GetAssessments().subscribe(
       data => {
         debugger
         this.quetionlist = data;
+        this.dummquetionlist = data;
         this.count = this.quetionlist.length;
       })
   }
@@ -84,9 +82,12 @@ export class AssessmentdashboardComponent implements OnInit {
   }
 
 
-  // checkbutton(){
-  //   location.href="/Checkanswer"
-  // }
+  checkbutton(){
+    location.href="/Checkanswer"
+  }
+
+   
+
 
 
 
