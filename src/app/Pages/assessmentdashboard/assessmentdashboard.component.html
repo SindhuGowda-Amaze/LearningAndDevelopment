@@ -6,7 +6,7 @@
                     <p class="headings">Assessment Dashboard</p>
                 </div>
                 <div class="col-lg-2">
-                    <p class="Text" style="float:right; color: #0C275A ;">
+                    <p class="count">
                         Count: {{count}}</p>
                 </div>
             </div>
@@ -20,9 +20,9 @@
             <p class="filter">Filter By</p>
         </div>
         <div class="col-lg-3">
-            <select class="form-control"  name="cars" id="Duration" (change)="getcourseid($event)">
+            <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
                 <option value="Select">Select Course</option>
-                <option style="color:#0C275A" *ngFor="let details of courselist"  value="{{details.id}}">
+                <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">
                     {{details.name}}</option>
             </select>
         </div>
@@ -40,7 +40,6 @@
     </div> <br>
 </div>
 <br>
-<br>
 <div class="row">
     <div class="col-lg-10"></div>
     <div class="col-lg-2">
@@ -50,8 +49,8 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12 scroll"  style="height:500px">
-            <table class="table">                   
+        <div class="col-lg-12 scroll" style="height:500px">
+            <table class="table" *ngIf="(quetionlist | filter: search).length > 0; else noResults">
                 <thead>
                     <tr class="head">
                         <th>Course Name</th>
@@ -66,7 +65,7 @@
                         <th>Weightage</th>
                         <th>Actions</th>
                     </tr>
-                    <tr class="header" *ngFor="let item of quetionlist">
+                    <tr class="header" *ngFor="let item of quetionlist | filter: search">
                         <td>{{item.coursename}}</td>
                         <td>{{item.chaptername}}</td>
                         <td>{{item.type}}</td>
@@ -108,10 +107,10 @@
                     <div class="col-lg-12">
                         <table style="width: 100%;">
                             <tr>
-                              
+
                             </tr> <br>
-                            <tr >
-                                
+                            <tr>
+
                             </tr>
                         </table>
                     </div>

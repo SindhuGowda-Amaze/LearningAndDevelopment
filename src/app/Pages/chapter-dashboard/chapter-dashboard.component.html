@@ -19,6 +19,8 @@
                     <option value="0">Select Course</option>
                     <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">
                         {{details.name}}</option>
+                    <!-- <option style="color:#0C275A" *ngFor="let details of coursedetails" value="{{details.id}}">
+                        {{details.courseName}}</option> -->
                 </select>
             </div>
             <div class="col-lg-5">
@@ -88,7 +90,7 @@
             </div>
         </div>
     </div>
-    
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
