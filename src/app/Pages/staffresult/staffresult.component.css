@@ -37,10 +37,10 @@
     border-radius: 12px;
  }
  
-  .count{
+ .count {
   text-align: right;
-  padding-right: 10px;;
-  }
+  padding-right: 10px;
+}
     .Button{
       background-color: #007bff;
       color:white;
@@ -68,9 +68,9 @@ background-color: #3247d5;
       color:white;
       background-color:red ;
     }
-    .count{
+    /* .count{
       font-size: 16px;
-    }
+    } */
 
     .underlinetext
 {
