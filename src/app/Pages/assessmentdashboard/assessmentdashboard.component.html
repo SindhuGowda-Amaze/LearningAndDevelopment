@@ -6,7 +6,7 @@
                     <p class="headings">Assessment Dashboard</p>
                 </div>
                 <div class="col-lg-2">
-                    <p class="Text" style="float:right; color: #0C275A ;">
+                    <p class="count">
                         Count: {{count}}</p>
                 </div>
             </div>
@@ -14,29 +14,30 @@
     </div>
 </div>
 <div class="card">
+    <br>
     <div class="row FilterClass ">
         <div class="col-lg-1">
             <p class="filter">Filter By</p>
         </div>
         <div class="col-lg-3">
-            <select class="form-control"  name="cars" id="Duration" (change)="getcourseid($event)">
+            <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
                 <option value="Select">Select Course</option>
-                <option style="color:#0C275A" *ngFor="let details of courselist"  value="{{details.id}}">
+                <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">
                     {{details.name}}</option>
             </select>
         </div>
         <div class="col-lg-3">
             <select class="form-control" name="cars" id="Duration">
                 <option value="Select">Select Question Type</option>
-            
+
             </select>
         </div>
-        <div class="col-lg-5">
-            <input type="search"  class="form-control search" placeholder="Search for Name..">
+        <div class="col-lg-4">
+            <input type="search" class="form-control search" placeholder="Search for Name..">
         </div>
     </div>
+    <br>
 </div>
-<br>
 <br>
 <div class="row">
     <div class="col-lg-10"></div>
@@ -47,8 +48,8 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12 scroll"  style="height:500px">
-            <table class="table">                   
+        <div class="col-lg-12 scroll" style="height:500px">
+            <table class="table">
                 <thead>
                     <tr class="head">
                         <th>Course Name</th>
@@ -74,9 +75,16 @@
                         <td>{{item.option4}}</td>
                         <td>{{item.correctAnswer}}</td>
                         <td>{{item.weightage}}</td>
-                        <td><button class="actionbuttons" routerLink="/AssessmentForm">Edit</button> <br>
+                        <td>
+                            <!-- <button class="actionbuttons" routerLink="/AssessmentForm">Edit</button> <br>
                             <br>
-                            <button class="actionbuttons" (click)="Ondelete(item.id)">Delete</button>
+                            <button class="actionbuttons" (click)="Ondelete(item.id)">Delete</button> -->
+
+                            <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width:16px;"
+                            routerLink="/AssessmentForm"> &nbsp;&nbsp;
+
+                            <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON" (click)="Ondelete(item.id)"
+                                style="width:16px;">
                         </td>
                     </tr>
                 </thead>
@@ -86,80 +94,8 @@
             </ng-template>
         </div>
     </div>
-<<<<<<< HEAD
 </div>
 
-=======
-</div> -->
-
-
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-lg-10">
-                    <p class="headings">Assessment Dashboard</p>
-                </div>
-                <div class="col-lg-2">
-                    <p class="count">Count: {{quetionlist.length}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <br>
-        <div class="row FilterClass">
-            <div class="col-lg-1">
-                <p class="filter">Filter By</p>
-            </div>
-            <div class="col-lg-3">
-                <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
-                    <option value="0">Select Course</option>
-                    <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">
-                        {{details.name}}</option>
-                </select>
-            </div>
-           
-            <div class="col-lg-5">
-                <input type="search"  class="form-control search" placeholder="Search for Name.." [(ngModel)]="search">
-            </div>
-        </div>
-        <br>
-    </div>
-
-    <br>
-<div class="row">
-    <div class="col-lg-10"></div>
-    <div class="col-lg-2">
-        <button class="addnew" routerLink="/AssessmentForm">Add</button>
-    </div>
-</div> <br>
-</div>
-
-
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12 scroll"  style="height:500px">
-            <table class="table" *ngIf="(quetionlist | filter: search).length > 0; else noResults">                   
-                <thead>
-                    <tr class="head">
-                        <th>Course Name</th>
-                        <th>Chapter Name</th>                      
-                        <th>QuestionType</th>
-                        <th>Question</th>
-                        <th>Option1</th>
-                        <th>Option2</th>
-                        <th>Option3</th>
-                        <th>Option4</th> 
-                        <th>Correct Answer</th>
-                        <th>Weightage</th>
-                        <th>Actions</th>
-                    </tr>
-                   
->>>>>>> 2dc3fbd791904d00dca64f34f4e1141114103e1e
 
 
 
@@ -177,10 +113,10 @@
                     <div class="col-lg-12">
                         <table style="width: 100%;">
                             <tr>
-                              
+
                             </tr> <br>
-                            <tr >
-                                
+                            <tr>
+
                             </tr>
                         </table>
                     </div>
