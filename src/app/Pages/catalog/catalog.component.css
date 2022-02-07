@@ -699,3 +699,8 @@ hr.new4 {
   color: #0c275a;
   float: right;
 }
+
+.count {
+  text-align: right;
+  margin-right: -20px;
+}
