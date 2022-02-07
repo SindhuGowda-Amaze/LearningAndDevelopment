@@ -25,7 +25,9 @@ export class AssessmentdashboardComponent implements OnInit {
   courseid:any;
   coursedetails:any;
   dummcoursedetails:any;
+
   getcourseid(even: any) {
+    debugger
     this.courseid = even.target.value;
     if (even.target.value != 0) {
       this.coursedetails = this.dummcoursedetails.filter((x: { courseID: any; }) => x.courseID == this.courseid)
@@ -33,10 +35,6 @@ export class AssessmentdashboardComponent implements OnInit {
 
   }
 
-
-
-
-   
 
   courselist:any;
   public GetCourse() {

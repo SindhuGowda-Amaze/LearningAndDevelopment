@@ -67,7 +67,7 @@
   }
   
   .edit{
-    width:100%;
+    width:50%;
     border: none;
     background: #3247D5;
     text-align: center;
@@ -75,6 +75,7 @@
     color: white;
     margin-top: 6px;
     padding: 5px;
+    margin-bottom: 5px;
   }
 
   .headings{
