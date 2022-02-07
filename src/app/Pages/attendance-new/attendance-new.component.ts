@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LearningService } from 'src/app/learning.service';
+import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-attendance-new',
   templateUrl: './attendance-new.component.html',
@@ -7,7 +9,11 @@ import { LearningService } from 'src/app/learning.service';
 })
 export class AttendanceNewComponent implements OnInit {
 
-  constructor(private LearningService:LearningService) { }
+  constructor(private ActivatedRoute: ActivatedRoute, private LearningService: LearningService) { }
+  search: any;
+  id: any;
+  result: any;
+  count: any;
 
   ngOnInit(): void {
     this.GetAttendance_New();
