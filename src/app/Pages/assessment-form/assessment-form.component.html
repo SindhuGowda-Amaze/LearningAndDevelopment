@@ -22,12 +22,9 @@
                     <div class="col-lg-3">
                         <p>Question</p>
                     </div>            
-                    <div class="col-lg-3" *ngIf="questionid==1 || questionid==2">
-                        <p>Correct Answer</p>
-                    </div>
-
-
-
+                    <!-- <div class="col-lg-2">
+                        <p>Assessment Name</p>
+                    </div> -->
                 </div>
                 <div class="row head">
                     <div class="col-lg-2">
@@ -49,21 +46,10 @@
                     <div class="col-lg-3">
                         <textarea class="form-control" placeholder="Question.." [(ngModel)]="Question"></textarea>
                     </div>
-
-                    
-                    <div class="col-lg-3">
-                        <ckeditor id="CorrectAnswer" name="CorrectAnswer" [(ngModel)]="CorrectAnswer" *ngIf="questionid==2"
-                            data="<p>Enter Answer Here !</p>"></ckeditor>
-                            
-                        <select class="form-control"  name="CorrectAnswer" id="CorrectAnswer"
-                            (change)="getCorrectAnswer($event)" *ngIf="questionid==1" [(ngModel)]="CorrectAnswer">
-                            <option value="CorrectAnswer">Select Options</option>
-                            <option value="A">Option1</option>
-                            <option value="B">Option2</option>
-                            <option value="C">Option3</option>
-                            <option value="D">Option4</option>
-                        </select>
-                    </div>
+                   
+                    <!-- <div class="col-lg-2">
+                        <input class="form-control" placeholder="Assessment Name" [(ngModel)]="AssessmentName">
+                     </div>                  -->
                 </div> <br>
                 <div class="row head">
                     <div class="col-lg-2" *ngIf="questionid==1">
@@ -81,29 +67,39 @@
                     <div class="col-lg-2">
                         <p>Weightage</p>
                     </div>
-                    <div class="col-lg-2">
-                        <p>Assessment Name</p>
-                    </div>
+                    <div class="col-lg-2" *ngIf="questionid==1 || questionid==2">
+                        <p>Correct Answer</p>
+                    </div>                
                 </div>
                 <div class="row head">
                     <div class="col-lg-2" *ngIf="questionid==1">
-                        <input class="form-control" placeholder="a" [(ngModel)]="Option1">
+                        <input class="form-control" placeholder="a" [(ngModel)]="Option1" name="Option1">
                     </div>
                     <div class="col-lg-2" *ngIf="questionid==1">
-                        <input class="form-control" placeholder="b" [(ngModel)]="Option2">
+                        <input class="form-control" placeholder="b" [(ngModel)]="Option2" name="Option2">
                     </div>
                     <div class="col-lg-2" *ngIf="questionid==1">
-                        <input class="form-control" placeholder="c" [(ngModel)]="Option3">
+                        <input class="form-control" placeholder="c" [(ngModel)]="Option3" name="Option3">
                     </div>
                     <div class="col-lg-2" *ngIf="questionid==1">
-                        <input class="form-control" placeholder="d" [(ngModel)]="Option4">
+                        <input class="form-control" placeholder="d" [(ngModel)]="Option4" name="Option4">
                     </div>
                     <div class="col-lg-2">
                         <input class="form-control" placeholder="Weightage" [(ngModel)]="Weightage">
                     </div>
                     <div class="col-lg-2">
-                       <input class="form-control" placeholder="Assessment Name" [(ngModel)]="AssessmentName">
+                        <ckeditor id="CorrectAnswer" name="CorrectAnswer" [(ngModel)]="CorrectAnswer" *ngIf="questionid==2"
+                            data="<p>Enter Answer Here !</p>"></ckeditor>                           
+                        <select class="form-control" 
+                            (change)="getCorrectAnswer($event)" *ngIf="questionid==1" >
+                            <option value="0">Select Options</option>
+                            <option value="A">Option1</option>
+                            <option value="B">Option2</option>
+                            <option value="C">Option3</option>
+                            <option value="D">Option4</option>
+                        </select>
                     </div>
+                 
                 </div><br>
                 <div class="row">
                     <div class="col-lg-10"></div>
@@ -111,7 +107,49 @@
                         <button class="form-control cancel" (click)="cancel()">Cancel</button>
                     </div>
                     <div class="col-lg-1">
-                        <button class="form-control cancel" (click)="Save()">Save</button>
+                        <button class="form-control cancel" (click)="ADd()">Add</button>
+                    </div>
+                </div>
+                <br>
+                <div class="row" *ngIf="tablecout==1">
+                    <div class="col-lg-12 scroll">
+                        <table class="table" >
+                            <thead>
+                                <tr class="head">
+                                    <!-- <th>Course Name</th>
+                                    <th>Chapter Name</th> -->
+                                    <th>QuestionType</th>
+                                    <th>Question</th>
+                                    <th>Option1</th>
+                                    <th>Option2</th>
+                                    <th>Option3</th>
+                                    <th>Option4</th>
+                                    <th>Correct Answer</th>
+                                    <th>Weightage</th>
+                                    <th>Actions</th>
+                                </tr>
+                            <tr *ngFor="let details of assessmenrArray">
+                                <td>{{details.QuestionID}}</td>
+                                <td>{{details.Question}}</td>
+                                <td>{{details.Option1}}</td>
+                                <td>{{details.Option2}}</td>
+                                <td>{{details.Option3}}</td>
+                                <td>{{details.Option4}}</td>
+                                <td>{{details.CorrectAnswer}}</td>
+                                <td>{{details.weightage}}</td>
+                                <td></td>
+                               
+                            </tr>
+                            </thead>
+                        </table>
+                        
+                    </div>
+                </div><br>
+                <div class="row" *ngIf="tablecout==1">
+                    <div class="col-lg-5"></div>
+                 
+                    <div class="col-lg-1">
+                        <button class="form-control cancel" (click)="save()">Save</button>
                     </div>
                 </div>
             </div>

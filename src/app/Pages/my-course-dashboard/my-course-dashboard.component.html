@@ -30,7 +30,8 @@
                     <div class="row">
                         <p class="lastassigned">Last Assigned</p> <br>
                         <div class="row">
-                            <p class="coursename"><b>{{latestcoursedetails.name}}</b></p>
+                            <p *ngIf="lastassigned=='1'" class="coursename"><b>{{latestcoursedetails.name}}</b></p>
+                            <p *ngIf="lastassigned=='0'" class="coursename"><b>No Assigned Courses Yet</b></p>
                         </div>
                     </div>
                     <div class="row">
@@ -245,10 +246,6 @@
                         </div>
                     </div>
                 </div> -->
-
-
-
-
             </div>
         </div>
 

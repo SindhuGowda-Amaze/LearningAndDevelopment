@@ -19,6 +19,19 @@ export class AssessmentdashboardComponent implements OnInit {
     this.GetAssessments();
     this.GetCourse();
     this. GetQuestionMaster();
+
+    this.LearningService.GetTestResponse().subscribe(
+      data => {
+        debugger
+        // this.result = data.filter(x => x.manager == this.manager );
+        this.result = data;
+      })
+
+
+
+
+
+
   }
 
 
@@ -60,9 +73,6 @@ export class AssessmentdashboardComponent implements OnInit {
       data => {
         debugger
         this.questiontype = data;
-        
-         
-       
       })
   }
 
@@ -118,8 +128,6 @@ export class AssessmentdashboardComponent implements OnInit {
     else{
       this.GetAssessments();
     }
-
-
   }
 
 

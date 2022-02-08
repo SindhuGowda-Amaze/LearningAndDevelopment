@@ -37,26 +37,32 @@
                     <tr>
                         <th>Employee Name</th>
                         <th>Course Name</th>
-                        <th>Assigned Date</th>
-                        <th>Course Start Date</th>
+                        <th>Chapter Name</th>
+                        <th>Actions</th>
+                        <!-- <th>Course Start Date</th>
                         <th>Course End Date</th>
-                        <th>Percentage</th>
-                        <th>Certificate</th>
+                        <th>Percentage</th> 
+                        <th>Certificate</th>-->
                     </tr>
 
                     <tr *ngFor="let details of detailslist|filter:search">
                         <td>{{details.staffname}}</td>
                         <td>{{details.coursename}}</td>
-                        <td>{{details.assignedDate}}</td>
+                        <td>{{details.chaptername}}</td>
+                        <td><button class="check" (click)="Check(details.id)" *ngIf="details.checked!=1">Check</button>
+                            <button *ngIf="details.checked==1" [routerLink]="['/Checkanswer',details.id]" class="add" id="show==1">View
+                            </button>
+                        </td>
+
+                        <!-- <td>{{details.assignedDate}}</td>
                         <td>{{details.startDate}}</td>
                         <td>{{details.endDate}}</td>
                         <td>{{details.obtainedMarks/details.totalmarks
-                            *100 | number : '1.2-2'}} %</td>
-                        <td>
+                            *100 | number : '1.2-2'}} %</td> -->
+                        <!-- <td>
                             <button class="viewcertificate" data-toggle="modal" data-target="#Certificate"
                                 (click)="view(details.staffname,details.coursename)">View Certificate</button>
-
-                        </td>
+                        </td> -->
                     </tr>
                 </thead>
             </table>

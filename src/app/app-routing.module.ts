@@ -36,6 +36,8 @@ import { SubmitedtestsComponent } from './Pages/submitedtests/submitedtests.comp
 import { AssignCourseDashboardComponent } from './Pages/assign-course-dashboard/assign-course-dashboard.component';
 import { AttendanceNewComponent } from './Pages/attendance-new/attendance-new.component';
 import { EmployeeAssessmentResultComponent } from './Pages/employee-assessment-result/employee-assessment-result.component';
+import { AssessmentDashboardnewComponent } from './assessment-dashboardnew/assessment-dashboardnew.component';
+import { FinalResultComponent } from './Pages/final-result/final-result.component';
 
 
 
@@ -86,7 +88,10 @@ const routes: Routes = [
   { path: 'Submitedtests', component: SubmitedtestsComponent },
   { path: 'AssignCourseDashboard', component: AssignCourseDashboardComponent },
   {path:'AttendanceNew',component:AttendanceNewComponent},
-  {path:'EmployeeAssessmentResult',component:EmployeeAssessmentResultComponent}
+  {path:'EmployeeAssessmentResult',component:EmployeeAssessmentResultComponent},
+  {path:'AssessmentDashboardnew',component: AssessmentDashboardnewComponent},
+  {path:'FinalResult',component:FinalResultComponent}
+
 
 
 

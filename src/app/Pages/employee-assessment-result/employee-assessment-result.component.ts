@@ -84,21 +84,13 @@ export class EmployeeAssessmentResultComponent implements OnInit {
   }
 
 
-
-
-
-  
+  Check(id:any){
+    location.href="#/Checkanswer/"+id;
+  }
+ 
   download(){
     this.convetToPDF1();
   }
-
-
-
-
-
-
-
-
   public convetToPDF1() {
     debugger
    

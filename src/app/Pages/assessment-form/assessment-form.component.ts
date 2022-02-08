@@ -69,13 +69,13 @@ export class AssessmentFormComponent implements OnInit {
   }
 
 
-  dumchapterlist:any;
+  dumchapterlist: any;
   public GetChapter() {
     debugger
     this.LearningService.GetChapter().subscribe(
       data => {
-        debugger     
-        this.dumchapterlist=data;
+        debugger
+        this.dumchapterlist = data;
       })
   }
   public GetCourse() {
@@ -143,10 +143,14 @@ export class AssessmentFormComponent implements OnInit {
   Option4: any;
   CorrectAnswer: any;
   Weightage: any;
-  AssessmentName:any;
-  
-  Save() {
+  AssessmentName: any;
+
+  tablecout: any;
+
+  assessmenrArray: any = [];
+  ADd() {
     debugger
+    this.tablecout = 1;
     var json = {
       "CourseID": this.courseid,
       "ChapterID": this.chapterid,
@@ -158,17 +162,67 @@ export class AssessmentFormComponent implements OnInit {
       "Option4": this.Option4,
       "CorrectAnswer": this.CorrectAnswer,
       "weightage": this.Weightage,
-      "AssessmentName":this.AssessmentName
-
+      "AssessmentName": this.AssessmentName
     };
-    this.LearningService.InsertAssessments(json).subscribe(
-      data => {
-        debugger
-        let id = data;
-        Swal.fire("Saved Successfully!!");
-        location.href = "#/Assessmentdashboard"
-      })
+    this.assessmenrArray.push(json)
+    this.Question="";
+    this.Option1="";
+    this.Option3="";
+    this.Option4="";
+    this.CorrectAnswer="";
+    this.Weightage="";
+    this.AssessmentName="";
+
+ 
+
+    // this.LearningService.InsertAssessments(json).subscribe(
+    //   data => {
+    //     debugger
+    //     let id = data;
+    //     Swal.fire("Saved Successfully!!");
+    //     location.href = "#/Assessmentdashboard"
+    //   })
   }
+
+
+
+
+
+
+  entity:any
+  save() {
+    debugger
+    for (let i = 0; i <=this.assessmenrArray.length; i++) {
+      debugger
+    var entity = {
+        "CourseID": this.assessmenrArray[i].CourseID,
+        "ChapterID": this.assessmenrArray[i].ChapterID,
+        "QuestionID": this.assessmenrArray[i].QuestionID,
+        "Question": this.assessmenrArray[i].Question,
+        "Option1": this.assessmenrArray[i].Option1,
+        "Option2": this.assessmenrArray[i].Option2,
+        "Option3": this.assessmenrArray[i].Option3,
+        "Option4": this.assessmenrArray[i].Option4,
+        "CorrectAnswer": this.assessmenrArray[i].CorrectAnswer,
+        "weightage": this.assessmenrArray[i].weightage,
+        "AssessmentName": this.assessmenrArray[i].AssessmentNames
+      };
+      debugger
+      this.LearningService.InsertAssessments(entity).subscribe(
+        data => {
+          debugger
+          let id = data;
+        })      
+
+        Swal.fire("Saved Successfully!!");
+        this.tablecout = 0;
+
+    }
+   
+        location.href = "#/Assessmentdashboard"
+       
+  }
+
 
   getCorrectAnswer(event: any) {
     debugger
@@ -185,8 +239,6 @@ export class AssessmentFormComponent implements OnInit {
     if (value == 'D') {
       this.CorrectAnswer = this.Option4;
     }
-
-
   }
   show: any;
   show2: any;
@@ -200,9 +252,8 @@ export class AssessmentFormComponent implements OnInit {
   //   this.show2=value;
   // }
 
-  getcourseid(even:any){
-    this.courseid=even.target.value;
-    this.ChapterList=this.dumchapterlist.filter((x: { courseID: any; })=>x.courseID==this.courseid)
+  getcourseid(even: any) {
+    this.courseid = even.target.value;
+    this.ChapterList = this.dumchapterlist.filter((x: { courseID: any; }) => x.courseID == this.courseid)
   }
-
 }

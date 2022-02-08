@@ -1,5 +1,6 @@
 
 
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LearningService } from 'src/app/learning.service';
@@ -38,9 +39,12 @@ export class CatalogComponent implements OnInit {
   categorylist: any;
   userid: any;
   manager: any;
+  Emplist:any;
 
 
-
+  manageremail:any;
+  managlist:any;
+  emplyphn:any;
   ngOnInit(): void {
     this.userid = sessionStorage.getItem('userid');
     this.GetCourse();
@@ -52,7 +56,11 @@ export class CatalogComponent implements OnInit {
 
     this.LearningService.GetMyDetails().subscribe(data => {
       debugger
-      this.stafflist = data.filter(x => x.id == this.userid);;
+      this.stafflist = data.filter(x => x.id == this.userid);
+      this.managlist = data.filter(x=>x.id==this.manager)    
+      this.manageremail=this.managlist[0].emailID
+      this.Emplist = data.filter(x=>x.id==this.userid)
+      this.emplyphn = this.Emplist[0].phoneNo
     });
     // this.showfullcards=1;
     this.show1 = 1;

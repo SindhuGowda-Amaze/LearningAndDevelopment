@@ -82,13 +82,19 @@ export class MyCourseDashboardComponent implements OnInit {
   }
 
   latestcoursedetails:any;
-
+  lastassigned:any;
   public GetApproveCourse() {
     debugger
     this.LearningService.GetApproveCourse(this.userid).subscribe(data => {
       debugger
       this.coursedetails = data;
       this.latestcoursedetails = data[0];
+      if(this.latestcoursedetails.length=0){
+        this.lastassigned=0;
+      }
+      else{
+        this.lastassigned=1;
+      }
 
       debugger
     })

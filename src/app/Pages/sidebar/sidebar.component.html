@@ -46,7 +46,30 @@
             &nbsp;
             <span [ngClass]="active == 'Assessments' ? 'Active1' : 'Active3'"> Assessments </span>
         </a>
+         
+        <a *ngIf="roleid==4" routerLink="/EmployeeAssessmentResult" class="tablinks" (click)="highlight($event)"
+        (click)="employeeAssessment()">
+        <img src="assets/Images/online-test (3).png" style="width:13% ;margin-right: 17px;"
+            [ngClass]="active == 'employeeAssessment' ? 'Active1' : 'Active2'" />
+        <img [ngClass]="active != 'employeeAssessment' ? 'Active1' : 'Active2'"
+            src="assets/Images/New folder/online-test (2).png" style="width:13%; margin-right: 17px;">
+        &nbsp;
+        <span [ngClass]="active == 'employeeAssessment' ? 'Active1' : 'Active3'">Employee Assessment </span>
+    </a>
 
+    <a *ngIf="roleid==4" routerLink="/EmployeeAssessmentResult" class="tablinks" (click)="highlight($event)"
+    (click)="Assessmentresult()">
+    <img src="assets/Images/people.png" style="width:13% ;margin-right: 17px;"
+        [ngClass]="active == 'assessmentresult' ? 'Active1' : 'Active2'" />
+    <img [ngClass]="active != 'assessmentresult' ? 'Active1' : 'Active2'"
+        src="assets/Images/New folder/people (1).png" style="width:13%; margin-right: 17px;">
+    &nbsp;
+    <span [ngClass]="active == 'assessmentresult' ? 'Active1' : 'Active3'">Assessment Result</span>
+</a>
+
+
+
+           
         <a data-toggle="collapse" class="togglebtn button" data-target="#userapplications" *ngIf="roleid==1"
             class="tablinks" (click)="highlight($event)" (click)="setup()">
 
