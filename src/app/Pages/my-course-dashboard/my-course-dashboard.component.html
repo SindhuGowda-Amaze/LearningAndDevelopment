@@ -24,7 +24,7 @@
         </div>
         <div class="col-lg-3">
             <div class="card1" style="background-color: white; height:290px;width: 290px; border-radius: 10px;">
-                <img class="card-img-top" style="width:200px;height:auto; margin-left: 15px; margin-top: 15px;"
+                <img class="card-img-top" style="width: 90%; height: 65px; margin-left: 15px; margin-top: 15px;"
                     src="{{latestcoursedetails.photo}}" alt="Card image cap">
                 <div class="card-body">
                     <div class="row">
@@ -177,20 +177,20 @@
                         <br>
                         <div class="row">
                             <div class="col-lg-12">
-                                <img  style="width:100px;height:auto;overflow-y: hidden;" src="{{details.photo}}">
+                                <img style="width: 100%; height: 65px; overflow-y: hidden;" src="{{details.photo}}">
                             </div>
                         </div><br>
+                        
 
                         <div class="row">
                             <div class="col-lg-12">
                                 <p class="name2" style="overflow-y: auto;height: 25px;">{{details.name}}</p>
                             </div>
                         </div>
-                        <div class="row startdate">
+                        <div class="row">
                             <div class="col-lg-6">
                                 <p>Start Date: {{details.startDate}} </p>
                             </div>
-
                             <div class="col-lg-6">
                                 <p style="float:right">End Date: {{details.endDate}} </p>
                             </div>
@@ -200,19 +200,7 @@
                                 <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
                             </div>
                         </div><br>
-                        <!-- <div class="row card-footer">
-                            <div class="col-lg-3"></div>
-                            <div class="col-lg-6">
-                                <button class="edit" [routerLink]="['/StartMyCourse',details.id]"
-                                    *ngIf="show==2||show==1">Start
-                                    Course</button>
-                                <button class="edit" data-toggle="modal" data-target="#enroll" *ngIf="show==3"
-                                    (click)="getcourseid(details.id)">
-                                    Enroll</button>
-                                <button class="edit" *ngIf="show==4" (click)="getcourseid(details.id)">
-                                    Completed</button>
-                            </div>
-                        </div> -->
+
                         <div class="card-footer card-footer__events text-muted" style="text-align: center;">
                             <button class="edit" [routerLink]="['/StartMyCourse',details.id]"
                                 *ngIf="show==2||show==1">Start
@@ -225,101 +213,159 @@
                         </div>
 
                     </div>
-                </div>
+                </div><br><br>
 
+                <!-- <div class="container-fluid ">
+                    <div class="card-group">
+                        <div class="card card--lightBg">
+                            <div class="card-block">
+                                <h4 class="card-title">
+                                    <img style="width: 100px; height: 65%;" src="{{details.photo}}">
+                                </h4>
+                                <p class="card-text card-text__events">This is a longer card with supporting text below
+                                    as a natural lead-in to additional content. This content is a little bit longer.
+                                    This content is a little bit longer. This content is a little bit longer. This
+                                    content is a little bit longer. This content is a little bit longer.</p>
 
-                <!-- <div class="container">
-                    <div class="card">
-                        <div class="card-inner">
-                            <div class="card-header">
-                                1st card
-                            </div>
-                            <div class="card-body">
-                                Meatloaf cupim drumstick, pig swine kielbasa frankfurter jerky pastrami ball tip bacon
-                                short ribs kevin. Fatback tri-tip kielbasa andouille, turkey hamburger rump beef ball
-                                tip swine filet mignon boudin frankfurter flank. Meatloaf sausage prosciutto,
-                                hamburger flank ribeye tenderloin turkey chuck.
-                            </div>
-                            <div class="card-footer">
-                                this should stick to the bottom
+                                <div class="card-footer card-footer__events text-muted">
+                                    Footer
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div> -->
 
 
+                    <!-- <div class="card1" style="background-color: white; height:290px;width:290;border-radius: 10px;">
+                        <div class="card-inner">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <img  style="width:100px;" src="{{details.photo}}">
+                                    </div>
+                                </div><br>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p class="name2" style="overflow-y: auto;height: 25px;">{{details.name}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="row startdate">
+                                    <div class="col-lg-6">
+                                        <p>Start Date: {{details.startDate}} </p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p style="float:right">End Date: {{details.endDate}} </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <progress id="file" value="0" max="100" style="width:100%;height:15px;">0%</progress>
+                                    </div>
+                                </div><br>
+
+                            </div>
+                            <div class="card-footer card-footer__events text-muted" style="text-align: center;">
+                                <button class="edit" [routerLink]="['/StartMyCourse',details.id]"
+                                *ngIf="show==2||show==1">Start
+                                Course</button>
+                            <button class="edit" data-toggle="modal" data-target="#enroll" *ngIf="show==3"
+                                (click)="getcourseid(details.id)">
+                                Enroll</button>
+                            <button class="edit" *ngIf="show==4" (click)="getcourseid(details.id)">
+                                Completed</button>
+                            </div>
+                        </div>
+                    </div> -->
 
 
-            </div>
-        </div>
+                    <!-- <div class="row card-footer">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6">
+                                <button class="edit" [routerLink]="['/StartMyCourse',details.id]"
+                                    *ngIf="show==2||show==1">Start
+                                    Course</button>
+                                <button class="edit" data-toggle="modal" data-target="#enroll" *ngIf="show==3"
+                                    (click)="getcourseid(details.id)">
+                                    Enroll</button>
+                                <button class="edit" *ngIf="show==4" (click)="getcourseid(details.id)">
+                                    Completed</button>
+                            </div>
+                        </div> -->
 
-    </div>
-
-    <ng-template #noResults>
-        <p class="NoResultShow"> No results found for "{{search}}" </p>
-    </ng-template>
-</div>
-
-
-
-<div id="enroll" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Enroll for Course</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body" *ngFor="let item of stafflist">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <label class="Text" style="font-weight: bold;">Name:</label>
-                    </div>
-                    <div class="col-lg-5">
-                        <input class="form-control" name="name" id="name" [(ngModel)]="name" placeholder="{{item.name}}"
-                            disabled>
-                    </div>
-                </div> <br>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <label class="Text" style="font-weight: bold;">Phone No:</label>
-                    </div>
-                    <div class="col-lg-5">
-                        <input class="form-control" name="mobile" id="mobile" [(ngModel)]="mobile"
-                            placeholder="{{item.mobile}}" disabled>
-                    </div>
-                </div> <br>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <label class="Text" style="font-weight: bold;">Email:</label>
-                    </div>
-                    <div class="col-lg-5">
-                        <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
-                            placeholder="{{item.emailID}}" disabled>
-                    </div>
-                </div> <br>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <label class="Text" style="font-weight: bold;">Manager:</label>
-                    </div>
-                    <div class="col-lg-5">
-                        <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
-                            placeholder="{{item.emailID}}" disabled>
-                    </div>
-                </div> <br>
-                <div class="row">
-                    <div class="col-lg-7"></div>
-                    <div class="col-lg-2">
-                        <button class="form-control Save" (click)="enroll(item.name,item.mobile,item.emailID)"
-                            data-dismiss="modal">Enroll</button>
-                    </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <!-- <hr>
+
+        </div>
+
+        <ng-template #noResults>
+            <p class="NoResultShow"> No results found for "{{search}}" </p>
+        </ng-template>
+    </div>
+
+
+
+    <div id="enroll" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Enroll for Course</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" *ngFor="let item of stafflist">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label class="Text" style="font-weight: bold;">Name:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input class="form-control" name="name" id="name" [(ngModel)]="name"
+                                placeholder="{{item.name}}" disabled>
+                        </div>
+                    </div> <br>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label class="Text" style="font-weight: bold;">Phone No:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input class="form-control" name="mobile" id="mobile" [(ngModel)]="mobile"
+                                placeholder="{{item.mobile}}" disabled>
+                        </div>
+                    </div> <br>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label class="Text" style="font-weight: bold;">Email:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
+                                placeholder="{{item.emailID}}" disabled>
+                        </div>
+                    </div> <br>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label class="Text" style="font-weight: bold;">Manager:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <input class="form-control" name="emailID" id="emailID" [(ngModel)]="emailID"
+                                placeholder="{{item.emailID}}" disabled>
+                        </div>
+                    </div> <br>
+                    <div class="row">
+                        <div class="col-lg-7"></div>
+                        <div class="col-lg-2">
+                            <button class="form-control Save" (click)="enroll(item.name,item.mobile,item.emailID)"
+                                data-dismiss="modal">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <hr>
                 <div class="col-lg-2">
                     <button data-dismiss="modal" class="form-control CloseBTN">Close</button>
                 </div> -->
+                </div>
             </div>
         </div>
     </div>
-</div>

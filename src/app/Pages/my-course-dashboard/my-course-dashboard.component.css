@@ -669,3 +669,41 @@ hr.new4 {
   left:0;
   width: 100%;
 }
+
+/* 
+
+.container-fluid {
+  margin-top:10px;
+}
+
+.card {
+	background-color: white;
+	border: 0px solid;
+	border-radius: 0;
+	margin-left:5px !important;
+	margin-right:5px !important;
+	margin-bottom: 10px !important;
+}
+
+.card-group {
+	display: flex;
+	width: 100%;
+}
+
+.card-block {
+	flex: 1 1 auto;
+  padding:10px;
+}
+
+
+.card-text__events {
+    padding-bottom: 50px;
+}
+
+
+.card-footer__events {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+} */
