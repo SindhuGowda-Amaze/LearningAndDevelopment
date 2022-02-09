@@ -635,6 +635,10 @@ export class LearningService {
       this.baseURL + '/Master/GetCourseDropdown');
   }
 
-
+  public GetChapterAssessment() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetChapterAssessment');
+  }
 
 }

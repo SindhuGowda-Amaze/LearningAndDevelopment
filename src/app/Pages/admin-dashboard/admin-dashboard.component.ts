@@ -113,7 +113,7 @@ export class AdminDashboardComponent implements OnInit {
             this.trainerlist = data;
           })
 
-          this.LearningService.GetChapter().subscribe(
+          this.LearningService.GetChapterAssessment().subscribe(
             data => {
               debugger
               this.assesmentlist = data;
