@@ -30,9 +30,9 @@ export class ChapterComponent implements OnInit {
   courseName: any;
   chapterText: any;
   show:any;
-  generalInstructions:any;
   Attachmentlist:any;
   assessmentName:any;
+  generalInstructions:any;
 
 
   ngOnInit(): void {
@@ -71,6 +71,8 @@ export class ChapterComponent implements OnInit {
       this.showChapterPhoto=this.result[0].chapterPhoto;
       this.chapterText=this.result[0].chapterText;
       this.chapterID=this.result[0].courseID;
+      this.assessmentName=this.result[0].assesmentName,
+      this.generalInstructions=this.result[0].generalInstructions
   
         }
       ) 
@@ -145,7 +147,8 @@ export class ChapterComponent implements OnInit {
       "Description": this.description,
       "ChapterPhoto": this.ChapterPhoto,
       "ChapterText": this.chapterText ,
-      "AssessmentName":this.assessmentName       
+      "AssessmentName":this.assessmentName ,
+      "GeneralInstructions":this.generalInstructions    
       };
     
       this.LearningService.UpdateChapter(json).subscribe(
@@ -204,6 +207,7 @@ export class ChapterComponent implements OnInit {
 
   onSelect(event: any) {
     console.log(event);
+    debugger
     this.files.push(...event.addedFiles);
     this.uploadattachments();
   }

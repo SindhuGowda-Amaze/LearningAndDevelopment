@@ -189,8 +189,8 @@ export class LoginComponent implements OnInit {
       'EmpID': id,
       'LoginDate': new Date()
     }
-    this.LearningService.InsertAttendance_New(entity).subscribe(
-      async( data:any) => {
+  await  this.LearningService.InsertAttendance_New(entity).subscribe(
+      (data:any) => {
         debugger
      localStorage.setItem('loginid',data);
       return 0;

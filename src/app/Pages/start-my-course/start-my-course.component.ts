@@ -50,7 +50,7 @@ export class StartMyCourseComponent implements OnInit {
       debugger
       this.coursename = this.coursedetails[0].courseName
       this.chaptername = this.coursedetails[0].name
-      this.chapterdescription = this.coursedetails[0].description
+      this.chapterdescription = this.coursedetails[0].chapterText
       this.chapterphoto = this.coursedetails[0].chapterPhoto
       this.ShowAttachments(this.coursedetails[0].id)
       this.show = 1
@@ -60,7 +60,7 @@ export class StartMyCourseComponent implements OnInit {
   getcoursedetails(details: any) {
     this.coursename = details.courseName
     this.chaptername = details.name
-    this.coursedescription = details.description
+    this.chapterdescription = details.chapterText
     this.chapterphoto = details.chapterPhoto
     this.ShowAttachments(details.id)
     this.show = 1
@@ -120,7 +120,7 @@ export class StartMyCourseComponent implements OnInit {
     if (this.Attachmentlist.length != 0) {
       this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'video')
       if (this.Attachmentlist.length != 0) {
-        // this.show = 2
+        //\\ this.show = 2
         window.open(this.Attachmentlist[0].photo, "_blank")
       }
       else {

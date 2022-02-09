@@ -153,7 +153,7 @@
             <!-- <i class="fa fa-users "></i> -->
 
         </a>
-        <a *ngIf="roleid==4" routerLink="/AttendanceNew" class="tablinks" (click)="highlight($event)"
+        <a *ngIf="roleid==4||roleid==2 || roleid==3||roleid==1" routerLink="/AttendanceNew" class="tablinks" (click)="highlight($event)"
             (click)="attendence()">
             <img src="assets/Images/people.png" style="width:13% ;margin-right: 17px;"
                 [ngClass]="active == 'ATTENDANCE' ? 'Active1' : 'Active2'" />

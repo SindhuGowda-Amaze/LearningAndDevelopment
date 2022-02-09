@@ -331,7 +331,7 @@ export class TakeAssessmentComponent implements OnInit {
           'Your Answers has been Submitted Sucessfully.',
           'success'
         )
-           location.href="/StartMyCourse";
+           location.href="#/MyCourseDashboard";
       }
     })
 

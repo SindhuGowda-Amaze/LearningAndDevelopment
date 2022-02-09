@@ -32,6 +32,7 @@ export class MyCourseDashboardComponent implements OnInit {
       this.manageremail=this.managlist[0].emailID
    
     });
+
     // this.show=2;
 
     
@@ -76,7 +77,12 @@ export class MyCourseDashboardComponent implements OnInit {
       this.GetApproveCourse();
     }
    else if (value == 3) {
-      this.GetCourse();
+    this.LearningService.GetCourse().subscribe(data => {
+      debugger
+      this.coursedetails = data.filter(x=> x.staffID!=this.userid);
+    });
+
+
     }
 
   }
