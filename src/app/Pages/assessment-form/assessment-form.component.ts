@@ -170,7 +170,6 @@ export class AssessmentFormComponent implements OnInit {
     this.Option2="";
     this.Option3="";
     this.Option4="";
-    this.CorrectAnswer="";
     this.Weightage="";
     this.AssessmentName="";
 
@@ -187,7 +186,22 @@ export class AssessmentFormComponent implements OnInit {
 
 
 
-
+  getCorrectAnswer(event: any) {
+    debugger
+    let value: any = event.target.value;
+    if (value == 'A') {
+      this.CorrectAnswer = this.Option1;
+    }
+    if (value == 'B') {
+      this.CorrectAnswer = this.Option2;
+    }
+    if (value == 'C') {
+      this.CorrectAnswer = this.Option3;
+    }
+    if (value == 'D') {
+      this.CorrectAnswer = this.Option4;
+    }
+  }
 
 
   entity:any
@@ -227,22 +241,7 @@ export class AssessmentFormComponent implements OnInit {
   }
 
 
-  getCorrectAnswer(event: any) {
-    debugger
-    let value: any = event.target.value;
-    if (value == 'A') {
-      this.CorrectAnswer = this.Option1;
-    }
-    if (value == 'B') {
-      this.CorrectAnswer = this.Option2;
-    }
-    if (value == 'C') {
-      this.CorrectAnswer = this.Option3;
-    }
-    if (value == 'D') {
-      this.CorrectAnswer = this.Option4;
-    }
-  }
+
   show: any;
   show2: any;
 

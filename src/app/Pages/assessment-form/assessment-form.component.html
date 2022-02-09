@@ -90,8 +90,7 @@
                     <div class="col-lg-2">
                         <ckeditor id="CorrectAnswer" name="CorrectAnswer" [(ngModel)]="CorrectAnswer" *ngIf="questionid==2"
                             data="<p>Enter Answer Here !</p>"></ckeditor>                           
-                        <select class="form-control" 
-                            (change)="getCorrectAnswer($event)" *ngIf="questionid==1" >
+                        <select class="form-control"  (change)="getCorrectAnswer($event)" *ngIf="questionid==1" >
                             <option value="0">Select Options</option>
                             <option value="A">Option1</option>
                             <option value="B">Option2</option>
