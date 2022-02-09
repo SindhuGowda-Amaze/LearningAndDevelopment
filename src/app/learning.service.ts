@@ -641,4 +641,13 @@ export class LearningService {
       this.baseURL + '/Master/GetChapterAssessment');
   }
 
+  public GetEnrollCourseChaptersAssessment() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetEnrollCourseChaptersAssessment');
+  }
+
+
+
+
 }

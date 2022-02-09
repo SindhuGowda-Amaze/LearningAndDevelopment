@@ -167,6 +167,7 @@ export class AssessmentFormComponent implements OnInit {
     this.assessmenrArray.push(json)
     this.Question="";
     this.Option1="";
+    this.Option2="";
     this.Option3="";
     this.Option4="";
     this.CorrectAnswer="";
@@ -212,14 +213,16 @@ export class AssessmentFormComponent implements OnInit {
         data => {
           debugger
           let id = data;
+          Swal.fire("Saved Successfully!!");
+          this.tablecout = 0;
+          location.href = "#/Assessmentdashboard"
         })      
 
-        Swal.fire("Saved Successfully!!");
-        this.tablecout = 0;
+
 
     }
    
-        location.href = "#/Assessmentdashboard"
+   
        
   }
 

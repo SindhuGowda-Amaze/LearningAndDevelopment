@@ -15,6 +15,8 @@ export class MyCourseDashboardComponent implements OnInit {
   stafflist: any;
   userid: any;
   search: any;
+  managlist:any;
+  manageremail:any;
   ngOnInit(): void {
 
     this.GetTrainerCourseMapping();
@@ -25,7 +27,10 @@ export class MyCourseDashboardComponent implements OnInit {
    this.Showcards(2);
     this.LearningService.GetMyDetails().subscribe(data => {
       debugger
-      this.stafflist = data.filter(x => x.id == this.userid);;
+      this.stafflist = data.filter(x => x.id == this.userid);
+      this.managlist = data.filter(x=>x.id==this.manager)    
+      this.manageremail=this.managlist[0].emailID
+   
     });
     // this.show=2;
 

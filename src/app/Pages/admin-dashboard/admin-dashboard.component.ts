@@ -80,7 +80,7 @@ export class AdminDashboardComponent implements OnInit {
             this.trainerlist = data.filter(x=>x.staffID==this.userid&&x.status=='Manager Approved');
           })
 
-          this.LearningService.GetEnrollCourseChapters().subscribe(
+          this.LearningService.GetEnrollCourseChaptersAssessment().subscribe(
             data => {
               debugger
               this.assesmentlist = data.filter(x=>x.staffID==this.userid&&x.status=='Manager Approved');

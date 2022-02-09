@@ -1,5 +1,4 @@
 <div class="container-fluid" style=" font-family: 'Poppins';">
-
     <div class="row">
         <div class="col-lg-10">
             <p class="headings">Catalog</p>
@@ -24,9 +23,6 @@
                     <span style="color: black; font-weight: 600;">{{count}} </span>Results</h3> -->
                 <!-- <p class="Count">Count: {{count}} </p> -->
             </div>
-            <!-- <div class="col-lg-2">
-                <input class="form-control" type="date" placeholder="By Dates" id="date" name="date" [(ngModel)]="search">
-            </div> -->
         </div>
     </div>
 
@@ -44,34 +40,12 @@
                     <a class="FilterBox " style="   background-color: #02cfff !important; color: white;"
                         *ngFor="let details of categorylist"> <input type="checkbox" value="{{details.id}}"
                             [(ngModel)]="details.checked" name="details.checked"
-                            (change)="filtercourse(details.name,details.id)"> {{details.name}}</a>
-                    <!-- 
-                    <a *ngFor="let details of categorylist1" class="FilterBox"
-                        style="  background-color: #02cfff !important; color: white;"> <input type="checkbox" value="1"
-                            [(ngModel)]="course" name="course"
-                            (change)="filtercourse(details.name,2)"> {{details.name}}</a>
-
-                    <a *ngFor="let details of categorylist2" class="FilterBox"
-                        style=" background-color: #02cfff !important; color: white;"> <input type="checkbox" value="1"
-                            [(ngModel)]="course2" name="course2"
-                            (change)="filtercourse(details.name,3)"> {{details.name}}</a>
-
-                    <a *ngFor="let details of categorylist3" class="FilterBox"
-                        style="  background-color: #02cfff !important; color: white;"> <input type="checkbox" value="1"
-                            [(ngModel)]="course3" name="course3"
-                            (change)="filtercourse(details.name,4)"> {{details.name}}</a> 
-
-                    <a *ngFor="let details of categorylist4" class="FilterBox"
-                        style="  background-color: #02cfff !important; color: white;"> <input type="checkbox" value="1"
-                            [(ngModel)]="course4" name="course4"
-                            (change)="filtercourse(details.name,5)"> {{details.name}}</a> <br> -->
-
+                            (change)="filtercourse(details.name,details.id)"> {{details.name}}</a> <br>
                     <button class="ShowMore" (click)="GetCourse()">Clear
                         Filter </button>
-
                 </div>
             </div>
-        </div>
+        </div><br>
         <div class="col-lg-9">
             <div class="row" *ngIf="(courselist | filter: search).length > 0; else noResults">
                 <div class="row" *ngIf="show1==1">
@@ -84,19 +58,6 @@
                                         <h5 class="card-title CardHead"><b>{{details.name}}</b><br>
                                         </h5>
                                         <p class="card-text CardBody">{{details.description}}</p>
-
-                                        <!-- <div class="row">
-                                            <div class="col-lg-5">
-                                                <button class="btn" data-toggle="modal" data-target="#enroll"
-                                                    (click)="getcoureid(details.id)">ENROLL</button>
-                                            </div>
-                                            <div class="col-lg-2"></div>
-                                            <div class="col-lg-5">
-                                                <button [routerLink]="['/ViewCourse',details.id]" class="btn">VIEW
-                                                    COURSE</button>
-                                            </div>
-                                        </div> -->
-
                                         <div class="card-footer card-footer__events text-muted" style="text-align: center;">
                                             <button class="btn" data-toggle="modal" data-target="#enroll"
                                                 (click)="getcoureid(details.id)">ENROLL</button> &nbsp;&nbsp;&nbsp;
@@ -104,8 +65,6 @@
                                             <button [routerLink]="['/ViewCourse',details.id]" class="btn">VIEW
                                                 COURSE</button>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div><br>
