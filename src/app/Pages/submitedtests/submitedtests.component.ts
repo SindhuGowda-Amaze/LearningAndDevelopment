@@ -22,8 +22,7 @@ export class SubmitedtestsComponent implements OnInit {
     this.LearningService.GetTestResponse().subscribe(
       data => {
         debugger
-        // this.result = data.filter(x => x.manager == this.manager );
-        this.result = data;
+        this.result = data.filter(x => x.checked == 1);
       })
   }
 

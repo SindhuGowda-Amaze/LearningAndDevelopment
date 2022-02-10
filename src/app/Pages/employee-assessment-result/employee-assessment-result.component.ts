@@ -58,8 +58,7 @@ export class EmployeeAssessmentResultComponent implements OnInit {
     // this.empid = details.id;
     this.LearningService.GetTestResponse().subscribe(data => {
       debugger
-      this.detailslist =data;
-      //  data.filter(x => x.userID == details.id);
+      this.detailslist =data.filter(x => x.checked == 1);
     });
 
   }

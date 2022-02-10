@@ -244,7 +244,7 @@ export class ChapterComponent implements OnInit {
         data => {
         debugger
         let result = data;
-        Swal.fire("Successfully Updated...!");
+        Swal.fire(" Updated  Successfully...!");
         this.LearningService.GetChapterAttachmentByChapterID(this.id).subscribe(data => {
           debugger
           this.Attachmentlist = data;
@@ -261,6 +261,38 @@ export class ChapterComponent implements OnInit {
     this.photoid=attchments.id
 
   }
+
+  Add(){
+      for (let i = 0; i < this.Attachment.length; i++) {
+        var entity = {
+          "ChapterID": this.id,
+          "ChapterAttachmentUrl": this.Attachment[i]
+        }
+        this.LearningService.InsertChapterAttachment(entity).subscribe(
+          data => {
+            debugger  
+            Swal.fire("Added Successfully...!"); 
+               this.Attachment.length=0;
+               this.files1.length=0;
+               this.files1=[];
+              
+            this.LearningService.GetChapterAttachmentByChapterID(this.id).subscribe(data => {
+              debugger
+              this.Attachmentlist = data;
+            })   
+          })    
+    }
+  }
+
+
+
+
+
+
+
+
+
+
 
 
 

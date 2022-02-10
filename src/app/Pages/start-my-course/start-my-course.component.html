@@ -13,28 +13,31 @@
                         style="width:400px; height:200px; padding-right:20px;">
                 </div>
                 <div class="col-lg-6" style="border-radius: 20px;">
-                    <p style="color:#0C275A;font-size: 13px;"><b>Course Materials</b></p>
-                    <div style="width:70%;border-radius: 20px;float: left;">
-                        <img src="assets/Images/Video_lcon.png" *ngIf="showvideo==1" alt="video_icon"
-                            style="width:10%;padding-top: 10px;"
-                            (click)="PreviewVideo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <img src="assets/pdf.jpg" *ngIf="showPdf==1" alt="video_icon"
-                            style="width:10%;padding-top: 10px;"
-                            (click)="PreviewPdf()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <img src="assets/Images/image.png" *ngIf="showimage==1" alt="video_icon"
-                            style="width:10%;padding-top: 10px;"
-                            (click)="PreviewIMG()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <img src="assets/Images/files.png" *ngIf="showPpt==1" alt="video_icon"
-                            style="width:10%;padding-top: 10px;"
-                            (click)="PreviewPPT()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <img src="assets/Images/word.png" *ngIf="showDocument==1" alt="video_icon"
-                            style="width:10%;padding-top: 10px;"
-                            (click)="PreviewMSword()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="row">
+                        <p style="color:#0C275A;font-size: 13px;"><b>Course Materials</b></p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1" *ngFor="let details of Attachmentlist">
+                            <img class="icon" *ngIf="details.attachmentType=='video'" src="assets/Images/Video_lcon.png"
+                                alt="video_icon" (click)="PreviewVideo(details.photo)">
+
+                            <img class="icon" *ngIf="details.attachmentType=='Pdf'" src="assets/pdf.jpg"
+                                alt="video_icon" (click)="PreviewPdf(details.photo)">
+
+                            <img class="icon" *ngIf="details.attachmentType=='Image'" src="assets/Images/image.png"
+                                alt="video_icon" (click)="PreviewIMG(details.photo)">
+
+                            <img class="icon" *ngIf="details.attachmentType=='Ppt'" src="assets/Images/files.png"
+                                alt="video_icon" (click)="PreviewPPT(details.photo)">
+
+                            <img class="icon" *ngIf="details.attachmentType=='Document'" src="assets/Images/word.png"
+                                alt="video_icon" (click)="PreviewMSword(details.photo)">
+
+                        </div>
                     </div>
                 </div>
 
-               
-                <div class="col-lg-12" *ngIf="show==2">                   
+                <div class="col-lg-12" *ngIf="show==2">
                     <video controls style="height: 80%; width: 100%;">
                         <source src="{{Attachmentlist[0].photo}}" type="video/mp4">
                         <source src="{{Attachmentlist[0].photo}}" type="video/ogg">

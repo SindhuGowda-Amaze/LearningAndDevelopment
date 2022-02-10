@@ -49,7 +49,8 @@
                         <td>{{details.staffname}}</td>
                         <td>{{details.coursename}}</td>
                         <td>{{details.chaptername}}</td>
-                        <td><button class="check" (click)="Check(details.id)" *ngIf="details.checked!=1">Check</button>
+                        <td>
+                            <!-- <button class="check" (click)="Check(details.id)" *ngIf="details.checked!=1">Check</button> -->
                             <button *ngIf="details.checked==1" [routerLink]="['/Checkanswer',details.id]" class="add" id="show==1">View
                             </button>
                         </td>
