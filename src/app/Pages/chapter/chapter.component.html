@@ -42,7 +42,8 @@
                         <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                     </ngx-dropzone-preview>
                 </ngx-dropzone>
-                <img src="{{showChapterPhoto}}" data-toggle="modal1" data-target="#exampleModal1" style="width: 100px;height:auto">
+                <img src="{{showChapterPhoto}}" data-toggle="modal1" data-target="#exampleModal1"
+                    style="width: 100px;height:auto">
             </div>
             <div class="col-lg-3" *ngIf="show==0">
                 <ngx-dropzone (change)="onSelect1($event)" style="width:100% ;height: auto;">
@@ -62,13 +63,13 @@
         <div class="row">
             <div class="col-lg-3">
                 <p>Chapter Text</p>
-            </div>   
+            </div>
             <div class="col-lg-5"></div>
             <div class="col-lg-3">
                 <p>Assessment Name</p>
-            </div>     
+            </div>
         </div>
-    
+
         <div class="row">
             <div class="col-lg-8" style="text-align: justify;">
                 <ckeditor id="chapterText" name="chapterText" [(ngModel)]="chapterText"
@@ -76,7 +77,7 @@
             </div>
 
             <div class="col-lg-3">
-                <input class="form-control" placeholder="Assessment Name"  [(ngModel)]="assessmentName" >
+                <input class="form-control" placeholder="Assessment Name" [(ngModel)]="assessmentName">
             </div>
         </div>
         <br>
@@ -87,16 +88,16 @@
                 <p>General Instructions</p>
             </div>
         </div>
-     
+
         <div class="row">
             <div class="col-lg-8" style="text-align: justify;">
-                <ckeditor id="generalinstructions" name="generalinstructions" [(ngModel)]="generalInstructions" 
+                <ckeditor id="generalinstructions" name="generalinstructions" [(ngModel)]="generalInstructions"
                     data="<p>Enter Answer Here !</p>"></ckeditor>
             </div>
         </div>
         <br>
 
-     
+
 
 
 
@@ -110,7 +111,7 @@
         <div class="card" style="width:60%" *ngIf="show==1">
             <div class="row">
                 <br>
-                <div class="col-lg-4" *ngFor="let attchments of Attachmentlist">
+                <div class="col-lg-2" *ngFor="let attchments of Attachmentlist">
                     <img src="{{attchments.photo}}" *ngIf="attchments.attachmentType=='Image'"
                         (click)="openAttchments(attchments.photo)" style="width:100px;height:100px;">
                     <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Pdf'"
@@ -119,21 +120,32 @@
                         (click)="openAttchments(attchments.photo)" style="width:100px;height:100px;">
                     <img src="assets/Images/files.png" *ngIf="attchments.attachmentType=='Ppt'"
                         (click)="openAttchments(attchments.photo)" style="width:100px;height:100px;">
-                    <video controls style="height:100px;width: 50%;" *ngIf="attchments.attachmentType=='video'"
+                    <video controls style="height:100px;width: 100%;" *ngIf="attchments.attachmentType=='video'"
                         (click)="openAttchments(attchments.photo)">
                         <source src="{{attchments.photo}}" (click)="openAttchments(attchments.photo)" type="video/mp4">
                         <source src="{{attchments.photo}}" (click)="openAttchments(attchments.photo)" type="video/ogg">
                         Your browser does not support the video tag.
                     </video><br><br>
                     <div class="row">
-                        <div class="col-lg-6" style="margin-left: 15px;">
+                        <div class="col-lg-12" style="margin-left: 15px;">
                             <button class="edit" data-toggle="modal" data-target="#exampleModal"
-                             (click)="Edit(attchments)">EDIT</button>
+                                (click)="Edit(attchments)">EDIT</button>
                         </div>
-                    </div>              
+                    </div>
                 </div>
             </div> <br>
+
+            <div class="row">
+                <div class="col-lg-10"></div>
+                <div class="col-lg-2">
+                    <button class="edit" data-toggle="modal" data-target="#exampleModal1" (click)="Add()">ADD</button>
+                </div>
+            </div>
         </div>
+
+
+
+
 
         <div class="row">
             <div class="col-lg-9"></div>
@@ -142,18 +154,12 @@
             </div>
             <div class="col-lg-1">
                 <button class="form-control  cancel" *ngIf="id==undefined" (click)="Save()">Save</button>
-                <button class="form-control  cancel " *ngIf="id!= undefined" (click)="Update()">Update</button>
+                <button class="form-control  cancel" *ngIf="id!= undefined" (click)="Update()">Update</button>
             </div>
             <div class="col-lg-1"></div>
         </div><br>
     </div>
 </div>
-
-
-
-
-
-
 
 
 
@@ -197,7 +203,7 @@
             <div class="modal-footer">
 
                 <!-- <button type="button" class="cancel" data-dismiss="modal">Close</button> -->
-            
+
             </div>
         </div>
     </div>
@@ -205,3 +211,44 @@
 
 
 
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Here</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <ngx-dropzone (change)="onSelect1($event)" style="width:100% ;height: auto;">
+                            <ngx-dropzone-label>
+                                <img class="image" src="assets/Images/youtube.png">&nbsp;&nbsp;
+                                <img class="image" src="assets/Images/word.png">&nbsp;&nbsp;
+                                <img class="image" src="assets/Images/pdf.png">&nbsp;&nbsp;
+                                <img class="image" src="assets/Images/image.png">&nbsp;&nbsp;
+                                <img class="image" src="assets/Images/files.png">&nbsp;&nbsp;
+                            </ngx-dropzone-label>
+                            <ngx-dropzone-preview *ngFor="let f of files1" [removable]="true" (removed)="onRemove1(f)">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-preview>
+                        </ngx-dropzone>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10"></div>
+                    <div class="col-lg-2">
+                        <button type="button" class="cancel" (click)="Add()"  data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="cancel" data-dismiss="modal">Close</button> -->
+            </div>
+        </div>
+    </div>
+</div>
