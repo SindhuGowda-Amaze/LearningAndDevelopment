@@ -17,7 +17,9 @@ export class EmployeeAssessmentResultComponent implements OnInit {
   count: any;
   staffid: any;
   manager: any;
+  trainer:any; 
   courselist: any;
+  Checkid:any;
   constructor(public LearningService: LearningService) { }
 
   ngOnInit(): void {
@@ -25,6 +27,13 @@ export class EmployeeAssessmentResultComponent implements OnInit {
     // this.show = 2;
     this.staffid = localStorage.getItem('userid');
     this.manager = localStorage.getItem('manager');
+    this.trainer =localStorage.getItem('trainerid');
+    if(this.trainer==undefined){
+      this.Checkid=0;
+    }
+    else{
+      this.Checkid=1;
+    }
 
     this.LearningService.GetMyDetails().subscribe(
       data => {
@@ -56,9 +65,10 @@ export class EmployeeAssessmentResultComponent implements OnInit {
   public getdetailslist() {
     debugger
     // this.empid = details.id;
-    this.LearningService.GetTestResponse().subscribe(data => {
+    this.LearningService.GetTestResponsenew().subscribe(data => {
       debugger
-      this.detailslist =data.filter(x => x.checked == 1);
+      this.detailslist =data;
+      // .filter(x => x.checked == 1);
     });
 
   }

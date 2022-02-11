@@ -38,6 +38,8 @@ import { AttendanceNewComponent } from './Pages/attendance-new/attendance-new.co
 import { EmployeeAssessmentResultComponent } from './Pages/employee-assessment-result/employee-assessment-result.component';
 import { AssessmentDashboardnewComponent } from './assessment-dashboardnew/assessment-dashboardnew.component';
 import { FinalResultComponent } from './Pages/final-result/final-result.component';
+import { AssesmentDetailsComponent } from './assesment-details/assesment-details.component';
+import { StartMyCourseNewComponent } from './Pages/start-my-course-new/start-my-course-new.component';
 
 
 
@@ -90,7 +92,9 @@ const routes: Routes = [
   {path:'AttendanceNew',component:AttendanceNewComponent},
   {path:'EmployeeAssessmentResult',component:EmployeeAssessmentResultComponent},
   {path:'AssessmentDashboardnew',component: AssessmentDashboardnewComponent},
-  {path:'FinalResult',component:FinalResultComponent}
+  {path:'FinalResult',component:FinalResultComponent},
+  {path:'AssesmentDetails',component:AssesmentDetailsComponent},
+  {path:'StartMyCourseNew/:id',component:StartMyCourseNewComponent}
 
 
 

@@ -162,6 +162,7 @@ export class LoginComponent implements OnInit {
         if (this.result != undefined || this.result != null) {
           sessionStorage.setItem('UserName', this.result.name);
           sessionStorage.setItem('userid', this.result.id);
+          localStorage.setItem('trainerid',this.result.id)
           sessionStorage.setItem('temp', '1');
           sessionStorage.setItem('role', 'Trainer');
           sessionStorage.setItem('roleid', '4');

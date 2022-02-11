@@ -18,6 +18,7 @@ export class MyCourseDashboardComponent implements OnInit {
   managlist:any;
   manageremail:any;
   ngOnInit(): void {
+  
 
     this.GetTrainerCourseMapping();
 
@@ -81,10 +82,7 @@ export class MyCourseDashboardComponent implements OnInit {
       debugger
       this.coursedetails = data.filter(x=> x.staffID!=this.userid);
     });
-
-
     }
-
   }
 
   getcourseid(id:any)
@@ -112,10 +110,19 @@ export class MyCourseDashboardComponent implements OnInit {
   }
 
 
+  testresponse:any;
+  GetTestResponse() {
+    this.LearningService.GetTestResponse().subscribe(data => {
+      debugger
+      this.testresponse = data;
+    });
+  }
+
+
   GetCourse() {
     this.LearningService.GetCourse().subscribe(data => {
       debugger
-      this.coursedetails = data;
+      this.coursedetails = data;;
     });
   }
 
@@ -168,14 +175,22 @@ export class MyCourseDashboardComponent implements OnInit {
 
   countlist: any;
   public GetAllCounts() {
-    debugger
-    
+    debugger 
       this.LearningService.GetAllCounts(0, 2).subscribe(
         data => {
           debugger
           this.countlist = data[0];
         })
     
+     
+      
+
+
+
+
+
+
+
 
   }
 

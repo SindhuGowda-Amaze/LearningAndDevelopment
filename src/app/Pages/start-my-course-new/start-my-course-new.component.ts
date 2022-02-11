@@ -1,28 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { LearningService } from 'src/app/learning.service';
 import { ActivatedRoute } from '@angular/router';
-import Swal from 'sweetalert2';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'
+
 
 @Component({
-  selector: 'app-start-my-course',
-  templateUrl: './start-my-course.component.html',
-  styleUrls: ['./start-my-course.component.css']
+  selector: 'app-start-my-course-new',
+  templateUrl: './start-my-course-new.component.html',
+  styleUrls: ['./start-my-course-new.component.css']
 })
-export class StartMyCourseComponent implements OnInit {
+export class StartMyCourseNewComponent implements OnInit {
+  [x: string]: any;
+
+  constructor(private LearningService: LearningService, private ActivatedRoute: ActivatedRoute,private sanitizer: DomSanitizer) { }
 
   courseid: any;
-  coursedetails: any;
-  coursename: any;
-  chaptername: any;
-  chapterdescription: any;
-  chapterphoto: any;
-  noattachments: any;
-  coursedescription: any;
-
-
-  constructor(private LearningService: LearningService, private ActivatedRoute: ActivatedRoute) { }
-
-  Attachmentlist: any;
 
   ngOnInit(): void {
     this.ActivatedRoute.params.subscribe(params => {
@@ -34,11 +26,14 @@ export class StartMyCourseComponent implements OnInit {
     this.show = 1;
   }
 
-  clickEvent() {
-    this.show = 1;
-  }
-  ID: any;
+
+  coursedetails: any;
   chapterdetails: any;
+  coursename: any;
+  chaptername: any;
+  chapterdescription: any;
+  chapterphoto: any;
+  show: any;
   public GetChapter() {
     debugger
     this.LearningService.GetChapterListByEmployeeID(sessionStorage.getItem('userid')).subscribe(data => {
@@ -55,7 +50,6 @@ export class StartMyCourseComponent implements OnInit {
       this.show = 1
     })
   }
-
   getcoursedetails(details: any) {
     this.coursename = details.courseName
     this.chaptername = details.name
@@ -65,12 +59,19 @@ export class StartMyCourseComponent implements OnInit {
     this.show = 1
   }
 
+  showcard: any;
+  clickcard() {
+    this.showcard = 1;
+  }
+
+  Attachmentlist: any;
   dummAttachmentlist: any;
   showvideo: any;
   showimage: any;
   showPdf: any;
   showDocument: any;
   showPpt: any;
+
 
 
   ShowAttachments(id: any) {
@@ -112,16 +113,18 @@ export class StartMyCourseComponent implements OnInit {
 
 
 
+  noattachments: any;
 
-  public PreviewVideo(photo:any) {
+  public PreviewVideo(photo: any) {
     debugger
-    window.open(photo, "_blank")
-
-    // if (this.Attachmentlist.length != 0) {
+    this.show = 2;
+    this.chapterphoto = photo;
+    
+    //    if (this.Attachmentlist.length != 0) {
     //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'video')
     //   if (this.Attachmentlist.length != 0) {
-    //     //\\ this.show = 2
-      
+    //     // this.show = 2
+
     //   }
     //   else {
     //     this.noattachments = "No Videos Found"
@@ -135,8 +138,13 @@ export class StartMyCourseComponent implements OnInit {
     // }
 
   }
-  public PreviewPdf(photo:any) {
-    window.open(photo, "_blank")
+
+
+
+  public PreviewPdf(photo: any) {
+    this.show = 3
+    this.chapterphoto=this.sanitizer.bypassSecurityTrustResourceUrl(photo);
+    // window.open(photo, "_blank")
     // if (this.Attachmentlist.length != 0) {
     //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Pdf')
     //   if (this.Attachmentlist.length != 0) {
@@ -153,12 +161,14 @@ export class StartMyCourseComponent implements OnInit {
     //   this.noattachments = "No Pdf Available"
     //   this.show = 5
     // }
-  }
+  } domSanitizer: any;
+  ppt:any
 
-
-
-  public PreviewPPT(photo:any) {
+  public PreviewPPT(photo: any) {
+    // this.show = 4;
     window.open(photo, "_blank")
+  //  this.ppt=this.sanitizer.bypassSecurityTrustResourceUrl(photo);
+    // window.open(photo, "_blank")
     // if (this.Attachmentlist.length != 0) {
     //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Ppt')
     //   if (this.Attachmentlist.length != 0) {
@@ -178,13 +188,14 @@ export class StartMyCourseComponent implements OnInit {
 
 
 
-  public PreviewMSword(photo:any) {
-
+  public PreviewMSword(photo: any) {
+    //  this.show=4;
+    // this.chapterphoto=photo;
+    // this.chapterphoto=this.sanitizer.bypassSecurityTrustResourceUrl(photo);
     window.open(photo, "_blank")
     // if (this.Attachmentlist.length != 0) {
     //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Document')
     //   if (this.Attachmentlist.length != 0) {
-    //     //  this.show=3
     //   }
     //   else {
     //     this.noattachments = "No Document Available"
@@ -198,9 +209,12 @@ export class StartMyCourseComponent implements OnInit {
     // }
 
   }
-  public PreviewIMG(photo:any) {
-    window.open(photo, "_blank")
-    
+
+  public PreviewIMG(photo: any) {
+    this.show = 1;
+    this.chapterphoto = photo;
+    // window.open(photo, "_blank")   
+    // this.ActivatedRoute.
     // if (this.Attachmentlist.length != 0) {
     //   debugger
     //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Image')
@@ -220,36 +234,13 @@ export class StartMyCourseComponent implements OnInit {
     // }
   }
 
-  show: any;
-  show1: any;
-  show2: any;
-  show3: any;
-  show4: any;
-  show5: any;
 
-  showcards(value: any) {
-    debugger
-    this.show = value;
-  }
 
-  // DisableStaff1(value: any) {
 
-  //   var eb = {
 
-  //     'ID': value,
-  //     'Enable_Disable': 0
-  //   }
 
-  // }
 
-  DisableStaff1() {
-    this.show = 1;
-  }
 
-  showcard:any;
-  clickcard(){
-  this.showcard=1;
-  }
 
 
 
@@ -258,3 +249,17 @@ export class StartMyCourseComponent implements OnInit {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

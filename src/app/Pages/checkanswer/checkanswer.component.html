@@ -25,7 +25,7 @@
                         <div style="margin-bottom: 10px;" >{{list.question}}</div>
                     </div>
                     <div class="col-lg-5" style="text-align: start;">
-                        <button *ngIf="list.type==2" class=" submit" (click)="getdetailslist(list)"
+                        <button *ngIf="list.type==2" class="submit1" (click)="getdetailslist(list)"
                             data-toggle="modal" data-target="#myModal">View Answer</button>
                         <div *ngIf="list.type==1" style="margin-bottom: 10px; margin-left: 100px;">{{list.userAnswer}}</div>
                     </div>
@@ -47,8 +47,8 @@
                     <div class="col-lg-4"></div>
                     <div class="col-lg-4">
                         <!-- <button type="button" class=" btn-success submit" (click)="submitAnswer()">Submit</button>  -->
-                        <!-- <button type="button" class=" btn-success submit"  (click)="UpdateResult()">Submit</button>  -->
-                        <button type="button" class=" btn-success submit"  routerLink="/EmployeeAssessmentResult">Go Back</button> 
+                        <button type="button" class=" btn-success submit"  (click)="UpdateResult()">Submit</button> &nbsp;
+                        <!-- <button type="button" class=" btn-success submit"  routerLink="/EmployeeAssessmentResult">Go Back</button>  -->
                     </div>
                     <div class="col-lg-4"></div>
                 </div>

@@ -647,6 +647,30 @@ export class LearningService {
       this.baseURL + '/Master/GetEnrollCourseChaptersAssessment');
   }
 
+  
+  public GetTestResponsenew() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetTestResponsenew');
+  }
+
+  public GetEmpcoursecounts() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetEmpcoursecounts');
+  }
+
+  public UpdateEmpCoursedetails() {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/UpdateEmpCoursedetails');
+  }
+
+
+
+
+
+
 
 
 

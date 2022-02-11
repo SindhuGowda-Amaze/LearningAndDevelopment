@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
@@ -56,6 +57,8 @@ import { AttendanceNewComponent } from './Pages/attendance-new/attendance-new.co
 import { EmployeeAssessmentResultComponent } from './Pages/employee-assessment-result/employee-assessment-result.component';
 import { AssessmentDashboardnewComponent } from './assessment-dashboardnew/assessment-dashboardnew.component';
 import { FinalResultComponent } from './Pages/final-result/final-result.component';
+import { AssesmentDetailsComponent } from './assesment-details/assesment-details.component';
+import { StartMyCourseNewComponent } from './Pages/start-my-course-new/start-my-course-new.component';
 
 
 
@@ -106,6 +109,8 @@ const ngWizardConfig: NgWizardConfig = {
     EmployeeAssessmentResultComponent,
     AssessmentDashboardnewComponent,
     FinalResultComponent,
+    AssesmentDetailsComponent,
+    StartMyCourseNewComponent,
 
   
   ],
@@ -117,6 +122,7 @@ const ngWizardConfig: NgWizardConfig = {
     AppRoutingModule,
     NgxDropzoneModule,
     CKEditorModule,
+    PdfViewerModule ,
     // NgxFullCalendarModule,
     HttpClientModule,
     NgWizardModule.forRoot(ngWizardConfig),

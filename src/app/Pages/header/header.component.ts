@@ -49,7 +49,6 @@ export class HeaderComponent implements OnInit {
     this.insertattdancelogout();
     localStorage.clear();
     sessionStorage.clear();
-
     location.href = "#/Login";
     location.reload();
   }

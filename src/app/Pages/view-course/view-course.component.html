@@ -68,16 +68,15 @@
     </div>
 </div> <br>
 
-<div class="container-fluid">
+ <div class="container-fluid">
     <div class="card card2">
         <div class="row">
             <div class="col-lg-7 ">
-                <div class="col-lg-12 chapter" data-toggle="collapse" id="#demo4"
+                <div class="col-lg-12 chapter" 
                     style="font-size: 20px; text-align: center; padding:10px;color: black;">
                     <a href="#demo4" class="chapter" data-toggle="collapse" style="font-size: 18px;color: black;">
                         Sample Chapter</a>
                 </div>
-
                 <div id="demo4" class="collapse">
                     <div class="card chapter" *ngFor="let details of chapterdetails">
                         <div class="row">
@@ -138,13 +137,19 @@
             </div>
         </div>
     </div>
-</div>
+</div> 
 
-<!-- <div class="w3-bar w3-gray">
-    <button class="w3-bar-item w3-sample" (click)="highlight($event)">Sample Chapters</button>
-    <button class="w3-bar-item w3-button" (click)="highlight($event)">Chapter</button>
-    
-  </div> -->
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -163,7 +168,6 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                 </div>
-               
             </div>
             <div class="modal-body" *ngFor="let item of stafflist">
                 <div class="row">
@@ -203,10 +207,6 @@
             </div>
             <div class="modal-footer">
                 <hr>
-                <!-- <div class="col-lg-10"></div>
-                <div class="col-lg-2">
-                    <button data-dismiss="modal" class="CloseBTN">Close</button> 
-                </div>-->
             </div>
         </div>
     </div>
