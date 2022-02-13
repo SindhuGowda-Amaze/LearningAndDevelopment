@@ -161,12 +161,13 @@ export class StartMyCourseNewComponent implements OnInit {
     //   this.noattachments = "No Pdf Available"
     //   this.show = 5
     // }
-  } domSanitizer: any;
+  }
+   domSanitizer: any;
   ppt:any
-
   public PreviewPPT(photo: any) {
-    // this.show = 4;
-    window.open(photo, "_blank")
+    this.show = 4;
+    this.chapterphoto="https://docs.google.com/gvie"+photo;
+    // window.open(photo, "_blank")
   //  this.ppt=this.sanitizer.bypassSecurityTrustResourceUrl(photo);
     // window.open(photo, "_blank")
     // if (this.Attachmentlist.length != 0) {
@@ -189,10 +190,13 @@ export class StartMyCourseNewComponent implements OnInit {
 
 
   public PreviewMSword(photo: any) {
+     debugger
+    this.show=5;
+    this.chapterphoto=this.sanitizer.bypassSecurityTrustResourceUrl(photo);
     //  this.show=4;
     // this.chapterphoto=photo;
     // this.chapterphoto=this.sanitizer.bypassSecurityTrustResourceUrl(photo);
-    window.open(photo, "_blank")
+    // window.open(photo, "_blank")
     // if (this.Attachmentlist.length != 0) {
     //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Document')
     //   if (this.Attachmentlist.length != 0) {

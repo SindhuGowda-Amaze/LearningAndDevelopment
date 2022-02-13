@@ -19,11 +19,12 @@ export class MyCourseDashboardComponent implements OnInit {
   manageremail:any;
   ngOnInit(): void {
   
-
-    this.GetTrainerCourseMapping();
-
-    this.userid = sessionStorage.getItem('userid')
     this.manager = sessionStorage.getItem('manager')
+    this.userid = sessionStorage.getItem('userid')
+    this.GetTrainerCourseMapping();
+    this.GetEmpcoursecounts();
+
+   
 
    this.Showcards(2);
     this.LearningService.GetMyDetails().subscribe(data => {
@@ -181,24 +182,30 @@ export class MyCourseDashboardComponent implements OnInit {
           debugger
           this.countlist = data[0];
         })
-    
-     
-      
-
-
-
-
-
-
-
-
   }
 
+  empcountlist:any;
+  public GetEmpcoursecounts() {
+    debugger 
+      this.LearningService.GetEmpcoursecounts(this.userid).subscribe(
+        data => {
+          debugger
+          this.empcountlist = data[0];
+        })
+
+      }
 
 
-
-
-
+      getenrollid(id:any)
+      {
+        debugger 
+        this.LearningService.UpdateEmpCoursedetails(id).subscribe(
+          data => {
+            debugger
+            this.empcountlist = data[0];
+          })
+  
+      }
 
 
 }

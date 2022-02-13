@@ -54,20 +54,20 @@
                             <br>
                             <p class="text-center CARDHead">Training</p>
                             <br>
-                            <div class="row">
+                            <div class="row" >
                                 <div class="col-lg-4">
                                     <button type="button" class="btn btn-danger"
-                                        style="margin-left: 15px;">{{countlist.notStarted}}</button><br>
+                                        style="margin-left: 15px;">{{empcountlist.notstarted}}</button><br>
                                     <p class="text-center CARDHead3"><b>Not Started</b></p>
                                 </div>
                                 <div class="col-lg-4">
                                     <button type="button" class="btn btn-light"
-                                        style="margin-left: 15px;">{{countlist.inProgress}}</button><br>
+                                        style="margin-left: 15px;">{{empcountlist.inprogress}}</button><br>
                                     <p class="text-center CARDHead3"><b>In progress</b></p>
                                 </div>
                                 <div class="col-lg-4">
                                     <button type="button" class="btn btn-success"
-                                        style="margin-left: 15px;">0</button><br>
+                                        style="margin-left: 15px;">{{empcountlist.completed}}</button><br>
                                     <p class="text-center CARDHead3"><b>Completed</b></p>
                                 </div>
                             </div>
@@ -253,8 +253,11 @@
                         <div class="row" style="text-align: center;margin-top: 0px;">
                             <div class="col-lg-12">
                                 <button class="edit" [routerLink]="['/StartMyCourseNew',details.id]"
-                                    *ngIf="details.enrollid!=0">Start
-                                    Course</button>                            
+                                    *ngIf="details.enrollid!=0&&details.notStarted==0" (click)="getenrollid(details.enrollid)">Start
+                                    Course</button>    
+                                    <button class="edit" [routerLink]="['/StartMyCourseNew',details.id]"
+                                    *ngIf="details.enrollid!=0&&details.notStarted==1" (click)="getenrollid(details.enrollid)">Open
+                                    </button>                            
                                 <button class="edit" data-toggle="modal" data-target="#enroll" *ngIf="details.enrollid=='0'"
                                     (click)="getcourseid(details.id)"> &nbsp;&nbsp;
                                     Enroll</button>
@@ -271,9 +274,6 @@
     <p class="NoResultShow"> No results found for "{{search}}" </p>
 </ng-template>
 </div> 
-
-
-
 <div id="enroll" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

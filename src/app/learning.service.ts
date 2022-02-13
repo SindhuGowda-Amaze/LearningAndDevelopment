@@ -654,16 +654,16 @@ export class LearningService {
       this.baseURL + '/Master/GetTestResponsenew');
   }
 
-  public GetEmpcoursecounts() {
+  public GetEmpcoursecounts(StaffID:any) {
     debugger;
     return this.http.get<any[]>(
-      this.baseURL + '/Master/GetEmpcoursecounts');
+      this.baseURL + '/Master/GetEmpcoursecounts?StaffID='+StaffID);
   }
 
-  public UpdateEmpCoursedetails() {
+  public UpdateEmpCoursedetails(id:any) {
     debugger;
     return this.http.get<any[]>(
-      this.baseURL + '/Master/UpdateEmpCoursedetails');
+      this.baseURL + '/Master/UpdateEmpCoursedetails?ID='+id);
   }
 
 

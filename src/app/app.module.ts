@@ -59,6 +59,7 @@ import { AssessmentDashboardnewComponent } from './assessment-dashboardnew/asses
 import { FinalResultComponent } from './Pages/final-result/final-result.component';
 import { AssesmentDetailsComponent } from './assesment-details/assesment-details.component';
 import { StartMyCourseNewComponent } from './Pages/start-my-course-new/start-my-course-new.component';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
 
 
 
@@ -122,7 +123,8 @@ const ngWizardConfig: NgWizardConfig = {
     AppRoutingModule,
     NgxDropzoneModule,
     CKEditorModule,
-    PdfViewerModule ,
+    PdfViewerModule,
+    NgxDocViewerModule,
     // NgxFullCalendarModule,
     HttpClientModule,
     NgWizardModule.forRoot(ngWizardConfig),
