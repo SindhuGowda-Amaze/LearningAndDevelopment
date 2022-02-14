@@ -668,6 +668,14 @@ export class LearningService {
 
 
 
+  public UpdateCourseCompleted(StaffID:any,courseid:any) {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/UpdateCourseCompleted?StaffID='+StaffID+'&CourseID='+courseid);
+  }
+
+
+
 
 
 

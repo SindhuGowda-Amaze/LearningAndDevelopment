@@ -45,24 +45,28 @@ export class HeaderComponent implements OnInit {
     this.role = sessionStorage.getItem('role')
   }
 
-  logout() {
+  async logout() {
     this.insertattdancelogout();
-    localStorage.clear();
-    sessionStorage.clear();
-    location.href = "#/Login";
-    location.reload();
+   
   }
 
-  public insertattdancelogout() {
+  public async insertattdancelogout() {
     debugger
     var entity = {
       'loginid': this.loginid,
       'LogoutDate': new Date()
     }
 
-    this.LearningService.UpdateAttendance_New(entity).subscribe(
+  await  this.LearningService.UpdateAttendance_New(entity).subscribe(
       data => {
         debugger
+        if(data==0)
+        {
+          localStorage.clear();
+          sessionStorage.clear();
+          location.href = "#/Login";
+          location.reload();
+        }
       })
   }
 

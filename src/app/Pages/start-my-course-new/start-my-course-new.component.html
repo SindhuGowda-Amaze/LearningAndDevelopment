@@ -62,7 +62,30 @@
             <div class="list-group" style="overflow-y:auto;height:230px;">
                 <button type="button" class="list-group-item list-group-item-action border"
                     *ngFor="let details of coursedetails" (click)="getcoursedetails(details)"
-                    [routerLink]="['/TakeAssessment',details.courseID,details.id]">{{details.assesmentName}}</button>
+                    [routerLink]="['/TakeAssessment',details.courseID,details.id]">{{details.assesmentName}}
+            
+                    <p style="display: inline;">
+                        <label style="    font-family: 'Poppins';
+                        color: blue;"
+                            *ngIf="details.obtainedMarks!=null">{{details.obtainedMarks/details.totalmarks
+                            *100 | number : '1.2-2'}} %</label><br>
+                        <button class="btn btn-sm btn-primary newbutton" *ngIf="details.teststatus=='nottaken'"
+                            [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id" name="id"> Take
+                            Assessment</button>
+                        <button class="btn btn-sm btn-danger newbutton1" *ngIf="details.teststatus=='Failed'"
+                            [routerLink]="['/TakeAssessment',details.courseID,details.id]" id="id"
+                            name="id">&#10006;
+                            Retake
+                            Assessment</button>
+                        <button class="btn btn-sm btn-success newbutton" *ngIf="details.teststatus=='Passed'"
+                            id="id" name="id">&#10003;Assessment Passed
+                        </button>
+                </button>
+
+
+                
+                        <hr>
+
             </div>
             <br>
             <br>

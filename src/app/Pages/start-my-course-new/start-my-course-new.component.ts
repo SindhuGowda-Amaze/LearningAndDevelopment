@@ -12,7 +12,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'
 export class StartMyCourseNewComponent implements OnInit {
   [x: string]: any;
 
-  constructor(private LearningService: LearningService, private ActivatedRoute: ActivatedRoute,private sanitizer: DomSanitizer) { }
+  constructor(private LearningService: LearningService, private ActivatedRoute: ActivatedRoute, private sanitizer: DomSanitizer) { }
 
   courseid: any;
 
@@ -48,6 +48,16 @@ export class StartMyCourseNewComponent implements OnInit {
       this.chapterphoto = this.coursedetails[0].chapterPhoto
       this.ShowAttachments(this.coursedetails[0].id)
       this.show = 1
+      debugger
+      let result = this.chapterdetails.filter((x: { teststatus: string; }) => x.teststatus == 'Failed' || x.teststatus == 'nottaken');
+      debugger
+      if (result.length == 0) {
+        this.LearningService.UpdateCourseCompleted(sessionStorage.getItem('userid'), this.courseid).subscribe(data => {
+
+        })
+      }
+
+
     })
   }
   getcoursedetails(details: any) {
@@ -119,7 +129,7 @@ export class StartMyCourseNewComponent implements OnInit {
     debugger
     this.show = 2;
     this.chapterphoto = photo;
-    
+
     //    if (this.Attachmentlist.length != 0) {
     //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'video')
     //   if (this.Attachmentlist.length != 0) {
@@ -143,7 +153,7 @@ export class StartMyCourseNewComponent implements OnInit {
 
   public PreviewPdf(photo: any) {
     this.show = 3
-    this.chapterphoto=this.sanitizer.bypassSecurityTrustResourceUrl(photo);
+    this.chapterphoto = this.sanitizer.bypassSecurityTrustResourceUrl(photo);
     // window.open(photo, "_blank")
     // if (this.Attachmentlist.length != 0) {
     //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Pdf')
@@ -162,13 +172,13 @@ export class StartMyCourseNewComponent implements OnInit {
     //   this.show = 5
     // }
   }
-   domSanitizer: any;
-  ppt:any
+  domSanitizer: any;
+  ppt: any
   public PreviewPPT(photo: any) {
     this.show = 4;
-    this.chapterphoto="https://docs.google.com/gvie"+photo;
+    this.chapterphoto = "https://docs.google.com/gvie" + photo;
     // window.open(photo, "_blank")
-  //  this.ppt=this.sanitizer.bypassSecurityTrustResourceUrl(photo);
+    //  this.ppt=this.sanitizer.bypassSecurityTrustResourceUrl(photo);
     // window.open(photo, "_blank")
     // if (this.Attachmentlist.length != 0) {
     //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Ppt')
@@ -190,9 +200,9 @@ export class StartMyCourseNewComponent implements OnInit {
 
 
   public PreviewMSword(photo: any) {
-     debugger
-    this.show=5;
-    this.chapterphoto=this.sanitizer.bypassSecurityTrustResourceUrl(photo);
+    debugger
+    this.show = 5;
+    this.chapterphoto = this.sanitizer.bypassSecurityTrustResourceUrl(photo);
     //  this.show=4;
     // this.chapterphoto=photo;
     // this.chapterphoto=this.sanitizer.bypassSecurityTrustResourceUrl(photo);

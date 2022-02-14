@@ -84,6 +84,12 @@ export class MyCourseDashboardComponent implements OnInit {
       this.coursedetails = data.filter(x=> x.staffID!=this.userid);
     });
     }
+    else if (value == 4) {
+      this.LearningService.GetCourse().subscribe(data => {
+        debugger
+        this.coursedetails = data.filter(x=> x.staffID!=this.userid&&x.completed==1);
+      });
+      }
   }
 
   getcourseid(id:any)
@@ -177,7 +183,7 @@ export class MyCourseDashboardComponent implements OnInit {
   countlist: any;
   public GetAllCounts() {
     debugger 
-      this.LearningService.GetAllCounts(0, 2).subscribe(
+      this.LearningService.GetAllCounts(this.userid, 2).subscribe(
         data => {
           debugger
           this.countlist = data[0];
@@ -207,5 +213,8 @@ export class MyCourseDashboardComponent implements OnInit {
   
       }
 
+
+
+   
 
 }

@@ -79,17 +79,17 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <button type="button" class="btn btn-danger"
-                                        style="margin-left: 15px;">{{countlist.notStarted}}</button><br>
+                                        style="margin-left: 15px;">{{countlist.myTotaolAssementCount}}</button><br>
                                     <p class="text-center CARDHead3"><b>Not Started</b></p>
                                 </div>
                                 <div class="col-lg-4">
                                     <button type="button" class="btn btn-light"
-                                        style="margin-left: 15px;">4</button><br>
+                                        style="margin-left: 15px;">{{countlist.myInprogressAssesments}}</button><br>
                                     <p class="text-center CARDHead3"><b>In progress</b></p>
                                 </div>
                                 <div class="col-lg-4">
                                     <button type="button" class="btn btn-success"
-                                        style="margin-left: 15px;">0</button><br>
+                                        style="margin-left: 15px;">{{countlist.myCompletedAssesments}}</button><br>
                                     <p class="text-center CARDHead3"><b>Completed</b></p>
                                 </div>
                             </div>
@@ -261,6 +261,10 @@
                                 <button class="edit" data-toggle="modal" data-target="#enroll" *ngIf="details.enrollid=='0'"
                                     (click)="getcourseid(details.id)"> &nbsp;&nbsp;
                                     Enroll</button>
+
+                                    <button class="edit" 
+                                    *ngIf="details.completed==1" (click)="getenrollid(details.enrollid)">Completed
+                                    </button> 
                                 <!-- <button class="Button1" *ngIf="show==4" (click)="getcourseid(details.id)">
                                     Completed</button> -->
                             </div>

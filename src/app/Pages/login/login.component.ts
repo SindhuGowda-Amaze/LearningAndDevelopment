@@ -95,7 +95,7 @@ export class LoginComponent implements OnInit {
 
     }
     else if (this.roleID == 2) {
-      this.LearningService.GetMyDetails().subscribe(data => {
+      this.LearningService.GetMyDetails().subscribe(async data => {
         let temp: any = data.filter(x => (x.emailID == this.userName || x.phoneNo == this.userName) && x.password == this.password);
         this.result = temp[0];
         debugger;
@@ -104,7 +104,7 @@ export class LoginComponent implements OnInit {
           debugger
           sessionStorage.setItem('UserName', this.result.name);
           sessionStorage.setItem('userid', this.result.id);
-         this.Insertattdnace(this.result.id)
+       
           console.log("Employeid", this.result.id)
           sessionStorage.setItem('temp', '1');
           sessionStorage.setItem('manager', this.result.supervisor)
@@ -113,8 +113,8 @@ export class LoginComponent implements OnInit {
           debugger
           sessionStorage.setItem('roleid', '2');
           localStorage.setItem("clickname", "Admin Dashboard")
-          location.href = "#/AdminDashboard";
-          location.reload();
+          this.Insertattdnace(this.result.id)
+      
         }
         else {
           Swal.fire('Username or Password is invalid');
@@ -191,10 +191,16 @@ export class LoginComponent implements OnInit {
       'LoginDate': new Date()
     }
   await  this.LearningService.InsertAttendance_New(entity).subscribe(
-      (data:any) => {
+      (datay:any) => {
         debugger
-     localStorage.setItem('loginid',data);
-      return 0;
+        if(datay!=0)
+        {
+          localStorage.setItem('loginid',datay);
+      
+          location.href = "#/AdminDashboard";
+          location.reload();
+        }
+   
       })
 
   }
