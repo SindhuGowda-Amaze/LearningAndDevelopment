@@ -60,6 +60,8 @@ import { FinalResultComponent } from './Pages/final-result/final-result.componen
 import { AssesmentDetailsComponent } from './assesment-details/assesment-details.component';
 import { StartMyCourseNewComponent } from './Pages/start-my-course-new/start-my-course-new.component';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
+import { TraineeReportComponent } from './Pages/trainee-report/trainee-report.component';
+import { CourseCertificateNewComponent } from './Pages/course-certificate-new/course-certificate-new.component';
 
 
 
@@ -112,6 +114,8 @@ const ngWizardConfig: NgWizardConfig = {
     FinalResultComponent,
     AssesmentDetailsComponent,
     StartMyCourseNewComponent,
+    TraineeReportComponent,
+    CourseCertificateNewComponent,
 
   
   ],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { jsPDF } from "jspdf";
 import { LearningService } from 'src/app/learning.service';
+import { ActivatedRoute } from '@angular/router';
 import html2canvas from 'html2canvas';
 @Component({
   selector: 'app-course-certificate',
@@ -8,14 +9,23 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./course-certificate.component.css']
 })
 export class CourseCertificateComponent implements OnInit {
-
-  constructor(public LearningService: LearningService) { }
+ 
+  courseid:any;
+  constructor(public LearningService: LearningService,private ActivatedRoute:ActivatedRoute) { }
   UserName: any;
   ngOnInit(): void {
+    this.ActivatedRoute.params.subscribe(params => {
+      debugger
+      this.courseid = params['id'];
+      this. GetEnrollCourseCertificate(sessionStorage.getItem('userid'))
+    }
+    )     
     debugger
     this.UserName = sessionStorage.getItem('UserName');
     this.getmycertiifcate();
   }
+
+
   mycertificates: any
   public getmycertiifcate() {
     debugger
@@ -65,4 +75,24 @@ export class CourseCertificateComponent implements OnInit {
 
     });;
   }
+
+  certificate:any;
+  public GetEnrollCourseCertificate(StaffID:any) {
+    debugger
+    this.LearningService.GetEnrollCourseCertificate(StaffID).subscribe(
+      data => {
+        debugger
+        this.certificate = data.filter(x => x.courseID ==this.courseid);
+      })
+  }
+
+
+
+
+
+
+
+
+
+
 }

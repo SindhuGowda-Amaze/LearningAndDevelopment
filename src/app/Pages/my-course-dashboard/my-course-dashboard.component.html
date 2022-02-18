@@ -256,14 +256,14 @@
                                     *ngIf="details.enrollid!=0&&details.notStarted==0" (click)="getenrollid(details.enrollid)">Start
                                     Course</button>    
                                     <button class="edit" [routerLink]="['/StartMyCourseNew',details.id]"
-                                    *ngIf="details.enrollid!=0&&details.notStarted==1" (click)="getenrollid(details.enrollid)">Open
+                                    *ngIf="details.enrollid!=0&&details.notStarted==1&&details.completed==0" (click)="getenrollid(details.enrollid)">Open
                                     </button>                            
-                                <button class="edit" data-toggle="modal" data-target="#enroll" *ngIf="details.enrollid=='0'"
+                                <button class="edit" data-toggle="modal" data-target="#enroll" *ngIf="details.enrollid=='0'&&details.completed==0"
                                     (click)="getcourseid(details.id)"> &nbsp;&nbsp;
                                     Enroll</button>
 
                                     <button class="edit" 
-                                    *ngIf="details.completed==1" (click)="getenrollid(details.enrollid)">Completed
+                                    *ngIf="details.completed==1" (click)="getenrollid(details.enrollid)"  [routerLink]="['/CourseCertificate',details.id]">Completed
                                     </button> 
                                 <!-- <button class="Button1" *ngIf="show==4" (click)="getcourseid(details.id)">
                                     Completed</button> -->

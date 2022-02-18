@@ -22,7 +22,8 @@ export class HeaderComponent implements OnInit {
   constructor(private LearningService:LearningService) { }
   ngOnInit(): void {
     this.temp = sessionStorage.getItem('temp');
-    this.loginid=localStorage.getItem('loginid')
+    this.loginid=localStorage.getItem('loginid');
+
 
     setInterval(() => {
       var time = new Date();
@@ -46,8 +47,17 @@ export class HeaderComponent implements OnInit {
   }
 
   async logout() {
-    this.insertattdancelogout();
-   
+    if(this.roleid==2)
+    {
+      this.insertattdancelogout();
+    }
+    else{
+      localStorage.clear();
+      sessionStorage.clear();
+      location.href = "#/Login";
+      location.reload();
+    }
+    
   }
 
   public async insertattdancelogout() {

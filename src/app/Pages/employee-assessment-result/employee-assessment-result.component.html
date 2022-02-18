@@ -35,12 +35,14 @@
                     <tr>
                         <th>Employee Name</th>
                         <th>Course Name</th>
+                        <th>Chapter Name</th>
                         <th>Actions</th>
                     </tr>
 
                     <tr *ngFor="let details of detailslist|filter:search">
                         <td>{{details.staffname}}</td>
                         <td>{{details.coursename}}</td>
+                        <td>{{details.chaptername}}</td>
                         <td>
                             <button class="check" (click)="Check(details.id)" *ngIf="details.checked==0&&Checkid==1">Check</button>
                             <button *ngIf="details.checked==1&&Checkid==0" [routerLink]="['/Checkanswer',details.id]" class="add" id="show==1">View

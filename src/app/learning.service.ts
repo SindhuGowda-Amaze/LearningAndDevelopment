@@ -601,7 +601,7 @@ export class LearningService {
   }
 
 
- 
+
   public GetAttendance_New() {
 
     return this.http.get<any[]>(this.baseURL + "/Master/GetAttendance_New");
@@ -615,7 +615,7 @@ export class LearningService {
     return this.http.post(this.url, data);
   }
 
- 
+
   public UpdateAttendance_New(data: any) {
     debugger;
     this.url = this.baseURL + '/Master/UpdateAttendance_New';
@@ -647,35 +647,61 @@ export class LearningService {
       this.baseURL + '/Master/GetEnrollCourseChaptersAssessment');
   }
 
-  
+
   public GetTestResponsenew() {
     debugger;
     return this.http.get<any[]>(
       this.baseURL + '/Master/GetTestResponsenew');
   }
 
-  public GetEmpcoursecounts(StaffID:any) {
+  public GetEmpcoursecounts(StaffID: any) {
     debugger;
     return this.http.get<any[]>(
-      this.baseURL + '/Master/GetEmpcoursecounts?StaffID='+StaffID);
+      this.baseURL + '/Master/GetEmpcoursecounts?StaffID=' + StaffID);
   }
 
-  public UpdateEmpCoursedetails(id:any) {
+  public UpdateEmpCoursedetails(id: any) {
     debugger;
     return this.http.get<any[]>(
-      this.baseURL + '/Master/UpdateEmpCoursedetails?ID='+id);
-  }
-
-
-
-  public UpdateCourseCompleted(StaffID:any,courseid:any) {
-    debugger;
-    return this.http.get<any[]>(
-      this.baseURL + '/Master/UpdateCourseCompleted?StaffID='+StaffID+'&CourseID='+courseid);
+      this.baseURL + '/Master/UpdateEmpCoursedetails?ID=' + id);
   }
 
 
 
+  public UpdateCourseCompleted(StaffID: any, courseid: any) {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/UpdateCourseCompleted?StaffID=' + StaffID + '&CourseID=' + courseid);
+  }
+
+
+  public GetEnrollCourseCertificate(StaffID: any) {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetEnrollCourseCertificate?StaffID=' + StaffID);
+  }
+
+
+  public GetTrainerReport(Year: any, Month: any) {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetTrainerReport?Year=' + Year + '&Month=' + Month);
+  }
+
+
+  public GetEnrollCourseCertificateNew(ID: any) {
+    debugger;
+    return this.http.get<any[]>(
+      this.baseURL + '/Master/GetEnrollCourseCertificateNew?ID='+ID);
+  }
+
+
+   
+  public GetDepartmentMaster() {
+    debugger;
+    return this.http.get<any[]>(
+      this.host + '/Announcement/GetDepartmentMaster');
+  }
 
 
 

@@ -133,6 +133,11 @@ export class SidebarComponent implements OnInit {
     localStorage.setItem("clickname", "Employee Assessment Result")
   }
 
+  TraineeReport(){
+    this.active='traineeReport';
+    localStorage.setItem("clickname", "Trainee Report")
+  }
+
 
 
 }

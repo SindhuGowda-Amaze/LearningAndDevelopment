@@ -65,7 +65,18 @@
         src="assets/Images/New folder/people (1).png" style="width:13%; margin-right: 17px;">
     &nbsp;
     <span [ngClass]="active == 'assessmentresult' ? 'Active1' : 'Active3'">Assessment Result</span>
-</a> -->
+   </a> -->
+     
+
+
+     
+
+
+
+
+
+
+
 
 
 
@@ -163,6 +174,16 @@
             <span [ngClass]="active == 'ATTENDANCE' ? 'Active1' : 'Active3'"> ATTENDANCE </span>
             &nbsp;
         </a>
+
+        <a *ngIf="roleid==1||roleid==3" routerLink="/TraineeReport" class="tablinks" (click)="highlight($event)"
+        (click)="TraineeReport()">
+        <img src="assets/Images/people.png" style="width:13% ;margin-right: 17px;"
+            [ngClass]="active == 'traineeReport' ? 'Active1' : 'Active2'" />
+        <img [ngClass]="active != 'traineeReport' ? 'Active1' : 'Active2'"
+            src="assets/Images/New folder/people (1).png" style="width:13%; margin-right: 17px;">
+        &nbsp;
+        <span [ngClass]="active == 'traineeReport' ? 'Active1' : 'Active3'">Trainee Report</span>
+       </a>
 
 
         <a *ngIf="roleid==2 || roleid==3" routerLink="/Catalog" class="tablinks" (click)="highlight($event)"

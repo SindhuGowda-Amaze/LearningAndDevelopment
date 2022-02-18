@@ -87,7 +87,7 @@ export class MyCourseDashboardComponent implements OnInit {
     else if (value == 4) {
       this.LearningService.GetCourse().subscribe(data => {
         debugger
-        this.coursedetails = data.filter(x=> x.staffID!=this.userid&&x.completed==1);
+        this.coursedetails = data.filter(x=> x.staffID=this.userid&&x.completed==1);
       });
       }
   }
@@ -168,13 +168,20 @@ export class MyCourseDashboardComponent implements OnInit {
           data => {
             debugger
             let id = data;
-            location.href = "#/Catalog"
+            if(id!=0)
+            {
+              Swal.fire(
+                'Request Sent',
+                'Your request has been sent to manager for Approval',
+                'success'
+              );
+              location.href = "#/Catalog"
+            }
+         else{
+           Swal.fire("Already Enrolled")
+         }
           })
-        Swal.fire(
-          'Request Sent',
-          'Your request has been sent to manager for Approval',
-          'success'
-        );
+      
         location.href = "#/Catalog";
       }
     });

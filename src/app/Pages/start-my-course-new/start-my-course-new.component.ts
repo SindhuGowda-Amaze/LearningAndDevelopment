@@ -248,7 +248,9 @@ export class StartMyCourseNewComponent implements OnInit {
     // }
   }
 
-
+  certificate(){
+    location.href="#/CourseCertificate/"+this.courseid
+  }
 
 
 
