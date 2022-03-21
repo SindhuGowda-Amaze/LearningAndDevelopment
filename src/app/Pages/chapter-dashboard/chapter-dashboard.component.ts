@@ -68,7 +68,7 @@ export class ChapterDashboardComponent implements OnInit {
 
   edit(id: any) {
     debugger
-    location.href = "/#/Chapter/" + id;
+    location.href = "#/Chapter/" + id;
   }
 
 

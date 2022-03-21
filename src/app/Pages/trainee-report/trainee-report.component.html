@@ -14,9 +14,10 @@
                 <p class="filter">Filter By</p>
             </div>
             <div class="col-lg-3">
-                <select class="form-control" name="cars" id="Duration" (change)="getdepartmentid($event)" >
-                    <option value="0" >Select Department</option>
-                    <option style="color:#0C275A" *ngFor="let details of departmentlist" value="{{details.id}}" >{{details.department_name}}</option>
+                <select class="form-control" name="cars" id="Duration" (change)="getdepartmentid($event)">
+                    <option value="0">Select Department</option>
+                    <option style="color:#0C275A" *ngFor="let details of departmentlist" value="{{details.id}}">
+                        {{details.department_name}}</option>
                 </select>
             </div>
             <div class="col-lg-2">
@@ -28,14 +29,14 @@
             </div>
         </div><br>
     </div>
-      <br>
-      <div class="row">
-          <div class="col-lg-10"></div>
-          <div class="col-lg-2">
-              <button class="Button" (click)="exportexcel()">Export To Excel</button>
-          </div>
-      </div>
-     <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-10"></div>
+        <div class="col-lg-2">
+            <button class="Button" (click)="exportexcel()">Export To Excel</button>
+        </div>
+    </div>
+    <br>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -60,10 +61,9 @@
                             <td style="color:#0C275A">{{details.completiondate}}</td>
                             <td style="color:#0C275A"></td>
                             <td style="color:#0C275A">
-                                <button class="Button"
-                                [routerLink]="['/CourseCertificateNew',details.id]">View</button>
+                                <button class="Button" [routerLink]="['/CourseCertificateNew',details.id]">View</button>
                             </td>
-                            
+
                         </tr>
                     </thead>
                 </table>
@@ -73,7 +73,4 @@
             </div>
         </div>
     </div>
-
-
-
 </div>

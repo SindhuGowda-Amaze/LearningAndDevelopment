@@ -7,7 +7,7 @@ import { LearningService } from 'src/app/learning.service';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor(public LearningService: LearningService) { }
+  constructor(public LearningService: LearningService) { } 
   temp: any;
   userid: any;
   showenrolment: any;

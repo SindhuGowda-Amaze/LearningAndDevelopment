@@ -263,6 +263,7 @@ export class ChapterComponent implements OnInit {
   }
 
   Add(){
+    debugger
       for (let i = 0; i < this.Attachment.length; i++) {
         var entity = {
           "ChapterID": this.id,
