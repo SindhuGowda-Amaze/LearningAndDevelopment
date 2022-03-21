@@ -133,7 +133,7 @@
                 <img [ngClass]="active != 'trainer' ? 'Active1' : 'Active2'"
                     src="assets/Images/New folder/people (1).png" style="width:13%; margin-right: 17px;">
                 &nbsp;
-                <span [ngClass]="active == 'trainer' ? 'Active1' : 'Active3'"> TRAINER </span>
+                <span [ngClass]="active == 'trainer' ? 'Active1' : 'Active3'"> FACULTY </span>
             </a>
             <a routerLink="/TrainerCourseMapping" class="tablinks" (click)="highlight($event)"
                 (click)="assigntrainer()">
@@ -142,7 +142,7 @@
                 <img [ngClass]="active != 11 ? 'Active1' : 'Active2'" src="assets/Images/New folder/people (1).png"
                     style="width:13%; margin-right: 17px;">
                 &nbsp;
-                <span [ngClass]="active == 11 ? 'Active1' : 'Active3'"> ASSIGN TRAINER </span>
+                <span [ngClass]="active == 11 ? 'Active1' : 'Active3'"> ASSIGN FACULTY </span>
             </a>
             <a routerLink="/Employee" class="tablinks" (click)="highlight($event)" (click)="employee()">
                 <img src="assets/Images/people.png" style="width:13% ;margin-right: 17px;"
@@ -150,7 +150,7 @@
                 <img [ngClass]="active != 'employee' ? 'Active1' : 'Active2'"
                     src="assets/Images/New folder/people (1).png" style="width:13%; margin-right: 17px;">
                 &nbsp;
-                <span [ngClass]="active == 'employee' ? 'Active1' : 'Active3'"> EMPLOYEE </span>
+                <span [ngClass]="active == 'employee' ? 'Active1' : 'Active3'"> STUDENT </span>
             </a>
         </div>
         <a *ngIf="roleid==2 || roleid==3" routerLink="/MyCourseDashboard" class="tablinks" (click)="highlight($event)"
@@ -160,7 +160,7 @@
             <img [ngClass]="active != 'mycourse' ? 'Active1' : 'Active2'" src="assets/Images/New folder/online-course1.png
                 " style="width:13%; margin-right: 17px;">
             &nbsp;
-            <span [ngClass]="active == 'mycourse' ? 'Active1' : 'Active3'"> My COURSE </span>
+            <span [ngClass]="active == 'mycourse' ? 'Active1' : 'Active3'"> MY COURSE </span>
             <!-- <i class="fa fa-users "></i> -->
 
         </a>
@@ -182,7 +182,7 @@
         <img [ngClass]="active != 'traineeReport' ? 'Active1' : 'Active2'"
             src="assets/Images/New folder/people (1).png" style="width:13%; margin-right: 17px;">
         &nbsp;
-        <span [ngClass]="active == 'traineeReport' ? 'Active1' : 'Active3'">Trainee Report</span>
+        <span [ngClass]="active == 'traineeReport' ? 'Active1' : 'Active3'">Faculty Report</span>
        </a>
 
 
