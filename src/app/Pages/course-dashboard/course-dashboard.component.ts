@@ -121,5 +121,16 @@ export class CourseDashboardComponent implements OnInit {
   }
  
 
+  description:any;
+  view(desc:any){
+    this.description=desc;
+    
+  }
+  
+
+
+
+
+
 
 }

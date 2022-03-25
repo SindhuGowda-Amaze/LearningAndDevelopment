@@ -68,8 +68,8 @@ export class TrainerCourseMappingFormComponent implements OnInit {
     debugger
     this.result = data;
 		this.result=this.result.filter((x: { id: any; })=>x.id==Number(this.id));
-    this.trainerName=this.result[0].trainerName;
-    this.courseName=this.result[0].courseName;
+    this.TrainerID=this.result[0].trainerID;
+    this.CourseID=this.result[0].courseID;
 		// this.EmailID=this.result[0].emailID;
 		this.StartDate=this.result[0].startDate;
     this.EndDate=this.result[0].endDate;

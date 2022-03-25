@@ -34,10 +34,10 @@
                         </select>
                     </div>
                     <div class="col-lg-3">
-                        <input type="date" class="form-control inputfield" placeholder="Start Date" [(ngModel)]="StartDate">
+                        <input type="date" class="form-control inputfield" placeholder="Start Date" [(ngModel)]="StartDate" name="StartDate">
                     </div>
                     <div class="col-lg-3">
-                        <input type="date" class="form-control inputfield" placeholder="End Date" [(ngModel)]="EndDate">
+                        <input type="date" class="form-control inputfield" placeholder="End Date" [(ngModel)]="EndDate" name="EndDate">
                     </div>
                 </div><br>
                 <div class="row leavereq ">
@@ -63,14 +63,11 @@
                 <div class="row">
                     <div class="col-lg-9"></div>
                     <div class="col-lg-1">
-                        <button class="form-control  cancel" (click)="cancel()">Cancel</button>
-                    </div>
-                    <div class="col-lg-1">
                         <button class="form-control cancel"  *ngIf="id==null || id==undefined" (click)="Submit()">Save</button>    
                      <button class="form-control cancel"  *ngIf="id!=null || id!=undefined" (click)="Update()">Update</button>   
+                    </div><div class="col-lg-1">
+                        <button class="form-control  cancel" (click)="cancel()">Cancel</button>
                     </div>
-
-                    <div class="col-lg-1"></div>
                 </div><br>
             </div> <br>
 </div>

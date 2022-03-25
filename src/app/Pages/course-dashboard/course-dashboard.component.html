@@ -15,14 +15,14 @@
                     <p class="filter">Filter By </p>
                 </div>
                 <div class="col-lg-3">
-                    <!-- <select  class="form-control "  id="Duration" (change)="getcategoryid($event)" >
-                        <option class="FilterClass"  value="0">Select Category</option>
-                        <option class="FilterClass" *ngFor="let cat  of categorylist" value="{{cat.name}}">{{cat.name}}</option>
-                    </select> -->
                     <select  class="form-control "  id="Duration" (change)="getcategoryid($event)" >
                         <option class="FilterClass"  value="0">Select Category</option>
-                        <option class="FilterClass" *ngFor="let cat  of categorylist" value="{{cat.id}}">{{cat.name}}</option>
+                        <option class="FilterClass" *ngFor="let cat  of categorylist" value="{{cat.name}}">{{cat.name}}</option>
                     </select>
+                    <!-- <select  class="form-control "  id="Duration" (change)="getcategoryid($event)" >
+                        <option class="FilterClass"  value="0">Select Category</option>
+                        <option class="FilterClass" *ngFor="let cat  of categorylist" value="{{cat.id}}">{{cat.name}}</option>
+                    </select> -->
                 </div>
                 <div class="col-lg-5">
                         <input type="search" class="form-control search" placeholder="Search for Course"  [(ngModel)]="search">
@@ -57,7 +57,16 @@
                                 <tr  *ngFor="let details of result | filter: search">
                                     <td>{{details.categoryName}}</td>
                                     <td>{{details.name}}</td>
-                                    <td>{{details.description}}</td>
+                                    <!-- <td>{{details.description}}</td> -->
+                                    <td>
+                                        <span  
+                                        [innerHTML]="details.coursedescription"></span>
+                                          <span style="color:#3247D5;    float: right;
+                                         "
+                                          data-toggle="modal"
+                                          data-target="#exampleModal3" (click)="view(details.description)">....View More</span>
+                                    </td>
+
                                     <td>
                                         <img (click)="clickonimage(details.photo)"  data-toggle="modal" data-target="#exampleModal"
                                          src="{{details.photo}}" width="50%" height="auto">
@@ -111,6 +120,35 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 19px;color:#3247D5">Description</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12" style="color:#0C275A ;font-size: 13px;">
+                        <p [innerHTML]="description"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-lg-9"></div>
+                <!-- <div class="col-lg-3">
+                    <button type="button" class="btn btn-secondary button" data-dismiss="modal">Close</button>
+                </div> -->
+
             </div>
         </div>
     </div>

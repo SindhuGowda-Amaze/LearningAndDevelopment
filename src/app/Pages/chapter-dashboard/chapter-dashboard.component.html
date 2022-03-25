@@ -19,6 +19,8 @@
                     <option value="0">Select Course</option>
                     <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">
                         {{details.name}}</option>
+                    <!-- <option style="color:#0C275A" *ngFor="let details of coursedetails" value="{{details.id}}">
+                        {{details.courseName}}</option> -->
                 </select>
             </div>
             <div class="col-lg-5">
@@ -67,7 +69,7 @@
                                   <span style="color:#3247D5;    float: right;
                                   margin-block: -18px;"
                                   data-toggle="modal"
-                                  data-target="#exampleModal3" (click)="view(details.chapterText)">...View more</span>
+                                  data-target="#exampleModal3" (click)="view(details.chapterText)">....View More</span>
                             </td>
                             <td style="width:100px">
                                 <!-- <button class="edit" (click)="edit(details.id)">Edit</button> <br> <br>
@@ -88,7 +90,7 @@
             </div>
         </div>
     </div>
-    
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -101,16 +103,17 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-4" *ngFor="let attchments of Attachmentlist">
+                    <div class="col-lg-3" *ngFor="let attchments of Attachmentlist">
                         <br>
                         <img src="{{attchments.photo}}" *ngIf="attchments.attachmentType=='Image'"
-                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                            (click)="openAttchments(attchments.photo)" style="width: 171px; height: 117px;">
+                           
                         <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Pdf'"
-                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                            (click)="openAttchments(attchments.photo)" style="width: 171px; height: 117px;">
                         <img src="assets/Images/word.png" *ngIf="attchments.attachmentType=='Document'"
-                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                            (click)="openAttchments(attchments.photo)" style="width: 171px; height: 117px;">
                         <img src="assets/Images/files.png" *ngIf="attchments.attachmentType=='Ppt'"
-                            (click)="openAttchments(attchments.photo)" style="width:100px;height: 100px;">
+                            (click)="openAttchments(attchments.photo)" style="width: 171px; height: 117px;">
                         <video controls style="height: 100px;width: 50%;" *ngIf="attchments.attachmentType=='video'"
                             (click)="openAttchments(attchments.photo)">
                             <source src="{{attchments.photo}}" (click)="openAttchments(attchments.photo)"

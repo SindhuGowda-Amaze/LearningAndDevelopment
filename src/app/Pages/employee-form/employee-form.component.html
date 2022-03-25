@@ -1175,12 +1175,13 @@
             <br />
             <div class="row">
                 <div class="col-lg-5"></div>
-                <div class="col-lg-2">
-                    <button type="button" class="upload" *ngIf="ID!=undefined" (click)="Update()">Update</button>&nbsp;&nbsp;
-                    <button class="upload" (click)="Save()" *ngIf="ID==undefined">Submit</button> &nbsp;&nbsp;
-                    <button class="upload">Cancel</button>
+                <div class="col-lg-1">
+                    <button type="button" class="form-control  cancel" *ngIf="ID!=undefined" (click)="Update()">Update</button>
+                    <button class="form-control  cancel" (click)="Save()" *ngIf="ID==undefined">Submit</button> 
                 </div>
-                <div class="col-lg-5"></div>
+                <div class="col-lg-1">
+                    <button class="form-control  cancel">Cancel</button>
+                </div>
             </div><br>
 
 

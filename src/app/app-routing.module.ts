@@ -36,6 +36,12 @@ import { SubmitedtestsComponent } from './Pages/submitedtests/submitedtests.comp
 import { AssignCourseDashboardComponent } from './Pages/assign-course-dashboard/assign-course-dashboard.component';
 import { AttendanceNewComponent } from './Pages/attendance-new/attendance-new.component';
 import { EmployeeAssessmentResultComponent } from './Pages/employee-assessment-result/employee-assessment-result.component';
+import { AssessmentDashboardnewComponent } from './assessment-dashboardnew/assessment-dashboardnew.component';
+import { FinalResultComponent } from './Pages/final-result/final-result.component';
+import { AssesmentDetailsComponent } from './assesment-details/assesment-details.component';
+import { StartMyCourseNewComponent } from './Pages/start-my-course-new/start-my-course-new.component';
+import { TraineeReportComponent } from './Pages/trainee-report/trainee-report.component';
+import { CourseCertificateNewComponent } from './Pages/course-certificate-new/course-certificate-new.component';
 
 
 
@@ -86,7 +92,17 @@ const routes: Routes = [
   { path: 'Submitedtests', component: SubmitedtestsComponent },
   { path: 'AssignCourseDashboard', component: AssignCourseDashboardComponent },
   {path:'AttendanceNew',component:AttendanceNewComponent},
-  {path:'EmployeeAssessmentResult',component:EmployeeAssessmentResultComponent}
+  {path:'EmployeeAssessmentResult',component:EmployeeAssessmentResultComponent},
+  {path:'AssessmentDashboardnew',component: AssessmentDashboardnewComponent},
+  {path:'FinalResult',component:FinalResultComponent},
+  {path:'AssesmentDetails',component:AssesmentDetailsComponent},
+  {path:'StartMyCourseNew/:id',component:StartMyCourseNewComponent},
+  {path:'CourseCertificate/:id',component:CourseCertificateComponent},
+  {path:'TraineeReport',component: TraineeReportComponent},
+  {path:'CourseCertificateNew/:id',component:CourseCertificateNewComponent}
+
+ 
+
 
 
 

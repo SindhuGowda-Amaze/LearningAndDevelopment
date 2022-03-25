@@ -525,3 +525,13 @@ margin-top: 10px;
 .chaptername{
   font-size: 12px;
 }
+
+table, tr, td {
+  border: none !important;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  /* font-size: 13px; */
+  /* line-height: 17px; */
+  color: #0C275A;
+}

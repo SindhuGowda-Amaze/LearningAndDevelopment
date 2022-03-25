@@ -163,10 +163,10 @@
 }
 .Heading{
   color:#3247D5;
-  font-size: 20px;
+  font-size: 20px; 
 }
 
-.addbutton{
+.addbutton{   
   color:white;
   background-color: #3247D5;
   border:none;

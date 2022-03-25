@@ -15,18 +15,26 @@ export class MyCourseDashboardComponent implements OnInit {
   stafflist: any;
   userid: any;
   search: any;
+  managlist:any;
+  manageremail:any;
   ngOnInit(): void {
-
-    this.GetTrainerCourseMapping();
-
-    this.userid = sessionStorage.getItem('userid')
+  
     this.manager = sessionStorage.getItem('manager')
+    this.userid = sessionStorage.getItem('userid')
+    this.GetTrainerCourseMapping();
+    this.GetEmpcoursecounts();
+
+   
 
    this.Showcards(2);
     this.LearningService.GetMyDetails().subscribe(data => {
       debugger
-      this.stafflist = data.filter(x => x.id == this.userid);;
+      this.stafflist = data.filter(x => x.id == this.userid);
+      this.managlist = data.filter(x=>x.id==this.manager)    
+      this.manageremail=this.managlist[0].emailID
+   
     });
+
     // this.show=2;
 
     
@@ -71,9 +79,17 @@ export class MyCourseDashboardComponent implements OnInit {
       this.GetApproveCourse();
     }
    else if (value == 3) {
-      this.GetCourse();
+    this.LearningService.GetCourse().subscribe(data => {
+      debugger
+      this.coursedetails = data.filter(x=> x.staffID!=this.userid);
+    });
     }
-
+    else if (value == 4) {
+      this.LearningService.GetCourse().subscribe(data => {
+        debugger
+        this.coursedetails = data.filter(x=> x.staffID=this.userid&&x.completed==1);
+      });
+      }
   }
 
   getcourseid(id:any)
@@ -82,23 +98,38 @@ export class MyCourseDashboardComponent implements OnInit {
   }
 
   latestcoursedetails:any;
-
+  lastassigned:any;
   public GetApproveCourse() {
     debugger
     this.LearningService.GetApproveCourse(this.userid).subscribe(data => {
       debugger
       this.coursedetails = data;
       this.latestcoursedetails = data[0];
+      if(this.latestcoursedetails.length=0){
+        this.lastassigned=0;
+      }
+      else{
+        this.lastassigned=1;
+      }
 
       debugger
     })
   }
 
 
+  testresponse:any;
+  GetTestResponse() {
+    this.LearningService.GetTestResponse().subscribe(data => {
+      debugger
+      this.testresponse = data;
+    });
+  }
+
+
   GetCourse() {
     this.LearningService.GetCourse().subscribe(data => {
       debugger
-      this.coursedetails = data;
+      this.coursedetails = data;;
     });
   }
 
@@ -137,13 +168,20 @@ export class MyCourseDashboardComponent implements OnInit {
           data => {
             debugger
             let id = data;
-            location.href = "#/Catalog"
+            if(id!=0)
+            {
+              Swal.fire(
+                'Request Sent',
+                'Your request has been sent to manager for Approval',
+                'success'
+              );
+              location.href = "#/Catalog"
+            }
+         else{
+           Swal.fire("Already Enrolled")
+         }
           })
-        Swal.fire(
-          'Request Sent',
-          'Your request has been sent to manager for Approval',
-          'success'
-        );
+      
         location.href = "#/Catalog";
       }
     });
@@ -151,22 +189,39 @@ export class MyCourseDashboardComponent implements OnInit {
 
   countlist: any;
   public GetAllCounts() {
-    debugger
-    
-      this.LearningService.GetAllCounts(0, 2).subscribe(
+    debugger 
+      this.LearningService.GetAllCounts(this.userid, 2).subscribe(
         data => {
           debugger
           this.countlist = data[0];
         })
-    
-
   }
 
+  empcountlist:any;
+  public GetEmpcoursecounts() {
+    debugger 
+      this.LearningService.GetEmpcoursecounts(this.userid).subscribe(
+        data => {
+          debugger
+          this.empcountlist = data[0];
+        })
+
+      }
+
+
+      getenrollid(id:any)
+      {
+        debugger 
+        this.LearningService.UpdateEmpCoursedetails(id).subscribe(
+          data => {
+            debugger
+            this.empcountlist = data[0];
+          })
+  
+      }
 
 
 
-
-
-
+   
 
 }

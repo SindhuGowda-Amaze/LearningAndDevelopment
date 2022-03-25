@@ -32,7 +32,6 @@ export class StartMyCourseComponent implements OnInit {
     }
     )
     this.show = 1;
-
   }
 
   clickEvent() {
@@ -50,7 +49,7 @@ export class StartMyCourseComponent implements OnInit {
       debugger
       this.coursename = this.coursedetails[0].courseName
       this.chaptername = this.coursedetails[0].name
-      this.chapterdescription = this.coursedetails[0].description
+      this.chapterdescription = this.coursedetails[0].chapterText
       this.chapterphoto = this.coursedetails[0].chapterPhoto
       this.ShowAttachments(this.coursedetails[0].id)
       this.show = 1
@@ -60,11 +59,10 @@ export class StartMyCourseComponent implements OnInit {
   getcoursedetails(details: any) {
     this.coursename = details.courseName
     this.chaptername = details.name
-    this.coursedescription = details.description
+    this.chapterdescription = details.chapterText
     this.chapterphoto = details.chapterPhoto
     this.ShowAttachments(details.id)
     this.show = 1
-
   }
 
   dummAttachmentlist: any;
@@ -115,107 +113,111 @@ export class StartMyCourseComponent implements OnInit {
 
 
 
-  public PreviewVideo() {
+  public PreviewVideo(photo:any) {
     debugger
-    if (this.Attachmentlist.length != 0) {
-      this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'video')
-      if (this.Attachmentlist.length != 0) {
-        // this.show = 2
-        window.open(this.Attachmentlist[0].photo, "_blank")
-      }
-      else {
-        this.noattachments = "No Videos Found"
-        this.show = 5
-      }
+    window.open(photo, "_blank")
 
-    }
-    else {
-      this.noattachments = "No Videos Found"
-      this.show = 5
-    }
+    // if (this.Attachmentlist.length != 0) {
+    //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'video')
+    //   if (this.Attachmentlist.length != 0) {
+    //     //\\ this.show = 2
+      
+    //   }
+    //   else {
+    //     this.noattachments = "No Videos Found"
+    //     this.show = 5
+    //   }
 
-  }
-  public PreviewPdf() {
-
-    if (this.Attachmentlist.length != 0) {
-      this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Pdf')
-      if (this.Attachmentlist.length != 0) {
-        //  this.show=3
-        window.open(this.Attachmentlist[0].photo, "_blank")
-      }
-      else {
-        this.noattachments = "No Pdf Available"
-        this.show = 5
-      }
-
-    }
-    else {
-      this.noattachments = "No Pdf Available"
-      this.show = 5
-    }
-  }
-
-
-
-  public PreviewPPT() {
-    if (this.Attachmentlist.length != 0) {
-      this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Ppt')
-      if (this.Attachmentlist.length != 0) {
-        //  this.show=3
-        window.open(this.Attachmentlist[0].photo, "_blank")
-      }
-      else {
-        this.noattachments = "No Ppt Available"
-        this.show = 5
-      }
-
-    }
-    else {
-      this.noattachments = "No Ppt Available"
-      this.show = 5
-    }
-  }
-  public PreviewMSword() {
-
-    if (this.Attachmentlist.length != 0) {
-      this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Document')
-      if (this.Attachmentlist.length != 0) {
-        //  this.show=3
-        window.open(this.Attachmentlist[0].photo, "_blank")
-      }
-      else {
-        this.noattachments = "No Document Available"
-        this.show = 5
-      }
-
-    }
-    else {
-      this.noattachments = "No Document Available"
-      this.show = 5
-    }
+    // }
+    // else {
+    //   this.noattachments = "No Videos Found"
+    //   this.show = 5
+    // }
 
   }
-  public PreviewIMG() {
-    // window.open('assets/Images/Java_CourseIMG.jpg')
-    debugger
-    if (this.Attachmentlist.length != 0) {
-      debugger
-      this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Image')
-      if (this.Attachmentlist.length != 0) {
-        this.show = 4
-        debugger
-        //  window.open(this.Attachmentlist[0].photo,"_blank")
-      }
-      else {
-        this.noattachments = "No Image Available"
-        this.show = 5
-      }
+  public PreviewPdf(photo:any) {
+    window.open(photo, "_blank")
+    // if (this.Attachmentlist.length != 0) {
+    //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Pdf')
+    //   if (this.Attachmentlist.length != 0) {
+    //     //  this.show=3
+    //     window.open(this.Attachmentlist[0].photo, "_blank")
+    //   }
+    //   else {
+    //     this.noattachments = "No Pdf Available"
+    //     this.show = 5
+    //   }
 
-    }
-    else {
-      this.noattachments = "No Image Available"
-      this.show = 5
-    }
+    // }
+    // else {
+    //   this.noattachments = "No Pdf Available"
+    //   this.show = 5
+    // }
+  }
+
+
+
+  public PreviewPPT(photo:any) {
+    window.open(photo, "_blank")
+    // if (this.Attachmentlist.length != 0) {
+    //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Ppt')
+    //   if (this.Attachmentlist.length != 0) {
+    //     //  this.show=3
+    //   }
+    //   else {
+    //     this.noattachments = "No Ppt Available"
+    //     this.show = 5
+    //   }
+
+    // }
+    // else {
+    //   this.noattachments = "No Ppt Available"
+    //   this.show = 5
+    // }
+  }
+
+
+
+  public PreviewMSword(photo:any) {
+
+    window.open(photo, "_blank")
+    // if (this.Attachmentlist.length != 0) {
+    //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Document')
+    //   if (this.Attachmentlist.length != 0) {
+    //     //  this.show=3
+    //   }
+    //   else {
+    //     this.noattachments = "No Document Available"
+    //     this.show = 5
+    //   }
+
+    // }
+    // else {
+    //   this.noattachments = "No Document Available"
+    //   this.show = 5
+    // }
+
+  }
+  public PreviewIMG(photo:any) {
+    window.open(photo, "_blank")
+    
+    // if (this.Attachmentlist.length != 0) {
+    //   debugger
+    //   this.Attachmentlist = this.dummAttachmentlist.filter((x: { attachmentType: string; }) => x.attachmentType == 'Image')
+    //   if (this.Attachmentlist.length != 0) {
+    //     this.show = 4
+    //     debugger
+    //   }
+    //   else {
+    //     this.noattachments = "No Image Available"
+    //     this.show = 5
+    //   }
+
+    // }
+    // else {
+    //   this.noattachments = "No Image Available"
+    //   this.show = 5
+    // }
   }
 
   show: any;

@@ -83,11 +83,6 @@ export class ViewCourseComponent implements OnInit {
       })
   }
 
-
-
-
-
-
   coursedetails: any;
 
   public GetTrainerCourseMapping() {
@@ -107,9 +102,7 @@ export class ViewCourseComponent implements OnInit {
     this.showchapter=details.Description;
   }
 
-
-
-
+  
   course:any
   name:any;
   mobile:any;
@@ -167,6 +160,10 @@ export class ViewCourseComponent implements OnInit {
 
     evt.currentTarget.className += " active";
   }
+
+
+
+
 
 
 

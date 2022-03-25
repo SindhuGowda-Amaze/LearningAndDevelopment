@@ -4,6 +4,7 @@ import { LearningService } from 'src/app/learning.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-angular';
+import { PopupService } from '@ng-bootstrap/ng-bootstrap/util/popup';
 //import Swal from 'sweetalert2';
 
 
@@ -75,6 +76,12 @@ export class TakeAssessmentComponent implements OnInit {
        this.courseid = params['courseid'];
        this.chapterid = params['chapterid'];
 
+       this.AmazeService.GetAssessments().subscribe(data => {
+        debugger
+        this.generalinstructions=data[0].generalInstructions
+
+         })
+       debugger
      }
      )
   }
@@ -105,6 +112,7 @@ export class TakeAssessmentComponent implements OnInit {
   // }
   count:any;
   totalmarks:any;
+  generalinstructions:any;
   public startTestContainer() {
     debugger
     this.startTest = 1;
@@ -196,6 +204,7 @@ export class TakeAssessmentComponent implements OnInit {
       if (this.questionList[i].userAnswer == '') {
         notansred=notansred+1
       }
+      
     }
 
     if(notansred>0){
@@ -253,7 +262,8 @@ export class TakeAssessmentComponent implements OnInit {
             this.AmazeService.InsertTestResponseDetails(ett).subscribe(data => {
             });
           }
-          Swal.fire('You have submited test successfully...');
+          // Swal.fire('You have submited test successfully...');
+         
           this.show = 0;
           this.startTest = "";
         //  this.router.navigate(['/AssessmentResult', this.testResponseID]);
@@ -263,10 +273,19 @@ export class TakeAssessmentComponent implements OnInit {
       })
     }
 
+  
    
     //location.href="/#/AssessmentResult/";
 
   }
+
+
+
+
+
+
+
+
 
   // countdownTimeStart(endtime) {
   //   this.interval = setInterval(() => {
@@ -290,6 +309,47 @@ export class TakeAssessmentComponent implements OnInit {
   //     // If the count down is over, write some text 
   //   }, 1000)
   // }
+
+
+
+
+
+  
+  submit(){
+    Swal.fire({
+      title: 'Are you sure Want to Submit?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Submit it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.submitAnswer();
+        Swal.fire(
+          'Submitted!',
+          'Your Answers has been Submitted Sucessfully.',
+          'success'
+        )
+           location.href="#/MyCourseDashboard";
+      }
+    })
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
@@ -340,3 +400,4 @@ export class TakeAssessmentComponent implements OnInit {
 //       })
 //   }
 // }
+

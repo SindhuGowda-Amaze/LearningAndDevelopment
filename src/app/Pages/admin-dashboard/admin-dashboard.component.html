@@ -145,6 +145,35 @@
                     </div>
                 </div>
             </div>
+
+            <!-- <div class="col-lg-3" *ngIf="showenrolment=='0'">
+                <div class="card1" style="background-color: white;  height: 325px;width: 275px;">
+                    <div class="front">
+                        <br>
+                        <div class="row title_outer1 top1">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-1">
+                                <i class="fa fa-calendar calend" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-lg-9">
+                                <p class="font">Trainers</p>
+                            </div>
+                        </div><br><br>
+                        <div class="row">
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4" style="text-align: center;">
+                                <h6 class="Number">{{countlist.trainersCount}}</h6>
+                            </div>
+                            <div class="col-lg-4"></div>
+                        </div><br><br><br>
+                        <button class="clickbutton1" data-toggle="modal" data-target="#enroll2">
+                            VIEW DETAILS</button>
+                    </div>
+                </div>
+            </div> -->
+
+
+
         </div>
 
 
@@ -189,26 +218,26 @@
 
 <div id="enroll" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="text-align: center;">
+        <div class="modal-content" style="text-align:left;">
             <div class="modal-header">
                 <h4 class="modal-title">Course And Chapter List</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="row" style="text-align: center;">
+                <div class="row" style="margin-left: 0px;">
                     <div class="col-lg-12">
                         <table style="width: 100%;">
-                            <tr style="font-size: 20px;">
+                            <tr style="font-size: 16px;">
                                 <th>Course Name </th>
                                 <th>Chapter Name </th>
-                            </tr> <br>
+                            </tr>
                             <tr *ngFor="let details of chapterlist" style="text-align: left;"> 
-                                <td>{{details.courseName}}</td>
-                                <td>{{details.chapterName}}</td>
+                                <td style="text-align: left;">{{details.courseName}}</td>
+                                <td style="text-align: left;">{{details.chapterName}}</td>
                             </tr>
                         </table>
                     </div>
-                </div> <br>
+                </div>
             </div>
             <div class="modal-footer">
                 <hr>
@@ -222,27 +251,27 @@
 
 <div id="enroll1" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="text-align: center;">
-            <div class="modal-header" style="text-align: center;">
-                <h4 class="modal-title">Chapter And Assesmentlist</h4>
+        <div class="modal-content" style="text-align: left;">
+            <div class="modal-header" style="text-align: left;">
+                <h4 class="modal-title">Chapter And Assesment List</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="row" style="text-align: center;">
+                <div class="row" style="margin-left: 0px;">
                     <div class="col-lg-12">
                         <table style="width: 100%;">
-                            <tr style="font-size: 20px;">
+                            <tr style="font-size: 16px;">
                                 <th>Chapter Name</th>
                                 <th>Assesment Name</th>
-                            </tr> <br>
-                            <tr *ngFor="let details of assesmentlist">
-                                <td>{{details.chapterName}}</td>
-                                <td>{{details.assesmentName}}</td>
+                            </tr>
+                            <tr *ngFor="let details of assesmentlist" style="text-align: left;">
+                                <td style="text-align: left;">{{details.chapterName}}</td>
+                                <td style="text-align: left;">{{details.assesmentName}}</td>
                             </tr>
                         </table>
                     </div>
 
-                </div> <br>
+                </div>
             </div>
             <div class="modal-footer">
                 <hr>
@@ -256,27 +285,27 @@
 
 <div id="enroll2" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="text-align: center;">
-            <div class="modal-header" style="text-align: center;">
-                <h4 class="modal-title">Course And Trainerlist</h4>
+        <div class="modal-content" style="text-align: left;">
+            <div class="modal-header" style="text-align: left;">
+                <h4 class="modal-title">Course And Trainer List</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="row" style="text-align: center; width: 100%;">
+                <div class="row" style="margin-left: 0px;">
                     <div class="col-lg-12">
                         <table style="width: 100%;">
-                            <tr>
+                            <tr style="font-size: 16px;">
                                 <th>Trainer name</th>
                                 <th>Course Name</th>
-                            </tr> <br>
-                            <tr *ngFor="let details of trainerlist">
-                                <td>{{details.trainerName}}</td>
-                                <td>{{details.courseName}}</td>
+                            </tr>
+                            <tr *ngFor="let details of trainerlist" style="text-align: left;">
+                                <td style="text-align: left;">{{details.trainerName}}</td>
+                                <td style="text-align: left;">{{details.courseName}}</td>
                             </tr>
                         </table>
                     </div>
 
-                </div> <br>
+                </div>
             </div>
             <div class="modal-footer">
                 <hr>

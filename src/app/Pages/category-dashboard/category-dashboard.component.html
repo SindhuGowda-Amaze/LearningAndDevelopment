@@ -40,7 +40,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let details of result index as i">
+                                <tr *ngFor="let details of result | filter: search index as i ">
                                     <!-- <td>{{i+1}}</td> -->
                                     <td>{{details.name}}</td>
                                     <td style="word-wrap: break-word; width: 65%;">{{details.description}}</td>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
@@ -54,6 +55,13 @@ import { SubmitedtestsComponent } from './Pages/submitedtests/submitedtests.comp
 import { AssignCourseDashboardComponent } from './Pages/assign-course-dashboard/assign-course-dashboard.component';
 import { AttendanceNewComponent } from './Pages/attendance-new/attendance-new.component';
 import { EmployeeAssessmentResultComponent } from './Pages/employee-assessment-result/employee-assessment-result.component';
+import { AssessmentDashboardnewComponent } from './assessment-dashboardnew/assessment-dashboardnew.component';
+import { FinalResultComponent } from './Pages/final-result/final-result.component';
+import { AssesmentDetailsComponent } from './assesment-details/assesment-details.component';
+import { StartMyCourseNewComponent } from './Pages/start-my-course-new/start-my-course-new.component';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
+import { TraineeReportComponent } from './Pages/trainee-report/trainee-report.component';
+import { CourseCertificateNewComponent } from './Pages/course-certificate-new/course-certificate-new.component';
 
 
 
@@ -102,6 +110,12 @@ const ngWizardConfig: NgWizardConfig = {
     AssignCourseDashboardComponent,
     AttendanceNewComponent,
     EmployeeAssessmentResultComponent,
+    AssessmentDashboardnewComponent,
+    FinalResultComponent,
+    AssesmentDetailsComponent,
+    StartMyCourseNewComponent,
+    TraineeReportComponent,
+    CourseCertificateNewComponent,
 
   
   ],
@@ -113,6 +127,8 @@ const ngWizardConfig: NgWizardConfig = {
     AppRoutingModule,
     NgxDropzoneModule,
     CKEditorModule,
+    PdfViewerModule,
+    NgxDocViewerModule,
     // NgxFullCalendarModule,
     HttpClientModule,
     NgWizardModule.forRoot(ngWizardConfig),

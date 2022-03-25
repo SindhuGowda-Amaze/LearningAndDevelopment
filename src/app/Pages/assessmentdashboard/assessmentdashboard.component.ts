@@ -18,6 +18,20 @@ export class AssessmentdashboardComponent implements OnInit {
    this. GetAssessmentResult()
     this.GetAssessments();
     this.GetCourse();
+    this. GetQuestionMaster();
+
+    this.LearningService.GetTestResponse().subscribe(
+      data => {
+        debugger
+        // this.result = data.filter(x => x.manager == this.manager );
+        this.result = data;
+      })
+
+
+
+
+
+
   }
 
 
@@ -51,6 +65,17 @@ export class AssessmentdashboardComponent implements OnInit {
   }
 
 
+  questiontype:any;
+  dummquestiontype:any;
+  public GetQuestionMaster() {
+    debugger
+    this.LearningService.GetQuestionMaster().subscribe(
+      data => {
+        debugger
+        this.questiontype = data;
+      })
+  }
+
   assessmentlist:any;
   public GetAssessmentResult() {
     debugger
@@ -60,6 +85,9 @@ export class AssessmentdashboardComponent implements OnInit {
         this.assessmentlist = data;
       })
   }
+
+
+
   dummquetionlist:any;
   public GetAssessments() {
     debugger
@@ -67,7 +95,9 @@ export class AssessmentdashboardComponent implements OnInit {
       data => {
         debugger
         this.quetionlist = data;
+        console.log("questionlist",this.quetionlist)
         this.dummquetionlist = data;
+      
         this.count = this.quetionlist.length;
       })
   }
@@ -87,8 +117,18 @@ export class AssessmentdashboardComponent implements OnInit {
     location.href="/Checkanswer"
   }
 
-   
-
+  question:any;
+  getquestion(even:any){
+    if(even.target.value !=0){
+      this.question=even.target.value;
+      debugger
+      this.quetionlist = this.dummquetionlist.filter((x: { questionID: any; }) => x.questionID == this.question);
+      this.count=this.quetionlist.length;
+    }
+    else{
+      this.GetAssessments();
+    }
+  }
 
 
 

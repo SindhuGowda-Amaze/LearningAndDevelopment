@@ -71,11 +71,12 @@ export class CheckanswerComponent implements OnInit {
         'ID': this.id,
         'Totalmarks': this.Totalmarks,
         'ObtainedMarks': this.ObtainedMarks,
+        'Checked': 1
       }
 
       this.AmazeService.UpdateTestResponse(ett).subscribe(data => {
         Swal.fire('Submitted Successfully');
-        location.href = '#/Submitedtests'
+        location.href = '#/FinalResult'
       });
     });
 
@@ -91,5 +92,19 @@ export class CheckanswerComponent implements OnInit {
     div.innerHTML = html;
     this.userSubAnswer = div.textContent || div.innerText || "";
   }
+
+
+  
+  Marks:any;
+  public GetTestResponse() {
+    debugger
+    this.AmazeService.GetTestResponse().subscribe(
+      data => {
+        debugger
+        this.Marks = data;
+        
+      })
+  }
+
 
 }

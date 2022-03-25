@@ -1,5 +1,4 @@
 <div class="container-fluid">
-
     <div class="row">
         <div class="col-lg-10">
             <p class="headings">Employee Assessment Results</p>
@@ -14,7 +13,6 @@
             <div class="col-lg-1" style="margin-left: 10px;">
                 <p class="filter">Filter By</p>
             </div>
-
             <div class="col-lg-3">
                 <input type="date" class="form-control search" placeholder="Search" [(ngModel)]="search">
             </div>
@@ -37,26 +35,33 @@
                     <tr>
                         <th>Employee Name</th>
                         <th>Course Name</th>
-                        <th>Assigned Date</th>
-                        <th>Course Start Date</th>
-                        <th>Course End Date</th>
-                        <th>Percentage</th>
-                        <th>Certificate</th>
+                        <th>Chapter Name</th>
+                        <th>Actions</th>
                     </tr>
 
                     <tr *ngFor="let details of detailslist|filter:search">
                         <td>{{details.staffname}}</td>
                         <td>{{details.coursename}}</td>
-                        <td>{{details.assignedDate}}</td>
+                        <td>{{details.chaptername}}</td>
+                        <td>
+                            <button class="check" (click)="Check(details.id)" *ngIf="details.checked==0&&Checkid==1">Check</button>
+                            <button *ngIf="details.checked==1&&Checkid==0" [routerLink]="['/Checkanswer',details.id]" class="add" id="show==1">View
+                            </button>
+                            <button *ngIf="details.checked==1&&Checkid==1" [routerLink]="['/AssesmentDetails',details.courseID,details.userID]" class="add" id="show==1">View
+                            </button>
+
+                            <!-- <button *ngIf="details.checked==1&&Checkid==1" [routerLink]="['/AssesmentDetails',details.courseID,details.userID]" class="add" id="show==1">View
+                            </button> -->
+                        </td>
+                        <!-- <td>{{details.assignedDate}}</td>
                         <td>{{details.startDate}}</td>
                         <td>{{details.endDate}}</td>
                         <td>{{details.obtainedMarks/details.totalmarks
-                            *100 | number : '1.2-2'}} %</td>
-                        <td>
+                            *100 | number : '1.2-2'}} %</td> -->
+                        <!-- <td>
                             <button class="viewcertificate" data-toggle="modal" data-target="#Certificate"
-                                (click)="view(details.staffname,details.coursename)">ViewCertificate</button>
-
-                        </td>
+                                (click)="view(details.staffname,details.coursename)">View Certificate</button>
+                        </td> -->
                     </tr>
                 </thead>
             </table>

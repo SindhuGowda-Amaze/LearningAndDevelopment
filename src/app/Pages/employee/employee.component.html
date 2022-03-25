@@ -1,23 +1,36 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div>
+    
+       
+            <!-- <div>
                 <p class="headings">Staff Dashboard</p>
+            </div> -->
+
+            <div class="row">
+                <div class="col-lg-10">
+                    <p class="headings">Staff Dashboard</p>
+                </div>
+                <div class="col-lg-2">
+                    <p class="count">Count: {{stafflist.length}}</p>
+                </div>
             </div>
+
+
             <div class="card">
-                <div class="row">
+                <br>
+                <div class="row FilterClass">
                     <div class="col-md-1">
                         <p class="filter"> Filter By</p>
                     </div>
                     <div class="col-md-2">
                         <input class="form-control" type="date" placeholder="Duration" id="date" name="date"
-                            [(ngModel)]="date" (change)="getdate($event)">
+                            [(ngModel)]="date" (change)="getdate($event)" [(ngModel)]="search">
                     </div>
                     <div class="col-md-6">
                         <input class="form-control search" type="search" [(ngModel)]="search"
-                            placeholder="search for Staff , Date of joining or Role">
+                            placeholder="Search for Staff , Date of joining or Role">
                     </div>
                 </div>
+                <br>
             </div>
             <br>
             <div class="row">
@@ -87,8 +100,8 @@
                 </div>
             </div>
 
-        </div>
-    </div>
+        
+    
 
 </div>
 
