@@ -62,6 +62,9 @@ import { StartMyCourseNewComponent } from './Pages/start-my-course-new/start-my-
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { TraineeReportComponent } from './Pages/trainee-report/trainee-report.component';
 import { CourseCertificateNewComponent } from './Pages/course-certificate-new/course-certificate-new.component';
+import { HelpComponent } from './help/help.component';
+import { SupportTicketsComponent } from './support-tickets/support-tickets.component';
+import { SupportTicketDashboardComponent } from './support-ticket-dashboard/support-ticket-dashboard.component';
 
 
 
@@ -116,6 +119,9 @@ const ngWizardConfig: NgWizardConfig = {
     StartMyCourseNewComponent,
     TraineeReportComponent,
     CourseCertificateNewComponent,
+    HelpComponent,
+    SupportTicketsComponent,
+    SupportTicketDashboardComponent,
 
   
   ],

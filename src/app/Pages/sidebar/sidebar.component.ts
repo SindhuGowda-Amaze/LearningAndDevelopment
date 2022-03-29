@@ -139,5 +139,15 @@ export class SidebarComponent implements OnInit {
   }
 
 
+  help(){
+    this.active = 'help'
+    localStorage.setItem("clickname", "HELP")
+  }
+
+  SupportTickets(){
+    this.active = 'SupportTickets'
+    localStorage.setItem("clickname", "support tickets")
+  }
+
 
 }

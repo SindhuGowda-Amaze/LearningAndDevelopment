@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { CourseComponent } from './Pages/course/course.component';
 import { FooterComponent } from './Pages/footer/footer.component';
@@ -42,6 +43,9 @@ import { AssesmentDetailsComponent } from './assesment-details/assesment-details
 import { StartMyCourseNewComponent } from './Pages/start-my-course-new/start-my-course-new.component';
 import { TraineeReportComponent } from './Pages/trainee-report/trainee-report.component';
 import { CourseCertificateNewComponent } from './Pages/course-certificate-new/course-certificate-new.component';
+import { HelpComponent } from './help/help.component';
+import { SupportTicketDashboardComponent } from './support-ticket-dashboard/support-ticket-dashboard.component';
+import { SupportTicketsComponent } from './support-tickets/support-tickets.component';
 
 
 
@@ -99,8 +103,11 @@ const routes: Routes = [
   {path:'StartMyCourseNew/:id',component:StartMyCourseNewComponent},
   {path:'CourseCertificate/:id',component:CourseCertificateComponent},
   {path:'TraineeReport',component: TraineeReportComponent},
-  {path:'CourseCertificateNew/:id',component:CourseCertificateNewComponent}
-
+  {path:'CourseCertificateNew/:id',component:CourseCertificateNewComponent},
+  {path:'Help',component:HelpComponent},
+  {path:'SupportTickets',component:SupportTicketsComponent},
+  {path:'SupportTickets/:id',component:SupportTicketsComponent},
+  {path:'SupportTicketDashboard',component:SupportTicketDashboardComponent}
  
 
 
