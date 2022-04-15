@@ -46,11 +46,9 @@ import { CourseCertificateNewComponent } from './Pages/course-certificate-new/co
 import { HelpComponent } from './help/help.component';
 import { SupportTicketDashboardComponent } from './support-ticket-dashboard/support-ticket-dashboard.component';
 import { SupportTicketsComponent } from './support-tickets/support-tickets.component';
-<<<<<<< HEAD
 import { CenterDashboardComponent } from './center-dashboard/center-dashboard.component';
 import { CenterFormComponent } from './center-form/center-form.component';
 
-=======
 import { ManagementstaffleaveviewComponent } from './Pages/managementstaffleaveview/managementstaffleaveview.component';
 import { StudentattedanceComponent } from './studentattedance/studentattedance.component';
 import { CoursecompletionComponent } from './coursecompletion/coursecompletion.component';
@@ -58,7 +56,6 @@ import { FeereportComponent } from './feereport/feereport.component';
 import { AddtimetableComponent } from './addtimetable/addtimetable.component';
 import { TimetabledshComponent } from './timetabledsh/timetabledsh.component';
 import { StaffleavesComponent } from './staffleaves/staffleaves.component';
->>>>>>> b3828bcec49253947ba8317ddbb4d03fb6bd1301
 
 
 
@@ -108,7 +105,6 @@ const routes: Routes = [
   { path: 'Checkanswer', component: CheckanswerComponent },
   { path: 'Submitedtests', component: SubmitedtestsComponent },
   { path: 'AssignCourseDashboard', component: AssignCourseDashboardComponent },
-<<<<<<< HEAD
   {path:'AttendanceNew',component:AttendanceNewComponent},
   {path:'EmployeeAssessmentResult',component:EmployeeAssessmentResultComponent},
   {path:'AssessmentDashboardnew',component: AssessmentDashboardnewComponent},
@@ -127,7 +123,6 @@ const routes: Routes = [
 
  
 
-=======
   { path: 'AttendanceNew', component: AttendanceNewComponent },
   { path: 'EmployeeAssessmentResult', component: EmployeeAssessmentResultComponent },
   { path: 'AssessmentDashboardnew', component: AssessmentDashboardnewComponent },
@@ -148,7 +143,6 @@ const routes: Routes = [
   { path: 'addtimetable', component: AddtimetableComponent },
   { path: 'timetabledsh', component: TimetabledshComponent },
   { path: 'staffleaves', component: StaffleavesComponent },
->>>>>>> b3828bcec49253947ba8317ddbb4d03fb6bd1301
 
 
 
