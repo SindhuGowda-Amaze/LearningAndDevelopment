@@ -65,6 +65,9 @@ import { CourseCertificateNewComponent } from './Pages/course-certificate-new/co
 import { HelpComponent } from './help/help.component';
 import { SupportTicketsComponent } from './support-tickets/support-tickets.component';
 import { SupportTicketDashboardComponent } from './support-ticket-dashboard/support-ticket-dashboard.component';
+import { CenterDashboardComponent } from './center-dashboard/center-dashboard.component';
+import { CenterFormComponent } from './center-form/center-form.component';
+import { CenterComponent } from './center/center.component';
 
 
 
@@ -122,6 +125,9 @@ const ngWizardConfig: NgWizardConfig = {
     HelpComponent,
     SupportTicketsComponent,
     SupportTicketDashboardComponent,
+    CenterDashboardComponent,
+    CenterFormComponent,
+    CenterComponent,
 
   
   ],

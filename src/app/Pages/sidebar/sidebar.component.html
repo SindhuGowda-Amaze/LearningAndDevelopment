@@ -95,6 +95,15 @@
         </a>
 
         <div id="userapplications" class="collapse" style="padding-left: 7%;">
+            <a routerLink="/CenterDashboard" class="tablinks" (click)="highlight($event)" (click)="center()">
+                <img src="assets/Images/1 (1).png" style="width:13% ;margin-right: 17px;"
+                    [ngClass]="active == 'center' ? 'Active1' : 'Active2'" />
+                <img [ngClass]="active != 'center' ? 'Active1' : 'Active2'" src="assets/Images/New folder/1 (1)1.png"
+                    style="width:13%; margin-right: 17px;">
+                &nbsp;
+                <span [ngClass]="active == 'center' ? 'Active1' : 'Active3'"> CENTER </span>
+
+            </a>
             <a routerLink="/CategoryDashboard" class="tablinks" (click)="highlight($event)" (click)="category()">
                 <!-- <img  class="dashboard" src="assets/Images/Vector.png" /> -->
                 <img src="assets/Images/New folder/categorie1.png" style="width:13% ;margin-right: 17px;"
@@ -124,7 +133,7 @@
                 <img [ngClass]="active != 'chapter' ? 'Active1' : 'Active2'" src="assets/Images/New folder/1 (1)1.png"
                     style="width:13%; margin-right: 17px;">
                 &nbsp;
-                <span [ngClass]="active == 'chapter' ? 'Active1' : 'Active3'"> CHAPTER </span>
+                <span [ngClass]="active == 'chapter' ? 'Active1' : 'Active3'"> SUBJECT </span>
 
             </a>
             <a routerLink="/Trainer" class="tablinks" (click)="highlight($event)" (click)="trainer()">
@@ -133,7 +142,7 @@
                 <img [ngClass]="active != 'trainer' ? 'Active1' : 'Active2'"
                     src="assets/Images/New folder/people (1).png" style="width:13%; margin-right: 17px;">
                 &nbsp;
-                <span [ngClass]="active == 'trainer' ? 'Active1' : 'Active3'"> TRAINER </span>
+                <span [ngClass]="active == 'trainer' ? 'Active1' : 'Active3'"> STAFF </span>
             </a>
             <a routerLink="/TrainerCourseMapping" class="tablinks" (click)="highlight($event)"
                 (click)="assigntrainer()">
@@ -142,7 +151,7 @@
                 <img [ngClass]="active != 11 ? 'Active1' : 'Active2'" src="assets/Images/New folder/people (1).png"
                     style="width:13%; margin-right: 17px;">
                 &nbsp;
-                <span [ngClass]="active == 11 ? 'Active1' : 'Active3'"> ASSIGN TRAINER </span>
+                <span [ngClass]="active == 11 ? 'Active1' : 'Active3'">ASSIGN STAFF </span>
             </a>
             <a routerLink="/Employee" class="tablinks" (click)="highlight($event)" (click)="employee()">
                 <img src="assets/Images/people.png" style="width:13% ;margin-right: 17px;"
@@ -150,7 +159,7 @@
                 <img [ngClass]="active != 'employee' ? 'Active1' : 'Active2'"
                     src="assets/Images/New folder/people (1).png" style="width:13%; margin-right: 17px;">
                 &nbsp;
-                <span [ngClass]="active == 'employee' ? 'Active1' : 'Active3'"> EMPLOYEE </span>
+                <span [ngClass]="active == 'employee' ? 'Active1' : 'Active3'"> STUDENT </span>
             </a>
         </div>
         <a *ngIf="roleid==2 || roleid==3" routerLink="/MyCourseDashboard" class="tablinks" (click)="highlight($event)"

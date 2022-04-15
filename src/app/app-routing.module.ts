@@ -46,6 +46,9 @@ import { CourseCertificateNewComponent } from './Pages/course-certificate-new/co
 import { HelpComponent } from './help/help.component';
 import { SupportTicketDashboardComponent } from './support-ticket-dashboard/support-ticket-dashboard.component';
 import { SupportTicketsComponent } from './support-tickets/support-tickets.component';
+import { CenterDashboardComponent } from './center-dashboard/center-dashboard.component';
+import { CenterFormComponent } from './center-form/center-form.component';
+
 
 
 
@@ -107,7 +110,10 @@ const routes: Routes = [
   {path:'Help',component:HelpComponent},
   {path:'SupportTickets',component:SupportTicketsComponent},
   {path:'SupportTickets/:id',component:SupportTicketsComponent},
-  {path:'SupportTicketDashboard',component:SupportTicketDashboardComponent}
+  {path:'SupportTicketDashboard',component:SupportTicketDashboardComponent},
+  {path:'CenterDashboard',component:CenterDashboardComponent},
+  {path:'CenterForm',component:CenterFormComponent}
+
  
 
 

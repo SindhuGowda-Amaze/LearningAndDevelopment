@@ -75,6 +75,12 @@ export class SidebarComponent implements OnInit {
     localStorage.setItem("clickname", "CHAPTER")
   }
 
+  center() {
+    this.active = 'center'
+    localStorage.setItem("clickname", "CENTER")
+ 
+  }
+
   trainer() {
     this.active = 'trainer'
     localStorage.setItem("clickname", "TRAINER")
