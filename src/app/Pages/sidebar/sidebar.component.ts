@@ -65,6 +65,33 @@ export class SidebarComponent implements OnInit {
     localStorage.setItem("clickname", "CATEGORY")
   }
 
+  managementstaffleaveview() {
+    this.active = 'managementstaffleaveview';
+    localStorage.setItem("clickname", "Staff Leave Details")
+  }
+  studentattedance() {
+    this.active = 'studentattedance';
+    localStorage.setItem("clickname", "Student Attedance")
+  }
+  coursecompletion() {
+    this.active = 'coursecompletion';
+    localStorage.setItem("clickname", "Course Completion")
+  }
+  feereport() {
+    this.active = 'feereport';
+    localStorage.setItem("clickname", "Fee Report")
+  }
+  timetabledsh() {
+    this.active = 'timetabledsh';
+    localStorage.setItem("clickname", "Timetable")
+  }
+
+  staffleaves() {
+    this.active = 'staffleaves';
+    localStorage.setItem("clickname", "My Leaves")
+  }
+
+
   course() {
     this.active = 'course'
     localStorage.setItem("clickname", "COURSE")
@@ -128,29 +155,29 @@ export class SidebarComponent implements OnInit {
     localStorage.setItem("clickname", "Test Submitted")
   }
 
-  employeeAssessment(){
-    this.active='employeeAssessment';
+  employeeAssessment() {
+    this.active = 'employeeAssessment';
     localStorage.setItem("clickname", "Employee Assessment")
   }
 
 
-  Assessmentresult(){
-    this.active='assessmentresult';
+  Assessmentresult() {
+    this.active = 'assessmentresult';
     localStorage.setItem("clickname", "Employee Assessment Result")
   }
 
-  TraineeReport(){
-    this.active='traineeReport';
+  TraineeReport() {
+    this.active = 'traineeReport';
     localStorage.setItem("clickname", "Trainee Report")
   }
 
 
-  help(){
+  help() {
     this.active = 'help'
     localStorage.setItem("clickname", "HELP")
   }
 
-  SupportTickets(){
+  SupportTickets() {
     this.active = 'SupportTickets'
     localStorage.setItem("clickname", "support tickets")
   }

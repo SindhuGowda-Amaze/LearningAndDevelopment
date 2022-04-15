@@ -9,17 +9,17 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./course-certificate.component.css']
 })
 export class CourseCertificateComponent implements OnInit {
- 
-  courseid:any;
-  constructor(public LearningService: LearningService,private ActivatedRoute:ActivatedRoute) { }
+
+  courseid: any;
+  constructor(public LearningService: LearningService, private ActivatedRoute: ActivatedRoute) { }
   UserName: any;
   ngOnInit(): void {
     this.ActivatedRoute.params.subscribe(params => {
       debugger
       this.courseid = params['id'];
-      this. GetEnrollCourseCertificate(sessionStorage.getItem('userid'))
+      this.GetEnrollCourseCertificate(sessionStorage.getItem('userid'))
     }
-    )     
+    )
     debugger
     this.UserName = sessionStorage.getItem('UserName');
     this.getmycertiifcate();
@@ -76,13 +76,13 @@ export class CourseCertificateComponent implements OnInit {
     });;
   }
 
-  certificate:any;
-  public GetEnrollCourseCertificate(StaffID:any) {
+  certificate: any;
+  public GetEnrollCourseCertificate(StaffID: any) {
     debugger
     this.LearningService.GetEnrollCourseCertificate(StaffID).subscribe(
       data => {
         debugger
-        this.certificate = data.filter(x => x.courseID ==this.courseid);
+        this.certificate = data.filter(x => x.courseID == this.courseid);
       })
   }
 
