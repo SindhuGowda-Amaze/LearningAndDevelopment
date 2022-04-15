@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-lg-10">
-            <p class="headings">Attendance Details</p>
+            <p class="headings">My Attendance Details</p>
         </div>
         <div class="col-lg-2">
             <p class="count">Count: {{Attendance.length}}</p>
@@ -15,12 +15,21 @@
             <div class="col-lg-1">
                 <p class="filter" style="margin-left: 15px;">Filter By </p>
             </div>
+
+
             <div class="col-lg-5">
                 <input type="search" class="form-control search" placeholder="Search" [(ngModel)]="search">
             </div>
+            <div class="col-lg-2">
+                <button class="form-control cancel">Sign In</button>
+            </div>
+            <div class="col-lg-2">
+                <button class="form-control cancel">Sign Out</button>
+            </div>
+
         </div> <br>
     </div> <br>
- <br>
+    <br>
 
     <div class="row">
         <div class="col-lg-12">
@@ -30,7 +39,7 @@
                         <table class="table" *ngIf="(Attendance | filter: search).length > 0; else noResults">
                             <thead>
                                 <tr>
-                                    <th>Employee Name</th>
+                                    <!-- <th *ngIf="roleid==4 ">Student Name</th> -->
                                     <th>Login Date</th>
                                     <th>Login Time</th>
                                     <th>Logout Time</th>
@@ -38,7 +47,7 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let details of Attendance | filter: search">
-                                    <td>{{details.employeename}}</td>
+                                    <!-- <td *ngIf="roleid==4">{{details.employeename}}</td> -->
                                     <td>{{details.loginDate}}</td>
                                     <td>{{details.loginTime}}</td>
                                     <td>{{details.logoutDate}}</td>

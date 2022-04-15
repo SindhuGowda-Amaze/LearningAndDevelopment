@@ -65,6 +65,13 @@ import { CourseCertificateNewComponent } from './Pages/course-certificate-new/co
 import { HelpComponent } from './help/help.component';
 import { SupportTicketsComponent } from './support-tickets/support-tickets.component';
 import { SupportTicketDashboardComponent } from './support-ticket-dashboard/support-ticket-dashboard.component';
+import { ManagementstaffleaveviewComponent } from './Pages/managementstaffleaveview/managementstaffleaveview.component';
+import { StudentattedanceComponent } from './studentattedance/studentattedance.component';
+import { CoursecompletionComponent } from './coursecompletion/coursecompletion.component';
+import { FeereportComponent } from './feereport/feereport.component';
+import { AddtimetableComponent } from './addtimetable/addtimetable.component';
+import { TimetabledshComponent } from './timetabledsh/timetabledsh.component';
+import { StaffleavesComponent } from './staffleaves/staffleaves.component';
 
 
 
@@ -122,6 +129,13 @@ const ngWizardConfig: NgWizardConfig = {
     HelpComponent,
     SupportTicketsComponent,
     SupportTicketDashboardComponent,
+    ManagementstaffleaveviewComponent,
+    StudentattedanceComponent,
+    CoursecompletionComponent,
+    FeereportComponent,
+    AddtimetableComponent,
+    TimetabledshComponent,
+    StaffleavesComponent,
 
   
   ],

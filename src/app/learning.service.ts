@@ -7,9 +7,10 @@ import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 })
 export class LearningService {
   // public baseURL = "http://localhost:4199/";
+  //  public baseURL = "http://103.133.214.197/LearningAndDevelopement";
   public baseURL = "http://103.133.214.197/LmsFashion/";
   public host = "https://digioffice.amazeone.co/digiofficeapi";
-  public host1="https://support.amazeone.co/SupportAPI/";
+  public host1 = "https://support.amazeone.co/SupportAPI/";
 
   url: any;
   constructor(private http: HttpClient) {
@@ -693,11 +694,11 @@ export class LearningService {
   public GetEnrollCourseCertificateNew(ID: any) {
     debugger;
     return this.http.get<any[]>(
-      this.baseURL + '/Master/GetEnrollCourseCertificateNew?ID='+ID);
+      this.baseURL + '/Master/GetEnrollCourseCertificateNew?ID=' + ID);
   }
 
 
-   
+
   public GetDepartmentMaster() {
     debugger;
     return this.http.get<any[]>(
@@ -711,7 +712,7 @@ export class LearningService {
     this.url = this.host1 + '/Master/InsertAttachment';
     return this.http.post(this.url, data);
   }
- 
+
   public InsertSupportTickets(data: any) {
     debugger;
     this.url = this.host1 + '/Master/InsertSupportTickets';
@@ -724,7 +725,7 @@ export class LearningService {
     for (let i = 0; i < files.length; i++) {
       formdata.append('file_upload', files[i], files[i].name);
     }
-    
+
     debugger
     let APIURL = this.host1 + "Master/UploadImages/";
     return this.http.post(APIURL, formdata);
