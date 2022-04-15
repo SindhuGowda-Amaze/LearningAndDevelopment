@@ -119,7 +119,7 @@ const routes: Routes = [
   {path:'SupportTickets/:id',component:SupportTicketsComponent},
   {path:'SupportTicketDashboard',component:SupportTicketDashboardComponent},
   {path:'CenterDashboard',component:CenterDashboardComponent},
-  {path:'CenterForm',component:CenterFormComponent}
+  {path:'CenterForm',component:CenterFormComponent},
 
  
 
