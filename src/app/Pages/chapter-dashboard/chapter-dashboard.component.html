@@ -35,22 +35,22 @@
         </div>
     </div> <br>
 </div>
-    <div class="container-fluid">
-        <div class="row scroll">
-            <div class="col-lg-12">
-                <table class="table" *ngIf="(coursedetails | filter: search).length >= 0; else noResults">
-                    <thead>
-                        <tr>
-                            <th>Center</th>
-                            <th>Course Name</th>
-                            <th>Chapter Name</th>
-                            <th>Description</th>
-                            <th style="width:15%">Chapter Photo</th>
-                            <th>Attachment</th>
-                            <th>Chapter Text</th>
-                            <th>Actions</th>
-                        </tr>
-                        <tr>
+<div class="container-fluid">
+    <div class="row scroll">
+        <div class="col-lg-12">
+            <table class="table" *ngIf="(coursedetails | filter: search).length >= 0; else noResults">
+                <thead>
+                    <tr>
+                        <th>Center</th>
+                        <th>Course Name</th>
+                        <th>Chapter Name</th>
+                        <th>Description</th>
+                        <th style="width:15%">Chapter Photo</th>
+                        <th>Attachment</th>
+                        <th>Chapter Text</th>
+                        <th>Actions</th>
+                    </tr>
+                    <!-- <tr>
                             <td>Amaze</td>
                             <td>Angular</td>
                             <td>Add</td>
@@ -59,48 +59,45 @@
                             <td>yes</td>
                             <td>Maths</td>
                             <td>Yes</td>
-                        </tr>
-                        <!-- <tr *ngFor="let details of coursedetails | filter: search"> 
-                            <td>{{details.courseName}}</td>
-                            <td>{{details.name}}</td>
-                            <td style="height:20px">{{details.shortdescription}}
-                                <span style="color:#3247D5" (click)="view(details.description)" data-toggle="modal"
-                                    data-target="#exampleModal3">...View more</span>
-                            </td>
-                            <td><img src="{{details.chapterPhoto}}" data-toggle="modal" data-target="#exampleModal2"
-                                    (click)="Showimage(details.chapterPhoto)" style="width:100px">
-                            </td>
-                            <td><img class="pdfimg" src="assets/Images/image.png" style="width: 20px;"
-                                    data-toggle="modal" data-target="#exampleModal"
-                                    (click)="ShowAttachments(details.id)">
+                        </tr> -->
+                    <tr *ngFor="let details of coursedetails | filter: search">
+                        <td>{{details.courseName}}</td>
+                        <td>{{details.name}}</td>
+                        <td style="height:20px">{{details.shortdescription}}
+                            <span style="color:#3247D5" (click)="view(details.description)" data-toggle="modal"
+                                data-target="#exampleModal3">...View more</span>
+                        </td>
+                        <td><img src="{{details.chapterPhoto}}" data-toggle="modal" data-target="#exampleModal2"
+                                (click)="Showimage(details.chapterPhoto)" style="width:100px">
+                        </td>
+                        <td><img class="pdfimg" src="assets/Images/image.png" style="width: 20px;" data-toggle="modal"
+                                data-target="#exampleModal" (click)="ShowAttachments(details.id)">
 
-                            <td>
-                                <span  
-                                [innerHTML]="details.chapterdescription"></span>
-                                  <span style="color:#3247D5;    float: right;
-                                  margin-block: -18px;"
-                                  data-toggle="modal"
-                                  data-target="#exampleModal3" (click)="view(details.chapterText)">....View More</span>
-                            </td>
-                            <td style="width:100px"> -->
-                                <!-- <button class="edit" (click)="edit(details.id)">Edit</button> <br> <br>
-                                <button class="edit" (click)="Ondelete(details.id)">Delete</button> -->
-<!-- 
-                                <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width:20px;"
-                                    (click)="edit(details.id)"> &nbsp;
+                        <td>
+                            <span [innerHTML]="details.chapterdescription"></span>
+                            <span style="color:#3247D5;    float: right;
+                                  margin-block: -18px;" data-toggle="modal" data-target="#exampleModal3"
+                                (click)="view(details.chapterText)">....View More</span>
+                        </td>
+                        <td style="width:100px">
+                            <button class="edit" (click)="edit(details.id)">Edit</button> <br> <br>
+                            <button class="edit" (click)="Ondelete(details.id)">Delete</button> 
 
-                                <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON"
-                                    (click)="Ondelete(details.id)" style="width:20px;">
-                            </td>
-                        </tr>  -->
-                    </thead>
-                </table>
-                <ng-template #noResults>
-                    <p class="NoResultShow"> No results found </p>
-                </ng-template>
-            </div>
+                            <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width:20px;"
+                                (click)="edit(details.id)"> &nbsp;
+
+                            <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON" (click)="Ondelete(details.id)"
+                                style="width:20px;">
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+            <ng-template #noResults>
+                <p class="NoResultShow"> No results found </p>
+            </ng-template>
         </div>
     </div>
+</div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -118,7 +115,7 @@
                         <br>
                         <img src="{{attchments.photo}}" *ngIf="attchments.attachmentType=='Image'"
                             (click)="openAttchments(attchments.photo)" style="width: 171px; height: 117px;">
-                           
+
                         <img src="assets/Images/pdf.png" *ngIf="attchments.attachmentType=='Pdf'"
                             (click)="openAttchments(attchments.photo)" style="width: 171px; height: 117px;">
                         <img src="assets/Images/word.png" *ngIf="attchments.attachmentType=='Document'"
