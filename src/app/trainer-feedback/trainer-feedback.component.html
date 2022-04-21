@@ -1,1 +1,368 @@
-<p>trainer-feedback works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-10">
+            <p class="headings">Trainer Feedback</p>
+        </div>
+        <div class="col-lg-2">
+            <p class="count">Count: 6</p>
+        </div>
+    </div>
+
+    <div class="card">
+
+        <div class="row FilterClass ">
+            <div class="col-lg-1">
+                <p class="filter">Filter By </p>
+            </div>
+            <div class="col-lg-3">
+                <select class="form-control " id="Duration">
+                    <option class="FilterClass" value="0">Select Center</option>
+                    <option class="FilterClass" value="0">Center 1</option>
+                    <option class="FilterClass" value="0">Center 2</option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <select class="form-control " id="Duration">
+                    <option class="FilterClass" value="0">Select staff</option>
+                    <option class="FilterClass" value="0">Arjun</option>
+                    <option class="FilterClass" value="0">Sameeksha</option>
+                    <option class="FilterClass" value="0">Roopa</option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <select class="form-control " id="Duration">
+                    <option class="FilterClass" value="0">Select Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <!-- <div class="col-lg-5">
+                <input type="search" class="form-control search" placeholder="Search for Staff" [(ngModel)]="search">
+            </div> -->
+        </div>
+    </div> <br>
+    <!-- <div class="row">
+        <div class="col-lg-9"></div>
+        <div class="col-lg-3">
+            Current Month : <b>April</b>
+        </div>
+    </div> <br> -->
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12" style="overflow: auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Center Name</th>
+                            <th>Staff Name</th>
+                            <th>Course NAme</th>
+                            <th>Student Name</th>
+                            <th>Feedback Date</th>
+                            <th>Feedback </th>
+                            <th>Feedback Rating</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Center 1</p>
+                            </td>
+                            <td>
+                                <p>Arjun</p>
+                            </td>
+                            <td>
+                                <p>Master of Design and Crafting Menswear</p>
+                            </td>
+                            <td>
+                                <p>Akriti</p>
+                            </td>
+                            <td>28th March 2022</td>
+                            <td>
+                                <p>I would highly recommend this course for someone passionate about the industry. It's an Insightful course too deepen inside the fashion world, 
+                                    through history, identity, sustainability, and much more.</p>
+                            </td>
+                            <td>
+                                <p class="rating"> * * * * *</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Center 2</p>
+                            </td>
+                            <td>
+                                <p>Roopa</p>
+                            </td>
+                            <td>
+                                <p>Master of Design and Crafting Menswear</p>
+                            </td>
+                            <td>
+                                <p>Pradeep</p>
+                            </td>
+                            <td>20th March 2022</td>
+                            <td>
+                                <p>Highly practical and ambitious material challenging us to think about the current landscape of fashion, as well as the future, and how we can improve the the industry with sustainable practices.</p>
+                            </td>
+                            <td>
+                                <p class="rating"> * * * * *</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Center 1</p>
+                            </td>
+                            <td>
+                                <p>Arjun</p>
+                            </td>
+                            <td>
+                                <p>Master of Design and Crafting Menswear</p>
+                            </td>
+                            <td>
+                                <p>Danny</p>
+                            </td>
+                            <td>10th March 2022</td>
+                         
+                            <td>
+                                <p>Although I found most of what was featured in the course interesting, and it allowed me to approach fashion from a more academic perspective for the first time, I feel there are some areas where it falls short slightly. Due to the course being based on an exhibition, I sometimes felt as though I wasn't really exploring the topic as much as I would have liked, as if I was just paying to go through the exhibition, rather than through a course. The way that everything was peer-assessed and reviewed is, while a good idea, sometimes a bit irritating as I would spend lots of time and effort forming a (hopefully!) insightful reflection, and would look at other people's submissions to see one-word answers. It felt a bit strange that I ended up getting the same certificate from the course as another person despite putting in a lot more effort.  </p>
+                            </td>
+                            <td>
+                                <p class="rating"> * * </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Center 2</p>
+                            </td>
+                            <td>
+                                <p>Sameeksha</p>
+                            </td>
+                            <td>
+                                <p>MBA Fashion Design Management</p>
+                            </td>
+                            <td>
+                                <p>Ramesh</p>
+                            </td>
+                            <td>20th Feb 2022</td>
+                            <td>
+                               
+                                <p>The information presented is good, I especially enjoyed the footage from presentations held at MoMa. Unfortunately, every week ends the same when it comes to the reflective stage (same questions, pretty generic) and I feel this steals us from the possibility to better internalize the information.</p>
+                            </td>
+                            <td>
+                                <p class="rating"> * * *</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Center 2</p>
+                            </td>
+                            <td>
+                                <p>Sameeksha</p>
+                            </td>
+                            <td>
+                                <p>MBA Fashion Design Management</p>
+                            </td>
+                            <td>
+                                <p>Sanjay</p>
+                            </td>
+                            <td>11th Feb 2022</td>
+                         
+                            <td>
+                                <p>The course is very interesting for those, who is connected to the fashion industry in one way 
+                                    or another. However I expected to have more information about life-circle of clothes: how it is produced, what exactly happens after an item is thrown away etc. </p>
+                            </td>
+                            <td>
+                                <p class="rating"> * * * * </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Center 1</p>
+                            </td>
+                            <td>
+                                <p>Arjun</p>
+                            </td>
+                            <td>
+                                <p>Master of Design and Crafting Menswear</p>
+                            </td>
+                            <td>
+                                <p>Suresh</p>
+                            </td>
+                            <td>2ndth Feb 2022</td>
+                           
+                            <td>
+                                <p>This course is excellently taught and very engaging, I have enjoyed it immensely and cant wait to do further courses produced by MOMA! Great course, I would highly recommend it :)</p>
+                            </td>
+                            <td>
+                                <p class="rating"> * * * * </p>
+                            </td>
+                        </tr>
+
+
+                  
+
+
+
+                        <!-- <tr *ngFor="let details of result | filter: search">
+                            <td>{{details.categoryName}}</td>
+                            <td>{{details.name}}</td>
+
+                            <td>
+                                <span [innerHTML]="details.coursedescription"></span>
+                                <span style="color:#3247D5;    float: right;
+                                 " data-toggle="modal" data-target="#exampleModal3"
+                                    (click)="view(details.description)">....View More</span>
+                            </td>
+
+                            <td>
+                                <img (click)="clickonimage(details.photo)" data-toggle="modal"
+                                    data-target="#exampleModal" src="{{details.photo}}" width="50%" height="auto">
+                            </td>
+                            <td>{{details.duration}}</td>
+                            <td>{{details.fee}}</td>
+                            <td>{{details.entryCriteria}}</td>
+                            <td>{{details.exitCriteria}}</td>
+                            <td style="width:100px">
+                                <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width:20px; height:auto"
+                                    (click)="Update(details.id)"> &nbsp;&nbsp;
+
+                                <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON"
+                                    (click)="Ondelete(details.id)" style="width:20px; height:auto">
+                            </td>
+                        </tr> -->
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="enroll1" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="text-align: left;    margin-left: 123px;
+        width: 550px;
+        text-align: left;">
+            <div class="modal-header" style="text-align: left;">
+                <h4 class="modal-title">Substitute Staff</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="margin-left: 0px;">
+                    <div class="col-lg-1">
+
+                    </div>
+                    <div class="col-lg-2">
+                        <p>Date:</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <input type="date" id="date" name="date" class="form-control">
+                    </div>
+
+                </div>
+                <br>
+                <div class="row" style="margin-left: 0px;">
+                    <div class="col-lg-1">
+
+                    </div>
+                    <div class="col-lg-2">
+                        <p>Staff:</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <select class="form-control" name="cars" id="Duration">
+                            <option value="0">Select Staff</option>
+                            <option value="0">Arjun</option>
+                            <option value="0">Samir</option>
+                            <option value="0">Pravin</option>
+                            <option value="0">Sachin</option>
+                            <option value="0">Dilip</option>
+
+                        </select>
+                    </div>
+
+                </div>
+                <br>
+                <br>
+                <div class="row" style="margin-left: 0px;">
+                    <div class="col-lg-4">
+
+                    </div>
+                    <div class="col-lg-4">
+                        <button class="form-control cancel">Substitute</button>
+                    </div>
+                    <div class="col-lg-4">
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <hr>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <br>
+                        <img src="{{image}}" style="width:100%;height:auto;">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 19px;color:#3247D5">Description</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12" style="color:#0C275A ;font-size: 13px;">
+                        <p [innerHTML]="description"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-lg-9"></div>
+               
+            </div>
+        </div>
+    </div>
+</div> -->

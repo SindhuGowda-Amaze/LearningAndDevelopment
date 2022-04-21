@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TrainerFeedbackComponent implements OnInit {
 
   constructor() { }
-
+  search: any
   ngOnInit(): void {
   }
 
