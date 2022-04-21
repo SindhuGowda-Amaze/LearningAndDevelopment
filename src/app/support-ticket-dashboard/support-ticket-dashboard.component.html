@@ -61,7 +61,7 @@
                                 <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width:20px; height:auto"
                                 [routerLink]="['/SupportTickets', details.id]" *ngIf="details.status=='Open'" > &nbsp;&nbsp;
 
-                                        <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON"*ngIf="details.status=='Open'"
+                                        <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON" *ngIf="details.status=='Open'"
                                               style="width:20px; height:auto" (click)="DeleteSupportTickets(details.id)">
                                               <p *ngIf="details.status!='Open'">NA</p>
                             </td> 
