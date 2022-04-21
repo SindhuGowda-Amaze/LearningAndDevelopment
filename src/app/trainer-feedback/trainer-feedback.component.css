@@ -239,10 +239,11 @@
     th,td{
       border: 1px #404040;
       border-collapse: collapse;
+      width: 100px;
     }
 
 
     .rating{
-        color: green; font-size: 18px;
+        color: green; font-size: 30px;
         font-weight: 900;
     }
