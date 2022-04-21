@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-lg-3">
                     <select  class="form-control "  id="Duration" (change)="getcategoryid($event)" >
-                        <option class="FilterClass"  value="0">Select Category</option>
+                        <option class="FilterClass"  value="0">Select Course</option>
                         <option class="FilterClass" *ngFor="let cat  of categorylist" value="{{cat.name}}">{{cat.name}}</option>
                     </select>
                     <!-- <select  class="form-control "  id="Duration" (change)="getcategoryid($event)" >

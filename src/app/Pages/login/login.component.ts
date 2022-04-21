@@ -94,6 +94,19 @@ export class LoginComponent implements OnInit {
 
 
     }
+    else if (this.userName === 'Management' && this.password == '1') {
+      sessionStorage.setItem('UserName', 'Management');
+      sessionStorage.setItem('temp', '1');
+      sessionStorage.setItem('role', 'Management');
+      sessionStorage.setItem('roleid', '5');
+
+      //  this.router.navigate(["AdminDashboard"]);
+      localStorage.setItem("clickname", "Management Dashboard")
+      location.href = "#/AdminDashboard";
+      location.reload();
+
+    }
+
     else if (this.roleID == 2) {
       this.LearningService.GetMyDetails().subscribe(async data => {
         let temp: any = data.filter(x => (x.emailID == this.userName || x.phoneNo == this.userName) && x.password == this.password);
@@ -104,17 +117,17 @@ export class LoginComponent implements OnInit {
           debugger
           sessionStorage.setItem('UserName', this.result.name);
           sessionStorage.setItem('userid', this.result.id);
-       
+
           console.log("Employeid", this.result.id)
           sessionStorage.setItem('temp', '1');
           sessionStorage.setItem('manager', this.result.supervisor)
           sessionStorage.setItem('role', 'Employee');
-       
+
           debugger
           sessionStorage.setItem('roleid', '2');
           localStorage.setItem("clickname", "Admin Dashboard")
           this.Insertattdnace(this.result.id)
-      
+
         }
         else {
           Swal.fire('Username or Password is invalid');
@@ -162,7 +175,7 @@ export class LoginComponent implements OnInit {
         if (this.result != undefined || this.result != null) {
           sessionStorage.setItem('UserName', this.result.name);
           sessionStorage.setItem('userid', this.result.id);
-          localStorage.setItem('trainerid',this.result.id)
+          localStorage.setItem('trainerid', this.result.id)
           sessionStorage.setItem('temp', '1');
           sessionStorage.setItem('role', 'Trainer');
           sessionStorage.setItem('roleid', '4');
@@ -184,23 +197,22 @@ export class LoginComponent implements OnInit {
 
 
 
-  public async Insertattdnace(id:any) {
+  public async Insertattdnace(id: any) {
     debugger
     var entity = {
       'EmpID': id,
       'LoginDate': new Date()
     }
-  await  this.LearningService.InsertAttendance_New(entity).subscribe(
-      (datay:any) => {
+    await this.LearningService.InsertAttendance_New(entity).subscribe(
+      (datay: any) => {
         debugger
-        if(datay!=0)
-        {
-          localStorage.setItem('loginid',datay);
-      
+        if (datay != 0) {
+          localStorage.setItem('loginid', datay);
+
           location.href = "#/AdminDashboard";
           location.reload();
         }
-   
+
       })
 
   }

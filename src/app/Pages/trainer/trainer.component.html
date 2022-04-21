@@ -1,7 +1,7 @@
 <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-10">
-                    <p class="headings">Trainer Dashboard</p>
+                    <p class="headings">Staff Dashboard</p>
                 </div>
                 <div class="col-lg-2">
                     <p class="count">Count: {{result.length}}</p>
@@ -33,7 +33,7 @@
                             <table class="table"  *ngIf="(result | filter:search).length > 0; else noResults">
                             <thead>
                                 <tr >
-                                    <th>Name</th>
+                                    <th>Center</th>
                                     <th>Phone Number</th>
                                     <th>Email Id</th>
                                     <th>Address</th>

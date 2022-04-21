@@ -46,6 +46,16 @@ import { CourseCertificateNewComponent } from './Pages/course-certificate-new/co
 import { HelpComponent } from './help/help.component';
 import { SupportTicketDashboardComponent } from './support-ticket-dashboard/support-ticket-dashboard.component';
 import { SupportTicketsComponent } from './support-tickets/support-tickets.component';
+import { CenterDashboardComponent } from './center-dashboard/center-dashboard.component';
+import { CenterFormComponent } from './center-form/center-form.component';
+
+import { ManagementstaffleaveviewComponent } from './Pages/managementstaffleaveview/managementstaffleaveview.component';
+import { StudentattedanceComponent } from './studentattedance/studentattedance.component';
+import { CoursecompletionComponent } from './coursecompletion/coursecompletion.component';
+import { FeereportComponent } from './feereport/feereport.component';
+import { AddtimetableComponent } from './addtimetable/addtimetable.component';
+import { TimetabledshComponent } from './timetabledsh/timetabledsh.component';
+import { StaffleavesComponent } from './staffleaves/staffleaves.component';
 
 
 
@@ -107,9 +117,32 @@ const routes: Routes = [
   {path:'Help',component:HelpComponent},
   {path:'SupportTickets',component:SupportTicketsComponent},
   {path:'SupportTickets/:id',component:SupportTicketsComponent},
-  {path:'SupportTicketDashboard',component:SupportTicketDashboardComponent}
+  {path:'SupportTicketDashboard',component:SupportTicketDashboardComponent},
+  {path:'CenterDashboard',component:CenterDashboardComponent},
+  {path:'CenterForm',component:CenterFormComponent},
+
  
 
+  { path: 'AttendanceNew', component: AttendanceNewComponent },
+  { path: 'EmployeeAssessmentResult', component: EmployeeAssessmentResultComponent },
+  { path: 'AssessmentDashboardnew', component: AssessmentDashboardnewComponent },
+  { path: 'FinalResult', component: FinalResultComponent },
+  { path: 'AssesmentDetails', component: AssesmentDetailsComponent },
+  { path: 'StartMyCourseNew/:id', component: StartMyCourseNewComponent },
+  { path: 'CourseCertificate/:id', component: CourseCertificateComponent },
+  { path: 'TraineeReport', component: TraineeReportComponent },
+  { path: 'CourseCertificateNew/:id', component: CourseCertificateNewComponent },
+  { path: 'Help', component: HelpComponent },
+  { path: 'SupportTickets', component: SupportTicketsComponent },
+  { path: 'SupportTickets/:id', component: SupportTicketsComponent },
+  { path: 'SupportTicketDashboard', component: SupportTicketDashboardComponent },
+  { path: 'managementstaffleaveview', component: ManagementstaffleaveviewComponent },
+  { path: 'studentattedance', component: StudentattedanceComponent },
+  { path: 'coursecompletion', component: CoursecompletionComponent },
+  { path: 'feereport', component: FeereportComponent },
+  { path: 'addtimetable', component: AddtimetableComponent },
+  { path: 'timetabledsh', component: TimetabledshComponent },
+  { path: 'staffleaves', component: StaffleavesComponent },
 
 
 

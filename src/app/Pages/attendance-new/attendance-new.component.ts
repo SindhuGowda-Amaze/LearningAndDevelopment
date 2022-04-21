@@ -14,20 +14,21 @@ export class AttendanceNewComponent implements OnInit {
   id: any;
   result: any;
   count: any;
-
+  roleid: any;
   ngOnInit(): void {
+    this.roleid = sessionStorage.getItem('roleid');
     this.GetAttendance_New();
   }
 
 
 
-  Attendance:any;
+  Attendance: any;
   public GetAttendance_New() {
     debugger
     this.LearningService.GetAttendance_New().subscribe(
       data => {
         debugger
-        this.Attendance=data;
+        this.Attendance = data;
       })
   }
 
@@ -45,7 +46,7 @@ export class AttendanceNewComponent implements OnInit {
   // }
 
 
-  
+
 
 
 

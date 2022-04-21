@@ -1,0 +1,86 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-lg-2">
+            <p class="headings">Center Details </p>
+        </div>
+        <!-- <div class="col-lg-8"></div>
+    </div> -->
+    <!-- <hr> -->
+    <div class="card">
+        <div class="row head">
+            <div class="col-lg-2">
+                <p>Name</p>
+                    <input class="form-control" type="name" placeholder="Enter Name" [(ngModel)]="name">
+            </div>
+            <div class="col-lg-3">
+                <p>Contact Person</p>
+                <input class="form-control" type="ContactPerson" placeholder="Enter Contact Person" [(ngModel)]="ContactPerson">
+            </div>
+            <div class="col-lg-3">
+                <p>Phone No.</p>
+                <input class="form-control" type="PhoneNo" placeholder="Enter Phone Number" [(ngModel)]="number">
+            </div>
+            <div class="col-lg-2">
+                <p>Email</p>
+                <input class="form-control" type="email" placeholder="Enter Email" [(ngModel)]="email">
+            </div>
+            <div class="col-lg-2">
+                <p>Address</p>
+                <!-- <div class="col-lg-4"> -->
+                    <textarea class="form-control" type="address" placeholder="Entry Address" rows="5"
+                        [(ngModel)]="address"></textarea>
+    
+                <!-- </div> -->
+            </div>
+           
+        
+        </div>
+        <div class="row header">
+            <div class="col-lg-2">
+                <p>Country</p>
+                <select class="form-control" (change)="GetCategoryid($event)">
+                    <option value="0">Select Country</option>
+                    <option *ngFor="let details of result" value="{{details.name}},{{details.id}}">{{details.name}}</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <p>State</p>
+                <select class="form-control" (change)="GetCategoryid($event)">
+                    <option value="0">Select State</option>
+                    <option *ngFor="let details of result" value="{{details.name}},{{details.id}}">{{details.name}}</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <p>City</p>
+                <select class="form-control" (change)="GetCategoryid($event)">
+                    <option value="0">Select City</option>
+                    <option *ngFor="let details of result" value="{{details.name}},{{details.id}}">{{details.name}}</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <p>Pincode</p>
+                <select class="form-control" (change)="GetCategoryid($event)">
+                    <option value="0">Select Pincode</option>
+                    <option *ngFor="let details of result" value="{{details.name}},{{details.id}}">{{details.name}}</option>
+                </select>
+            </div>
+
+        </div> <br>
+
+        <div class="row">
+            
+           
+        </div><br>
+        <div class="row">
+            <div class="col-lg-9"></div>
+            <div class="col-lg-1">
+                <button class="form-control cancel" *ngIf="id==null || id==undefined" (click)="Save()">Save</button>
+            </div>
+            <div class="col-lg-1">
+                <button class="form-control  cancel " (click)="cancel()">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+

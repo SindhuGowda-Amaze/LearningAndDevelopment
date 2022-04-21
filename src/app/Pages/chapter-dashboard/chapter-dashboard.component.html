@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-10">
-            <p class="headings">Chapter Dashboard</p>
+            <p class="headings">Subject Dashboard</p>
         </div>
         <div class="col-lg-2">
             <p class="count">Count: {{coursedetails.length}}</p>
@@ -16,7 +16,7 @@
             </div>
             <div class="col-lg-3">
                 <select class="form-control" name="cars" id="Duration" (change)="getcourseid($event)">
-                    <option value="0">Select Course</option>
+                    <option value="0">Select Subject</option>
                     <option style="color:#0C275A" *ngFor="let details of courselist" value="{{details.id}}">
                         {{details.name}}</option>
                     <!-- <option style="color:#0C275A" *ngFor="let details of coursedetails" value="{{details.id}}">
@@ -38,9 +38,10 @@
     <div class="container-fluid">
         <div class="row scroll">
             <div class="col-lg-12">
-                <table class="table" *ngIf="(coursedetails | filter: search).length > 0; else noResults">
+                <table class="table" *ngIf="(coursedetails | filter: search).length >= 0; else noResults">
                     <thead>
                         <tr>
+                            <th>Center</th>
                             <th>Course Name</th>
                             <th>Chapter Name</th>
                             <th>Description</th>
@@ -49,7 +50,17 @@
                             <th>Chapter Text</th>
                             <th>Actions</th>
                         </tr>
-                        <tr *ngFor="let details of coursedetails | filter: search">
+                        <tr>
+                            <td>Amaze</td>
+                            <td>Angular</td>
+                            <td>Add</td>
+                            <td>Easy to Add</td>
+                            <td>simple</td>
+                            <td>yes</td>
+                            <td>Maths</td>
+                            <td>Yes</td>
+                        </tr>
+                        <!-- <tr *ngFor="let details of coursedetails | filter: search"> 
                             <td>{{details.courseName}}</td>
                             <td>{{details.name}}</td>
                             <td style="height:20px">{{details.shortdescription}}
@@ -71,21 +82,21 @@
                                   data-toggle="modal"
                                   data-target="#exampleModal3" (click)="view(details.chapterText)">....View More</span>
                             </td>
-                            <td style="width:100px">
+                            <td style="width:100px"> -->
                                 <!-- <button class="edit" (click)="edit(details.id)">Edit</button> <br> <br>
                                 <button class="edit" (click)="Ondelete(details.id)">Delete</button> -->
-
+<!-- 
                                 <img src="assets/Images/Edit_ICON.png" alt="Edit_ICON" style="width:20px;"
                                     (click)="edit(details.id)"> &nbsp;
 
                                 <img src="assets/Images/Delete_ICON.png" alt="Delete_ICON"
                                     (click)="Ondelete(details.id)" style="width:20px;">
                             </td>
-                        </tr>
+                        </tr>  -->
                     </thead>
                 </table>
                 <ng-template #noResults>
-                    <p class="NoResultShow"> No results found for "{{search}}" </p>
+                    <p class="NoResultShow"> No results found </p>
                 </ng-template>
             </div>
         </div>
