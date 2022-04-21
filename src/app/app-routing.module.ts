@@ -56,6 +56,8 @@ import { FeereportComponent } from './feereport/feereport.component';
 import { AddtimetableComponent } from './addtimetable/addtimetable.component';
 import { TimetabledshComponent } from './timetabledsh/timetabledsh.component';
 import { StaffleavesComponent } from './staffleaves/staffleaves.component';
+import { TrainerFeedbackComponent } from './trainer-feedback/trainer-feedback.component';
+import { CentrewiseScheduleComponent } from './centrewise-schedule/centrewise-schedule.component';
 
 
 
@@ -143,6 +145,8 @@ const routes: Routes = [
   { path: 'addtimetable', component: AddtimetableComponent },
   { path: 'timetabledsh', component: TimetabledshComponent },
   { path: 'staffleaves', component: StaffleavesComponent },
+  { path: 'TrainerFeedback', component: TrainerFeedbackComponent },
+  { path: 'CentrewiseSchedule', component: CentrewiseScheduleComponent },
 
 
 

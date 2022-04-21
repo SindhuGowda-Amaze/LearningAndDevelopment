@@ -182,5 +182,15 @@ export class SidebarComponent implements OnInit {
     localStorage.setItem("clickname", "support tickets")
   }
 
+  trainerfeedback() {
+    this.active = 'trainerfeedback'
+    localStorage.setItem("clickname", "Trainer Feedback")
+  }
+
+  centrewise() {
+    this.active = 'centrewise'
+    localStorage.setItem("clickname", "Centre Schedule")
+  }
+
 
 }

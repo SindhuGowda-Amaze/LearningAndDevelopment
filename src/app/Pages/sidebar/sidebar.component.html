@@ -302,6 +302,26 @@
             <span [ngClass]="active == 'submitest' ? 'Active1' : 'Active3'"> Test Submitted </span>
         </a>
 
+        <a *ngIf="roleid==5" routerLink="/TrainerFeedback" class="tablinks" (click)="highlight($event)"
+            (click)="trainerfeedback()">
+            <img src="assets/Images/homework (1).png" style="width:13% ;margin-right: 17px;"
+                [ngClass]="active == 'trainerfeedback' ? 'Active1' : 'Active2'" />
+            <img [ngClass]="active != 'trainerfeedback' ? 'Active1' : 'Active2'" src="assets/Images/New folder/homework.png"
+                style="width:13%; margin-right: 17px;">
+            &nbsp;
+            <span [ngClass]="active == 'trainerfeedback' ? 'Active1' : 'Active3'"> Trainer Feedback </span>
+        </a>
+
+        <a *ngIf="roleid==5" routerLink="/CentrewiseSchedule" class="tablinks" (click)="highlight($event)"
+        (click)="centrewise()">
+        <img src="assets/Images/homework (1).png" style="width:13% ;margin-right: 17px;"
+            [ngClass]="active == 'centrewise' ? 'Active1' : 'Active2'" />
+        <img [ngClass]="active != 'centrewise' ? 'Active1' : 'Active2'" src="assets/Images/New folder/homework.png"
+            style="width:13%; margin-right: 17px;">
+        &nbsp;
+        <span [ngClass]="active == 'centrewise' ? 'Active1' : 'Active3'"> Centre Schedule </span>
+    </a>
+
         <a routerLink="/Help" class="tablinks" (click)="highlight($event)" (click)="help()">
             <img src="assets/Images/64 Blue/leaves.png" style="width:13% ;margin-right: 17px;"
                 [ngClass]="active == 'help' ? 'Active1' : 'Active2'" />
