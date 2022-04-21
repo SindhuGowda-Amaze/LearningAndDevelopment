@@ -31,7 +31,7 @@
             <img [ngClass]="active == 'studentattedance' ? 'Active1' : 'Active2'" src="assets/Images/chapter1.png"
                 style="width:13%; margin-right: 17px;">
             &nbsp;
-            <span [ngClass]="active == 'studentattedance' ? 'Active1' : 'Active3'"> Student Attedance</span>
+            <span [ngClass]="active == 'studentattedance' ? 'Active1' : 'Active3'"> Student Attendance</span>
         </a>
 
         <a *ngIf="roleid=='5'" routerLink="/coursecompletion" class="tablinks" (click)="highlight($event)"
