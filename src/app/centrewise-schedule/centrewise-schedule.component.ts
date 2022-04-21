@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CentrewiseScheduleComponent implements OnInit {
 
   constructor() { }
-
+  search: any
   ngOnInit(): void {
   }
 
