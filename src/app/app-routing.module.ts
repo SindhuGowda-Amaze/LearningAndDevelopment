@@ -56,6 +56,7 @@ import { FeereportComponent } from './feereport/feereport.component';
 import { AddtimetableComponent } from './addtimetable/addtimetable.component';
 import { TimetabledshComponent } from './timetabledsh/timetabledsh.component';
 import { StaffleavesComponent } from './staffleaves/staffleaves.component';
+import { ContentFeedbackDashComponent } from './content-feedback-dash/content-feedback-dash.component';
 
 
 
@@ -143,6 +144,7 @@ const routes: Routes = [
   { path: 'addtimetable', component: AddtimetableComponent },
   { path: 'timetabledsh', component: TimetabledshComponent },
   { path: 'staffleaves', component: StaffleavesComponent },
+  { path: 'ContentFeedbackDash', component: ContentFeedbackDashComponent },
 
 
 

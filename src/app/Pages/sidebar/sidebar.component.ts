@@ -73,6 +73,10 @@ export class SidebarComponent implements OnInit {
     this.active = 'studentattedance';
     localStorage.setItem("clickname", "Student Attedance")
   }
+  contentfeedback() {
+    this.active = 'contentfeedback';
+    localStorage.setItem("clickname", "Content Feedback")
+  }
   coursecompletion() {
     this.active = 'coursecompletion';
     localStorage.setItem("clickname", "Course Completion")

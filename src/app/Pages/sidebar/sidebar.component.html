@@ -62,6 +62,17 @@
             &nbsp;
             <span [ngClass]="active == 'timetabledsh' ? 'Active1' : 'Active3'"> Time Table </span>
         </a>
+
+        <a *ngIf="roleid=='5' " routerLink="/ContentFeedbackDash" class="tablinks"
+        (click)="highlight($event)" (click)="contentfeedback()">
+        <img src="assets/Images/New folder/chapter.png" style="width:13% ;margin-right: 17px;"
+            [ngClass]="active != 'contentfeedback' ? 'Active1' : 'Active2'" />
+        <img [ngClass]="active == 'contentfeedback' ? 'Active1' : 'Active2'" src="assets/Images/chapter1.png"
+            style="width:13%; margin-right: 17px;">
+        &nbsp;
+        <span [ngClass]="active == 'contentfeedback' ? 'Active1' : 'Active3'"> Content Feedback</span>
+    </a>
+
         <a *ngIf="roleid=='4' || roleid=='2'" routerLink="/staffleaves" class="tablinks" (click)="highlight($event)"
             (click)="staffleaves()">
             <img src="assets/Images/New folder/chapter.png" style="width:13% ;margin-right: 17px;"

@@ -75,6 +75,7 @@ import { FeereportComponent } from './feereport/feereport.component';
 import { AddtimetableComponent } from './addtimetable/addtimetable.component';
 import { TimetabledshComponent } from './timetabledsh/timetabledsh.component';
 import { StaffleavesComponent } from './staffleaves/staffleaves.component';
+import { ContentFeedbackDashComponent } from './content-feedback-dash/content-feedback-dash.component';
 
 
 
@@ -142,6 +143,7 @@ const ngWizardConfig: NgWizardConfig = {
     AddtimetableComponent,
     TimetabledshComponent,
     StaffleavesComponent,
+    ContentFeedbackDashComponent,
 
   
   ],
