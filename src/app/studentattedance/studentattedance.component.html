@@ -38,15 +38,26 @@
                     <option value="12">December</option>
                 </select>
             </div>
-            <div class="col-lg-5">
-                <input type="search" class="form-control search" placeholder="Search for Student">
+            <div class="col-lg-3">
+                <select class="form-control " id="Duration">
+                    <option class="FilterClass" value="0">Select Percentage</option>
+                    <option value="1">Less Than 75%</option>
+                    <option value="1">Less Than 50%</option>
+                    <option value="1">Less Than 25%</option>
+                    <option value="1">Less Than 15%</option>
+                </select>
             </div>
+            <!-- <div class="col-lg-5">
+                <input type="search" class="form-control search" placeholder="Search for Student">
+            </div> -->
         </div><br>
     </div> <br>
     <div class="row">
         <div class="col-lg-9"></div>
+
+
         <div class="col-lg-3">
-            <!-- <button class="addnew" routerLink="/Course">Add</button> -->
+            Current Month : <b>April</b>
         </div>
     </div> <br>
 
@@ -58,7 +69,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Center Name</th>
+                            <th *ngIf="roleid!=4">Center Name</th>
                             <th>Course</th>
                             <th>Student Name</th>
                             <th>1</th>
@@ -76,29 +87,16 @@
                             <th>13</th>
                             <th>14</th>
                             <th>15</th>
-                            <th>16</th>
+                            <th style="background-color: #3247D5;">16</th>
                             <th>17</th>
-                            <th>18</th>
-                            <th>19</th>
-                            <th>20</th>
-                            <th>21</th>
-                            <th>22</th>
-                            <th>23</th>
-                            <th>24</th>
-                            <th>25</th>
-                            <th>26</th>
-                            <th>27</th>
-                            <th>28</th>
-                            <th>29</th>
-                            <th>30</th>
                             <th>Percentage</th>
                         </tr>
                         <tr>
-                            <td>
+                            <td *ngIf="roleid!=4">
                                 <p>Center 1</p>
                             </td>
                             <td>
-                                <p>Physics</p>
+                                <p>BSc fashion design</p>
                             </td>
                             <td>
                                 <p>Arjun</p>
@@ -131,58 +129,9 @@
                                 &#9989;
 
                             </td>
-                            <td>
-                                &#9989;
 
-                            </td>
-                            <td>
-                                &#9989;
 
-                            </td>
-                            <td>
-                                &#9989;
 
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
                             <td>
 
                                 &#x274C;
@@ -231,147 +180,11 @@
 
                         </tr>
                         <tr>
-                            <td>
-                                <p>Center 1</p>
-                            </td>
-
-                            <td>
-                                <p>Chemistry</p>
-                            </td>
-                            <td>
-                                <p>Pravin</p>
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                <p>80%</p>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
+                            <td *ngIf="roleid!=4">
                                 <p>Center 1</p>
                             </td>
                             <td>
-                                <p>Java</p>
+                                <p>BSc fashion design</p>
                             </td>
                             <td>
                                 <p>Sachin</p>
@@ -404,58 +217,9 @@
                                 &#9989;
 
                             </td>
-                            <td>
-                                &#9989;
 
-                            </td>
-                            <td>
-                                &#9989;
 
-                            </td>
-                            <td>
-                                &#9989;
 
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-                                &#9989;
-
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
-                            <td>
-
-                                &#x274C;
-                            </td>
                             <td>
 
                                 &#x274C;
@@ -497,10 +261,540 @@
 
                             </td>
                             <td>
-                                <p>60%</p>
+                                50%
                             </td>
+
+
+
                         </tr>
+                        <tr>
+                            <td *ngIf="roleid!=4">
+                                <p>Center 1</p>
+                            </td>
+                            <td>
+                                <p>BSc fashion design</p>
+                            </td>
+                            <td>
+                                <p>Naveen</p>
+                            </td>
+                            <td>
+                                &#9989;
 
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+
+
+
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                50%
+                            </td>
+
+
+
+                        </tr>
+                        <tr>
+                            <td *ngIf="roleid!=4">
+                                <p>Center 1</p>
+                            </td>
+                            <td>
+                                <p>BSc fashion design</p>
+                            </td>
+                            <td>
+                                <p>Kapil</p>
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+
+
+
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                50%
+                            </td>
+
+
+
+                        </tr>
+                        <tr>
+                            <td *ngIf="roleid!=4">
+                                <p>Center 1</p>
+                            </td>
+                            <td>
+                                <p>BSc fashion design</p>
+                            </td>
+                            <td>
+                                <p>Sanjay</p>
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+
+
+
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                50%
+                            </td>
+
+
+
+                        </tr>
+                        <tr>
+                            <td *ngIf="roleid!=4">
+                                <p>Center 1</p>
+                            </td>
+                            <td>
+                                <p>BSc fashion design</p>
+                            </td>
+                            <td>
+                                <p>Bhargav</p>
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+
+
+
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                50%
+                            </td>
+
+
+
+                        </tr>
+                        <tr>
+                            <td *ngIf="roleid!=4">
+                                <p>Center 1</p>
+                            </td>
+                            <td>
+                                <p>BSc fashion design</p>
+                            </td>
+                            <td>
+                                <p>Rohan</p>
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+
+
+
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                50%
+                            </td>
+
+
+
+                        </tr>
+                        <tr>
+                            <td *ngIf="roleid!=4">
+                                <p>Center 1</p>
+                            </td>
+                            <td>
+                                <p>BSc fashion design</p>
+                            </td>
+                            <td>
+                                <p>John</p>
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+
+
+
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+
+                                &#x274C;
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                &#9989;
+
+                            </td>
+                            <td>
+                                70%
+                            </td>
+
+
+
+                        </tr>
 
 
 

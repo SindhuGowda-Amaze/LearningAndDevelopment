@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class StudentattedanceComponent implements OnInit {
 
   constructor() { }
-
+  roleid: any
   ngOnInit(): void {
+    this.roleid = sessionStorage.getItem('roleid')
   }
 
 }
